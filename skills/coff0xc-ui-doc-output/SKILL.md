@@ -1,6 +1,6 @@
 ---
 name: coff0xc-ui-doc-output
-description: "Use when / 当用户请求: 全面 UI 设计、前端体验、PDF/文档处理、报告交付和技术翻译工作流。触发：UI、前端、dashboard、组件、页面、视觉验证、PDF、Word、文档、报告、翻译、润色、截图、版式、可访问性。 Covered source aliases / 来源别名: UIdesign, pdf, quick-translate. Capability domains / 能力域: 产品 UI, 设计系统, 交互状态, 视觉验证, PDF/文档, 报告输出, 翻译润色. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-ui-doc-output."
+description: "Use when / 当用户请求: 全面 UI 设计、前端体验、PDF/文档处理、报告交付和技术翻译工作流。触发：UI、前端、dashboard、组件、页面、视觉验证、PDF、Word、文档、报告、翻译、润色、截图、版式、可访问性、页面很乱、信息密度、按钮状态、窄屏表现、交付文案、产品可用性。 Covered source aliases / 来源别名: UIdesign, pdf, quick-translate. Capability domains / 能力域: 产品 UI, 设计系统, 交互状态, 视觉验证, PDF/文档, 报告输出, 翻译润色. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-ui-doc-output."
 ---
 
 # coff0xc-ui-doc-output

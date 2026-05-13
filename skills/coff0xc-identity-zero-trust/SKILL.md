@@ -1,6 +1,6 @@
 ---
 name: coff0xc-identity-zero-trust
-description: "Use when / 当用户请求: 全面身份安全、零信任、AD/Kerberos、IAM、权限、凭证风险、横向移动防御和访问控制审查工作流。触发：IAM、SSO、MFA、AD、Active Directory、Kerberos、BloodHound、权限、凭证、服务账号、提权、横向移动、Zero Trust、PAM。 Covered source aliases / 来源别名: ad-pentest, credential-access, identity-security, lateral-movement, privilege-escalation, zero-trust. Capability domains / 能力域: 身份治理, 认证强度, 授权模型, AD/Kerberos, 凭证风险, 横向移动防御, 零信任. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-identity-zero-trust."
+description: "Use when / 当用户请求: 全面身份安全、零信任、AD/Kerberos、IAM、权限、凭证风险、横向移动防御和访问控制审查工作流。触发：IAM、SSO、MFA、AD、Active Directory、Kerberos、BloodHound、权限、凭证、服务账号、提权、横向移动、Zero Trust、PAM、账号权限混乱、谁能访问什么、特权账号收敛、登录策略、access governance。 Covered source aliases / 来源别名: ad-pentest, credential-access, identity-security, lateral-movement, privilege-escalation, zero-trust. Capability domains / 能力域: 身份治理, 认证强度, 授权模型, AD/Kerberos, 凭证风险, 横向移动防御, 零信任. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-identity-zero-trust."
 ---
 
 # coff0xc-identity-zero-trust

@@ -31,11 +31,14 @@ REQUIRED_FILES = [
     "NOTICE",
     "manifest.json",
     "docs/TRIGGERING.md",
+    "docs/TRIGGER_EVAL.md",
     "docs/USAGE.md",
     "docs/LANGUAGES.md",
     "docs/COVERAGE.md",
     "docs/SANITIZATION.md",
     "docs/PROVENANCE.md",
+    "evals/trigger-eval.json",
+    "scripts/run_trigger_eval.py",
 ]
 
 REQUIRED_I18N_FILES = [

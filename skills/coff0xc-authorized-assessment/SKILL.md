@@ -1,6 +1,6 @@
 ---
 name: coff0xc-authorized-assessment
-description: "Use when / 当用户请求: 全面授权安全评估、攻击面梳理、红队计划防御化、演练边界、控制有效性验证和报告工作流。触发：recon、fingerprint、attack chain、full pentest、red team、C2、evasion、phishing simulation、post-exploitation、data exfiltration、CDN/WAF、proxy、social engineering、ROE。 Covered source aliases / 来源别名: attack-chain-orchestrator, autoredteam-orchestrator, c2-framework, cdn-bypass, data-exfiltration, evasion-toolkit, fingerprint-engine, full-pentest, phishing-simulation, post-exploitation, proxy-pool-manager, recon-workflow, red-team-infra, security-tool-dev, social-engineering. Capability domains / 能力域: ROE/授权, 攻击面梳理, 控制验证, 红队防御化, 钓鱼演练, 外传演练, 工具开发, 报告. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-authorized-assessment."
+description: "Use when / 当用户请求: 全面授权安全评估、攻击面梳理、红队计划防御化、演练边界、控制有效性验证和报告工作流。触发：recon、fingerprint、attack chain、full pentest、red team、C2、evasion、phishing simulation、post-exploitation、data exfiltration、CDN/WAF、proxy、social engineering、ROE、书面授权、完整入侵链、防护发现、边界和步骤、防御验证。 Covered source aliases / 来源别名: attack-chain-orchestrator, autoredteam-orchestrator, c2-framework, cdn-bypass, data-exfiltration, evasion-toolkit, fingerprint-engine, full-pentest, phishing-simulation, post-exploitation, proxy-pool-manager, recon-workflow, red-team-infra, security-tool-dev, social-engineering. Capability domains / 能力域: ROE/授权, 攻击面梳理, 控制验证, 红队防御化, 钓鱼演练, 外传演练, 工具开发, 报告. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-authorized-assessment."
 ---
 
 # coff0xc-authorized-assessment

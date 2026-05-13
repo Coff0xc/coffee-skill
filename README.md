@@ -139,6 +139,16 @@ If auto-triggering misses, invoke the skill explicitly:
 
 See [docs/TRIGGERING.md](docs/TRIGGERING.md) and [docs/USAGE.md](docs/USAGE.md).
 
+## Trigger Evaluation
+
+This repo includes a deterministic local proxy eval for skill triggering:
+
+```powershell
+python .\scripts\run_trigger_eval.py
+```
+
+The eval covers should-trigger and should-not-trigger prompts for all 16 skills, including hard paraphrases and router fallback cases. See [docs/TRIGGER_EVAL.md](docs/TRIGGER_EVAL.md).
+
 ## Languages
 
 The skill content is primarily Chinese + English. The trigger strategy also includes common English tool names and acronyms.
@@ -193,6 +203,7 @@ The validator checks:
 
 - [Usage Guide](docs/USAGE.md)
 - [Triggering Guide](docs/TRIGGERING.md)
+- [Trigger Evaluation](docs/TRIGGER_EVAL.md)
 - [Coverage Matrix](docs/COVERAGE.md)
 - [Language References](docs/LANGUAGES.md)
 - [Sanitization Notes](docs/SANITIZATION.md)

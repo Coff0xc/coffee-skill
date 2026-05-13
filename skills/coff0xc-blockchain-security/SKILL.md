@@ -1,6 +1,6 @@
 ---
 name: coff0xc-blockchain-security
-description: "Use when / 当用户请求: 全面区块链、智能合约、DeFi、Web3、跨链、代币和多链安全审计工作流。触发：Solidity、EVM、Solana、Cosmos、Substrate、Cairo/StarkNet、TON、Algorand、DeFi、AMM、oracle、bridge、token、NFT、智能合约审计、Foundry、Hardhat、Slither。 Covered source aliases / 来源别名: blockchain-security. Capability domains / 能力域: EVM/Solidity, Solana, Cosmos/CosmWasm, Substrate, Cairo/StarkNet, TON/Algorand, DeFi, Token/NFT. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-blockchain-security."
+description: "Use when / 当用户请求: 全面区块链、智能合约、DeFi、Web3、跨链、代币和多链安全审计工作流。触发：Solidity、EVM、Solana、Cosmos、Substrate、Cairo/StarkNet、TON、Algorand、DeFi、AMM、oracle、bridge、token、NFT、智能合约审计、Foundry、Hardhat、Slither、链上资金逻辑、价格来源、资产流转、合约权限、测试覆盖。 Covered source aliases / 来源别名: blockchain-security. Capability domains / 能力域: EVM/Solidity, Solana, Cosmos/CosmWasm, Substrate, Cairo/StarkNet, TON/Algorand, DeFi, Token/NFT. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-blockchain-security."
 ---
 
 # coff0xc-blockchain-security

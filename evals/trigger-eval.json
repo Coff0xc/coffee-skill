@@ -1,0 +1,723 @@
+{
+  "schema_version": 1,
+  "description": "Trigger evaluation set for coffee-skill. Positive cases test whether the expected skill is ranked from SKILL.md frontmatter metadata. Negative cases test false-positive risk for simple or unrelated prompts.",
+  "targets": {
+    "positive_top1_rate": 0.85,
+    "positive_top3_rate": 0.95,
+    "router_top3_rate": 0.90,
+    "negative_no_trigger_rate": 0.80
+  },
+  "cases": [
+    {
+      "id": "software-cn-tests-refactor",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "这个 Python 项目的 pytest 挂了，帮我定位失败用例，做最小修复，然后跑测试和 lint。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "reason": "Local coding, tests, minimal fix, validation."
+    },
+    {
+      "id": "software-en-typescript-feature",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Add a TypeScript feature to this repo, follow the existing style, update tests, and summarize the git diff.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "reason": "Feature implementation, TypeScript, tests, Git summary."
+    },
+    {
+      "id": "software-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-software-engineering 帮我重构这个 Go 模块，保持行为不变并补测试。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "agent-cn-knowledge-base",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "用 Agent/RAG 的方式设计一个本地知识库助手，需要引用来源、缓存、失败降级和评测集。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ai-agent-rag",
+      "reason": "Agent/RAG architecture, citations, cache, fallback, evals."
+    },
+    {
+      "id": "agent-en-tool-calling",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Review this LLM tool-calling agent design for memory, retrieval quality, observability, latency, and cost.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ai-agent-rag",
+      "reason": "LLM agent, tools, memory, retrieval, observability, cost."
+    },
+    {
+      "id": "agent-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-ai-agent-rag 设计一个带向量数据库和多模型编排的 RAG workflow。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ai-agent-rag",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "api-cn-openapi-schema",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "帮我设计这个 billing REST API，包含 OpenAPI、数据库 schema、分页、错误码和兼容迁移。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-api-data-platform",
+      "reason": "REST, OpenAPI, database schema, pagination, errors, migration."
+    },
+    {
+      "id": "api-en-cli-sdk",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Turn these curl examples into a stable CLI and SDK plan with auth, JSON output, retries, and data contracts.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-api-data-platform",
+      "reason": "CLI, SDK, API contracts, auth, JSON."
+    },
+    {
+      "id": "api-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-api-data-platform 梳理 GraphQL 查询、SQL 表结构和数据质量检查。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-api-data-platform",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "ui-cn-dashboard",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "优化这个 dashboard 的前端体验，检查移动端截图、组件状态、可访问性和视觉层级。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ui-doc-output",
+      "reason": "UI/frontend dashboard, screenshots, components, accessibility."
+    },
+    {
+      "id": "ui-en-report-pdf",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Create a clean PDF-ready security report from these findings, with layout checks and concise technical wording.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ui-doc-output",
+      "reason": "PDF/report/document output and wording."
+    },
+    {
+      "id": "ui-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-ui-doc-output 把这份中文报告翻译润色成英文交付版。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ui-doc-output",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "appsec-cn-authz",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "审计这个 Web/API 项目的认证和越权风险，重点看 source/sink、SSRF、XSS、SQLi 和后门迹象。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-secure-code-appsec",
+      "reason": "Code audit, Web/API security, authz, source/sink, vulnerability classes."
+    },
+    {
+      "id": "appsec-en-oauth-graphql",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Review this authorized GraphQL and OAuth implementation for CORS, cookies, access control, and prompt injection risks.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-secure-code-appsec",
+      "reason": "GraphQL, OAuth, browser controls, LLM app security."
+    },
+    {
+      "id": "appsec-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-secure-code-appsec 做一次授权代码安全审计，只输出证据和修复建议。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-secure-code-appsec",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "cloud-cn-k8s-ci",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "检查这个 Docker、K8s 和 GitHub Actions 配置有没有供应链、SBOM、secret scanning 和 IaC 风险。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-cloud-devsecops",
+      "reason": "Docker, Kubernetes, CI/CD, supply chain, SBOM, secrets, IaC."
+    },
+    {
+      "id": "cloud-en-aws-terraform",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Audit this Terraform plan for AWS IAM, S3 exposure, serverless permissions, and DevSecOps controls.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-cloud-devsecops",
+      "reason": "Cloud/IAM/S3/serverless/Terraform/DevSecOps."
+    },
+    {
+      "id": "cloud-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-cloud-devsecops 评估 Azure、容器镜像和 CI/CD 的密钥管理问题。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-cloud-devsecops",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "detect-cn-sigma-yara",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "根据这些 EDR 日志写 Sigma 和 YARA 检测规则，说明 IOC、误报和验证样例。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-detection-response",
+      "reason": "EDR logs, Sigma, YARA, IOC, false positives, validation."
+    },
+    {
+      "id": "detect-en-ir-forensics",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Build an incident response timeline from these forensics notes and map malware indicators to SIEM detections.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-detection-response",
+      "reason": "IR, forensics, malware indicators, SIEM detections."
+    },
+    {
+      "id": "detect-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-detection-response 做一次威胁狩猎假设、日志查询和告警调优。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-detection-response",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "vuln-cn-cve-patch",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "分析这个 CVE 的漏洞原理、补丁对比、CVSS/EPSS/KEV 优先级和修复跟踪计划。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-vulnerability-lifecycle",
+      "reason": "CVE, patch diff, prioritization, remediation tracking."
+    },
+    {
+      "id": "vuln-en-advisory-report",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Turn this advisory into a vulnerability management report with impact, exploitability, bug bounty evidence, and remediation owners.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-vulnerability-lifecycle",
+      "reason": "Advisory, vulnerability management, report, remediation."
+    },
+    {
+      "id": "vuln-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-vulnerability-lifecycle 做授权 PoC 验证计划和修复优先级。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-vulnerability-lifecycle",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "identity-cn-ad-kerberos",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "评估这个 AD 域的 Kerberos、BloodHound 路径、服务账号、MFA 和横向移动防御。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-identity-zero-trust",
+      "reason": "AD, Kerberos, BloodHound, service accounts, MFA, lateral movement defense."
+    },
+    {
+      "id": "identity-en-zero-trust",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Review this IAM and SSO design for Zero Trust, PAM, privilege boundaries, credential risk, and access control gaps.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-identity-zero-trust",
+      "reason": "IAM, SSO, Zero Trust, PAM, privileges, credentials."
+    },
+    {
+      "id": "identity-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-identity-zero-trust 检查身份治理、权限模型和凭证暴露风险。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-identity-zero-trust",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "assessment-cn-roe",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "为一次授权红队演练写 ROE、攻击面梳理、控制验证、钓鱼演练边界和报告结构。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-authorized-assessment",
+      "reason": "Authorized assessment, ROE, red team, control validation, phishing simulation boundaries."
+    },
+    {
+      "id": "assessment-en-control-validation",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Plan an authorized assessment that maps recon, attack chain, WAF/CDN assumptions, and data exfiltration simulation to defensive controls.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-authorized-assessment",
+      "reason": "Authorized assessment, recon, attack chain, CDN/WAF, exfiltration simulation, controls."
+    },
+    {
+      "id": "assessment-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-authorized-assessment 设计一个只用于防御验证的 red team emulation plan。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-authorized-assessment",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "binary-cn-apk-firmware",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "分析这个 APK 和 IoT firmware 的 Frida Hook 点、UART/JTAG 接口、BLE 通信和加密实现风险。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-binary-mobile-iot",
+      "reason": "APK, firmware, Frida, hardware interfaces, BLE, crypto."
+    },
+    {
+      "id": "binary-en-reverse-ctf",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Help triage this authorized reverse engineering challenge with Ghidra notes, PWN constraints, kernel surface, and constant-time crypto checks.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-binary-mobile-iot",
+      "reason": "Reverse engineering, PWN, kernel, crypto constant-time."
+    },
+    {
+      "id": "binary-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-binary-mobile-iot 做移动安全、固件和 ICS/SCADA 分析计划。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-binary-mobile-iot",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "blockchain-cn-defi",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "审计这个 Solidity DeFi 合约，重点看 oracle、AMM、bridge、token/NFT 和 Slither/Foundry 测试。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-blockchain-security",
+      "reason": "Solidity, DeFi, oracle, AMM, bridge, token/NFT, Slither/Foundry."
+    },
+    {
+      "id": "blockchain-en-multichain",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Route this smart contract audit across EVM, Solana, Cosmos, Substrate, Cairo, TON, and Algorand checks.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-blockchain-security",
+      "reason": "Smart contract audit across multiple chains."
+    },
+    {
+      "id": "blockchain-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-blockchain-security 检查 Web3 跨链桥和代币集成风险。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-blockchain-security",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "compliance-cn-stride-dlp",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "为这个系统做 STRIDE 威胁建模，映射等保、ISO27001、SOC2、数据分类、脱敏和 DLP 控制。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-compliance-architecture",
+      "reason": "Threat modeling, compliance, data classification, DLP."
+    },
+    {
+      "id": "compliance-en-control-matrix",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Create a security architecture review with NIST, CIS, GDPR, privacy controls, baseline gaps, and a control matrix.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-compliance-architecture",
+      "reason": "Security architecture, NIST/CIS/GDPR, privacy, baseline, controls."
+    },
+    {
+      "id": "compliance-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-compliance-architecture 做安全基线、合规审计和成熟度评估。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-compliance-architecture",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "purple-cn-attack-coverage",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "设计紫队演练，把 ATT&CK 技术映射到检测覆盖、响应验证、蜜罐和 canary 指标。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-purple-deception",
+      "reason": "Purple team, ATT&CK, detection coverage, response validation, honeypot/canary."
+    },
+    {
+      "id": "purple-en-deception",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Build a deception defense plan with honeypots, decoys, control validation, detection coverage metrics, and emulation phases.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-purple-deception",
+      "reason": "Deception, honeypots, control validation, detection coverage, emulation."
+    },
+    {
+      "id": "purple-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-purple-deception 做红蓝对抗复盘和检测有效性评估。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-purple-deception",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "network-cn-pcap-tls",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "分析这个 pcap，重点看 TLS、DNS、HTTP/3、QUIC、TCP/UDP 和 Wireshark 证据。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-network-protocol-security",
+      "reason": "pcap, TLS, DNS, HTTP/3, QUIC, TCP/UDP, Wireshark."
+    },
+    {
+      "id": "network-en-formal-protocol",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Model this network protocol flow with Mermaid and ProVerif, then review wireless BLE and RF assumptions.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-network-protocol-security",
+      "reason": "Protocol modeling, Mermaid, ProVerif, BLE/RF."
+    },
+    {
+      "id": "network-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-network-protocol-security 检查安全通信、无线安全和协议日志。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-network-protocol-security",
+      "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "router-cn-broad",
+      "language": "zh-CN",
+      "category": "router_fallback",
+      "prompt": "这个需求同时涉及代码、云安全、检测规则和漏洞报告，先帮我判断应该用哪个 Coff0xc skill。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "reason": "Broad mixed Coff0xc capability routing."
+    },
+    {
+      "id": "router-en-ambiguous",
+      "language": "en",
+      "category": "router_fallback",
+      "prompt": "Use the Coff0xc router to decide which skill should handle a project with API design, RAG, CI/CD, and security review.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "reason": "Explicit router request."
+    },
+    {
+      "id": "router-manual-cn",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-skill-router 帮我选择合适 skill。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "reason": "Explicit router invocation."
+    },
+    {
+      "id": "router-multilingual-es",
+      "language": "es",
+      "category": "manual_multilingual",
+      "prompt": "Use coff0xc-skill-router to choose the right skill for seguridad defensiva, API y documentación.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "reason": "Multilingual reference still uses explicit router phrase."
+    },
+    {
+      "id": "router-multilingual-ja",
+      "language": "ja",
+      "category": "manual_multilingual",
+      "prompt": "Use coff0xc-skill-router to choose the right skill for AI Agent/RAG と防御的セキュリティの作業。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "reason": "Multilingual reference still uses explicit router phrase."
+    },
+    {
+      "id": "router-multilingual-fr",
+      "language": "fr",
+      "category": "manual_multilingual",
+      "prompt": "Use coff0xc-skill-router to choose the right skill for agents IA, documentation et sécurité défensive.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "reason": "Multilingual reference still uses explicit router phrase."
+    },
+    {
+      "id": "hard-software-cn-colloquial",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "这个仓库跑不起来，先别大改，帮我看下报错链路，改最小范围，再证明确实好了。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "reason": "Colloquial engineering repair request without language names."
+    },
+    {
+      "id": "hard-agent-cn-colloquial",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "我想做一个会查资料、会调用工具、答错能追踪原因的助手，帮我把方案拆成可落地版本。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ai-agent-rag",
+      "reason": "Agent/RAG intent without direct RAG keyword."
+    },
+    {
+      "id": "hard-api-cn-contract",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "这个后端接口要给外部客户用，帮我把请求响应、鉴权、错误返回、版本兼容和存储结构定下来。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-api-data-platform",
+      "reason": "API/data platform intent without REST/OpenAPI keywords."
+    },
+    {
+      "id": "hard-ui-cn-polish",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "这个页面看起来很乱，帮我按真实产品可用性调整信息密度、按钮状态、窄屏表现和交付文案。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ui-doc-output",
+      "reason": "UI polish and output wording without exact UI keywords."
+    },
+    {
+      "id": "hard-appsec-cn-risk",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "这个系统有没有人能绕过登录看到别人的数据？帮我从代码入口和数据流找证据。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-secure-code-appsec",
+      "reason": "Access-control code audit without explicit vulnerability names."
+    },
+    {
+      "id": "hard-cloud-cn-pipeline",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "发版流水线和集群配置我不放心，帮我看镜像、权限、依赖来源和配置暴露风险。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-cloud-devsecops",
+      "reason": "CI/container/cloud risk without exact CI/CD/K8s keywords."
+    },
+    {
+      "id": "hard-detect-cn-alert",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "这些安全告警太吵，帮我从日志里提炼检测逻辑、降误报，并给验证样本。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-detection-response",
+      "reason": "Detection engineering without Sigma/YARA/SIEM acronyms."
+    },
+    {
+      "id": "hard-vuln-cn-patch",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "上游刚修了一个安全问题，我要判断我们受不受影响、先修哪儿、怎么跟进闭环。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-vulnerability-lifecycle",
+      "reason": "Patch/vulnerability lifecycle without CVE keyword."
+    },
+    {
+      "id": "hard-identity-cn-access",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "公司账号权限越来越乱，帮我检查谁能访问什么、特权账号怎么收敛、登录策略怎么补。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-identity-zero-trust",
+      "reason": "Identity governance without AD/IAM acronyms."
+    },
+    {
+      "id": "hard-assessment-cn-authorized",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "我们有书面授权，想验证现有防护能不能发现一条完整入侵链，先帮我写边界和步骤。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-authorized-assessment",
+      "reason": "Authorized assessment and control validation without red-team jargon."
+    },
+    {
+      "id": "hard-binary-cn-device",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "这个设备包里有可执行文件和通信固件，帮我制定静态分析、动态调试和接口枚举计划。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-binary-mobile-iot",
+      "reason": "Binary/firmware analysis without explicit IoT acronyms."
+    },
+    {
+      "id": "hard-blockchain-cn-contract",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "这个链上资金逻辑要上线，帮我检查价格来源、权限、资产流转和测试覆盖。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-blockchain-security",
+      "reason": "Smart contract/DeFi audit without Solidity keyword."
+    },
+    {
+      "id": "hard-compliance-cn-architecture",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "新系统上线前要过安全评审，帮我整理风险模型、控制项、隐私和审计证据。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-compliance-architecture",
+      "reason": "Security architecture/compliance review without standard names."
+    },
+    {
+      "id": "hard-purple-cn-coverage",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "我想验证蓝队到底能不能发现这些攻击行为，帮我设计演练、覆盖指标和改进闭环。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-purple-deception",
+      "reason": "Purple/control validation without ATT&CK or honeypot keywords."
+    },
+    {
+      "id": "hard-network-cn-traffic",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "这段抓包里握手和解析看起来不对，帮我按通信流程、加密协商和异常字段分析。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-network-protocol-security",
+      "reason": "Protocol/packet analysis without explicit protocol names."
+    },
+    {
+      "id": "hard-router-cn-unknown",
+      "language": "zh-CN",
+      "category": "hard_router",
+      "prompt": "我不确定该用哪个 coffee skill，这件事同时有界面、接口、检测和合规，先帮我分流。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "reason": "Ambiguous routing request without exact router name."
+    },
+    {
+      "id": "negative-simple-translate",
+      "language": "zh-CN",
+      "category": "negative_simple",
+      "prompt": "把 hello 翻译成中文。",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "One-step trivial translation should not need a workflow skill."
+    },
+    {
+      "id": "negative-simple-definition-cve",
+      "language": "zh-CN",
+      "category": "negative_simple",
+      "prompt": "CVE 是什么意思？",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Simple definition, not vulnerability workflow."
+    },
+    {
+      "id": "negative-weather",
+      "language": "zh-CN",
+      "category": "negative_unrelated",
+      "prompt": "明天上海天气怎么样？",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Weather lookup is unrelated."
+    },
+    {
+      "id": "negative-recipes",
+      "language": "en",
+      "category": "negative_unrelated",
+      "prompt": "Give me a quick dinner recipe with eggs and tomatoes.",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Cooking request is unrelated."
+    },
+    {
+      "id": "negative-single-git-command",
+      "language": "en",
+      "category": "negative_simple",
+      "prompt": "What git command shows the current branch?",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Simple one-step Git question."
+    },
+    {
+      "id": "negative-simple-json",
+      "language": "en",
+      "category": "negative_simple",
+      "prompt": "Pretty-print this small JSON object.",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Simple formatting task."
+    },
+    {
+      "id": "negative-token-definition",
+      "language": "en",
+      "category": "negative_near_miss",
+      "prompt": "In one sentence, what does token mean in NLP?",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Simple definition, not AI system design."
+    },
+    {
+      "id": "negative-blockchain-price",
+      "language": "en",
+      "category": "negative_near_miss",
+      "prompt": "What is the current ETH price?",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Market lookup, not blockchain security."
+    },
+    {
+      "id": "negative-pdf-summary-simple",
+      "language": "en",
+      "category": "negative_simple",
+      "prompt": "Summarize this one-page PDF in two bullets.",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Simple PDF summarization may not need the full UI/document workflow."
+    },
+    {
+      "id": "negative-grammar",
+      "language": "en",
+      "category": "negative_simple",
+      "prompt": "Fix grammar in this sentence: I has a apple.",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Simple writing fix."
+    },
+    {
+      "id": "negative-acronym-siem",
+      "language": "en",
+      "category": "negative_near_miss",
+      "prompt": "What does SIEM stand for?",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Simple acronym explanation, not detection workflow."
+    },
+    {
+      "id": "negative-kubernetes-definition",
+      "language": "en",
+      "category": "negative_near_miss",
+      "prompt": "Explain Kubernetes to a beginner in one paragraph.",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Simple explanation, not DevSecOps review."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 name: coff0xc-compliance-architecture
-description: "Use when / 当用户请求: 全面安全架构、威胁建模、合规审计、数据安全、DLP、隐私、安全基线和成熟度评估工作流。触发：安全架构、STRIDE、威胁建模、等保、PCI-DSS、GDPR、ISO27001、SOC2、CIS、NIST、数据分类、脱敏、DLP、隐私、基线、控制矩阵。 Covered source aliases / 来源别名: compliance-audit, data-security, security-architecture. Capability domains / 能力域: 架构评审, 威胁建模, 合规映射, 数据安全, 隐私, 基线, 成熟度. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-compliance-architecture."
+description: "Use when / 当用户请求: 全面安全架构、威胁建模、合规审计、数据安全、DLP、隐私、安全基线和成熟度评估工作流。触发：安全架构、STRIDE、威胁建模、等保、PCI-DSS、GDPR、ISO27001、SOC2、CIS、NIST、数据分类、脱敏、DLP、隐私、基线、控制矩阵、安全评审、风险模型、控制项、审计证据、上线前评审。 Covered source aliases / 来源别名: compliance-audit, data-security, security-architecture. Capability domains / 能力域: 架构评审, 威胁建模, 合规映射, 数据安全, 隐私, 基线, 成熟度. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-compliance-architecture."
 ---
 
 # coff0xc-compliance-architecture

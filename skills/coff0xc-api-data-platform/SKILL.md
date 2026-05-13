@@ -1,6 +1,6 @@
 ---
 name: coff0xc-api-data-platform
-description: "Use when / 当用户请求: 全面 API、数据库、数据平台、CLI、SDK 和接口契约工程工作流。触发：REST、GraphQL、OpenAPI、SQL、数据库、迁移、CLI、SDK、分页、认证、错误码、JSON 输出、数据模型、ETL、数据质量。 Covered source aliases / 来源别名: api-design, database, cli-creator. Capability domains / 能力域: API 设计, 认证授权, 数据模型, 查询与分页, CLI/SDK, 数据平台, 兼容演进. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-api-data-platform."
+description: "Use when / 当用户请求: 全面 API、数据库、数据平台、CLI、SDK 和接口契约工程工作流。触发：REST、GraphQL、OpenAPI、SQL、数据库、迁移、CLI、SDK、分页、认证、错误码、JSON 输出、数据模型、ETL、数据质量、后端接口、请求响应、鉴权、版本兼容、存储结构、外部客户接口。 Covered source aliases / 来源别名: api-design, database, cli-creator. Capability domains / 能力域: API 设计, 认证授权, 数据模型, 查询与分页, CLI/SDK, 数据平台, 兼容演进. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-api-data-platform."
 ---
 
 # coff0xc-api-data-platform

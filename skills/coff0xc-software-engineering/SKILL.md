@@ -1,6 +1,6 @@
 ---
 name: coff0xc-software-engineering
-description: "Use when / 当用户请求: 全面软件工程、语言开发、测试、重构、脚本、Git 和工程质量工作流。触发：Python、JavaScript、TypeScript、Go、Rust、Java、C/C++、Shell、bugfix、feature、测试、重构、构建、脚本、Git、本地工程化。 Covered source aliases / 来源别名: c-cpp-dev, code-simplifier, git-workflow, go-dev, java-dev, js-ts-dev, python-dev, rust-dev, shell-scripting, testing. Capability domains / 能力域: 语言实现, 缺陷修复, 特性开发, 重构简化, 测试体系, 构建质量, Git 协作. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-software-engineering."
+description: "Use when / 当用户请求: 全面软件工程、语言开发、测试、重构、脚本、Git 和工程质量工作流。触发：Python、JavaScript、TypeScript、Go、Rust、Java、C/C++、Shell、bugfix、feature、测试、重构、构建、脚本、Git、本地工程化、仓库跑不起来、报错链路、最小修复、证明好了、failing tests、repo does not run。 Covered source aliases / 来源别名: c-cpp-dev, code-simplifier, git-workflow, go-dev, java-dev, js-ts-dev, python-dev, rust-dev, shell-scripting, testing. Capability domains / 能力域: 语言实现, 缺陷修复, 特性开发, 重构简化, 测试体系, 构建质量, Git 协作. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-software-engineering."
 ---
 
 # coff0xc-software-engineering
