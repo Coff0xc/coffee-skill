@@ -117,6 +117,33 @@
       "reason": "Explicit skill invocation."
     },
     {
+      "id": "drawio-cn-paper-method",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "帮我根据这篇论文和官方 GitHub 画一个可编辑的 draw.io 科研算法架构图，要求标注模块证据和推断连接。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-research-drawio-diagram",
+      "reason": "Research algorithm architecture figure, public-source analysis, editable draw.io output."
+    },
+    {
+      "id": "drawio-en-method-figure",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Use the paper, arXiv page, and official repo to create an editable diagrams.net method figure for this algorithm pipeline.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-research-drawio-diagram",
+      "reason": "diagrams.net method figure from public paper and official repo sources."
+    },
+    {
+      "id": "drawio-manual",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-research-drawio-diagram 把这个 Transformer 论文方法整理成 .drawio 模型结构图。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-research-drawio-diagram",
+      "reason": "Explicit skill invocation."
+    },
+    {
       "id": "appsec-cn-authz",
       "language": "zh-CN",
       "category": "natural_cn",
@@ -504,6 +531,15 @@
       "reason": "UI polish and output wording without exact UI keywords."
     },
     {
+      "id": "hard-drawio-cn-paper-figure",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "我要给论文补一张方法总览图，能从公开材料核对算法模块，最后给我可编辑源文件。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-research-drawio-diagram",
+      "reason": "Colloquial research method figure request without exact draw.io wording."
+    },
+    {
       "id": "hard-appsec-cn-risk",
       "language": "zh-CN",
       "category": "hard_paraphrase",
@@ -718,6 +754,15 @@
       "should_trigger": false,
       "expected_skill": null,
       "reason": "Simple explanation, not DevSecOps review."
+    },
+    {
+      "id": "negative-drawio-definition",
+      "language": "en",
+      "category": "negative_near_miss",
+      "prompt": "What is draw.io?",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Simple definition, not a research diagram generation workflow."
     }
   ]
 }

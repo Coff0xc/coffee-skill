@@ -19,7 +19,7 @@ AI coding agents often have two recurring problems:
 
 This repository solves those problems by:
 
-- consolidating 87 source skills into 15 comprehensive capability skills,
+- consolidating 87 source skills into 16 comprehensive capability skills,
 - adding `coff0xc-skill-router` as a trigger-dense fallback,
 - writing trigger descriptions and usage notes for Chinese, English, and common international users,
 - keeping security topics defensive and authorization-scoped,
@@ -27,9 +27,9 @@ This repository solves those problems by:
 
 ## What Is Inside
 
-This repository contains 16 skills:
+This repository contains 17 skills:
 
-- 15 comprehensive capability skills.
+- 16 comprehensive capability skills.
 - 1 trigger fallback router: `coff0xc-skill-router`.
 
 | Skill | Use it for | Security-scoped |
@@ -38,6 +38,7 @@ This repository contains 16 skills:
 | `coff0xc-ai-agent-rag` | AI agents, RAG, prompts, LLM apps, tool calling, evals, observability | no |
 | `coff0xc-api-data-platform` | REST, GraphQL, OpenAPI, databases, CLI, SDK, data contracts | no |
 | `coff0xc-ui-doc-output` | UI/frontend work, PDF/document output, reports, translation | no |
+| `coff0xc-research-drawio-diagram` | Research algorithm architecture diagrams, paper method figures, editable draw.io files | no |
 | `coff0xc-secure-code-appsec` | Code audit, Web/API/GraphQL/OAuth/browser/LLM app security | yes |
 | `coff0xc-cloud-devsecops` | Cloud, Docker, Kubernetes, CI/CD, supply chain, secret handling | yes |
 | `coff0xc-detection-response` | SOC, SIEM, detection engineering, YARA/Sigma, IR, forensics, malware triage | yes |
@@ -53,7 +54,7 @@ This repository contains 16 skills:
 
 ## Why Use It
 
-- **Broad coverage without clutter**: 87 source skills are mapped into 15 capability areas.
+- **Broad coverage without clutter**: 87 source skills plus a new draw.io research-diagram workflow are mapped into 16 capability areas.
 - **Better automatic triggering**: frontmatter descriptions include Chinese, English, common domain terms, source aliases, acronyms, and manual invocation phrases.
 - **Router fallback**: `coff0xc-skill-router` catches broad requests and routes them to the right capability skill.
 - **Practical workflows**: every capability skill includes when to use it, when not to use it, a capability matrix, workflow stages, hard gates, validation checks, and anti-patterns.
@@ -84,6 +85,7 @@ Good fits:
 - AI Agent / RAG system design,
 - API, database, and CLI engineering,
 - UI and document generation workflows,
+- research algorithm architecture diagrams and editable draw.io figures,
 - defensive application security reviews,
 - cloud and DevSecOps reviews,
 - detection engineering and incident response,
@@ -125,6 +127,7 @@ Ask naturally:
 用 Agent/RAG 的方式设计一个本地知识库助手
 检查这个 K8s 和 CI/CD 配置有没有供应链风险
 帮我写一条检测这个日志行为的 Sigma/YARA 规则
+帮我根据这篇论文画一个可编辑的 draw.io 科研算法架构图
 ```
 
 If auto-triggering misses, invoke the skill explicitly:
@@ -135,6 +138,7 @@ If auto-triggering misses, invoke the skill explicitly:
 使用 coff0xc-secure-code-appsec 审计这个项目
 使用 coff0xc-cloud-devsecops 检查 K8s 和 CI/CD
 使用 coff0xc-detection-response 写检测规则
+使用 coff0xc-research-drawio-diagram 根据论文和官方仓库生成 .drawio 架构图
 ```
 
 See [docs/TRIGGERING.md](docs/TRIGGERING.md) and [docs/USAGE.md](docs/USAGE.md).
@@ -147,7 +151,7 @@ This repo includes a deterministic local proxy eval for skill triggering:
 python .\scripts\run_trigger_eval.py
 ```
 
-The eval covers should-trigger and should-not-trigger prompts for all 16 skills, including hard paraphrases and router fallback cases. See [docs/TRIGGER_EVAL.md](docs/TRIGGER_EVAL.md).
+The eval covers should-trigger and should-not-trigger prompts for all 17 skills, including hard paraphrases and router fallback cases. See [docs/TRIGGER_EVAL.md](docs/TRIGGER_EVAL.md).
 
 ## Languages
 

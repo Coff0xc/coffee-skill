@@ -103,6 +103,28 @@
     ]
   },
   {
+    "name": "coff0xc-research-drawio-diagram",
+    "description": "科研算法架构图、论文方法图、模型结构图、实验流程图和可编辑 draw.io/diagrams.net `.drawio` 文件生成工作流。触发：draw.io、diagrams.net、.drawio、科研绘图、论文配图、算法 pipeline、method figure、architecture figure、model diagram、research workflow、神经网络结构、Transformer、CNN、GNN、diffusion、RAG、agent 架构图。",
+    "source_skills": [
+      "new workflow"
+    ],
+    "similar_installed_skills": [
+      "diagramming-code",
+      "crypto-protocol-diagram",
+      "source-command-paper",
+      "coff0xc-ui-doc-output"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "科研算法架构图",
+      "论文方法图",
+      "draw.io/diagrams.net",
+      "可编辑 .drawio",
+      "公开来源分析",
+      "图证据表"
+    ]
+  },
+  {
     "name": "coff0xc-secure-code-appsec",
     "description": "全面代码安全审计、Web/API/GraphQL/OAuth/浏览器/SPA/LLM 安全、后门检测和授权应用安全验证工作流。触发：代码审计、危险函数、source/sink、污点分析、Web 安全、API 安全、GraphQL、OAuth、CSP、CORS、Cookie、Prompt 注入、越权、SSRF、XSS、SQLi、后门、Webshell、绕过登录、看到别人数据、代码入口、数据流。",
     "source_skills": [
@@ -412,7 +434,7 @@
   },
   {
     "name": "coff0xc-skill-router",
-    "description": "Coff0xc skill router and auto-trigger fallback. Use when a user asks for any Coff0xc capability, asks which coffee/coff0xc skill to use, says they are unsure, or when a specific skill does not auto-trigger. Routes Chinese/English requests for: software engineering, Python, JavaScript, TypeScript, Go, Rust, Java, C/C++, Shell, testing, Git, Agent, RAG, LLM, Prompt, API, database, CLI, UI, PDF, document, translation, code audit, Web security, API security, GraphQL, OAuth, cloud, AWS, Azure, GCP, Docker, Kubernetes, CI/CD, supply chain, secret scanning, SOC, SIEM, YARA, Sigma, incident response, malware, forensics, CVE, vulnerability management, AD, Kerberos, IAM, Zero Trust, red team, authorized assessment, reverse engineering, binary, mobile, APK, firmware, IoT, ICS, blockchain, smart contract, compliance, threat modeling, purple team, honeypot, TLS, DNS, network protocol, wireless. 中文触发：代码、开发、测试、重构、脚本、Agent、智能体、RAG、向量数据库、提示词、接口、数据库、命令行、前端、界面、PDF、文档、翻译、代码审计、Web安全、云安全、容器、K8s、供应链、密钥、检测、应急、取证、漏洞、CVE、AD域、身份、零信任、红队、授权评估、逆向、二进制、移动安全、固件、工控、区块链、合约审计、合规、威胁建模、紫队、蜜罐、网络协议、无线安全、不确定用哪个、选择 skill、帮我分流、同时涉及多个领域。",
+    "description": "Coff0xc skill router and auto-trigger fallback. Use when a user asks for any Coff0xc capability, asks which coffee/coff0xc skill to use, says they are unsure, or when a specific skill does not auto-trigger. Routes Chinese/English requests for: software engineering, Python, JavaScript, TypeScript, Go, Rust, Java, C/C++, Shell, testing, Git, Agent, RAG, LLM, Prompt, API, database, CLI, UI, PDF, document, translation, research diagram, draw.io, diagrams.net, paper figure, algorithm architecture, code audit, Web security, API security, GraphQL, OAuth, cloud, AWS, Azure, GCP, Docker, Kubernetes, CI/CD, supply chain, secret scanning, SOC, SIEM, YARA, Sigma, incident response, malware, forensics, CVE, vulnerability management, AD, Kerberos, IAM, Zero Trust, red team, authorized assessment, reverse engineering, binary, mobile, APK, firmware, IoT, ICS, blockchain, smart contract, compliance, threat modeling, purple team, honeypot, TLS, DNS, network protocol, wireless. 中文触发：代码、开发、测试、重构、脚本、Agent、智能体、RAG、向量数据库、提示词、接口、数据库、命令行、前端、界面、PDF、文档、翻译、科研绘图、论文配图、算法架构图、模型结构图、draw.io、diagrams.net、代码审计、Web安全、云安全、容器、K8s、供应链、密钥、检测、应急、取证、漏洞、CVE、AD域、身份、零信任、红队、授权评估、逆向、二进制、移动安全、固件、工控、区块链、合约审计、合规、威胁建模、紫队、蜜罐、网络协议、无线安全、不确定用哪个、选择 skill、帮我分流、同时涉及多个领域。",
     "source_skills": [],
     "similar_installed_skills": [],
     "security_boundary": true,

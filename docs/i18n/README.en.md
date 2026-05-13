@@ -13,7 +13,7 @@
 
 ## Why Use It
 
-- It consolidates 87 source skills into 15 comprehensive capability skills.
+- It consolidates 87 source skills and adds a research draw.io workflow into 16 comprehensive capability skills.
 - `coff0xc-skill-router` acts as a fallback when a specific skill does not auto-trigger.
 - Each skill includes scope, exclusions, capability matrix, workflow phases, evidence levels, hard gates, validation checks, and anti-patterns.
 - Security content stays focused on authorized defense, detection, hardening, verification, and reporting.

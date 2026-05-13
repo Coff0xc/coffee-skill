@@ -13,7 +13,7 @@
 
 ## ดีอย่างไร
 
-- รวม 87 source skills เป็น 15 capability skills ที่ครอบคลุม
+- รวม 87 source skills และ research draw.io workflow เป็น 16 capability skills ที่ครอบคลุม
 - `coff0xc-skill-router` เป็น fallback เมื่อ skill เฉพาะไม่ถูก trigger
 - แต่ละ skill มี scope, exclusions, capability matrix, workflow phases, evidence levels, hard gates, validation checks และ anti-patterns
 - เนื้อหา security เน้น authorized defense, detection, hardening, verification และ reporting

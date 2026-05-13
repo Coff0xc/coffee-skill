@@ -12,7 +12,8 @@ This repository is a publication candidate generated from a local skill consolid
 
 - Similar skills were clustered by capability area.
 - High-risk dual-use material was converted to defensive, authorization-scoped guidance.
-- 87 source skills were consolidated into 15 comprehensive capability skills.
+- 87 source skills were consolidated into 15 original comprehensive capability skills.
+- A research draw.io diagram skill was added as a new workflow after public-source analysis of diagrams.net/draw.io editing/export behavior.
 - A trigger fallback router skill was added because client auto-triggering depends heavily on frontmatter metadata.
 
 ## Publication Caveat

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="1778660895777" agent="coffee-skill" version="24.0.0" type="device">
+  <diagram id="page_1" name="Overview">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="paper" value="Paper / Public Sources" style="shape=document;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="40.0" y="40.0" width="190.0" height="70.0" as="geometry" />
+        </mxCell>
+        <mxCell id="input" value="Input Data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40.0" y="170.0" width="160.0" height="70.0" as="geometry" />
+        </mxCell>
+        <mxCell id="preprocess" value="Preprocessing" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="260.0" y="170.0" width="170.0" height="70.0" as="geometry" />
+        </mxCell>
+        <mxCell id="core" value="Core Algorithm / Model" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500.0" y="160.0" width="220.0" height="90.0" as="geometry" />
+        </mxCell>
+        <mxCell id="loss" value="Training Objective / Loss" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="500.0" y="300.0" width="220.0" height="70.0" as="geometry" />
+        </mxCell>
+        <mxCell id="output" value="Prediction / Output" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="790.0" y="170.0" width="180.0" height="70.0" as="geometry" />
+        </mxCell>
+        <mxCell id="eval" value="Benchmark / Evaluation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="790.0" y="300.0" width="190.0" height="70.0" as="geometry" />
+        </mxCell>
+        <mxCell id="claim" value="Main Contribution" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="1040.0" y="170.0" width="190.0" height="80.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_1_paper_core" value="evidence" style="endArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="paper" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_2_input_preprocess" value="raw samples" style="endArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="input" target="preprocess">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_3_preprocess_core" value="features" style="endArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="preprocess" target="core">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_4_core_output" value="inference" style="endArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="core" target="output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_5_core_loss" value="training path" style="endArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="core" target="loss">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_6_output_eval" value="metrics" style="endArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="output" target="eval">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_7_core_claim" value="novel module" style="endArrow=block;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="core" target="claim">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

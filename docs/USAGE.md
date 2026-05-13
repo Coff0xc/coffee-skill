@@ -28,6 +28,7 @@ The pack is useful when a task needs:
 使用 coff0xc-ai-agent-rag 设计一个 RAG Agent
 使用 coff0xc-api-data-platform 设计这个 REST API 和数据库 schema
 使用 coff0xc-ui-doc-output 优化这个 dashboard
+使用 coff0xc-research-drawio-diagram 根据论文和官方仓库生成可编辑 .drawio 算法架构图
 使用 coff0xc-secure-code-appsec 审计这个 Web/API 项目
 使用 coff0xc-cloud-devsecops 检查 Docker、K8s、CI/CD 和供应链风险
 使用 coff0xc-detection-response 写检测规则和应急响应流程
@@ -93,6 +94,25 @@ Good prompts:
 ```text
 使用 coff0xc-ui-doc-output 优化这个 dashboard，并用截图检查移动端
 Use coff0xc-ui-doc-output to create a clean PDF-ready report from these findings.
+```
+
+### Research Draw.io Diagrams
+
+Use `coff0xc-research-drawio-diagram` when you need an editable diagrams.net/draw.io architecture figure for a paper, model, algorithm, or research workflow.
+
+Expected behavior:
+
+- inspect user-provided paper material first,
+- search public sources when needed,
+- extract modules, data flow, training/inference paths, losses, metrics, and contributions,
+- generate a `.drawio` file instead of only Mermaid or PNG,
+- report evidence and uncertain inferred edges.
+
+Good prompts:
+
+```text
+使用 coff0xc-research-drawio-diagram 根据这篇论文和官方 GitHub 画一个可编辑 draw.io 方法图
+Use coff0xc-research-drawio-diagram to create a diagrams.net architecture figure for this algorithm pipeline.
 ```
 
 ### Defensive Security

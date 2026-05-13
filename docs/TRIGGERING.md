@@ -21,6 +21,7 @@ Use one of these phrases when auto-triggering misses:
 | `coff0xc-ai-agent-rag` | `使用 coff0xc-ai-agent-rag ...` | `ai-agent-dev`, `ai-orchestrator`, `deep-thinking` |
 | `coff0xc-api-data-platform` | `使用 coff0xc-api-data-platform ...` | `api-design`, `database`, `cli-creator` |
 | `coff0xc-ui-doc-output` | `使用 coff0xc-ui-doc-output ...` | `UIdesign`, `pdf`, `quick-translate` |
+| `coff0xc-research-drawio-diagram` | `使用 coff0xc-research-drawio-diagram ...` | `draw.io`, `diagrams.net`, `.drawio`, `paper figure`, `research diagram` |
 | `coff0xc-secure-code-appsec` | `使用 coff0xc-secure-code-appsec ...` | `api-discovery`, `api-security-test`, `backdoor-detector`, `browser-security`, `code-audit`, `graphql-pentest`, `llm-red-teaming`, `oauth-security`, `spa-pentest`, `web-pentest` |
 | `coff0xc-cloud-devsecops` | `使用 coff0xc-cloud-devsecops ...` | `cloud-security`, `container-security`, `devsecops`, `docker-k8s`, `secrets-management`, `serverless-security`, `supply-chain-security` |
 | `coff0xc-detection-response` | `使用 coff0xc-detection-response ...` | `detection-engineering`, `email-security`, `forensics-analysis`, `incident-response`, `malware-analysis`, `osint`, `soc-operations`, `threat-hunting`, `threat-intelligence` |

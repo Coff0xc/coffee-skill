@@ -2,9 +2,9 @@
 
 ## Summary
 
-- Release skills: 16
+- Release skills: 17
 - Source skills consolidated: 87
-- Comprehensive capability skills: 15
+- Comprehensive capability skills: 16
 - Router/fallback skills: 1
 
 ## Skill Coverage
@@ -15,6 +15,7 @@
 | `coff0xc-ai-agent-rag` | `ai-agent-dev`, `ai-orchestrator`, `deep-thinking` | Agent 架构, 工具调用, 记忆系统, RAG 管线, Prompt 工程, 评测, 观测与成本 |
 | `coff0xc-api-data-platform` | `api-design`, `database`, `cli-creator` | API 设计, 认证授权, 数据模型, 查询与分页, CLI/SDK, 数据平台, 兼容演进 |
 | `coff0xc-ui-doc-output` | `UIdesign`, `pdf`, `quick-translate` | 产品 UI, 设计系统, 交互状态, 视觉验证, PDF/文档, 报告输出, 翻译润色 |
+| `coff0xc-research-drawio-diagram` | new workflow | 科研算法架构图, 论文方法图, draw.io/diagrams.net, 可编辑 .drawio, 公开来源分析, 图证据表 |
 | `coff0xc-secure-code-appsec` | `api-discovery`, `api-security-test`, `backdoor-detector`, `browser-security`, `code-audit`, `graphql-pentest`, `llm-red-teaming`, `oauth-security`, `spa-pentest`, `web-pentest` | 入口梳理, Source/Sink, 认证授权, Web/API 漏洞, 浏览器/SPA, GraphQL, LLM/Agent 安全, 后门检测 |
 | `coff0xc-cloud-devsecops` | `cloud-security`, `container-security`, `devsecops`, `docker-k8s`, `secrets-management`, `serverless-security`, `supply-chain-security` | 云配置, 容器镜像, Kubernetes, Serverless, CI/CD, 供应链, 密钥管理 |
 | `coff0xc-detection-response` | `detection-engineering`, `email-security`, `forensics-analysis`, `incident-response`, `malware-analysis`, `osint`, `soc-operations`, `threat-hunting`, `threat-intelligence` | 检测工程, SOC 运营, 威胁狩猎, 威胁情报, 邮件安全, 取证分析, 恶意软件分析, 应急响应 |

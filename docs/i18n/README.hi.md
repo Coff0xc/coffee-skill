@@ -13,7 +13,7 @@
 
 ## यह अच्छा क्यों है
 
-- 87 source skills को 15 comprehensive capability skills में consolidate करता है।
+- 87 source skills और research draw.io workflow को 16 comprehensive capability skills में consolidate करता है।
 - Specific skill trigger न हो तो `coff0xc-skill-router` fallback देता है।
 - हर skill में scope, exclusions, capability matrix, workflow phases, evidence levels, hard gates, validation checks, और anti-patterns हैं।
 - Security content authorized defense, detection, hardening, verification, और reporting पर केंद्रित है।

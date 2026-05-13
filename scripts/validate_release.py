@@ -39,6 +39,10 @@ REQUIRED_FILES = [
     "docs/PROVENANCE.md",
     "evals/trigger-eval.json",
     "scripts/run_trigger_eval.py",
+    "skills/coff0xc-research-drawio-diagram/scripts/build_drawio.py",
+    "skills/coff0xc-research-drawio-diagram/examples/research-pipeline.json",
+    "skills/coff0xc-research-drawio-diagram/examples/research-pipeline.drawio",
+    "skills/coff0xc-research-drawio-diagram/references/drawio-public-notes.md",
 ]
 
 REQUIRED_I18N_FILES = [
