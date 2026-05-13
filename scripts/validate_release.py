@@ -31,9 +31,32 @@ REQUIRED_FILES = [
     "NOTICE",
     "manifest.json",
     "docs/TRIGGERING.md",
+    "docs/USAGE.md",
+    "docs/LANGUAGES.md",
     "docs/COVERAGE.md",
     "docs/SANITIZATION.md",
     "docs/PROVENANCE.md",
+]
+
+REQUIRED_I18N_FILES = [
+    "docs/i18n/README.en.md",
+    "docs/i18n/README.zh-CN.md",
+    "docs/i18n/README.ja.md",
+    "docs/i18n/README.ko.md",
+    "docs/i18n/README.es.md",
+    "docs/i18n/README.fr.md",
+    "docs/i18n/README.de.md",
+    "docs/i18n/README.pt-BR.md",
+    "docs/i18n/README.it.md",
+    "docs/i18n/README.nl.md",
+    "docs/i18n/README.pl.md",
+    "docs/i18n/README.ru.md",
+    "docs/i18n/README.ar.md",
+    "docs/i18n/README.tr.md",
+    "docs/i18n/README.hi.md",
+    "docs/i18n/README.id.md",
+    "docs/i18n/README.vi.md",
+    "docs/i18n/README.th.md",
 ]
 
 
@@ -65,7 +88,7 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, str], list[str]]:
 def main() -> None:
     errors: list[str] = []
 
-    for rel in REQUIRED_FILES:
+    for rel in [*REQUIRED_FILES, *REQUIRED_I18N_FILES]:
         if not (ROOT / rel).exists():
             errors.append(f"missing required file: {rel}")
 
