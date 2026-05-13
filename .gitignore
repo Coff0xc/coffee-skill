@@ -1,0 +1,26 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python/cache
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Secrets/local config
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Archives and local exports
+*.rar
+*.zip
+*.7z
+*.tar
+*.tar.gz
+extracted/

@@ -1,0 +1,425 @@
+[
+  {
+    "name": "coff0xc-software-engineering",
+    "description": "全面软件工程、语言开发、测试、重构、脚本、Git 和工程质量工作流。触发：Python、JavaScript、TypeScript、Go、Rust、Java、C/C++、Shell、bugfix、feature、测试、重构、构建、脚本、Git、本地工程化。",
+    "source_skills": [
+      "c-cpp-dev",
+      "code-simplifier",
+      "git-workflow",
+      "go-dev",
+      "java-dev",
+      "js-ts-dev",
+      "python-dev",
+      "rust-dev",
+      "shell-scripting",
+      "testing"
+    ],
+    "similar_installed_skills": [
+      "dev",
+      "modern-python",
+      "property-based-testing",
+      "planning-with-files"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "语言实现",
+      "缺陷修复",
+      "特性开发",
+      "重构简化",
+      "测试体系",
+      "构建质量",
+      "Git 协作"
+    ]
+  },
+  {
+    "name": "coff0xc-ai-agent-rag",
+    "description": "全面 AI Agent、RAG、Prompt、LLM 应用、多模型协作、评测、观测和成本控制工作流。触发：Agent、RAG、embedding、向量数据库、Prompt、LangChain、AutoGen、工具调用、多模型编排、代码审计协作、视觉分析、评测、缓存、记忆、失败恢复。",
+    "source_skills": [
+      "ai-agent-dev",
+      "ai-orchestrator",
+      "deep-thinking"
+    ],
+    "similar_installed_skills": [
+      "dev",
+      "source-command-ai-agent-dev",
+      "openai-docs"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "Agent 架构",
+      "工具调用",
+      "记忆系统",
+      "RAG 管线",
+      "Prompt 工程",
+      "评测",
+      "观测与成本"
+    ]
+  },
+  {
+    "name": "coff0xc-api-data-platform",
+    "description": "全面 API、数据库、数据平台、CLI、SDK 和接口契约工程工作流。触发：REST、GraphQL、OpenAPI、SQL、数据库、迁移、CLI、SDK、分页、认证、错误码、JSON 输出、数据模型、ETL、数据质量。",
+    "source_skills": [
+      "api-design",
+      "database",
+      "cli-creator"
+    ],
+    "similar_installed_skills": [
+      "cli-creator",
+      "gh-cli"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "API 设计",
+      "认证授权",
+      "数据模型",
+      "查询与分页",
+      "CLI/SDK",
+      "数据平台",
+      "兼容演进"
+    ]
+  },
+  {
+    "name": "coff0xc-ui-doc-output",
+    "description": "全面 UI 设计、前端体验、PDF/文档处理、报告交付和技术翻译工作流。触发：UI、前端、dashboard、组件、页面、视觉验证、PDF、Word、文档、报告、翻译、润色、截图、版式、可访问性。",
+    "source_skills": [
+      "UIdesign",
+      "pdf",
+      "quick-translate"
+    ],
+    "similar_installed_skills": [
+      "UIdesign",
+      "pdf",
+      "source-command-quick-translate"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "产品 UI",
+      "设计系统",
+      "交互状态",
+      "视觉验证",
+      "PDF/文档",
+      "报告输出",
+      "翻译润色"
+    ]
+  },
+  {
+    "name": "coff0xc-secure-code-appsec",
+    "description": "全面代码安全审计、Web/API/GraphQL/OAuth/浏览器/SPA/LLM 安全、后门检测和授权应用安全验证工作流。触发：代码审计、危险函数、source/sink、污点分析、Web 安全、API 安全、GraphQL、OAuth、CSP、CORS、Cookie、Prompt 注入、越权、SSRF、XSS、SQLi、后门、Webshell。",
+    "source_skills": [
+      "api-discovery",
+      "api-security-test",
+      "backdoor-detector",
+      "browser-security",
+      "code-audit",
+      "graphql-pentest",
+      "llm-red-teaming",
+      "oauth-security",
+      "spa-pentest",
+      "web-pentest"
+    ],
+    "similar_installed_skills": [
+      "source-command-code-audit",
+      "semgrep",
+      "codeql",
+      "variant-analysis",
+      "burpsuite-project-parser"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "入口梳理",
+      "Source/Sink",
+      "认证授权",
+      "Web/API 漏洞",
+      "浏览器/SPA",
+      "GraphQL",
+      "LLM/Agent 安全",
+      "后门检测"
+    ]
+  },
+  {
+    "name": "coff0xc-cloud-devsecops",
+    "description": "全面云安全、容器/Kubernetes、Serverless、DevSecOps、供应链、CI/CD 和密钥管理工作流。触发：AWS、Azure、GCP、IAM、S3/Blob/GCS、Docker、K8s、镜像、Serverless、CI/CD、SAST、DAST、SCA、SBOM、secret scanning、IaC、Terraform、GitHub Actions。",
+    "source_skills": [
+      "cloud-security",
+      "container-security",
+      "devsecops",
+      "docker-k8s",
+      "secrets-management",
+      "serverless-security",
+      "supply-chain-security"
+    ],
+    "similar_installed_skills": [
+      "supply-chain-risk-auditor",
+      "insecure-defaults",
+      "agentic-actions-auditor",
+      "devcontainer-setup"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "云配置",
+      "容器镜像",
+      "Kubernetes",
+      "Serverless",
+      "CI/CD",
+      "供应链",
+      "密钥管理"
+    ]
+  },
+  {
+    "name": "coff0xc-detection-response",
+    "description": "全面 SOC、安全运营、检测工程、威胁狩猎、威胁情报、邮件安全、恶意软件分析、取证和应急响应工作流。触发：SIEM、Sigma、YARA、IOC、日志、告警、EDR、IR、forensics、malware、phishing、timeline、威胁情报、狩猎、误报。",
+    "source_skills": [
+      "detection-engineering",
+      "email-security",
+      "forensics-analysis",
+      "incident-response",
+      "malware-analysis",
+      "osint",
+      "soc-operations",
+      "threat-hunting",
+      "threat-intelligence"
+    ],
+    "similar_installed_skills": [
+      "yara-rule-authoring",
+      "sarif-parsing",
+      "source-command-vuln-research"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "检测工程",
+      "SOC 运营",
+      "威胁狩猎",
+      "威胁情报",
+      "邮件安全",
+      "取证分析",
+      "恶意软件分析",
+      "应急响应"
+    ]
+  },
+  {
+    "name": "coff0xc-vulnerability-lifecycle",
+    "description": "全面漏洞研究、CVE/补丁分析、漏洞管理、风险优先级、报告、授权验证和修复跟踪工作流。触发：CVE、漏洞原理、补丁对比、advisory、CVSS、EPSS、KEV、PoC 验证、漏洞报告、bug bounty、pentest report、修复跟踪。",
+    "source_skills": [
+      "bug-bounty",
+      "pentest-report",
+      "red-team-poc",
+      "vuln-research",
+      "vulnerability-management"
+    ],
+    "similar_installed_skills": [
+      "source-command-vuln-research",
+      "fp-check",
+      "differential-review"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "CVE 研究",
+      "补丁分析",
+      "影响评估",
+      "优先级",
+      "授权验证",
+      "报告",
+      "修复跟踪"
+    ]
+  },
+  {
+    "name": "coff0xc-identity-zero-trust",
+    "description": "全面身份安全、零信任、AD/Kerberos、IAM、权限、凭证风险、横向移动防御和访问控制审查工作流。触发：IAM、SSO、MFA、AD、Active Directory、Kerberos、BloodHound、权限、凭证、服务账号、提权、横向移动、Zero Trust、PAM。",
+    "source_skills": [
+      "ad-pentest",
+      "credential-access",
+      "identity-security",
+      "lateral-movement",
+      "privilege-escalation",
+      "zero-trust"
+    ],
+    "similar_installed_skills": [
+      "source-command-ad-pentest",
+      "source-command-privesc",
+      "zeroize-audit"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "身份治理",
+      "认证强度",
+      "授权模型",
+      "AD/Kerberos",
+      "凭证风险",
+      "横向移动防御",
+      "零信任"
+    ]
+  },
+  {
+    "name": "coff0xc-authorized-assessment",
+    "description": "全面授权安全评估、攻击面梳理、红队计划防御化、演练边界、控制有效性验证和报告工作流。触发：recon、fingerprint、attack chain、full pentest、red team、C2、evasion、phishing simulation、post-exploitation、data exfiltration、CDN/WAF、proxy、social engineering、ROE。",
+    "source_skills": [
+      "attack-chain-orchestrator",
+      "autoredteam-orchestrator",
+      "c2-framework",
+      "cdn-bypass",
+      "data-exfiltration",
+      "evasion-toolkit",
+      "fingerprint-engine",
+      "full-pentest",
+      "phishing-simulation",
+      "post-exploitation",
+      "proxy-pool-manager",
+      "recon-workflow",
+      "red-team-infra",
+      "security-tool-dev",
+      "social-engineering"
+    ],
+    "similar_installed_skills": [
+      "source-command-purple-team",
+      "secure-workflow-guide",
+      "audit-prep-assistant"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "ROE/授权",
+      "攻击面梳理",
+      "控制验证",
+      "红队防御化",
+      "钓鱼演练",
+      "外传演练",
+      "工具开发",
+      "报告"
+    ]
+  },
+  {
+    "name": "coff0xc-binary-mobile-iot",
+    "description": "全面二进制/逆向/内核/移动/IoT/ICS/CTF/密码学安全分析工作流。触发：reverse engineering、PWN、kernel、APK、IPA、Frida、firmware、UART、JTAG、SPI、SCADA、PLC、Modbus、BLE、RF、CTF、crypto review、constant-time。",
+    "source_skills": [
+      "binary-exploit",
+      "crypto-security",
+      "ctf",
+      "ics-scada",
+      "iot-security",
+      "kernel-security",
+      "mobile-security",
+      "reverse-engineering"
+    ],
+    "similar_installed_skills": [
+      "source-command-binary-exploit",
+      "source-command-iot-ics",
+      "source-command-mobile-security",
+      "constant-time-analysis",
+      "wycheproof"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "二进制/逆向",
+      "PWN/CTF",
+      "内核安全",
+      "移动安全",
+      "IoT 固件",
+      "硬件接口",
+      "ICS/OT",
+      "密码学"
+    ]
+  },
+  {
+    "name": "coff0xc-blockchain-security",
+    "description": "全面区块链、智能合约、DeFi、Web3、跨链、代币和多链安全审计工作流。触发：Solidity、EVM、Solana、Cosmos、Substrate、Cairo/StarkNet、TON、Algorand、DeFi、AMM、oracle、bridge、token、NFT、智能合约审计、Foundry、Hardhat、Slither。",
+    "source_skills": [
+      "blockchain-security"
+    ],
+    "similar_installed_skills": [
+      "solana-vulnerability-scanner",
+      "cosmos-vulnerability-scanner",
+      "substrate-vulnerability-scanner",
+      "token-integration-analyzer",
+      "secure-workflow-guide"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "EVM/Solidity",
+      "Solana",
+      "Cosmos/CosmWasm",
+      "Substrate",
+      "Cairo/StarkNet",
+      "TON/Algorand",
+      "DeFi",
+      "Token/NFT"
+    ]
+  },
+  {
+    "name": "coff0xc-compliance-architecture",
+    "description": "全面安全架构、威胁建模、合规审计、数据安全、DLP、隐私、安全基线和成熟度评估工作流。触发：安全架构、STRIDE、威胁建模、等保、PCI-DSS、GDPR、ISO27001、SOC2、CIS、NIST、数据分类、脱敏、DLP、隐私、基线、控制矩阵。",
+    "source_skills": [
+      "compliance-audit",
+      "data-security",
+      "security-architecture"
+    ],
+    "similar_installed_skills": [
+      "guidelines-advisor",
+      "sharp-edges",
+      "code-maturity-assessor"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "架构评审",
+      "威胁建模",
+      "合规映射",
+      "数据安全",
+      "隐私",
+      "基线",
+      "成熟度"
+    ]
+  },
+  {
+    "name": "coff0xc-purple-deception",
+    "description": "全面紫队演练、ATT&CK 映射、控制验证、检测能力评估、蜜罐/欺骗防御和安全运营改进工作流。触发：purple team、ATT&CK、红蓝对抗、control validation、detection coverage、emulation plan、honeypot、deception、decoy、canary、检测有效性。",
+    "source_skills": [
+      "honeypot",
+      "purple-team"
+    ],
+    "similar_installed_skills": [
+      "source-command-purple-team",
+      "detection-engineering"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "ATT&CK 映射",
+      "演练计划",
+      "检测验证",
+      "响应验证",
+      "欺骗防御",
+      "指标"
+    ]
+  },
+  {
+    "name": "coff0xc-network-protocol-security",
+    "description": "全面网络协议、TLS/DNS/TCP/UDP/QUIC/HTTP、无线/RF/蓝牙、协议日志分析、通信安全和形式化协议建模工作流。触发：network protocol、TLS、DNS、HTTP/2、HTTP/3、QUIC、TCP、UDP、WiFi、Bluetooth、BLE、RF、packet、pcap、Wireshark、协议分析、安全通信、ProVerif、Mermaid protocol。",
+    "source_skills": [
+      "network-protocol",
+      "wireless-security"
+    ],
+    "similar_installed_skills": [
+      "crypto-protocol-diagram",
+      "mermaid-to-proverif"
+    ],
+    "security_boundary": true,
+    "capability_domains": [
+      "协议设计",
+      "TLS/PKI",
+      "DNS",
+      "HTTP/QUIC",
+      "Packet 分析",
+      "无线/BLE/RF",
+      "形式化"
+    ]
+  },
+  {
+    "name": "coff0xc-skill-router",
+    "description": "Coff0xc skill router and auto-trigger fallback. Use when a user asks for any Coff0xc capability or when a specific skill does not auto-trigger. Routes Chinese/English requests for: software engineering, Python, JavaScript, TypeScript, Go, Rust, Java, C/C++, Shell, testing, Git, Agent, RAG, LLM, Prompt, API, database, CLI, UI, PDF, document, translation, code audit, Web security, API security, GraphQL, OAuth, cloud, AWS, Azure, GCP, Docker, Kubernetes, CI/CD, supply chain, secret scanning, SOC, SIEM, YARA, Sigma, incident response, malware, forensics, CVE, vulnerability management, AD, Kerberos, IAM, Zero Trust, red team, authorized assessment, reverse engineering, binary, mobile, APK, firmware, IoT, ICS, blockchain, smart contract, compliance, threat modeling, purple team, honeypot, TLS, DNS, network protocol, wireless. 中文触发：代码、开发、测试、重构、脚本、Agent、智能体、RAG、向量数据库、提示词、接口、数据库、命令行、前端、界面、PDF、文档、翻译、代码审计、Web安全、云安全、容器、K8s、供应链、密钥、检测、应急、取证、漏洞、CVE、AD域、身份、零信任、红队、授权评估、逆向、二进制、移动安全、固件、工控、区块链、合约审计、合规、威胁建模、紫队、蜜罐、网络协议、无线安全。",
+    "source_skills": [],
+    "similar_installed_skills": [],
+    "security_boundary": true,
+    "capability_domains": [
+      "auto-trigger fallback",
+      "skill routing",
+      "manual invocation guidance"
+    ]
+  }
+]
