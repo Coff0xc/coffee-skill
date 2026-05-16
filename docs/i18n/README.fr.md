@@ -2,7 +2,7 @@
 
 ## Qu'est-ce que c'est
 
-`coffee-skill` est un pack de compétences pour Codex. Il couvre le développement logiciel, AI Agent/RAG, les API et les données, les interfaces et documents, la sécurité défensive, la détection, la réponse aux incidents et la gestion des vulnérabilités.
+`coffee-skill` est un pack de compétences pour Codex. Il couvre le développement logiciel, AI Agent/RAG, les API et les données, les interfaces/rapports, les fichiers Office/PDF, la sécurité défensive, la détection, la réponse aux incidents et la gestion des vulnérabilités.
 
 ## Pourquoi ce pack existe
 
@@ -13,7 +13,7 @@
 
 ## Pourquoi l'utiliser
 
-- Il consolide 87 compétences source en 15 compétences complètes.
+- Il consolide 91 compétences et workflows source en 17 compétences complètes plus un routeur.
 - `coff0xc-skill-router` sert de routeur de secours quand aucune compétence précise ne se déclenche.
 - Chaque compétence contient le périmètre, les exclusions, une matrice de capacités, les étapes, les niveaux de preuve, les points de blocage, la validation et les anti-patterns.
 - La sécurité reste centrée sur la défense autorisée, la détection, le durcissement, la vérification et le reporting.
@@ -38,7 +38,7 @@ Use coff0xc-skill-router to choose the right skill.
 
 - Répertoires locaux de compétences Codex.
 - Clients compatibles avec les dossiers `SKILL.md`.
-- Ingénierie, systèmes IA, documentation, sécurité défensive, détection et gestion des vulnérabilités.
+- Ingénierie, systèmes IA, fichiers Office/documentaires, sécurité défensive, détection et gestion des vulnérabilités.
 
 ## Si le déclenchement échoue
 

@@ -13,7 +13,7 @@
 
 ## Warum es nützlich ist
 
-- Es konsolidiert 87 Quell-Skills in 15 umfassende Capability-Skills.
+- Es konsolidiert 91 Quell-Skills und Workflows in 17 umfassende Capability-Skills plus Router.
 - `coff0xc-skill-router` dient als Fallback, wenn kein spezifischer Skill automatisch auslöst.
 - Jeder Skill enthält Umfang, Ausschlüsse, Capability-Matrix, Arbeitsphasen, Evidenzstufen, harte Gates, Validierung und Anti-Patterns.
 - Sicherheitsinhalte bleiben auf autorisierte Verteidigung, Detection, Härtung, Verifikation und Reporting beschränkt.

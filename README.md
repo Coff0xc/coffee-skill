@@ -2,7 +2,7 @@
 
 中文 | [English](#english)
 
-`coffee-skill` 是一套给 Codex / Agent 类 AI 工具使用的技能包。它不是一个普通脚本库，也不是一个独立应用，而是一组可以安装到 AI 助手里的“工作说明书”。安装后，AI 在遇到开发、Agent/RAG、API、UI、科研绘图、防御安全等任务时，可以自动加载更具体的工作流程、边界规则和验证清单，减少胡乱发挥。
+`coffee-skill` 是一套给 Codex / Agent 类 AI 工具使用的技能包。它不是一个普通脚本库，也不是一个独立应用，而是一组可以安装到 AI 助手里的“工作说明书”。安装后，AI 在遇到开发、Agent/RAG、API、UI、Office/PDF 文件交付、科研绘图、防御安全等任务时，可以自动加载更具体的工作流程、边界规则和验证清单，减少胡乱发挥。
 
 如果你还不熟悉 AI skill，可以先这样理解：
 
@@ -13,7 +13,7 @@
 推荐 GitHub About：
 
 ```text
-Comprehensive Codex skills pack for engineering, AI agents, docs, research draw.io diagrams, and defensive security, with multilingual triggers and a router fallback
+Comprehensive Codex skills pack for engineering, AI agents, Office docs, research draw.io diagrams, and defensive security, with multilingual triggers and a router fallback
 ```
 
 ## 这个仓库有什么用
@@ -80,9 +80,9 @@ some-skill/
 
 ## 包含哪些能力
 
-本仓库包含 17 个 skills：
+本仓库包含 18 个 skills：
 
-- 16 个综合能力 skill；
+- 17 个综合能力 skill；
 - 1 个兜底路由 skill：`coff0xc-skill-router`。
 
 | Skill | 可以用来做什么 | 典型场景 | 安全边界 |
@@ -90,7 +90,8 @@ some-skill/
 | `coff0xc-software-engineering` | 软件开发、修 bug、全栈功能、测试、重构、脚本、Git 摘要 | “这个项目跑不起来”“少问确认，直接实现这个多文件功能”“修 failing tests” | 否 |
 | `coff0xc-ai-agent-rag` | AI Agent、RAG、Prompt、LLM 应用、工具调用、评测、观测和成本 | “设计一个本地知识库助手”“评估工具调用 Agent 架构” | 否 |
 | `coff0xc-api-data-platform` | REST、GraphQL、OpenAPI、数据库 schema、CLI、SDK、数据契约 | “设计 billing API”“把 curl 流程做成 CLI” | 否 |
-| `coff0xc-ui-doc-output` | UI/前端体验、PDF/Word、报告、翻译、版式检查 | “优化 dashboard”“把中文报告润色成英文交付版” | 否 |
+| `coff0xc-ui-doc-output` | UI/前端体验、报告表达、翻译、交付文案 | “优化 dashboard”“把中文报告润色成英文交付版” | 否 |
+| `coff0xc-office-doc-tools` | PPT/PPTX、DOCX/Word、PDF、Excel/XLSX/CSV 正式文件交付，强调 PPT 审美、Excel 数据解析、DOCX 阅读与格式门禁 | “做一份高审美可编辑 PPTX”“把 CSV 做成带公式和图表的可审计 Excel” | 否 |
 | `coff0xc-research-drawio-diagram` | 论文方法图、科研架构图、模型结构图、可编辑 `.drawio` 文件 | “根据论文和官方仓库画 draw.io 方法图” | 否 |
 | `coff0xc-secure-code-appsec` | 代码安全审计、Web/API/GraphQL/OAuth/浏览器/LLM 应用安全 | “审计认证越权风险”“看 source/sink 和后门迹象” | 是 |
 | `coff0xc-cloud-devsecops` | 云、Docker、K8s、CI/CD、供应链、密钥管理 | “检查 GitHub Actions 和镜像供应链风险” | 是 |
@@ -117,6 +118,7 @@ some-skill/
 | 使用 coff0xc-ai-agent-rag 设计一个带引用、缓存和失败降级的企业知识库助手。 | `coff0xc-ai-agent-rag` | Agent/RAG 架构方案和数据流; 工具 schema、记忆/缓存策略、检索和引用策略 |
 | 使用 coff0xc-api-data-platform 设计这个 billing REST API，包含 OpenAPI、分页和错误码。 | `coff0xc-api-data-platform` | REST/GraphQL/OpenAPI 契约; 数据库 schema、迁移和数据一致性建议 |
 | 使用 coff0xc-ui-doc-output 优化这个 dashboard，并用截图检查移动端。 | `coff0xc-ui-doc-output` | 可用 UI/组件/页面改动或设计建议; 桌面/移动端截图或浏览器 smoke 结果 |
+| 使用 coff0xc-office-doc-tools 生成一份可编辑 PPTX，并检查预览、图表和导出文件。 | `coff0xc-office-doc-tools` | 可编辑 PPTX/DOCX/PDF/XLSX 文件; 渲染/预览 QA、公式检查和交付路径 |
 | 使用 coff0xc-research-drawio-diagram 根据论文和官方 GitHub 画一个可编辑 draw.io 方法图。 | `coff0xc-research-drawio-diagram` | 可编辑 `.drawio` 文件; 图结构 JSON/spec 或模块清单 |
 | 使用 coff0xc-secure-code-appsec 审计这个 Web/API 项目的认证和越权风险。 | `coff0xc-secure-code-appsec` | 安全发现列表：位置、影响、证据、复现条件; source/sink 或权限链路说明 |
 | 使用 coff0xc-cloud-devsecops 检查 Docker、K8s、CI/CD 和供应链风险。 | `coff0xc-cloud-devsecops` | 云/IaC/K8s/CI/CD 风险清单; 最小权限、网络隔离、pipeline gate 和密钥轮换建议 |
@@ -189,7 +191,7 @@ Use coff0xc-api-data-platform to turn this curl workflow into a stable CLI.
 
 它会帮助 AI 把接口、数据结构、错误处理、分页、认证、兼容迁移和 SDK/CLI 输出一起考虑。
 
-### 4. 优化 UI、文档和报告
+### 4. 优化 UI、报告和翻译
 
 使用 `coff0xc-ui-doc-output`。
 
@@ -206,9 +208,31 @@ Use coff0xc-api-data-platform to turn this curl workflow into a stable CLI.
 - loading / empty / error / success 状态；
 - 移动端和桌面端；
 - 截图或浏览器验证；
-- 文档格式、报告结构和交付语言。
+- 报告结构、交付语言和术语一致性。
 
-### 5. 根据论文画可编辑科研图
+### 5. 生成或编辑 Office / PDF / Excel 文件
+
+使用 `coff0xc-office-doc-tools`。
+
+适合这样的请求：
+
+```text
+使用 coff0xc-office-doc-tools 把这份 Markdown 做成可编辑 PPTX，包含图表、讲述逻辑和预览验证。
+使用 coff0xc-office-doc-tools 给这个 DOCX 加批注和修订，不覆盖原件，最后渲染检查版式。
+使用 coff0xc-office-doc-tools 把这个 CSV 做成带公式、图表和校验的 Excel 工作簿。
+```
+
+它会提醒 AI 做这些事：
+
+- 先确认最终文件格式、用途、受众和是否保留原件；
+- PPTX 不能停在“能打开”：需要 claim spine、design system、contact-sheet 规划、反模板感检查、comeback scorecard 和渲染预览；
+- Excel/XLSX/CSV 不能只做表面排版：需要 inspect 数据结构、保留 raw/source/assumptions、派生值用公式、trace 关键输出、扫描公式错误并检查图表渲染；
+- DOCX 不能只抽文本：需要理解标题层级、表格、批注、修订和页眉页脚，检查真实 styles/numbering/table geometry，并尽量逐页渲染验证格式；
+- PPT/DOCX/PDF 需要渲染或预览检查，不能只看文本；
+- Excel/XLSX 需要检查公式、引用范围、错误值和图表来源；
+- 最后给出最终文件路径、验证结果和未验证风险。
+
+### 6. 根据论文画可编辑科研图
 
 使用 `coff0xc-research-drawio-diagram`。
 
@@ -221,7 +245,7 @@ Use coff0xc-api-data-platform to turn this curl workflow into a stable CLI.
 
 这个 skill 的重点是输出可编辑 `.drawio` 文件，而不是只给一张截图或 Mermaid。它还会要求 AI 给出证据表，说明哪些连接来自论文，哪些是合理推断。
 
-### 6. 做授权范围内的安全工作
+### 7. 做授权范围内的安全工作
 
 安全相关任务会进入对应的安全 skill，例如：
 
@@ -283,6 +307,7 @@ Copy-Item -Recurse .\skills\* $dest
 使用 coff0xc-ai-agent-rag 设计一个 RAG Agent
 使用 coff0xc-api-data-platform 设计这个 REST API 和数据库 schema
 使用 coff0xc-ui-doc-output 优化这个 dashboard
+使用 coff0xc-office-doc-tools 生成一份可编辑 PPTX 并检查预览
 使用 coff0xc-research-drawio-diagram 根据论文和官方仓库生成 .drawio 架构图
 使用 coff0xc-secure-code-appsec 审计这个项目
 使用 coff0xc-cloud-devsecops 检查 K8s 和 CI/CD
@@ -411,7 +436,7 @@ Skill 正文主要是中文 + 英文。触发策略包含常见英文工具名�
 
 ## English
 
-`coffee-skill` is a publish-ready skill pack for Codex and AgentSkills-compatible AI coding assistants. It is not a standalone app or script library. It is a collection of installable workflow instructions that help an AI assistant choose the right process for engineering, AI Agent/RAG, API/data, UI/document output, research draw.io diagrams, and defensive security tasks.
+`coffee-skill` is a publish-ready skill pack for Codex and AgentSkills-compatible AI coding assistants. It is not a standalone app or script library. It is a collection of installable workflow instructions that help an AI assistant choose the right process for engineering, AI Agent/RAG, API/data, UI/report output, Office/PDF file delivery, research draw.io diagrams, and defensive security tasks.
 
 If you are new to AI skills, think of a skill as an operating procedure for the assistant:
 
@@ -431,9 +456,9 @@ If you are new to AI skills, think of a skill as an operating procedure for the 
 
 ## Included Skills
 
-This repository contains 17 skills:
+This repository contains 18 skills:
 
-- 16 broad capability skills,
+- 17 broad capability skills,
 - 1 fallback router skill: `coff0xc-skill-router`.
 
 | Skill | Use it for | Typical prompt | Security-scoped |
@@ -441,7 +466,8 @@ This repository contains 17 skills:
 | `coff0xc-software-engineering` | Dev/autonomous development, full-stack or multi-file implementation, tests, refactors, scripts, Git | "Build this admin panel feature end to end with tests." | no |
 | `coff0xc-ai-agent-rag` | AI agents, RAG, prompts, LLM apps, tools, evals, observability | "Design a RAG assistant with citations and fallback behavior." | no |
 | `coff0xc-api-data-platform` | REST, GraphQL, OpenAPI, databases, CLI, SDK, data contracts | "Design this billing API and database schema." | no |
-| `coff0xc-ui-doc-output` | UI/frontend work, PDF/document output, reports, translation | "Improve this dashboard and verify mobile layout." | no |
+| `coff0xc-ui-doc-output` | UI/frontend work, report wording, translation, delivery copy | "Improve this dashboard and verify mobile layout." | no |
+| `coff0xc-office-doc-tools` | PPTX, DOCX, PDF, Excel/XLSX/CSV file artifacts, with quality gates for PPT aesthetics, Excel data parsing, and DOCX reading/format fidelity | "Create a polished editable PPTX and verify the preview." | no |
 | `coff0xc-research-drawio-diagram` | Research architecture diagrams and editable `.drawio` files | "Create an editable method figure from this paper and repo." | no |
 | `coff0xc-secure-code-appsec` | Code audit and Web/API/GraphQL/OAuth/browser/LLM app security | "Review this authorized API for authz risks." | yes |
 | `coff0xc-cloud-devsecops` | Cloud, Docker, Kubernetes, CI/CD, supply chain, secrets | "Check this GitHub Actions workflow for supply-chain risk." | yes |
@@ -478,6 +504,7 @@ Ask naturally:
 Fix this Python project's failing pytest cases, make the smallest correct change, then run tests and lint.
 Design a local knowledge-base assistant with Agent/RAG architecture, citations, cache, fallback, and evals.
 Check this Docker, Kubernetes, and GitHub Actions setup for supply-chain and secret risks.
+Create an editable PPTX from this Markdown outline and verify the preview.
 Create an editable draw.io research architecture diagram from this paper and official repo.
 ```
 
@@ -489,9 +516,16 @@ Use coff0xc-software-engineering to build this feature end to end with tests.
 Use coff0xc-ai-agent-rag to design a RAG Agent.
 Use coff0xc-api-data-platform to design this REST API and database schema.
 Use coff0xc-ui-doc-output to improve this dashboard.
+Use coff0xc-office-doc-tools to create an editable PPTX with preview checks.
 Use coff0xc-research-drawio-diagram to generate a .drawio figure from the paper and official repo.
 Use coff0xc-secure-code-appsec to review this project.
 ```
+
+For Office artifacts, `coff0xc-office-doc-tools` now applies stricter quality gates:
+
+- PPTX work should include a claim spine, design system, contact-sheet plan, anti-template checks, comeback scorecard, and rendered preview review.
+- Excel/XLSX/CSV work should inspect workbook/data structure, preserve raw/source/assumptions, use formulas for derived values, trace key outputs, scan formula errors, and verify chart renders.
+- DOCX work should understand headings, tables, comments, tracked changes, headers/footers, real styles/numbering/table geometry, and page-rendered formatting before claiming layout quality.
 
 ## Validation
 

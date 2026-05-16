@@ -13,7 +13,7 @@
 
 ## Neden kullanılır
 
-- 87 kaynak skill'i 15 kapsamlı yetenek skill'ine indirger.
+- 91 kaynak skill/workflow'u 17 kapsamlı yetenek skill'ine ve bir router'a indirger.
 - Belirli bir skill tetiklenmezse `coff0xc-skill-router` fallback olarak çalışır.
 - Her skill kapsam, hariçler, yetenek matrisi, iş akışı aşamaları, kanıt seviyeleri, sert kapılar, doğrulama ve anti-pattern içerir.
 - Güvenlik içeriği yetkili savunma, tespit, sıkılaştırma, doğrulama ve raporlamaya odaklanır.

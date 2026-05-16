@@ -13,7 +13,7 @@
 
 ## Dlaczego warto używać
 
-- Konsoliduje 87 źródłowych umiejętności w 15 szerokich skillów.
+- Konsoliduje 91 źródłowych umiejętności i workflow w 17 szerokich skillów oraz router.
 - `coff0xc-skill-router` działa jako fallback, gdy konkretna umiejętność się nie uruchomi.
 - Każdy skill zawiera zakres, wyłączenia, macierz możliwości, fazy pracy, poziomy dowodów, bramki, walidację i antywzorce.
 - Treści bezpieczeństwa pozostają skupione na autoryzowanej obronie, detekcji, utwardzaniu, weryfikacji i raportowaniu.

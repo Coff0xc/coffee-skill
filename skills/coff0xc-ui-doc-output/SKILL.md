@@ -1,28 +1,31 @@
 ---
 name: coff0xc-ui-doc-output
-description: "Use when / 当用户请求: 全面 UI 设计、前端体验、PDF/文档处理、报告交付和技术翻译工作流。触发：UI、前端、dashboard、组件、页面、视觉验证、PDF、Word、文档、报告、翻译、润色、截图、版式、可访问性、页面很乱、信息密度、按钮状态、窄屏表现、交付文案、产品可用性。 Covered source aliases / 来源别名: UIdesign, pdf, quick-translate. Capability domains / 能力域: 产品 UI, 设计系统, 交互状态, 视觉验证, PDF/文档, 报告输出, 翻译润色. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-ui-doc-output."
+description: "Use when / 当用户请求: 全面 UI 设计、前端体验、报告表达和技术翻译工作流。触发：UI、前端、dashboard、组件、页面、视觉验证、报告、technical report、executive delivery、section hierarchy、terminology consistency、翻译、润色、截图、可访问性、页面很乱、信息密度、按钮状态、窄屏表现、交付文案、产品可用性、术语一致、报告层级、交付语言。正式 Office/PDF 文件交付如 PPT/PPTX、DOCX/Word、PDF、Excel/XLSX/CSV 优先使用 coff0xc-office-doc-tools。 Covered source aliases / 来源别名: UIdesign, quick-translate. Capability domains / 能力域: 产品 UI, 设计系统, 交互状态, 视觉验证, 报告输出, 翻译润色. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-ui-doc-output."
 ---
 
 # coff0xc-ui-doc-output
 
 ## 能力定位
-面向 UI、前端体验、PDF/文档、报告和翻译交付的产物质量能力。它不只润色文字，还要求界面和文档真实可用、可读、可验证。
+面向 UI、前端体验、报告表达和技术翻译交付的产物质量能力。它不只润色文字，还要求界面、交互状态和报告叙事真实可用、可读、可验证。
+
+正式 Office/PDF 文件产物，例如 PPTX、DOCX、PDF、Excel/XLSX/CSV 的创建、编辑、批注、公式和渲染验证，优先使用 `coff0xc-office-doc-tools`。
 
 ## 能交付什么
 - 可用 UI/组件/页面改动或设计建议
 - 桌面/移动端截图或浏览器 smoke 结果
-- PDF/Word/报告结构和版式检查
+- 报告结构、交付文案和版式建议
 - 翻译润色稿、术语一致性和交付说明
 
 ## 可以接收什么输入
 - 前端仓库、页面截图、设计稿、组件代码
-- PDF、Word、Markdown、报告草稿、翻译文本
+- Markdown、报告草稿、翻译文本、截图、页面文案
 - 用户反馈、移动端问题、可访问性或版式问题
 
 ## 放心使用的边界
 - 可直接处理本地 UI 和文档产物
+- 正式 PPTX/DOCX/PDF/XLSX/CSV 文件交付转入 `coff0xc-office-doc-tools`
 - 下载外部资产、上传文档、发布网站、付费服务必须先确认
-- 含个人信息或客户数据的文档要先确认脱敏要求
+- 含个人信息或客户数据的内容要先确认脱敏要求
 - 默认只处理本地、可逆、可验证的低风险工作；涉及生产、凭据、付费、远程写入、删除、发布或权限变更时必须先确认。
 
 ## 为什么可以放心
@@ -34,16 +37,16 @@ description: "Use when / 当用户请求: 全面 UI 设计、前端体验、PDF/
 ```text
 使用 coff0xc-ui-doc-output 优化这个 dashboard，并用截图检查移动端。
 使用 coff0xc-ui-doc-output 把这份中文报告翻译润色成英文交付版。
-Use coff0xc-ui-doc-output to create a clean PDF-ready report from these findings.
+Use coff0xc-ui-doc-output to polish the report narrative and UI copy for these findings.
 ```
 
 
 ## 目标
-交付真实可用的界面和可读可验证的文档产物；视觉、交互、版式和语言质量都要检查。
+交付真实可用的界面和可读可验证的报告/翻译产物；视觉、交互、版式建议和语言质量都要检查。
 
 ## 适用场景
 - 实现、改版、打磨 UI、dashboard、工具界面、表单、组件和交互状态。
-- 阅读、生成、检查 PDF/文档/报告/翻译交付物。
+- 改进报告结构、交付文案、翻译和技术表达。
 - 需要截图、浏览器、渲染、版式或移动端响应式验证。
 
 ## 触发强化
@@ -71,7 +74,6 @@ Use coff0xc-ui-doc-output to create a clean PDF-ready report from these findings
 | 设计系统 | 组件、间距、密度、状态、图标、颜色、响应式、可访问性 | 跟随已有设计语言。 |
 | 交互状态 | loading、empty、error、success、disabled、focus、hover、keyboard | 关键流程完整。 |
 | 视觉验证 | 浏览器、截图、移动/桌面、文本溢出、布局重排、资产加载 | 不凭想象说好看。 |
-| PDF/文档 | 提取、合并、生成、批注、表格、页码、字体、渲染检查 | 文本和版式都可检查。 |
 | 报告输出 | 安全报告、技术报告、交付说明、变更摘要 | 结构清晰、证据可追溯。 |
 | 翻译润色 | 中英互译、术语一致、技术语气、保留代码/命令/路径 | 不改动事实和数字。 |
 
@@ -79,8 +81,8 @@ Use coff0xc-ui-doc-output to create a clean PDF-ready report from these findings
 | 来源 skill | 并入后的处理方式 |
 | --- | --- |
 | UIdesign | UI/前端体验、视觉打磨、响应式和浏览器验证。 |
-| pdf | PDF 阅读、生成、渲染、页面检查和版式验证。 |
 | quick-translate | 技术翻译、报告翻译、术语统一和简洁润色。 |
+| coff0xc-office-doc-tools | PPTX/DOCX/PDF/XLSX/CSV 等正式文件交付、批注、公式和渲染验证。 |
 
 ## 工作流
 | 阶段 | 动作 | 完成标准 |
@@ -89,7 +91,7 @@ Use coff0xc-ui-doc-output to create a clean PDF-ready report from these findings
 | 体验建模 | 列核心流程、信息层级、状态、输入输出和边界案例。 | 界面不是装饰图。 |
 | 实现/编辑 | 复用组件和图标，稳定尺寸，避免嵌套卡片和文本溢出。 | 功能可用。 |
 | 视觉验证 | 启动本地服务或打开文件，做桌面/移动截图和交互 smoke。 | 发现并修复重叠/空白/溢出。 |
-| 文档检查 | PDF/报告渲染、页码、表格、链接、图像、术语和敏感信息检查。 | 交付物可读。 |
+| 报告检查 | 报告结构、链接、图像、术语和敏感信息检查；正式文件渲染转入 `coff0xc-office-doc-tools`。 | 交付物可读。 |
 | 交付说明 | 说明输出路径、验证方式和剩余风险。 | 用户能直接使用。 |
 
 ## 证据等级
@@ -106,25 +108,24 @@ Use coff0xc-ui-doc-output to create a clean PDF-ready report from these findings
 
 ## 验证清单
 - UI：浏览器打开、截图、移动/桌面、关键按钮和表单流程。
-- PDF：渲染页面、抽样页检查、文本提取和版式对照。
+- Office/PDF：如需交付 PPTX/DOCX/PDF/XLSX 文件，使用 `coff0xc-office-doc-tools` 的文件级验证清单。
 - 翻译：术语表、数字/单位/引用/代码不变、语气一致。
 - 报告：证据链接、文件路径、行号和风险等级一致。
 
 ## 反模式
 - 用大段文字解释怎么用界面，而不是做出可用控件。
 - 所有界面都做成同一种卡片/渐变风格。
-- PDF 只抽文本不看渲染。
+- 把正式 Office/PDF 文件产物留在本 skill 内粗略处理，而不使用 `coff0xc-office-doc-tools` 的文件级验证。
 - 翻译时改变事实、弱化不确定性或丢失技术术语。
 
 ## 合并来源
 - `UIdesign`
-- `pdf`
 - `quick-translate`
 
 ## 本机相近 Skill
 - `UIdesign`
-- `pdf`
 - `source-command-quick-translate`
+- `coff0xc-office-doc-tools`
 
 ## 输出合同
 ```markdown

@@ -2,7 +2,7 @@
 
 ## What It Is
 
-`coffee-skill` is a Codex skill pack for software engineering, AI Agent/RAG work, API and data design, UI and document output, defensive security, detection, incident response, and vulnerability management.
+`coffee-skill` is a Codex skill pack for software engineering, AI Agent/RAG work, API and data design, UI/report output, Office/PDF file delivery, defensive security, detection, incident response, and vulnerability management.
 
 ## Why It Exists
 
@@ -13,7 +13,7 @@
 
 ## Why Use It
 
-- It consolidates 87 source skills and adds a research draw.io workflow into 16 comprehensive capability skills.
+- It consolidates 91 source skills and workflows into 17 comprehensive capability skills plus a router.
 - `coff0xc-skill-router` acts as a fallback when a specific skill does not auto-trigger.
 - Each skill includes scope, exclusions, capability matrix, workflow phases, evidence levels, hard gates, validation checks, and anti-patterns.
 - Security content stays focused on authorized defense, detection, hardening, verification, and reporting.
@@ -38,7 +38,7 @@ Use coff0xc-skill-router to choose the right skill.
 
 - Local Codex skill directories.
 - Compatible clients that load `SKILL.md` folders.
-- Engineering, AI systems, documentation, defensive security, detection, incident response, and vulnerability management.
+- Engineering, AI systems, Office/document artifacts, defensive security, detection, incident response, and vulnerability management.
 
 ## When Triggering Fails
 

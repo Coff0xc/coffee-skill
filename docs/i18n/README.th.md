@@ -2,7 +2,7 @@
 
 ## คืออะไร
 
-`coffee-skill` คือชุด skill สำหรับ Codex ครอบคลุม software engineering, AI Agent/RAG, API และ data, UI และเอกสาร, defensive security, detection, incident response และ vulnerability management
+`coffee-skill` คือชุด skill สำหรับ Codex ครอบคลุม software engineering, AI Agent/RAG, API และ data, UI/report output, Office/PDF file delivery, defensive security, detection, incident response และ vulnerability management
 
 ## ทำไมต้องมี
 
@@ -13,7 +13,7 @@
 
 ## ดีอย่างไร
 
-- รวม 87 source skills และ research draw.io workflow เป็น 16 capability skills ที่ครอบคลุม
+- รวม 91 source skills/workflows เป็น 17 capability skills และ router 1 ตัว
 - `coff0xc-skill-router` เป็น fallback เมื่อ skill เฉพาะไม่ถูก trigger
 - แต่ละ skill มี scope, exclusions, capability matrix, workflow phases, evidence levels, hard gates, validation checks และ anti-patterns
 - เนื้อหา security เน้น authorized defense, detection, hardening, verification และ reporting
@@ -36,7 +36,7 @@ Use coff0xc-skill-router to choose the right skill.
 
 - Local Codex skill directories
 - Client ที่รองรับโฟลเดอร์ `SKILL.md`
-- Engineering, AI systems, documentation, defensive security, detection และ vulnerability management
+- Engineering, AI systems, Office/document artifacts, defensive security, detection และ vulnerability management
 
 ## เมื่อ trigger ล้มเหลว
 

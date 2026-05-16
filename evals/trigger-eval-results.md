@@ -6,8 +6,8 @@ Important: this is a local proxy evaluation based on `SKILL.md` frontmatter meta
 
 ## Summary
 
-- Cases: 103
-- Skills: 17
+- Cases: 113
+- Skills: 18
 - Threshold: 3.0
 - Positive top-1 rate: 1.0
 - Positive top-3 rate: 1.0
@@ -31,6 +31,7 @@ Important: this is a local proxy evaluation based on `SKILL.md` frontmatter meta
 | `coff0xc-detection-response` | 5 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-identity-zero-trust` | 5 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-network-protocol-security` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-office-doc-tools` | 8 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-purple-deception` | 5 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-research-drawio-diagram` | 5 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-secure-code-appsec` | 5 | 1.0 | 1.0 | 1.0 |

@@ -2,9 +2,9 @@
 
 ## Summary
 
-- Release skills: 17
-- Source skills consolidated: 87
-- Comprehensive capability skills: 16
+- Release skills: 18
+- Source skills consolidated: 91
+- Comprehensive capability skills: 17
 - Router/fallback skills: 1
 
 ## Skill Capability Map
@@ -14,7 +14,8 @@
 | `coff0xc-software-engineering` | 面向真实仓库的工程交付能力。适合把模糊需求变成可运行代码、可复现修复、可验证测试结果和清晰 diff 摘要。 | 代码补丁、脚本或配置修改; 失败原因和根因链路说明; 单元/集成/构建验证结果 | 本地可逆优先 |
 | `coff0xc-ai-agent-rag` | 面向 AI Agent、RAG 和 LLM 应用的系统设计与落地能力。它把“写 Prompt”升级为数据、工具、检索、评测、观测和成本一起管理的工程系统。 | Agent/RAG 架构方案和数据流; 工具 schema、记忆/缓存策略、检索和引用策略; 评测集、失败用例和质量指标 | 本地可逆优先 |
 | `coff0xc-api-data-platform` | 面向 API、数据库、CLI/SDK 和数据契约的工程能力。目标是让接口可使用、可演进、可测试，数据链路可迁移、可追踪、可恢复。 | REST/GraphQL/OpenAPI 契约; 数据库 schema、迁移和数据一致性建议; CLI/SDK 命令设计、JSON 输出和错误模型 | 本地可逆优先 |
-| `coff0xc-ui-doc-output` | 面向 UI、前端体验、PDF/文档、报告和翻译交付的产物质量能力。它不只润色文字，还要求界面和文档真实可用、可读、可验证。 | 可用 UI/组件/页面改动或设计建议; 桌面/移动端截图或浏览器 smoke 结果; PDF/Word/报告结构和版式检查 | 本地可逆优先 |
+| `coff0xc-ui-doc-output` | 面向 UI、前端体验、报告表达和技术翻译交付的产物质量能力。它不只润色文字，还要求界面、交互和报告叙事真实可用、可读、可验证。 | 可用 UI/组件/页面改动或设计建议; 桌面/移动端截图或浏览器 smoke 结果; 报告结构、交付文案和翻译润色稿 | 本地可逆优先 |
+| `coff0xc-office-doc-tools` | 面向 PowerPoint、Word、PDF、Excel/CSV 这类正式文件交付的 Office 文档工具能力。重点是交付可打开、可编辑、可审阅、可验证的文件。 | 可编辑 PPTX、DOCX、PDF、XLSX/CSV; 图表、批注/修订、公式检查; 渲染截图/预览 QA 和文件路径 | 本地可逆优先 |
 | `coff0xc-research-drawio-diagram` | 面向论文、算法、模型和研究流程的可编辑 draw.io 图生成能力。重点是交付可继续编辑的 `.drawio` 源文件，并把图中元素和公开证据对应起来。 | 可编辑 `.drawio` 文件; 图结构 JSON/spec 或模块清单; 证据表：论文段落、公式、图号、代码路径、官方文档 | 本地可逆优先 |
 | `coff0xc-secure-code-appsec` | 面向代码和应用安全的证据化审计能力。它把源码、路由、配置、扫描结果和日志转成可验证发现、修复建议和回归检查。 | 安全发现列表：位置、影响、证据、复现条件; source/sink 或权限链路说明; 修复建议、测试用例、检测/日志建议 | 授权/防御优先 |
 | `coff0xc-cloud-devsecops` | 面向云原生、容器、CI/CD、供应链和密钥治理的只读优先评估能力。目标是让风险有证据、修复可落地、验证可复现。 | 云/IaC/K8s/CI/CD 风险清单; 最小权限、网络隔离、pipeline gate 和密钥轮换建议; SBOM/SCA/secret scanning 策略 | 授权/防御优先 |
@@ -36,7 +37,8 @@
 | `coff0xc-software-engineering` | `c-cpp-dev`, `code-simplifier`, `git-workflow`, `go-dev`, `java-dev`, `js-ts-dev`, `python-dev`, `rust-dev`, `shell-scripting`, `testing` | 自主开发, 代码修复, 功能实现, 测试验证, 构建质量, Git 协作 |
 | `coff0xc-ai-agent-rag` | `ai-agent-dev`, `ai-orchestrator`, `deep-thinking` | Agent 架构, RAG 管线, 工具调用, 记忆系统, Prompt 工程, 评测观测 |
 | `coff0xc-api-data-platform` | `api-design`, `database`, `cli-creator` | API 契约, 数据模型, 认证授权, CLI/SDK, 数据质量, 兼容演进 |
-| `coff0xc-ui-doc-output` | `UIdesign`, `pdf`, `quick-translate` | 产品 UI, 交互状态, 视觉验证, PDF/文档, 报告输出, 翻译润色 |
+| `coff0xc-ui-doc-output` | `UIdesign`, `quick-translate` | 产品 UI, 交互状态, 视觉验证, 报告输出, 翻译润色 |
+| `coff0xc-office-doc-tools` | `documents`, `presentations`, `spreadsheets`, `pdf` | PPT/PPTX, DOCX/Word, PDF, Excel/XLSX, CSV/表格, 渲染验证 |
 | `coff0xc-research-drawio-diagram` | `new workflow` | 科研绘图, 论文方法图, 模型结构图, draw.io, 证据表, 推断标注 |
 | `coff0xc-secure-code-appsec` | `api-discovery`, `api-security-test`, `backdoor-detector`, `browser-security`, `code-audit`, `graphql-pentest`, `llm-red-teaming`, `oauth-security`, `spa-pentest`, `web-pentest` | 代码审计, Source/Sink, 认证授权, Web/API 安全, GraphQL/OAuth, 后门检测 |
 | `coff0xc-cloud-devsecops` | `cloud-security`, `container-security`, `devsecops`, `docker-k8s`, `secrets-management`, `serverless-security`, `supply-chain-security` | 云配置, 容器镜像, Kubernetes, CI/CD, 供应链, 密钥管理 |

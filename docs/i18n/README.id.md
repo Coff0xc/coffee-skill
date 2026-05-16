@@ -13,7 +13,7 @@
 
 ## Mengapa berguna
 
-- Menggabungkan 87 skill sumber menjadi 15 skill kemampuan luas.
+- Menggabungkan 91 skill/workflow sumber menjadi 17 skill kemampuan luas plus satu router.
 - `coff0xc-skill-router` menjadi fallback saat skill tertentu tidak terpicu otomatis.
 - Setiap skill berisi cakupan, pengecualian, matriks kemampuan, tahap kerja, level bukti, hard gate, validasi, dan anti-pattern.
 - Konten keamanan tetap fokus pada defense, detection, hardening, verification, dan reporting yang terotorisasi.

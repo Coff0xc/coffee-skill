@@ -13,7 +13,7 @@
 
 ## Por qué es útil
 
-- Consolida 87 skills de origen en 15 skills de capacidad amplia.
+- Consolida 91 skills/workflows de origen en 17 skills de capacidad amplia más un router.
 - Agrega `coff0xc-skill-router` como ruta de respaldo cuando no se activa una skill específica.
 - Cada skill incluye alcance, exclusiones, matriz de capacidades, fases de trabajo, niveles de evidencia, controles duros, validación y antipatrones.
 - La seguridad se mantiene enfocada en defensa autorizada, detección, endurecimiento, verificación y reporte.

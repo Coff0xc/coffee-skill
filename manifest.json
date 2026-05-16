@@ -77,25 +77,49 @@
   },
   {
     "name": "coff0xc-ui-doc-output",
-    "description": "能力化 Coff0xc skill：面向 UI、前端体验、PDF/文档、报告和翻译交付的产物质量能力。它不只润色文字，还要求界面和文档真实可用、可读、可验证。 可交付：可用 UI/组件/页面改动或设计建议、桌面/移动端截图或浏览器 smoke 结果、PDF/Word/报告结构和版式检查。触发：UI、前端、dashboard、组件、页面、视觉验证、PDF、Word、文档、报告、翻译、润色、截图、版式、可访问性、页面很乱、信息密度、按钮状态、窄屏表现、交付文案。",
+    "description": "能力化 Coff0xc skill：面向 UI、前端体验、报告表达和技术翻译交付的产物质量能力。它不只润色文字，还要求界面、交互和报告叙事真实可用、可读、可验证；正式 PPTX/DOCX/PDF/XLSX 文件交付优先路由到 coff0xc-office-doc-tools。 可交付：可用 UI/组件/页面改动或设计建议、桌面/移动端截图或浏览器 smoke 结果、报告结构、交付文案和翻译润色稿。触发：UI、前端、dashboard、组件、页面、视觉验证、报告、technical report、executive delivery、section hierarchy、terminology consistency、翻译、润色、截图、可访问性、页面很乱、信息密度、按钮状态、窄屏表现、交付文案、术语一致、报告层级、交付语言。",
     "source_skills": [
       "UIdesign",
-      "pdf",
       "quick-translate"
     ],
     "similar_installed_skills": [
       "UIdesign",
-      "pdf",
-      "source-command-quick-translate"
+      "source-command-quick-translate",
+      "coff0xc-office-doc-tools"
     ],
     "security_boundary": false,
     "capability_domains": [
       "产品 UI",
       "交互状态",
       "视觉验证",
-      "PDF/文档",
       "报告输出",
       "翻译润色"
+    ]
+  },
+  {
+    "name": "coff0xc-office-doc-tools",
+    "description": "能力化 Coff0xc skill：面向正式 Office 和文件型交付物的创建、编辑、检查、转换和验证能力。覆盖 PowerPoint/PPT/PPTX/slides/deck、Word/DOCX/document/redline/comment、PDF/read/create/review/render、Excel/XLSX/CSV/spreadsheet/workbook/chart/formula。 可交付：可编辑 PPTX、DOCX、PDF、XLSX/CSV、图表、批注/修订、公式检查、渲染截图/预览 QA、文件路径和验证说明。触发：ppt、pptx、powerpoint、slides、deck、docx、word、redline、track changes、comments、pdf、excel、xlsx、csv、spreadsheet、workbook、chart、formula、table、render、export、office、文档、演示文稿、幻灯片、表格、工作簿、公式、批注、修订、版式、导出、可编辑文件。",
+    "source_skills": [
+      "documents",
+      "presentations",
+      "spreadsheets",
+      "pdf"
+    ],
+    "similar_installed_skills": [
+      "documents:documents",
+      "presentations:Presentations",
+      "spreadsheets:Spreadsheets",
+      "pdf",
+      "coff0xc-ui-doc-output"
+    ],
+    "security_boundary": false,
+    "capability_domains": [
+      "PPT/PPTX",
+      "DOCX/Word",
+      "PDF",
+      "Excel/XLSX",
+      "CSV/表格",
+      "渲染验证"
     ]
   },
   {

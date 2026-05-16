@@ -13,7 +13,7 @@
 
 ## Waarom gebruiken
 
-- Het consolideert 87 bronskills in 15 brede capability-skills.
+- Het consolideert 91 bronskills/workflows in 17 brede capability-skills plus een router.
 - `coff0xc-skill-router` is de fallback wanneer een specifieke skill niet automatisch start.
 - Elke skill bevat scope, uitsluitingen, capability matrix, workflowfasen, bewijsniveaus, harde gates, validatie en anti-patterns.
 - Security-inhoud blijft gericht op geautoriseerde verdediging, detectie, hardening, verificatie en rapportage.

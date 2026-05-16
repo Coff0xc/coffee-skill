@@ -13,7 +13,7 @@
 
 ## Perché usarlo
 
-- Consolida 87 skill sorgente in 15 skill complete.
+- Consolida 91 skill/workflow sorgente in 17 skill complete più un router.
 - `coff0xc-skill-router` è il fallback quando una skill specifica non si attiva.
 - Ogni skill include ambito, esclusioni, matrice di capacità, fasi, livelli di evidenza, gate, validazione e anti-pattern.
 - La sicurezza resta focalizzata su difesa autorizzata, rilevamento, hardening, verifica e report.

@@ -117,13 +117,13 @@
       "reason": "UI/frontend dashboard, screenshots, components, accessibility."
     },
     {
-      "id": "ui-en-report-pdf",
+      "id": "ui-en-report-copy",
       "language": "en",
       "category": "natural_en",
-      "prompt": "Create a clean PDF-ready security report from these findings, with layout checks and concise technical wording.",
+      "prompt": "Polish this technical report narrative for executive delivery, improve section hierarchy, language, and terminology consistency.",
       "should_trigger": true,
       "expected_skill": "coff0xc-ui-doc-output",
-      "reason": "PDF/report/document output and wording."
+      "reason": "Report narrative, delivery language, hierarchy, and terminology without a file artifact."
     },
     {
       "id": "ui-manual",
@@ -133,6 +133,60 @@
       "should_trigger": true,
       "expected_skill": "coff0xc-ui-doc-output",
       "reason": "Explicit skill invocation."
+    },
+    {
+      "id": "office-cn-pptx-deck",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "把这份 Markdown 大纲做成可编辑 PPTX 演示文稿，包含图表、讲述逻辑、预览验证和最终文件路径。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "reason": "Office artifact request for editable PPTX with preview verification."
+    },
+    {
+      "id": "office-en-excel-formulas",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Turn this CSV into a formatted Excel workbook with formulas, charts, conditional formatting, and a formula error scan before export.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "reason": "Spreadsheet artifact with formulas, charts, and validation."
+    },
+    {
+      "id": "office-manual-docx",
+      "language": "zh-CN",
+      "category": "manual_invocation",
+      "prompt": "使用 coff0xc-office-doc-tools 给这个 DOCX 加批注和修订，不覆盖原件，最后渲染检查版式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "reason": "Explicit skill invocation for DOCX comments, redlines, and render QA."
+    },
+    {
+      "id": "office-quality-ppt-aesthetic-gate",
+      "language": "zh-CN",
+      "category": "quality_gate",
+      "prompt": "使用 coff0xc-office-doc-tools 把这份运营复盘大纲做成高审美可编辑 PPTX，不要模板感；必须先给 claim spine、design system、contact-sheet 规划、comeback scorecard，并说明渲染预览如何检查弱页。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "reason": "Quality eval for PPT aesthetics gates beyond basic PPTX triggering."
+    },
+    {
+      "id": "office-quality-excel-data-parse-gate",
+      "language": "zh-CN",
+      "category": "quality_gate",
+      "prompt": "使用 coff0xc-office-doc-tools 解析这个混乱 CSV/XLSX 数据包，生成可审计 Excel：先 inspect sheets/ranges、识别编码分隔符和异常值，保留 raw/source/assumptions，派生值用公式，trace 关键输出，最后做 formula error scan 和图表渲染检查。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "reason": "Quality eval for spreadsheet parsing, auditability, formulas, trace, and render validation."
+    },
+    {
+      "id": "office-quality-docx-reading-format-gate",
+      "language": "zh-CN",
+      "category": "quality_gate",
+      "prompt": "使用 coff0xc-office-doc-tools 审阅并小改这个 DOCX，不覆盖原件；先理解标题层级、表格、批注、修订和页眉页脚，再按 preset/token map 检查真实 styles、numbering、table geometry，最后逐页渲染检查格式并说明 comments/redlines 的结构验证。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "reason": "Quality eval for DOCX comprehension, formatting preservation, render QA, and structural review evidence."
     },
     {
       "id": "drawio-cn-paper-method",
@@ -549,6 +603,15 @@
       "reason": "UI polish and output wording without exact UI keywords."
     },
     {
+      "id": "hard-office-cn-files",
+      "language": "zh-CN",
+      "category": "hard_paraphrase",
+      "prompt": "老板给了我一堆表格和文字，我要整理成能直接汇报的幻灯片和工作簿，公式别错，文件要能继续编辑。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "reason": "Colloquial Office artifact request without exact skill name."
+    },
+    {
       "id": "hard-drawio-cn-paper-figure",
       "language": "zh-CN",
       "category": "hard_paraphrase",
@@ -699,6 +762,15 @@
       "prompt": "使用 coff0xc-ui-doc-output 优化这个 dashboard，并用截图检查移动端。 请明确输入、交付物、边界和验证方式。",
       "should_trigger": true,
       "expected_skill": "coff0xc-ui-doc-output",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-office-doc-tools",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-office-doc-tools 生成一份可编辑 PPTX，并检查预览、图表和导出文件。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
     },
     {
@@ -898,6 +970,24 @@
       "should_trigger": false,
       "expected_skill": null,
       "reason": "Simple PDF summarization may not need the full UI/document workflow."
+    },
+    {
+      "id": "negative-excel-definition",
+      "language": "zh-CN",
+      "category": "negative_near_miss",
+      "prompt": "Excel 是什么？",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Simple definition, not an Office artifact workflow."
+    },
+    {
+      "id": "negative-ppt-short-tip",
+      "language": "en",
+      "category": "negative_near_miss",
+      "prompt": "Give me three quick tips for a better PowerPoint presentation.",
+      "should_trigger": false,
+      "expected_skill": null,
+      "reason": "Simple advice, not creating or editing a file artifact."
     },
     {
       "id": "negative-grammar",

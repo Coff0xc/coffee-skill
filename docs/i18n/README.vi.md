@@ -13,7 +13,7 @@
 
 ## Vì sao nên dùng
 
-- Hợp nhất 87 skill nguồn thành 15 skill năng lực toàn diện.
+- Hợp nhất 91 skill/workflow nguồn thành 17 skill năng lực toàn diện và một router.
 - `coff0xc-skill-router` là fallback khi một skill cụ thể không tự kích hoạt.
 - Mỗi skill có phạm vi, loại trừ, ma trận năng lực, giai đoạn công việc, mức bằng chứng, hard gate, kiểm chứng và anti-pattern.
 - Nội dung bảo mật tập trung vào phòng thủ được ủy quyền, phát hiện, hardening, xác minh và báo cáo.

@@ -20,7 +20,8 @@ Use one of these phrases when auto-triggering misses:
 | `coff0xc-software-engineering` | `使用 coff0xc-software-engineering ...` | 自主开发, 代码修复, 功能实现, 测试验证, 构建质量, Git 协作 |
 | `coff0xc-ai-agent-rag` | `使用 coff0xc-ai-agent-rag ...` | Agent 架构, RAG 管线, 工具调用, 记忆系统, Prompt 工程, 评测观测 |
 | `coff0xc-api-data-platform` | `使用 coff0xc-api-data-platform ...` | API 契约, 数据模型, 认证授权, CLI/SDK, 数据质量, 兼容演进 |
-| `coff0xc-ui-doc-output` | `使用 coff0xc-ui-doc-output ...` | 产品 UI, 交互状态, 视觉验证, PDF/文档, 报告输出, 翻译润色 |
+| `coff0xc-ui-doc-output` | `使用 coff0xc-ui-doc-output ...` | 产品 UI, 交互状态, 视觉验证, 报告输出, 翻译润色 |
+| `coff0xc-office-doc-tools` | `使用 coff0xc-office-doc-tools ...` | PPT/PPTX, DOCX/Word, PDF, Excel/XLSX, CSV/表格, 渲染验证 |
 | `coff0xc-research-drawio-diagram` | `使用 coff0xc-research-drawio-diagram ...` | 科研绘图, 论文方法图, 模型结构图, draw.io, 证据表, 推断标注 |
 | `coff0xc-secure-code-appsec` | `使用 coff0xc-secure-code-appsec ...` | 代码审计, Source/Sink, 认证授权, Web/API 安全, GraphQL/OAuth, 后门检测 |
 | `coff0xc-cloud-devsecops` | `使用 coff0xc-cloud-devsecops ...` | 云配置, 容器镜像, Kubernetes, CI/CD, 供应链, 密钥管理 |
@@ -42,4 +43,4 @@ Use one of these phrases when auto-triggering misses:
 3. Remove duplicate skill names across `.codex/skills`, `.agents/skills`, or other scanned locations.
 4. Keep trigger terms in frontmatter `description`, not only in the Markdown body.
 5. Use `coff0xc-skill-router` when unsure which skill should handle a request.
-6. If a task is broad, mention the expected deliverable, for example `检测规则`, `OpenAPI`, `draw.io`, `测试验证`, or `风险清单`.
+6. If a task is broad, mention the expected deliverable, for example `检测规则`, `OpenAPI`, `draw.io`, `PPTX`, `XLSX`, `测试验证`, or `风险清单`.

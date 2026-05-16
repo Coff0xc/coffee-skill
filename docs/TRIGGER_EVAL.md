@@ -1,6 +1,6 @@
 # Trigger Evaluation
 
-This repository includes a local trigger proxy evaluation for `coff0xc-skill-router` and the 16 capability skills.
+This repository includes a local trigger proxy evaluation for `coff0xc-skill-router` and the 17 capability skills.
 
 ## Purpose
 

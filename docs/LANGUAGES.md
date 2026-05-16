@@ -1,6 +1,6 @@
 # Language References
 
-These files are short usage references for international users. They explain what `coffee-skill` is, why it exists, why it is useful, how to use it, where it fits, and what to do when automatic skill triggering misses.
+These files are short usage references for international users. They explain what `coffee-skill` is, why it exists, why it is useful, how to use it, where it fits, and what to do when automatic skill triggering misses. The core skills include engineering, AI Agent/RAG, API/data, UI/report output, Office/PDF file delivery, research draw.io diagrams, and defensive security.
 
 The skills themselves are primarily Chinese + English. These reference files are not separate skill implementations.
 
