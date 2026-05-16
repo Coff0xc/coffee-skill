@@ -14,10 +14,10 @@ Use this pack by matching your task to the outcome you want, not by memorizing e
 
 | If you want... | Use this skill | Expected capability |
 |---|---|---|
-| 使用 coff0xc-software-engineering 修复这个 repo 的 failing tests，并说明验证结果。 | `coff0xc-software-engineering` | 代码补丁、脚本或配置修改; 失败原因和根因链路说明 |
+| 使用 coff0xc-software-engineering 修复这个 repo 的 failing tests，并说明验证结果。 | `coff0xc-software-engineering` | 代码补丁、脚本或配置修改; 失败原因和根因链路说明; 快速内循环、CI 复现和 diff 卫生 |
 | 使用 coff0xc-ai-agent-rag 设计一个带引用、缓存和失败降级的企业知识库助手。 | `coff0xc-ai-agent-rag` | Agent/RAG 架构方案和数据流; 工具 schema、记忆/缓存策略、检索和引用策略 |
 | 使用 coff0xc-api-data-platform 设计这个 billing REST API，包含 OpenAPI、分页和错误码。 | `coff0xc-api-data-platform` | REST/GraphQL/OpenAPI 契约; 数据库 schema、迁移和数据一致性建议 |
-| 使用 coff0xc-ui-doc-output 优化这个 dashboard，并用截图检查移动端。 | `coff0xc-ui-doc-output` | 可用 UI/组件/页面改动或设计建议; 桌面/移动端截图或浏览器 smoke 结果 |
+| 使用 coff0xc-ui-doc-output 优化这个 dashboard，并用截图检查移动端。 | `coff0xc-ui-doc-output` | 可用 UI/组件/页面改动或设计建议; 设计系统、状态门禁、可访问性和浏览器截图验收 |
 | 使用 coff0xc-office-doc-tools 生成一份可编辑 PPTX，并检查预览、图表和导出文件。 | `coff0xc-office-doc-tools` | 可编辑 PPTX/DOCX/PDF/XLSX 文件; 渲染/预览 QA、公式检查和交付路径 |
 | 使用 coff0xc-research-drawio-diagram 根据论文和官方 GitHub 画一个可编辑 draw.io 方法图。 | `coff0xc-research-drawio-diagram` | 可编辑 `.drawio` 文件; 图结构 JSON/spec 或模块清单 |
 | 使用 coff0xc-secure-code-appsec 审计这个 Web/API 项目的认证和越权风险。 | `coff0xc-secure-code-appsec` | 安全发现列表：位置、影响、证据、复现条件; source/sink 或权限链路说明 |
@@ -37,9 +37,11 @@ Use this pack by matching your task to the outcome you want, not by memorizing e
 
 ```text
 使用 coff0xc-software-engineering 修复这个 repo 的 failing tests，并说明验证结果。
+使用 coff0xc-software-engineering 复现这个 CI 失败，先读仓库规则，做最小修复，跑快速内循环和最终审计，只暂存相关文件。
 使用 coff0xc-ai-agent-rag 设计一个带引用、缓存和失败降级的企业知识库助手。
 使用 coff0xc-api-data-platform 设计这个 billing REST API，包含 OpenAPI、分页和错误码。
 使用 coff0xc-ui-doc-output 优化这个 dashboard，并用截图检查移动端。
+使用 coff0xc-ui-doc-output 重做这个 SaaS admin 页面，先做产品类型路由、设计系统检查、empty/loading/error 状态、可访问性和反 AI 味视觉验收。
 使用 coff0xc-office-doc-tools 生成一份可编辑 PPTX，并检查预览、图表和导出文件。
 使用 coff0xc-research-drawio-diagram 根据论文和官方 GitHub 画一个可编辑 draw.io 方法图。
 使用 coff0xc-secure-code-appsec 审计这个 Web/API 项目的认证和越权风险。

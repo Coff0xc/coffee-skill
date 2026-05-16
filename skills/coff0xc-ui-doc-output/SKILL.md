@@ -1,6 +1,6 @@
 ---
 name: coff0xc-ui-doc-output
-description: "Use when / 当用户请求: 全面 UI 设计、前端体验、报告表达和技术翻译工作流。触发：UI、前端、dashboard、组件、页面、视觉验证、报告、technical report、executive delivery、section hierarchy、terminology consistency、翻译、润色、截图、可访问性、页面很乱、信息密度、按钮状态、窄屏表现、交付文案、产品可用性、术语一致、报告层级、交付语言。正式 Office/PDF 文件交付如 PPT/PPTX、DOCX/Word、PDF、Excel/XLSX/CSV 优先使用 coff0xc-office-doc-tools。 Covered source aliases / 来源别名: UIdesign, quick-translate. Capability domains / 能力域: 产品 UI, 设计系统, 交互状态, 视觉验证, 报告输出, 翻译润色. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-ui-doc-output."
+description: "Use when / 当用户请求: 全面 UI 设计、前端体验、设计系统、视觉审美门禁、报告表达和技术翻译工作流。触发：UI、前端、frontend、web/app UI、dashboard、admin panel、SaaS screen、component、design system、semantic tokens、responsive、mobile-first、accessibility、empty/loading/error states、hover/focus/keyboard、browser smoke、screenshot、anti-AI aesthetic、视觉验证、页面很乱、信息密度、按钮状态、窄屏表现、产品可用性、反 AI 味、设计系统、状态门禁、可访问性、报告、technical report、executive delivery、section hierarchy、terminology consistency、翻译、润色、交付文案、术语一致、报告层级、交付语言。正式 Office/PDF 文件交付如 PPT/PPTX、DOCX/Word、PDF、Excel/XLSX/CSV 优先使用 coff0xc-office-doc-tools。 Covered source aliases / 来源别名: UIdesign, quick-translate. Capability domains / 能力域: 产品 UI, 设计系统, 组件架构, 交互状态, 视觉验收, 报告输出, 翻译润色. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-ui-doc-output."
 ---
 
 # coff0xc-ui-doc-output
@@ -66,6 +66,74 @@ Use coff0xc-ui-doc-output to polish the report narrative and UI copy for these f
 - 涉及代码改动时保持最小正确改动，优先使用现有框架、脚本、测试和本地工具。
 - 只有真实运行过的命令、测试、构建、扫描或人工检查才能写成已验证。
 - 涉及删除、远程写入、生产、凭据、付费、push、PR/Issue、CI/CD、权限或基础设施变更时，先拿到明确授权。
+
+## 设计质量门禁
+本 skill 借鉴高星 UI/agent skill 和成熟前端仓库的共同做法：先把产品任务、设计系统、组件状态、可访问性和浏览器验收绑定在一起。目标不是“更好看一点”，而是交付像真实产品团队会合并的界面。
+
+### UI Need Package
+做任何实质 UI 设计、实现或重做前，先压缩成一个可执行包。小任务可在心里完成，大任务要写进计划或回复：
+
+| 字段 | 必须回答的问题 |
+| --- | --- |
+| 用户和任务 | 谁在用，第一屏要支持什么主要工作。 |
+| 产品类型 | SaaS/admin、analytics/dashboard、editor/tool、consumer/landing、e-commerce、design system、game/interactive、report/translation。 |
+| 信息优先级 | 主要对象、主动作、次动作、导航、空/错/加载状态。 |
+| 设计系统 | 现有 tokens、组件、图标、字体、颜色、spacing、radius、shadow、motion。 |
+| 数据和状态 | populated、empty、loading、error、disabled、success、long-content、missing-asset。 |
+| 验收标准 | 要跑哪些静态检查、截图/浏览器视口、交互 smoke 和剩余风险说明。 |
+
+### 产品类型路由
+不要把所有界面都做成同一种 landing 或卡片墙。先选产品类型，再定默认密度和视觉语言：
+
+| 类型 | 默认方向 | 常见误区 |
+| --- | --- | --- |
+| SaaS / CRM / admin / ops | 安静、密集、可扫描，表格/筛选/表单/批量操作优先。 | 做成营销 hero、过度插画、信息太松。 |
+| Analytics / dashboard | 单位、时间范围、过滤器、异常状态和图表可读性优先。 | 指标卡堆叠、图表无轴/无单位、颜色只为装饰。 |
+| Editor / tool | 工作区优先，稳定 toolbar、快捷操作、空/错/保存状态明确。 | 先做品牌介绍页，或让工具藏在第二屏。 |
+| Consumer / landing | 第一视口必须立刻表达产品/品牌/对象，使用真实或可溯源视觉资产。 | 纯渐变背景、虚假 stock 图、价值主张空话。 |
+| E-commerce / product | 产品可检查、价格/变体/库存/购买路径清楚。 | 图片暗、裁切过度、CTA 和规格被装饰淹没。 |
+| Design system / component library | tokens、variants、states、accessibility notes、examples 和 regression path。 | 只有静态样式，没有组件契约。 |
+| Game / interactive | 反馈、动效、状态机、规则/物理引擎和可玩性优先。 | 只做漂亮封面，没有真实交互。 |
+| Report / translation | 信息层级、证据、术语一致、交付语气。 | 只润色句子，不保留证据和不确定性。 |
+
+### 设计系统与组件门禁
+- 先查现有设计系统：`tailwind.config.*`、CSS variables、theme/tokens、component library、Storybook、icons、screenshots、README/AGENTS/DESIGN 文档。
+- 优先使用 semantic tokens 和现有 variants；不要在组件里随手写 raw color、magic spacing、一次性 class pile，除非项目本来就是这种风格。
+- 引入图标、动画、状态管理或 UI 库前先查依赖文件；没有依赖就不要假装能 import。
+- 组件优先组合而不是巨型配置对象；数据获取和展示分离；可复用状态抽到 hook，但不要为单一页面过度抽象。
+- 组件必须有明确状态契约：输入、输出、交互、错误、disabled、focus、响应式和长内容行为。
+- 对 shadcn/Radix/MUI/Ant/自研组件，只继承其可访问性和结构，不要保留默认模板味；radius、颜色、shadow、density 要匹配当前产品。
+
+### 状态与可访问性门禁
+用户可见 UI 不能只做 happy path。相关场景至少检查：
+
+- populated：真实内容长度、真实数字、真实对象名，不用 Lorem ipsum、John Doe、Acme、99.99% 这类假质感占位。
+- empty：告诉用户下一步能做什么，不留空白区域。
+- loading：内容型区域优先 skeleton 或结构化占位，不用一个孤立 spinner 顶替整页。
+- error：错误在发生位置附近说明，可重试；不要只 `alert()` 或吞错。
+- disabled / unavailable：说明原因或让状态可理解。
+- hover / active / selected / focus：鼠标和键盘路径都能看出当前元素。
+- small-screen / long-content：320px、768px、1024px、1440px 或项目常用断点内不溢出、不遮挡。
+- accessibility：语义标签、label、alt、aria-name、focus order、对比度、触摸目标、reduced-motion、图表不能只靠颜色。
+
+### 反 AI 味视觉门禁
+以下是常见 AI 生成痕迹，发现就优先改：
+
+- 紫蓝霓虹、过度 glow、任意渐变文字、纯黑背景、单一色相统治全页。
+- 三列等宽 feature cards、卡片套卡片、每个区块都是圆角白卡、无意义 bento。
+- 过大 hero 字、居中大标题加两按钮的模板式首屏，尤其对工具/admin/dashboard。
+- 所有内容都均匀、对称、等高、等距，没有主次和扫描路径。
+- 用图标替代真实产品/数据/状态；图片暗、糊、裁切到无法检查对象。
+- 表单没有 label/helper/error；按钮文字溢出；表格列宽不随内容设计。
+- 动效用 `top/left/width/height` 或频繁 React state 驱动连续动画；应优先 transform/opacity，并尊重 reduced-motion。
+- 页面要靠可见说明文字解释怎么用，说明交互本身没做好。
+
+### 浏览器验收门禁
+- UI 代码改动后，能启动本地服务就启动；能静态打开就给本地 HTML 路径。
+- 至少检查一个桌面和一个移动视口；复杂工具再加窄屏/平板宽度。
+- 看 console、网络资源、空白渲染、重叠、裁切、文本溢出、按钮可点性、表单基本路径、焦点状态。
+- Canvas/WebGL/Three.js 必须检查非空像素、场景 framing、移动/交互是否可见。
+- 如果浏览器或截图不可用，最终必须写明“代码已改但未做视觉验收”，不能说 UI 已验证。
 
 ## 能力矩阵
 | 能力域 | 覆盖范围 | 执行要点 |

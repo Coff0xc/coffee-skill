@@ -55,10 +55,10 @@ Use coff0xc-skill-router when a Coff0xc skill did not auto-trigger.
 ## 路由表
 | 目标 skill | 常见别名/来源词 | 触发说明 |
 | --- | --- | --- |
-| coff0xc-software-engineering | c-cpp-dev, code-simplifier, git-workflow, go-dev, java-dev, js-ts-dev, ... | 全面软件工程、语言开发、测试、重构、脚本、Git 和工程质量工作流。触发：Python、JavaScript、TypeScript、Go、Rust、Java、C/C++、Shell、bugfix、feature、测试、重构、构建、脚本、Git、本地工程化。 |
+| coff0xc-software-engineering | c-cpp-dev, code-simplifier, git-workflow, go-dev, java-dev, js-ts-dev, ... | 全面软件工程、语言开发、测试、重构、脚本、Git 和工程质量工作流。触发：Python、JavaScript、TypeScript、Go、Rust、Java、C/C++、Shell、bugfix、feature、测试、重构、构建、脚本、Git、本地工程化、CI 失败、快速内循环、模块循环、最终审计。 |
 | coff0xc-ai-agent-rag | ai-agent-dev, ai-orchestrator, deep-thinking | 全面 AI Agent、RAG、Prompt、LLM 应用、多模型协作、评测、观测和成本控制工作流。触发：Agent、RAG、embedding、向量数据库、Prompt、LangChain、AutoGen、工具调用、多模型编排、代码审计协作、视觉分析、评测、缓存、记忆、失败恢复。 |
 | coff0xc-api-data-platform | api-design, database, cli-creator | 全面 API、数据库、数据平台、CLI、SDK 和接口契约工程工作流。触发：REST、GraphQL、OpenAPI、SQL、数据库、迁移、CLI、SDK、分页、认证、错误码、JSON 输出、数据模型、ETL、数据质量。 |
-| coff0xc-ui-doc-output | UIdesign, quick-translate | 全面 UI 设计、前端体验、报告叙事和技术翻译工作流。触发：UI、前端、dashboard、组件、页面、视觉验证、报告、翻译、润色、截图、可访问性。正式 PPTX/DOCX/PDF/XLSX 文件交付转入 `coff0xc-office-doc-tools`。 |
+| coff0xc-ui-doc-output | UIdesign, quick-translate | 全面 UI 设计、前端体验、设计系统、报告叙事和技术翻译工作流。触发：UI、前端、dashboard、组件、页面、设计系统、状态门禁、响应式、移动端、浏览器截图、可访问性、反 AI 味、报告、翻译、润色。正式 PPTX/DOCX/PDF/XLSX 文件交付转入 `coff0xc-office-doc-tools`。 |
 | coff0xc-office-doc-tools | documents, presentations, spreadsheets, pdf | 全面 Office/PDF 文件型交付工作流。触发：PowerPoint、PPT、PPTX、slides、deck、Word、DOCX、PDF、Excel、XLSX、CSV、spreadsheet、workbook、chart、formula、redline、comments、render、export、演示文稿、幻灯片、文档、表格、工作簿、公式、批注、修订、导出、可编辑文件。 |
 | coff0xc-secure-code-appsec | api-discovery, api-security-test, backdoor-detector, browser-security, code-audit, graphql-pentest, ... | 全面代码安全审计、Web/API/GraphQL/OAuth/浏览器/SPA/LLM 安全、后门检测和授权应用安全验证工作流。触发：代码审计、危险函数、source/sink、污点分析、Web 安全、API 安全、GraphQL、OAuth、CSP、CORS、Cookie、Prompt 注入、越权、SSRF、XSS、SQLi、后门、Webshell。 |
 | coff0xc-cloud-devsecops | cloud-security, container-security, devsecops, docker-k8s, secrets-management, serverless-security, ... | 全面云安全、容器/Kubernetes、Serverless、DevSecOps、供应链、CI/CD 和密钥管理工作流。触发：AWS、Azure、GCP、IAM、S3/Blob/GCS、Docker、K8s、镜像、Serverless、CI/CD、SAST、DAST、SCA、SBOM、secret scanning、IaC、Terraform、GitHub Actions。 |

@@ -1,7 +1,7 @@
 [
   {
     "name": "coff0xc-software-engineering",
-    "description": "能力化 Coff0xc skill：面向真实仓库的工程交付能力。适合把模糊需求变成可运行代码、可复现修复、可验证测试结果和清晰 diff 摘要。 可交付：代码补丁、脚本或配置修改、失败原因和根因链路说明、单元/集成/构建验证结果。触发：build end-to-end、full-stack feature、one-shot implementation、repo repair、failing tests、bugfix、feature、refactor、scripts、local Git summary、Python、JavaScript、TypeScript、Go、Rust、Java、C/C++、Shell、dashboard/admin/API implementation、最小修复、证明好了、仓库跑不起来、多文件开发、全栈功能、少问确认、直接实现。",
+    "description": "能力化 Coff0xc skill：面向真实仓库的工程交付能力。适合把模糊需求变成可运行代码、可复现修复、可验证测试结果和清晰 diff 摘要；强调先读仓库规则、需求包、快速内循环、模块循环、CI 复现、最终审计和 diff 卫生。 可交付：代码补丁、脚本或配置修改、失败原因和根因链路说明、单元/集成/构建验证结果、CI/回归分诊和剩余风险。触发：build end-to-end、full-stack feature、one-shot implementation、repo repair、failing tests、CI failure triage、test reproduction、fast inner loop、need package、module loop、diff hygiene、Python、JavaScript、TypeScript、Go、Rust、Java、C/C++、Shell、dashboard/admin/API implementation、最小修复、证明好了、仓库跑不起来、多文件开发、全栈功能、少问确认、直接实现、先读仓库规则、快速内循环、复现 CI、模块化实现、最终审计、只暂存相关文件。",
     "source_skills": [
       "c-cpp-dev",
       "code-simplifier",
@@ -26,6 +26,8 @@
       "代码修复",
       "功能实现",
       "测试验证",
+      "CI 分诊",
+      "快速内循环",
       "构建质量",
       "Git 协作"
     ]
@@ -77,7 +79,7 @@
   },
   {
     "name": "coff0xc-ui-doc-output",
-    "description": "能力化 Coff0xc skill：面向 UI、前端体验、报告表达和技术翻译交付的产物质量能力。它不只润色文字，还要求界面、交互和报告叙事真实可用、可读、可验证；正式 PPTX/DOCX/PDF/XLSX 文件交付优先路由到 coff0xc-office-doc-tools。 可交付：可用 UI/组件/页面改动或设计建议、桌面/移动端截图或浏览器 smoke 结果、报告结构、交付文案和翻译润色稿。触发：UI、前端、dashboard、组件、页面、视觉验证、报告、technical report、executive delivery、section hierarchy、terminology consistency、翻译、润色、截图、可访问性、页面很乱、信息密度、按钮状态、窄屏表现、交付文案、术语一致、报告层级、交付语言。",
+    "description": "能力化 Coff0xc skill：面向 UI、前端体验、设计系统、报告表达和技术翻译交付的产物质量能力。它不只润色文字，还要求产品类型路由、设计系统遵循、组件状态覆盖、可访问性、反 AI 味视觉门禁和浏览器截图验收；正式 PPTX/DOCX/PDF/XLSX 文件交付优先路由到 coff0xc-office-doc-tools。 可交付：可用 UI/组件/页面改动或设计建议、设计系统/tokens/variants 建议、桌面/移动端截图或浏览器 smoke 结果、报告结构、交付文案和翻译润色稿。触发：UI、前端、frontend、web/app UI、dashboard、admin panel、SaaS screen、component、design system、semantic tokens、responsive、mobile-first、accessibility、empty/loading/error states、hover/focus/keyboard、browser smoke、screenshot、anti-AI aesthetic、视觉验证、页面很乱、信息密度、按钮状态、窄屏表现、产品可用性、反 AI 味、设计系统、状态门禁、可访问性、报告、technical report、executive delivery、section hierarchy、terminology consistency、翻译、润色、交付文案、术语一致、报告层级、交付语言。",
     "source_skills": [
       "UIdesign",
       "quick-translate"
@@ -90,8 +92,10 @@
     "security_boundary": false,
     "capability_domains": [
       "产品 UI",
+      "设计系统",
+      "组件架构",
       "交互状态",
-      "视觉验证",
+      "视觉验收",
       "报告输出",
       "翻译润色"
     ]

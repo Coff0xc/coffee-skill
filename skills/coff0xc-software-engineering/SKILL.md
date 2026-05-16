@@ -1,6 +1,6 @@
 ---
 name: coff0xc-software-engineering
-description: "Use when / 当用户请求: dev, autonomous development, build end-to-end, full-stack feature, one-shot implementation, repo repair, failing tests, bugfix, refactor, scripts, local Git summary, Python, JavaScript, TypeScript, Go, Rust, Java, C/C++, Shell, dashboard/admin/API implementation, 最小修复、证明好了、仓库跑不起来、多文件开发、全栈功能、少问确认、直接实现。 Covered source aliases / 来源别名: dev, c-cpp-dev, code-simplifier, git-workflow, go-dev, java-dev, js-ts-dev, python-dev, rust-dev, shell-scripting, testing. Capability domains / 能力域: 自主开发, 语言实现, 缺陷修复, 特性开发, 重构简化, 测试体系, 构建质量, Git 协作. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-software-engineering."
+description: "Use when / 当用户请求: dev, autonomous development, build end-to-end, full-stack feature, one-shot implementation, repo repair, failing tests, bugfix, refactor, scripts, local Git summary, CI failure triage, test reproduction, fast inner loop, need package, module loop, integration verification, diff hygiene, lockfile discipline, Python, JavaScript, TypeScript, Go, Rust, Java, C/C++, Shell, dashboard/admin/API implementation, 最小修复、证明好了、仓库跑不起来、多文件开发、全栈功能、少问确认、直接实现、先读仓库规则、快速内循环、复现 CI、模块化实现、最终审计、只暂存相关文件。 Covered source aliases / 来源别名: dev, c-cpp-dev, code-simplifier, git-workflow, go-dev, java-dev, js-ts-dev, python-dev, rust-dev, shell-scripting, testing. Capability domains / 能力域: 自主开发, 语言实现, 缺陷修复, 特性开发, 重构简化, 测试体系, 构建质量, Git 协作. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-software-engineering."
 ---
 
 # coff0xc-software-engineering
@@ -87,22 +87,29 @@ Use coff0xc-software-engineering to build this admin panel feature end to end wi
 ### 1. 恢复上下文
 先查真实项目，不凭记忆猜。
 
-- 读取 `AGENTS.md`、`CLAUDE.md`、README、manifest、lockfile、框架配置、env example、测试脚本。
+- 读取 `AGENTS.md`、`CLAUDE.md`、README、manifest、lockfile、框架配置、env example、测试脚本；编辑子目录前沿路径读取就近 README/AGENTS/开发说明。
 - 查看 `git status --short`、当前分支和已有改动。
 - 用 `rg --files`、`rg`、语言工具或项目脚本找入口、调用点、测试和构建命令。
 - 如果已有 `task_plan.md`、`progress.md`、`findings.md`，先读并延续。
+- 识别包管理器和工具版本：npm/pnpm/yarn/bun、poetry/uv/pip、cargo、go、maven/gradle、bazel，以及 lockfile 是否应保持原生成工具版本。
 
 完成标准：知道项目类型、可用命令、用户已有改动、主要入口和不能碰的边界。
 
 ### 2. 需求包
 不要长时间访谈。把用户需求压成一个可执行包：
 
-- 目标：最终用户要能做什么。
-- 输入/输出：数据、文件、接口、页面或命令。
-- 非目标：本轮不做什么。
-- 假设：低风险推断。
-- 验收标准：什么算完成。
-- 风险门禁：是否触发 L3/L4。
+| 字段 | 要写清楚什么 |
+| --- | --- |
+| Goal | 最终用户、系统或维护者要能做什么。 |
+| Users / workflow | 主要路径、失败路径、管理员/系统路径。 |
+| Inputs / outputs | 数据、文件、接口、页面、命令、事件或后台任务。 |
+| UI surface | 路由、组件、状态：loading、empty、error、success、disabled。 |
+| API surface | endpoint/action、request/response、validation、auth/permission。 |
+| Data model | entity、关系、迁移、兼容读取、fixture。 |
+| Non-goals | 本轮不做什么，避免范围膨胀。 |
+| Assumptions | 低风险推断及风险等级。 |
+| Acceptance | 功能路径、失败路径、测试、typecheck/lint/build、UI smoke。 |
+| Risk gates | 生产、凭据、付费、远程写入、删除、公开发布、CI/CD 权限。 |
 
 大任务把需求包写进计划或进度文件；小任务可以只在回复或内部计划中保留。
 
@@ -115,6 +122,15 @@ Use coff0xc-software-engineering to build this admin panel feature end to end wi
 - 是否需要同步文档、示例、类型、schema、迁移或快照。
 
 完成标准：能说清该改哪些文件、为什么改、如何验证。
+
+### 3.5 快速内循环
+成熟大仓通常不是每次都全量 build。先找项目推荐的快速路径，再逐步加宽验证：
+
+- 优先用项目自带 watch、targeted test、filter、workspace 命令、Storybook/component test、package-specific build。
+- 测试失败先保存一次完整输出，再检索错误，不要用不同 grep 反复跑同一重测试。
+- CI 失败复现要尽量匹配 CI mode、env、bundler、isolation、数据库/浏览器配置；不要用本地 shortcuts 掩盖打包或模块解析问题。
+- 子模块改动使用对应包/目录命令；跨模块接口改动再跑集成或全量命令。
+- 如果项目要求生成测试模板、fixture、snapshot、schema 或 docs，优先用项目脚本生成，不手写不一致结构。
 
 ### 4. 模块循环
 对每个模块执行完整闭环：
@@ -131,6 +147,8 @@ Use coff0xc-software-engineering to build this admin panel feature end to end wi
 - UI 改动要覆盖 loading、empty、error、success、disabled、mobile/desktop 和可访问性基础状态。
 - API/后端改动要覆盖输入校验、错误码、边界条件、认证/授权、日志和敏感信息处理。
 - 数据/schema 改动要考虑迁移、回滚、兼容读取和测试 fixture。
+- 锁文件只在依赖真实变化时更新；再生成 lockfile 前检查原工具和版本，避免纯工具版本造成噪声。
+- 临时设计笔记、日志、实验脚本放到项目允许的位置；如果没有约定，保持本地不提交，最终说明。
 
 ### 5. 验证策略
 先窄后宽，按风险加码。
@@ -148,6 +166,15 @@ Use coff0xc-software-engineering to build this admin panel feature end to end wi
 
 无法验证时说明：缺什么环境、哪个命令没跑、风险是什么、用户下一步可运行什么。
 
+### 5.5 CI / 回归失败分诊
+当用户给 CI、测试、lint、build 或线上回归信号时：
+
+- 先按阻塞程度排序：build/typecheck/lint > 单测 > 集成/e2e > flaky/视觉。
+- 假设失败为真，先复现或用日志定位，不把 known flaky 当作免修理由。
+- 区分新失败、已有失败、平台/环境失败和测试本身错误；每类用不同修复策略。
+- 对同一路线连续失败两次，停止盲跑，回到调用链和最小复现。
+- 修测试前先确认测试覆盖真实行为；不要只改断言迎合错误实现。
+
 ### 6. 最终同类审计
 交付前复查完整 diff：
 
@@ -157,6 +184,21 @@ Use coff0xc-software-engineering to build this admin panel feature end to end wi
 - 错误、空状态、边界条件、权限和敏感信息处理是否完整。
 - 测试是否覆盖真实行为，而不只是 happy path。
 - 临时文件、调试日志、硬编码路径、密钥和机器私有信息是否被清理。
+- Git 卫生：只暂存相关文件，不用 `git add .`；不提交本地计划/日志/截图/临时输出，除非用户明确要。
+
+## 高星仓库借鉴的工程门禁
+以下是从成熟开源工程和高星 agent skill 中提炼的通用模式，已改写成本 skill 的执行要求：
+
+| 门禁 | 执行方式 |
+| --- | --- |
+| 本地规则优先 | 任何代码前先读根部和目标路径附近的说明、脚本、锁文件、测试约定。 |
+| 快速反馈 | 使用 target test/watch/filter，先缩小失败面，再跑更宽验证。 |
+| CI 等价复现 | CI 问题要匹配 CI 环境变量、bundler、isolation、数据库、浏览器模式。 |
+| 模块化合并 | 每个模块做完即窄验证和自审，避免最后才发现跨模块断裂。 |
+| 依赖纪律 | 先查现有依赖；新增依赖要有明确收益；锁文件不做工具版本噪声更新。 |
+| 变更卫生 | 只改请求范围；只暂存相关文件；保留用户未要求回滚的改动。 |
+| 真实测试 | 测试覆盖行为和失败路径；不用 snapshot 或 happy path 假装覆盖。 |
+| UI 协作 | 前端实现由本 skill 落地，但必须套用 `coff0xc-ui-doc-output` 的 UI 状态/视觉验收门禁。 |
 
 ## 子域路由
 | 来源 skill | 并入后的处理方式 |

@@ -1024,6 +1024,42 @@
       "should_trigger": false,
       "expected_skill": null,
       "reason": "Simple definition, not a research diagram generation workflow."
+    },
+    {
+      "id": "ui-quality-product-type-state-gate",
+      "language": "zh-CN",
+      "category": "quality_gate",
+      "prompt": "使用 coff0xc-ui-doc-output 重做这个 SaaS admin dashboard，不要 AI 味卡片堆叠；先做产品类型路由和 UI need package，检查现有 design system/tokens/components，覆盖 populated、empty、loading、error、disabled、hover、focus、long-content、mobile 状态，最后用桌面和移动端浏览器截图验收。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ui-doc-output",
+      "reason": "Quality eval for UI product routing, state gates, design system adherence, anti-AI visual audit, and browser verification."
+    },
+    {
+      "id": "ui-quality-design-system-accessibility-gate",
+      "language": "en",
+      "category": "quality_gate",
+      "prompt": "Use coff0xc-ui-doc-output to implement this user-facing settings screen with production UI quality: inspect the local design system, use semantic tokens and component variants, separate data and presentation, cover keyboard/focus/ARIA/contrast, avoid generic AI gradients/card grids, and verify desktop/mobile screenshots plus console cleanliness.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ui-doc-output",
+      "reason": "Quality eval for production UI engineering, semantic tokens, accessibility, anti-generic patterns, and visual verification."
+    },
+    {
+      "id": "software-quality-ci-fast-loop-gate",
+      "language": "zh-CN",
+      "category": "quality_gate",
+      "prompt": "使用 coff0xc-software-engineering 复现这个 CI 失败；先读根目录和目标子目录的 AGENTS/README/开发说明，整理 need package，找到快速内循环命令，保存一次完整测试输出再分析，做最小修复，按 CI 等价环境验证，最后只暂存相关文件并做最终审计。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "reason": "Quality eval for repo rules, need package, fast inner loop, CI reproduction, focused staging, and final audit."
+    },
+    {
+      "id": "software-quality-module-loop-lockfile-gate",
+      "language": "en",
+      "category": "quality_gate",
+      "prompt": "Use coff0xc-software-engineering for this multi-module feature: create a need package with UI/API/data surfaces and risk gates, implement module by module with focused tests, avoid unnecessary dependencies, preserve lockfile tool-version discipline, run integration verification, and summarize diff hygiene and remaining risks.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "reason": "Quality eval for need package, module loop, dependency and lockfile discipline, integration verification, and diff hygiene."
     }
   ]
 }

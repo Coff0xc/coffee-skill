@@ -1,12 +1,12 @@
 {
   "threshold": 3.0,
-  "case_count": 113,
+  "case_count": 117,
   "skill_count": 18,
   "metrics": {
-    "positive_total": 98,
-    "positive_top1": 98,
-    "positive_top3": 98,
-    "positive_triggered": 98,
+    "positive_total": 102,
+    "positive_top1": 102,
+    "positive_top3": 102,
+    "positive_triggered": 102,
     "router_total": 8,
     "router_top1": 8,
     "router_top3": 8,
@@ -158,19 +158,19 @@
       "triggered_rate": 1.0
     },
     "coff0xc-software-engineering": {
-      "total": 7,
-      "top1": 7,
-      "top3": 7,
-      "triggered": 7,
+      "total": 9,
+      "top1": 9,
+      "top3": 9,
+      "triggered": 9,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-ui-doc-output": {
-      "total": 5,
-      "top1": 5,
-      "top3": 5,
-      "triggered": 5,
+      "total": 7,
+      "top1": 7,
+      "top3": 7,
+      "triggered": 7,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
@@ -240,12 +240,13 @@
       "should_trigger": true,
       "expected_skill": "coff0xc-software-engineering",
       "predicted_skill": "coff0xc-software-engineering",
-      "top_score": 29.9624,
+      "top_score": 33.5014,
       "top3": [
         {
           "skill": "coff0xc-software-engineering",
-          "score": 29.9624,
+          "score": 33.5014,
           "lexical_overlap": [
+            "diff",
             "feature",
             "git",
             "repo",
@@ -374,10 +375,8 @@
         },
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 5.339,
-          "lexical_overlap": [
-            "页面"
-          ],
+          "score": 1.8,
+          "lexical_overlap": [],
           "phrase_hits": [
             "前端"
           ],
@@ -416,21 +415,27 @@
           "simple_prompt_penalty": 0.0
         },
         {
+          "skill": "coff0xc-ui-doc-output",
+          "score": 18.9559,
+          "lexical_overlap": [
+            "admin",
+            "browser",
+            "panel",
+            "smoke"
+          ],
+          "phrase_hits": [
+            "browser smoke",
+            "ui"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
           "skill": "coff0xc-research-drawio-diagram",
           "score": 3.0281,
           "lexical_overlap": [
             "repo"
           ],
           "phrase_hits": [],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-detection-response",
-          "score": 1.8,
-          "lexical_overlap": [],
-          "phrase_hits": [
-            "ir"
-          ],
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -520,11 +525,10 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-skill-router",
-          "score": 1.0563,
+          "skill": "coff0xc-ui-doc-output",
+          "score": 3.539,
           "lexical_overlap": [
-            "agent",
-            "llm"
+            "design"
           ],
           "phrase_hits": [],
           "simple_prompt_penalty": 0.0
@@ -744,17 +748,19 @@
       "should_trigger": true,
       "expected_skill": "coff0xc-ui-doc-output",
       "predicted_skill": "coff0xc-ui-doc-output",
-      "top_score": 15.4779,
+      "top_score": 20.2779,
       "top3": [
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 15.4779,
+          "score": 20.2779,
           "lexical_overlap": [
             "dashboard",
             "可访问性"
           ],
           "phrase_hits": [
             "dashboard",
+            "可访问性",
+            "移动端",
             "前端",
             "截图",
             "组件"
@@ -1087,12 +1093,16 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-api-data-platform",
-          "score": 3.539,
+          "skill": "coff0xc-ui-doc-output",
+          "score": 13.1061,
           "lexical_overlap": [
-            "页"
+            "coff0xc-office-doc-tools",
+            "design",
+            "system"
           ],
-          "phrase_hits": [],
+          "phrase_hits": [
+            "design system"
+          ],
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3341,7 +3351,7 @@
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": 3.3656,
+          "score": 2.8548,
           "lexical_overlap": [
             "ai",
             "skill"
@@ -3353,9 +3363,10 @@
           "simple_prompt_penalty": 6.0
         },
         {
-          "skill": "coff0xc-api-data-platform",
-          "score": -4.9733,
+          "skill": "coff0xc-ui-doc-output",
+          "score": -1.9452,
           "lexical_overlap": [
+            "ai",
             "skill"
           ],
           "phrase_hits": [],
@@ -4119,19 +4130,21 @@
           "simple_prompt_penalty": 0.0
         },
         {
+          "skill": "coff0xc-software-engineering",
+          "score": 3.539,
+          "lexical_overlap": [
+            "环"
+          ],
+          "phrase_hits": [],
+          "simple_prompt_penalty": 0.0
+        },
+        {
           "skill": "coff0xc-authorized-assessment",
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
             "演练"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-ai-agent-rag",
-          "score": 0.0,
-          "lexical_overlap": [],
-          "phrase_hits": [],
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4388,17 +4401,18 @@
       "should_trigger": true,
       "expected_skill": "coff0xc-ui-doc-output",
       "predicted_skill": "coff0xc-ui-doc-output",
-      "top_score": 113.6779,
+      "top_score": 115.4779,
       "top3": [
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 113.6779,
+          "score": 115.4779,
           "lexical_overlap": [
             "coff0xc-ui-doc-output",
             "dashboard"
           ],
           "phrase_hits": [
             "dashboard",
+            "移动端",
             "ui",
             "截图"
           ],
@@ -5718,6 +5732,243 @@
       "passed": true,
       "failure": "",
       "reason": "Simple definition, not a research diagram generation workflow."
+    },
+    {
+      "id": "ui-quality-product-type-state-gate",
+      "category": "quality_gate",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ui-doc-output",
+      "predicted_skill": "coff0xc-ui-doc-output",
+      "top_score": 144.1512,
+      "top3": [
+        {
+          "skill": "coff0xc-ui-doc-output",
+          "score": 144.1512,
+          "lexical_overlap": [
+            "admin",
+            "ai",
+            "coff0xc-ui-doc-output",
+            "dashboard",
+            "design",
+            "saas",
+            "ui"
+          ],
+          "phrase_hits": [
+            "design system",
+            "component",
+            "dashboard",
+            "focus",
+            "hover",
+            "移动端",
+            "ui",
+            "截图"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 26.3671,
+          "lexical_overlap": [
+            "mobile",
+            "ui"
+          ],
+          "phrase_hits": [
+            "coff0xc",
+            "路由"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-software-engineering",
+          "score": 13.0779,
+          "lexical_overlap": [
+            "need",
+            "package"
+          ],
+          "phrase_hits": [
+            "need package",
+            "dashboard"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Quality eval for UI product routing, state gates, design system adherence, anti-AI visual audit, and browser verification."
+    },
+    {
+      "id": "ui-quality-design-system-accessibility-gate",
+      "category": "quality_gate",
+      "language": "en",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ui-doc-output",
+      "predicted_skill": "coff0xc-ui-doc-output",
+      "top_score": 150.6291,
+      "top3": [
+        {
+          "skill": "coff0xc-ui-doc-output",
+          "score": 150.6291,
+          "lexical_overlap": [
+            "ai",
+            "coff0xc-ui-doc-output",
+            "component",
+            "design",
+            "screen",
+            "semantic",
+            "system",
+            "tokens",
+            "ui"
+          ],
+          "phrase_hits": [
+            "semantic tokens",
+            "design system",
+            "screenshot",
+            "component",
+            "keyboard",
+            "focus",
+            "ui"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 21.0281,
+          "lexical_overlap": [
+            "ui"
+          ],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 3.539,
+          "lexical_overlap": [
+            "data"
+          ],
+          "phrase_hits": [],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Quality eval for production UI engineering, semantic tokens, accessibility, anti-generic patterns, and visual verification."
+    },
+    {
+      "id": "software-quality-ci-fast-loop-gate",
+      "category": "quality_gate",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "predicted_skill": "coff0xc-software-engineering",
+      "top_score": 135.2089,
+      "top3": [
+        {
+          "skill": "coff0xc-software-engineering",
+          "score": 135.2089,
+          "lexical_overlap": [
+            "ci",
+            "coff0xc-software-engineering",
+            "need",
+            "package"
+          ],
+          "phrase_hits": [
+            "need package",
+            "只暂存相关文件",
+            "快速内循环",
+            "最小修复",
+            "最终审计",
+            "开发",
+            "测试"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 18.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-vulnerability-lifecycle",
+          "score": 4.8281,
+          "lexical_overlap": [
+            "验证"
+          ],
+          "phrase_hits": [
+            "修复"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Quality eval for repo rules, need package, fast inner loop, CI reproduction, focused staging, and final audit."
+    },
+    {
+      "id": "software-quality-module-loop-lockfile-gate",
+      "category": "quality_gate",
+      "language": "en",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "predicted_skill": "coff0xc-software-engineering",
+      "top_score": 162.9207,
+      "top3": [
+        {
+          "skill": "coff0xc-software-engineering",
+          "score": 162.9207,
+          "lexical_overlap": [
+            "coff0xc-software-engineering",
+            "diff",
+            "discipline",
+            "feature",
+            "hygiene",
+            "integration",
+            "lockfile",
+            "module",
+            "need",
+            "package",
+            "tests",
+            "verification"
+          ],
+          "phrase_hits": [
+            "integration verification",
+            "diff hygiene",
+            "need package",
+            "feature",
+            "tests",
+            "test"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 18.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-binary-mobile-iot",
+          "score": 4.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "engineering",
+            "rf"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Quality eval for need package, module loop, dependency and lockfile discipline, integration verification, and diff hygiene."
     }
   ]
 }
