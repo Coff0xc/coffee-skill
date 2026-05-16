@@ -194,10 +194,10 @@
             "python"
           ],
           "phrase_hits": [
-            "python",
             "pytest",
-            "test",
+            "python",
             "lint",
+            "test",
             "最小修复",
             "测试"
           ],
@@ -292,9 +292,9 @@
             "go"
           ],
           "phrase_hits": [
+            "go",
             "测试",
-            "重构",
-            "go"
+            "重构"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -340,14 +340,14 @@
             "少问确认"
           ],
           "phrase_hits": [
-            "后端接口",
-            "状态处理",
-            "少问确认",
             "前端页面",
+            "后端接口",
+            "少问确认",
+            "状态处理",
             "多文件",
-            "测试",
+            "全栈",
             "构建",
-            "全栈"
+            "测试"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -449,8 +449,8 @@
             "agent",
             "rag",
             "助手",
-            "评测",
-            "缓存"
+            "缓存",
+            "评测"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -597,9 +597,9 @@
             "openapi",
             "schema",
             "rest",
+            "api",
             "数据库",
             "错误码",
-            "api",
             "分页"
           ],
           "simple_prompt_penalty": 0.0
@@ -647,8 +647,8 @@
           ],
           "phrase_hits": [
             "json",
-            "sdk",
-            "cli"
+            "cli",
+            "sdk"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -696,8 +696,8 @@
           "phrase_hits": [
             "graphql",
             "数据质量",
-            "sql",
-            "api"
+            "api",
+            "sql"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -746,9 +746,9 @@
           ],
           "phrase_hits": [
             "dashboard",
-            "组件",
+            "前端",
             "截图",
-            "前端"
+            "组件"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -789,8 +789,8 @@
           "score": 10.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "report",
             "layout",
+            "report",
             "word",
             "pdf"
           ],
@@ -836,10 +836,10 @@
             "coff0xc-ui-doc-output"
           ],
           "phrase_hits": [
-            "翻译",
-            "润色",
+            "ui",
             "报告",
-            "ui"
+            "润色",
+            "翻译"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -998,8 +998,8 @@
           "phrase_hits": [
             "transformer",
             "research",
-            "diagram",
             ".drawio",
+            "diagram",
             "drawio",
             "模型结构图"
           ],
@@ -1053,11 +1053,11 @@
             "source/sink",
             "sqli",
             "ssrf",
-            "xss",
             "web",
-            "越权",
+            "xss",
+            "后门",
             "认证",
-            "后门"
+            "越权"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1066,8 +1066,8 @@
           "score": 3.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "sql",
-            "api"
+            "api",
+            "sql"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1213,8 +1213,8 @@
             "github actions",
             "docker",
             "sbom",
-            "k8s",
             "iac",
+            "k8s",
             "供应链"
           ],
           "simple_prompt_penalty": 0.0
@@ -1319,11 +1319,11 @@
             "容器镜像"
           ],
           "phrase_hits": [
-            "ci/cd",
             "azure",
-            "镜像",
+            "ci/cd",
             "容器",
-            "密钥"
+            "密钥",
+            "镜像"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -1374,8 +1374,8 @@
           "phrase_hits": [
             "sigma",
             "yara",
-            "ioc",
             "edr",
+            "ioc",
             "日志",
             "检测"
           ],
@@ -1422,8 +1422,8 @@
             "timeline"
           ],
           "phrase_hits": [
-            "forensics",
             "detection",
+            "forensics",
             "timeline",
             "malware",
             "siem"
@@ -1475,8 +1475,8 @@
           "phrase_hits": [
             "detection",
             "告警",
-            "日志",
-            "威胁"
+            "威胁",
+            "日志"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -1519,8 +1519,8 @@
             "补丁对比"
           ],
           "phrase_hits": [
-            "epss",
             "cvss",
+            "epss",
             "cve",
             "kev",
             "优先级",
@@ -1725,9 +1725,9 @@
             "credential",
             "zero trust",
             "privilege",
+            "iam",
             "pam",
-            "sso",
-            "iam"
+            "sso"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1775,8 +1775,8 @@
           ],
           "phrase_hits": [
             "凭证",
-            "身份",
-            "权限"
+            "权限",
+            "身份"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -1826,9 +1826,9 @@
             "roe",
             "攻击面",
             "授权",
-            "边界",
             "演练",
-            "红队"
+            "红队",
+            "边界"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1880,8 +1880,8 @@
             "attack chain",
             "authorized",
             "recon",
-            "waf",
-            "cdn"
+            "cdn",
+            "waf"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1988,10 +1988,10 @@
           "phrase_hits": [
             "firmware",
             "frida",
-            "uart",
             "jtag",
-            "ble",
-            "apk"
+            "uart",
+            "apk",
+            "ble"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -2047,8 +2047,8 @@
           "phrase_hits": [
             "engineering",
             "reverse",
-            "kernel",
             "crypto",
+            "kernel",
             "pwn",
             "rf"
           ],
@@ -2148,14 +2148,14 @@
           ],
           "phrase_hits": [
             "solidity",
-            "slither",
             "foundry",
-            "oracle",
+            "slither",
             "bridge",
+            "oracle",
             "token",
             "defi",
-            "nft",
-            "amm"
+            "amm",
+            "nft"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -2206,8 +2206,8 @@
             "cosmos",
             "solana",
             "cairo",
-            "ton",
-            "evm"
+            "evm",
+            "ton"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -2354,8 +2354,8 @@
             "control matrix",
             "baseline",
             "privacy",
-            "nist",
             "gdpr",
+            "nist",
             "cis"
           ],
           "simple_prompt_penalty": 0.0
@@ -2402,8 +2402,8 @@
           ],
           "phrase_hits": [
             "compliance",
-            "基线",
-            "合规"
+            "合规",
+            "基线"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -2451,8 +2451,8 @@
             "演练"
           ],
           "phrase_hits": [
-            "canary",
             "att&ck",
+            "canary",
             "检测覆盖",
             "紫队",
             "蜜罐"
@@ -2504,8 +2504,8 @@
             "validation"
           ],
           "phrase_hits": [
-            "detection coverage",
             "control validation",
+            "detection coverage",
             "deception",
             "emulation",
             "honeypot",
@@ -2607,9 +2607,9 @@
             "pcap",
             "quic",
             "dns",
+            "tcp",
             "tls",
-            "udp",
-            "tcp"
+            "udp"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -2659,8 +2659,8 @@
           "phrase_hits": [
             "protocol",
             "proverif",
-            "network",
             "mermaid",
+            "network",
             "ble",
             "rf"
           ],
@@ -2715,8 +2715,8 @@
             "protocol",
             "network",
             "协议",
-            "通信",
-            "无线"
+            "无线",
+            "通信"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -3159,13 +3159,13 @@
             "鉴权"
           ],
           "phrase_hits": [
-            "版本兼容",
-            "存储结构",
             "后端接口",
-            "请求响应",
             "外部客户",
-            "鉴权",
-            "接口"
+            "存储结构",
+            "版本兼容",
+            "请求响应",
+            "接口",
+            "鉴权"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -3210,11 +3210,11 @@
           "phrase_hits": [
             "产品可用性",
             "页面看起来",
+            "交付文案",
             "信息密度",
             "按钮状态",
-            "交付文案",
-            "窄屏",
-            "很乱"
+            "很乱",
+            "窄屏"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -3335,9 +3335,9 @@
           ],
           "phrase_hits": [
             "发版流水线",
+            "依赖来源",
             "配置暴露",
             "集群配置",
-            "依赖来源",
             "镜像"
           ],
           "simple_prompt_penalty": 0.0
@@ -3382,12 +3382,12 @@
             "降误报"
           ],
           "phrase_hits": [
-            "验证样本",
-            "检测逻辑",
             "安全告警",
+            "检测逻辑",
+            "验证样本",
             "降误报",
-            "太吵",
             "告警",
+            "太吵",
             "日志",
             "检测"
           ],
@@ -3474,12 +3474,12 @@
             "谁能访问"
           ],
           "phrase_hits": [
-            "账号权限",
+            "特权账号",
             "登录策略",
             "谁能访问",
-            "特权账号",
-            "权限",
-            "收敛"
+            "账号权限",
+            "收敛",
+            "权限"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -3566,10 +3566,10 @@
           ],
           "phrase_hits": [
             "可执行文件",
-            "静态分析",
             "动态调试",
             "接口枚举",
             "通信固件",
+            "静态分析",
             "设备包",
             "固件"
           ],
@@ -3615,10 +3615,10 @@
             "资产流转"
           ],
           "phrase_hits": [
-            "资产流转",
-            "链上资金",
             "价格来源",
-            "测试覆盖"
+            "测试覆盖",
+            "资产流转",
+            "链上资金"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -3710,8 +3710,8 @@
           ],
           "phrase_hits": [
             "改进闭环",
-            "覆盖指标",
             "攻击行为",
+            "覆盖指标",
             "蓝队"
           ],
           "simple_prompt_penalty": 0.0
@@ -3753,13 +3753,13 @@
             "加密协商"
           ],
           "phrase_hits": [
+            "加密协商",
             "异常字段",
             "通信流程",
-            "加密协商",
-            "通信",
-            "解析",
             "抓包",
-            "握手"
+            "握手",
+            "解析",
+            "通信"
           ],
           "simple_prompt_penalty": 0.0
         },

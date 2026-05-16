@@ -583,7 +583,7 @@ def idf_by_token(skills: list[Skill]) -> dict[str, float]:
 def phrase_hits(prompt: str, skill_name: str) -> list[str]:
     prompt_lower = prompt.lower()
     hits: list[str] = []
-    for phrase in sorted(DOMAIN_KEYWORDS.get(skill_name, set()), key=len, reverse=True):
+    for phrase in sorted(DOMAIN_KEYWORDS.get(skill_name, set()), key=lambda item: (-len(item), item.lower())):
         if phrase.lower() in prompt_lower:
             hits.append(phrase)
     return hits
