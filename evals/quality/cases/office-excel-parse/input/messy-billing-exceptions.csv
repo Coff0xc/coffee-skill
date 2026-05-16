@@ -1,0 +1,8 @@
+invoice_id,region,invoice_date,amount,exception_type,review_hours,status
+INV-1001,West,2026-04-02,"$1,240.50",Tax Code,2.5,open
+INV-1002,East,04/03/2026,"980.00",Missing PO,1.25,closed
+INV-1003,West,2026/04/05,"$1,240.50",Tax Code,2.0,open
+INV-1003,West,2026/04/05,"$1,240.50",Tax Code,2.0,open
+INV-1004,South,not available,"",Address Normalization,,open
+INV-1005,North,2026-06-30,"12,400",Missing PO,7.5,escalated
+INV-1006,West,2026-06-30,"-45.00",Tax Code,0.5,closed

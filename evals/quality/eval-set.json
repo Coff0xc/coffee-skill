@@ -155,6 +155,279 @@
           "reason": "The run must leave evidence that it followed the repo-repair gates."
         }
       ]
+    },
+    {
+      "id": "office-ppt-aesthetic",
+      "skill": "coff0xc-office-doc-tools",
+      "category": "office_quality",
+      "prompt_file": "cases/office-ppt-aesthetic/prompt.md",
+      "input_files": [
+        "cases/office-ppt-aesthetic/input/operating-review-outline.md"
+      ],
+      "expected_output_dir": "responses/<case-id>/",
+      "artifacts": [
+        "deck-outline.md",
+        "design-system.md",
+        "contact-sheet-plan.md",
+        "comeback-scorecard.md",
+        "render-checks/contact-sheet.png",
+        "final/operating-review.pptx"
+      ],
+      "assertions": [
+        {
+          "id": "ppt-final-artifact-exists",
+          "type": "file_exists",
+          "path": "final/operating-review.pptx",
+          "reason": "The run must produce a concrete PPTX artifact, even if it is a fixture placeholder."
+        },
+        {
+          "id": "ppt-claim-spine-present",
+          "type": "file_contains_all",
+          "path": "deck-outline.md",
+          "terms": [
+            "claim",
+            "proof object",
+            "source",
+            "slide"
+          ],
+          "reason": "PPT quality starts with narrative spine, not decoration."
+        },
+        {
+          "id": "ppt-design-system-lock-present",
+          "type": "file_contains_all",
+          "path": "design-system.md",
+          "terms": [
+            "typography",
+            "palette",
+            "chart grammar",
+            "connector",
+            "footer",
+            "banned"
+          ],
+          "reason": "The deck must lock a visual system before slide production."
+        },
+        {
+          "id": "ppt-contact-sheet-and-scorecard-present",
+          "type": "file_contains_all",
+          "path": "comeback-scorecard.md",
+          "terms": [
+            "story",
+            "specificity",
+            "rhythm",
+            "whitespace",
+            "chart clarity",
+            "typography",
+            "restraint",
+            "precision",
+            "coherence"
+          ],
+          "reason": "The comeback scorecard makes aesthetics auditable."
+        },
+        {
+          "id": "ppt-avoids-template-language",
+          "type": "file_not_contains_regex",
+          "path": "deck-outline.md",
+          "patterns": [
+            "Lorem ipsum",
+            "generic dashboard",
+            "card grid",
+            "99\\.99%"
+          ],
+          "reason": "The output should reject template deck filler."
+        },
+        {
+          "id": "ppt-render-evidence-exists",
+          "type": "file_exists",
+          "path": "render-checks/contact-sheet.png",
+          "reason": "PPT aesthetics require rendered or placeholder render evidence with limitations."
+        }
+      ]
+    },
+    {
+      "id": "office-excel-parse",
+      "skill": "coff0xc-office-doc-tools",
+      "category": "office_quality",
+      "prompt_file": "cases/office-excel-parse/prompt.md",
+      "input_files": [
+        "cases/office-excel-parse/input/messy-billing-exceptions.csv",
+        "cases/office-excel-parse/input/workbook-notes.md"
+      ],
+      "expected_output_dir": "responses/<case-id>/",
+      "artifacts": [
+        "workbook-plan.md",
+        "parse-audit.md",
+        "formula-checks.md",
+        "render-checks/dashboard.png",
+        "final/billing-exceptions.xlsx"
+      ],
+      "assertions": [
+        {
+          "id": "excel-final-artifact-exists",
+          "type": "file_exists",
+          "path": "final/billing-exceptions.xlsx",
+          "reason": "The run must produce a concrete workbook artifact, even if it is a fixture placeholder."
+        },
+        {
+          "id": "excel-parse-audit-covers-data-shape",
+          "type": "file_contains_all",
+          "path": "parse-audit.md",
+          "terms": [
+            "encoding",
+            "delimiter",
+            "headers",
+            "units",
+            "date",
+            "null",
+            "duplicate",
+            "abnormal",
+            "sheet",
+            "range"
+          ],
+          "reason": "Excel quality depends on explicit data-shape inspection."
+        },
+        {
+          "id": "excel-workbook-structure-auditable",
+          "type": "file_contains_all",
+          "path": "workbook-plan.md",
+          "terms": [
+            "Raw",
+            "Source",
+            "Assumptions",
+            "Model",
+            "Checks",
+            "Dashboard"
+          ],
+          "reason": "The workbook plan must preserve raw/source data and audit sheets."
+        },
+        {
+          "id": "excel-formula-checks-present",
+          "type": "file_contains_all",
+          "path": "formula-checks.md",
+          "terms": [
+            "formula",
+            "bounded range",
+            "trace",
+            "error scan",
+            "helper range",
+            "chart"
+          ],
+          "reason": "Derived outputs should be formula-driven and checkable."
+        },
+        {
+          "id": "excel-no-hardcode-language",
+          "type": "file_not_contains_regex",
+          "path": "formula-checks.md",
+          "patterns": [
+            "hardcode derived",
+            "manual split only",
+            "overwrite raw"
+          ],
+          "reason": "The output should not normalize away the auditability requirements."
+        },
+        {
+          "id": "excel-render-evidence-exists",
+          "type": "file_exists",
+          "path": "render-checks/dashboard.png",
+          "reason": "Excel dashboard/chart quality requires render evidence."
+        }
+      ]
+    },
+    {
+      "id": "office-docx-format",
+      "skill": "coff0xc-office-doc-tools",
+      "category": "office_quality",
+      "prompt_file": "cases/office-docx-format/prompt.md",
+      "input_files": [
+        "cases/office-docx-format/input/vendor-risk-review-structure.md"
+      ],
+      "expected_output_dir": "responses/<case-id>/",
+      "artifacts": [
+        "reading-map.md",
+        "style-token-map.md",
+        "edit-plan.md",
+        "render-checks/page-1.png",
+        "render-checks/page-2.png",
+        "final/vendor-risk-review.docx"
+      ],
+      "assertions": [
+        {
+          "id": "docx-final-artifact-exists",
+          "type": "file_exists",
+          "path": "final/vendor-risk-review.docx",
+          "reason": "The run must produce a concrete DOCX artifact, even if it is a fixture placeholder."
+        },
+        {
+          "id": "docx-reading-map-covers-structure",
+          "type": "file_contains_all",
+          "path": "reading-map.md",
+          "terms": [
+            "heading",
+            "section",
+            "table",
+            "comment",
+            "tracked",
+            "header",
+            "footer",
+            "field",
+            "metadata"
+          ],
+          "reason": "DOCX comprehension must cover structure beyond extracted text."
+        },
+        {
+          "id": "docx-style-token-map-present",
+          "type": "file_contains_all",
+          "path": "style-token-map.md",
+          "terms": [
+            "styles",
+            "numbering",
+            "table geometry",
+            "margins",
+            "type scale",
+            "paragraph rhythm",
+            "headers",
+            "footers",
+            "table gate"
+          ],
+          "reason": "DOCX formatting quality requires real Word structure and layout tokens."
+        },
+        {
+          "id": "docx-edit-plan-preserves-review-structure",
+          "type": "file_contains_all",
+          "path": "edit-plan.md",
+          "terms": [
+            "preserve original",
+            "minimal",
+            "comment anchor",
+            "redline",
+            "tracked-change",
+            "render"
+          ],
+          "reason": "Existing DOCX edits must preserve comments, redlines, and layout evidence."
+        },
+        {
+          "id": "docx-no-text-only-claim",
+          "type": "file_not_contains_regex",
+          "path": "edit-plan.md",
+          "patterns": [
+            "text extraction proves layout",
+            "accept all changes",
+            "overwrite source"
+          ],
+          "reason": "The output must reject unsafe DOCX shortcuts."
+        },
+        {
+          "id": "docx-render-evidence-page-1-exists",
+          "type": "file_exists",
+          "path": "render-checks/page-1.png",
+          "reason": "DOCX layout quality requires page render evidence."
+        },
+        {
+          "id": "docx-render-evidence-page-2-exists",
+          "type": "file_exists",
+          "path": "render-checks/page-2.png",
+          "reason": "DOCX layout quality requires multi-page render evidence."
+        }
+      ]
     }
   ]
 }

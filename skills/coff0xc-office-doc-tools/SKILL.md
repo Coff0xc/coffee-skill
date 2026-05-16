@@ -111,6 +111,15 @@ Use coff0xc-office-doc-tools to review this PDF report for layout, missing pages
 - 每个有意义的编辑批次后重新渲染或结构复查，重点看 clipping、overlap、missing glyphs、broken tables、spacing drift、header/footer 错位、页码和目录异常。
 - 最终必须区分：已读懂的内容结构、已修改的范围、已验证的页面/结构、未能验证的版式风险。
 
+## 质量 Eval 自测
+当用户要求“确认 Office skill 是否真的好用”“优化 PPT/Excel/DOCX 质量门禁”“不要只堆触发词”时，用仓库内 artifact-level 夹具校准：
+
+- `evals/quality/cases/office-ppt-aesthetic/`：检查 claim spine、design-system lock、contact-sheet plan、comeback scorecard、render evidence 和最终 PPTX。
+- `evals/quality/cases/office-excel-parse/`：检查 messy CSV/workbook notes 的编码/分隔符/表头/单位/日期/空值/重复/异常审计、Raw/Source/Assumptions/Model/Checks/Dashboard 结构、公式/trace/error scan/helper range 和 dashboard render evidence。
+- `evals/quality/cases/office-docx-format/`：检查 reading map、style/token map、minimal edit plan、comment/redline anchors、真实 styles/numbering/table geometry 和 page render evidence。
+- 运行 `python .\scripts\run_quality_eval.py` 检查夹具完整性；有真实 agent 输出时运行 `python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses`。
+- 质量 eval 通过不等于 Office 文件已经人工验收；PPT 审美、Excel 公式重算和 DOCX 逐页版式仍需要对应工具渲染或人工复核。
+
 ## 能力矩阵
 | 文件类型 | 典型能力 | 验证重点 |
 | --- | --- | --- |

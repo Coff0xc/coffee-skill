@@ -6,7 +6,7 @@ Unlike trigger evals, these cases define artifact-level quality checks for actua
 
 ## Summary
 
-- Cases: 2
+- Cases: 5
 - Mode: fixture
 - Fixture errors: 0
 

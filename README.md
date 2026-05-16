@@ -6,7 +6,7 @@
 
 `coffee-skill` 是一套可安装的 `SKILL.md` 工作流包。它不提供可执行程序，而是告诉 AI 在真实任务里该什么时候触发、先查什么、怎么动手、哪些动作必须确认、怎么验证，以及最后怎么交付。
 
-`18 skills` · `中英触发` · `router 兜底` · `117 个触发评测用例` · `2 个质量评测夹具` · `Apache-2.0`
+`18 skills` · `中英触发` · `router 兜底` · `117 个触发评测用例` · `5 个质量评测夹具` · `Apache-2.0`
 
 ## 先看这个
 
@@ -130,7 +130,7 @@ python .\scripts\run_trigger_eval.py
 python .\scripts\run_quality_eval.py
 ```
 
-当前触发评测包含 117 个本地 proxy cases，用来检查应该触发的 prompt 是否命中目标 skill，以及简单问题是否误触发。质量评测当前包含 2 个 artifact-level fixtures，用来检查 UI/dev skill 是否要求真实产物、过程证据和行为断言。两者都是发布护栏：触发 eval 不证明产物质量，质量 eval 也不替代真实截图、人工审美 review 或项目 CI。
+当前触发评测包含 117 个本地 proxy cases，用来检查应该触发的 prompt 是否命中目标 skill，以及简单问题是否误触发。质量评测当前包含 5 个 artifact-level fixtures，用来检查 UI/dev/Office skills 是否要求真实产物、过程证据和行为断言。两者都是发布护栏：触发 eval 不证明产物质量，质量 eval 也不替代真实截图、人工审美 review、Office 渲染检查或项目 CI。
 
 ## 仓库结构
 
@@ -167,7 +167,7 @@ Turn Codex / AgentSkills-compatible AI assistants from ad hoc execution into reu
 
 `coffee-skill` is an installable pack of `SKILL.md` workflows. It is not a standalone app. Each skill tells the assistant when to trigger, what to inspect first, how to proceed, what needs confirmation, how to verify, and how to report the result.
 
-`18 skills` · `Chinese/English triggers` · `router fallback` · `117 trigger eval cases` · `2 quality eval fixtures` · `Apache-2.0`
+`18 skills` · `Chinese/English triggers` · `router fallback` · `117 trigger eval cases` · `5 quality eval fixtures` · `Apache-2.0`
 
 ## Quick Start
 
@@ -239,7 +239,7 @@ python .\scripts\run_trigger_eval.py
 python .\scripts\run_quality_eval.py
 ```
 
-The trigger evaluation currently covers 117 local proxy cases. It is a release guard for routing and false positives, not a clone of every client runtime's private selection logic. The quality evaluation currently covers 2 artifact-level fixtures for UI and dev work. It checks expected files, process evidence, banned template artifacts, lockfile discipline, and a small Python behavior assertion.
+The trigger evaluation currently covers 117 local proxy cases. It is a release guard for routing and false positives, not a clone of every client runtime's private selection logic. The quality evaluation currently covers 5 artifact-level fixtures for UI, dev, and Office work. It checks expected files, process evidence, banned template artifacts, lockfile discipline, Office QA evidence, and a small Python behavior assertion.
 
 ## Repository Layout
 
