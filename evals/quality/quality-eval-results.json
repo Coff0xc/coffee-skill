@@ -1,13 +1,260 @@
 {
-  "schema_version": 1,
-  "mode": "fixture",
+  "schema_version": 2,
+  "mode": "responses",
+  "responses_dir": "evals/quality/golden-responses",
   "case_count": 5,
   "fixture_error_count": 0,
   "fixture_errors": [],
-  "passed_cases": 0,
+  "passed_cases": 5,
   "failed_cases": 0,
-  "assertion_total": 0,
-  "assertion_passed": 0,
-  "assertion_pass_rate": null,
-  "results": []
+  "assertion_total": 40,
+  "assertion_passed": 40,
+  "assertion_pass_rate": 1.0,
+  "results": [
+    {
+      "id": "ui-admin-dashboard-visual-gate",
+      "skill": "coff0xc-ui-doc-output",
+      "category": "ui_quality",
+      "response_dir": "evals/quality/golden-responses/ui-admin-dashboard-visual-gate",
+      "passed": true,
+      "assertions": [
+        {
+          "id": "ui-output-html-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/ui-admin-dashboard-visual-gate/output/index.html exists"
+        },
+        {
+          "id": "ui-uses-semantic-design-tokens",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "ui-covers-state-and-responsive-gates",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "ui-avoids-generic-ai-visuals",
+          "passed": true,
+          "evidence": "no banned patterns found"
+        },
+        {
+          "id": "ui-notes-prove-quality-gates",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "ui-desktop-screenshot-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/ui-admin-dashboard-visual-gate/screenshots/desktop.png exists"
+        },
+        {
+          "id": "ui-mobile-screenshot-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/ui-admin-dashboard-visual-gate/screenshots/mobile.png exists"
+        },
+        {
+          "id": "ui-desktop-screenshot-is-real-png",
+          "passed": true,
+          "evidence": "png dimensions 1280x800, required >= 900x600"
+        },
+        {
+          "id": "ui-mobile-screenshot-is-real-png",
+          "passed": true,
+          "evidence": "png dimensions 390x844, required >= 320x600"
+        }
+      ]
+    },
+    {
+      "id": "dev-repo-repair-ci-gate",
+      "skill": "coff0xc-software-engineering",
+      "category": "software_quality",
+      "response_dir": "evals/quality/golden-responses/dev-repo-repair-ci-gate",
+      "passed": true,
+      "assertions": [
+        {
+          "id": "dev-fixed-billing-file-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/dev-repo-repair-ci-gate/src/billing.py exists"
+        },
+        {
+          "id": "dev-fixes-currency-and-rate-paths",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "dev-behavior-passes-fixture-tests",
+          "passed": true,
+          "evidence": "normalize_amount=1200.50, invoice_total=243.00"
+        },
+        {
+          "id": "dev-no-unnecessary-dependency-noise",
+          "passed": true,
+          "evidence": "matches reference"
+        },
+        {
+          "id": "dev-notes-prove-repair-loop",
+          "passed": true,
+          "evidence": "all terms found"
+        }
+      ]
+    },
+    {
+      "id": "office-ppt-aesthetic",
+      "skill": "coff0xc-office-doc-tools",
+      "category": "office_quality",
+      "response_dir": "evals/quality/golden-responses/office-ppt-aesthetic",
+      "passed": true,
+      "assertions": [
+        {
+          "id": "ppt-final-artifact-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/office-ppt-aesthetic/final/operating-review.pptx exists"
+        },
+        {
+          "id": "ppt-real-ooxml-package-has-editable-visual-system",
+          "passed": true,
+          "evidence": "{\"chart_or_diagram_objects\": 3, \"chart_parts\": 1, \"distinct_colors\": 7, \"layout_signatures\": 6, \"round_rects\": 0, \"slides\": 6, \"source_note_slides\": 6, \"text_shapes\": 42}"
+        },
+        {
+          "id": "ppt-claim-spine-present",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "ppt-design-system-lock-present",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "ppt-contact-sheet-and-scorecard-present",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "ppt-avoids-template-language",
+          "passed": true,
+          "evidence": "no banned patterns found"
+        },
+        {
+          "id": "ppt-render-evidence-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/office-ppt-aesthetic/render-checks/contact-sheet.png exists"
+        },
+        {
+          "id": "ppt-render-evidence-is-real-png",
+          "passed": true,
+          "evidence": "png dimensions 1280x720, required >= 900x500"
+        }
+      ]
+    },
+    {
+      "id": "office-excel-parse",
+      "skill": "coff0xc-office-doc-tools",
+      "category": "office_quality",
+      "response_dir": "evals/quality/golden-responses/office-excel-parse",
+      "passed": true,
+      "assertions": [
+        {
+          "id": "excel-final-artifact-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/office-excel-parse/final/billing-exceptions.xlsx exists"
+        },
+        {
+          "id": "excel-real-workbook-has-sheets-formulas-tables-and-chart",
+          "passed": true,
+          "evidence": "{\"charts\": 1, \"formulas\": 12, \"recalculated_formulas\": 8, \"shared_strings\": 0, \"sheets\": [\"Assumptions\", \"Checks\", \"Dashboard\", \"Model\", \"Raw\", \"Source\"], \"tables\": 2}"
+        },
+        {
+          "id": "excel-parse-audit-covers-data-shape",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "excel-workbook-structure-auditable",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "excel-formula-checks-present",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "excel-no-hardcode-language",
+          "passed": true,
+          "evidence": "no banned patterns found"
+        },
+        {
+          "id": "excel-render-evidence-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/office-excel-parse/render-checks/dashboard.png exists"
+        },
+        {
+          "id": "excel-render-evidence-is-real-png",
+          "passed": true,
+          "evidence": "png dimensions 1280x720, required >= 900x500"
+        }
+      ]
+    },
+    {
+      "id": "office-docx-format",
+      "skill": "coff0xc-office-doc-tools",
+      "category": "office_quality",
+      "response_dir": "evals/quality/golden-responses/office-docx-format",
+      "passed": true,
+      "assertions": [
+        {
+          "id": "docx-final-artifact-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/office-docx-format/final/vendor-risk-review.docx exists"
+        },
+        {
+          "id": "docx-real-ooxml-has-comments-redlines-styles-rels",
+          "passed": true,
+          "evidence": "{\"comment_anchors\": {\"end\": 3, \"ref\": 3, \"start\": 3}, \"comments\": 3, \"fields\": 3, \"numbering_defs\": 9, \"rels\": [\"http://schemas.microsoft.com/office/2007/relationships/stylesWithEffects\", \"http://schemas.openxmlformats.org/officeDocument/2006/relationships/comments\", \"http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXml\", \"http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable\", \"http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer\", \"http://schemas.openxmlformats.org/officeDocument/2006/relationships/header\", \"http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering\", \"http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings\", \"http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles\", \"http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme\", \"http://schemas.openxmlformats.org/officeDocument/2006/relationships/webSettings\"], \"style_count\": 164, \"tables\": 1, \"tblGrid\": 2, \"tcW\": 20, \"tracked_deletions\": 1, \"tracked_insertions\": 1}"
+        },
+        {
+          "id": "docx-reading-map-covers-structure",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "docx-style-token-map-present",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "docx-edit-plan-preserves-review-structure",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "docx-no-text-only-claim",
+          "passed": true,
+          "evidence": "no banned patterns found"
+        },
+        {
+          "id": "docx-render-evidence-page-1-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/office-docx-format/render-checks/page-1.png exists"
+        },
+        {
+          "id": "docx-render-evidence-page-2-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/office-docx-format/render-checks/page-2.png exists"
+        },
+        {
+          "id": "docx-render-evidence-page-1-is-real-png",
+          "passed": true,
+          "evidence": "png dimensions 850x1100, required >= 700x900"
+        },
+        {
+          "id": "docx-render-evidence-page-2-is-real-png",
+          "passed": true,
+          "evidence": "png dimensions 850x1100, required >= 700x900"
+        }
+      ]
+    }
+  ]
 }

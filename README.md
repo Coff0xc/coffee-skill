@@ -2,11 +2,26 @@
 
 中文 | [English](#english)
 
-把 Codex / AgentSkills 兼容 AI 助手从“临场发挥”变成可复用工作流。
+把 Codex / AgentSkills 兼容 AI 助手从“临场发挥”变成可复用、可验证、可恢复的工作流。
 
-`coffee-skill` 是一套可安装的 `SKILL.md` 工作流包。它不提供可执行程序，而是告诉 AI 在真实任务里该什么时候触发、先查什么、怎么动手、哪些动作必须确认、怎么验证，以及最后怎么交付。
+`coffee-skill` 不是一个脚本工具，也不是触发词合集。它是一套可安装的 `SKILL.md` 工作流包：告诉 AI 什么时候触发、先查什么、怎么动手、哪些动作必须确认、怎么验证、最后怎么交付。
 
-`18 skills` · `中英触发` · `router 兜底` · `117 个触发评测用例` · `5 个质量评测夹具` · `Apache-2.0`
+`18 skills` · `中英触发` · `router 兜底` · `117 个触发评测用例` · `5 个真实产物质量评测夹具` · `CI 自动验证` · `Apache-2.0`
+
+## 和其他 skill 仓库的区别
+
+| 维度 | 常见 skill 仓库 | coffee-skill |
+|---|---|---|
+| 目标 | 提供单个场景提示词或工具说明 | 覆盖工程、AI/RAG、API/数据、UI、Office、科研图、安全审计等真实工作流 |
+| 触发方式 | 主要靠关键词堆叠 | 每个 skill 有定位、边界、交付物、输入类型、验证方式和 router 兜底 |
+| 质量证明 | 通常只能证明“写了 skill” | 有 trigger eval、quality eval、golden responses 和 CI 门禁 |
+| 产物要求 | 多数停留在文本建议 | 要求代码 diff、截图、PPTX/DOCX/XLSX、draw.io、报告、验证结果等可交付物 |
+| Office 能力 | 常见是“生成文件/转换格式” | 会真实检查 PPTX OOXML、Excel 公式/表/图表、DOCX comments/redlines/styles/rels |
+| 开发能力 | 常见是语言提示或泛化步骤 | 强制读仓库规则、定位根因、最小修复、跑验证、不乱改 lockfile |
+| 安全边界 | 容易混合攻防动作 | 授权/防御优先，生产、凭据、删除、push、PR、云资源等高风险动作必须确认 |
+| 可维护性 | 依赖人工记忆 | manifest、docs、evals、golden fixtures、CI 一起约束漂移 |
+
+一句话：很多 skill 仓库解决“AI 知不知道该怎么说”，`coffee-skill` 更关注“AI 能不能按工程标准把事做完，并留下证据”。
 
 ## 先看这个
 
@@ -16,11 +31,12 @@
 | 修项目、写功能、跑测试 | `使用 coff0xc-software-engineering 修复这个 repo` | 代码补丁、验证结果、剩余风险 |
 | 设计 Agent / RAG / Prompt | `使用 coff0xc-ai-agent-rag 设计这个知识库助手` | 架构、工具、检索、引用、评测、降级方案 |
 | 做 API / 数据库 / SDK | `使用 coff0xc-api-data-platform 设计这个接口` | OpenAPI/schema、错误码、分页、迁移和数据质量方案 |
+| 做 UI / dashboard / 前端体验 | `使用 coff0xc-ui-doc-output 优化这个 dashboard` | UI 改动、状态覆盖、响应式/可访问性、截图验证 |
 | 做正式 PPT / Excel / DOCX / PDF | `使用 coff0xc-office-doc-tools 生成可交付文件` | 可编辑文件、预览/渲染 QA、公式和格式检查 |
 | 做论文/算法架构图 | `使用 coff0xc-research-drawio-diagram 画 draw.io 图` | 可编辑 `.drawio`、图结构、证据表 |
 | 做授权安全分析 | `使用对应 coff0xc-* security skill` | 证据化发现、风险说明、修复/检测/加固建议 |
 
-如果只记一句：知道 skill 名就直接点名，不知道就先用 `coff0xc-skill-router`。
+知道 skill 名就直接点名；不知道就先用 `coff0xc-skill-router`。
 
 ## 30 秒安装
 
@@ -42,7 +58,7 @@ Copy-Item -Recurse .\skills\* $dest
 
 ## 怎么提问更稳
 
-最稳的格式是：
+最稳的格式：
 
 ```text
 使用 <skill-name>：
@@ -88,7 +104,9 @@ Copy-Item -Recurse .\skills\* $dest
 
 完整清单见 [docs/COVERAGE.md](docs/COVERAGE.md)。
 
-## Office 质量门禁
+## 质量门禁
+
+### Office
 
 `coff0xc-office-doc-tools` 的定位不是“生成一个文件就算完成”，而是让文件能打开、能编辑、能审阅、能验证、能继续交付。
 
@@ -98,7 +116,30 @@ Copy-Item -Recurse .\skills\* $dest
 | Excel / CSV / XLSX | 先检查编码、分隔符、表头、单位、日期、空值、异常值和已有公式/图表；保留 raw/source/assumptions；关键派生值用公式；trace 关键输出；扫描公式错误；检查图表和 dashboard 渲染。 | 手写 split、硬编码计算结果、覆盖原始数据、图表无来源、公式错误未扫。 |
 | DOCX / Word | 先读标题层级、表格、批注、修订、页眉页脚、字段和元数据；用真实 styles、numbering、table geometry；表格只放真正行列数据；尽量逐页渲染检查版式。 | 只抽文本就说读懂、假标题/假列表、表格包长段落、批注/修订锚点没检查。 |
 
-这三类门禁来自对官方 Office 类 skills 的重点对照：PPT 看审美和叙事，Excel 看数据解析和可审计计算，DOCX 看阅读理解、结构保真和版式验证。
+### UI / Dev
+
+- UI 不只看“页面能打开”，还要求产品类型路由、设计系统、状态覆盖、响应式、可访问性和截图证据。
+- Dev 不只看“代码改了”，还要求读仓库规则、复现失败、定位根因、最小修复、跑可用验证、避免 lockfile 噪声。
+
+## 本地验证
+
+```powershell
+python .\scripts\validate_release.py
+python .\scripts\run_trigger_eval.py
+python .\scripts\run_quality_eval.py
+```
+
+当前 trigger eval 覆盖 117 个本地 proxy cases，用来检查应该触发的 prompt 是否命中目标 skill，以及简单问题是否误触发。
+
+quality eval 默认评分 `evals/quality/golden-responses/` 里的真实产物夹具：
+
+- UI：HTML、状态覆盖、反模板文本、桌面/移动 PNG 尺寸。
+- Dev：导入修复后的 Python 文件并执行行为断言，同时检查 lockfile 不被噪声改动。
+- PPTX：解包 `.pptx`，检查 slide XML、可编辑 text shapes、chart parts、source notes、layout diversity 和 PNG render evidence。
+- XLSX：解包 `.xlsx`，检查 workbook/sheets/tables/chart parts、bounded formulas、错误值、关键公式重算和 PNG render evidence。
+- DOCX：解包 `.docx`，检查 comments、anchors、tracked changes、styles、numbering、table geometry、rels、headers/footers、fields 和页面 PNG evidence。
+
+CI 会在 push / pull request 上自动运行 release validation、trigger eval、quality eval 和 whitespace check。
 
 ## 安全边界
 
@@ -110,35 +151,14 @@ Copy-Item -Recurse .\skills\* $dest
 
 生产环境、凭据、付费资源、远程写入、删除、push、PR、云资源和 CI/CD 权限变更，需要用户明确授权。
 
-## 本地验证
-
-发布结构校验：
-
-```powershell
-python .\scripts\validate_release.py
-```
-
-触发评测：
-
-```powershell
-python .\scripts\run_trigger_eval.py
-```
-
-质量评测夹具：
-
-```powershell
-python .\scripts\run_quality_eval.py
-```
-
-当前触发评测包含 117 个本地 proxy cases，用来检查应该触发的 prompt 是否命中目标 skill，以及简单问题是否误触发。质量评测当前包含 5 个 artifact-level fixtures，用来检查 UI/dev/Office skills 是否要求真实产物、过程证据和行为断言。两者都是发布护栏：触发 eval 不证明产物质量，质量 eval 也不替代真实截图、人工审美 review、Office 渲染检查或项目 CI。
-
 ## 仓库结构
 
 ```text
 skills/                 # 可安装的 skill 文件夹
 docs/                   # 使用、触发、覆盖、来源、清理和多语言说明
-evals/                  # 本地触发评测数据和生成结果
-scripts/                # 发布校验和触发评测脚本
+evals/                  # trigger eval、quality eval、golden responses
+scripts/                # 发布校验、触发评测、质量评测脚本
+.github/workflows/      # CI 验证流程
 manifest.json           # 机器可读 skill 清单
 LICENSE                 # Apache License 2.0
 NOTICE                  # 归属说明
@@ -149,6 +169,7 @@ NOTICE                  # 归属说明
 - [Usage Guide](docs/USAGE.md)
 - [Triggering Guide](docs/TRIGGERING.md)
 - [Trigger Evaluation](docs/TRIGGER_EVAL.md)
+- [Quality Evaluation](docs/QUALITY_EVAL.md)
 - [Coverage Matrix](docs/COVERAGE.md)
 - [Language References](docs/LANGUAGES.md)
 - [Sanitization Notes](docs/SANITIZATION.md)
@@ -163,11 +184,26 @@ Apache License 2.0。见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
 
 ## English
 
-Turn Codex / AgentSkills-compatible AI assistants from ad hoc execution into reusable workflows.
+Turn Codex / AgentSkills-compatible AI assistants from ad hoc execution into reusable, verifiable, recoverable workflows.
 
-`coffee-skill` is an installable pack of `SKILL.md` workflows. It is not a standalone app. Each skill tells the assistant when to trigger, what to inspect first, how to proceed, what needs confirmation, how to verify, and how to report the result.
+`coffee-skill` is not a script package or a keyword list. It is an installable pack of `SKILL.md` workflows: when to trigger, what to inspect first, how to proceed, what needs confirmation, how to verify, and how to report the result.
 
-`18 skills` · `Chinese/English triggers` · `router fallback` · `117 trigger eval cases` · `5 quality eval fixtures` · `Apache-2.0`
+`18 skills` · `Chinese/English triggers` · `router fallback` · `117 trigger eval cases` · `5 real-artifact quality eval fixtures` · `CI validation` · `Apache-2.0`
+
+## How This Differs
+
+| Dimension | Typical skill repos | coffee-skill |
+|---|---|---|
+| Goal | Single-purpose prompts or tool notes | End-to-end workflows across engineering, AI/RAG, API/data, UI, Office, research diagrams, and authorized security |
+| Routing | Mostly keyword matching | Positioning, inputs, deliverables, boundaries, verification, and router fallback |
+| Proof | Usually proves the skill file exists | Trigger evals, quality evals, golden responses, and CI gates |
+| Output | Often text advice | Diffs, screenshots, PPTX/DOCX/XLSX, draw.io files, reports, and verification evidence |
+| Office | Often file generation or conversion | OOXML checks for PPTX slides/charts/text, XLSX formulas/tables/charts, DOCX comments/redlines/styles/rels |
+| Development | Generic coding guidance | Repo rules, root-cause repair, minimal diffs, validation, and lockfile discipline |
+| Safety | Mixed or implicit boundaries | Authorization-first security boundaries and confirmation gates for high-risk actions |
+| Maintenance | Manual review | Manifest, docs, evals, golden fixtures, and CI keep behavior from drifting |
+
+In short: many skill repos help an assistant know what to say. `coffee-skill` focuses on whether the assistant can finish real work and leave evidence.
 
 ## Quick Start
 
@@ -215,22 +251,6 @@ If you know the skill, name it directly. If you do not, start with `coff0xc-skil
 
 See [docs/COVERAGE.md](docs/COVERAGE.md) for the full list.
 
-## Office Quality Gates
-
-`coff0xc-office-doc-tools` is built for formal file delivery, not just file generation.
-
-| Artifact | Required gate |
-|---|---|
-| PPTX | Claim spine, design system, contact-sheet plan, anti-template checks, comeback scorecard, and rendered preview review. |
-| Excel / CSV / XLSX | Workbook/data inspect, encoding and delimiter checks, raw/source/assumptions preservation, formula-driven derived values, traced key outputs, formula error scan, chart/dashboard render checks. |
-| DOCX / Word | Structural reading of headings, tables, comments, tracked changes, headers/footers, real styles/numbering/table geometry, and page-rendered layout checks instead of text extraction only. |
-
-## Safety Scope
-
-Security-related skills are defensive and authorization-scoped. They are for owned or explicitly authorized assets, local code/config review, logs, reports, labs, CTFs, training ranges, detection, hardening, verification, and reporting.
-
-They do not provide guidance for unauthorized access, credential theft, persistence, detection evasion, C2, phishing collection, data exfiltration, or destructive actions. Production, credentials, paid services, remote writes, deletion, push, PR actions, cloud resources, and CI/CD permission changes require explicit authorization.
-
 ## Validation
 
 ```powershell
@@ -239,15 +259,26 @@ python .\scripts\run_trigger_eval.py
 python .\scripts\run_quality_eval.py
 ```
 
-The trigger evaluation currently covers 117 local proxy cases. It is a release guard for routing and false positives, not a clone of every client runtime's private selection logic. The quality evaluation currently covers 5 artifact-level fixtures for UI, dev, and Office work. It checks expected files, process evidence, banned template artifacts, lockfile discipline, Office QA evidence, and a small Python behavior assertion.
+The trigger evaluation currently covers 117 local proxy cases.
+
+The quality evaluation scores committed golden responses under `evals/quality/golden-responses/`. It checks real HTML/PNG UI evidence, imports and executes a repo-repair Python behavior assertion, and opens `.pptx`, `.xlsx`, and `.docx` as OOXML packages to verify slide/chart/text structures, workbook formulas/tables/charts/recalculated cells, and Word comments/redlines/styles/numbering/rels/table geometry.
+
+It is a deterministic release gate, not a replacement for native Office rendering, full Excel calculation, human taste review, or real project CI.
+
+## Safety Scope
+
+Security-related skills are defensive and authorization-scoped. They are for owned or explicitly authorized assets, local code/config review, logs, reports, labs, CTFs, training ranges, detection, hardening, verification, and reporting.
+
+They do not provide guidance for unauthorized access, credential theft, persistence, detection evasion, C2, phishing collection, data exfiltration, or destructive actions. Production, credentials, paid services, remote writes, deletion, push, PR actions, cloud resources, and CI/CD permission changes require explicit authorization.
 
 ## Repository Layout
 
 ```text
 skills/                 # Installable skill folders
 docs/                   # Usage, triggering, coverage, provenance, i18n, sanitization
-evals/                  # Trigger eval cases and generated reports
-scripts/                # Release validation and trigger scoring
+evals/                  # Trigger evals, quality evals, golden responses
+scripts/                # Release validation and eval scripts
+.github/workflows/      # CI validation
 manifest.json           # Machine-readable skill inventory
 LICENSE                 # Apache License 2.0
 NOTICE                  # Attribution notice

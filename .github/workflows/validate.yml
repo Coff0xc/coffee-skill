@@ -1,0 +1,34 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate release structure
+        run: python scripts/validate_release.py
+
+      - name: Run trigger eval
+        run: python scripts/run_trigger_eval.py
+
+      - name: Run quality eval
+        run: python scripts/run_quality_eval.py
+
+      - name: Check whitespace
+        run: git diff --check

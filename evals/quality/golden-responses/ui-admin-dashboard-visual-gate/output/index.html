@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Billing Operations Console</title>
+  <style>
+    :root {
+      --surface: #f8faf7;
+      --ink: #182225;
+      --muted: #5f6b6f;
+      --accent: #b75f3a;
+      --ok: #2f7f5f;
+      --warn: #b7791f;
+      --line: #d9ded7;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; color: var(--ink); background: var(--surface); }
+    main { max-width: 1160px; margin: 0 auto; padding: 24px; }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    button { border: 1px solid var(--line); background: #fff; color: var(--ink); padding: 8px 12px; border-radius: 6px; }
+    button:focus { outline: 3px solid #87b5c4; outline-offset: 2px; }
+    button:disabled, .disabled { opacity: .45; cursor: not-allowed; }
+    .grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 18px; margin-top: 18px; }
+    .panel { border: 1px solid var(--line); background: #fff; padding: 18px; border-radius: 8px; }
+    .state { display: grid; gap: 10px; }
+    .loading, .empty, .error { padding: 10px 12px; border-left: 4px solid var(--accent); background: #fbf6f2; }
+    .metric { font-size: 32px; font-weight: 700; }
+    @media (max-width: 720px) {
+      main { padding: 16px; }
+      .toolbar, .grid { display: block; }
+      .panel { margin-top: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="toolbar">
+      <div>
+        <h1>Billing Operations Console</h1>
+        <p>Exception review queue, owner triage, and state coverage.</p>
+      </div>
+      <button type="button">Refresh queue</button>
+    </section>
+    <section class="grid">
+      <article class="panel">
+        <h2>Exception workload</h2>
+        <p class="metric">271</p>
+        <p>Open exceptions with West concentration and tax-code review pressure.</p>
+        <button type="button" class="disabled" disabled>Assign selected</button>
+      </article>
+      <aside class="panel state">
+        <h2>States</h2>
+        <div class="loading">Loading: fetching latest queue status.</div>
+        <div class="empty">Empty: no exceptions match the current filter.</div>
+        <div class="error">Error: source workbook needs review before refresh.</div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

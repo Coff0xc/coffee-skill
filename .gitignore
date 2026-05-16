@@ -27,3 +27,4 @@ extracted/
 
 # Quality-eval local agent outputs
 evals/quality/responses/
+!evals/quality/golden-responses/

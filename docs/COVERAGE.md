@@ -7,7 +7,8 @@
 - Comprehensive capability skills: 17
 - Router/fallback skills: 1
 - Trigger eval cases: 117
-- Quality eval fixtures: 5
+- Quality eval fixtures: 5 real-artifact cases with 40 assertions
+- Office OOXML quality gates: PPTX package/slide/chart parsing, XLSX workbook/formula/table/chart parsing, DOCX comments/redlines/styles/numbering/rels/table geometry parsing
 
 ## Skill Capability Map
 

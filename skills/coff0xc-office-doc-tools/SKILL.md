@@ -117,8 +117,9 @@ Use coff0xc-office-doc-tools to review this PDF report for layout, missing pages
 - `evals/quality/cases/office-ppt-aesthetic/`：检查 claim spine、design-system lock、contact-sheet plan、comeback scorecard、render evidence 和最终 PPTX。
 - `evals/quality/cases/office-excel-parse/`：检查 messy CSV/workbook notes 的编码/分隔符/表头/单位/日期/空值/重复/异常审计、Raw/Source/Assumptions/Model/Checks/Dashboard 结构、公式/trace/error scan/helper range 和 dashboard render evidence。
 - `evals/quality/cases/office-docx-format/`：检查 reading map、style/token map、minimal edit plan、comment/redline anchors、真实 styles/numbering/table geometry 和 page render evidence。
-- 运行 `python .\scripts\run_quality_eval.py` 检查夹具完整性；有真实 agent 输出时运行 `python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses`。
-- 质量 eval 通过不等于 Office 文件已经人工验收；PPT 审美、Excel 公式重算和 DOCX 逐页版式仍需要对应工具渲染或人工复核。
+- 运行 `python .\scripts\run_quality_eval.py` 默认评分 `evals/quality/golden-responses/` 的真实产物：PPTX 会解包检查 slide XML/text shapes/chart parts/layout signatures，XLSX 会检查 sheets/tables/charts/formulas 并重算支持范围内的关键公式，DOCX 会检查 comments、anchors、tracked changes、styles、numbering、table geometry、rels、headers/footers 和 fields。
+- 只想检查 prompt/input/assertion schema 时运行 `python .\scripts\run_quality_eval.py --fixture-only`；有真实 agent 输出时运行 `python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses`。
+- 质量 eval 通过不等于 Office 文件已经人工验收；PPT 审美、Excel 完整公式引擎和 DOCX 逐页版式仍需要对应工具渲染或人工复核。
 
 ## 能力矩阵
 | 文件类型 | 典型能力 | 验证重点 |

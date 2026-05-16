@@ -2,34 +2,46 @@
 
 Trigger evals answer one question: "does this prompt route to the right skill?" Quality evals answer a harder question: "does the skill force the agent to produce reviewable, high-quality work?"
 
-This repository includes artifact-level fixtures for areas where routing metrics are not enough:
+This repository includes artifact-level fixtures for areas where routing metrics are not enough. The default quality command now scores checked-in golden responses, including real `.pptx`, `.xlsx`, and `.docx` OOXML packages. Use `--fixture-only` only when you want schema/path validation without scoring artifacts.
 
 | Case | Skill | What it tests |
 |---|---|---|
 | `ui-admin-dashboard-visual-gate` | `coff0xc-ui-doc-output` | Reworking an AI-template dashboard into a SaaS/admin UI with product routing, design tokens, state coverage, accessibility evidence, anti-template cleanup, and browser validation notes. |
 | `dev-repo-repair-ci-gate` | `coff0xc-software-engineering` | Repairing a failing Python repo from CI logs while reading local rules, using the fast inner loop, preserving lockfile discipline, fixing source behavior, and leaving root-cause evidence. |
-| `office-ppt-aesthetic` | `coff0xc-office-doc-tools` | Producing a PPTX package with claim spine, design-system lock, contact-sheet plan, comeback scorecard, and render evidence. |
-| `office-excel-parse` | `coff0xc-office-doc-tools` | Parsing messy CSV/workbook notes into an auditable workbook package with raw/source preservation, assumptions, formulas, checks, and render evidence. |
-| `office-docx-format` | `coff0xc-office-doc-tools` | Reviewing/editing DOCX structure with reading map, style/token map, comments/redlines preservation, and page render evidence. |
+| `office-ppt-aesthetic` | `coff0xc-office-doc-tools` | Producing a real PPTX package with claim spine, design-system lock, contact-sheet plan, comeback scorecard, editable slide objects, chart parts, source notes, layout diversity, and render evidence. |
+| `office-excel-parse` | `coff0xc-office-doc-tools` | Parsing messy CSV/workbook notes into a real XLSX package with raw/source preservation, assumptions, formulas, tables, chart parts, bounded references, recalculated key formulas, and render evidence. |
+| `office-docx-format` | `coff0xc-office-doc-tools` | Reviewing/editing DOCX structure with real OOXML comments, comment anchors, tracked changes, styles, numbering, table geometry, headers/footers, fields, rels, and page render evidence. |
 
 ## Files
 
 - `evals/quality/eval-set.json`: cases, required artifacts, and assertions.
 - `evals/quality/cases/*/prompt.md`: task prompt for each quality fixture.
 - `evals/quality/cases/*/input/`: files the agent should inspect and repair.
+- `evals/quality/golden-responses/*/`: committed scoring fixtures used by the default release gate.
 - `scripts/run_quality_eval.py`: fixture validator and response scorer.
+- `scripts/build_quality_golden_responses.py`: deterministic helper for rebuilding the committed golden artifacts.
 - `evals/quality/quality-eval-results.json`: generated machine-readable report.
 - `evals/quality/quality-eval-results.md`: generated readable report.
 
-## Validate Fixtures
+## Run The Release Gate
 
 ```powershell
 python .\scripts\run_quality_eval.py
 ```
 
-Fixture mode checks that prompts, input files, references, and assertion schemas are complete. It does not grade an agent output.
+Default mode scores `evals/quality/golden-responses/` and exits non-zero on any failed assertion. It opens the Office files as OOXML zip packages and checks:
 
-## Score Agent Outputs
+- PPTX package parts, slide count, editable text shapes, chart/diagram objects, chart XML parts, source notes, layout signatures, color diversity, and non-placeholder PNG render evidence.
+- XLSX workbook parts, required sheet names, tables, chart XML parts, bounded formula text, formula-error literals, selected workbook cells, and deterministic recalculation for supported formulas such as `SUM`, `SUMIFS`, `COUNTA`, and `COUNTIFS`.
+- DOCX package parts, comments XML, comment anchors, tracked insert/delete tags, Word styles, numbering definitions, table geometry (`tblGrid`/`tcW`), headers/footers, fields, relationships, content types, and non-placeholder page PNG evidence.
+
+To validate only prompt/input/assertion schema without scoring artifacts:
+
+```powershell
+python .\scripts\run_quality_eval.py --fixture-only
+```
+
+## Score Fresh Agent Outputs
 
 Run an agent on each prompt and save outputs under a response directory:
 
@@ -83,6 +95,15 @@ python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses
 
 The runner checks required files, required terms, banned AI-template patterns, lockfile churn, Office QA evidence, and behavior-specific assertions. It exits non-zero on failed assertions.
 
+## Rebuild Golden Fixtures
+
+After changing assertion semantics or fixture expectations, rebuild the deterministic golden responses and rerun the gate:
+
+```powershell
+python .\scripts\build_quality_golden_responses.py
+python .\scripts\run_quality_eval.py
+```
+
 ## Limits
 
-These checks are deterministic and intentionally narrow. They do not replace human taste review, browser screenshots, Office render inspection, formula recalculation in Excel, Word layout review, visual diffing, or real CI execution. They are a release guard that makes the skill's quality gates testable instead of only aspirational.
+These checks are deterministic and intentionally narrow. They do not replace human taste review, browser screenshots, native Office render inspection, Excel's full calculation engine, Word layout review, visual diffing, or real project CI execution. They are a release guard that makes the skill's quality gates testable instead of only aspirational.

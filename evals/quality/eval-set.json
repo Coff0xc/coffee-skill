@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "description": "Artifact-level quality evaluation fixtures for coffee-skill. These cases are not trigger-routing tests. They define realistic UI and repo-repair tasks plus objective checks for expected process evidence and output artifacts.",
+  "description": "Artifact-level quality evaluation fixtures for coffee-skill. These cases are not trigger-routing tests. They define realistic UI, repo-repair, and Office tasks plus objective checks for process evidence, real artifacts, OOXML structure, formulas, and render evidence.",
   "cases": [
     {
       "id": "ui-admin-dashboard-visual-gate",
@@ -88,6 +88,22 @@
           "type": "file_exists",
           "path": "screenshots/mobile.png",
           "reason": "The responsive gate requires a mobile render artifact."
+        },
+        {
+          "id": "ui-desktop-screenshot-is-real-png",
+          "type": "png_dimensions",
+          "path": "screenshots/desktop.png",
+          "min_width": 900,
+          "min_height": 600,
+          "reason": "A named screenshot file is not enough; it must be a valid desktop PNG."
+        },
+        {
+          "id": "ui-mobile-screenshot-is-real-png",
+          "type": "png_dimensions",
+          "path": "screenshots/mobile.png",
+          "min_width": 320,
+          "min_height": 600,
+          "reason": "A named screenshot file is not enough; it must be a valid mobile PNG."
         }
       ]
     },
@@ -178,7 +194,31 @@
           "id": "ppt-final-artifact-exists",
           "type": "file_exists",
           "path": "final/operating-review.pptx",
-          "reason": "The run must produce a concrete PPTX artifact, even if it is a fixture placeholder."
+          "reason": "The run must produce a concrete PPTX artifact."
+        },
+        {
+          "id": "ppt-real-ooxml-package-has-editable-visual-system",
+          "type": "pptx_ooxml_structure",
+          "path": "final/operating-review.pptx",
+          "min_slides": 6,
+          "min_text_shapes": 18,
+          "min_distinct_layout_signatures": 5,
+          "min_distinct_srgb_colors": 4,
+          "min_chart_or_diagram_objects": 1,
+          "min_chart_parts": 1,
+          "min_source_slides": 4,
+          "max_round_rects": 2,
+          "no_image_only_slides": true,
+          "required_text_terms": [
+            "operating question",
+            "exceptions improved",
+            "manual review hours",
+            "tax-code mismatches",
+            "west region",
+            "decisions needed",
+            "Source:"
+          ],
+          "reason": "The PPTX must be a real OOXML deck with editable text/proof objects, source notes, layout diversity, and package chart parts."
         },
         {
           "id": "ppt-claim-spine-present",
@@ -240,6 +280,14 @@
           "type": "file_exists",
           "path": "render-checks/contact-sheet.png",
           "reason": "PPT aesthetics require rendered or placeholder render evidence with limitations."
+        },
+        {
+          "id": "ppt-render-evidence-is-real-png",
+          "type": "png_dimensions",
+          "path": "render-checks/contact-sheet.png",
+          "min_width": 900,
+          "min_height": 500,
+          "reason": "Render evidence must be a valid image, not a renamed empty placeholder."
         }
       ]
     },
@@ -265,7 +313,92 @@
           "id": "excel-final-artifact-exists",
           "type": "file_exists",
           "path": "final/billing-exceptions.xlsx",
-          "reason": "The run must produce a concrete workbook artifact, even if it is a fixture placeholder."
+          "reason": "The run must produce a concrete workbook artifact."
+        },
+        {
+          "id": "excel-real-workbook-has-sheets-formulas-tables-and-chart",
+          "type": "xlsx_workbook_structure",
+          "path": "final/billing-exceptions.xlsx",
+          "required_sheets": [
+            "Dashboard",
+            "Raw",
+            "Source",
+            "Assumptions",
+            "Model",
+            "Checks"
+          ],
+          "min_formula_count": 12,
+          "min_chart_parts": 1,
+          "min_table_parts": 1,
+          "forbid_error_literals": true,
+          "required_formula_terms": [
+            "SUMIFS",
+            "COUNTIFS",
+            "COUNTA"
+          ],
+          "banned_formula_regex": [
+            "\\$?[A-Z]+:\\$?[A-Z]+"
+          ],
+          "expected_cells": [
+            {
+              "sheet": "Assumptions",
+              "cell": "B2",
+              "value": 0
+            },
+            {
+              "sheet": "Checks",
+              "cell": "B2",
+              "value": 7
+            },
+            {
+              "sheet": "Checks",
+              "cell": "B3",
+              "value": 1
+            }
+          ],
+          "expected_formula_results": [
+            {
+              "sheet": "Dashboard",
+              "cell": "B4",
+              "value": 17056.5
+            },
+            {
+              "sheet": "Dashboard",
+              "cell": "B5",
+              "value": 5
+            },
+            {
+              "sheet": "Dashboard",
+              "cell": "B6",
+              "value": 4
+            },
+            {
+              "sheet": "Dashboard",
+              "cell": "B7",
+              "value": 4
+            },
+            {
+              "sheet": "Checks",
+              "cell": "B4",
+              "value": 17056.5
+            },
+            {
+              "sheet": "Dashboard",
+              "cell": "B8",
+              "value": 4
+            },
+            {
+              "sheet": "Dashboard",
+              "cell": "B9",
+              "value": 3676.5
+            },
+            {
+              "sheet": "Dashboard",
+              "cell": "B10",
+              "value": 3721.5
+            }
+          ],
+          "reason": "The workbook must be a real XLSX with sheets, bounded formulas, calculated cells, tables, a chart part, and no formula error literals."
         },
         {
           "id": "excel-parse-audit-covers-data-shape",
@@ -329,6 +462,14 @@
           "type": "file_exists",
           "path": "render-checks/dashboard.png",
           "reason": "Excel dashboard/chart quality requires render evidence."
+        },
+        {
+          "id": "excel-render-evidence-is-real-png",
+          "type": "png_dimensions",
+          "path": "render-checks/dashboard.png",
+          "min_width": 900,
+          "min_height": 500,
+          "reason": "Dashboard render evidence must be a valid image, not a renamed empty placeholder."
         }
       ]
     },
@@ -354,7 +495,41 @@
           "id": "docx-final-artifact-exists",
           "type": "file_exists",
           "path": "final/vendor-risk-review.docx",
-          "reason": "The run must produce a concrete DOCX artifact, even if it is a fixture placeholder."
+          "reason": "The run must produce a concrete DOCX artifact."
+        },
+        {
+          "id": "docx-real-ooxml-has-comments-redlines-styles-rels",
+          "type": "docx_ooxml_structure",
+          "path": "final/vendor-risk-review.docx",
+          "min_comments": 3,
+          "require_comment_anchors": true,
+          "min_tracked_change_tags": 2,
+          "required_style_ids": [
+            "Title",
+            "Heading1",
+            "Heading2",
+            "Normal"
+          ],
+          "require_numbering": true,
+          "min_tables": 1,
+          "require_table_geometry": true,
+          "require_comments_rel": true,
+          "require_header_footer_rels": true,
+          "min_fields": 1,
+          "required_content_type_parts": [
+            "word/document.xml",
+            "word/styles.xml",
+            "word/numbering.xml",
+            "word/comments.xml"
+          ],
+          "required_text_terms": [
+            "Executive Summary",
+            "Contractual Gaps",
+            "Required Remediation",
+            "payment processor",
+            "Evidence link is stale"
+          ],
+          "reason": "The DOCX must be a real OOXML document with comments, tracked changes, styles, numbering, table geometry, fields, headers/footers, rels, and content-type parts."
         },
         {
           "id": "docx-reading-map-covers-structure",
@@ -410,7 +585,7 @@
           "path": "edit-plan.md",
           "patterns": [
             "text extraction proves layout",
-            "accept all changes",
+            "accepted all changes",
             "overwrite source"
           ],
           "reason": "The output must reject unsafe DOCX shortcuts."
@@ -426,6 +601,22 @@
           "type": "file_exists",
           "path": "render-checks/page-2.png",
           "reason": "DOCX layout quality requires multi-page render evidence."
+        },
+        {
+          "id": "docx-render-evidence-page-1-is-real-png",
+          "type": "png_dimensions",
+          "path": "render-checks/page-1.png",
+          "min_width": 700,
+          "min_height": 900,
+          "reason": "Page render evidence must be a valid PNG, not a renamed empty placeholder."
+        },
+        {
+          "id": "docx-render-evidence-page-2-is-real-png",
+          "type": "png_dimensions",
+          "path": "render-checks/page-2.png",
+          "min_width": 700,
+          "min_height": 900,
+          "reason": "Multi-page render evidence must be a valid PNG, not a renamed empty placeholder."
         }
       ]
     }
