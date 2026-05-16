@@ -5,10 +5,11 @@
 - Release skills: 18
 - Source skills consolidated: 91
 - Comprehensive capability skills: 17
-- Router/fallback skills: 1
-- Trigger eval cases: 117
-- Quality eval fixtures: 5 real-artifact cases with 40 assertions
+- Router/composer skills: 1
+- Trigger eval cases: 128
+- Quality eval fixtures: 7 real-artifact/workflow cases with 51 assertions
 - Office OOXML quality gates: PPTX package/slide/chart parsing, XLSX workbook/formula/table/chart parsing, DOCX comments/redlines/styles/numbering/rels/table geometry parsing
+- Autonomous composition: router can choose a primary skill, add support skills, sequence phases, define gates, and re-route as evidence changes
 
 ## Skill Capability Map
 
@@ -31,7 +32,7 @@
 | `coff0xc-compliance-architecture` | 面向安全架构、威胁建模、合规映射、数据安全和成熟度评估的治理能力。它把系统设计、控制要求和审计证据整理成能落地的风险决策材料。 | 架构风险评审和信任边界图; STRIDE/威胁建模、控制矩阵和差距分析; 数据分类、隐私、DLP 和日志审计建议 | 授权/防御优先 |
 | `coff0xc-purple-deception` | 面向紫队、ATT&CK 映射、检测覆盖验证和欺骗防御的安全运营改进能力。它把攻击行为语言翻译成可观测、可检测、可改进的防御能力。 | ATT&CK 技术映射和演练假设; 检测覆盖矩阵、日志需求和响应验证点; 蜜罐/诱饵/canary 设计建议 | 授权/防御优先 |
 | `coff0xc-network-protocol-security` | 面向网络协议、TLS/DNS/QUIC/HTTP、无线通信、抓包和形式化建模的协议安全分析能力。它把通信证据转成流程图、风险点和验证建议。 | 协议流程、握手和状态机说明; pcap/日志字段分析、异常字段和安全影响; TLS/PKI/DNS/HTTP/QUIC/无线风险清单 | 授权/防御优先 |
-| `coff0xc-skill-router` | 面向不确定任务的 skill 分诊能力。它不是替代专业 skill，而是在用户不知道该用哪个能力时先判断主题、风险和下一步入口。 | 推荐 skill 和理由; 候选 skill 对比和适用边界; 需要澄清的最少问题 | 授权/防御优先 |
+| `coff0xc-skill-router` | 面向不确定任务和跨领域任务的 autonomous skill composer。它不是替代专业 skill，而是让 AI 选择主 skill、添加辅助 skill、排阶段、设门禁，并在执行中根据证据重路由。 | 主/辅 skill graph; 阶段顺序和验证门禁; 候选组合取舍; 最小澄清问题; 重路由条件 | 授权/防御优先 |
 
 ## Source Skill Coverage
 
@@ -54,4 +55,4 @@
 | `coff0xc-compliance-architecture` | `compliance-audit`, `data-security`, `security-architecture` | 安全架构, 威胁建模, 合规映射, 数据安全, 隐私, 成熟度 |
 | `coff0xc-purple-deception` | `honeypot`, `purple-team` | 紫队演练, ATT&CK, 检测覆盖, 响应验证, 欺骗防御, 运营改进 |
 | `coff0xc-network-protocol-security` | `network-protocol`, `wireless-security` | 协议分析, TLS/DNS/HTTP, Packet/pcap, 无线/BLE/RF, 状态机, 形式化建模 |
-| `coff0xc-skill-router` | - | 技能分诊, 兜底触发, 候选对比, 安全门禁, 手动调用 |
+| `coff0xc-skill-router` | - | 自治编排, 多 skill 工作流, 任务图, 阶段门禁, 重路由 |

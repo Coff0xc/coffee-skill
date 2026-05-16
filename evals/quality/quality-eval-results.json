@@ -2,13 +2,13 @@
   "schema_version": 2,
   "mode": "responses",
   "responses_dir": "evals/quality/golden-responses",
-  "case_count": 5,
+  "case_count": 7,
   "fixture_error_count": 0,
   "fixture_errors": [],
-  "passed_cases": 5,
+  "passed_cases": 7,
   "failed_cases": 0,
-  "assertion_total": 40,
-  "assertion_passed": 40,
+  "assertion_total": 50,
+  "assertion_passed": 50,
   "assertion_pass_rate": 1.0,
   "results": [
     {
@@ -32,6 +32,11 @@
           "id": "ui-covers-state-and-responsive-gates",
           "passed": true,
           "evidence": "all terms found"
+        },
+        {
+          "id": "ui-static-html-quality-checks",
+          "passed": true,
+          "evidence": "{\"aria_attrs\": 1, \"buttons\": 2, \"css_variables\": 7, \"focus_rules\": 1, \"grid_or_flex_rules\": 3, \"long_unbroken_tokens\": 0, \"media_queries\": 1, \"semantic_tags\": [\"article\", \"aside\", \"main\", \"section\"], \"state_terms\": [\"loading\", \"empty\", \"error\", \"disabled\"]}"
         },
         {
           "id": "ui-avoids-generic-ai-visuals",
@@ -62,6 +67,11 @@
           "id": "ui-mobile-screenshot-is-real-png",
           "passed": true,
           "evidence": "png dimensions 390x844, required >= 320x600"
+        },
+        {
+          "id": "ui-render-audit-links-html-screenshots-console-layout-aesthetic",
+          "passed": true,
+          "evidence": "{\"aesthetic_score\": 8.2, \"checks\": {\"console_clean\": true, \"desktop_mobile_present\": true, \"html_matches_screenshots\": true, \"no_overlap\": true, \"professional_aesthetic\": true}, \"clipped_text_count\": 0, \"console_errors\": 0, \"console_warnings\": 0, \"html_sha256\": \"29dd0fbba70a2d6432e7eb30545964e94c08e7fdd98865e547d06f12b9d7157e\", \"overlap_count\": 0}"
         }
       ]
     },
@@ -94,6 +104,64 @@
         },
         {
           "id": "dev-notes-prove-repair-loop",
+          "passed": true,
+          "evidence": "all terms found"
+        }
+      ]
+    },
+    {
+      "id": "dev-js-api-repair-gate",
+      "skill": "coff0xc-software-engineering",
+      "category": "software_quality",
+      "response_dir": "evals/quality/golden-responses/dev-js-api-repair-gate",
+      "passed": true,
+      "assertions": [
+        {
+          "id": "dev-js-fixed-source-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/dev-js-api-repair-gate/src/usage.js exists"
+        },
+        {
+          "id": "dev-js-normalizes-plan-and-units",
+          "passed": true,
+          "evidence": "all terms found"
+        },
+        {
+          "id": "dev-js-behavior-passes-fixture-tests",
+          "passed": true,
+          "evidence": "usage behavior passed"
+        },
+        {
+          "id": "dev-js-no-lockfile-noise",
+          "passed": true,
+          "evidence": "matches reference"
+        },
+        {
+          "id": "dev-js-notes-prove-repair-loop",
+          "passed": true,
+          "evidence": "all terms found"
+        }
+      ]
+    },
+    {
+      "id": "composition-workflow-execution-gate",
+      "skill": "coff0xc-skill-router",
+      "category": "composition_quality",
+      "response_dir": "evals/quality/golden-responses/composition-workflow-execution-gate",
+      "passed": true,
+      "assertions": [
+        {
+          "id": "composition-trace-exists",
+          "passed": true,
+          "evidence": "evals/quality/golden-responses/composition-workflow-execution-gate/workflow-trace.json exists"
+        },
+        {
+          "id": "composition-trace-proves-multistage-execution",
+          "passed": true,
+          "evidence": "{\"final_verification\": {\"commands\": [\"pytest tests/test_billing.py\", \"npm run test:ui\", \"python scripts/run_quality_eval.py\"], \"result\": \"passed in fixture\"}, \"reroutes\": 1, \"skills\": [\"coff0xc-api-data-platform\", \"coff0xc-compliance-architecture\", \"coff0xc-office-doc-tools\", \"coff0xc-secure-code-appsec\", \"coff0xc-skill-router\", \"coff0xc-software-engineering\", \"coff0xc-ui-doc-output\"], \"stages\": 5}"
+        },
+        {
+          "id": "composition-summary-explains-reroute-and-gates",
           "passed": true,
           "evidence": "all terms found"
         }

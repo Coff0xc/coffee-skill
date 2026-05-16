@@ -4,16 +4,17 @@
 
 把 Codex / AgentSkills 兼容 AI 助手从“临场发挥”变成可复用、可验证、可恢复的工作流。
 
-`coffee-skill` 不是一个脚本工具，也不是触发词合集。它是一套可安装的 `SKILL.md` 工作流包：告诉 AI 什么时候触发、先查什么、怎么动手、哪些动作必须确认、怎么验证、最后怎么交付。
+`coffee-skill` 不是一个脚本工具，也不是触发词合集。它是一套可安装的 `SKILL.md` 工作流包：让 AI 自己判断任务需要哪些 skill，把它们串成任务专属工作流，按阶段动手、验证、重路由和交付。
 
-`18 skills` · `中英触发` · `router 兜底` · `117 个触发评测用例` · `5 个真实产物质量评测夹具` · `CI 自动验证` · `Apache-2.0`
+`18 skills` · `中英触发` · `自治编排 router` · `128 个触发/组合评测用例` · `7 个真实产物质量评测夹具` · `CI 自动验证` · `Apache-2.0`
 
 ## 和其他 skill 仓库的区别
 
 | 维度 | 常见 skill 仓库 | coffee-skill |
 |---|---|---|
 | 目标 | 提供单个场景提示词或工具说明 | 覆盖工程、AI/RAG、API/数据、UI、Office、科研图、安全审计等真实工作流 |
-| 触发方式 | 主要靠关键词堆叠 | 每个 skill 有定位、边界、交付物、输入类型、验证方式和 router 兜底 |
+| 编排方式 | 通常让用户自己选一个 skill | router 可让 AI 自己选主 skill、加辅助 skill、排阶段、设门禁、执行中重路由 |
+| 触发方式 | 主要靠关键词堆叠 | 每个 skill 有定位、边界、交付物、输入类型、验证方式和自治编排入口 |
 | 质量证明 | 通常只能证明“写了 skill” | 有 trigger eval、quality eval、golden responses 和 CI 门禁 |
 | 产物要求 | 多数停留在文本建议 | 要求代码 diff、截图、PPTX/DOCX/XLSX、draw.io、报告、验证结果等可交付物 |
 | Office 能力 | 常见是“生成文件/转换格式” | 会真实检查 PPTX OOXML、Excel 公式/表/图表、DOCX comments/redlines/styles/rels |
@@ -21,13 +22,36 @@
 | 安全边界 | 容易混合攻防动作 | 授权/防御优先，生产、凭据、删除、push、PR、云资源等高风险动作必须确认 |
 | 可维护性 | 依赖人工记忆 | manifest、docs、evals、golden fixtures、CI 一起约束漂移 |
 
-一句话：很多 skill 仓库解决“AI 知不知道该怎么说”，`coffee-skill` 更关注“AI 能不能按工程标准把事做完，并留下证据”。
+一句话：很多 skill 仓库解决“AI 知不知道该怎么说”，`coffee-skill` 更关注“AI 能不能自己组织能力，把真实工作做完，并留下证据”。
+
+## 自治编排：AI 自己串 skill
+
+你不需要预先知道该用哪个 skill。复杂任务可以直接让 router 先生成任务图：
+
+```text
+你自己判断要用哪些 coff0xc skills，并把它们串成工作流完成这个功能。
+这个 vibe coding 任务可能涉及前后端、数据库、安全和文档，你来编排 skill。
+```
+
+router 的职责不是永远停在“推荐一个 skill”，而是输出：
+
+```text
+主 skill: coff0xc-software-engineering
+辅助 skills:
+- coff0xc-api-data-platform: 定 API/schema/数据契约
+- coff0xc-ui-doc-output: 做 UI 状态和截图验收
+- coff0xc-secure-code-appsec: 做认证/输入/权限回归
+阶段: 仓库规则 -> 数据契约 -> 实现 -> UI 验收 -> 安全审计 -> 测试/build
+```
+
+如果执行中发现新证据，工作流可以调整。例如：普通 dev 任务发现需要正式 PPTX 交付，就新增 `coff0xc-office-doc-tools`；Agent 应用发现缺数据契约，就新增 `coff0xc-api-data-platform`。
 
 ## 先看这个
 
 | 你想让 AI 做什么 | 直接怎么说 | 你应该拿到什么 |
 |---|---|---|
 | 不知道该用哪个工作流 | `使用 coff0xc-skill-router 判断该用哪个 skill` | 推荐 skill、理由、边界、下一步 |
+| 任务跨多个领域 | `你自己判断要用哪些 coff0xc skills，并串成工作流完成` | 主/辅 skill graph、阶段顺序、验证门禁、重路由条件 |
 | 修项目、写功能、跑测试 | `使用 coff0xc-software-engineering 修复这个 repo` | 代码补丁、验证结果、剩余风险 |
 | 设计 Agent / RAG / Prompt | `使用 coff0xc-ai-agent-rag 设计这个知识库助手` | 架构、工具、检索、引用、评测、降级方案 |
 | 做 API / 数据库 / SDK | `使用 coff0xc-api-data-platform 设计这个接口` | OpenAPI/schema、错误码、分页、迁移和数据质量方案 |
@@ -36,7 +60,7 @@
 | 做论文/算法架构图 | `使用 coff0xc-research-drawio-diagram 画 draw.io 图` | 可编辑 `.drawio`、图结构、证据表 |
 | 做授权安全分析 | `使用对应 coff0xc-* security skill` | 证据化发现、风险说明、修复/检测/加固建议 |
 
-知道 skill 名就直接点名；不知道就先用 `coff0xc-skill-router`。
+知道 skill 名就直接点名；不知道或任务明显跨领域，就先用 `coff0xc-skill-router` 让 AI 编排。
 
 ## 30 秒安装
 
@@ -100,7 +124,7 @@ Copy-Item -Recurse .\skills\* $dest
 | Office 文件 | `coff0xc-office-doc-tools` | PPTX、DOCX、PDF、XLSX、CSV、图表、批注、修订 | 可编辑文件、渲染 QA、公式/格式检查 |
 | 科研图 | `coff0xc-research-drawio-diagram` | 论文方法图、模型结构图、算法 pipeline | `.drawio` 源文件、节点/边说明、证据表 |
 | 授权安全 | 安全类 `coff0xc-*` skills | AppSec、云安全、检测响应、身份、合约、协议、漏洞生命周期 | 证据、影响、修复、检测、加固建议 |
-| 路由兜底 | `coff0xc-skill-router` | 不确定该用哪个 skill，或任务跨多个领域 | 推荐 skill、选择理由、边界和下一步 |
+| 自治编排 | `coff0xc-skill-router` | 不确定该用哪个 skill，或任务跨多个领域 | 主/辅 skill graph、阶段顺序、门禁、重路由条件 |
 
 完整清单见 [docs/COVERAGE.md](docs/COVERAGE.md)。
 
@@ -129,12 +153,13 @@ python .\scripts\run_trigger_eval.py
 python .\scripts\run_quality_eval.py
 ```
 
-当前 trigger eval 覆盖 117 个本地 proxy cases，用来检查应该触发的 prompt 是否命中目标 skill，以及简单问题是否误触发。
+当前 trigger eval 覆盖 128 个本地 proxy cases，用来检查应该触发的 prompt 是否命中目标 skill、博士级/顶级工程/授权红队/UI/多域危机场景是否包含预期 skill set，以及简单问题是否误触发。
 
 quality eval 默认评分 `evals/quality/golden-responses/` 里的真实产物夹具：
 
-- UI：HTML、状态覆盖、反模板文本、桌面/移动 PNG 尺寸。
-- Dev：导入修复后的 Python 文件并执行行为断言，同时检查 lockfile 不被噪声改动。
+- Workflow：检查 `workflow-trace.json` 的阶段、skills、输入、产物、门禁、重路由和最终验证。
+- UI：HTML 静态质量、状态覆盖、反模板文本、桌面/移动 PNG、render audit、HTML hash、console cleanliness、overlap/clipping 和审美评分证据。
+- Dev：执行 Python 和 Node 行为断言，同时检查 requirements/package lockfile 不被噪声改动。
 - PPTX：解包 `.pptx`，检查 slide XML、可编辑 text shapes、chart parts、source notes、layout diversity 和 PNG render evidence。
 - XLSX：解包 `.xlsx`，检查 workbook/sheets/tables/chart parts、bounded formulas、错误值、关键公式重算和 PNG render evidence。
 - DOCX：解包 `.docx`，检查 comments、anchors、tracked changes、styles、numbering、table geometry、rels、headers/footers、fields 和页面 PNG evidence。
@@ -186,16 +211,17 @@ Apache License 2.0。见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
 
 Turn Codex / AgentSkills-compatible AI assistants from ad hoc execution into reusable, verifiable, recoverable workflows.
 
-`coffee-skill` is not a script package or a keyword list. It is an installable pack of `SKILL.md` workflows: when to trigger, what to inspect first, how to proceed, what needs confirmation, how to verify, and how to report the result.
+`coffee-skill` is not a script package or a keyword list. It is an installable pack of `SKILL.md` workflows that lets an AI decide which skills a task needs, compose them into a task-specific workflow, execute phase by phase, verify, re-route, and deliver evidence.
 
-`18 skills` · `Chinese/English triggers` · `router fallback` · `117 trigger eval cases` · `5 real-artifact quality eval fixtures` · `CI validation` · `Apache-2.0`
+`18 skills` · `Chinese/English triggers` · `autonomous router` · `128 trigger/composition eval cases` · `7 real-artifact quality eval fixtures` · `CI validation` · `Apache-2.0`
 
 ## How This Differs
 
 | Dimension | Typical skill repos | coffee-skill |
 |---|---|---|
 | Goal | Single-purpose prompts or tool notes | End-to-end workflows across engineering, AI/RAG, API/data, UI, Office, research diagrams, and authorized security |
-| Routing | Mostly keyword matching | Positioning, inputs, deliverables, boundaries, verification, and router fallback |
+| Orchestration | Users usually pick one skill manually | The router can choose a primary skill, add supporting skills, sequence phases, define gates, and re-route during execution |
+| Routing | Mostly keyword matching | Positioning, inputs, deliverables, boundaries, verification, and an autonomous composition entry point |
 | Proof | Usually proves the skill file exists | Trigger evals, quality evals, golden responses, and CI gates |
 | Output | Often text advice | Diffs, screenshots, PPTX/DOCX/XLSX, draw.io files, reports, and verification evidence |
 | Office | Often file generation or conversion | OOXML checks for PPTX slides/charts/text, XLSX formulas/tables/charts, DOCX comments/redlines/styles/rels |
@@ -203,7 +229,18 @@ Turn Codex / AgentSkills-compatible AI assistants from ad hoc execution into reu
 | Safety | Mixed or implicit boundaries | Authorization-first security boundaries and confirmation gates for high-risk actions |
 | Maintenance | Manual review | Manifest, docs, evals, golden fixtures, and CI keep behavior from drifting |
 
-In short: many skill repos help an assistant know what to say. `coffee-skill` focuses on whether the assistant can finish real work and leave evidence.
+In short: many skill repos help an assistant know what to say. `coffee-skill` focuses on whether the assistant can organize capabilities, finish real work, and leave evidence.
+
+## Autonomous Composition
+
+For broad work, do not pre-select every skill. Ask the router to build the workflow:
+
+```text
+Decide which coff0xc skills are needed, chain them into a workflow, and complete this task.
+This vibe-coding task may include frontend, backend, data, security, and docs; orchestrate the skills yourself.
+```
+
+The router should produce a primary skill, supporting skills, phase order, gates, and re-routing conditions. For example, a SaaS feature may compose `software-engineering + api-data-platform + ui-doc-output + secure-code-appsec`.
 
 ## Quick Start
 
@@ -247,7 +284,7 @@ If you know the skill, name it directly. If you do not, start with `coff0xc-skil
 | Office artifacts | `coff0xc-office-doc-tools` | PPTX, DOCX, PDF, XLSX, CSV, charts, comments, redlines | editable files, render QA, formula/format checks |
 | Research diagrams | `coff0xc-research-drawio-diagram` | paper method figures, model diagrams, algorithm pipelines | editable `.drawio`, node/edge spec, evidence table |
 | Authorized security | security `coff0xc-*` skills | AppSec, cloud, detection, identity, contracts, protocols, vulnerability lifecycle | evidence, impact, fixes, detections, hardening |
-| Routing fallback | `coff0xc-skill-router` | uncertain or cross-domain tasks | recommended skill, rationale, boundaries, next step |
+| Autonomous composition | `coff0xc-skill-router` | uncertain or cross-domain tasks | primary/supporting skill graph, phase order, gates, re-routing conditions |
 
 See [docs/COVERAGE.md](docs/COVERAGE.md) for the full list.
 
@@ -259,7 +296,7 @@ python .\scripts\run_trigger_eval.py
 python .\scripts\run_quality_eval.py
 ```
 
-The trigger evaluation currently covers 117 local proxy cases.
+The trigger evaluation currently covers 128 local proxy cases, including extreme multi-skill composition prompts for research, top-tier development, authorized red-team planning, UI engineering, incident/crisis work, and protocol/IoT analysis.
 
 The quality evaluation scores committed golden responses under `evals/quality/golden-responses/`. It checks real HTML/PNG UI evidence, imports and executes a repo-repair Python behavior assertion, and opens `.pptx`, `.xlsx`, and `.docx` as OOXML packages to verify slide/chart/text structures, workbook formulas/tables/charts/recalculated cells, and Word comments/redlines/styles/numbering/rels/table geometry.
 

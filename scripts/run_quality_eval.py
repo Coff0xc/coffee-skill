@@ -2,10 +2,13 @@ from __future__ import annotations
 
 import argparse
 import filecmp
+import hashlib
+import html.parser
 import importlib.util
 import json
 import re
 import struct
+import subprocess
 import sys
 import zipfile
 from dataclasses import dataclass
@@ -37,6 +40,10 @@ SUPPORTED_ASSERTIONS = {
     "file_not_contains_regex",
     "file_unchanged_if_present",
     "python_billing_behavior",
+    "node_api_behavior",
+    "html_static_ui_quality",
+    "ui_render_audit",
+    "workflow_trace",
     "png_dimensions",
     "pptx_ooxml_structure",
     "xlsx_workbook_structure",
@@ -142,6 +149,188 @@ def evaluate_png_dimensions(assertion: dict[str, Any], target: Path) -> Assertio
         assertion["id"],
         passed,
         f"png dimensions {dims[0]}x{dims[1]}, required >= {min_width}x{min_height}",
+    )
+
+
+def file_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+class HTMLQualityParser(html.parser.HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.tags: list[str] = []
+        self.attrs: dict[str, list[str]] = {}
+        self.buttons = 0
+        self.aria_count = 0
+        self.table_count = 0
+        self.current_tag: str | None = None
+        self.text_chunks: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        self.tags.append(tag)
+        self.current_tag = tag
+        attr_map = {key.lower(): value or "" for key, value in attrs}
+        for key, value in attr_map.items():
+            self.attrs.setdefault(key, []).append(value)
+        if tag == "button":
+            self.buttons += 1
+        if tag == "table":
+            self.table_count += 1
+        self.aria_count += sum(1 for key in attr_map if key.startswith("aria-"))
+
+    def handle_data(self, data: str) -> None:
+        text = data.strip()
+        if text:
+            self.text_chunks.append(text)
+
+
+def evaluate_html_static_ui_quality(assertion: dict[str, Any], target: Path) -> AssertionResult:
+    if not target.exists():
+        return AssertionResult(assertion["id"], False, f"{rel_path(target)} does not exist")
+    text = read_text(target)
+    parser = HTMLQualityParser()
+    parser.feed(text)
+    folded = text.lower()
+    css_vars = len(set(re.findall(r"--[a-z0-9-]+\s*:", text, flags=re.IGNORECASE)))
+    media_queries = len(re.findall(r"@media\b", text, flags=re.IGNORECASE))
+    focus_rules = len(re.findall(r":focus|focus-visible", text, flags=re.IGNORECASE))
+    grid_rules = len(re.findall(r"display\s*:\s*(grid|flex)", text, flags=re.IGNORECASE))
+    states = [term for term in assertion.get("required_state_terms", []) if term.lower() in folded]
+    semantic_tags = set(parser.tags) & set(assertion.get("required_semantic_tags", []))
+    text_blob = " ".join(parser.text_chunks)
+    long_tokens = [token for token in re.findall(r"\b\S{32,}\b", text_blob) if not token.startswith("--")]
+
+    failures: list[str] = []
+    min_css_vars = int(assertion.get("min_css_variables", 0))
+    if css_vars < min_css_vars:
+        failures.append(f"css variables {css_vars} < {min_css_vars}")
+    min_media = int(assertion.get("min_media_queries", 0))
+    if media_queries < min_media:
+        failures.append(f"media queries {media_queries} < {min_media}")
+    min_focus = int(assertion.get("min_focus_rules", 0))
+    if focus_rules < min_focus:
+        failures.append(f"focus rules {focus_rules} < {min_focus}")
+    min_grid = int(assertion.get("min_grid_or_flex_rules", 0))
+    if grid_rules < min_grid:
+        failures.append(f"grid/flex rules {grid_rules} < {min_grid}")
+    min_buttons = int(assertion.get("min_buttons", 0))
+    if parser.buttons < min_buttons:
+        failures.append(f"buttons {parser.buttons} < {min_buttons}")
+    min_aria = int(assertion.get("min_aria_attrs", 0))
+    if parser.aria_count < min_aria:
+        failures.append(f"ARIA attrs {parser.aria_count} < {min_aria}")
+    missing_states = [term for term in assertion.get("required_state_terms", []) if term not in states]
+    if missing_states:
+        failures.append(f"missing state terms: {', '.join(missing_states)}")
+    missing_semantic = [tag for tag in assertion.get("required_semantic_tags", []) if tag not in semantic_tags]
+    if missing_semantic:
+        failures.append(f"missing semantic tags: {', '.join(missing_semantic)}")
+    max_long_tokens = int(assertion.get("max_long_unbroken_tokens", 9999))
+    if len(long_tokens) > max_long_tokens:
+        failures.append(f"long unbroken tokens {len(long_tokens)} > {max_long_tokens}")
+
+    metrics = {
+        "css_variables": css_vars,
+        "media_queries": media_queries,
+        "focus_rules": focus_rules,
+        "grid_or_flex_rules": grid_rules,
+        "buttons": parser.buttons,
+        "aria_attrs": parser.aria_count,
+        "semantic_tags": sorted(semantic_tags),
+        "state_terms": states,
+        "long_unbroken_tokens": len(long_tokens),
+    }
+    return AssertionResult(
+        assertion["id"],
+        not failures,
+        json.dumps(metrics, ensure_ascii=False, sort_keys=True) if not failures else "; ".join(failures),
+    )
+
+
+def evaluate_ui_render_audit(assertion: dict[str, Any], target: Path) -> AssertionResult:
+    if not target.exists():
+        return AssertionResult(assertion["id"], False, f"{rel_path(target)} does not exist")
+    try:
+        audit = load_json(target)
+    except Exception as exc:  # noqa: BLE001 - report malformed candidate evidence.
+        return AssertionResult(assertion["id"], False, f"invalid JSON: {exc}")
+
+    failures: list[str] = []
+    html_path = target.parent / assertion.get("html_path", "output/index.html")
+    if not html_path.exists():
+        failures.append(f"missing html_path {rel_path(html_path)}")
+        html_hash = None
+    else:
+        html_hash = file_sha256(html_path)
+        if audit.get("html_sha256") != html_hash:
+            failures.append("html_sha256 does not match output HTML")
+
+    for shot in assertion.get("screenshots", []):
+        rel = shot["path"]
+        screenshot = target.parent / rel
+        if not screenshot.exists():
+            failures.append(f"missing screenshot {rel}")
+            continue
+        dims = png_dimensions(screenshot)
+        if dims is None:
+            failures.append(f"{rel} is not a PNG")
+            continue
+        if dims[0] < int(shot.get("min_width", 1)) or dims[1] < int(shot.get("min_height", 1)):
+            failures.append(f"{rel} dimensions {dims[0]}x{dims[1]} below required")
+        expected_hash = shot.get("sha256")
+        if expected_hash and file_sha256(screenshot) != expected_hash:
+            failures.append(f"{rel} sha256 mismatch")
+
+    console_errors = int(audit.get("console", {}).get("errors", 0))
+    max_console_errors = int(assertion.get("max_console_errors", 0))
+    if console_errors > max_console_errors:
+        failures.append(f"console errors {console_errors} > {max_console_errors}")
+    console_warnings = int(audit.get("console", {}).get("warnings", 0))
+    max_console_warnings = int(assertion.get("max_console_warnings", 9999))
+    if console_warnings > max_console_warnings:
+        failures.append(f"console warnings {console_warnings} > {max_console_warnings}")
+
+    overlap_count = int(audit.get("layout", {}).get("overlap_count", 9999))
+    max_overlap = int(assertion.get("max_overlap_count", 0))
+    if overlap_count > max_overlap:
+        failures.append(f"overlap count {overlap_count} > {max_overlap}")
+    clipped_count = int(audit.get("layout", {}).get("clipped_text_count", 9999))
+    max_clipped = int(assertion.get("max_clipped_text_count", 0))
+    if clipped_count > max_clipped:
+        failures.append(f"clipped text count {clipped_count} > {max_clipped}")
+
+    min_score = float(assertion.get("min_aesthetic_score", 0))
+    score = float(audit.get("aesthetic", {}).get("score", 0))
+    if score < min_score:
+        failures.append(f"aesthetic score {score} < {min_score}")
+    missing_dims = [
+        name
+        for name in assertion.get("required_aesthetic_dimensions", [])
+        if name not in audit.get("aesthetic", {}).get("dimensions", {})
+    ]
+    if missing_dims:
+        failures.append(f"missing aesthetic dimensions: {', '.join(missing_dims)}")
+
+    required_checks = assertion.get("required_checks", [])
+    checks = audit.get("checks", {})
+    failed_checks = [name for name in required_checks if checks.get(name) is not True]
+    if failed_checks:
+        failures.append(f"failed/missing checks: {', '.join(failed_checks)}")
+
+    metrics = {
+        "html_sha256": html_hash,
+        "console_errors": console_errors,
+        "console_warnings": console_warnings,
+        "overlap_count": overlap_count,
+        "clipped_text_count": clipped_count,
+        "aesthetic_score": score,
+        "checks": checks,
+    }
+    return AssertionResult(
+        assertion["id"],
+        not failures,
+        json.dumps(metrics, ensure_ascii=False, sort_keys=True) if not failures else "; ".join(failures),
     )
 
 
@@ -857,6 +1046,103 @@ def evaluate_docx_ooxml(assertion: dict[str, Any], target: Path) -> AssertionRes
     )
 
 
+def evaluate_node_api_behavior(assertion: dict[str, Any], target: Path) -> AssertionResult:
+    if not target.exists():
+        return AssertionResult(assertion["id"], False, f"{rel_path(target)} does not exist")
+    script = assertion.get("script", "")
+    if not script:
+        return AssertionResult(assertion["id"], False, "missing inline node behavior script")
+    try:
+        completed = subprocess.run(
+            ["node", "-e", script],
+            cwd=target.parent,
+            text=True,
+            capture_output=True,
+            timeout=int(assertion.get("timeout_seconds", 10)),
+            check=False,
+        )
+    except FileNotFoundError:
+        return AssertionResult(assertion["id"], False, "node executable not found")
+    except subprocess.TimeoutExpired:
+        return AssertionResult(assertion["id"], False, "node behavior check timed out")
+
+    passed = completed.returncode == 0
+    evidence = (completed.stdout or completed.stderr).strip()
+    if not evidence:
+        evidence = f"node exited {completed.returncode}"
+    return AssertionResult(assertion["id"], passed, evidence[:500])
+
+
+def evaluate_workflow_trace(assertion: dict[str, Any], target: Path) -> AssertionResult:
+    if not target.exists():
+        return AssertionResult(assertion["id"], False, f"{rel_path(target)} does not exist")
+    try:
+        trace = load_json(target)
+    except Exception as exc:  # noqa: BLE001 - report malformed candidate trace.
+        return AssertionResult(assertion["id"], False, f"invalid JSON: {exc}")
+
+    failures: list[str] = []
+    stages = trace.get("stages", [])
+    if not isinstance(stages, list):
+        return AssertionResult(assertion["id"], False, "stages must be a list")
+    min_stages = int(assertion.get("min_stages", 0))
+    if len(stages) < min_stages:
+        failures.append(f"stages {len(stages)} < {min_stages}")
+
+    used_skills = {
+        skill
+        for stage in stages
+        for skill in stage.get("skills", [])
+        if isinstance(skill, str)
+    }
+    missing_skills = [skill for skill in assertion.get("required_skills", []) if skill not in used_skills]
+    if missing_skills:
+        failures.append(f"missing skills: {', '.join(missing_skills)}")
+
+    stage_names = [str(stage.get("name", "")).lower() for stage in stages]
+    missing_stage_terms = [
+        term
+        for term in assertion.get("required_stage_terms", [])
+        if not any(term.lower() in name for name in stage_names)
+    ]
+    if missing_stage_terms:
+        failures.append(f"missing stage terms: {', '.join(missing_stage_terms)}")
+
+    for idx, stage in enumerate(stages, 1):
+        if not stage.get("inputs"):
+            failures.append(f"stage {idx} missing inputs")
+        if not stage.get("artifacts"):
+            failures.append(f"stage {idx} missing artifacts")
+        gates = stage.get("gates", [])
+        if not gates:
+            failures.append(f"stage {idx} missing gates")
+        elif assertion.get("require_gate_status", True):
+            bad_gates = [gate for gate in gates if gate.get("status") not in {"passed", "complete"}]
+            if bad_gates:
+                failures.append(f"stage {idx} has non-passing gates")
+
+    reroutes = trace.get("reroutes", [])
+    min_reroutes = int(assertion.get("min_reroutes", 0))
+    if len(reroutes) < min_reroutes:
+        failures.append(f"reroutes {len(reroutes)} < {min_reroutes}")
+    if assertion.get("require_final_verification", True):
+        verification = trace.get("final_verification", {})
+        if not verification.get("commands") or not verification.get("result"):
+            failures.append("missing final verification commands/result")
+
+    metrics = {
+        "stages": len(stages),
+        "skills": sorted(used_skills),
+        "reroutes": len(reroutes),
+        "final_verification": trace.get("final_verification", {}),
+    }
+    return AssertionResult(
+        assertion["id"],
+        not failures,
+        json.dumps(metrics, ensure_ascii=False, sort_keys=True) if not failures else "; ".join(failures),
+    )
+
+
 def evaluate_assertion(assertion: dict[str, Any], response_dir: Path, eval_root: Path) -> AssertionResult:
     assertion_id = assertion["id"]
     assertion_type = assertion["type"]
@@ -935,6 +1221,18 @@ def evaluate_assertion(assertion: dict[str, Any], response_dir: Path, eval_root:
             passed=passed,
             evidence=f"normalize_amount={amount!s}, invoice_total={total!s}",
         )
+
+    if assertion_type == "node_api_behavior":
+        return evaluate_node_api_behavior(assertion, target)
+
+    if assertion_type == "html_static_ui_quality":
+        return evaluate_html_static_ui_quality(assertion, target)
+
+    if assertion_type == "ui_render_audit":
+        return evaluate_ui_render_audit(assertion, target)
+
+    if assertion_type == "workflow_trace":
+        return evaluate_workflow_trace(assertion, target)
 
     if assertion_type == "png_dimensions":
         return evaluate_png_dimensions(assertion, target)

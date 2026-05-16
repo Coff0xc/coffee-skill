@@ -729,6 +729,199 @@
       "reason": "Ambiguous routing request without exact router name."
     },
     {
+      "id": "composition-cn-vibe-coding-fullstack",
+      "language": "zh-CN",
+      "category": "composition",
+      "prompt": "你自己判断要用哪些 coff0xc skills，并把它们串成工作流完成这个 vibe coding 任务：实现一个 SaaS admin 功能，涉及代码实现、前端界面、后端 API、数据库 schema、认证越权风险和最终测试验证。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "expected_skill_set": [
+        "coff0xc-skill-router",
+        "coff0xc-software-engineering",
+        "coff0xc-api-data-platform",
+        "coff0xc-ui-doc-output",
+        "coff0xc-secure-code-appsec"
+      ],
+      "expected_set_top_n": 6,
+      "reason": "Autonomous composition should surface router plus software, API/data, UI, and AppSec skills."
+    },
+    {
+      "id": "composition-en-agent-product",
+      "language": "en",
+      "category": "composition",
+      "prompt": "Decide which coff0xc skills are needed, chain them into a workflow, and build an Agent/RAG knowledge-base product with storage schema, REST API, frontend UI, citations, evals, and cost/latency observability.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "expected_skill_set": [
+        "coff0xc-skill-router",
+        "coff0xc-ai-agent-rag",
+        "coff0xc-api-data-platform",
+        "coff0xc-software-engineering",
+        "coff0xc-ui-doc-output"
+      ],
+      "expected_set_top_n": 6,
+      "reason": "Agent product composition should include router, AI/RAG, API/data, software, and UI skills."
+    },
+    {
+      "id": "composition-cn-executive-deliverable",
+      "language": "zh-CN",
+      "category": "composition",
+      "prompt": "AI 自己判断并自动串联 skill：从 repo 指标、CSV 数据和论文证据里做一套给高管看的交付物，包含数据契约、PPTX、Excel workbook、draw.io 架构图、报告叙事和数据来源验证。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "expected_skill_set": [
+        "coff0xc-skill-router",
+        "coff0xc-office-doc-tools",
+        "coff0xc-api-data-platform",
+        "coff0xc-ui-doc-output",
+        "coff0xc-research-drawio-diagram"
+      ],
+      "expected_set_top_n": 6,
+      "reason": "Executive deliverable composition should include router, Office, data, UI narrative, and draw.io skills."
+    },
+    {
+      "id": "composition-extreme-phd-research-system",
+      "language": "zh-CN",
+      "category": "composition_extreme",
+      "prompt": "博士级任务：从 arXiv 论文和 official GitHub 复现实验思路，设计 RAG/Agent 评测 pipeline，抽取模型结构和证据等级，画可编辑 draw.io 方法图，再输出 technical report 和领导可读 PPTX；要求区分官方证据、论文证据和推断。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "expected_skill_set": [
+        "coff0xc-skill-router",
+        "coff0xc-ai-agent-rag",
+        "coff0xc-research-drawio-diagram",
+        "coff0xc-office-doc-tools",
+        "coff0xc-ui-doc-output"
+      ],
+      "expected_set_top_n": 8,
+      "reason": "PhD-level research system should compose AI/RAG, research diagrams, Office artifacts, UI/report narrative, and the router."
+    },
+    {
+      "id": "composition-extreme-top-dev-platform",
+      "language": "en",
+      "category": "composition_extreme",
+      "prompt": "Top-tier development task: repair an enterprise usage billing platform in a monorepo with Next.js admin UI, REST/OpenAPI, Postgres schema and migration, usage ledger, risk audit logs, team budgets, failing CI tests, browser smoke, permission model, and security regression checks.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "expected_skill_set": [
+        "coff0xc-skill-router",
+        "coff0xc-software-engineering",
+        "coff0xc-api-data-platform",
+        "coff0xc-ui-doc-output",
+        "coff0xc-secure-code-appsec",
+        "coff0xc-compliance-architecture"
+      ],
+      "expected_set_top_n": 9,
+      "reason": "Top development platform work needs software, API/data, UI, AppSec, compliance/risk evidence, and router composition."
+    },
+    {
+      "id": "composition-extreme-authorized-redteam",
+      "language": "en",
+      "category": "composition_extreme",
+      "prompt": "Top authorized red-team demand: plan defensive adversary emulation with written ROE and no weaponized details; cover attack surface, cloud/K8s/CI supply-chain controls, AD/identity paths, defensive control validation, detection engineering with Sigma/YARA, purple coverage matrix, compliance report, and executive PPT.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "expected_skill_set": [
+        "coff0xc-skill-router",
+        "coff0xc-authorized-assessment",
+        "coff0xc-cloud-devsecops",
+        "coff0xc-identity-zero-trust",
+        "coff0xc-detection-response",
+        "coff0xc-purple-deception",
+        "coff0xc-compliance-architecture",
+        "coff0xc-office-doc-tools"
+      ],
+      "expected_set_top_n": 10,
+      "reason": "Authorized red-team composition must stay defensive while surfacing ROE, cloud, identity, detection, purple, compliance, and Office delivery skills."
+    },
+    {
+      "id": "composition-extreme-top-ui-engineer",
+      "language": "en",
+      "category": "composition_extreme",
+      "prompt": "Top UI engineer task: implement a complex SaaS ops dashboard and settings console with design tokens, component variants, dense data table, filter builder, populated/empty/loading/error/disabled states, ARIA and contrast checks, desktop/mobile screenshots, console cleanliness, anti-AI aesthetic review, repo implementation, tests, and API data wiring.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "expected_skill_set": [
+        "coff0xc-skill-router",
+        "coff0xc-ui-doc-output",
+        "coff0xc-software-engineering",
+        "coff0xc-api-data-platform"
+      ],
+      "expected_set_top_n": 7,
+      "reason": "Top UI engineering should compose UI quality, implementation, API/data wiring, and routing."
+    },
+    {
+      "id": "composition-extreme-multidim-crisis",
+      "language": "zh-CN",
+      "category": "composition_extreme",
+      "prompt": "多维度危机任务：billing 数据异常叠加安全告警，定位代码 bug，修 API 和数据库迁移，补权限越权回归，写检测响应规则，生成客户说明 DOCX、内部复盘 PPTX、Excel 影响面表、合规控制证据，并保持可恢复工作流。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "expected_skill_set": [
+        "coff0xc-skill-router",
+        "coff0xc-software-engineering",
+        "coff0xc-api-data-platform",
+        "coff0xc-secure-code-appsec",
+        "coff0xc-detection-response",
+        "coff0xc-office-doc-tools",
+        "coff0xc-compliance-architecture"
+      ],
+      "expected_set_top_n": 10,
+      "reason": "Crisis workflow needs code repair, API/data, AppSec, detection, Office communication, compliance evidence, and router orchestration."
+    },
+    {
+      "id": "composition-extreme-blockchain-incident",
+      "language": "zh-CN",
+      "category": "composition_extreme",
+      "prompt": "顶级多链 DeFi 事件审计：覆盖 Solidity/EVM、Solana、oracle、bridge、token 权限、资产流转、Foundry/Slither 测试、修复优先级和漏洞生命周期、检测响应规则、投资人风险报告和可编辑 PPTX。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "expected_skill_set": [
+        "coff0xc-skill-router",
+        "coff0xc-blockchain-security",
+        "coff0xc-vulnerability-lifecycle",
+        "coff0xc-detection-response",
+        "coff0xc-office-doc-tools"
+      ],
+      "expected_set_top_n": 8,
+      "reason": "Blockchain incident work should compose blockchain audit, vuln lifecycle, detection response, Office reporting, and router."
+    },
+    {
+      "id": "composition-extreme-protocol-iot",
+      "language": "zh-CN",
+      "category": "composition_extreme",
+      "prompt": "顶级协议/IoT/形式化任务：分析工业 IoT firmware 和 pcap，逆向协议状态机，覆盖 TLS/DNS/QUIC/custom binary protocol、BLE/RF、固件接口、constant-time crypto、ProVerif/Mermaid protocol diagram、draw.io 架构图和风险报告。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "expected_skill_set": [
+        "coff0xc-skill-router",
+        "coff0xc-binary-mobile-iot",
+        "coff0xc-network-protocol-security",
+        "coff0xc-research-drawio-diagram",
+        "coff0xc-compliance-architecture"
+      ],
+      "expected_set_top_n": 9,
+      "reason": "Protocol/IoT/formal-analysis work should compose binary/IoT, network protocol, research diagrams, risk/compliance, and router."
+    },
+    {
+      "id": "composition-natural-cross-domain-workflow",
+      "language": "zh-CN",
+      "category": "composition_extreme",
+      "prompt": "这个任务同时涉及前后端开发、数据库、UI、Web/API 安全和 DOCX/PPT 文档交付，你来编排工作流，先判断哪些能力要串起来，再分阶段执行并给出每阶段验收门禁。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "expected_skill_set": [
+        "coff0xc-skill-router",
+        "coff0xc-software-engineering",
+        "coff0xc-api-data-platform",
+        "coff0xc-ui-doc-output",
+        "coff0xc-secure-code-appsec",
+        "coff0xc-office-doc-tools"
+      ],
+      "expected_set_top_n": 9,
+      "reason": "Natural cross-domain workflow wording should still surface the autonomous router and the core support skills."
+    },
+    {
       "id": "capability-software-engineering",
       "language": "zh-CN",
       "category": "capability_cn",

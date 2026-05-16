@@ -1,0 +1,46 @@
+{
+  "html_sha256": "29dd0fbba70a2d6432e7eb30545964e94c08e7fdd98865e547d06f12b9d7157e",
+  "screenshots": {
+    "desktop": {
+      "path": "screenshots/desktop.png",
+      "sha256": "8d8bb01e85113014e2097aee7f51a9c39ef7746bb24ed933a52e016526b8f19f",
+      "viewport": [
+        1280,
+        800
+      ]
+    },
+    "mobile": {
+      "path": "screenshots/mobile.png",
+      "sha256": "00affb24309a62aea8957ec58a2aaa44a29a5b2cbef08f6bf744c0e4a29d6d75",
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "layout": {
+    "overlap_count": 0,
+    "clipped_text_count": 0
+  },
+  "aesthetic": {
+    "score": 8.2,
+    "dimensions": {
+      "density": 8,
+      "hierarchy": 8,
+      "restraint": 9,
+      "domain_fit": 8,
+      "state_coverage": 8
+    }
+  },
+  "checks": {
+    "html_matches_screenshots": true,
+    "desktop_mobile_present": true,
+    "console_clean": true,
+    "no_overlap": true,
+    "professional_aesthetic": true
+  }
+}

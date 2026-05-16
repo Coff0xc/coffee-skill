@@ -51,6 +51,31 @@
           "reason": "The fixture checks that the skill forces state coverage and responsive behavior."
         },
         {
+          "id": "ui-static-html-quality-checks",
+          "type": "html_static_ui_quality",
+          "path": "output/index.html",
+          "min_css_variables": 6,
+          "min_media_queries": 1,
+          "min_focus_rules": 1,
+          "min_grid_or_flex_rules": 2,
+          "min_buttons": 2,
+          "min_aria_attrs": 1,
+          "max_long_unbroken_tokens": 0,
+          "required_semantic_tags": [
+            "main",
+            "section",
+            "article",
+            "aside"
+          ],
+          "required_state_terms": [
+            "loading",
+            "empty",
+            "error",
+            "disabled"
+          ],
+          "reason": "Static HTML checks catch missing semantic structure, responsive CSS, focus/ARIA coverage, and obvious text-fit risks."
+        },
+        {
           "id": "ui-avoids-generic-ai-visuals",
           "type": "file_not_contains_regex",
           "path": "output/index.html",
@@ -104,6 +129,44 @@
           "min_width": 320,
           "min_height": 600,
           "reason": "A named screenshot file is not enough; it must be a valid mobile PNG."
+        },
+        {
+          "id": "ui-render-audit-links-html-screenshots-console-layout-aesthetic",
+          "type": "ui_render_audit",
+          "path": "render-audit.json",
+          "html_path": "output/index.html",
+          "screenshots": [
+            {
+              "path": "screenshots/desktop.png",
+              "min_width": 900,
+              "min_height": 600
+            },
+            {
+              "path": "screenshots/mobile.png",
+              "min_width": 320,
+              "min_height": 600
+            }
+          ],
+          "max_console_errors": 0,
+          "max_console_warnings": 0,
+          "max_overlap_count": 0,
+          "max_clipped_text_count": 0,
+          "min_aesthetic_score": 8,
+          "required_aesthetic_dimensions": [
+            "density",
+            "hierarchy",
+            "restraint",
+            "domain_fit",
+            "state_coverage"
+          ],
+          "required_checks": [
+            "html_matches_screenshots",
+            "desktop_mobile_present",
+            "console_clean",
+            "no_overlap",
+            "professional_aesthetic"
+          ],
+          "reason": "UI quality must connect render evidence to the HTML and check console cleanliness, overlap, clipping, and aesthetic scoring."
         }
       ]
     },
@@ -169,6 +232,135 @@
             "lockfile"
           ],
           "reason": "The run must leave evidence that it followed the repo-repair gates."
+        }
+      ]
+    },
+    {
+      "id": "dev-js-api-repair-gate",
+      "skill": "coff0xc-software-engineering",
+      "category": "software_quality",
+      "prompt_file": "cases/dev-js-api-repair-gate/prompt.md",
+      "input_files": [
+        "cases/dev-js-api-repair-gate/input/AGENTS.md",
+        "cases/dev-js-api-repair-gate/input/README.md",
+        "cases/dev-js-api-repair-gate/input/ci.log",
+        "cases/dev-js-api-repair-gate/input/package-lock.json",
+        "cases/dev-js-api-repair-gate/input/src/usage.js",
+        "cases/dev-js-api-repair-gate/input/test/usage.test.js"
+      ],
+      "expected_output_dir": "responses/<case-id>/",
+      "artifacts": [
+        "src/usage.js",
+        "package-lock.json",
+        "repair-notes.md"
+      ],
+      "assertions": [
+        {
+          "id": "dev-js-fixed-source-exists",
+          "type": "file_exists",
+          "path": "src/usage.js",
+          "reason": "The run must produce a concrete JS source patch."
+        },
+        {
+          "id": "dev-js-normalizes-plan-and-units",
+          "type": "file_contains_all",
+          "path": "src/usage.js",
+          "terms": [
+            "toLowerCase",
+            "Number.isFinite",
+            "unknown plan",
+            "non-negative"
+          ],
+          "reason": "The minimal JS fix should normalize API inputs and fail closed on invalid data."
+        },
+        {
+          "id": "dev-js-behavior-passes-fixture-tests",
+          "type": "node_api_behavior",
+          "path": "src/usage.js",
+          "script": "const assert = require('assert'); const { calculateRemainingBudget, shouldThrottle } = require('./usage'); assert.strictEqual(calculateRemainingBudget({ plan: 'team', units: '500' }), 24500); assert.strictEqual(shouldThrottle({ plan: 'enterprise', units: 249999 }), false); assert.strictEqual(shouldThrottle({ plan: 'starter', units: 1000 }), true); assert.throws(() => calculateRemainingBudget({ plan: 'unknown', units: 1 }), /unknown plan/); assert.throws(() => calculateRemainingBudget({ plan: 'team', units: -1 }), /non-negative/); console.log('usage behavior passed');",
+          "reason": "The candidate code must satisfy behavior, not only contain matching keywords."
+        },
+        {
+          "id": "dev-js-no-lockfile-noise",
+          "type": "file_unchanged_if_present",
+          "path": "package-lock.json",
+          "reference": "cases/dev-js-api-repair-gate/input/package-lock.json",
+          "reason": "The fixture catches unnecessary package-lock churn."
+        },
+        {
+          "id": "dev-js-notes-prove-repair-loop",
+          "type": "file_contains_all",
+          "path": "repair-notes.md",
+          "terms": [
+            "Need Package",
+            "Root cause",
+            "Fast inner loop",
+            "CI",
+            "Lockfile",
+            "Security"
+          ],
+          "reason": "The run must leave evidence of a real repo-repair workflow."
+        }
+      ]
+    },
+    {
+      "id": "composition-workflow-execution-gate",
+      "skill": "coff0xc-skill-router",
+      "category": "composition_quality",
+      "prompt_file": "cases/composition-workflow-execution-gate/prompt.md",
+      "input_files": [
+        "cases/composition-workflow-execution-gate/input/incident-brief.md"
+      ],
+      "expected_output_dir": "responses/<case-id>/",
+      "artifacts": [
+        "workflow-trace.json",
+        "workflow-summary.md"
+      ],
+      "assertions": [
+        {
+          "id": "composition-trace-exists",
+          "type": "file_exists",
+          "path": "workflow-trace.json",
+          "reason": "Composition quality must leave a machine-readable execution trace."
+        },
+        {
+          "id": "composition-trace-proves-multistage-execution",
+          "type": "workflow_trace",
+          "path": "workflow-trace.json",
+          "min_stages": 5,
+          "min_reroutes": 1,
+          "required_skills": [
+            "coff0xc-skill-router",
+            "coff0xc-software-engineering",
+            "coff0xc-api-data-platform",
+            "coff0xc-secure-code-appsec",
+            "coff0xc-compliance-architecture",
+            "coff0xc-ui-doc-output",
+            "coff0xc-office-doc-tools"
+          ],
+          "required_stage_terms": [
+            "skill graph",
+            "implementation",
+            "security",
+            "deliverables",
+            "verification"
+          ],
+          "require_gate_status": true,
+          "require_final_verification": true,
+          "reason": "The trace must prove staged execution, gates, rerouting, and final verification rather than only skill selection."
+        },
+        {
+          "id": "composition-summary-explains-reroute-and-gates",
+          "type": "file_contains_all",
+          "path": "workflow-summary.md",
+          "terms": [
+            "Primary skill",
+            "Support skills",
+            "Reroute",
+            "Stage gates",
+            "Final verification"
+          ],
+          "reason": "The human-readable summary must explain how the skill graph was executed."
         }
       ]
     },

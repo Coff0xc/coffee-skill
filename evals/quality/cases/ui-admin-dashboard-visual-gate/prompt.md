@@ -17,8 +17,9 @@ Required evidence:
 - State the product type and why that changes density/layout.
 - Describe the design system choices: tokens, spacing, radius, color, typography, and components.
 - Cover populated, empty, loading, error, disabled, hover/focus, long-content, and mobile states.
-- State how desktop/mobile browser validation should be performed, even if the eval runner only checks files.
-- Save render evidence as `screenshots/desktop.png` and `screenshots/mobile.png`. If a browser is unavailable in the run environment, create placeholder files and state the limitation in `evaluation-notes.md` instead of claiming visual verification.
+- State how desktop/mobile browser validation should be performed.
+- Save render evidence as `screenshots/desktop.png` and `screenshots/mobile.png`.
+- Create `render-audit.json` linking the HTML hash to screenshot evidence, console cleanliness, overlap/clipped-text checks, and aesthetic scoring. If a browser is unavailable, state that limitation in `evaluation-notes.md` and still provide deterministic visual evidence instead of empty renamed files.
 
 Expected output directory shape:
 
@@ -29,5 +30,6 @@ responses/ui-admin-dashboard-visual-gate/
 ├── screenshots/
 │   ├── desktop.png
 │   └── mobile.png
+├── render-audit.json
 └── evaluation-notes.md
 ```

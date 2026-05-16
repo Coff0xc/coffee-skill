@@ -1,56 +1,105 @@
 ---
 name: coff0xc-skill-router
-description: "Coff0xc skill router and auto-trigger fallback. Use when a user asks for any Coff0xc capability, asks which coffee/coff0xc skill to use, says they are unsure, or when a specific skill does not auto-trigger. Routes Chinese/English requests for: software engineering, Python, JavaScript, TypeScript, Go, Rust, Java, C/C++, Shell, testing, Git, Agent, RAG, LLM, Prompt, API, database, CLI, UI, frontend, PowerPoint, PPT, PPTX, slides, deck, DOCX, Word, PDF, Excel, XLSX, CSV, spreadsheet, workbook, chart, formula, document, translation, research diagram, draw.io, diagrams.net, paper figure, algorithm architecture, code audit, Web security, API security, GraphQL, OAuth, cloud, AWS, Azure, GCP, Docker, Kubernetes, CI/CD, supply chain, secret scanning, SOC, SIEM, YARA, Sigma, incident response, malware, forensics, CVE, vulnerability management, AD, Kerberos, IAM, Zero Trust, red team, authorized assessment, reverse engineering, binary, mobile, APK, firmware, IoT, ICS, blockchain, smart contract, compliance, threat modeling, purple team, honeypot, TLS, DNS, network protocol, wireless. 中文触发：代码、开发、测试、重构、脚本、Agent、智能体、RAG、向量数据库、提示词、接口、数据库、命令行、前端、界面、PPT、PPTX、PowerPoint、演示文稿、幻灯片、DOCX、Word、PDF、Excel、XLSX、CSV、表格、工作簿、公式、批注、修订、导出、文档、翻译、科研绘图、论文配图、算法架构图、模型结构图、draw.io、diagrams.net、代码审计、Web安全、云安全、容器、K8s、供应链、密钥、检测、应急、取证、漏洞、CVE、AD域、身份、零信任、红队、授权评估、逆向、二进制、移动安全、固件、工控、区块链、合约审计、合规、威胁建模、紫队、蜜罐、网络协议、无线安全、不确定用哪个、选择 skill、帮我分流、同时涉及多个领域。"
+description: "Coff0xc autonomous skill router, multi-skill workflow composer, and auto-trigger fallback. Use when a user asks the AI to decide which coffee/coff0xc skills to use, chain skills together, create a task-specific workflow graph, run a vibe-coding workflow, handle cross-domain or multi-domain work, or when a specific skill does not auto-trigger. It can choose a primary skill, add support skills, sequence phases, define gates, and re-route as evidence changes. Routes Chinese/English requests for: software engineering, Python, JavaScript, TypeScript, Go, Rust, Java, C/C++, Shell, testing, Git, Agent, RAG, LLM, Prompt, API, database, CLI, UI, frontend, PowerPoint, PPT, PPTX, slides, deck, DOCX, Word, PDF, Excel, XLSX, CSV, spreadsheet, workbook, chart, formula, document, translation, research diagram, draw.io, diagrams.net, paper figure, algorithm architecture, code audit, Web security, API security, GraphQL, OAuth, cloud, AWS, Azure, GCP, Docker, Kubernetes, CI/CD, supply chain, secret scanning, SOC, SIEM, YARA, Sigma, incident response, malware, forensics, CVE, vulnerability management, AD, Kerberos, IAM, Zero Trust, red team, authorized assessment, reverse engineering, binary, mobile, APK, firmware, IoT, ICS, blockchain, smart contract, compliance, threat modeling, purple team, honeypot, TLS, DNS, network protocol, wireless. 中文触发：自主编排、多 skill 工作流、AI 自己判断、自动串联 skill、任务图、工作流图、跨领域、跨域、多领域、多维度、编排工作流、vibe coding、代码、开发、测试、重构、脚本、Agent、智能体、RAG、向量数据库、提示词、接口、数据库、命令行、前端、界面、PPT、PPTX、PowerPoint、演示文稿、幻灯片、DOCX、Word、PDF、Excel、XLSX、CSV、表格、工作簿、公式、批注、修订、导出、文档、翻译、科研绘图、论文配图、算法架构图、模型结构图、draw.io、diagrams.net、代码审计、Web安全、云安全、容器、K8s、供应链、密钥、检测、应急、取证、漏洞、CVE、AD域、身份、零信任、红队、授权评估、逆向、二进制、移动安全、固件、工控、区块链、合约审计、合规、威胁建模、紫队、蜜罐、网络协议、无线安全、不确定用哪个、选择 skill、帮我分流、同时涉及多个领域。"
 ---
 
 # coff0xc-skill-router
 
 ## 能力定位
-面向不确定任务的 skill 分诊能力。它不是替代专业 skill，而是在用户不知道该用哪个能力时先判断主题、风险和下一步入口。
+面向不确定任务和跨领域任务的 autonomous skill composer。它不是把所有能力揉成一个大 skill，而是让 AI 先判断任务需要哪些专业 skill，再把它们串成一个可执行、可验证、可调整的任务工作流。
+
+单一任务只选一个最具体 skill；复杂任务输出主 skill、辅助 skill、执行顺序、门禁和重路由条件。
 
 ## 能交付什么
-- 推荐 skill 和理由
-- 候选 skill 对比和适用边界
+- 任务专属 skill graph：主 skill、辅助 skill、暂不使用的 skill
+- 分阶段执行顺序：每阶段调用哪个 skill、输入、输出、完成门禁
+- 候选 skill 对比、取舍理由和适用边界
 - 需要澄清的最少问题
-- 后续手动触发句式
+- 执行中新增、移除或切换 skill 的条件
+- 后续手动触发或自然语言触发句式
 
 ## 可以接收什么输入
-- 模糊任务描述、多个领域混合需求
+- 模糊任务描述、多个领域混合需求、vibe coding 需求
 - 用户说不确定用哪个 skill、自动触发失败
 - 仓库、截图、日志、论文、配置等混合材料
+- 用户要求 AI 自己判断、自己串联 skill、按工作流完成
 
 ## 放心使用的边界
-- 只负责路由和低风险分诊
+- 负责规划和编排，不替代专业 skill 的深层执行规则
 - 遇到安全、生产、凭据、删除、远程写入或付费动作时沿用目标 skill 的门禁
-- 无法确定时给 2-3 个候选并问最小澄清问题
+- 无法确定时给 2-3 个候选组合并问最小澄清问题
 - 安全类能力默认只用于授权、防御、检测、加固、验证和报告；不提供未授权攻击、凭据窃取、持久化、规避检测、C2、钓鱼收集、数据外传或破坏性步骤。
 
 ## 为什么可以放心
-- 先选择最具体 skill，不让 router 长期替代专业流程
-- 说明为什么选这个 skill
-- 保留手动触发写法帮助用户下次直接调用
+- 保持 skill 模块化，只在需要时加载对应专业流程
+- 每个 skill 都必须有明确职责、输入、输出和退出门禁
+- 执行中根据真实证据重路由，而不是死守初始判断
+- 保留手动触发写法，用户仍可强制指定某个 skill
 
 ## 典型使用方式
 ```text
 使用 coff0xc-skill-router 帮我判断这个任务该用哪个 skill。
 使用 coff0xc-skill-router 这个需求同时涉及 API、UI 和安全，帮我分流。
+你自己判断要用哪些 coff0xc skills，并把它们串成工作流完成这个功能。
+这个 vibe coding 任务可能涉及前后端、数据库、安全和文档，你来编排 skill。
 Use coff0xc-skill-router when a Coff0xc skill did not auto-trigger.
 ```
 
 
 ## 目标
-作为自动触发兜底入口。当前端模型没有自动选择具体 Coff0xc skill 时，先用本路由表判断主题，再读取或按对应 skill 的工作流执行。
+作为自动触发兜底入口和多 skill 编排入口。当前端模型没有自动选择具体 Coff0xc skill，或任务明显跨多个领域时，先用本路由表和组合规则生成任务图，再读取并执行对应 skill 的工作流。
 
 ## 为什么需要 Router
 - 多个客户端只用 `name` 和 `description` 参与触发，正文内容不会帮助首次触发。
 - 中文请求、缩写、英文工具名和安全领域黑话容易导致具体 skill 漏触发。
-- 合并后的大 skill 数量更少，但每个主题覆盖面更广，需要一个触发词密集的兜底入口。
+- 真实任务经常不是一个 skill 能完成：开发会牵涉 API、数据、UI、安全、Office 交付或发布验证。
+- 合并后的大 skill 数量更少，但每个主题覆盖面更广，需要一个触发词密集的兜底和编排入口。
 
-## 路由规则
-1. 如果另一个更具体的 Coff0xc skill 已经触发，优先执行具体 skill，本 router 只用于确认覆盖和边界。
-2. 如果只有本 router 触发，按下表选择最匹配的 skill；若本地文件可读，读取该 skill 的 `SKILL.md` 后执行。
-3. 如果请求涉及安全、生产、凭据、远程写入、删除或付费动作，先套用目标 skill 的硬门禁。
-4. 如果无法确定路由，给出 2-3 个候选 skill 和最小澄清问题；不要凭空执行高风险动作。
+## 自治编排规则
+1. 如果一个更具体的 Coff0xc skill 已经完全覆盖任务，直接执行该 skill；本 router 只用于确认边界。
+2. 如果任务跨领域，构造 skill graph：选一个主 skill，再添加支持 skill；不要把所有看似相关的 skill 都塞进去。
+3. 每个支持 skill 必须有明确职责：补契约、补 UI、补安全、补文件交付、补检测、补合规、补验证。
+4. 先执行当前阶段需要的 skill。阶段完成后根据证据决定是否继续、切换或新增 skill。
+5. 如果请求涉及安全、生产、凭据、远程写入、删除或付费动作，先套用对应专业 skill 的硬门禁。
+6. 如果无法确定组合，给出 2-3 个候选 workflow 和最小澄清问题；不要凭空执行高风险动作。
+
+## Skill Composition Loop
+1. 读任务和证据：目标、输入、交付物、约束、风险、已有文件。
+2. 选主 skill：决定谁负责最终结果。
+3. 加支持 skill：只加入当前任务真实需要的能力。
+4. 排阶段：每阶段写清输入、动作、输出和完成门禁。
+5. 执行当前阶段：读取对应 skill 的 `SKILL.md`，按它的工作流做。
+6. 重路由：发现新表面时调整 graph，例如从 dev 扩到 API/UI/AppSec/Office。
+7. 收口：所有阶段门禁通过后，总结完成项、验证项、风险和下一步。
+
+## 常见组合模式
+| 任务类型 | 默认主 skill | 常见支持 skill | 组合意图 |
+| --- | --- | --- | --- |
+| Vibe coding / full-stack feature | `coff0xc-software-engineering` | `coff0xc-api-data-platform`, `coff0xc-ui-doc-output`, `coff0xc-secure-code-appsec` | 先修/实现，再补契约、界面质量和安全回归 |
+| AI knowledge base / Agent app | `coff0xc-ai-agent-rag` | `coff0xc-api-data-platform`, `coff0xc-software-engineering`, `coff0xc-ui-doc-output` | 先定 Agent/RAG 架构，再落 API、代码和 UI |
+| Data product / analytics dashboard | `coff0xc-api-data-platform` | `coff0xc-ui-doc-output`, `coff0xc-office-doc-tools`, `coff0xc-software-engineering` | 先定数据契约，再做界面和可交付文件 |
+| Investor / executive deliverable | `coff0xc-office-doc-tools` | `coff0xc-ui-doc-output`, `coff0xc-api-data-platform`, `coff0xc-research-drawio-diagram` | 先定交付文件，再补叙事、数据和图 |
+| Secure release review | `coff0xc-secure-code-appsec` | `coff0xc-cloud-devsecops`, `coff0xc-software-engineering`, `coff0xc-compliance-architecture` | 先找风险，再修复、验证和整理上线证据 |
+| Detection / incident workflow | `coff0xc-detection-response` | `coff0xc-vulnerability-lifecycle`, `coff0xc-cloud-devsecops`, `coff0xc-purple-deception` | 先建检测/时间线，再做优先级和覆盖验证 |
+
+## 输出格式
+复杂任务先输出短编排，不要写长篇理论：
+
+```markdown
+工作流：
+- 主 skill: <skill>
+- 辅助 skills: <skill>: <为什么需要>
+- 暂不使用: <skill>: <为什么不需要>
+
+阶段：
+1. <阶段名> - 使用 <skill>，门禁：<可验证完成标准>
+2. <阶段名> - 使用 <skill>，门禁：<可验证完成标准>
+
+重路由条件：
+- 如果发现 <证据>，新增/切换到 <skill>。
+```
+
+执行时可以边做边更新，但不要把“初始工作流”当不可改的计划。
 
 ## 路由表
 | 目标 skill | 常见别名/来源词 | 触发说明 |

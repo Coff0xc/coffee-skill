@@ -1,0 +1,127 @@
+{
+  "task": "Repair billing anomaly with API, UI, security, Office, and compliance outputs.",
+  "primary_skill": "coff0xc-skill-router",
+  "stages": [
+    {
+      "name": "intake and skill graph",
+      "skills": [
+        "coff0xc-skill-router"
+      ],
+      "inputs": [
+        "user request",
+        "repo status",
+        "available artifacts"
+      ],
+      "artifacts": [
+        "skill-graph.md"
+      ],
+      "gates": [
+        {
+          "name": "primary/support skills selected",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "name": "repo repair implementation",
+      "skills": [
+        "coff0xc-software-engineering",
+        "coff0xc-api-data-platform"
+      ],
+      "inputs": [
+        "CI log",
+        "API route",
+        "database migration"
+      ],
+      "artifacts": [
+        "patch-summary.md",
+        "api-contract.md"
+      ],
+      "gates": [
+        {
+          "name": "targeted tests pass",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "name": "security regression",
+      "skills": [
+        "coff0xc-secure-code-appsec",
+        "coff0xc-compliance-architecture"
+      ],
+      "inputs": [
+        "authz path",
+        "audit log",
+        "risk register"
+      ],
+      "artifacts": [
+        "security-review.md",
+        "control-evidence.md"
+      ],
+      "gates": [
+        {
+          "name": "authorization regression covered",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "name": "ui and customer deliverables",
+      "skills": [
+        "coff0xc-ui-doc-output",
+        "coff0xc-office-doc-tools"
+      ],
+      "inputs": [
+        "dashboard screenshot",
+        "customer impact data"
+      ],
+      "artifacts": [
+        "ui-audit.md",
+        "customer-notice.docx",
+        "impact-table.xlsx"
+      ],
+      "gates": [
+        {
+          "name": "visual and artifact checks pass",
+          "status": "passed"
+        }
+      ]
+    },
+    {
+      "name": "final verification",
+      "skills": [
+        "coff0xc-skill-router",
+        "coff0xc-software-engineering"
+      ],
+      "inputs": [
+        "all stage artifacts"
+      ],
+      "artifacts": [
+        "final-verification.md"
+      ],
+      "gates": [
+        {
+          "name": "release gate complete",
+          "status": "passed"
+        }
+      ]
+    }
+  ],
+  "reroutes": [
+    {
+      "trigger": "security alert intersects billing anomaly",
+      "from": "coff0xc-software-engineering",
+      "to": "coff0xc-secure-code-appsec",
+      "reason": "authorization regression became part of the root cause"
+    }
+  ],
+  "final_verification": {
+    "commands": [
+      "pytest tests/test_billing.py",
+      "npm run test:ui",
+      "python scripts/run_quality_eval.py"
+    ],
+    "result": "passed in fixture"
+  }
+}

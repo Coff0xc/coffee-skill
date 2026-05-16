@@ -1,0 +1,10 @@
+> node test/usage.test.js
+
+FAIL usage budget
+  AssertionError: expected remaining team budget to be 24500
+  actual: NaN
+
+FAIL throttling
+  AssertionError: enterprise account should not throttle at 249999 units
+
+Hint: src/usage.js accepts plan names from API JSON and must reject unknown plans.

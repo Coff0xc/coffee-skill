@@ -22,10 +22,11 @@ Constraints:
 - Do not overwrite the source.
 - Do not claim layout quality from text extraction alone.
 - Do not use fake headings, fake bullets, or tables for ordinary prose.
-- The DOCX may be a placeholder in this fixture, but the notes must prove structure and format gates were followed.
+- `final/vendor-risk-review.docx` must be a real OOXML DOCX package, not a renamed or empty placeholder.
+- The document must contain inspectable styles, numbering, comments, comment anchors, tracked changes, table geometry, relationships, content types, headers/footers, and fields for automated structure checks.
 
 Required evidence:
 - `reading-map.md` must identify headings, sections, tables, comments, tracked changes, headers/footers, fields, metadata, and unresolved risks.
 - `style-token-map.md` must mention real Word styles, numbering, table geometry, margins, type scale, paragraph rhythm, headers/footers, and table gate.
 - `edit-plan.md` must mention preserving the original, minimal local edits, comment anchors, redline/tracked-change structural checks, and render limitations if any.
-- `render-checks/page-1.png` and `render-checks/page-2.png` must exist as page render evidence. If rendering is unavailable, create placeholders and state the limitation in `edit-plan.md`.
+- `render-checks/page-1.png` and `render-checks/page-2.png` must be valid PNG page/render evidence files. If native rendering is unavailable, create deterministic visual evidence from the document pages and state the limitation in `edit-plan.md`; do not use empty renamed files.

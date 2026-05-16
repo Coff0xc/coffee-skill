@@ -10,7 +10,7 @@ It is designed to catch:
 
 - missing trigger terms,
 - ambiguous overlap between skills,
-- router fallback gaps,
+- router fallback and autonomous composition gaps,
 - false positives on simple or unrelated prompts,
 - multilingual manual invocation coverage.
 
@@ -36,6 +36,7 @@ The script exits non-zero if any case fails. To inspect scores without changing 
 - `positive_triggered_rate`: at least one skill scored above threshold for should-trigger cases.
 - `router_top1_rate`: router cases rank `coff0xc-skill-router` first.
 - `router_top3_rate`: router cases include `coff0xc-skill-router` in top three.
+- `composition_full_topn_rate`: multi-skill composition cases include every expected skill in the configured top-N set.
 - `negative_no_trigger_rate`: should-not-trigger cases stay below threshold.
 - `negative_false_positive_rate`: should-not-trigger cases incorrectly trigger a skill.
 
@@ -43,4 +44,4 @@ The script exits non-zero if any case fails. To inspect scores without changing 
 
 This is a deterministic local proxy. It does not reproduce the private trigger logic of every Codex client or model runtime. Treat failures as strong evidence of metadata gaps, and treat passes as a useful release guard rather than a guarantee.
 
-For artifact-level behavior checks, use [Quality Evaluation](QUALITY_EVAL.md). Trigger evals only prove routing metadata; they do not prove UI taste, repo repair quality, or Office artifact correctness.
+For artifact-level behavior checks, use [Quality Evaluation](QUALITY_EVAL.md). Trigger evals only prove routing metadata and expected skill-set surfacing; they do not prove UI taste, repo repair quality, or Office artifact correctness.

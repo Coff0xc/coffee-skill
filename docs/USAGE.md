@@ -5,12 +5,12 @@
 1. Install the `skills/` folders into your Codex skill directory.
 2. Restart or refresh Codex so it re-indexes skill metadata.
 3. Ask naturally in Chinese or English, or explicitly name a skill.
-4. If you are unsure, invoke `coff0xc-skill-router` first.
+4. If you are unsure or the task spans multiple domains, invoke `coff0xc-skill-router` first and let it compose the workflow.
 5. For security tasks, confirm authorization before active testing or remote actions.
 
-## How To Choose A Skill
+## How To Choose Or Compose Skills
 
-Use this pack by matching your task to the outcome you want, not by memorizing every source skill.
+Use this pack by matching your task to the outcome you want, not by memorizing every source skill. For narrow tasks, name one skill directly. For broad work, ask the router to choose and chain the needed skills.
 
 | If you want... | Use this skill | Expected capability |
 |---|---|---|
@@ -32,6 +32,24 @@ Use this pack by matching your task to the outcome you want, not by memorizing e
 | 使用 coff0xc-purple-deception 把这些攻击行为映射成 ATT&CK 检测覆盖矩阵。 | `coff0xc-purple-deception` | ATT&CK 技术映射和演练假设; 检测覆盖矩阵、日志需求和响应验证点 |
 | 使用 coff0xc-network-protocol-security 分析这个 pcap 里的 TLS 握手和异常字段。 | `coff0xc-network-protocol-security` | 协议流程、握手和状态机说明; pcap/日志字段分析、异常字段和安全影响 |
 | 使用 coff0xc-skill-router 帮我判断这个任务该用哪个 skill。 | `coff0xc-skill-router` | 推荐 skill 和理由; 候选 skill 对比和适用边界 |
+| 你自己判断要用哪些 coff0xc skills，并把它们串成工作流完成这个功能。 | `coff0xc-skill-router` | 主/辅 skill graph、阶段顺序、验证门禁、重路由条件 |
+
+## Autonomous Composition Examples
+
+```text
+你自己判断要用哪些 coff0xc skills，并把它们串成工作流完成这个功能。
+这个 vibe coding 任务可能涉及前后端、数据库、安全和文档，你来编排 skill。
+Decide which coff0xc skills are needed, chain them into a workflow, and complete this task.
+```
+
+Typical compositions:
+
+| Task | Likely composition | Why |
+|---|---|---|
+| SaaS feature / admin panel | `software-engineering` + `api-data-platform` + `ui-doc-output` + `secure-code-appsec` | Code owns implementation; API/data owns contracts; UI owns states/screenshots; AppSec owns auth/input review. |
+| Agent/RAG product | `ai-agent-rag` + `api-data-platform` + `software-engineering` + `ui-doc-output` | Agent owns system design; API/data owns storage and contracts; dev/UI make it usable. |
+| Executive deliverable from repo/data | `office-doc-tools` + `ui-doc-output` + `api-data-platform` + `research-drawio-diagram` | Office owns files; UI owns narrative clarity; data owns evidence; draw.io owns diagrams. |
+| Secure release | `secure-code-appsec` + `cloud-devsecops` + `software-engineering` + `compliance-architecture` | AppSec/cloud find risks; dev fixes; compliance turns evidence into release material. |
 
 ## Recommended Manual Invocations
 
@@ -56,6 +74,7 @@ Use this pack by matching your task to the outcome you want, not by memorizing e
 使用 coff0xc-purple-deception 把这些攻击行为映射成 ATT&CK 检测覆盖矩阵。
 使用 coff0xc-network-protocol-security 分析这个 pcap 里的 TLS 握手和异常字段。
 使用 coff0xc-skill-router 帮我判断这个任务该用哪个 skill。
+你自己判断要用哪些 coff0xc skills，并把它们串成工作流完成这个功能。
 ```
 
 ## What A Good Run Should Produce
@@ -63,6 +82,7 @@ Use this pack by matching your task to the outcome you want, not by memorizing e
 A good Coff0xc skill run should leave the user with evidence, not just prose:
 
 - a clear statement of the selected skill and scope,
+- for cross-domain work, the primary skill, supporting skills, phase order, and re-routing conditions,
 - the concrete artifact or analysis result,
 - commands, files, sources, or evidence used,
 - validation results or clear reasons validation could not run,

@@ -59,9 +59,14 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "end-to-end",
         "one-shot",
         "repo repair",
+        "monorepo",
         "admin panel",
+        "saas admin",
         "dashboard",
         "api implementation",
+        "code implementation",
+        "usage ledger",
+        "ledger",
         "browser smoke",
         "pytest",
         "test",
@@ -72,6 +77,7 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "refactor",
         "ci failure",
         "ci failures",
+        "ci failing tests",
         "test reproduction",
         "fast inner loop",
         "need package",
@@ -81,13 +87,20 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "lockfile discipline",
         "git",
         "代码",
+        "代码实现",
         "开发",
+        "前后端",
+        "前后端开发",
         "测试",
         "重构",
         "脚本",
         "构建",
+        "平台",
         "全栈",
+        "功能实现",
         "多文件",
+        "代码 bug",
+        "修 api",
         "少问确认",
         "直接实现",
         "前端页面",
@@ -141,6 +154,8 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "openapi",
         "sql",
         "database",
+        "postgres",
+        "postgresql",
         "schema",
         "migration",
         "cli",
@@ -148,8 +163,12 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "pagination",
         "json",
         "etl",
+        "usage ledger",
+        "ledger",
+        "filter builder",
         "接口",
         "数据库",
+        "数据迁移",
         "分页",
         "错误码",
         "数据质量",
@@ -159,12 +178,18 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "版本兼容",
         "存储结构",
         "外部客户",
+        "数据来源",
+        "数据验证",
+        "数据契约",
+        "影响面",
+        "指标",
     },
     "coff0xc-ui-doc-output": {
         "ui",
         "frontend",
         "dashboard",
         "component",
+        "component variants",
         "report",
         "technical report",
         "executive delivery",
@@ -174,10 +199,14 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "translation",
         "layout",
         "accessibility",
+        "aria",
+        "contrast",
         "responsive",
         "mobile-first",
         "design system",
         "semantic tokens",
+        "dense data table",
+        "filter builder",
         "empty states",
         "loading states",
         "error states",
@@ -185,6 +214,7 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "focus",
         "keyboard",
         "browser smoke",
+        "console cleanliness",
         "anti-ai aesthetic",
         "screenshot",
         "前端",
@@ -201,6 +231,8 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "按钮状态",
         "窄屏",
         "交付文案",
+        "报告叙事",
+        "高管",
         "术语一致",
         "报告层级",
         "交付语言",
@@ -253,9 +285,13 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "预览验证",
         "渲染检查",
         "不覆盖原件",
+        "高管 ppt",
+        "客户说明 docx",
+        "内部复盘 pptx",
     },
     "coff0xc-research-drawio-diagram": {
         "research",
+        "arxiv",
         "diagram",
         "draw.io",
         "drawio",
@@ -267,6 +303,7 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "algorithm",
         "pipeline",
         "model diagram",
+        "model structure",
         "research workflow",
         "transformer",
         "cnn",
@@ -274,6 +311,7 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "diffusion",
         "科研",
         "科研绘图",
+        "论文级",
         "论文配图",
         "论文方法图",
         "算法架构图",
@@ -287,8 +325,11 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "audit",
         "appsec",
         "web",
+        "web/api",
+        "api security",
         "oauth",
         "graphql",
+        "permission model",
         "cors",
         "cookie",
         "source/sink",
@@ -298,11 +339,15 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "backdoor",
         "webshell",
         "prompt injection",
+        "代码安全",
         "代码审计",
         "越权",
         "后门",
         "认证",
         "授权",
+        "权限越权",
+        "权限模型",
+        "安全回归",
         "绕过登录",
         "别人数据",
         "代码入口",
@@ -323,6 +368,7 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "github actions",
         "sbom",
         "supply chain",
+        "supply-chain",
         "secret scanning",
         "iac",
         "云",
@@ -349,9 +395,15 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "timeline",
         "threat hunting",
         "detection",
+        "detection response",
+        "incident",
+        "incident response",
+        "sigma/yara",
         "日志",
         "告警",
         "检测",
+        "检测响应",
+        "事故",
         "取证",
         "应急",
         "威胁",
@@ -373,6 +425,7 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "remediation",
         "patch",
         "exploitability",
+        "漏洞生命周期",
         "漏洞",
         "补丁",
         "修复",
@@ -385,6 +438,8 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
     },
     "coff0xc-identity-zero-trust": {
         "iam",
+        "identity",
+        "identity paths",
         "sso",
         "mfa",
         "ad",
@@ -407,9 +462,11 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "收敛",
         "登录策略",
     },
-    "coff0xc-authorized-assessment": {
+        "coff0xc-authorized-assessment": {
         "authorized",
         "roe",
+        "adversary",
+        "adversary emulation",
         "recon",
         "red team",
         "attack chain",
@@ -505,6 +562,12 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "privacy",
         "baseline",
         "control matrix",
+        "audit log",
+        "risk register",
+        "executive report",
+        "release evidence",
+        "control evidence",
+        "compliance report",
         "合规",
         "威胁建模",
         "数据分类",
@@ -514,6 +577,12 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "风险模型",
         "控制项",
         "审计证据",
+        "审计日志",
+        "控制证据",
+        "高管报告",
+        "风险报告",
+        "客户说明",
+        "权限模型",
         "上线前",
     },
     "coff0xc-purple-deception": {
@@ -572,8 +641,30 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "coff0xc",
         "router",
         "skill-router",
+        "autonomous skill",
+        "multi-skill",
+        "workflow graph",
+        "task graph",
+        "cross-domain",
+        "multi-domain",
+        "chain the needed skills",
+        "vibe coding",
+        "orchestrate",
         "choose the right skill",
         "specific skill does not auto-trigger",
+        "自主编排",
+        "多 skill",
+        "多领域",
+        "多维度",
+        "跨领域",
+        "跨域",
+        "编排工作流",
+        "工作流图",
+        "任务图",
+        "串联 skill",
+        "自动串联",
+        "ai 自己判断",
+        "自己判断",
         "选择合适",
         "不确定",
         "coffee skill",
@@ -612,6 +703,7 @@ SIMPLE_PROMPT_PATTERNS = [
     re.compile(r"是什么意思\??$"),
     re.compile(r"翻译成"),
     re.compile(r"^fix grammar\b", re.IGNORECASE),
+    re.compile(r"^give me \w+ quick tips?\b", re.IGNORECASE),
     re.compile(r"^pretty-print\b", re.IGNORECASE),
     re.compile(r"^summarize this one-page", re.IGNORECASE),
     re.compile(r"^explain .+ in one paragraph", re.IGNORECASE),
@@ -692,6 +784,7 @@ def is_simple_prompt(prompt: str) -> bool:
 def rank_skills(prompt: str, skills: list[Skill], idf: dict[str, float]) -> list[dict[str, object]]:
     prompt_tokens = Counter(tokenize(prompt))
     simple = is_simple_prompt(prompt)
+    domain_hit_count = sum(1 for skill_name in DOMAIN_KEYWORDS if skill_name != "coff0xc-skill-router" and phrase_hits(prompt, skill_name))
     ranked: list[dict[str, object]] = []
 
     for skill in skills:
@@ -705,9 +798,13 @@ def rank_skills(prompt: str, skills: list[Skill], idf: dict[str, float]) -> list
             explicit_score += 100.0
         if skill.name == "coff0xc-skill-router" and ("coff0xc" in prompt_lower or "choose the right skill" in prompt_lower):
             explicit_score += 20.0
+        if skill.name == "coff0xc-skill-router" and domain_hit_count >= 3:
+            explicit_score += 3.5 * domain_hit_count
         router_penalty = 0.0
         if skill.name == "coff0xc-skill-router" and "coff0xc-skill-router" not in prompt_lower:
             router_penalty = 5.0
+            if simple:
+                router_penalty += 4.0
         simplicity_penalty = 6.0 if simple else 0.0
         score = lexical_score + phrase_score + explicit_score - router_penalty - simplicity_penalty
         ranked.append(
@@ -735,6 +832,8 @@ def evaluate(eval_set: dict[str, object], threshold: float) -> dict[str, object]
         "router_total": 0,
         "router_top1": 0,
         "router_top3": 0,
+        "composition_total": 0,
+        "composition_full_topn": 0,
         "negative_total": 0,
         "negative_no_trigger": 0,
         "negative_false_positive": 0,
@@ -749,28 +848,43 @@ def evaluate(eval_set: dict[str, object], threshold: float) -> dict[str, object]
         predicted = str(top["skill"]) if top_score >= threshold else None
         top3 = [str(item["skill"]) for item in ranked[:3] if float(item["score"]) >= threshold]
         expected = case.get("expected_skill")
+        expected_skill_set = [str(item) for item in case.get("expected_skill_set", [])]
+        expected_set_top_n = int(case.get("expected_set_top_n", max(5, len(expected_skill_set))))
+        topn = [str(item["skill"]) for item in ranked[:expected_set_top_n] if float(item["score"]) >= threshold]
         should_trigger = bool(case["should_trigger"])
         passed = False
         failure = ""
 
         if should_trigger:
             metrics["positive_total"] += 1
-            by_skill[str(expected)]["total"] += 1
+            if expected is not None:
+                by_skill[str(expected)]["total"] += 1
             if predicted:
                 metrics["positive_triggered"] += 1
-                by_skill[str(expected)]["triggered"] += 1
-            if predicted == expected:
+                if expected is not None:
+                    by_skill[str(expected)]["triggered"] += 1
+            if expected_skill_set:
+                metrics["composition_total"] += 1
+                missing = [skill for skill in expected_skill_set if skill not in topn]
+                if not missing:
+                    metrics["composition_full_topn"] += 1
+                    passed = True
+                else:
+                    failure = f"composition missing in top{expected_set_top_n}: {', '.join(missing)}"
+            if expected is not None and predicted == expected:
                 metrics["positive_top1"] += 1
                 by_skill[str(expected)]["top1"] += 1
-                passed = True
-            elif expected in top3:
+                if not expected_skill_set:
+                    passed = True
+            elif expected is not None and expected in top3:
                 metrics["positive_top3"] += 1
                 by_skill[str(expected)]["top3"] += 1
-                passed = True
+                if not expected_skill_set:
+                    passed = True
                 failure = "expected skill was top3 but not top1"
-            else:
+            elif not expected_skill_set:
                 failure = f"expected {expected}, predicted {predicted or 'none'}"
-            if predicted == expected:
+            if expected is not None and predicted == expected:
                 metrics["positive_top3"] += 1
                 by_skill[str(expected)]["top3"] += 1
             if expected == "coff0xc-skill-router":
@@ -795,8 +909,11 @@ def evaluate(eval_set: dict[str, object], threshold: float) -> dict[str, object]
                 "language": case["language"],
                 "should_trigger": should_trigger,
                 "expected_skill": expected,
+                "expected_skill_set": expected_skill_set,
+                "expected_set_top_n": expected_set_top_n if expected_skill_set else None,
                 "predicted_skill": predicted,
                 "top_score": top_score,
+                "topn": ranked[:expected_set_top_n] if expected_skill_set else [],
                 "top3": ranked[:3],
                 "passed": passed,
                 "failure": failure,
@@ -818,6 +935,7 @@ def evaluate(eval_set: dict[str, object], threshold: float) -> dict[str, object]
             "positive_triggered_rate": rate(metrics["positive_triggered"], metrics["positive_total"]),
             "router_top1_rate": rate(metrics["router_top1"], metrics["router_total"]),
             "router_top3_rate": rate(metrics["router_top3"], metrics["router_total"]),
+            "composition_full_topn_rate": rate(metrics["composition_full_topn"], metrics["composition_total"]),
             "negative_no_trigger_rate": rate(metrics["negative_no_trigger"], metrics["negative_total"]),
             "negative_false_positive_rate": rate(metrics["negative_false_positive"], metrics["negative_total"]),
         },
@@ -855,6 +973,7 @@ def write_markdown_report(summary: dict[str, object], output: Path) -> None:
         f"- Positive triggered rate: {metrics['positive_triggered_rate']}",
         f"- Router top-1 rate: {metrics['router_top1_rate']}",
         f"- Router top-3 rate: {metrics['router_top3_rate']}",
+        f"- Composition full top-N rate: {metrics['composition_full_topn_rate']}",
         f"- Negative no-trigger rate: {metrics['negative_no_trigger_rate']}",
         f"- Negative false-positive rate: {metrics['negative_false_positive_rate']}",
         "",
@@ -878,6 +997,7 @@ def write_markdown_report(summary: dict[str, object], output: Path) -> None:
                     f"### {item['id']}",
                     "",
                     f"- Expected: `{item['expected_skill']}`",
+                    f"- Expected set: `{', '.join(item.get('expected_skill_set', []))}`",
                     f"- Predicted: `{item['predicted_skill']}`",
                     f"- Failure: {item['failure']}",
                     "- Top 3:",

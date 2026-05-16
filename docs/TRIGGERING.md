@@ -9,7 +9,27 @@ Most clients select skills from frontmatter metadata, especially `name` and `des
 - Each capability skill starts with broad Chinese/English capability terms.
 - Descriptions include concrete deliverables, domain nouns, tool names, acronyms, and source aliases.
 - Each skill body includes capability positioning, inputs, deliverables, boundaries, trust reasons, and examples.
-- `coff0xc-skill-router` is the fallback when the user is unsure or auto-triggering misses.
+- `coff0xc-skill-router` is both the fallback when auto-triggering misses and the autonomous composer for cross-domain tasks.
+- Broad prompts should trigger a workflow graph, not a forced one-skill answer.
+
+## Composition Triggers
+
+Use the router when the user says any of these:
+
+```text
+你自己判断要用哪些 coff0xc skills，并把它们串成工作流完成。
+这个任务同时涉及前后端、数据库、UI 和安全，你来编排。
+Decide which coff0xc skills are needed and chain them into a workflow.
+Orchestrate a vibe-coding workflow for this repo.
+```
+
+Expected router output:
+
+- primary skill,
+- supporting skills with one-line reasons,
+- phase order with gates,
+- skills intentionally not used,
+- re-routing conditions if new evidence appears.
 
 ## Manual Invocation
 
@@ -34,7 +54,7 @@ Use one of these phrases when auto-triggering misses:
 | `coff0xc-compliance-architecture` | `使用 coff0xc-compliance-architecture ...` | 安全架构, 威胁建模, 合规映射, 数据安全, 隐私, 成熟度 |
 | `coff0xc-purple-deception` | `使用 coff0xc-purple-deception ...` | 紫队演练, ATT&CK, 检测覆盖, 响应验证, 欺骗防御, 运营改进 |
 | `coff0xc-network-protocol-security` | `使用 coff0xc-network-protocol-security ...` | 协议分析, TLS/DNS/HTTP, Packet/pcap, 无线/BLE/RF, 状态机, 形式化建模 |
-| `coff0xc-skill-router` | `使用 coff0xc-skill-router ...` | 技能分诊, 兜底触发, 候选对比, 安全门禁, 手动调用 |
+| `coff0xc-skill-router` | `使用 coff0xc-skill-router ...` | 自治编排, 多 skill 工作流, 任务图, 阶段门禁, 重路由 |
 
 ## Troubleshooting
 
@@ -42,5 +62,6 @@ Use one of these phrases when auto-triggering misses:
 2. Restart or refresh the client after copying skills.
 3. Remove duplicate skill names across `.codex/skills`, `.agents/skills`, or other scanned locations.
 4. Keep trigger terms in frontmatter `description`, not only in the Markdown body.
-5. Use `coff0xc-skill-router` when unsure which skill should handle a request.
+5. Use `coff0xc-skill-router` when unsure which skill should handle a request or when the task should compose multiple skills.
 6. If a task is broad, mention the expected deliverable, for example `检测规则`, `OpenAPI`, `draw.io`, `PPTX`, `XLSX`, `测试验证`, `CI 复现`, `设计系统`, `状态门禁`, `浏览器截图`, or `风险清单`.
+7. For autonomous composition, include wording such as `你自己判断`, `串联 skill`, `任务图`, `工作流`, `vibe coding`, or `chain the needed skills`.

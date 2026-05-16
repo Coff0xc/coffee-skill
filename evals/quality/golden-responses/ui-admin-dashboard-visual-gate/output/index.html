@@ -20,6 +20,7 @@
     .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     button { border: 1px solid var(--line); background: #fff; color: var(--ink); padding: 8px 12px; border-radius: 6px; }
     button:focus { outline: 3px solid #87b5c4; outline-offset: 2px; }
+    button:hover { border-color: var(--accent); }
     button:disabled, .disabled { opacity: .45; cursor: not-allowed; }
     .grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 18px; margin-top: 18px; }
     .panel { border: 1px solid var(--line); background: #fff; padding: 18px; border-radius: 8px; }
@@ -40,7 +41,7 @@
         <h1>Billing Operations Console</h1>
         <p>Exception review queue, owner triage, and state coverage.</p>
       </div>
-      <button type="button">Refresh queue</button>
+      <button type="button" aria-label="Refresh billing exception queue">Refresh queue</button>
     </section>
     <section class="grid">
       <article class="panel">

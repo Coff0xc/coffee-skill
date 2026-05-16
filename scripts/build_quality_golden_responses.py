@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import csv
+import hashlib
+import json
 import shutil
 import textwrap
 import zipfile
@@ -71,6 +73,10 @@ def create_png(path: Path, size: tuple[int, int], title: str, lines: list[str]) 
     image.save(path)
 
 
+def file_sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
 def docx_xml_text(root: ET.Element) -> str:
     values = [
         elem.text
@@ -108,6 +114,7 @@ def build_ui_golden() -> None:
             .toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
             button { border: 1px solid var(--line); background: #fff; color: var(--ink); padding: 8px 12px; border-radius: 6px; }
             button:focus { outline: 3px solid #87b5c4; outline-offset: 2px; }
+            button:hover { border-color: var(--accent); }
             button:disabled, .disabled { opacity: .45; cursor: not-allowed; }
             .grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 18px; margin-top: 18px; }
             .panel { border: 1px solid var(--line); background: #fff; padding: 18px; border-radius: 8px; }
@@ -128,7 +135,7 @@ def build_ui_golden() -> None:
                 <h1>Billing Operations Console</h1>
                 <p>Exception review queue, owner triage, and state coverage.</p>
               </div>
-              <button type="button">Refresh queue</button>
+              <button type="button" aria-label="Refresh billing exception queue">Refresh queue</button>
             </section>
             <section class="grid">
               <article class="panel">
@@ -163,6 +170,41 @@ def build_ui_golden() -> None:
     )
     create_png(case / "screenshots" / "desktop.png", (1280, 800), "Desktop dashboard render", ["Queue panel", "State rail", "Responsive table"])
     create_png(case / "screenshots" / "mobile.png", (390, 844), "Mobile dashboard render", ["Toolbar", "Queue", "States"])
+    render_audit = {
+        "html_sha256": file_sha256(case / "output" / "index.html"),
+        "screenshots": {
+            "desktop": {
+                "path": "screenshots/desktop.png",
+                "sha256": file_sha256(case / "screenshots" / "desktop.png"),
+                "viewport": [1280, 800],
+            },
+            "mobile": {
+                "path": "screenshots/mobile.png",
+                "sha256": file_sha256(case / "screenshots" / "mobile.png"),
+                "viewport": [390, 844],
+            },
+        },
+        "console": {"errors": 0, "warnings": 0},
+        "layout": {"overlap_count": 0, "clipped_text_count": 0},
+        "aesthetic": {
+            "score": 8.2,
+            "dimensions": {
+                "density": 8,
+                "hierarchy": 8,
+                "restraint": 9,
+                "domain_fit": 8,
+                "state_coverage": 8,
+            },
+        },
+        "checks": {
+            "html_matches_screenshots": True,
+            "desktop_mobile_present": True,
+            "console_clean": True,
+            "no_overlap": True,
+            "professional_aesthetic": True,
+        },
+    }
+    (case / "render-audit.json").write_text(json.dumps(render_audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def build_dev_golden() -> None:
@@ -209,6 +251,146 @@ def build_dev_golden() -> None:
         CI: the fixture CI log points to pytest failures in test_billing.py.
         Pytest: the repaired normalize_amount and invoice_total paths satisfy currency parsing, discount_rate, and tax_rate behavior.
         Lockfile: requirements.lock is intentionally unchanged to avoid dependency noise.
+        """,
+    )
+
+
+def build_dev_js_golden() -> None:
+    case = GOLDEN_ROOT / "dev-js-api-repair-gate"
+    reset_dir(case)
+    write_text(
+        case / "src" / "usage.js",
+        """
+        const PLAN_LIMITS = {
+          starter: 1000,
+          team: 25000,
+          enterprise: 250000,
+        };
+
+        function normalizeUsageEvent(event) {
+          if (!event || typeof event !== "object") {
+            throw new TypeError("event must be an object");
+          }
+          const plan = String(event.plan || "").toLowerCase();
+          if (!Object.prototype.hasOwnProperty.call(PLAN_LIMITS, plan)) {
+            throw new Error(`unknown plan: ${event.plan}`);
+          }
+          const units = Number(event.units);
+          if (!Number.isFinite(units) || units < 0) {
+            throw new Error("units must be a non-negative number");
+          }
+          return {
+            accountId: String(event.accountId || "").trim(),
+            plan,
+            units,
+            limit: PLAN_LIMITS[plan],
+          };
+        }
+
+        function calculateRemainingBudget(event) {
+          const normalized = normalizeUsageEvent(event);
+          return Math.max(0, normalized.limit - normalized.units);
+        }
+
+        function shouldThrottle(event) {
+          const normalized = normalizeUsageEvent(event);
+          return normalized.units >= normalized.limit;
+        }
+
+        module.exports = {
+          PLAN_LIMITS,
+          normalizeUsageEvent,
+          calculateRemainingBudget,
+          shouldThrottle,
+        };
+        """,
+    )
+    shutil.copyfile(
+        CASES_ROOT / "dev-js-api-repair-gate" / "input" / "package-lock.json",
+        case / "package-lock.json",
+    )
+    write_text(
+        case / "repair-notes.md",
+        """
+        # JS API Repair Notes
+
+        Need Package: CI log, package scripts, API contract, lockfile, and failing usage budget tests.
+        Root cause: plan normalization and numeric unit handling were missing from the usage helper.
+        Fast inner loop: node-based behavior check for calculateRemainingBudget and shouldThrottle.
+        CI: npm test would run the usage tests after the local behavior check.
+        Lockfile: package-lock.json is unchanged because no dependency was needed.
+        Security: invalid plan and negative units now fail closed.
+        """,
+    )
+
+
+def build_composition_workflow_golden() -> None:
+    case = GOLDEN_ROOT / "composition-workflow-execution-gate"
+    reset_dir(case)
+    trace = {
+        "task": "Repair billing anomaly with API, UI, security, Office, and compliance outputs.",
+        "primary_skill": "coff0xc-skill-router",
+        "stages": [
+            {
+                "name": "intake and skill graph",
+                "skills": ["coff0xc-skill-router"],
+                "inputs": ["user request", "repo status", "available artifacts"],
+                "artifacts": ["skill-graph.md"],
+                "gates": [{"name": "primary/support skills selected", "status": "passed"}],
+            },
+            {
+                "name": "repo repair implementation",
+                "skills": ["coff0xc-software-engineering", "coff0xc-api-data-platform"],
+                "inputs": ["CI log", "API route", "database migration"],
+                "artifacts": ["patch-summary.md", "api-contract.md"],
+                "gates": [{"name": "targeted tests pass", "status": "passed"}],
+            },
+            {
+                "name": "security regression",
+                "skills": ["coff0xc-secure-code-appsec", "coff0xc-compliance-architecture"],
+                "inputs": ["authz path", "audit log", "risk register"],
+                "artifacts": ["security-review.md", "control-evidence.md"],
+                "gates": [{"name": "authorization regression covered", "status": "passed"}],
+            },
+            {
+                "name": "ui and customer deliverables",
+                "skills": ["coff0xc-ui-doc-output", "coff0xc-office-doc-tools"],
+                "inputs": ["dashboard screenshot", "customer impact data"],
+                "artifacts": ["ui-audit.md", "customer-notice.docx", "impact-table.xlsx"],
+                "gates": [{"name": "visual and artifact checks pass", "status": "passed"}],
+            },
+            {
+                "name": "final verification",
+                "skills": ["coff0xc-skill-router", "coff0xc-software-engineering"],
+                "inputs": ["all stage artifacts"],
+                "artifacts": ["final-verification.md"],
+                "gates": [{"name": "release gate complete", "status": "passed"}],
+            },
+        ],
+        "reroutes": [
+            {
+                "trigger": "security alert intersects billing anomaly",
+                "from": "coff0xc-software-engineering",
+                "to": "coff0xc-secure-code-appsec",
+                "reason": "authorization regression became part of the root cause",
+            }
+        ],
+        "final_verification": {
+            "commands": ["pytest tests/test_billing.py", "npm run test:ui", "python scripts/run_quality_eval.py"],
+            "result": "passed in fixture",
+        },
+    }
+    (case / "workflow-trace.json").write_text(json.dumps(trace, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_text(
+        case / "workflow-summary.md",
+        """
+        # Multi-Skill Workflow Summary
+
+        Primary skill: coff0xc-skill-router.
+        Support skills: software engineering, API/data, secure code/AppSec, compliance architecture, UI/doc output, and Office/doc tools.
+        Reroute: security alert evidence moved the task from pure repo repair into AppSec and compliance checks.
+        Stage gates: every phase records inputs, artifacts, and passed verification gates.
+        Final verification: code, UI, and quality eval commands are represented as explicit release gates.
         """,
     )
 
@@ -874,6 +1056,8 @@ def main() -> None:
     GOLDEN_ROOT.mkdir(parents=True, exist_ok=True)
     build_ui_golden()
     build_dev_golden()
+    build_dev_js_golden()
+    build_composition_workflow_golden()
     build_ppt_golden()
     build_excel_golden()
     build_docx_golden()

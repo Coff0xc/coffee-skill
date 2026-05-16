@@ -1,6 +1,6 @@
 ---
 name: coff0xc-secure-code-appsec
-description: "Use when / 当用户请求: 全面代码安全审计、Web/API/GraphQL/OAuth/浏览器/SPA/LLM 安全、后门检测和授权应用安全验证工作流。触发：代码审计、危险函数、source/sink、污点分析、Web 安全、API 安全、GraphQL、OAuth、CSP、CORS、Cookie、Prompt 注入、越权、SSRF、XSS、SQLi、后门、Webshell、绕过登录、看到别人数据、代码入口、数据流、access control、authorization bypass。 Covered source aliases / 来源别名: api-discovery, api-security-test, backdoor-detector, browser-security, code-audit, graphql-pentest, llm-red-teaming, oauth-security, spa-pentest, web-pentest. Capability domains / 能力域: 入口梳理, Source/Sink, 认证授权, Web/API 漏洞, 浏览器/SPA, GraphQL, LLM/Agent 安全, 后门检测. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-secure-code-appsec."
+description: "Use when / 当用户请求: 全面代码安全审计、Web/API/GraphQL/OAuth/浏览器/SPA/LLM 安全、后门检测和授权应用安全验证工作流。触发：代码审计、危险函数、source/sink、污点分析、Web 安全、API 安全、GraphQL、OAuth、CSP、CORS、Cookie、Prompt 注入、越权、权限越权、权限模型、SSRF、XSS、SQLi、后门、Webshell、绕过登录、看到别人数据、代码入口、数据流、access control、permission model、authorization bypass、security regression、安全回归。 Covered source aliases / 来源别名: api-discovery, api-security-test, backdoor-detector, browser-security, code-audit, graphql-pentest, llm-red-teaming, oauth-security, spa-pentest, web-pentest. Capability domains / 能力域: 入口梳理, Source/Sink, 认证授权, Web/API 漏洞, 浏览器/SPA, GraphQL, LLM/Agent 安全, 后门检测. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-secure-code-appsec."
 ---
 
 # coff0xc-secure-code-appsec

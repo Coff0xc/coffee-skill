@@ -6,11 +6,11 @@ Unlike trigger evals, these cases define artifact-level quality checks for actua
 
 ## Summary
 
-- Cases: 5
+- Cases: 7
 - Mode: responses
 - Fixture errors: 0
 - Responses dir: `evals/quality/golden-responses`
-- Passed cases: 5
+- Passed cases: 7
 - Failed cases: 0
 - Assertion pass rate: 1.0
 
@@ -27,12 +27,14 @@ No fixture errors.
 - PASS `ui-output-html-exists`: evals/quality/golden-responses/ui-admin-dashboard-visual-gate/output/index.html exists
 - PASS `ui-uses-semantic-design-tokens`: all terms found
 - PASS `ui-covers-state-and-responsive-gates`: all terms found
+- PASS `ui-static-html-quality-checks`: {"aria_attrs": 1, "buttons": 2, "css_variables": 7, "focus_rules": 1, "grid_or_flex_rules": 3, "long_unbroken_tokens": 0, "media_queries": 1, "semantic_tags": ["article", "aside", "main", "section"], "state_terms": ["loading", "empty", "error", "disabled"]}
 - PASS `ui-avoids-generic-ai-visuals`: no banned patterns found
 - PASS `ui-notes-prove-quality-gates`: all terms found
 - PASS `ui-desktop-screenshot-exists`: evals/quality/golden-responses/ui-admin-dashboard-visual-gate/screenshots/desktop.png exists
 - PASS `ui-mobile-screenshot-exists`: evals/quality/golden-responses/ui-admin-dashboard-visual-gate/screenshots/mobile.png exists
 - PASS `ui-desktop-screenshot-is-real-png`: png dimensions 1280x800, required >= 900x600
 - PASS `ui-mobile-screenshot-is-real-png`: png dimensions 390x844, required >= 320x600
+- PASS `ui-render-audit-links-html-screenshots-console-layout-aesthetic`: {"aesthetic_score": 8.2, "checks": {"console_clean": true, "desktop_mobile_present": true, "html_matches_screenshots": true, "no_overlap": true, "professional_aesthetic": true}, "clipped_text_count": 0, "console_errors": 0, "console_warnings": 0, "html_sha256": "29dd0fbba70a2d6432e7eb30545964e94c08e7fdd98865e547d06f12b9d7157e", "overlap_count": 0}
 ### dev-repo-repair-ci-gate
 
 - Skill: `coff0xc-software-engineering`
@@ -42,6 +44,22 @@ No fixture errors.
 - PASS `dev-behavior-passes-fixture-tests`: normalize_amount=1200.50, invoice_total=243.00
 - PASS `dev-no-unnecessary-dependency-noise`: matches reference
 - PASS `dev-notes-prove-repair-loop`: all terms found
+### dev-js-api-repair-gate
+
+- Skill: `coff0xc-software-engineering`
+- Passed: `True`
+- PASS `dev-js-fixed-source-exists`: evals/quality/golden-responses/dev-js-api-repair-gate/src/usage.js exists
+- PASS `dev-js-normalizes-plan-and-units`: all terms found
+- PASS `dev-js-behavior-passes-fixture-tests`: usage behavior passed
+- PASS `dev-js-no-lockfile-noise`: matches reference
+- PASS `dev-js-notes-prove-repair-loop`: all terms found
+### composition-workflow-execution-gate
+
+- Skill: `coff0xc-skill-router`
+- Passed: `True`
+- PASS `composition-trace-exists`: evals/quality/golden-responses/composition-workflow-execution-gate/workflow-trace.json exists
+- PASS `composition-trace-proves-multistage-execution`: {"final_verification": {"commands": ["pytest tests/test_billing.py", "npm run test:ui", "python scripts/run_quality_eval.py"], "result": "passed in fixture"}, "reroutes": 1, "skills": ["coff0xc-api-data-platform", "coff0xc-compliance-architecture", "coff0xc-office-doc-tools", "coff0xc-secure-code-appsec", "coff0xc-skill-router", "coff0xc-software-engineering", "coff0xc-ui-doc-output"], "stages": 5}
+- PASS `composition-summary-explains-reroute-and-gates`: all terms found
 ### office-ppt-aesthetic
 
 - Skill: `coff0xc-office-doc-tools`
