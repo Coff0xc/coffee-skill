@@ -135,6 +135,14 @@ Use coff0xc-ui-doc-output to polish the report narrative and UI copy for these f
 - Canvas/WebGL/Three.js 必须检查非空像素、场景 framing、移动/交互是否可见。
 - 如果浏览器或截图不可用，最终必须写明“代码已改但未做视觉验收”，不能说 UI 已验证。
 
+### 质量 Eval 自测
+当用户要求“确认 skill 是否真的好用”“优化 UI skill”“不要只堆触发词”时，不要只改描述。优先用仓库内质量夹具校准：
+
+- 参考 `evals/quality/cases/ui-admin-dashboard-visual-gate/`：输入是典型 AI 味 dashboard，合格输出必须有 `output/index.html`、`screenshots/desktop.png`、`screenshots/mobile.png` 和 `evaluation-notes.md`。
+- `evaluation-notes.md` 要能证明：UI Need Package、产品类型路由、设计系统、状态覆盖、可访问性、浏览器验收和剩余限制。
+- 运行 `python .\scripts\run_quality_eval.py` 检查夹具完整性；有真实 agent 输出时运行 `python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses` 评分。
+- 质量 eval 通过不等于审美一定满分；它只证明产物没有跳过关键门禁。需要最终截图和人工 taste review 时要明说。
+
 ## 能力矩阵
 | 能力域 | 覆盖范围 | 执行要点 |
 | --- | --- | --- |

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "mode": "fixture",
+  "case_count": 2,
+  "fixture_error_count": 0,
+  "fixture_errors": [],
+  "passed_cases": 0,
+  "failed_cases": 0,
+  "assertion_total": 0,
+  "assertion_passed": 0,
+  "assertion_pass_rate": null,
+  "results": []
+}

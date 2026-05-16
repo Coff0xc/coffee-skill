@@ -1,0 +1,19 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.3, pytest-8.2.0
+collected 2 items
+
+test/test_billing.py F.
+
+================================== FAILURES ===================================
+_________________ test_normalize_amount_accepts_currency_commas _________________
+
+    def test_normalize_amount_accepts_currency_commas():
+>       assert normalize_amount("$1,200.50") == Decimal("1200.50")
+
+src\billing.py:8: in normalize_amount
+    return Decimal(cleaned)
+decimal.InvalidOperation: [<class 'decimal.ConversionSyntax'>]
+
+=========================== short test summary info ===========================
+FAILED test/test_billing.py::test_normalize_amount_accepts_currency_commas
+========================= 1 failed, 1 passed in 0.13s =========================

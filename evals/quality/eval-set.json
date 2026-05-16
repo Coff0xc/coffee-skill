@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "description": "Artifact-level quality evaluation fixtures for coffee-skill. These cases are not trigger-routing tests. They define realistic UI and repo-repair tasks plus objective checks for expected process evidence and output artifacts.",
+  "cases": [
+    {
+      "id": "ui-admin-dashboard-visual-gate",
+      "skill": "coff0xc-ui-doc-output",
+      "category": "ui_quality",
+      "prompt_file": "cases/ui-admin-dashboard-visual-gate/prompt.md",
+      "input_files": [
+        "cases/ui-admin-dashboard-visual-gate/input/bad-dashboard.html"
+      ],
+      "expected_output_dir": "responses/<case-id>/",
+      "artifacts": [
+        "output/index.html",
+        "screenshots/desktop.png",
+        "screenshots/mobile.png",
+        "evaluation-notes.md"
+      ],
+      "assertions": [
+        {
+          "id": "ui-output-html-exists",
+          "type": "file_exists",
+          "path": "output/index.html",
+          "reason": "The run must produce a concrete UI artifact, not only advice."
+        },
+        {
+          "id": "ui-uses-semantic-design-tokens",
+          "type": "file_contains_all",
+          "path": "output/index.html",
+          "terms": [
+            ":root",
+            "--",
+            "main",
+            "button"
+          ],
+          "reason": "The improved UI should expose a small design system and semantic structure."
+        },
+        {
+          "id": "ui-covers-state-and-responsive-gates",
+          "type": "file_contains_all",
+          "path": "output/index.html",
+          "terms": [
+            "@media",
+            "empty",
+            "loading",
+            "error",
+            "disabled",
+            "focus"
+          ],
+          "reason": "The fixture checks that the skill forces state coverage and responsive behavior."
+        },
+        {
+          "id": "ui-avoids-generic-ai-visuals",
+          "type": "file_not_contains_regex",
+          "path": "output/index.html",
+          "patterns": [
+            "linear-gradient\\(",
+            "Lorem ipsum",
+            "John Doe",
+            "Acme",
+            "99\\.99%"
+          ],
+          "reason": "The output should remove common AI-template artifacts from the provided bad dashboard."
+        },
+        {
+          "id": "ui-notes-prove-quality-gates",
+          "type": "file_contains_all",
+          "path": "evaluation-notes.md",
+          "terms": [
+            "UI Need Package",
+            "product type",
+            "design system",
+            "state",
+            "accessibility",
+            "browser"
+          ],
+          "reason": "The run must leave reviewable evidence for the UI quality gates."
+        },
+        {
+          "id": "ui-desktop-screenshot-exists",
+          "type": "file_exists",
+          "path": "screenshots/desktop.png",
+          "reason": "UI quality cannot be claimed without at least a desktop render artifact."
+        },
+        {
+          "id": "ui-mobile-screenshot-exists",
+          "type": "file_exists",
+          "path": "screenshots/mobile.png",
+          "reason": "The responsive gate requires a mobile render artifact."
+        }
+      ]
+    },
+    {
+      "id": "dev-repo-repair-ci-gate",
+      "skill": "coff0xc-software-engineering",
+      "category": "software_quality",
+      "prompt_file": "cases/dev-repo-repair-ci-gate/prompt.md",
+      "input_files": [
+        "cases/dev-repo-repair-ci-gate/input/AGENTS.md",
+        "cases/dev-repo-repair-ci-gate/input/README.md",
+        "cases/dev-repo-repair-ci-gate/input/ci.log",
+        "cases/dev-repo-repair-ci-gate/input/requirements.lock",
+        "cases/dev-repo-repair-ci-gate/input/src/billing.py",
+        "cases/dev-repo-repair-ci-gate/input/test/test_billing.py"
+      ],
+      "expected_output_dir": "responses/<case-id>/",
+      "artifacts": [
+        "src/billing.py",
+        "repair-notes.md"
+      ],
+      "assertions": [
+        {
+          "id": "dev-fixed-billing-file-exists",
+          "type": "file_exists",
+          "path": "src/billing.py",
+          "reason": "The run must produce a concrete code patch."
+        },
+        {
+          "id": "dev-fixes-currency-and-rate-paths",
+          "type": "file_contains_all",
+          "path": "src/billing.py",
+          "terms": [
+            "replace(\",\", \"\")",
+            "discount_rate",
+            "tax_rate"
+          ],
+          "reason": "The minimal fix should address the failing currency parsing and invoice math paths."
+        },
+        {
+          "id": "dev-behavior-passes-fixture-tests",
+          "type": "python_billing_behavior",
+          "path": "src/billing.py",
+          "reason": "The candidate code must satisfy the actual failing behavior, not only contain matching keywords."
+        },
+        {
+          "id": "dev-no-unnecessary-dependency-noise",
+          "type": "file_unchanged_if_present",
+          "path": "requirements.lock",
+          "reference": "cases/dev-repo-repair-ci-gate/input/requirements.lock",
+          "reason": "The fixture is designed to catch unnecessary lockfile churn."
+        },
+        {
+          "id": "dev-notes-prove-repair-loop",
+          "type": "file_contains_all",
+          "path": "repair-notes.md",
+          "terms": [
+            "Need Package",
+            "fast inner loop",
+            "CI",
+            "pytest",
+            "root cause",
+            "lockfile"
+          ],
+          "reason": "The run must leave evidence that it followed the repo-repair gates."
+        }
+      ]
+    }
+  ]
+}

@@ -6,6 +6,8 @@
 - Source skills consolidated: 91
 - Comprehensive capability skills: 17
 - Router/fallback skills: 1
+- Trigger eval cases: 117
+- Quality eval fixtures: 2
 
 ## Skill Capability Map
 

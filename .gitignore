@@ -24,3 +24,6 @@ __pycache__/
 *.tar
 *.tar.gz
 extracted/
+
+# Quality-eval local agent outputs
+evals/quality/responses/

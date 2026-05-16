@@ -42,3 +42,5 @@ The script exits non-zero if any case fails. To inspect scores without changing 
 ## Limits
 
 This is a deterministic local proxy. It does not reproduce the private trigger logic of every Codex client or model runtime. Treat failures as strong evidence of metadata gaps, and treat passes as a useful release guard rather than a guarantee.
+
+For artifact-level behavior checks, use [Quality Evaluation](QUALITY_EVAL.md). Trigger evals only prove routing metadata; they do not prove UI taste, repo repair quality, or Office artifact correctness.

@@ -200,6 +200,15 @@ Use coff0xc-software-engineering to build this admin panel feature end to end wi
 | 真实测试 | 测试覆盖行为和失败路径；不用 snapshot 或 happy path 假装覆盖。 |
 | UI 协作 | 前端实现由本 skill 落地，但必须套用 `coff0xc-ui-doc-output` 的 UI 状态/视觉验收门禁。 |
 
+## 质量 Eval 自测
+当用户要求“确认 dev skill 是否真的好用”“优化开发 skill”“不要只堆触发词”时，不要只改 frontmatter。优先用仓库内真实 repair 夹具校准：
+
+- 参考 `evals/quality/cases/dev-repo-repair-ci-gate/`：输入包含 `AGENTS.md`、README、CI 日志、lockfile、源码和失败测试。
+- 合格输出必须有修复后的 `src/billing.py` 和 `repair-notes.md`；如果输出 `requirements.lock`，必须与输入一致，除非依赖真实变化。
+- `repair-notes.md` 要能证明：Need Package、fast inner loop、CI 线索、pytest 验证、root cause 和 lockfile discipline。
+- 运行 `python .\scripts\run_quality_eval.py` 检查夹具完整性；有真实 agent 输出时运行 `python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses`。runner 会加载候选 `billing.py` 做行为断言，避免只靠关键词假通过。
+- 质量 eval 是最小行为基准，不替代真实项目的 typecheck、lint、build、browser smoke 或 CI。
+
 ## 子域路由
 | 来源 skill | 并入后的处理方式 |
 | --- | --- |

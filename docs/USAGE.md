@@ -68,6 +68,26 @@ A good Coff0xc skill run should leave the user with evidence, not just prose:
 - validation results or clear reasons validation could not run,
 - remaining risk and the next useful action.
 
+## Local Quality Evals
+
+Use trigger evals to check routing metadata:
+
+```powershell
+python .\scripts\run_trigger_eval.py
+```
+
+Use quality evals to check whether UI/dev skills force concrete artifacts and reviewable evidence:
+
+```powershell
+python .\scripts\run_quality_eval.py
+```
+
+To score actual agent outputs, save them under `evals/quality/responses/<case-id>/` and run:
+
+```powershell
+python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses
+```
+
 ## Safety And Trust
 
 Security-scoped skills are defensive and authorization-scoped. They should transform risky requests into safe outputs: scope confirmation, evidence collection, hardening, detection, validation, and reporting. Production, credentials, paid services, deletion, push, PR actions, cloud writes, and CI/CD permission changes require explicit authorization.
