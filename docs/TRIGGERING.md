@@ -17,7 +17,7 @@ Use one of these phrases when auto-triggering misses:
 
 | Skill | Manual phrase | Source aliases |
 |---|---|---|
-| `coff0xc-software-engineering` | `使用 coff0xc-software-engineering ...` | `c-cpp-dev`, `code-simplifier`, `git-workflow`, `go-dev`, `java-dev`, `js-ts-dev`, `python-dev`, `rust-dev`, `shell-scripting`, `testing` |
+| `coff0xc-software-engineering` | `使用 coff0xc-software-engineering ...` | `dev`, `c-cpp-dev`, `code-simplifier`, `git-workflow`, `go-dev`, `java-dev`, `js-ts-dev`, `python-dev`, `rust-dev`, `shell-scripting`, `testing` |
 | `coff0xc-ai-agent-rag` | `使用 coff0xc-ai-agent-rag ...` | `ai-agent-dev`, `ai-orchestrator`, `deep-thinking` |
 | `coff0xc-api-data-platform` | `使用 coff0xc-api-data-platform ...` | `api-design`, `database`, `cli-creator` |
 | `coff0xc-ui-doc-output` | `使用 coff0xc-ui-doc-output ...` | `UIdesign`, `pdf`, `quick-translate` |

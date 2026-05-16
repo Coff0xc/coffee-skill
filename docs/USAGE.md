@@ -25,6 +25,7 @@ The pack is useful when a task needs:
 ```text
 使用 coff0xc-skill-router 帮我选择合适 skill
 使用 coff0xc-software-engineering 修复这个项目的测试失败
+使用 coff0xc-software-engineering 少问确认，直接实现这个多文件开发任务
 使用 coff0xc-ai-agent-rag 设计一个 RAG Agent
 使用 coff0xc-api-data-platform 设计这个 REST API 和数据库 schema
 使用 coff0xc-ui-doc-output 优化这个 dashboard
@@ -38,7 +39,7 @@ The pack is useful when a task needs:
 
 ### Software Engineering
 
-Use `coff0xc-software-engineering` for multi-file coding tasks, tests, refactors, scripts, and local Git summaries.
+Use `coff0xc-software-engineering` for dev-style autonomous implementation, multi-file coding tasks, end-to-end features, repo repair, tests, refactors, scripts, and local Git summaries.
 
 Expected behavior:
 
@@ -52,7 +53,9 @@ Good prompts:
 
 ```text
 使用 coff0xc-software-engineering 修复这个 repo 的 failing tests，并说明验证结果
+使用 coff0xc-software-engineering 少问确认，直接把这个全栈功能做完并跑验证
 Use coff0xc-software-engineering to refactor this module without changing behavior.
+Use coff0xc-software-engineering to build this admin panel feature end to end with tests.
 ```
 
 ### AI Agent And RAG

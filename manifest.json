@@ -1,7 +1,7 @@
 [
   {
     "name": "coff0xc-software-engineering",
-    "description": "全面软件工程、语言开发、测试、重构、脚本、Git 和工程质量工作流。触发：Python、JavaScript、TypeScript、Go、Rust、Java、C/C++、Shell、bugfix、feature、测试、重构、构建、脚本、Git、本地工程化、仓库跑不起来、报错链路、最小修复、证明好了。",
+    "description": "全面 dev / 软件工程 / 自主开发工作流。触发：build end-to-end、full-stack feature、one-shot implementation、repo repair、failing tests、bugfix、feature、refactor、scripts、local Git summary、Python、JavaScript、TypeScript、Go、Rust、Java、C/C++、Shell、dashboard/admin/API implementation、最小修复、证明好了、仓库跑不起来、多文件开发、全栈功能、少问确认、直接实现。",
     "source_skills": [
       "c-cpp-dev",
       "code-simplifier",

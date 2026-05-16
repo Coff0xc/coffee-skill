@@ -1,12 +1,12 @@
 {
   "threshold": 3.0,
-  "case_count": 84,
+  "case_count": 86,
   "skill_count": 17,
   "metrics": {
-    "positive_total": 71,
-    "positive_top1": 71,
-    "positive_top3": 71,
-    "positive_triggered": 71,
+    "positive_total": 73,
+    "positive_top1": 73,
+    "positive_top3": 73,
+    "positive_triggered": 73,
     "router_total": 7,
     "router_top1": 7,
     "router_top3": 7,
@@ -149,10 +149,10 @@
       "triggered_rate": 1.0
     },
     "coff0xc-software-engineering": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 6,
+      "top1": 6,
+      "top3": 6,
+      "triggered": 6,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
@@ -196,9 +196,9 @@
           "phrase_hits": [
             "python",
             "pytest",
-            "最小修复",
             "test",
             "lint",
+            "最小修复",
             "测试"
           ],
           "simple_prompt_penalty": 0.0
@@ -282,26 +282,25 @@
       "should_trigger": true,
       "expected_skill": "coff0xc-software-engineering",
       "predicted_skill": "coff0xc-software-engineering",
-      "top_score": 108.8331,
+      "top_score": 105.859,
       "top3": [
         {
           "skill": "coff0xc-software-engineering",
-          "score": 108.8331,
+          "score": 105.859,
           "lexical_overlap": [
             "coff0xc-software-engineering",
-            "go",
-            "测试"
+            "go"
           ],
           "phrase_hits": [
-            "go",
             "测试",
-            "重构"
+            "重构",
+            "go"
           ],
           "simple_prompt_penalty": 6.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 17.9482,
+          "score": 18.459,
           "lexical_overlap": [
             "go",
             "测试"
@@ -326,6 +325,111 @@
       "reason": "Explicit skill invocation."
     },
     {
+      "id": "software-cn-autonomous-fullstack",
+      "category": "natural_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "predicted_skill": "coff0xc-software-engineering",
+      "top_score": 22.6849,
+      "top3": [
+        {
+          "skill": "coff0xc-software-engineering",
+          "score": 22.6849,
+          "lexical_overlap": [
+            "少问确认"
+          ],
+          "phrase_hits": [
+            "后端接口",
+            "状态处理",
+            "少问确认",
+            "前端页面",
+            "多文件",
+            "测试",
+            "构建",
+            "全栈"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-api-data-platform",
+          "score": 8.2849,
+          "lexical_overlap": [
+            "后端接口"
+          ],
+          "phrase_hits": [
+            "后端接口",
+            "接口"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-ui-doc-output",
+          "score": 5.2849,
+          "lexical_overlap": [
+            "页面"
+          ],
+          "phrase_hits": [
+            "前端"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Autonomous multi-file full-stack implementation with verification."
+    },
+    {
+      "id": "software-en-end-to-end-admin",
+      "category": "natural_en",
+      "language": "en",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "predicted_skill": "coff0xc-software-engineering",
+      "top_score": 28.4288,
+      "top3": [
+        {
+          "skill": "coff0xc-software-engineering",
+          "score": 28.4288,
+          "lexical_overlap": [
+            "build",
+            "feature",
+            "repo",
+            "tests"
+          ],
+          "phrase_hits": [
+            "browser smoke",
+            "admin panel",
+            "feature",
+            "tests",
+            "test"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-research-drawio-diagram",
+          "score": 2.9741,
+          "lexical_overlap": [
+            "repo"
+          ],
+          "phrase_hits": [],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-detection-response",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "ir"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "End-to-end development, repo inspection, tests, and browser verification."
+    },
+    {
       "id": "agent-cn-knowledge-base",
       "category": "natural_cn",
       "language": "zh-CN",
@@ -344,9 +448,9 @@
           "phrase_hits": [
             "agent",
             "rag",
+            "助手",
             "评测",
-            "缓存",
-            "助手"
+            "缓存"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -439,8 +543,8 @@
             "workflow"
           ],
           "phrase_hits": [
-            "向量数据库",
             "agent",
+            "向量数据库",
             "rag"
           ],
           "simple_prompt_penalty": 6.0
@@ -493,9 +597,9 @@
             "openapi",
             "schema",
             "rest",
-            "api",
-            "错误码",
             "数据库",
+            "错误码",
+            "api",
             "分页"
           ],
           "simple_prompt_penalty": 0.0
@@ -592,8 +696,8 @@
           "phrase_hits": [
             "graphql",
             "数据质量",
-            "api",
-            "sql"
+            "sql",
+            "api"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -642,9 +746,9 @@
           ],
           "phrase_hits": [
             "dashboard",
-            "前端",
             "组件",
-            "截图"
+            "截图",
+            "前端"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -658,11 +762,11 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-binary-mobile-iot",
-          "score": 1.8,
+          "skill": "coff0xc-software-engineering",
+          "score": 3.0,
           "lexical_overlap": [],
           "phrase_hits": [
-            "移动"
+            "dashboard"
           ],
           "simple_prompt_penalty": 0.0
         }
@@ -732,10 +836,10 @@
             "coff0xc-ui-doc-output"
           ],
           "phrase_hits": [
-            "ui",
-            "润色",
             "翻译",
-            "报告"
+            "润色",
+            "报告",
+            "ui"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -951,9 +1055,9 @@
             "ssrf",
             "xss",
             "web",
-            "后门",
+            "越权",
             "认证",
-            "越权"
+            "后门"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -962,8 +1066,8 @@
           "score": 3.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "api",
-            "sql"
+            "sql",
+            "api"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1109,9 +1213,9 @@
             "github actions",
             "docker",
             "sbom",
-            "供应链",
             "k8s",
-            "iac"
+            "iac",
+            "供应链"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1215,11 +1319,11 @@
             "容器镜像"
           ],
           "phrase_hits": [
-            "azure",
             "ci/cd",
+            "azure",
             "镜像",
-            "密钥",
-            "容器"
+            "容器",
+            "密钥"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -1270,10 +1374,10 @@
           "phrase_hits": [
             "sigma",
             "yara",
-            "edr",
             "ioc",
-            "检测",
-            "日志"
+            "edr",
+            "日志",
+            "检测"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1340,12 +1444,12 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": 1.8,
-          "lexical_overlap": [],
-          "phrase_hits": [
-            "ui"
+          "skill": "coff0xc-software-engineering",
+          "score": 3.4849,
+          "lexical_overlap": [
+            "build"
           ],
+          "phrase_hits": [],
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1370,9 +1474,9 @@
           ],
           "phrase_hits": [
             "detection",
+            "告警",
             "日志",
-            "威胁",
-            "告警"
+            "威胁"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -1415,14 +1519,14 @@
             "补丁对比"
           ],
           "phrase_hits": [
-            "cvss",
             "epss",
+            "cvss",
             "cve",
             "kev",
             "优先级",
-            "补丁",
             "修复",
-            "漏洞"
+            "漏洞",
+            "补丁"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1621,9 +1725,9 @@
             "credential",
             "zero trust",
             "privilege",
+            "pam",
             "sso",
-            "iam",
-            "pam"
+            "iam"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1670,9 +1774,9 @@
             "coff0xc-identity-zero-trust"
           ],
           "phrase_hits": [
+            "凭证",
             "身份",
-            "权限",
-            "凭证"
+            "权限"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -1719,12 +1823,12 @@
             "钓鱼演练"
           ],
           "phrase_hits": [
-            "攻击面",
             "roe",
+            "攻击面",
             "授权",
             "边界",
-            "红队",
-            "演练"
+            "演练",
+            "红队"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1886,8 +1990,8 @@
             "frida",
             "uart",
             "jtag",
-            "apk",
-            "ble"
+            "ble",
+            "apk"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -1943,8 +2047,8 @@
           "phrase_hits": [
             "engineering",
             "reverse",
-            "crypto",
             "kernel",
+            "crypto",
             "pwn",
             "rf"
           ],
@@ -1994,8 +2098,8 @@
           ],
           "phrase_hits": [
             "scada",
-            "移动",
-            "固件"
+            "固件",
+            "移动"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -2044,8 +2148,8 @@
           ],
           "phrase_hits": [
             "solidity",
-            "foundry",
             "slither",
+            "foundry",
             "oracle",
             "bridge",
             "token",
@@ -2057,10 +2161,8 @@
         },
         {
           "skill": "coff0xc-software-engineering",
-          "score": 4.7741,
-          "lexical_overlap": [
-            "测试"
-          ],
+          "score": 1.8,
+          "lexical_overlap": [],
           "phrase_hits": [
             "测试"
           ],
@@ -2101,8 +2203,8 @@
           "phrase_hits": [
             "substrate",
             "algorand",
-            "solana",
             "cosmos",
+            "solana",
             "cairo",
             "ton",
             "evm"
@@ -2201,9 +2303,9 @@
           "phrase_hits": [
             "iso27001",
             "stride",
+            "soc2",
             "威胁建模",
             "数据分类",
-            "soc2",
             "dlp",
             "脱敏"
           ],
@@ -2349,8 +2451,8 @@
             "演练"
           ],
           "phrase_hits": [
-            "att&ck",
             "canary",
+            "att&ck",
             "检测覆盖",
             "紫队",
             "蜜罐"
@@ -2412,20 +2514,20 @@
           "simple_prompt_penalty": 0.0
         },
         {
+          "skill": "coff0xc-software-engineering",
+          "score": 3.4849,
+          "lexical_overlap": [
+            "build"
+          ],
+          "phrase_hits": [],
+          "simple_prompt_penalty": 0.0
+        },
+        {
           "skill": "coff0xc-authorized-assessment",
           "score": 3.0,
           "lexical_overlap": [],
           "phrase_hits": [
             "control validation"
-          ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-detection-response",
-          "score": 3.0,
-          "lexical_overlap": [],
-          "phrase_hits": [
-            "detection"
           ],
           "simple_prompt_penalty": 0.0
         }
@@ -2505,9 +2607,9 @@
             "pcap",
             "quic",
             "dns",
-            "tcp",
+            "tls",
             "udp",
-            "tls"
+            "tcp"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -2555,10 +2657,10 @@
             "rf"
           ],
           "phrase_hits": [
-            "proverif",
             "protocol",
-            "mermaid",
+            "proverif",
             "network",
+            "mermaid",
             "ble",
             "rf"
           ],
@@ -2612,8 +2714,8 @@
           "phrase_hits": [
             "protocol",
             "network",
-            "通信",
             "协议",
+            "通信",
             "无线"
           ],
           "simple_prompt_penalty": 6.0
@@ -2962,14 +3064,12 @@
       "should_trigger": true,
       "expected_skill": "coff0xc-software-engineering",
       "predicted_skill": "coff0xc-software-engineering",
-      "top_score": 14.2849,
+      "top_score": 10.8,
       "top3": [
         {
           "skill": "coff0xc-software-engineering",
-          "score": 14.2849,
-          "lexical_overlap": [
-            "报错链路"
-          ],
+          "score": 10.8,
+          "lexical_overlap": [],
           "phrase_hits": [
             "仓库跑不起来",
             "报错链路",
@@ -3016,9 +3116,9 @@
             "调用工具",
             "追踪原因",
             "查资料",
-            "落地",
+            "助手",
             "答错",
-            "助手"
+            "落地"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -3061,23 +3161,25 @@
           "phrase_hits": [
             "版本兼容",
             "存储结构",
+            "后端接口",
             "请求响应",
             "外部客户",
-            "后端接口",
-            "接口",
-            "鉴权"
+            "鉴权",
+            "接口"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-software-engineering",
+          "score": 3.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "后端接口"
           ],
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": 0.0,
-          "lexical_overlap": [],
-          "phrase_hits": [],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-authorized-assessment",
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
@@ -3106,11 +3208,11 @@
             "窄屏表现"
           ],
           "phrase_hits": [
-            "页面看起来",
             "产品可用性",
+            "页面看起来",
+            "信息密度",
             "按钮状态",
             "交付文案",
-            "信息密度",
             "窄屏",
             "很乱"
           ],
@@ -3188,8 +3290,8 @@
           "score": 7.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "绕过登录",
             "代码入口",
+            "绕过登录",
             "数据流"
           ],
           "simple_prompt_penalty": 0.0
@@ -3233,9 +3335,9 @@
           ],
           "phrase_hits": [
             "发版流水线",
+            "配置暴露",
             "集群配置",
             "依赖来源",
-            "配置暴露",
             "镜像"
           ],
           "simple_prompt_penalty": 0.0
@@ -3280,14 +3382,14 @@
             "降误报"
           ],
           "phrase_hits": [
-            "安全告警",
             "验证样本",
             "检测逻辑",
+            "安全告警",
             "降误报",
             "太吵",
-            "检测",
+            "告警",
             "日志",
-            "告警"
+            "检测"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -3327,8 +3429,8 @@
           ],
           "phrase_hits": [
             "受不受影响",
-            "跟进闭环",
             "安全问题",
+            "跟进闭环",
             "先修哪",
             "上游"
           ],
@@ -3372,12 +3474,12 @@
             "谁能访问"
           ],
           "phrase_hits": [
+            "账号权限",
             "登录策略",
             "谁能访问",
             "特权账号",
-            "账号权限",
-            "收敛",
-            "权限"
+            "权限",
+            "收敛"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -3465,9 +3567,9 @@
           "phrase_hits": [
             "可执行文件",
             "静态分析",
+            "动态调试",
             "接口枚举",
             "通信固件",
-            "动态调试",
             "设备包",
             "固件"
           ],
@@ -3514,9 +3616,9 @@
           ],
           "phrase_hits": [
             "资产流转",
-            "测试覆盖",
+            "链上资金",
             "价格来源",
-            "链上资金"
+            "测试覆盖"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -3563,11 +3665,11 @@
             "风险模型"
           ],
           "phrase_hits": [
-            "风险模型",
             "安全评审",
             "审计证据",
-            "控制项",
-            "上线前"
+            "风险模型",
+            "上线前",
+            "控制项"
           ],
           "simple_prompt_penalty": 6.0
         },
@@ -3607,8 +3709,8 @@
             "覆盖指标"
           ],
           "phrase_hits": [
-            "覆盖指标",
             "改进闭环",
+            "覆盖指标",
             "攻击行为",
             "蓝队"
           ],
@@ -3651,13 +3753,13 @@
             "加密协商"
           ],
           "phrase_hits": [
+            "异常字段",
             "通信流程",
             "加密协商",
-            "异常字段",
             "通信",
+            "解析",
             "抓包",
-            "握手",
-            "解析"
+            "握手"
           ],
           "simple_prompt_penalty": 0.0
         },

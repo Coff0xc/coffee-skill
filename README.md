@@ -37,7 +37,7 @@ AI coding agent 常见两个问题：
 
 | Skill | 用途 | 安全边界 |
 |---|---|---|
-| `coff0xc-software-engineering` | 软件工程、语言开发、测试、重构、脚本、Git | 否 |
+| `coff0xc-software-engineering` | dev/自主开发、全栈或多文件实现、测试、重构、脚本、Git | 否 |
 | `coff0xc-ai-agent-rag` | AI Agent、RAG、Prompt、LLM 应用、工具调用、评测、观测 | 否 |
 | `coff0xc-api-data-platform` | REST、GraphQL、OpenAPI、数据库、CLI、SDK、数据契约 | 否 |
 | `coff0xc-ui-doc-output` | UI/前端、PDF/文档输出、报告、翻译润色 | 否 |
@@ -121,6 +121,7 @@ Copy-Item -Recurse .\skills\* $dest
 
 ```text
 使用 coff0xc-skill-router 帮我选择合适 skill
+使用 coff0xc-software-engineering 少问确认，直接实现这个多文件开发任务
 使用 coff0xc-ai-agent-rag 设计一个 RAG Agent
 使用 coff0xc-secure-code-appsec 审计这个项目
 使用 coff0xc-cloud-devsecops 检查 K8s 和 CI/CD
@@ -245,7 +246,7 @@ This repository contains 17 skills:
 
 | Skill | Use it for | Security-scoped |
 |---|---|---|
-| `coff0xc-software-engineering` | Software engineering, language development, testing, refactoring, scripts, Git | no |
+| `coff0xc-software-engineering` | Dev/autonomous development, full-stack or multi-file implementation, tests, refactors, scripts, Git | no |
 | `coff0xc-ai-agent-rag` | AI agents, RAG, prompts, LLM apps, tool calling, evals, observability | no |
 | `coff0xc-api-data-platform` | REST, GraphQL, OpenAPI, databases, CLI, SDK, data contracts | no |
 | `coff0xc-ui-doc-output` | UI/frontend work, PDF/document output, reports, translation | no |

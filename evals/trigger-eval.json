@@ -36,6 +36,24 @@
       "reason": "Explicit skill invocation."
     },
     {
+      "id": "software-cn-autonomous-fullstack",
+      "language": "zh-CN",
+      "category": "natural_cn",
+      "prompt": "少问确认，直接把这个项目的多文件全栈功能做完，包含前端页面、后端接口、状态处理、测试和构建验证。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "reason": "Autonomous multi-file full-stack implementation with verification."
+    },
+    {
+      "id": "software-en-end-to-end-admin",
+      "language": "en",
+      "category": "natural_en",
+      "prompt": "Build this admin panel feature end to end, inspect the repo first, implement the modules, run tests, and do a browser smoke check.",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "reason": "End-to-end development, repo inspection, tests, and browser verification."
+    },
+    {
       "id": "agent-cn-knowledge-base",
       "language": "zh-CN",
       "category": "natural_cn",

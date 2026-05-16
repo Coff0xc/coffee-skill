@@ -11,7 +11,7 @@
 
 | Release skill | Source skills | Capability domains |
 |---|---|---|
-| `coff0xc-software-engineering` | `c-cpp-dev`, `code-simplifier`, `git-workflow`, `go-dev`, `java-dev`, `js-ts-dev`, `python-dev`, `rust-dev`, `shell-scripting`, `testing` | 语言实现, 缺陷修复, 特性开发, 重构简化, 测试体系, 构建质量, Git 协作 |
+| `coff0xc-software-engineering` | `dev`, `c-cpp-dev`, `code-simplifier`, `git-workflow`, `go-dev`, `java-dev`, `js-ts-dev`, `python-dev`, `rust-dev`, `shell-scripting`, `testing` | 自主开发, 语言实现, 缺陷修复, 特性开发, 重构简化, 测试体系, 构建质量, Git 协作 |
 | `coff0xc-ai-agent-rag` | `ai-agent-dev`, `ai-orchestrator`, `deep-thinking` | Agent 架构, 工具调用, 记忆系统, RAG 管线, Prompt 工程, 评测, 观测与成本 |
 | `coff0xc-api-data-platform` | `api-design`, `database`, `cli-creator` | API 设计, 认证授权, 数据模型, 查询与分页, CLI/SDK, 数据平台, 兼容演进 |
 | `coff0xc-ui-doc-output` | `UIdesign`, `pdf`, `quick-translate` | 产品 UI, 设计系统, 交互状态, 视觉验证, PDF/文档, 报告输出, 翻译润色 |
