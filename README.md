@@ -2,42 +2,29 @@
 
 中文 | [English](#english)
 
-`coffee-skill` 是一套可安装到 Codex / AgentSkills 兼容 AI 助手里的工作流 skill 包。它把常见任务拆成 18 个可触发的 SOP：开发、Agent/RAG、API/数据、UI、Office/PDF、科研 draw.io 图、防御安全，以及一个兜底路由 skill。
+把 Codex / AgentSkills 兼容 AI 助手从“临场发挥”变成可复用工作流。
 
-它不是脚本库，也不是独立应用。安装后，AI 在遇到真实任务时会加载更具体的工作方式：先看什么、怎么做、哪些动作要先确认、怎么验证、最后如何汇报。
+`coffee-skill` 是一套可安装的 `SKILL.md` 工作流包。它不提供可执行程序，而是告诉 AI 在真实任务里该什么时候触发、先查什么、怎么动手、哪些动作必须确认、怎么验证，以及最后怎么交付。
 
-## GitHub About
+`18 skills` · `中英触发` · `router 兜底` · `113 个触发评测用例` · `Apache-2.0`
 
-推荐仓库描述：
+## 先看这个
 
-```text
-Codex skill pack for real work: dev, Agent/RAG, API/data, Office docs, research diagrams, and defensive security, with bilingual triggers, routing, and validation.
-```
-
-推荐 topics：
-
-```text
-codex, skills, ai-agents, rag, office-docs, appsec, defensive-security, devsecops, prompt-engineering
-```
-
-## 你能用它做什么
-
-| 任务 | 用哪个 skill | 结果 |
+| 你想让 AI 做什么 | 直接怎么说 | 你应该拿到什么 |
 |---|---|---|
-| 修 bug、写功能、跑测试、做全栈改造 | `coff0xc-software-engineering` | 代码改动、测试/构建结果、diff 摘要 |
-| 设计 Agent、RAG、Prompt、工具调用和评测 | `coff0xc-ai-agent-rag` | 架构、工具 schema、检索/引用/评测方案 |
-| 设计 API、数据库、OpenAPI、CLI/SDK | `coff0xc-api-data-platform` | 接口契约、schema、错误码、迁移和数据质量方案 |
-| 优化 UI、dashboard、报告表达和翻译 | `coff0xc-ui-doc-output` | 页面/组件建议、截图验证、报告结构和交付文案 |
-| 做 PPTX、DOCX、PDF、Excel/CSV 文件 | `coff0xc-office-doc-tools` | 可编辑文件、渲染/预览 QA、公式和格式检查 |
-| 根据论文/代码画可编辑 draw.io 图 | `coff0xc-research-drawio-diagram` | `.drawio` 文件、图结构、证据表 |
-| 做授权范围内的代码/云/检测/身份/合约/协议安全工作 | 对应安全 skill | 证据化发现、风险说明、修复/检测/加固建议 |
-| 不确定该用哪个 | `coff0xc-skill-router` | 推荐 skill、理由、边界和下一步 |
+| 不知道该用哪个工作流 | `使用 coff0xc-skill-router 判断该用哪个 skill` | 推荐 skill、理由、边界、下一步 |
+| 修项目、写功能、跑测试 | `使用 coff0xc-software-engineering 修复这个 repo` | 代码补丁、验证结果、剩余风险 |
+| 设计 Agent / RAG / Prompt | `使用 coff0xc-ai-agent-rag 设计这个知识库助手` | 架构、工具、检索、引用、评测、降级方案 |
+| 做 API / 数据库 / SDK | `使用 coff0xc-api-data-platform 设计这个接口` | OpenAPI/schema、错误码、分页、迁移和数据质量方案 |
+| 做正式 PPT / Excel / DOCX / PDF | `使用 coff0xc-office-doc-tools 生成可交付文件` | 可编辑文件、预览/渲染 QA、公式和格式检查 |
+| 做论文/算法架构图 | `使用 coff0xc-research-drawio-diagram 画 draw.io 图` | 可编辑 `.drawio`、图结构、证据表 |
+| 做授权安全分析 | `使用对应 coff0xc-* security skill` | 证据化发现、风险说明、修复/检测/加固建议 |
 
-完整 skill 清单见 [Coverage Matrix](docs/COVERAGE.md)。
+如果只记一句：知道 skill 名就直接点名，不知道就先用 `coff0xc-skill-router`。
 
-## 快速安装
+## 30 秒安装
 
-Windows / Codex Desktop：
+在仓库根目录执行：
 
 ```powershell
 $dest = "$env:USERPROFILE\.codex\skills"
@@ -45,59 +32,87 @@ New-Item -ItemType Directory -Force $dest
 Copy-Item -Recurse .\skills\* $dest
 ```
 
-安装后重启或刷新 Codex，让客户端重新索引 skill metadata。
+然后重启或刷新 Codex，让客户端重新索引 skill metadata。
 
-确认安装是否生效：
+快速验证：
 
 ```text
 使用 coff0xc-skill-router 帮我判断这个任务该用哪个 skill。
 ```
 
-## 推荐用法
+## 怎么提问更稳
 
-你可以自然描述任务：
+最稳的格式是：
+
+```text
+使用 <skill-name>：
+目标：...
+输入：...
+交付：...
+验证：...
+限制：...
+```
+
+示例：
+
+```text
+使用 coff0xc-software-engineering：
+目标：定位并修复 pytest 失败。
+输入：当前 repo。
+交付：最小代码补丁、失败原因、验证命令输出摘要。
+验证：pytest 和 lint 能跑就跑，不能跑说明原因。
+限制：不要做无关重构。
+```
+
+自然描述也可以：
 
 ```text
 这个 Python 项目的 pytest 挂了，帮我定位失败用例，做最小修复，然后跑测试和 lint。
-用 Agent/RAG 的方式设计一个本地知识库助手，需要引用来源、缓存、失败降级和评测集。
-检查这个 Docker、K8s 和 GitHub Actions 配置有没有供应链、SBOM、secret scanning 和 IaC 风险。
 把这份 Markdown 大纲做成可编辑 PPTX，包含图表、讲述逻辑、预览验证和最终文件路径。
+用 Agent/RAG 的方式设计一个本地知识库助手，需要引用来源、缓存、失败降级和评测集。
 根据这篇论文和官方 GitHub 画一个可编辑的 draw.io 科研算法架构图。
 ```
 
-也可以直接点名 skill：
+## 能力地图
 
-```text
-使用 coff0xc-software-engineering 少问确认，直接实现这个多文件开发任务。
-使用 coff0xc-ai-agent-rag 设计一个带引用、缓存和失败降级的企业知识库助手。
-使用 coff0xc-api-data-platform 设计这个 billing REST API，包含 OpenAPI、分页和错误码。
-使用 coff0xc-office-doc-tools 生成一份高审美可编辑 PPTX，并检查预览、图表和导出文件。
-使用 coff0xc-secure-code-appsec 审计这个 Web/API 项目的认证和越权风险。
-```
+| 领域 | 推荐 skill | 适合任务 | 交付结果 |
+|---|---|---|---|
+| 软件工程 | `coff0xc-software-engineering` | bugfix、feature、refactor、full-stack、repo repair | diff、测试/构建结果、风险说明 |
+| AI 系统 | `coff0xc-ai-agent-rag` | Agent、RAG、Prompt、工具调用、评测、观测、成本 | 架构、流程、工具 schema、评测闭环 |
+| API / 数据 | `coff0xc-api-data-platform` | REST、GraphQL、OpenAPI、SQL、迁移、CLI/SDK | 契约、schema、错误模型、数据质量检查 |
+| UI / 输出 | `coff0xc-ui-doc-output` | 前端、dashboard、报告表达、技术翻译 | UI/文案改进、截图验证、报告结构 |
+| Office 文件 | `coff0xc-office-doc-tools` | PPTX、DOCX、PDF、XLSX、CSV、图表、批注、修订 | 可编辑文件、渲染 QA、公式/格式检查 |
+| 科研图 | `coff0xc-research-drawio-diagram` | 论文方法图、模型结构图、算法 pipeline | `.drawio` 源文件、节点/边说明、证据表 |
+| 授权安全 | 安全类 `coff0xc-*` skills | AppSec、云安全、检测响应、身份、合约、协议、漏洞生命周期 | 证据、影响、修复、检测、加固建议 |
+| 路由兜底 | `coff0xc-skill-router` | 不确定该用哪个 skill，或任务跨多个领域 | 推荐 skill、选择理由、边界和下一步 |
 
-简单规则：知道要用哪个就直接点名；不知道就先用 `coff0xc-skill-router`。
+完整清单见 [docs/COVERAGE.md](docs/COVERAGE.md)。
 
-## Office 文件质量门禁
+## Office 质量门禁
 
-`coff0xc-office-doc-tools` 是这次重点增强的文件交付 skill。它不只要求“生成文件”，还要求交付物能被打开、编辑、审阅、验证和继续使用。
+`coff0xc-office-doc-tools` 的定位不是“生成一个文件就算完成”，而是让文件能打开、能编辑、能审阅、能验证、能继续交付。
 
-| 文件类型 | 质量门禁 |
-|---|---|
-| PPTX | 先写 claim spine；锁定 design system；规划 contact sheet；避免模板感、重复卡片和空洞标题；用 comeback scorecard 检查 story、rhythm、whitespace、typography、chart clarity；渲染预览后再交付。 |
-| Excel / CSV / XLSX | 先 inspect workbook / data shape；识别编码、分隔符、表头、单位、日期、空值和异常值；保留 raw/source/assumptions；派生值用公式；trace 关键输出；扫描公式错误；检查图表和 dashboard 渲染。 |
-| DOCX / Word | 先理解标题层级、表格、批注、修订、页眉页脚和字段；使用真实 styles、numbering、table geometry；避免假标题/假列表/表格包装长段落；尽量逐页渲染检查格式，不能只靠文本抽取判断版式。 |
+| 文件 | 必须过的门禁 | 失败表现 |
+|---|---|---|
+| PPTX | 每页先有结论型标题和证明对象；先锁定设计系统；规划 contact sheet；避免模板感和连续重复版式；用 comeback scorecard 检查叙事、节奏、留白、字体、图表清晰度；渲染预览后再交付。 | 只有漂亮背景、卡片堆叠、标题空泛、图表不能证明观点、没有预览检查。 |
+| Excel / CSV / XLSX | 先检查编码、分隔符、表头、单位、日期、空值、异常值和已有公式/图表；保留 raw/source/assumptions；关键派生值用公式；trace 关键输出；扫描公式错误；检查图表和 dashboard 渲染。 | 手写 split、硬编码计算结果、覆盖原始数据、图表无来源、公式错误未扫。 |
+| DOCX / Word | 先读标题层级、表格、批注、修订、页眉页脚、字段和元数据；用真实 styles、numbering、table geometry；表格只放真正行列数据；尽量逐页渲染检查版式。 | 只抽文本就说读懂、假标题/假列表、表格包长段落、批注/修订锚点没检查。 |
+
+这三类门禁来自对官方 Office 类 skills 的重点对照：PPT 看审美和叙事，Excel 看数据解析和可审计计算，DOCX 看阅读理解、结构保真和版式验证。
 
 ## 安全边界
 
-安全相关 skills 只用于授权、防御、检测、加固、验证和报告。它们适合本地代码、配置、日志、样本、报告、实验室、CTF、靶场和已授权资产。
+安全相关 skills 只用于授权、防御、检测、加固、验证和报告。
 
-不用于未授权访问、凭据窃取、持久化、规避检测、C2、钓鱼收集、数据外传或破坏性操作。生产、凭据、付费、远程写入、删除、push、PR、云资源和 CI/CD 权限变更都需要明确授权。
+适用范围：本地代码、配置、日志、样本、报告、实验室、CTF、靶场、已授权资产。
 
-见 [SECURITY.md](SECURITY.md) 和 [docs/SANITIZATION.md](docs/SANITIZATION.md)。
+不提供：未授权访问、凭据窃取、持久化、规避检测、C2、钓鱼收集、数据外传、破坏性操作。
 
-## 验证
+生产环境、凭据、付费资源、远程写入、删除、push、PR、云资源和 CI/CD 权限变更，需要用户明确授权。
 
-发布前检查：
+## 本地验证
+
+发布结构校验：
 
 ```powershell
 python .\scripts\validate_release.py
@@ -109,12 +124,12 @@ python .\scripts\validate_release.py
 python .\scripts\run_trigger_eval.py
 ```
 
-当前评测覆盖 113 个本地 proxy cases，用来检查应该触发的 prompt 是否命中目标 skill，以及简单问题是否误触发。它不能完全复刻所有客户端的私有触发逻辑，但能抓出明显漏词、误触发和路由退化。
+当前触发评测包含 113 个本地 proxy cases，用来检查应该触发的 prompt 是否命中目标 skill，以及简单问题是否误触发。它是发布护栏，不等同于所有客户端的私有路由逻辑。
 
 ## 仓库结构
 
 ```text
-skills/                 # 可安装的 skill 文件夹，每个目录至少有 SKILL.md
+skills/                 # 可安装的 skill 文件夹
 docs/                   # 使用、触发、覆盖、来源、清理和多语言说明
 evals/                  # 本地触发评测数据和生成结果
 scripts/                # 发布校验和触发评测脚本
@@ -142,42 +157,13 @@ Apache License 2.0。见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
 
 ## English
 
-`coffee-skill` is an installable skill pack for Codex and AgentSkills-compatible AI assistants. It turns common work into 18 triggerable operating procedures: software engineering, Agent/RAG, API/data, UI, Office/PDF artifacts, research draw.io diagrams, defensive security, and a router fallback.
+Turn Codex / AgentSkills-compatible AI assistants from ad hoc execution into reusable workflows.
 
-It is not a script library or standalone app. After installation, the assistant can load a task-specific workflow that tells it what to inspect, what to do, what to avoid, what requires confirmation, how to verify, and how to report the result.
+`coffee-skill` is an installable pack of `SKILL.md` workflows. It is not a standalone app. Each skill tells the assistant when to trigger, what to inspect first, how to proceed, what needs confirmation, how to verify, and how to report the result.
 
-## GitHub About
+`18 skills` · `Chinese/English triggers` · `router fallback` · `113 trigger eval cases` · `Apache-2.0`
 
-Recommended repository description:
-
-```text
-Codex skill pack for real work: dev, Agent/RAG, API/data, Office docs, research diagrams, and defensive security, with bilingual triggers, routing, and validation.
-```
-
-Recommended topics:
-
-```text
-codex, skills, ai-agents, rag, office-docs, appsec, defensive-security, devsecops, prompt-engineering
-```
-
-## What It Covers
-
-| Task | Skill | Output |
-|---|---|---|
-| Bugs, features, tests, refactors, full-stack work | `coff0xc-software-engineering` | Code changes, validation results, diff summary |
-| Agents, RAG, prompts, tool use, evaluation | `coff0xc-ai-agent-rag` | Architecture, tool schemas, retrieval/citation/eval plan |
-| APIs, databases, OpenAPI, CLI/SDK | `coff0xc-api-data-platform` | Contracts, schema, errors, migration and data quality plan |
-| UI, dashboards, reports, translation | `coff0xc-ui-doc-output` | UX/page guidance, screenshot checks, delivery copy |
-| PPTX, DOCX, PDF, Excel/CSV artifacts | `coff0xc-office-doc-tools` | Editable files, render/preview QA, formula and format checks |
-| Research diagrams from papers/code | `coff0xc-research-drawio-diagram` | Editable `.drawio`, graph spec, evidence table |
-| Authorized defensive security work | Security skills | Evidence-backed findings, fixes, detections, hardening advice |
-| Unsure which one to use | `coff0xc-skill-router` | Recommended skill, rationale, boundaries, next step |
-
-See [Coverage Matrix](docs/COVERAGE.md) for the full list.
-
-## Install
-
-Windows / Codex Desktop:
+## Quick Start
 
 ```powershell
 $dest = "$env:USERPROFILE\.codex\skills"
@@ -193,35 +179,41 @@ Smoke check:
 Use coff0xc-skill-router to choose the right skill for this task.
 ```
 
-## Usage
+## How To Prompt
 
-Natural prompts work:
-
-```text
-Fix this Python project's failing pytest cases, make the smallest correct change, then run tests and lint.
-Design a local knowledge-base assistant with Agent/RAG architecture, citations, cache, fallback, and evals.
-Check this Docker, Kubernetes, and GitHub Actions setup for supply-chain and secret risks.
-Create an editable PPTX from this Markdown outline and verify the preview.
-Create an editable draw.io research architecture diagram from this paper and official repo.
-```
-
-Explicit invocation is more reliable:
+Most reliable format:
 
 ```text
-Use coff0xc-software-engineering to build this feature end to end with tests.
-Use coff0xc-ai-agent-rag to design a RAG assistant with citations and fallback behavior.
-Use coff0xc-api-data-platform to design this REST API and database schema.
-Use coff0xc-office-doc-tools to create a polished editable PPTX and verify the preview.
-Use coff0xc-secure-code-appsec to review this authorized API for authz risks.
+Use <skill-name>:
+Goal: ...
+Input: ...
+Deliverable: ...
+Validation: ...
+Limits: ...
 ```
 
-If you know the skill, name it. If you do not, start with `coff0xc-skill-router`.
+If you know the skill, name it directly. If you do not, start with `coff0xc-skill-router`.
 
-## Office Artifact Quality Gates
+## Capability Map
 
-`coff0xc-office-doc-tools` is the file-delivery skill. It does not stop at “a file exists”; the file should be openable, editable, reviewable, verifiable, and reusable.
+| Domain | Skill | Best for | Output |
+|---|---|---|---|
+| Software engineering | `coff0xc-software-engineering` | bugfixes, features, refactors, full-stack work, repo repair | diff, test/build results, risk notes |
+| AI systems | `coff0xc-ai-agent-rag` | Agent, RAG, prompts, tools, evals, observability, cost | architecture, flow, tool schemas, eval loop |
+| API / data | `coff0xc-api-data-platform` | REST, GraphQL, OpenAPI, SQL, migrations, CLI/SDK | contracts, schemas, errors, data checks |
+| UI / output | `coff0xc-ui-doc-output` | frontend, dashboards, reports, translation | UX/content improvements, screenshot checks, report structure |
+| Office artifacts | `coff0xc-office-doc-tools` | PPTX, DOCX, PDF, XLSX, CSV, charts, comments, redlines | editable files, render QA, formula/format checks |
+| Research diagrams | `coff0xc-research-drawio-diagram` | paper method figures, model diagrams, algorithm pipelines | editable `.drawio`, node/edge spec, evidence table |
+| Authorized security | security `coff0xc-*` skills | AppSec, cloud, detection, identity, contracts, protocols, vulnerability lifecycle | evidence, impact, fixes, detections, hardening |
+| Routing fallback | `coff0xc-skill-router` | uncertain or cross-domain tasks | recommended skill, rationale, boundaries, next step |
 
-| Artifact | Gate |
+See [docs/COVERAGE.md](docs/COVERAGE.md) for the full list.
+
+## Office Quality Gates
+
+`coff0xc-office-doc-tools` is built for formal file delivery, not just file generation.
+
+| Artifact | Required gate |
 |---|---|
 | PPTX | Claim spine, design system, contact-sheet plan, anti-template checks, comeback scorecard, and rendered preview review. |
 | Excel / CSV / XLSX | Workbook/data inspect, encoding and delimiter checks, raw/source/assumptions preservation, formula-driven derived values, traced key outputs, formula error scan, chart/dashboard render checks. |
@@ -229,9 +221,9 @@ If you know the skill, name it. If you do not, start with `coff0xc-skill-router`
 
 ## Safety Scope
 
-Security-related skills are defensive and authorization-scoped. They are intended for owned or explicitly authorized assets, local code/config review, logs, reports, lab environments, CTFs, training ranges, detection, hardening, verification, and reporting.
+Security-related skills are defensive and authorization-scoped. They are for owned or explicitly authorized assets, local code/config review, logs, reports, labs, CTFs, training ranges, detection, hardening, verification, and reporting.
 
-They do not include guidance for unauthorized access, credential theft, persistence, detection evasion, C2 operation, phishing collection, data exfiltration, or destructive actions. Production, credentials, paid services, remote writes, deletion, push, PR actions, cloud resources, and CI/CD permission changes require explicit authorization.
+They do not provide guidance for unauthorized access, credential theft, persistence, detection evasion, C2, phishing collection, data exfiltration, or destructive actions. Production, credentials, paid services, remote writes, deletion, push, PR actions, cloud resources, and CI/CD permission changes require explicit authorization.
 
 ## Validation
 
@@ -240,7 +232,7 @@ python .\scripts\validate_release.py
 python .\scripts\run_trigger_eval.py
 ```
 
-The trigger evaluation currently covers 113 local proxy cases. It is a release guard for routing and false positives; it does not claim to reproduce every client runtime's private selection logic.
+The trigger evaluation currently covers 113 local proxy cases. It is a release guard for routing and false positives, not a clone of every client runtime's private selection logic.
 
 ## Repository Layout
 
