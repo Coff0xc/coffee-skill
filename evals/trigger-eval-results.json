@@ -1,15 +1,15 @@
 {
   "threshold": 3.0,
-  "case_count": 86,
+  "case_count": 103,
   "skill_count": 17,
   "metrics": {
-    "positive_total": 73,
-    "positive_top1": 73,
-    "positive_top3": 73,
-    "positive_triggered": 73,
-    "router_total": 7,
-    "router_top1": 7,
-    "router_top3": 7,
+    "positive_total": 90,
+    "positive_top1": 90,
+    "positive_top3": 90,
+    "positive_triggered": 90,
+    "router_total": 8,
+    "router_top1": 8,
+    "router_top3": 8,
     "negative_total": 13,
     "negative_no_trigger": 13,
     "negative_false_positive": 0,
@@ -23,123 +23,132 @@
   },
   "by_skill": {
     "coff0xc-ai-agent-rag": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-api-data-platform": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-authorized-assessment": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-binary-mobile-iot": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-blockchain-security": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-cloud-devsecops": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-compliance-architecture": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-detection-response": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-identity-zero-trust": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-network-protocol-security": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-purple-deception": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-research-drawio-diagram": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-secure-code-appsec": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-skill-router": {
+      "total": 8,
+      "top1": 8,
+      "top3": 8,
+      "triggered": 8,
+      "top1_rate": 1.0,
+      "top3_rate": 1.0,
+      "triggered_rate": 1.0
+    },
+    "coff0xc-software-engineering": {
       "total": 7,
       "top1": 7,
       "top3": 7,
@@ -148,29 +157,20 @@
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
-    "coff0xc-software-engineering": {
-      "total": 6,
-      "top1": 6,
-      "top3": 6,
-      "triggered": 6,
-      "top1_rate": 1.0,
-      "top3_rate": 1.0,
-      "triggered_rate": 1.0
-    },
     "coff0xc-ui-doc-output": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
     "coff0xc-vulnerability-lifecycle": {
-      "total": 4,
-      "top1": 4,
-      "top3": 4,
-      "triggered": 4,
+      "total": 5,
+      "top1": 5,
+      "top3": 5,
+      "triggered": 5,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
@@ -3833,6 +3833,838 @@
       "passed": true,
       "failure": "",
       "reason": "Ambiguous routing request without exact router name."
+    },
+    {
+      "id": "capability-software-engineering",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "predicted_skill": "coff0xc-software-engineering",
+      "top_score": 119.4288,
+      "top3": [
+        {
+          "skill": "coff0xc-software-engineering",
+          "score": 119.4288,
+          "lexical_overlap": [
+            "coff0xc-software-engineering",
+            "failing",
+            "repo",
+            "tests"
+          ],
+          "phrase_hits": [
+            "tests",
+            "test"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 18.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-binary-mobile-iot",
+          "score": 3.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "engineering"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-ai-agent-rag",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ai-agent-rag",
+      "predicted_skill": "coff0xc-ai-agent-rag",
+      "top_score": 111.8849,
+      "top3": [
+        {
+          "skill": "coff0xc-ai-agent-rag",
+          "score": 111.8849,
+          "lexical_overlap": [
+            "coff0xc-ai-agent-rag"
+          ],
+          "phrase_hits": [
+            "agent",
+            "rag",
+            "助手",
+            "缓存"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 18.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "边界"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-api-data-platform",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-api-data-platform",
+      "predicted_skill": "coff0xc-api-data-platform",
+      "top_score": 124.4923,
+      "top3": [
+        {
+          "skill": "coff0xc-api-data-platform",
+          "score": 124.4923,
+          "lexical_overlap": [
+            "api",
+            "coff0xc-api-data-platform",
+            "openapi",
+            "rest"
+          ],
+          "phrase_hits": [
+            "openapi",
+            "rest",
+            "api",
+            "错误码",
+            "分页"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 20.6376,
+          "lexical_overlap": [
+            "api"
+          ],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-secure-code-appsec",
+          "score": 2.6376,
+          "lexical_overlap": [
+            "api"
+          ],
+          "phrase_hits": [],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-ui-doc-output",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ui-doc-output",
+      "predicted_skill": "coff0xc-ui-doc-output",
+      "top_score": 113.5698,
+      "top3": [
+        {
+          "skill": "coff0xc-ui-doc-output",
+          "score": 113.5698,
+          "lexical_overlap": [
+            "coff0xc-ui-doc-output",
+            "dashboard"
+          ],
+          "phrase_hits": [
+            "dashboard",
+            "ui",
+            "截图"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 18.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-software-engineering",
+          "score": 3.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "dashboard"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-research-drawio-diagram",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-research-drawio-diagram",
+      "predicted_skill": "coff0xc-research-drawio-diagram",
+      "top_score": 120.259,
+      "top3": [
+        {
+          "skill": "coff0xc-research-drawio-diagram",
+          "score": 120.259,
+          "lexical_overlap": [
+            "coff0xc-research-drawio-diagram",
+            "draw.io"
+          ],
+          "phrase_hits": [
+            "research",
+            "diagram",
+            "draw.io",
+            "drawio",
+            "可编辑"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 23.9741,
+          "lexical_overlap": [
+            "draw.io"
+          ],
+          "phrase_hits": [
+            "coff0xc",
+            "draw.io"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-cloud-devsecops",
+          "score": 3.4849,
+          "lexical_overlap": [
+            "github"
+          ],
+          "phrase_hits": [],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-secure-code-appsec",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-secure-code-appsec",
+      "predicted_skill": "coff0xc-secure-code-appsec",
+      "top_score": 115.3698,
+      "top3": [
+        {
+          "skill": "coff0xc-secure-code-appsec",
+          "score": 115.3698,
+          "lexical_overlap": [
+            "coff0xc-secure-code-appsec",
+            "web/api"
+          ],
+          "phrase_hits": [
+            "appsec",
+            "web",
+            "认证",
+            "越权"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 18.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-api-data-platform",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "api"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-cloud-devsecops",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-cloud-devsecops",
+      "predicted_skill": "coff0xc-cloud-devsecops",
+      "top_score": 122.0071,
+      "top3": [
+        {
+          "skill": "coff0xc-cloud-devsecops",
+          "score": 122.0071,
+          "lexical_overlap": [
+            "ci/cd",
+            "coff0xc-cloud-devsecops",
+            "docker",
+            "k8s"
+          ],
+          "phrase_hits": [
+            "docker",
+            "ci/cd",
+            "k8s",
+            "供应链"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 26.9222,
+          "lexical_overlap": [
+            "ci/cd",
+            "docker",
+            "k8s"
+          ],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "边界"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-detection-response",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-detection-response",
+      "predicted_skill": "coff0xc-detection-response",
+      "top_score": 127.318,
+      "top3": [
+        {
+          "skill": "coff0xc-detection-response",
+          "score": 127.318,
+          "lexical_overlap": [
+            "coff0xc-detection-response",
+            "edr",
+            "sigma",
+            "yara"
+          ],
+          "phrase_hits": [
+            "detection",
+            "sigma",
+            "yara",
+            "edr",
+            "日志",
+            "检测"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 23.9482,
+          "lexical_overlap": [
+            "sigma",
+            "yara"
+          ],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "边界"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-vulnerability-lifecycle",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-vulnerability-lifecycle",
+      "predicted_skill": "coff0xc-vulnerability-lifecycle",
+      "top_score": 116.659,
+      "top3": [
+        {
+          "skill": "coff0xc-vulnerability-lifecycle",
+          "score": 116.659,
+          "lexical_overlap": [
+            "coff0xc-vulnerability-lifecycle",
+            "cve"
+          ],
+          "phrase_hits": [
+            "vulnerability",
+            "cve",
+            "优先级",
+            "修复",
+            "补丁"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 20.9741,
+          "lexical_overlap": [
+            "cve"
+          ],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "边界"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-identity-zero-trust",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-identity-zero-trust",
+      "predicted_skill": "coff0xc-identity-zero-trust",
+      "top_score": 120.718,
+      "top3": [
+        {
+          "skill": "coff0xc-identity-zero-trust",
+          "score": 120.718,
+          "lexical_overlap": [
+            "ad",
+            "bloodhound",
+            "coff0xc-identity-zero-trust",
+            "kerberos"
+          ],
+          "phrase_hits": [
+            "bloodhound",
+            "kerberos",
+            "ad"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 23.9482,
+          "lexical_overlap": [
+            "ad",
+            "kerberos"
+          ],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-software-engineering",
+          "score": 3.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "rust"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-authorized-assessment",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-authorized-assessment",
+      "predicted_skill": "coff0xc-authorized-assessment",
+      "top_score": 116.5698,
+      "top3": [
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 116.5698,
+          "lexical_overlap": [
+            "coff0xc-authorized-assessment",
+            "安全评估"
+          ],
+          "phrase_hits": [
+            "authorized",
+            "书面授权",
+            "授权",
+            "边界"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 18.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-secure-code-appsec",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "授权"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-binary-mobile-iot",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-binary-mobile-iot",
+      "predicted_skill": "coff0xc-binary-mobile-iot",
+      "top_score": 114.7439,
+      "top3": [
+        {
+          "skill": "coff0xc-binary-mobile-iot",
+          "score": 114.7439,
+          "lexical_overlap": [
+            "apk",
+            "coff0xc-binary-mobile-iot",
+            "frida"
+          ],
+          "phrase_hits": [
+            "frida",
+            "apk"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 20.9741,
+          "lexical_overlap": [
+            "apk"
+          ],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "边界"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-blockchain-security",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-blockchain-security",
+      "predicted_skill": "coff0xc-blockchain-security",
+      "top_score": 116.4547,
+      "top3": [
+        {
+          "skill": "coff0xc-blockchain-security",
+          "score": 116.4547,
+          "lexical_overlap": [
+            "coff0xc-blockchain-security",
+            "solidity",
+            "价格来源"
+          ],
+          "phrase_hits": [
+            "solidity",
+            "价格来源"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 18.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "边界"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-compliance-architecture",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-compliance-architecture",
+      "predicted_skill": "coff0xc-compliance-architecture",
+      "top_score": 114.7698,
+      "top3": [
+        {
+          "skill": "coff0xc-compliance-architecture",
+          "score": 114.7698,
+          "lexical_overlap": [
+            "coff0xc-compliance-architecture",
+            "安全架构"
+          ],
+          "phrase_hits": [
+            "compliance",
+            "威胁建模",
+            "上线前"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 18.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "边界"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-purple-deception",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-purple-deception",
+      "predicted_skill": "coff0xc-purple-deception",
+      "top_score": 122.4547,
+      "top3": [
+        {
+          "skill": "coff0xc-purple-deception",
+          "score": 122.4547,
+          "lexical_overlap": [
+            "att",
+            "ck",
+            "coff0xc-purple-deception"
+          ],
+          "phrase_hits": [
+            "deception",
+            "att&ck",
+            "攻击行为",
+            "检测覆盖"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 18.0,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "边界"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-network-protocol-security",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-network-protocol-security",
+      "predicted_skill": "coff0xc-network-protocol-security",
+      "top_score": 125.5439,
+      "top3": [
+        {
+          "skill": "coff0xc-network-protocol-security",
+          "score": 125.5439,
+          "lexical_overlap": [
+            "coff0xc-network-protocol-security",
+            "pcap",
+            "tls"
+          ],
+          "phrase_hits": [
+            "protocol",
+            "network",
+            "pcap",
+            "异常字段",
+            "tls",
+            "握手"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 20.9741,
+          "lexical_overlap": [
+            "tls"
+          ],
+          "phrase_hits": [
+            "coff0xc"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "边界"
+          ],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-skill-router",
+      "category": "capability_cn",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "predicted_skill": "coff0xc-skill-router",
+      "top_score": 133.5131,
+      "top3": [
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 133.5131,
+          "lexical_overlap": [
+            "coff0xc-skill-router",
+            "skill"
+          ],
+          "phrase_hits": [
+            "skill-router",
+            "coff0xc",
+            "router"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 2.8282,
+          "lexical_overlap": [
+            "skill"
+          ],
+          "phrase_hits": [
+            "边界"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-ai-agent-rag",
+          "score": 1.0282,
+          "lexical_overlap": [
+            "skill"
+          ],
+          "phrase_hits": [],
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
     },
     {
       "id": "negative-simple-translate",

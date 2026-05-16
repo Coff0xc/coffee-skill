@@ -5,6 +5,39 @@ description: "Use when / 当用户请求: 全面身份安全、零信任、AD/Ke
 
 # coff0xc-identity-zero-trust
 
+## 能力定位
+面向身份、访问控制、AD/Kerberos、IAM 和零信任治理的权限风险评估能力。它帮助回答“谁能访问什么、为什么、风险在哪里、如何收敛”。
+
+## 能交付什么
+- 身份/权限风险清单和路径说明
+- MFA/SSO/session/device posture 评估
+- AD/Kerberos/IAM 横向移动和特权账号防御建议
+- 最小权限、PAM、条件访问和审计验证计划
+
+## 可以接收什么输入
+- IAM policy、AD/BloodHound 输出、SSO/MFA 配置
+- 账号/角色/组/权限矩阵、登录日志、访问异常
+- Zero Trust 策略、设备姿态、session policy
+
+## 放心使用的边界
+- 默认做授权环境的只读分析和防御建议
+- 凭证获取、hash dump、未授权横向移动或提权步骤不提供
+- 生产身份策略修改、账号禁用、密钥轮换必须先确认
+- 安全类能力默认只用于授权、防御、检测、加固、验证和报告；不提供未授权攻击、凭据窃取、持久化、规避检测、C2、钓鱼收集、数据外传或破坏性步骤。
+
+## 为什么可以放心
+- 把身份、设备、会话、资源和审计链路一起看
+- 区分配置弱点和实际可达路径
+- 输出收敛顺序和验证方法
+
+## 典型使用方式
+```text
+使用 coff0xc-identity-zero-trust 评估这个 AD 域的 Kerberos、BloodHound 路径和服务账号风险。
+使用 coff0xc-identity-zero-trust 梳理谁能访问什么，并给最小权限收敛方案。
+Use coff0xc-identity-zero-trust to review IAM, SSO, MFA, and privileged account exposure.
+```
+
+
 ## 目标
 从身份、设备、网络、应用和数据访问路径评估权限风险，输出检测、最小权限和零信任改进方案。
 

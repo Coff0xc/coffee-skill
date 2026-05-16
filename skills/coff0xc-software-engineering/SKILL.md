@@ -5,6 +5,39 @@ description: "Use when / 当用户请求: dev, autonomous development, build end
 
 # coff0xc-software-engineering
 
+## 能力定位
+面向真实仓库的工程交付能力。适合把模糊需求变成可运行代码、可复现修复、可验证测试结果和清晰 diff 摘要。
+
+## 能交付什么
+- 代码补丁、脚本或配置修改
+- 失败原因和根因链路说明
+- 单元/集成/构建验证结果
+- Git diff 摘要和剩余风险
+
+## 可以接收什么输入
+- 本地仓库、报错日志、测试输出、issue 描述
+- 需求草稿、接口说明、UI 截图或现有模块
+- package/lockfile、README、AGENTS、CI 脚本
+
+## 放心使用的边界
+- 可直接做本地、可逆、低风险的代码和测试改动
+- 删除、远程 push、生产配置、凭据、付费服务和 CI/CD 权限变更必须先确认
+- 不为小问题引入新框架或无必要依赖
+- 默认只处理本地、可逆、可验证的低风险工作；涉及生产、凭据、付费、远程写入、删除、发布或权限变更时必须先确认。
+
+## 为什么可以放心
+- 先读项目结构和现有风格，再修改
+- 先跑窄验证，再按风险跑宽验证
+- 未运行的测试不会写成已通过
+
+## 典型使用方式
+```text
+使用 coff0xc-software-engineering 修复这个 repo 的 failing tests，并说明验证结果。
+使用 coff0xc-software-engineering 少问确认，直接实现这个多文件开发任务。
+Use coff0xc-software-engineering to build this admin panel feature end to end with tests.
+```
+
+
 ## 目标
 把粗略开发需求落到可运行、可测试、可维护的本地工程改动上。默认少打断用户，先查项目、记录假设、做最小正确改动、跑可用验证，再用证据交付。
 

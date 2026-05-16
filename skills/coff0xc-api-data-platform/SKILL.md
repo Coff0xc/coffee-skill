@@ -5,6 +5,39 @@ description: "Use when / 当用户请求: 全面 API、数据库、数据平台�
 
 # coff0xc-api-data-platform
 
+## 能力定位
+面向 API、数据库、CLI/SDK 和数据契约的工程能力。目标是让接口可使用、可演进、可测试，数据链路可迁移、可追踪、可恢复。
+
+## 能交付什么
+- REST/GraphQL/OpenAPI 契约
+- 数据库 schema、迁移和数据一致性建议
+- CLI/SDK 命令设计、JSON 输出和错误模型
+- 兼容性、分页、认证和幂等策略
+
+## 可以接收什么输入
+- 现有 routes、schema、OpenAPI、curl、SDK、README
+- 数据库表结构、迁移脚本、查询样例
+- 错误日志、客户端调用点、数据质量问题
+
+## 放心使用的边界
+- 可直接做本地契约设计、代码实现和只读检查
+- 生产数据库迁移、数据删除、远程 API 写入必须先确认
+- 示例中不写真实 token、cookie、账号或客户数据
+- 默认只处理本地、可逆、可验证的低风险工作；涉及生产、凭据、付费、远程写入、删除、发布或权限变更时必须先确认。
+
+## 为什么可以放心
+- 先发现现有契约风格，再设计变更
+- 强调机器可解析输出和明确错误
+- 迁移和公共 API 变更必须说明兼容影响
+
+## 典型使用方式
+```text
+使用 coff0xc-api-data-platform 设计这个 billing REST API，包含 OpenAPI、分页和错误码。
+使用 coff0xc-api-data-platform 梳理 GraphQL 查询、SQL 表结构和数据质量检查。
+Use coff0xc-api-data-platform to turn these curl examples into a stable CLI and SDK plan.
+```
+
+
 ## 目标
 把接口、数据和命令行工具做成稳定契约：输入明确、输出可机器处理、错误可诊断、变更可兼容、数据可迁移。
 

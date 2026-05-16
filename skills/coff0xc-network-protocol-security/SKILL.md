@@ -5,6 +5,39 @@ description: "Use when / 当用户请求: 全面网络协议、TLS/DNS/TCP/UDP/Q
 
 # coff0xc-network-protocol-security
 
+## 能力定位
+面向网络协议、TLS/DNS/QUIC/HTTP、无线通信、抓包和形式化建模的协议安全分析能力。它把通信证据转成流程图、风险点和验证建议。
+
+## 能交付什么
+- 协议流程、握手和状态机说明
+- pcap/日志字段分析、异常字段和安全影响
+- TLS/PKI/DNS/HTTP/QUIC/无线风险清单
+- Mermaid/ProVerif/Tamarin 方向的建模建议
+
+## 可以接收什么输入
+- pcap、Wireshark 导出、协议日志、报文字段
+- 协议规范、实现代码、握手说明、证书链
+- 无线/BLE/RF 捕获摘要或设备通信流程
+
+## 放心使用的边界
+- 可做本地抓包和授权通信分析
+- 不提供未授权监听、入侵、绕过或干扰第三方网络步骤
+- 主动探测、无线发射、生产网络测试必须先确认范围
+- 安全类能力默认只用于授权、防御、检测、加固、验证和报告；不提供未授权攻击、凭据窃取、持久化、规避检测、C2、钓鱼收集、数据外传或破坏性步骤。
+
+## 为什么可以放心
+- 把报文字段、代码和规范分开标注证据
+- 优先说明状态机和信任边界
+- 形式化建模只表达可验证协议性质，不夸大结论
+
+## 典型使用方式
+```text
+使用 coff0xc-network-protocol-security 分析这个 pcap 里的 TLS 握手和异常字段。
+使用 coff0xc-network-protocol-security 把这个协议流程画成 Mermaid 并指出安全边界。
+Use coff0xc-network-protocol-security to review DNS/QUIC behavior and propose verification checks.
+```
+
+
 ## 目标
 分析通信协议和网络遥测中的安全属性、状态机、认证、加密和配置风险，默认用于授权和防御场景。
 

@@ -5,6 +5,39 @@ description: "Coff0xc skill router and auto-trigger fallback. Use when a user as
 
 # coff0xc-skill-router
 
+## 能力定位
+面向不确定任务的 skill 分诊能力。它不是替代专业 skill，而是在用户不知道该用哪个能力时先判断主题、风险和下一步入口。
+
+## 能交付什么
+- 推荐 skill 和理由
+- 候选 skill 对比和适用边界
+- 需要澄清的最少问题
+- 后续手动触发句式
+
+## 可以接收什么输入
+- 模糊任务描述、多个领域混合需求
+- 用户说不确定用哪个 skill、自动触发失败
+- 仓库、截图、日志、论文、配置等混合材料
+
+## 放心使用的边界
+- 只负责路由和低风险分诊
+- 遇到安全、生产、凭据、删除、远程写入或付费动作时沿用目标 skill 的门禁
+- 无法确定时给 2-3 个候选并问最小澄清问题
+- 安全类能力默认只用于授权、防御、检测、加固、验证和报告；不提供未授权攻击、凭据窃取、持久化、规避检测、C2、钓鱼收集、数据外传或破坏性步骤。
+
+## 为什么可以放心
+- 先选择最具体 skill，不让 router 长期替代专业流程
+- 说明为什么选这个 skill
+- 保留手动触发写法帮助用户下次直接调用
+
+## 典型使用方式
+```text
+使用 coff0xc-skill-router 帮我判断这个任务该用哪个 skill。
+使用 coff0xc-skill-router 这个需求同时涉及 API、UI 和安全，帮我分流。
+Use coff0xc-skill-router when a Coff0xc skill did not auto-trigger.
+```
+
+
 ## 目标
 作为自动触发兜底入口。当前端模型没有自动选择具体 Coff0xc skill 时，先用本路由表判断主题，再读取或按对应 skill 的工作流执行。
 

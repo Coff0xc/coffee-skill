@@ -6,7 +6,7 @@ Important: this is a local proxy evaluation based on `SKILL.md` frontmatter meta
 
 ## Summary
 
-- Cases: 86
+- Cases: 103
 - Skills: 17
 - Threshold: 3.0
 - Positive top-1 rate: 1.0
@@ -21,23 +21,23 @@ Important: this is a local proxy evaluation based on `SKILL.md` frontmatter meta
 
 | Skill | Total | Top-1 | Top-3 | Triggered |
 |---|---:|---:|---:|---:|
-| `coff0xc-ai-agent-rag` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-api-data-platform` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-authorized-assessment` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-binary-mobile-iot` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-blockchain-security` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-cloud-devsecops` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-compliance-architecture` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-detection-response` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-identity-zero-trust` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-network-protocol-security` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-purple-deception` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-research-drawio-diagram` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-secure-code-appsec` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-skill-router` | 7 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-software-engineering` | 6 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-ui-doc-output` | 4 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-vulnerability-lifecycle` | 4 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-ai-agent-rag` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-api-data-platform` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-authorized-assessment` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-binary-mobile-iot` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-blockchain-security` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-cloud-devsecops` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-compliance-architecture` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-detection-response` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-identity-zero-trust` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-network-protocol-security` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-purple-deception` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-research-drawio-diagram` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-secure-code-appsec` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-skill-router` | 8 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-software-engineering` | 7 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-ui-doc-output` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-vulnerability-lifecycle` | 5 | 1.0 | 1.0 | 1.0 |
 
 ## Failures
 

@@ -4,8 +4,8 @@
   "targets": {
     "positive_top1_rate": 0.85,
     "positive_top3_rate": 0.95,
-    "router_top3_rate": 0.90,
-    "negative_no_trigger_rate": 0.80
+    "router_top3_rate": 0.9,
+    "negative_no_trigger_rate": 0.8
   },
   "cases": [
     {
@@ -664,6 +664,159 @@
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "reason": "Ambiguous routing request without exact router name."
+    },
+    {
+      "id": "capability-software-engineering",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-software-engineering 修复这个 repo 的 failing tests，并说明验证结果。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-software-engineering",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-ai-agent-rag",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-ai-agent-rag 设计一个带引用、缓存和失败降级的企业知识库助手。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ai-agent-rag",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-api-data-platform",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-api-data-platform 设计这个 billing REST API，包含 OpenAPI、分页和错误码。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-api-data-platform",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-ui-doc-output",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-ui-doc-output 优化这个 dashboard，并用截图检查移动端。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-ui-doc-output",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-research-drawio-diagram",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-research-drawio-diagram 根据论文和官方 GitHub 画一个可编辑 draw.io 方法图。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-research-drawio-diagram",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-secure-code-appsec",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-secure-code-appsec 审计这个 Web/API 项目的认证和越权风险。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-secure-code-appsec",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-cloud-devsecops",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-cloud-devsecops 检查 Docker、K8s、CI/CD 和供应链风险。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-cloud-devsecops",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-detection-response",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-detection-response 根据这些 EDR 日志写 Sigma 和 YARA 检测规则。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-detection-response",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-vulnerability-lifecycle",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-vulnerability-lifecycle 分析这个 CVE 的影响、补丁和修复优先级。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-vulnerability-lifecycle",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-identity-zero-trust",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-identity-zero-trust 评估这个 AD 域的 Kerberos、BloodHound 路径和服务账号风险。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-identity-zero-trust",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-authorized-assessment",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-authorized-assessment 在书面授权范围内规划一次安全评估。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-authorized-assessment",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-binary-mobile-iot",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-binary-mobile-iot 分析这个 APK 的权限、网络通信和 Frida hook 点。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-binary-mobile-iot",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-blockchain-security",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-blockchain-security 审计这个 Solidity 合约的权限、资产流和价格来源。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-blockchain-security",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-compliance-architecture",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-compliance-architecture 做上线前安全架构评审和威胁建模。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-compliance-architecture",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-purple-deception",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-purple-deception 把这些攻击行为映射成 ATT&CK 检测覆盖矩阵。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-purple-deception",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-network-protocol-security",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-network-protocol-security 分析这个 pcap 里的 TLS 握手和异常字段。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-network-protocol-security",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
+    },
+    {
+      "id": "capability-skill-router",
+      "language": "zh-CN",
+      "category": "capability_cn",
+      "prompt": "使用 coff0xc-skill-router 帮我判断这个任务该用哪个 skill。 请明确输入、交付物、边界和验证方式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-skill-router",
+      "reason": "Capability-focused invocation with deliverable and trust criteria."
     },
     {
       "id": "negative-simple-translate",

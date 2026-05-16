@@ -5,6 +5,39 @@ description: "Use when / 当用户请求: 科研算法架构图、论文方法�
 
 # coff0xc-research-drawio-diagram
 
+## 能力定位
+面向论文、算法、模型和研究流程的可编辑 draw.io 图生成能力。重点是交付可继续编辑的 `.drawio` 源文件，并把图中元素和公开证据对应起来。
+
+## 能交付什么
+- 可编辑 `.drawio` 文件
+- 图结构 JSON/spec 或模块清单
+- 证据表：论文段落、公式、图号、代码路径、官方文档
+- 未确认推断边和不确定项说明
+
+## 可以接收什么输入
+- 论文 PDF/arXiv/OpenReview、官方 GitHub、项目文档
+- 模型结构、算法 pipeline、实验流程、训练/推理说明
+- 已有草图、截图、Mermaid 或图形要求
+
+## 放心使用的边界
+- 可直接基于用户材料和公开来源整理图
+- 需要联网查论文/仓库时标注来源和证据等级
+- 不把推断连接伪装成论文原文事实
+- 默认只处理本地、可逆、可验证的低风险工作；涉及生产、凭据、付费、远程写入、删除、发布或权限变更时必须先确认。
+
+## 为什么可以放心
+- 优先生成 draw.io 可编辑源文件，不只给 PNG/Mermaid
+- 图中关键模块要能追溯到证据
+- 训练路径、推理路径和指标分层标注
+
+## 典型使用方式
+```text
+使用 coff0xc-research-drawio-diagram 根据论文和官方 GitHub 画一个可编辑 draw.io 方法图。
+使用 coff0xc-research-drawio-diagram 把 Transformer 论文方法整理成 .drawio 模型结构图。
+Use coff0xc-research-drawio-diagram to create an editable diagrams.net method figure with evidence notes.
+```
+
+
 ## 目标
 把科研算法、论文方法、模型结构或实验流程转成可编辑的 diagrams.net/draw.io `.drawio` 架构图。先基于公开来源或用户提供材料做结构分析，再画图；不要凭记忆编造模块、连接或创新点。
 

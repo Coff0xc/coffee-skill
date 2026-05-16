@@ -5,6 +5,39 @@ description: "Use when / 当用户请求: 全面云安全、容器/Kubernetes、
 
 # coff0xc-cloud-devsecops
 
+## 能力定位
+面向云原生、容器、CI/CD、供应链和密钥治理的只读优先评估能力。目标是让风险有证据、修复可落地、验证可复现。
+
+## 能交付什么
+- 云/IaC/K8s/CI/CD 风险清单
+- 最小权限、网络隔离、pipeline gate 和密钥轮换建议
+- SBOM/SCA/secret scanning 策略
+- 本地 lint/plan/只读检查和验证路线
+
+## 可以接收什么输入
+- Terraform/CloudFormation、K8s manifests、Dockerfile
+- GitHub Actions/CI 配置、lockfile、SBOM、镜像扫描结果
+- 云账号只读输出、日志、env example、密钥发现线索
+
+## 放心使用的边界
+- 默认只读分析本地配置和授权证据
+- 云端写入、IaC apply、kubectl apply/delete、workflow dispatch、密钥撤销必须先确认
+- 发现秘密值只报告类型、位置和处置建议，不复述完整值
+- 安全类能力默认只用于授权、防御、检测、加固、验证和报告；不提供未授权攻击、凭据窃取、持久化、规避检测、C2、钓鱼收集、数据外传或破坏性步骤。
+
+## 为什么可以放心
+- 按身份、网络、数据、运行时、供应链分层审查
+- 区分配置风险和真实可达风险
+- 输出修复优先级和回滚/验证方法
+
+## 典型使用方式
+```text
+使用 coff0xc-cloud-devsecops 检查 Docker、K8s、CI/CD 和供应链风险。
+使用 coff0xc-cloud-devsecops 评估 Terraform 里的 IAM、S3 暴露和 serverless 权限。
+Use coff0xc-cloud-devsecops to harden this GitHub Actions workflow and secret usage.
+```
+
+
 ## 目标
 用只读优先、证据化的方式评估云原生和交付链风险，输出可落地加固方案和验证路线。
 

@@ -5,6 +5,39 @@ description: "Use when / 当用户请求: 全面区块链、智能合约、DeFi�
 
 # coff0xc-blockchain-security
 
+## 能力定位
+面向区块链、智能合约、DeFi 和多链项目的安全审计能力。重点是资金流、权限、状态转换、预言机、跨链和测试覆盖。
+
+## 能交付什么
+- 合约入口点和权限模型清单
+- 资产流、状态机、价格来源和外部调用风险
+- 漏洞发现、影响、PoC 思路和修复建议
+- Foundry/Hardhat/链特定测试或审计检查清单
+
+## 可以接收什么输入
+- Solidity/Rust/CosmWasm/Cairo/TON/Algorand 合约
+- 测试、部署脚本、白皮书、经济模型、审计报告
+- 交易样例、事件日志、配置和权限说明
+
+## 放心使用的边界
+- 只处理授权代码和测试/本地链验证
+- 真实链上操作、私钥、资金迁移、公开利用必须先确认或拒绝
+- 不把理论漏洞当成已验证资金风险
+- 安全类能力默认只用于授权、防御、检测、加固、验证和报告；不提供未授权攻击、凭据窃取、持久化、规避检测、C2、钓鱼收集、数据外传或破坏性步骤。
+
+## 为什么可以放心
+- 先识别资产和权限边界
+- 按链和框架使用对应安全检查
+- 每个发现说明可达性、影响和测试建议
+
+## 典型使用方式
+```text
+使用 coff0xc-blockchain-security 审计这个 Solidity 合约的权限、资产流和价格来源。
+使用 coff0xc-blockchain-security 检查 Solana 程序的 PDA、signer 和 CPI 风险。
+Use coff0xc-blockchain-security to review this DeFi protocol and propose Foundry tests.
+```
+
+
 ## 目标
 围绕资产流、权限、状态机和链特性审计合约与协议，优先使用链专用工具和测试证明风险。
 
