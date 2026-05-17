@@ -9,8 +9,8 @@ from pathlib import Path
 TERMS = [
     re.compile(r"<!--\s*skill-id:\s*cs-[a-z0-9]{3}-[a-f0-9]{8}\s*-->"),
     "Required Notice: Copyright 2026 Coff0xc",
-    "AGPL-3.0-only",
-    "GNU Affero General Public License",
+    "source-available noncommercial",
+    "prior notice to Coff0xc",
 ]
 
 

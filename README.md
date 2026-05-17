@@ -6,9 +6,9 @@
 
 `coffee-skill` 不是脚本工具，也不是触发词合集。它是一套可安装的 `SKILL.md` 工作流包：普通任务直接进入最相关 skill 干活，跨领域任务才让 router 选择主 skill、补必要辅助 skill、按阶段执行和验证。
 
-本仓库是开源项目，采用 `AGPL-3.0-only`。别人可以 fork、修改、分发、商用，但必须保留许可证、版权和来源说明；发布衍生版本或把修改版作为网络服务提供时，也必须按 AGPL 提供对应源码。`Coff0xc` / `coffee-skill` 名称和项目身份不随许可证授权，不能冒充原创、官方、独家或授权版本。
+本仓库公开可见，但不是开源授权。个人学习、研究、评估和本地非商业使用可以保留署名后使用；任何商业化、公司内部生产使用、咨询交付、付费课程、付费社群、agent 包、托管服务、镜像、转售或衍生发布，都必须先通知 Coff0xc 并获得书面许可。没有书面许可，就没有商业授权。
 
-`18 skills` · `中英触发` · `自治编排 router` · `131 个触发/组合评测用例` · `7 个真实产物质量评测夹具` · `CI 自动验证` · `AGPL-3.0-only`
+`18 skills` · `中英触发` · `自治编排 router` · `131 个触发/组合评测用例` · `7 个真实产物质量评测夹具` · `CI 自动验证` · `个人非商业可用，商业化必须先通知授权`
 
 ## 两种模式
 
@@ -84,9 +84,9 @@ router 的职责不是永远停在“推荐一个 skill”，也不是每次都�
 
 知道 skill 名就直接点名；不知道或任务明显跨领域，就用 `coff0xc-skill-router` 轻量编排。普通单域任务不要先绕 router。
 
-## 30 秒安装
+## 个人非商业安装
 
-在仓库根目录执行：
+个人学习、研究、评估和本地非商业使用，在仓库根目录执行：
 
 ```powershell
 $dest = "$env:USERPROFILE\.codex\skills"
@@ -209,7 +209,7 @@ evals/                  # trigger eval、quality eval、golden responses
 scripts/                # 发布校验、触发评测、质量评测脚本
 .github/workflows/      # CI 验证流程
 manifest.json           # 机器可读 skill 清单
-LICENSE                 # GNU Affero General Public License v3.0
+LICENSE                 # Source-available noncommercial license
 NOTICE                  # 归属说明
 ```
 
@@ -230,11 +230,11 @@ NOTICE                  # 归属说明
 
 ## 许可证
 
-从当前版本起使用 GNU Affero General Public License v3.0 only，即 `AGPL-3.0-only`。见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
+从当前版本起使用自定义 source-available noncommercial 授权。见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
 
-这意味着：这是 OSI 意义上的开源路线，不能靠许可证禁止商业使用；但任何复制、修改、分发、再打包、课程/agent 包分发或网络服务托管，都必须遵守 AGPL 的源码、同许可证、版权和通知义务。
+这意味着：个人学习、研究、评估和本地非商业使用可以使用；商业化必须先通知 Coff0xc 并获得书面许可。禁止无通知/无授权的商业使用、公司内部生产使用、咨询交付、转售、付费再分发、商业托管、内训、课程打包、付费社群、agent 包打包、镜像发布或包装成任何产品/服务。
 
-严正声明：开源不等于允许偷署名、闭源套壳、删许可证、删 `NOTICE`、去除源码标识、冒充原创、冒充 Coff0xc 官方或暗示独家授权。Coff0xc 会使用 Git 历史、源码标识、相似度对比、购买记录、平台页面和交付包作为下架投诉、许可证执行、商标/冒充投诉和法律主张的证据。
+严正声明：未经书面许可的商业化不被授权；去除署名、删除 `LICENSE` / `NOTICE`、删除源码标识、冒充原创、冒充 Coff0xc 官方或暗示独家授权，均不被许可。Coff0xc 会使用 Git 历史、源码标识、相似度对比、购买记录、平台页面和交付包作为下架投诉、许可证执行、商标/冒充投诉和法律主张的证据。
 
 本仓库的 `SKILL.md` 文件包含源码级标识。它是版权和来源取证元数据，不影响 skill 执行。扫描可疑复制品：
 
@@ -252,9 +252,9 @@ Turn Codex / AgentSkills-compatible AI assistants from ad hoc execution into reu
 
 `coffee-skill` is not a script package or a keyword list. It is an installable pack of `SKILL.md` workflows: narrow tasks go straight to the most specific skill, while cross-domain tasks use the router to choose a primary skill, add necessary support skills, execute phases, verify, and re-route.
 
-This repository is open source under `AGPL-3.0-only`. Others may fork, modify, distribute, and use it commercially, but they must preserve the license, copyright, and origin notices. If they distribute a derivative or run a modified version as a network service, they must provide the corresponding source under the AGPL. The `Coff0xc` / `coffee-skill` names and project identity are not licensed for false originality, official endorsement, exclusivity, or impersonation.
+This repository is publicly visible, but it is not open-source licensed. Personal learning, research, evaluation, and local noncommercial use are allowed with attribution preserved. Any commercialization, company internal production use, consulting deliverable, paid course, paid community, agent-pack bundling, hosted service, mirror, resale, or derivative publication requires prior notice to Coff0xc and written permission. Without written permission, there is no commercial authorization.
 
-`18 skills` · `Chinese/English triggers` · `autonomous router` · `131 trigger/composition eval cases` · `7 real-artifact quality eval fixtures` · `CI validation` · `AGPL-3.0-only`
+`18 skills` · `Chinese/English triggers` · `autonomous router` · `131 trigger/composition eval cases` · `7 real-artifact quality eval fixtures` · `CI validation` · `personal noncommercial use allowed; commercial use requires prior notice and permission`
 
 ## Two Modes
 
@@ -302,7 +302,9 @@ This vibe-coding task may include frontend, backend, data, security, and docs; o
 
 The router should produce a primary skill, only necessary supporting skills, phase order, gates, and re-routing conditions. For example, a SaaS feature may compose `software-engineering + api-data-platform + ui-doc-output + secure-code-appsec`.
 
-## Quick Start
+## Personal Noncommercial Installation
+
+For personal learning, research, evaluation, and local noncommercial use:
 
 ```powershell
 $dest = "$env:USERPROFILE\.codex\skills"
@@ -379,7 +381,7 @@ evals/                  # Trigger evals, quality evals, golden responses
 scripts/                # Release validation and eval scripts
 .github/workflows/      # CI validation
 manifest.json           # Machine-readable skill inventory
-LICENSE                 # GNU Affero General Public License v3.0
+LICENSE                 # Source-available noncommercial license
 NOTICE                  # Attribution notice
 ```
 
@@ -400,11 +402,11 @@ NOTICE                  # Attribution notice
 
 ## License
 
-From the current version onward, this repository is licensed under GNU Affero General Public License v3.0 only, `AGPL-3.0-only`. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+From the current version onward, this repository uses a custom source-available noncommercial license. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
-This is an OSI-style open source path, so the license does not prohibit commercial use. It does require license preservation, copyright notices, source availability, same-license sharing for covered derivatives, and source availability for modified network-service deployments.
+Personal learning, research, evaluation, and local noncommercial use are allowed with attribution preserved. Commercialization requires prior notice to Coff0xc and written permission. Unauthorized commercial use, company internal production use, consulting delivery, resale, paid redistribution, commercial hosting, paid course bundling, paid community use, paid agent-pack bundling, mirroring, or packaging into any product or service is not permitted.
 
-Strict notice: open source does not allow removing attribution, removing `LICENSE` / `NOTICE`, stripping source identifiers, closed-source repackaging in violation of the AGPL, false originality claims, or any implication of official Coff0xc authorization. Coff0xc may use Git history, source identifiers, similarity analysis, purchase records, platform pages, and distributed artifacts as evidence for takedown requests, license enforcement, trademark/impersonation complaints, and legal claims.
+Strict notice: unnotified commercial use, unauthorized commercial use, removal of attribution, removal of `LICENSE` / `NOTICE`, stripping source identifiers, false originality claims, or any implication of official Coff0xc authorization is not permitted. Coff0xc may use Git history, source identifiers, similarity analysis, purchase records, platform pages, and distributed artifacts as evidence for takedown requests, license enforcement, trademark/impersonation complaints, and legal claims.
 
 `SKILL.md` files include source-level identifiers for copyright and origin evidence. They do not affect skill execution. To scan a suspected copy:
 

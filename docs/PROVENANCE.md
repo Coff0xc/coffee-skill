@@ -25,8 +25,9 @@ Before pushing to a public repository, confirm that you have the right to publis
 
 License history:
 - Versions published before the license change remain under the terms that applied to those earlier versions.
-- From the current license-change commit onward, this repository uses GNU Affero General Public License v3.0 only (`AGPL-3.0-only`).
-- The AGPL open source license allows commercial use, but covered copying, modification, distribution, packaged derivatives, and modified network-service deployments must preserve the AGPL license, copyright notices, source availability obligations, and this NOTICE.
+- From the current license-change commit onward, this repository uses a custom source-available noncommercial license.
+- Personal learning, research, evaluation, and local noncommercial use are allowed with attribution preserved.
+- Commercialization, company internal production use, consulting deliverables, paid courses, paid communities, agent-pack bundling, hosted services, mirrors, resale, and derivative publication require prior notice to Coff0xc and written permission.
 
 ## Source Identification
 
@@ -38,7 +39,7 @@ Run:
 python .\scripts\scan_provenance.py <suspected-folder>
 ```
 
-Removal of attribution, removal of `LICENSE` / `NOTICE`, removal of source identifiers, AGPL source-obligation violations, closed-source repackaging of covered derivatives, false originality claims, or any implication of official Coff0xc authorization is not permitted and may be used as evidence for takedown requests, license enforcement, trademark/impersonation complaints, and legal claims.
+Unnotified commercial use, unauthorized commercial use, removal of attribution, removal of `LICENSE` / `NOTICE`, removal of source identifiers, false originality claims, or any implication of official Coff0xc authorization is not permitted and may be used as evidence for takedown requests, license enforcement, trademark/impersonation complaints, and legal claims.
 
 For practical enforcement steps, see:
 

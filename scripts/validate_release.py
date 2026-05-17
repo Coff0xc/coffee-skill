@@ -18,9 +18,8 @@ OPENAI_KEY_MARKER = "sk" + r"-[A-Za-z0-9]{20,}"
 QUICK_RULE_HEADING = "## 快速规则（日常任务先读这里）"
 SKILL_ID_PATTERN = re.compile(r"<!--\s*skill-id:\s*cs-[a-z0-9]{3}-[a-f0-9]{8}\s*-->")
 FORBIDDEN_LICENSE_TERMS = [
-    "PolyForm",
-    "Noncommercial",
-    "noncommercial",
+    "AGPL",
+    "GNU Affero",
 ]
 
 SENSITIVE_PATTERNS = [
@@ -149,13 +148,15 @@ def main() -> None:
     license_path = ROOT / "LICENSE"
     if license_path.exists():
         license_text = license_path.read_text(encoding="utf-8", errors="ignore")
-        if "GNU AFFERO GENERAL PUBLIC LICENSE" not in license_text:
-            errors.append("LICENSE: expected GNU Affero General Public License text")
+        if "Source-Available Noncommercial License" not in license_text:
+            errors.append("LICENSE: expected source-available noncommercial license text")
+        if "Any commercial use requires prior notice to Coff0xc" not in license_text:
+            errors.append("LICENSE: expected commercial prior-notice requirement")
     notice_path = ROOT / "NOTICE"
     if notice_path.exists():
         notice_text = notice_path.read_text(encoding="utf-8", errors="ignore")
-        if "AGPL-3.0-only" not in notice_text:
-            errors.append("NOTICE: expected AGPL-3.0-only notice")
+        if "source-available noncommercial license" not in notice_text:
+            errors.append("NOTICE: expected source-available noncommercial notice")
 
     manifest_path = ROOT / "manifest.json"
     manifest = []
