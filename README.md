@@ -6,7 +6,7 @@
 
 `coffee-skill` 不是脚本工具，也不是触发词合集。它是一套可安装的 `SKILL.md` 工作流包：普通任务直接进入最相关 skill 干活，跨领域任务才让 router 选择主 skill、补必要辅助 skill、按阶段执行和验证。
 
-`18 skills` · `中英触发` · `自治编排 router` · `131 个触发/组合评测用例` · `7 个真实产物质量评测夹具` · `CI 自动验证` · `Apache-2.0`
+`18 skills` · `中英触发` · `自治编排 router` · `131 个触发/组合评测用例` · `7 个真实产物质量评测夹具` · `CI 自动验证` · `PolyForm Noncommercial 1.0.0`
 
 ## 两种模式
 
@@ -207,7 +207,7 @@ evals/                  # trigger eval、quality eval、golden responses
 scripts/                # 发布校验、触发评测、质量评测脚本
 .github/workflows/      # CI 验证流程
 manifest.json           # 机器可读 skill 清单
-LICENSE                 # Apache License 2.0
+LICENSE                 # PolyForm Noncommercial License 1.0.0
 NOTICE                  # 归属说明
 ```
 
@@ -225,7 +225,11 @@ NOTICE                  # 归属说明
 
 ## 许可证
 
-Apache License 2.0。见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
+从当前版本起使用 PolyForm Noncommercial License 1.0.0。见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
+
+这意味着：非商业使用可以按许可证使用、修改和分发；商业使用、转售、付费再分发、商业托管或把本仓库内容打包成收费产品，需要 Coff0xc 的单独书面许可。
+
+注意：许可证变更不追溯。变更前已经发布的版本仍按当时适用的许可证授权。
 
 ---
 
@@ -235,7 +239,7 @@ Turn Codex / AgentSkills-compatible AI assistants from ad hoc execution into reu
 
 `coffee-skill` is not a script package or a keyword list. It is an installable pack of `SKILL.md` workflows: narrow tasks go straight to the most specific skill, while cross-domain tasks use the router to choose a primary skill, add necessary support skills, execute phases, verify, and re-route.
 
-`18 skills` · `Chinese/English triggers` · `autonomous router` · `131 trigger/composition eval cases` · `7 real-artifact quality eval fixtures` · `CI validation` · `Apache-2.0`
+`18 skills` · `Chinese/English triggers` · `autonomous router` · `131 trigger/composition eval cases` · `7 real-artifact quality eval fixtures` · `CI validation` · `PolyForm Noncommercial 1.0.0`
 
 ## Two Modes
 
@@ -360,7 +364,7 @@ evals/                  # Trigger evals, quality evals, golden responses
 scripts/                # Release validation and eval scripts
 .github/workflows/      # CI validation
 manifest.json           # Machine-readable skill inventory
-LICENSE                 # Apache License 2.0
+LICENSE                 # PolyForm Noncommercial License 1.0.0
 NOTICE                  # Attribution notice
 ```
 
@@ -378,4 +382,8 @@ NOTICE                  # Attribution notice
 
 ## License
 
-Apache License 2.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+From the current version onward, this repository is licensed under the PolyForm Noncommercial License 1.0.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+
+Noncommercial use is allowed under the license. Commercial use, resale, paid redistribution, commercial hosting, or packaging this repository's contents into a paid product requires separate written permission from Coff0xc.
+
+This license change is not retroactive. Versions published before the change remain under the license terms that applied to those earlier versions.

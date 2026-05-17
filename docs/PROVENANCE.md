@@ -21,4 +21,9 @@ This repository is a publication candidate generated from a local skill consolid
 
 ## Publication Caveat
 
-Before pushing to a public repository, confirm that you have the right to publish the included text. This release candidate uses Apache License 2.0.
+Before pushing to a public repository, confirm that you have the right to publish the included text.
+
+License history:
+- Versions published before the license change remain under the terms that applied to those earlier versions.
+- From the current license-change commit onward, this repository uses PolyForm Noncommercial License 1.0.0.
+- Commercial use, resale, paid redistribution, commercial hosting, or packaging this repository's contents into a paid product requires separate written permission from Coff0xc.
