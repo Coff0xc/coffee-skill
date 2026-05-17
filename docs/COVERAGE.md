@@ -10,6 +10,7 @@
 - Quality eval fixtures: 7 real-artifact/workflow cases with 51 assertions
 - Office OOXML quality gates: PPTX package/slide/chart parsing, XLSX workbook/formula/table/chart parsing, DOCX comments/redlines/styles/numbering/rels/table geometry parsing
 - Autonomous composition: narrow tasks go directly to the most specific skill; only uncertain or cross-domain tasks use the router to choose a primary skill, add necessary support skills, sequence phases, define gates, and re-route as evidence changes
+- Runtime speed model: every main `SKILL.md` starts with `快速规则（日常任务先读这里）`; detailed UI merge/review gates and router maps live in on-demand `references/`
 
 ## Skill Capability Map
 
@@ -18,7 +19,7 @@
 | `coff0xc-software-engineering` | 面向真实仓库的工程交付能力。适合把模糊需求变成可运行代码、可复现修复、可验证测试结果和清晰 diff 摘要；强调先读仓库规则、需求包、快速内循环、模块循环、CI 复现、最终审计和 diff 卫生。 | 代码补丁、脚本或配置修改; 失败原因和根因链路说明; 单元/集成/构建验证结果; CI/回归分诊和剩余风险 | 本地可逆优先 |
 | `coff0xc-ai-agent-rag` | 面向 AI Agent、RAG 和 LLM 应用的系统设计与落地能力。它把“写 Prompt”升级为数据、工具、检索、评测、观测和成本一起管理的工程系统。 | Agent/RAG 架构方案和数据流; 工具 schema、记忆/缓存策略、检索和引用策略; 评测集、失败用例和质量指标 | 本地可逆优先 |
 | `coff0xc-api-data-platform` | 面向 API、数据库、CLI/SDK 和数据契约的工程能力。目标是让接口可使用、可演进、可测试，数据链路可迁移、可追踪、可恢复。 | REST/GraphQL/OpenAPI 契约; 数据库 schema、迁移和数据一致性建议; CLI/SDK 命令设计、JSON 输出和错误模型 | 本地可逆优先 |
-| `coff0xc-ui-doc-output` | 面向 UI、前端体验、设计系统、报告表达和技术翻译交付的产物质量能力。它要求产品类型路由、设计系统遵循、组件状态覆盖、可访问性、反 AI 味视觉门禁和浏览器截图验收。 | 可用 UI/组件/页面改动或设计建议; 设计系统/tokens/variants 建议; 桌面/移动端截图或浏览器 smoke 结果; 报告结构、交付文案和翻译润色稿 | 本地可逆优先 |
+| `coff0xc-ui-doc-output` | 面向 UI、前端体验、设计系统、报告表达和技术翻译交付的产物质量能力。普通任务走快路径；深度审美、外部 UI skill 合并、Figma/Playwright 和 quality eval 读取按需 reference。 | 可用 UI/组件/页面改动或设计建议; 桌面/移动端截图或浏览器 smoke 结果; 报告结构、交付文案和翻译润色稿 | 本地可逆优先 |
 | `coff0xc-office-doc-tools` | 面向 PowerPoint、Word、PDF、Excel/CSV 这类正式文件交付的 Office 文档工具能力。重点是交付可打开、可编辑、可审阅、可验证的文件。 | 可编辑 PPTX、DOCX、PDF、XLSX/CSV; 图表、批注/修订、公式检查; 渲染截图/预览 QA 和文件路径 | 本地可逆优先 |
 | `coff0xc-research-drawio-diagram` | 面向论文、算法、模型和研究流程的可编辑 draw.io 图生成能力。重点是交付可继续编辑的 `.drawio` 源文件，并把图中元素和公开证据对应起来。 | 可编辑 `.drawio` 文件; 图结构 JSON/spec 或模块清单; 证据表：论文段落、公式、图号、代码路径、官方文档 | 本地可逆优先 |
 | `coff0xc-secure-code-appsec` | 面向代码和应用安全的证据化审计能力。它把源码、路由、配置、扫描结果和日志转成可验证发现、修复建议和回归检查。 | 安全发现列表：位置、影响、证据、复现条件; source/sink 或权限链路说明; 修复建议、测试用例、检测/日志建议 | 授权/防御优先 |
@@ -32,7 +33,7 @@
 | `coff0xc-compliance-architecture` | 面向安全架构、威胁建模、合规映射、数据安全和成熟度评估的治理能力。它把系统设计、控制要求和审计证据整理成能落地的风险决策材料。 | 架构风险评审和信任边界图; STRIDE/威胁建模、控制矩阵和差距分析; 数据分类、隐私、DLP 和日志审计建议 | 授权/防御优先 |
 | `coff0xc-purple-deception` | 面向紫队、ATT&CK 映射、检测覆盖验证和欺骗防御的安全运营改进能力。它把攻击行为语言翻译成可观测、可检测、可改进的防御能力。 | ATT&CK 技术映射和演练假设; 检测覆盖矩阵、日志需求和响应验证点; 蜜罐/诱饵/canary 设计建议 | 授权/防御优先 |
 | `coff0xc-network-protocol-security` | 面向网络协议、TLS/DNS/QUIC/HTTP、无线通信、抓包和形式化建模的协议安全分析能力。它把通信证据转成流程图、风险点和验证建议。 | 协议流程、握手和状态机说明; pcap/日志字段分析、异常字段和安全影响; TLS/PKI/DNS/HTTP/QUIC/无线风险清单 | 授权/防御优先 |
-| `coff0xc-skill-router` | 面向不确定任务和跨领域任务的轻量 autonomous skill composer。它不是普通任务的必经步骤；窄任务直达最具体 skill，跨域任务才由它选择主 skill、添加必要辅助 skill、排阶段、设门禁，并在执行中根据证据重路由。 | 轻量主/辅 skill graph; 阶段顺序和验证门禁; 候选组合取舍; 最小澄清问题; 重路由条件 | 授权/防御优先 |
+| `coff0xc-skill-router` | 面向不确定任务和跨领域任务的轻量 autonomous skill composer。它不是普通任务的必经步骤；窄任务直达最具体 skill，跨域任务才由它选择主 skill、添加必要辅助 skill，并按需读取完整路由表。 | 轻量主/辅 skill graph; 阶段顺序和验证门禁; 候选组合取舍; 最小澄清问题; 重路由条件 | 授权/防御优先 |
 
 ## Source Skill Coverage
 

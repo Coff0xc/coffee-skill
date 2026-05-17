@@ -14,12 +14,15 @@
 For everyday work, the expected behavior is:
 
 1. Pick the most specific skill.
-2. Read the minimum necessary context.
-3. Make the smallest correct change or analysis.
-4. Run the relevant project validation.
-5. Report completed work, real validation, residual risk, and next step.
+2. Read the skill's `快速规则（日常任务先读这里）` block first.
+3. Read the minimum necessary project context.
+4. Make the smallest correct change or analysis.
+5. Run the relevant project validation.
+6. Report completed work, real validation, residual risk, and next step.
 
 Do not create quality evals, golden responses, workflow traces, or long skill graphs for normal tasks. Those are repository release tools, not runtime ceremony.
+
+Do not load `references/` by default. References are for deep review, external skill merging, router debugging, and release/eval work. For ordinary tasks, use the main skill body and the target project's own validation.
 
 ## When To Run Evals
 

@@ -1,23 +1,22 @@
 ---
 name: coff0xc-skill-router
-description: "Coff0xc autonomous skill router and lightweight multi-skill composer. Use only when the user asks the AI to decide which coffee/coff0xc skills to use, chain skills together, build a task/workflow graph, orchestrate a vibe-coding workflow, handle cross-domain or multi-domain work, or recover from a missing/uncertain skill trigger. It chooses one primary skill, adds only necessary support skills, sequences phases, defines gates, and re-routes as evidence changes. 中文触发：自主编排、多 skill 工作流、AI 自己判断、自动串联 skill、任务图、工作流图、跨领域、跨域、多领域、多维度、编排工作流、vibe coding、不确定用哪个、选择 skill、帮我分流、同时涉及多个领域、串联 skill、工作流编排。 Do not use this router for narrow tasks that already match one specific skill; route directly to that skill."
+description: "Coff0xc lightweight skill router and autonomous multi-skill composer. Use only when the user asks the AI to decide which coff0xc skills to use, chain skills, build a task/workflow graph, orchestrate vibe coding, handle cross-domain/multi-domain work, or recover from an uncertain/missing trigger. 中文触发：自主编排、多 skill 工作流、AI 自己判断、自动串联 skill、任务图、工作流图、跨领域、跨域、多领域、多维度、编排工作流、vibe coding、不确定用哪个、选择 skill、帮我分流、串联 skill。Do not use for narrow tasks already covered by one specific skill."
 ---
 
 # coff0xc-skill-router
+
+## 快速规则（日常任务先读这里）
+> **[单域直达]** 能用一个专业 skill 做完就直接用它，不输出长 skill graph。
+> **[跨域编排]** 只有任务确实跨多个领域或用户要求 AI 自己串联 skill，才给主 skill、辅助 skill、阶段和门禁。
+> **[轻量执行]** 复杂任务只给 3-5 行可执行工作流，然后马上进入第一阶段。
+> **[发版边界]** trigger eval、quality eval、workflow trace、golden responses 只在 review/eval/发版/CI/推送时使用。
+
+普通任务按本节分流；只有路由调试、skill 质量验证或复杂跨域工作流才读取 router map reference。
 
 ## 能力定位
 面向不确定任务和跨领域任务的轻量 autonomous skill composer。它不是把所有能力揉成一个大 skill，也不是普通任务的必经步骤；它只在任务确实需要选择、分流或跨域编排时介入。
 
 单一任务只选一个最具体 skill；复杂任务输出主 skill、辅助 skill、执行顺序、门禁和重路由条件。
-
-## 执行模式优先级
-默认是执行模式，不是证明模式。
-
-- 普通任务：不要先输出完整 skill graph；直接选择最具体的主 skill 并开始执行。
-- 复杂跨域任务：只给 3-5 行轻量工作流，然后马上进入第一阶段。
-- 只有用户明确要求 review、eval、质量测试、发版、推送、CI、benchmark、确认 skill 是否好用时，才启用 release/eval 模式。
-- `workflow-trace.json`、golden responses、trigger eval、quality eval 是发版门禁，不是普通任务默认动作。
-- Router 是快速分流器，不是强制规划层；能用一个专业 skill 做完，就不要绕进多 skill 编排。
 
 ## 能交付什么
 - 轻量分流结果：当前主 skill、必要辅助 skill、暂不使用的 skill
@@ -56,13 +55,13 @@ Use coff0xc-skill-router when a Coff0xc skill did not auto-trigger.
 
 
 ## 目标
-作为自动触发兜底入口和多 skill 编排入口。当前端模型没有自动选择具体 Coff0xc skill，或任务明显跨多个领域时，用本路由表快速选择主 skill 和必要支持 skill，然后读取并执行当前阶段对应 skill 的工作流。
+作为自动触发兜底入口和多 skill 编排入口。当前端模型没有自动选择具体 Coff0xc skill，或任务明显跨多个领域时，快速选择主 skill 和必要支持 skill，然后读取并执行当前阶段对应 skill 的工作流。
 
 ## 为什么需要 Router
 - 多个客户端只用 `name` 和 `description` 参与触发，正文内容不会帮助首次触发。
 - 中文请求、缩写、英文工具名和安全领域黑话容易导致具体 skill 漏触发。
 - 真实任务经常不是一个 skill 能完成：开发会牵涉 API、数据、UI、安全、Office 交付或发布验证。
-- 合并后的大 skill 数量更少，但每个主题覆盖面更广，需要一个触发词密集的兜底和编排入口。
+- Router 只负责分流和编排，不把所有专业规则装进一个大上下文。
 
 ## 自治编排规则
 1. 如果一个更具体的 Coff0xc skill 已经完全覆盖任务，直接执行该 skill；不要输出 router 计划。
@@ -94,6 +93,8 @@ Use coff0xc-skill-router when a Coff0xc skill did not auto-trigger.
 | Secure release review | `coff0xc-secure-code-appsec` | `coff0xc-cloud-devsecops`, `coff0xc-software-engineering`, `coff0xc-compliance-architecture` | 先找风险，再修复、验证和整理上线证据 |
 | Detection / incident workflow | `coff0xc-detection-response` | `coff0xc-vulnerability-lifecycle`, `coff0xc-cloud-devsecops`, `coff0xc-purple-deception` | 先建检测/时间线，再做优先级和覆盖验证 |
 
+更多组合和完整路由表只在复杂编排或 router 调试时读取 `references/router-map.md`。
+
 ## 输出格式
 普通任务不要输出这段，直接执行对应专业 skill。复杂任务先输出短编排，不要写长篇理论：
 
@@ -113,26 +114,6 @@ Use coff0xc-skill-router when a Coff0xc skill did not auto-trigger.
 
 执行时可以边做边更新，但不要把“初始工作流”当不可改的计划。
 
-## 路由表
-| 目标 skill | 常见别名/来源词 | 触发说明 |
-| --- | --- | --- |
-| coff0xc-software-engineering | c-cpp-dev, code-simplifier, git-workflow, go-dev, java-dev, js-ts-dev, ... | 全面软件工程、语言开发、测试、重构、脚本、Git 和工程质量工作流。触发：Python、JavaScript、TypeScript、Go、Rust、Java、C/C++、Shell、bugfix、feature、测试、重构、构建、脚本、Git、本地工程化、CI 失败、快速内循环、模块循环、最终审计。 |
-| coff0xc-ai-agent-rag | ai-agent-dev, ai-orchestrator, deep-thinking | 全面 AI Agent、RAG、Prompt、LLM 应用、多模型协作、评测、观测和成本控制工作流。触发：Agent、RAG、embedding、向量数据库、Prompt、LangChain、AutoGen、工具调用、多模型编排、代码审计协作、视觉分析、评测、缓存、记忆、失败恢复。 |
-| coff0xc-api-data-platform | api-design, database, cli-creator | 全面 API、数据库、数据平台、CLI、SDK 和接口契约工程工作流。触发：REST、GraphQL、OpenAPI、SQL、数据库、迁移、CLI、SDK、分页、认证、错误码、JSON 输出、数据模型、ETL、数据质量。 |
-| coff0xc-ui-doc-output | UIdesign, quick-translate | 全面 UI 设计、前端体验、设计系统、报告叙事和技术翻译工作流。触发：UI、前端、dashboard、组件、页面、设计系统、状态门禁、响应式、移动端、浏览器截图、可访问性、反 AI 味、报告、翻译、润色。正式 PPTX/DOCX/PDF/XLSX 文件交付转入 `coff0xc-office-doc-tools`。 |
-| coff0xc-office-doc-tools | documents, presentations, spreadsheets, pdf | 全面 Office/PDF 文件型交付工作流。触发：PowerPoint、PPT、PPTX、slides、deck、Word、DOCX、PDF、Excel、XLSX、CSV、spreadsheet、workbook、chart、formula、redline、comments、render、export、演示文稿、幻灯片、文档、表格、工作簿、公式、批注、修订、导出、可编辑文件。 |
-| coff0xc-secure-code-appsec | api-discovery, api-security-test, backdoor-detector, browser-security, code-audit, graphql-pentest, ... | 全面代码安全审计、Web/API/GraphQL/OAuth/浏览器/SPA/LLM 安全、后门检测和授权应用安全验证工作流。触发：代码审计、危险函数、source/sink、污点分析、Web 安全、API 安全、GraphQL、OAuth、CSP、CORS、Cookie、Prompt 注入、越权、SSRF、XSS、SQLi、后门、Webshell。 |
-| coff0xc-cloud-devsecops | cloud-security, container-security, devsecops, docker-k8s, secrets-management, serverless-security, ... | 全面云安全、容器/Kubernetes、Serverless、DevSecOps、供应链、CI/CD 和密钥管理工作流。触发：AWS、Azure、GCP、IAM、S3/Blob/GCS、Docker、K8s、镜像、Serverless、CI/CD、SAST、DAST、SCA、SBOM、secret scanning、IaC、Terraform、GitHub Actions。 |
-| coff0xc-detection-response | detection-engineering, email-security, forensics-analysis, incident-response, malware-analysis, osint, ... | 全面 SOC、安全运营、检测工程、威胁狩猎、威胁情报、邮件安全、恶意软件分析、取证和应急响应工作流。触发：SIEM、Sigma、YARA、IOC、日志、告警、EDR、IR、forensics、malware、phishing、timeline、威胁情报、狩猎、误报。 |
-| coff0xc-vulnerability-lifecycle | bug-bounty, pentest-report, red-team-poc, vuln-research, vulnerability-management | 全面漏洞研究、CVE/补丁分析、漏洞管理、风险优先级、报告、授权验证和修复跟踪工作流。触发：CVE、漏洞原理、补丁对比、advisory、CVSS、EPSS、KEV、PoC 验证、漏洞报告、bug bounty、pentest report、修复跟踪。 |
-| coff0xc-identity-zero-trust | ad-pentest, credential-access, identity-security, lateral-movement, privilege-escalation, zero-trust | 全面身份安全、零信任、AD/Kerberos、IAM、权限、凭证风险、横向移动防御和访问控制审查工作流。触发：IAM、SSO、MFA、AD、Active Directory、Kerberos、BloodHound、权限、凭证、服务账号、提权、横向移动、Zero Trust、PAM。 |
-| coff0xc-authorized-assessment | attack-chain-orchestrator, autoredteam-orchestrator, c2-framework, cdn-bypass, data-exfiltration, evasion-toolkit, ... | 全面授权安全评估、攻击面梳理、红队计划防御化、演练边界、控制有效性验证和报告工作流。触发：recon、fingerprint、attack chain、full pentest、red team、C2、evasion、phishing simulation、post-exploitation、data exfiltration、CDN/WAF、proxy、social engineering、ROE。 |
-| coff0xc-binary-mobile-iot | binary-exploit, crypto-security, ctf, ics-scada, iot-security, kernel-security, ... | 全面二进制/逆向/内核/移动/IoT/ICS/CTF/密码学安全分析工作流。触发：reverse engineering、PWN、kernel、APK、IPA、Frida、firmware、UART、JTAG、SPI、SCADA、PLC、Modbus、BLE、RF、CTF、crypto review、constant-time。 |
-| coff0xc-blockchain-security | blockchain-security | 全面区块链、智能合约、DeFi、Web3、跨链、代币和多链安全审计工作流。触发：Solidity、EVM、Solana、Cosmos、Substrate、Cairo/StarkNet、TON、Algorand、DeFi、AMM、oracle、bridge、token、NFT、智能合约审计、Foundry、Hardhat、Slither。 |
-| coff0xc-compliance-architecture | compliance-audit, data-security, security-architecture | 全面安全架构、威胁建模、合规审计、数据安全、DLP、隐私、安全基线和成熟度评估工作流。触发：安全架构、STRIDE、威胁建模、等保、PCI-DSS、GDPR、ISO27001、SOC2、CIS、NIST、数据分类、脱敏、DLP、隐私、基线、控制矩阵。 |
-| coff0xc-purple-deception | honeypot, purple-team | 全面紫队演练、ATT&CK 映射、控制验证、检测能力评估、蜜罐/欺骗防御和安全运营改进工作流。触发：purple team、ATT&CK、红蓝对抗、control validation、detection coverage、emulation plan、honeypot、deception、decoy、canary、检测有效性。 |
-| coff0xc-network-protocol-security | network-protocol, wireless-security | 全面网络协议、TLS/DNS/TCP/UDP/QUIC/HTTP、无线/RF/蓝牙、协议日志分析、通信安全和形式化协议建模工作流。触发：network protocol、TLS、DNS、HTTP/2、HTTP/3、QUIC、TCP、UDP、WiFi、Bluetooth、BLE、RF、packet、pcap、Wireshark、协议分析、安全通信、ProVerif、Mermaid protocol。 |
-
 ## 手动触发写法
 如果自动触发不稳定，用户可以直接写：
 
@@ -151,3 +132,9 @@ Use coff0xc-skill-router when a Coff0xc skill did not auto-trigger.
 - frontmatter 只保留 `name` 和 `description` 最稳；触发词必须写进 `description`。
 - 同名 skill 分布在多个目录时可能抢占触发，保留一份主版本。
 - 太短或只写抽象能力的 description 容易漏触发；应包含中文、英文、工具名、任务名和常见缩写。
+
+## 按需 References
+
+| Reference | 何时读取 |
+| --- | --- |
+| `references/router-map.md` | 复杂多域编排、路由调试、扩展组合模式、解释某个 skill 为什么被选或被排除。 |

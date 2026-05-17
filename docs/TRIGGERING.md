@@ -8,9 +8,10 @@ Most clients select skills from frontmatter metadata, especially `name` and `des
 
 - Each capability skill starts with broad Chinese/English capability terms.
 - Descriptions include concrete deliverables, domain nouns, tool names, acronyms, and source aliases.
-- Each skill body includes capability positioning, inputs, deliverables, boundaries, trust reasons, and examples.
+- Each skill body starts with `快速规则（日常任务先读这里）`, then capability positioning, inputs, deliverables, boundaries, trust reasons, and examples.
 - `coff0xc-skill-router` is the fallback when auto-triggering misses and the lightweight autonomous composer for cross-domain tasks.
 - Narrow prompts should go directly to the most specific skill. Broad prompts should trigger a small workflow graph and then execution, not a long proof artifact.
+- Main `SKILL.md` files are optimized for runtime fast paths. Heavy checklists, route maps, and eval guidance live in `references/` and should be loaded only when the active task needs them.
 
 ## Runtime Modes
 
@@ -20,6 +21,8 @@ Most clients select skills from frontmatter metadata, especially `name` and `des
 | Release / eval mode | `review the skill`, `run eval`, `quality test`, `release`, `push`, `CI gate`, `benchmark`, `确认是否真的好用` | Run trigger/quality/release gates and update generated eval artifacts. |
 
 `workflow-trace.json`, golden responses, trigger evals, and quality evals belong to release/eval mode. They should not appear in normal task execution unless the user explicitly asks for them.
+
+If a normal task feels slow, first check whether the agent unnecessarily invoked the router, loaded references, or entered release/eval mode. The expected fix is to return to the most specific skill and run only task-relevant validation.
 
 ## Composition Triggers
 

@@ -17,6 +17,16 @@
 
 一句话：平时不要让 skill 先证明自己，先让它把任务做完；只有要发版或验证 skill 质量时才跑重型门禁。
 
+## 为什么之前会变慢，现在怎么避免
+
+Skill 变慢通常不是能力太强，而是普通任务也加载了发版门禁、长路由表和审美长清单。这个仓库现在按“快路径 + 按需 reference”组织：
+
+- 每个 skill 顶部都有 `快速规则（日常任务先读这里）`：先给 3-4 条硬门禁和当前任务的默认执行方式。
+- 普通任务只读主 `SKILL.md` 顶部：目标、边界、短工作流、核心门禁。
+- 深度 UI/外部 skill 合并/路由调试/quality eval 才读取 `references/`。
+- `coff0xc-skill-router` 只在跨领域或不确定任务介入；单域 UI、dev、Office、安全任务直接进专业 skill。
+- `trigger eval`、`quality eval`、`workflow trace`、golden responses 是 release guard，不是日常任务前置步骤。
+
 ## 和其他 skill 仓库的区别
 
 | 维度 | 常见 skill 仓库 | coffee-skill |
@@ -235,6 +245,16 @@ Turn Codex / AgentSkills-compatible AI assistants from ad hoc execution into reu
 | Release / eval mode | Explicit review, eval, quality test, release, push, CI, benchmark, or skill-quality request | Run trigger evals, quality evals, golden fixtures, workflow traces, docs/manifest sync, and release gates. |
 
 Normal work should not start by proving the skill system. It should start by doing the task.
+
+## Why Skills Felt Slow
+
+The slow path came from loading release gates, long route tables, and detailed design checklists during ordinary work. The pack now uses a fast-path plus on-demand references:
+
+- Every skill starts with `快速规则（日常任务先读这里）`: 3-4 hard gates and the default way to proceed.
+- Normal tasks load only the top of the main `SKILL.md`: goal, boundary, short workflow, and core gates.
+- Deep UI review, external skill merging, router debugging, and quality evals load `references/` only when needed.
+- `coff0xc-skill-router` is only for uncertain or cross-domain work; narrow UI, dev, Office, or security tasks go directly to the specific skill.
+- Trigger evals, quality evals, workflow traces, and golden responses are release guards, not runtime ceremony.
 
 ## How This Differs
 

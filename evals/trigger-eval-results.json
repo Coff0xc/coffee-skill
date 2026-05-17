@@ -406,12 +406,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-software-engineering",
-      "top_score": 34.1905,
+      "top_score": 34.7014,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-software-engineering",
-          "score": 34.1905,
+          "score": 34.7014,
           "lexical_overlap": [
             "browser",
             "build",
@@ -430,21 +430,6 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": 17.9342,
-          "lexical_overlap": [
-            "admin",
-            "browser",
-            "panel",
-            "smoke"
-          ],
-          "phrase_hits": [
-            "browser smoke",
-            "ui"
-          ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
           "skill": "coff0xc-skill-router",
           "score": 15.5671,
           "lexical_overlap": [
@@ -452,6 +437,18 @@
             "do"
           ],
           "phrase_hits": [],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-ui-doc-output",
+          "score": 7.8281,
+          "lexical_overlap": [
+            "browser"
+          ],
+          "phrase_hits": [
+            "browser smoke",
+            "ui"
+          ],
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -488,14 +485,16 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-api-data-platform",
-          "score": 0.0,
-          "lexical_overlap": [],
+          "skill": "coff0xc-ui-doc-output",
+          "score": 3.539,
+          "lexical_overlap": [
+            "用"
+          ],
           "phrase_hits": [],
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-authorized-assessment",
+          "skill": "coff0xc-api-data-platform",
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
@@ -547,11 +546,9 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": 3.539,
-          "lexical_overlap": [
-            "design"
-          ],
+          "skill": "coff0xc-api-data-platform",
+          "score": 0.0,
+          "lexical_overlap": [],
           "phrase_hits": [],
           "simple_prompt_penalty": 0.0
         }
@@ -569,12 +566,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-ai-agent-rag",
-      "top_score": 111.5696,
+      "top_score": 111.9061,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": 111.5696,
+          "score": 111.9061,
           "lexical_overlap": [
             "coff0xc-ai-agent-rag",
             "rag",
@@ -589,10 +586,8 @@
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 10.6917,
-          "lexical_overlap": [
-            "workflow"
-          ],
+          "score": 8.0,
+          "lexical_overlap": [],
           "phrase_hits": [
             "coff0xc"
           ],
@@ -600,7 +595,7 @@
         },
         {
           "skill": "coff0xc-research-drawio-diagram",
-          "score": -3.3083,
+          "score": -2.9719,
           "lexical_overlap": [
             "workflow"
           ],
@@ -704,10 +699,10 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-purple-deception",
+          "skill": "coff0xc-authorized-assessment",
           "score": 3.539,
           "lexical_overlap": [
-            "plan"
+            "data"
           ],
           "phrase_hits": [],
           "simple_prompt_penalty": 0.0
@@ -830,21 +825,17 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-ui-doc-output",
-      "top_score": 44.4428,
+      "top_score": 31.3086,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 44.4428,
+          "score": 31.3086,
           "lexical_overlap": [
             "consistency",
-            "delivery",
-            "executive",
-            "hierarchy",
-            "report",
-            "section",
-            "technical",
-            "terminology"
+            "narrative",
+            "polish",
+            "report"
           ],
           "phrase_hits": [
             "terminology consistency",
@@ -858,7 +849,7 @@
         },
         {
           "skill": "coff0xc-compliance-architecture",
-          "score": 5.7198,
+          "score": 6.2306,
           "lexical_overlap": [
             "executive",
             "report"
@@ -868,7 +859,7 @@
         },
         {
           "skill": "coff0xc-research-drawio-diagram",
-          "score": 3.0281,
+          "score": 3.539,
           "lexical_overlap": [
             "section"
           ],
@@ -1260,10 +1251,9 @@
         },
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 13.1061,
+          "score": 9.5671,
           "lexical_overlap": [
             "coff0xc-office-doc-tools",
-            "design",
             "system"
           ],
           "phrase_hits": [
@@ -1340,12 +1330,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-office-doc-tools",
-      "top_score": 149.3039,
+      "top_score": 149.8147,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 149.3039,
+          "score": 149.8147,
           "lexical_overlap": [
             "coff0xc-office-doc-tools",
             "docx",
@@ -1379,13 +1369,14 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": 6.0563,
+          "skill": "coff0xc-binary-mobile-iot",
+          "score": 4.4917,
           "lexical_overlap": [
-            "coff0xc-office-doc-tools",
-            "table"
+            "件"
           ],
-          "phrase_hits": [],
+          "phrase_hits": [
+            "ble"
+          ],
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2119,22 +2110,24 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-skill-router",
-          "score": 8.5281,
-          "lexical_overlap": [
-            "evidence"
-          ],
-          "phrase_hits": [],
-          "simple_prompt_penalty": 0.0
-        },
-        {
           "skill": "coff0xc-compliance-architecture",
-          "score": 5.7198,
+          "score": 6.2306,
           "lexical_overlap": [
             "evidence",
             "report"
           ],
           "phrase_hits": [],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-ui-doc-output",
+          "score": 5.6917,
+          "lexical_overlap": [
+            "report"
+          ],
+          "phrase_hits": [
+            "report"
+          ],
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2417,12 +2410,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-authorized-assessment",
-      "top_score": 35.4757,
+      "top_score": 35.9865,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-authorized-assessment",
-          "score": 35.4757,
+          "score": 35.9865,
           "lexical_overlap": [
             "attack",
             "chain",
@@ -2453,10 +2446,10 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": 3.0281,
+          "skill": "coff0xc-cloud-devsecops",
+          "score": 2.6917,
           "lexical_overlap": [
-            "data"
+            "chain"
           ],
           "phrase_hits": [],
           "simple_prompt_penalty": 0.0
@@ -2774,10 +2767,8 @@
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 12.539,
-          "lexical_overlap": [
-            "route"
-          ],
+          "score": 9.0,
+          "lexical_overlap": [],
           "phrase_hits": [],
           "simple_prompt_penalty": 0.0
         },
@@ -3092,10 +3083,9 @@
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 19.0671,
+          "score": 15.5281,
           "lexical_overlap": [
-            "build",
-            "phases"
+            "build"
           ],
           "phrase_hits": [],
           "simple_prompt_penalty": 0.0
@@ -3338,16 +3328,15 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 50.1436,
+      "top_score": 46.6602,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 50.1436,
+          "score": 46.6602,
           "lexical_overlap": [
             "coff0xc",
             "skill",
-            "同时涉及",
             "哪个"
           ],
           "phrase_hits": [
@@ -3358,7 +3347,7 @@
         },
         {
           "skill": "coff0xc-software-engineering",
-          "score": 6.3656,
+          "score": 6.4212,
           "lexical_overlap": [
             "skill",
             "代码"
@@ -3370,7 +3359,7 @@
         },
         {
           "skill": "coff0xc-cloud-devsecops",
-          "score": 2.8267,
+          "score": 2.8822,
           "lexical_overlap": [
             "skill"
           ],
@@ -3393,12 +3382,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 50.2215,
+      "top_score": 50.2771,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 50.2215,
+          "score": 50.2771,
           "lexical_overlap": [
             "coff0xc",
             "decide",
@@ -3415,7 +3404,7 @@
         },
         {
           "skill": "coff0xc-cloud-devsecops",
-          "score": 7.5656,
+          "score": 7.6212,
           "lexical_overlap": [
             "ci/cd",
             "skill"
@@ -3427,7 +3416,7 @@
         },
         {
           "skill": "coff0xc-secure-code-appsec",
-          "score": 6.7465,
+          "score": 6.8021,
           "lexical_overlap": [
             "api",
             "security",
@@ -3450,12 +3439,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 130.5656,
+      "top_score": 130.6212,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 130.5656,
+          "score": 130.6212,
           "lexical_overlap": [
             "coff0xc-skill-router",
             "skill"
@@ -3470,7 +3459,7 @@
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": -4.9733,
+          "score": -4.9178,
           "lexical_overlap": [
             "skill"
           ],
@@ -3479,7 +3468,7 @@
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": -4.9733,
+          "score": -4.9178,
           "lexical_overlap": [
             "skill"
           ],
@@ -3500,12 +3489,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 136.5656,
+      "top_score": 136.6212,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 136.5656,
+          "score": 136.6212,
           "lexical_overlap": [
             "coff0xc-skill-router",
             "skill"
@@ -3520,7 +3509,7 @@
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": 5.5183,
+          "score": 5.5739,
           "lexical_overlap": [
             "api",
             "skill"
@@ -3532,7 +3521,7 @@
         },
         {
           "skill": "coff0xc-secure-code-appsec",
-          "score": 3.7183,
+          "score": 3.7739,
           "lexical_overlap": [
             "api",
             "skill"
@@ -3554,12 +3543,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 133.2573,
+      "top_score": 133.3129,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 133.2573,
+          "score": 133.3129,
           "lexical_overlap": [
             "ai",
             "coff0xc-skill-router",
@@ -3575,7 +3564,7 @@
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": 2.5183,
+          "score": 2.5739,
           "lexical_overlap": [
             "ai",
             "skill"
@@ -3588,10 +3577,9 @@
         },
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": -2.2817,
+          "score": -3.3083,
           "lexical_overlap": [
-            "ai",
-            "skill"
+            "ai"
           ],
           "phrase_hits": [],
           "simple_prompt_penalty": 6.0
@@ -3610,12 +3598,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 136.5656,
+      "top_score": 136.6212,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 136.5656,
+          "score": 136.6212,
           "lexical_overlap": [
             "coff0xc-skill-router",
             "skill"
@@ -3630,7 +3618,7 @@
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": 4.0267,
+          "score": 4.0822,
           "lexical_overlap": [
             "skill"
           ],
@@ -3641,7 +3629,7 @@
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": 1.0267,
+          "score": 1.0822,
           "lexical_overlap": [
             "skill"
           ],
@@ -3775,19 +3763,21 @@
           "simple_prompt_penalty": 0.0
         },
         {
+          "skill": "coff0xc-ui-doc-output",
+          "score": 3.539,
+          "lexical_overlap": [
+            "用"
+          ],
+          "phrase_hits": [],
+          "simple_prompt_penalty": 0.0
+        },
+        {
           "skill": "coff0xc-software-engineering",
           "score": 3.0,
           "lexical_overlap": [],
           "phrase_hits": [
             "后端接口"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-ai-agent-rag",
-          "score": 0.0,
-          "lexical_overlap": [],
-          "phrase_hits": [],
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3804,17 +3794,13 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-ui-doc-output",
-      "top_score": 29.2169,
+      "top_score": 18.6,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 29.2169,
-          "lexical_overlap": [
-            "信息密度",
-            "按钮状态",
-            "窄屏表现"
-          ],
+          "score": 18.6,
+          "lexical_overlap": [],
           "phrase_hits": [
             "产品可用性",
             "页面看起来",
@@ -4474,12 +4460,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 20.5183,
+      "top_score": 20.5739,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 20.5183,
+          "score": 20.5739,
           "lexical_overlap": [
             "skill",
             "流"
@@ -4493,7 +4479,7 @@
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": 6.3656,
+          "score": 6.4212,
           "lexical_overlap": [
             "skill",
             "接口"
@@ -4505,7 +4491,7 @@
         },
         {
           "skill": "coff0xc-compliance-architecture",
-          "score": 5.5183,
+          "score": 5.5739,
           "lexical_overlap": [
             "skill",
             "流"
@@ -4583,19 +4569,6 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": 10.6779,
-          "lexical_overlap": [
-            "admin",
-            "saas"
-          ],
-          "phrase_hits": [
-            "前端",
-            "界面"
-          ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
           "skill": "coff0xc-secure-code-appsec",
           "score": 6.2917,
           "lexical_overlap": [
@@ -4604,6 +4577,16 @@
           "phrase_hits": [
             "认证",
             "越权"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-ui-doc-output",
+          "score": 3.6,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "前端",
+            "界面"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -4683,19 +4666,18 @@
       ],
       "expected_set_top_n": 6,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 51.0674,
+      "top_score": 48.3757,
       "topn": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 51.0674,
+          "score": 48.3757,
           "lexical_overlap": [
             "build",
             "chain",
             "coff0xc",
             "decide",
             "skills",
-            "which",
-            "workflow"
+            "which"
           ],
           "phrase_hits": [
             "coff0xc"
@@ -4719,7 +4701,7 @@
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": 16.4917,
+          "score": 16.8281,
           "lexical_overlap": [
             "workflow"
           ],
@@ -4756,10 +4738,10 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-authorized-assessment",
-          "score": 2.6917,
+          "skill": "coff0xc-research-drawio-diagram",
+          "score": 3.0281,
           "lexical_overlap": [
-            "chain"
+            "workflow"
           ],
           "phrase_hits": [],
           "simple_prompt_penalty": 0.0
@@ -4768,15 +4750,14 @@
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 51.0674,
+          "score": 48.3757,
           "lexical_overlap": [
             "build",
             "chain",
             "coff0xc",
             "decide",
             "skills",
-            "which",
-            "workflow"
+            "which"
           ],
           "phrase_hits": [
             "coff0xc"
@@ -4800,7 +4781,7 @@
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": 16.4917,
+          "score": 16.8281,
           "lexical_overlap": [
             "workflow"
           ],
@@ -4833,11 +4814,11 @@
       ],
       "expected_set_top_n": 6,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 28.2573,
+      "top_score": 28.3129,
       "topn": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 28.2573,
+          "score": 28.3129,
           "lexical_overlap": [
             "ai",
             "skill",
@@ -4853,7 +4834,7 @@
         },
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 27.7826,
+          "score": 27.8381,
           "lexical_overlap": [
             "csv",
             "excel",
@@ -4872,7 +4853,7 @@
         },
         {
           "skill": "coff0xc-research-drawio-diagram",
-          "score": 14.1328,
+          "score": 14.1883,
           "lexical_overlap": [
             "draw.io",
             "repo",
@@ -4886,11 +4867,9 @@
         },
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 13.8573,
+          "score": 9.2917,
           "lexical_overlap": [
-            "ai",
-            "skill",
-            "报告叙事"
+            "ai"
           ],
           "phrase_hits": [
             "报告叙事",
@@ -4901,7 +4880,7 @@
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": 8.8267,
+          "score": 8.8822,
           "lexical_overlap": [
             "skill"
           ],
@@ -4914,7 +4893,7 @@
         },
         {
           "skill": "coff0xc-purple-deception",
-          "score": 4.5656,
+          "score": 4.6212,
           "lexical_overlap": [
             "skill",
             "指标"
@@ -4926,7 +4905,7 @@
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 28.2573,
+          "score": 28.3129,
           "lexical_overlap": [
             "ai",
             "skill",
@@ -4942,7 +4921,7 @@
         },
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 27.7826,
+          "score": 27.8381,
           "lexical_overlap": [
             "csv",
             "excel",
@@ -4961,7 +4940,7 @@
         },
         {
           "skill": "coff0xc-research-drawio-diagram",
-          "score": 14.1328,
+          "score": 14.1883,
           "lexical_overlap": [
             "draw.io",
             "repo",
@@ -5014,20 +4993,6 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": 15.2588,
-          "lexical_overlap": [
-            "report",
-            "technical",
-            "设计"
-          ],
-          "phrase_hits": [
-            "technical report",
-            "report"
-          ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
           "skill": "coff0xc-skill-router",
           "score": 12.5,
           "lexical_overlap": [],
@@ -5044,6 +5009,18 @@
             "agent",
             "rag",
             "评测"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-ui-doc-output",
+          "score": 8.6917,
+          "lexical_overlap": [
+            "report"
+          ],
+          "phrase_hits": [
+            "technical report",
+            "report"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -5071,7 +5048,7 @@
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": 3.0281,
+          "score": 3.539,
           "lexical_overlap": [
             "设计"
           ],
@@ -5108,24 +5085,23 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": 15.2588,
-          "lexical_overlap": [
-            "report",
-            "technical",
-            "设计"
-          ],
-          "phrase_hits": [
-            "technical report",
-            "report"
-          ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
           "skill": "coff0xc-skill-router",
           "score": 12.5,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-ai-agent-rag",
+          "score": 10.139,
+          "lexical_overlap": [
+            "评测"
+          ],
+          "phrase_hits": [
+            "agent",
+            "rag",
+            "评测"
+          ],
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -5149,11 +5125,11 @@
       ],
       "expected_set_top_n": 9,
       "predicted_skill": "coff0xc-software-engineering",
-      "top_score": 56.9844,
+      "top_score": 57.4952,
       "topn": [
         {
           "skill": "coff0xc-software-engineering",
-          "score": 56.9844,
+          "score": 57.4952,
           "lexical_overlap": [
             "browser",
             "ci",
@@ -5223,11 +5199,9 @@
         },
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 17.9342,
+          "score": 11.3671,
           "lexical_overlap": [
-            "admin",
             "browser",
-            "smoke",
             "ui"
           ],
           "phrase_hits": [
@@ -5279,7 +5253,7 @@
       "top3": [
         {
           "skill": "coff0xc-software-engineering",
-          "score": 56.9844,
+          "score": 57.4952,
           "lexical_overlap": [
             "browser",
             "ci",
@@ -5419,7 +5393,7 @@
         },
         {
           "skill": "coff0xc-compliance-architecture",
-          "score": 17.9505,
+          "score": 18.4613,
           "lexical_overlap": [
             "compliance",
             "control",
@@ -5446,18 +5420,6 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": 8.7198,
-          "lexical_overlap": [
-            "executive",
-            "report"
-          ],
-          "phrase_hits": [
-            "report"
-          ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
           "skill": "coff0xc-cloud-devsecops",
           "score": 8.339,
           "lexical_overlap": [
@@ -5478,6 +5440,17 @@
           "phrase_hits": [
             "engineering",
             "rf"
+          ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-ui-doc-output",
+          "score": 5.6917,
+          "lexical_overlap": [
+            "report"
+          ],
+          "phrase_hits": [
+            "report"
           ],
           "simple_prompt_penalty": 0.0
         },
@@ -5558,31 +5531,17 @@
       ],
       "expected_set_top_n": 7,
       "predicted_skill": "coff0xc-ui-doc-output",
-      "top_score": 101.5492,
+      "top_score": 49.4949,
       "topn": [
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 101.5492,
+          "score": 49.4949,
           "lexical_overlap": [
-            "aesthetic",
             "anti-ai",
-            "aria",
-            "builder",
             "cleanliness",
-            "component",
-            "console",
-            "contrast",
             "dashboard",
-            "data",
-            "dense",
-            "design",
-            "filter",
-            "saas",
             "states",
-            "table",
-            "tokens",
-            "ui",
-            "variants"
+            "ui"
           ],
           "phrase_hits": [
             "console cleanliness",
@@ -5624,7 +5583,7 @@
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": 13.548,
+          "score": 14.5696,
           "lexical_overlap": [
             "api",
             "builder",
@@ -5638,13 +5597,22 @@
         },
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 6.0281,
+          "score": 6.539,
           "lexical_overlap": [
             "table"
           ],
           "phrase_hits": [
             "table"
           ],
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 5.992,
+          "lexical_overlap": [
+            "data"
+          ],
+          "phrase_hits": [],
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5657,41 +5625,18 @@
             "ble"
           ],
           "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-authorized-assessment",
-          "score": 5.1271,
-          "lexical_overlap": [
-            "data"
-          ],
-          "phrase_hits": [],
-          "simple_prompt_penalty": 0.0
         }
       ],
       "top3": [
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 101.5492,
+          "score": 49.4949,
           "lexical_overlap": [
-            "aesthetic",
             "anti-ai",
-            "aria",
-            "builder",
             "cleanliness",
-            "component",
-            "console",
-            "contrast",
             "dashboard",
-            "data",
-            "dense",
-            "design",
-            "filter",
-            "saas",
             "states",
-            "table",
-            "tokens",
-            "ui",
-            "variants"
+            "ui"
           ],
           "phrase_hits": [
             "console cleanliness",
@@ -6297,14 +6242,12 @@
       ],
       "expected_set_top_n": 9,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 22.039,
+      "top_score": 18.5,
       "topn": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 22.039,
-          "lexical_overlap": [
-            "同时涉及"
-          ],
+          "score": 18.5,
+          "lexical_overlap": [],
           "phrase_hits": [
             "编排工作流",
             "同时涉及"
@@ -6396,10 +6339,8 @@
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 22.039,
-          "lexical_overlap": [
-            "同时涉及"
-          ],
+          "score": 18.5,
+          "lexical_overlap": [],
           "phrase_hits": [
             "编排工作流",
             "同时涉及"
@@ -7311,12 +7252,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 133.5656,
+      "top_score": 133.6212,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 133.5656,
+          "score": 133.6212,
           "lexical_overlap": [
             "coff0xc-skill-router",
             "skill"
@@ -7330,7 +7271,7 @@
         },
         {
           "skill": "coff0xc-authorized-assessment",
-          "score": 2.8267,
+          "score": 2.8822,
           "lexical_overlap": [
             "skill"
           ],
@@ -7341,7 +7282,7 @@
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": 1.0267,
+          "score": 1.0822,
           "lexical_overlap": [
             "skill"
           ],
@@ -7608,12 +7549,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": null,
-      "top_score": 1.6212,
+      "top_score": 1.6801,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-blockchain-security",
-          "score": 1.6212,
+          "score": 1.6801,
           "lexical_overlap": [
             "does",
             "token"
@@ -7625,7 +7566,7 @@
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": -4.9178,
+          "score": -4.8589,
           "lexical_overlap": [
             "does"
           ],
@@ -7634,7 +7575,7 @@
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": -4.9178,
+          "score": -4.8589,
           "lexical_overlap": [
             "does"
           ],
@@ -7693,12 +7634,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": null,
-      "top_score": -1.1719,
+      "top_score": -0.661,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": -1.1719,
+          "score": -0.661,
           "lexical_overlap": [
             "pdf"
           ],
@@ -7708,16 +7649,14 @@
           "simple_prompt_penalty": 6.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": -2.9719,
-          "lexical_overlap": [
-            "pdf"
-          ],
+          "skill": "coff0xc-ai-agent-rag",
+          "score": -6.0,
+          "lexical_overlap": [],
           "phrase_hits": [],
           "simple_prompt_penalty": 6.0
         },
         {
-          "skill": "coff0xc-ai-agent-rag",
+          "skill": "coff0xc-api-data-platform",
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
@@ -7865,12 +7804,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": null,
-      "top_score": 1.6212,
+      "top_score": 1.6801,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-detection-response",
-          "score": 1.6212,
+          "score": 1.6801,
           "lexical_overlap": [
             "does",
             "siem"
@@ -7882,7 +7821,7 @@
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": -4.9178,
+          "score": -4.8589,
           "lexical_overlap": [
             "does"
           ],
@@ -7891,7 +7830,7 @@
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": -4.9178,
+          "score": -4.8589,
           "lexical_overlap": [
             "does"
           ],
@@ -7998,19 +7937,16 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-ui-doc-output",
-      "top_score": 144.3255,
+      "top_score": 133.7086,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 144.3255,
+          "score": 133.7086,
           "lexical_overlap": [
-            "admin",
             "ai",
             "coff0xc-ui-doc-output",
             "dashboard",
-            "design",
-            "saas",
             "ui"
           ],
           "phrase_hits": [
@@ -8065,26 +8001,19 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-ui-doc-output",
-      "top_score": 176.4485,
+      "top_score": 152.1865,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 176.4485,
+          "score": 152.1865,
           "lexical_overlap": [
             "ai",
             "cleanliness",
             "coff0xc-ui-doc-output",
-            "component",
-            "console",
-            "data",
-            "design",
             "screen",
-            "semantic",
             "system",
-            "tokens",
-            "ui",
-            "variants"
+            "ui"
           ],
           "phrase_hits": [
             "console cleanliness",
@@ -8113,10 +8042,10 @@
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-software-engineering",
+          "skill": "coff0xc-authorized-assessment",
           "score": 3.539,
           "lexical_overlap": [
-            "local"
+            "data"
           ],
           "phrase_hits": [],
           "simple_prompt_penalty": 0.0
@@ -8226,7 +8155,7 @@
           "skill": "coff0xc-skill-router",
           "score": 39.039,
           "lexical_overlap": [
-            "gates"
+            "by"
           ],
           "phrase_hits": [
             "coff0xc"

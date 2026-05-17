@@ -15,6 +15,7 @@ KEY_BLOCK_SUFFIX = "PRIVATE" + " KEY"
 PRIVATE_KEY_MARKER = KEY_BLOCK_PREFIX + r"(RSA|EC|DSA|OPENSSH )?" + KEY_BLOCK_SUFFIX
 GITHUB_TOKEN_MARKER = "github" + r"_pat_[A-Za-z0-9_]+|" + "ghp" + r"_[A-Za-z0-9_]{20,}"
 OPENAI_KEY_MARKER = "sk" + r"-[A-Za-z0-9]{20,}"
+QUICK_RULE_HEADING = "## 快速规则（日常任务先读这里）"
 
 SENSITIVE_PATTERNS = [
     re.compile(LOCAL_USER_MARKER, re.IGNORECASE),
@@ -73,6 +74,8 @@ REQUIRED_FILES = [
     "scripts/run_trigger_eval.py",
     "scripts/run_quality_eval.py",
     "scripts/build_quality_golden_responses.py",
+    "skills/coff0xc-skill-router/references/router-map.md",
+    "skills/coff0xc-ui-doc-output/references/ui-generalized-rules.md",
     "skills/coff0xc-research-drawio-diagram/scripts/build_drawio.py",
     "skills/coff0xc-research-drawio-diagram/examples/research-pipeline.json",
     "skills/coff0xc-research-drawio-diagram/examples/research-pipeline.drawio",
@@ -147,12 +150,17 @@ def main() -> None:
         folder = path.parent.name
         values, fm_errors = parse_frontmatter(path)
         errors.extend(fm_errors)
+        text = path.read_text(encoding="utf-8")
         if values.get("name") != folder:
             errors.append(f"{path}: frontmatter name does not match folder")
         if folder not in manifest_names:
             errors.append(f"{path}: not listed in manifest")
         if not values.get("description"):
             errors.append(f"{path}: missing description")
+        if QUICK_RULE_HEADING not in text:
+            errors.append(f"{path}: missing quick rules section")
+        elif "## 能力定位" in text and text.index(QUICK_RULE_HEADING) > text.index("## 能力定位"):
+            errors.append(f"{path}: quick rules section must appear before capability positioning")
 
     for path in sorted(ROOT.rglob("*")):
         if path.is_dir() or ".git" in path.parts:

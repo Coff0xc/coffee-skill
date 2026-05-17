@@ -79,7 +79,7 @@
   },
   {
     "name": "coff0xc-ui-doc-output",
-    "description": "能力化 Coff0xc skill：面向 UI、前端体验、设计系统、报告表达和技术翻译交付的产物质量能力。它不只润色文字，还要求产品类型路由、设计系统遵循、组件状态覆盖、可访问性、反 AI 味视觉门禁和浏览器截图验收；正式 PPTX/DOCX/PDF/XLSX 文件交付优先路由到 coff0xc-office-doc-tools。 可交付：可用 UI/组件/页面改动或设计建议、设计系统/tokens/variants 建议、桌面/移动端截图或浏览器 smoke 结果、报告结构、交付文案和翻译润色稿。触发：UI、前端、frontend、web/app UI、dashboard、admin panel、SaaS screen、component、design system、semantic tokens、responsive、mobile-first、accessibility、empty/loading/error states、hover/focus/keyboard、browser smoke、screenshot、anti-AI aesthetic、视觉验证、页面很乱、信息密度、按钮状态、窄屏表现、产品可用性、反 AI 味、设计系统、状态门禁、可访问性、报告、technical report、executive delivery、section hierarchy、terminology consistency、翻译、润色、交付文案、术语一致、报告层级、交付语言。",
+    "description": "能力化 Coff0xc skill：面向 UI、前端体验、设计系统、报告表达和技术翻译交付的产物质量能力。普通任务走快路径：定中心、扫系统、做改动、做截图/浏览器 smoke、短交付；深度审美、外部 UI skill 合并、Figma/Playwright/quality eval 才按需读取 references。正式 PPTX/DOCX/PDF/XLSX 文件交付优先路由到 coff0xc-office-doc-tools。可交付：UI/组件/页面改动、桌面/移动端截图或浏览器 smoke、报告结构、交付文案、翻译润色。触发：UI、前端、frontend、dashboard、admin panel、SaaS screen、component、design system、responsive、accessibility、empty/loading/error states、hover/focus/keyboard、browser smoke、screenshot、anti-AI visual polish、页面很乱、移动端、状态门禁、可访问性、反 AI 味、报告、translation、polish、terminology consistency、翻译、润色、术语一致。",
     "source_skills": [
       "UIdesign",
       "quick-translate"
@@ -443,7 +443,7 @@
   },
   {
     "name": "coff0xc-skill-router",
-    "description": "能力化 Coff0xc skill：面向不确定任务和跨领域任务的轻量 autonomous skill composer。它不是普通任务的必经步骤；窄任务应直接进入最具体的专业 skill。只有用户要求 AI 自己判断、串联 skill、生成任务图/工作流图、处理跨领域/多维度任务，或自动触发失败时，才由它选择主 skill、添加必要辅助 skill、排阶段、设门禁并根据证据重路由。可交付：轻量主/辅 skill graph、阶段顺序、验证门禁、候选取舍、最小澄清问题和重路由条件。触发：自主编排、多 skill 工作流、AI 自己判断、自动串联 skill、任务图、工作流图、vibe coding、跨领域、跨域、多领域、多维度、编排工作流、不确定用哪个、选择 skill、帮我分流、同时涉及多个领域、串联 skill。",
+    "description": "能力化 Coff0xc skill：面向不确定任务和跨领域任务的轻量 autonomous skill composer。它不是普通任务的必经步骤；窄任务应直接进入最具体 skill。只有用户要求 AI 自己判断、串联 skill、生成任务图/工作流图、处理跨领域/多维度任务，或自动触发失败时，才由它选择主 skill、添加必要辅助 skill、排阶段、设门禁并根据证据重路由；完整路由表按需读取 reference。可交付：轻量主/辅 skill graph、阶段顺序、验证门禁、候选取舍、最小澄清问题和重路由条件。触发：自主编排、多 skill 工作流、AI 自己判断、自动串联 skill、任务图、工作流图、vibe coding、跨领域、跨域、多领域、多维度、编排工作流、不确定用哪个、选择 skill、帮我分流、串联 skill。",
     "source_skills": [],
     "similar_installed_skills": [],
     "security_boundary": true,

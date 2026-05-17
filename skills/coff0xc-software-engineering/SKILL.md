@@ -5,6 +5,14 @@ description: "Use when / 当用户请求: dev, autonomous development, build end
 
 # coff0xc-software-engineering
 
+## 快速规则（日常任务先读这里）
+> **[先读仓库]** 先看 AGENTS/README、package/lockfile、入口、测试脚本和当前 dirty worktree。
+> **[最小修复]** 只改请求范围；先复现/定位，再小步 patch，不做无关重构和新框架迁移。
+> **[验证闭环]** 先跑目标 test/typecheck/lint/build，再按风险加宽；没跑不能写已验证。
+> **[Git 边界]** 不回滚用户改动；push、PR、删除、生产、凭据、CI/CD 权限先确认。
+
+普通开发任务按本节直接执行；只有大功能、架构/API/schema/auth、CI 发布或 skill 质量验证才展开完整工作流。
+
 ## 能力定位
 面向真实仓库的工程交付能力。适合把模糊需求变成可运行代码、可复现修复、可验证测试结果和清晰 diff 摘要。
 
