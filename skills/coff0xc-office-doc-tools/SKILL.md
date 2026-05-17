@@ -5,6 +5,8 @@ description: "Use when / 当用户请求: 正式 Office 和文件型交付物能
 
 # coff0xc-office-doc-tools
 
+<!-- skill-id: cs-odt-9c3a15f7 -->
+
 ## 快速规则（日常任务先读这里）
 > **[文件优先]** 先确认输入/输出文件类型、可编辑性、原件保留、目标受众和交付路径。
 > **[结构门禁]** PPT 看叙事和视觉系统；Excel 看数据形状/公式/图表；DOCX/PDF 看样式、批注、分页和渲染证据。

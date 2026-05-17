@@ -5,6 +5,8 @@ description: "Use when / 当用户请求: 全面 API、数据库、数据平台�
 
 # coff0xc-api-data-platform
 
+<!-- skill-id: cs-adp-4b9e62f0 -->
+
 ## 快速规则（日常任务先读这里）
 > **[契约先行]** 先定 endpoint/action、schema、auth、错误码、分页、版本和兼容边界，再谈实现。
 > **[数据门禁]** 明确 source/raw/assumptions、迁移、回滚、幂等、审计字段和异常数据处理。

@@ -5,6 +5,8 @@ description: "Use when / 当用户请求: 全面云安全、容器/Kubernetes、
 
 # coff0xc-cloud-devsecops
 
+<!-- skill-id: cs-cds-0e9b4c6a -->
+
 ## 快速规则（日常任务先读这里）
 > **[只读优先]** 先看 IaC、K8s、Dockerfile、CI workflow、依赖和密钥暴露面；默认不改云端。
 > **[控制映射]** 把问题映射到身份、网络、密钥、镜像、供应链、pipeline 和审计日志。

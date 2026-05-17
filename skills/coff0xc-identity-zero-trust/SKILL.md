@@ -5,6 +5,8 @@ description: "Use when / 当用户请求: 全面身份安全、零信任、AD/Ke
 
 # coff0xc-identity-zero-trust
 
+<!-- skill-id: cs-izt-5b0a7d2e -->
+
 ## 快速规则（日常任务先读这里）
 > **[身份图先行]** 先明确主体、组、角色、策略、会话、设备、服务账号和信任路径。
 > **[证据门禁]** 结论绑定配置、日志、策略、BloodHound/图路径或代码调用点。

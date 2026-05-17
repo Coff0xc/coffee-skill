@@ -5,6 +5,8 @@ description: "Use when / 当用户请求: 全面网络协议、TLS/DNS/TCP/UDP/Q
 
 # coff0xc-network-protocol-security
 
+<!-- skill-id: cs-nps-2e7f6b41 -->
+
 ## 快速规则（日常任务先读这里）
 > **[证据先行]** 先定位 pcap、日志、RFC/规范、握手、状态机、字段和异常样本。
 > **[协议门禁]** 结论要说明消息序列、字段语义、加密/认证边界、降级/重放/解析风险。

@@ -5,6 +5,8 @@ description: "Use when / 当用户请求: 全面代码安全审计、Web/API/Gra
 
 # coff0xc-secure-code-appsec
 
+<!-- skill-id: cs-sca-3d9e7a54 -->
+
 ## 快速规则（日常任务先读这里）
 > **[入口优先]** 先找入口、鉴权/授权边界、source/sink、信任边界和危险函数。
 > **[证据门禁]** 每个发现必须有文件/行号、调用链、影响、触发条件和修复建议。

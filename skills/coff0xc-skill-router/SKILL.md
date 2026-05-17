@@ -5,6 +5,8 @@ description: "Coff0xc lightweight skill router and autonomous multi-skill compos
 
 # coff0xc-skill-router
 
+<!-- skill-id: cs-srt-b7a20c6d -->
+
 ## 快速规则（日常任务先读这里）
 > **[单域直达]** 能用一个专业 skill 做完就直接用它，不输出长 skill graph。
 > **[跨域编排]** 只有任务确实跨多个领域或用户要求 AI 自己串联 skill，才给主 skill、辅助 skill、阶段和门禁。

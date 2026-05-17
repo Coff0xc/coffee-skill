@@ -5,6 +5,8 @@ description: "Use when / 当用户请求: dev, autonomous development, build end
 
 # coff0xc-software-engineering
 
+<!-- skill-id: cs-swe-1a4f8c03 -->
+
 ## 快速规则（日常任务先读这里）
 > **[先读仓库]** 先看 AGENTS/README、package/lockfile、入口、测试脚本和当前 dirty worktree。
 > **[最小修复]** 只改请求范围；先复现/定位，再小步 patch，不做无关重构和新框架迁移。

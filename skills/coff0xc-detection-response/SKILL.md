@@ -5,6 +5,8 @@ description: "Use when / 当用户请求: 全面 SOC、安全运营、检测工�
 
 # coff0xc-detection-response
 
+<!-- skill-id: cs-drs-6c1f90e4 -->
+
 ## 快速规则（日常任务先读这里）
 > **[时间线先行]** 先定日志源、字段、时间范围、实体、告警上下文和已知 IOC。
 > **[检测门禁]** Sigma/YARA/查询必须说明字段映射、样本、误报来源、ATT&CK 映射和测试方式。

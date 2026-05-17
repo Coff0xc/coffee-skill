@@ -5,6 +5,8 @@ description: "Use when / 当用户请求 UI、frontend、dashboard/admin/SaaS sc
 
 # coff0xc-ui-doc-output
 
+<!-- skill-id: cs-udo-c8e51b29 -->
+
 ## 快速规则（日常任务先读这里）
 > **[先扫系统]** 先看现有 route/component/token/theme/icon/copy/test/browser path，复用项目设计语言。
 > **[状态门禁]** UI 必须覆盖 loading、empty、error、success、disabled、focus、hover、mobile 和长文本/空数据。

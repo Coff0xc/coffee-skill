@@ -16,6 +16,12 @@ PRIVATE_KEY_MARKER = KEY_BLOCK_PREFIX + r"(RSA|EC|DSA|OPENSSH )?" + KEY_BLOCK_SU
 GITHUB_TOKEN_MARKER = "github" + r"_pat_[A-Za-z0-9_]+|" + "ghp" + r"_[A-Za-z0-9_]{20,}"
 OPENAI_KEY_MARKER = "sk" + r"-[A-Za-z0-9]{20,}"
 QUICK_RULE_HEADING = "## 快速规则（日常任务先读这里）"
+SKILL_ID_PATTERN = re.compile(r"<!--\s*skill-id:\s*cs-[a-z0-9]{3}-[a-f0-9]{8}\s*-->")
+FORBIDDEN_LICENSE_TERMS = [
+    "PolyForm",
+    "Noncommercial",
+    "noncommercial",
+]
 
 SENSITIVE_PATTERNS = [
     re.compile(LOCAL_USER_MARKER, re.IGNORECASE),
@@ -30,6 +36,7 @@ REQUIRED_FILES = [
     "LICENSE",
     "SECURITY.md",
     "NOTICE",
+    "TRADEMARK.md",
     "manifest.json",
     "docs/TRIGGERING.md",
     "docs/TRIGGER_EVAL.md",
@@ -39,6 +46,8 @@ REQUIRED_FILES = [
     "docs/COVERAGE.md",
     "docs/SANITIZATION.md",
     "docs/PROVENANCE.md",
+    "docs/ENFORCEMENT.md",
+    "docs/TAKEDOWN_TEMPLATE.md",
     "evals/trigger-eval.json",
     "evals/quality/eval-set.json",
     "evals/quality/quality-eval-results.json",
@@ -74,6 +83,7 @@ REQUIRED_FILES = [
     "scripts/run_trigger_eval.py",
     "scripts/run_quality_eval.py",
     "scripts/build_quality_golden_responses.py",
+    "scripts/scan_provenance.py",
     "skills/coff0xc-skill-router/references/router-map.md",
     "skills/coff0xc-ui-doc-output/references/ui-generalized-rules.md",
     "skills/coff0xc-research-drawio-diagram/scripts/build_drawio.py",
@@ -136,6 +146,17 @@ def main() -> None:
         if not (ROOT / rel).exists():
             errors.append(f"missing required file: {rel}")
 
+    license_path = ROOT / "LICENSE"
+    if license_path.exists():
+        license_text = license_path.read_text(encoding="utf-8", errors="ignore")
+        if "GNU AFFERO GENERAL PUBLIC LICENSE" not in license_text:
+            errors.append("LICENSE: expected GNU Affero General Public License text")
+    notice_path = ROOT / "NOTICE"
+    if notice_path.exists():
+        notice_text = notice_path.read_text(encoding="utf-8", errors="ignore")
+        if "AGPL-3.0-only" not in notice_text:
+            errors.append("NOTICE: expected AGPL-3.0-only notice")
+
     manifest_path = ROOT / "manifest.json"
     manifest = []
     if manifest_path.exists():
@@ -161,6 +182,8 @@ def main() -> None:
             errors.append(f"{path}: missing quick rules section")
         elif "## 能力定位" in text and text.index(QUICK_RULE_HEADING) > text.index("## 能力定位"):
             errors.append(f"{path}: quick rules section must appear before capability positioning")
+        if not SKILL_ID_PATTERN.search(text):
+            errors.append(f"{path}: missing source skill-id marker")
 
     for path in sorted(ROOT.rglob("*")):
         if path.is_dir() or ".git" in path.parts:
@@ -169,6 +192,10 @@ def main() -> None:
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
         for idx, line in enumerate(text.splitlines(), 1):
+            if path.name in {"README.md", "NOTICE"} or path.parts[-2:] == ("docs", "PROVENANCE.md"):
+                for term in FORBIDDEN_LICENSE_TERMS:
+                    if term in line:
+                        errors.append(f"{path}:{idx}: stale non-open-source license term {term}")
             for pattern in SENSITIVE_PATTERNS:
                 if pattern.search(line):
                     errors.append(f"{path}:{idx}: sensitive pattern {pattern.pattern}")

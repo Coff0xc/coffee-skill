@@ -25,5 +25,23 @@ Before pushing to a public repository, confirm that you have the right to publis
 
 License history:
 - Versions published before the license change remain under the terms that applied to those earlier versions.
-- From the current license-change commit onward, this repository uses PolyForm Noncommercial License 1.0.0.
-- Commercial use, resale, paid redistribution, commercial hosting, or packaging this repository's contents into a paid product requires separate written permission from Coff0xc.
+- From the current license-change commit onward, this repository uses GNU Affero General Public License v3.0 only (`AGPL-3.0-only`).
+- The AGPL open source license allows commercial use, but covered copying, modification, distribution, packaged derivatives, and modified network-service deployments must preserve the AGPL license, copyright notices, source availability obligations, and this NOTICE.
+
+## Source Identification
+
+Release `SKILL.md` files contain source-level HTML comment identifiers. These identifiers are intentionally non-rendered Markdown source metadata. They are not telemetry, do not call any network service, and do not alter model behavior. They exist to make copied source packages easier to identify.
+
+Run:
+
+```powershell
+python .\scripts\scan_provenance.py <suspected-folder>
+```
+
+Removal of attribution, removal of `LICENSE` / `NOTICE`, removal of source identifiers, AGPL source-obligation violations, closed-source repackaging of covered derivatives, false originality claims, or any implication of official Coff0xc authorization is not permitted and may be used as evidence for takedown requests, license enforcement, trademark/impersonation complaints, and legal claims.
+
+For practical enforcement steps, see:
+
+- `docs/ENFORCEMENT.md`
+- `docs/TAKEDOWN_TEMPLATE.md`
+- `TRADEMARK.md`

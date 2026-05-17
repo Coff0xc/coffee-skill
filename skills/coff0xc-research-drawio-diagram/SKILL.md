@@ -5,6 +5,8 @@ description: "Use when / 当用户请求: 科研算法架构图、论文方法�
 
 # coff0xc-research-drawio-diagram
 
+<!-- skill-id: cs-rdd-0f8d6e2b -->
+
 ## 快速规则（日常任务先读这里）
 > **[证据先行]** 论文、官方仓库、README、代码或实验材料先定位；未知结构不能编造。
 > **[图可编辑]** 默认交付 `.drawio`/diagrams.net 可编辑结构，不只给截图或口头描述。

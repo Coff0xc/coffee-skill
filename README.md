@@ -6,7 +6,9 @@
 
 `coffee-skill` 不是脚本工具，也不是触发词合集。它是一套可安装的 `SKILL.md` 工作流包：普通任务直接进入最相关 skill 干活，跨领域任务才让 router 选择主 skill、补必要辅助 skill、按阶段执行和验证。
 
-`18 skills` · `中英触发` · `自治编排 router` · `131 个触发/组合评测用例` · `7 个真实产物质量评测夹具` · `CI 自动验证` · `PolyForm Noncommercial 1.0.0`
+本仓库是开源项目，采用 `AGPL-3.0-only`。别人可以 fork、修改、分发、商用，但必须保留许可证、版权和来源说明；发布衍生版本或把修改版作为网络服务提供时，也必须按 AGPL 提供对应源码。`Coff0xc` / `coffee-skill` 名称和项目身份不随许可证授权，不能冒充原创、官方、独家或授权版本。
+
+`18 skills` · `中英触发` · `自治编排 router` · `131 个触发/组合评测用例` · `7 个真实产物质量评测夹具` · `CI 自动验证` · `AGPL-3.0-only`
 
 ## 两种模式
 
@@ -207,7 +209,7 @@ evals/                  # trigger eval、quality eval、golden responses
 scripts/                # 发布校验、触发评测、质量评测脚本
 .github/workflows/      # CI 验证流程
 manifest.json           # 机器可读 skill 清单
-LICENSE                 # PolyForm Noncommercial License 1.0.0
+LICENSE                 # GNU Affero General Public License v3.0
 NOTICE                  # 归属说明
 ```
 
@@ -221,13 +223,24 @@ NOTICE                  # 归属说明
 - [Language References](docs/LANGUAGES.md)
 - [Sanitization Notes](docs/SANITIZATION.md)
 - [Provenance](docs/PROVENANCE.md)
+- [Enforcement Guide](docs/ENFORCEMENT.md)
+- [Takedown Template](docs/TAKEDOWN_TEMPLATE.md)
+- [Trademark Policy](TRADEMARK.md)
 - [Security Policy](SECURITY.md)
 
 ## 许可证
 
-从当前版本起使用 PolyForm Noncommercial License 1.0.0。见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
+从当前版本起使用 GNU Affero General Public License v3.0 only，即 `AGPL-3.0-only`。见 [LICENSE](LICENSE) 和 [NOTICE](NOTICE)。
 
-这意味着：非商业使用可以按许可证使用、修改和分发；商业使用、转售、付费再分发、商业托管或把本仓库内容打包成收费产品，需要 Coff0xc 的单独书面许可。
+这意味着：这是 OSI 意义上的开源路线，不能靠许可证禁止商业使用；但任何复制、修改、分发、再打包、课程/agent 包分发或网络服务托管，都必须遵守 AGPL 的源码、同许可证、版权和通知义务。
+
+严正声明：开源不等于允许偷署名、闭源套壳、删许可证、删 `NOTICE`、去除源码标识、冒充原创、冒充 Coff0xc 官方或暗示独家授权。Coff0xc 会使用 Git 历史、源码标识、相似度对比、购买记录、平台页面和交付包作为下架投诉、许可证执行、商标/冒充投诉和法律主张的证据。
+
+本仓库的 `SKILL.md` 文件包含源码级标识。它是版权和来源取证元数据，不影响 skill 执行。扫描可疑复制品：
+
+```powershell
+python .\scripts\scan_provenance.py <suspected-folder>
+```
 
 注意：许可证变更不追溯。变更前已经发布的版本仍按当时适用的许可证授权。
 
@@ -239,7 +252,9 @@ Turn Codex / AgentSkills-compatible AI assistants from ad hoc execution into reu
 
 `coffee-skill` is not a script package or a keyword list. It is an installable pack of `SKILL.md` workflows: narrow tasks go straight to the most specific skill, while cross-domain tasks use the router to choose a primary skill, add necessary support skills, execute phases, verify, and re-route.
 
-`18 skills` · `Chinese/English triggers` · `autonomous router` · `131 trigger/composition eval cases` · `7 real-artifact quality eval fixtures` · `CI validation` · `PolyForm Noncommercial 1.0.0`
+This repository is open source under `AGPL-3.0-only`. Others may fork, modify, distribute, and use it commercially, but they must preserve the license, copyright, and origin notices. If they distribute a derivative or run a modified version as a network service, they must provide the corresponding source under the AGPL. The `Coff0xc` / `coffee-skill` names and project identity are not licensed for false originality, official endorsement, exclusivity, or impersonation.
+
+`18 skills` · `Chinese/English triggers` · `autonomous router` · `131 trigger/composition eval cases` · `7 real-artifact quality eval fixtures` · `CI validation` · `AGPL-3.0-only`
 
 ## Two Modes
 
@@ -364,7 +379,7 @@ evals/                  # Trigger evals, quality evals, golden responses
 scripts/                # Release validation and eval scripts
 .github/workflows/      # CI validation
 manifest.json           # Machine-readable skill inventory
-LICENSE                 # PolyForm Noncommercial License 1.0.0
+LICENSE                 # GNU Affero General Public License v3.0
 NOTICE                  # Attribution notice
 ```
 
@@ -378,12 +393,23 @@ NOTICE                  # Attribution notice
 - [Language References](docs/LANGUAGES.md)
 - [Sanitization Notes](docs/SANITIZATION.md)
 - [Provenance](docs/PROVENANCE.md)
+- [Enforcement Guide](docs/ENFORCEMENT.md)
+- [Takedown Template](docs/TAKEDOWN_TEMPLATE.md)
+- [Trademark Policy](TRADEMARK.md)
 - [Security Policy](SECURITY.md)
 
 ## License
 
-From the current version onward, this repository is licensed under the PolyForm Noncommercial License 1.0.0. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
+From the current version onward, this repository is licensed under GNU Affero General Public License v3.0 only, `AGPL-3.0-only`. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
-Noncommercial use is allowed under the license. Commercial use, resale, paid redistribution, commercial hosting, or packaging this repository's contents into a paid product requires separate written permission from Coff0xc.
+This is an OSI-style open source path, so the license does not prohibit commercial use. It does require license preservation, copyright notices, source availability, same-license sharing for covered derivatives, and source availability for modified network-service deployments.
+
+Strict notice: open source does not allow removing attribution, removing `LICENSE` / `NOTICE`, stripping source identifiers, closed-source repackaging in violation of the AGPL, false originality claims, or any implication of official Coff0xc authorization. Coff0xc may use Git history, source identifiers, similarity analysis, purchase records, platform pages, and distributed artifacts as evidence for takedown requests, license enforcement, trademark/impersonation complaints, and legal claims.
+
+`SKILL.md` files include source-level identifiers for copyright and origin evidence. They do not affect skill execution. To scan a suspected copy:
+
+```powershell
+python .\scripts\scan_provenance.py <suspected-folder>
+```
 
 This license change is not retroactive. Versions published before the change remain under the license terms that applied to those earlier versions.

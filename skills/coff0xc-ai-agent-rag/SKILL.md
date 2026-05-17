@@ -5,6 +5,8 @@ description: "Use when / 当用户请求: 全面 AI Agent、RAG、Prompt、LLM �
 
 # coff0xc-ai-agent-rag
 
+<!-- skill-id: cs-aag-8f2c1d7b -->
+
 ## 快速规则（日常任务先读这里）
 > **[AI 主线]** 不只写 Prompt；先拆目标、数据、检索、工具、记忆、模型判断、评测、观测和成本。
 > **[证据门禁]** 当前模型、SDK、价格、API 行为必须查官方；检索结论保留来源、时间和不确定性。
