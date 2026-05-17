@@ -9,8 +9,17 @@ Most clients select skills from frontmatter metadata, especially `name` and `des
 - Each capability skill starts with broad Chinese/English capability terms.
 - Descriptions include concrete deliverables, domain nouns, tool names, acronyms, and source aliases.
 - Each skill body includes capability positioning, inputs, deliverables, boundaries, trust reasons, and examples.
-- `coff0xc-skill-router` is both the fallback when auto-triggering misses and the autonomous composer for cross-domain tasks.
-- Broad prompts should trigger a workflow graph, not a forced one-skill answer.
+- `coff0xc-skill-router` is the fallback when auto-triggering misses and the lightweight autonomous composer for cross-domain tasks.
+- Narrow prompts should go directly to the most specific skill. Broad prompts should trigger a small workflow graph and then execution, not a long proof artifact.
+
+## Runtime Modes
+
+| Mode | Trigger wording | Expected behavior |
+|---|---|---|
+| Execution mode | Normal task requests: fix, build, analyze, generate, edit, review a file, repair tests | Use one primary skill, add support skills only when needed, and execute the task. |
+| Release / eval mode | `review the skill`, `run eval`, `quality test`, `release`, `push`, `CI gate`, `benchmark`, `确认是否真的好用` | Run trigger/quality/release gates and update generated eval artifacts. |
+
+`workflow-trace.json`, golden responses, trigger evals, and quality evals belong to release/eval mode. They should not appear in normal task execution unless the user explicitly asks for them.
 
 ## Composition Triggers
 
@@ -26,10 +35,12 @@ Orchestrate a vibe-coding workflow for this repo.
 Expected router output:
 
 - primary skill,
-- supporting skills with one-line reasons,
+- only necessary supporting skills with one-line reasons,
 - phase order with gates,
 - skills intentionally not used,
 - re-routing conditions if new evidence appears.
+
+The router should keep this output short. After the lightweight plan, continue with the first actionable phase instead of stopping at planning.
 
 ## Manual Invocation
 
@@ -62,6 +73,6 @@ Use one of these phrases when auto-triggering misses:
 2. Restart or refresh the client after copying skills.
 3. Remove duplicate skill names across `.codex/skills`, `.agents/skills`, or other scanned locations.
 4. Keep trigger terms in frontmatter `description`, not only in the Markdown body.
-5. Use `coff0xc-skill-router` when unsure which skill should handle a request or when the task should compose multiple skills.
+5. Use `coff0xc-skill-router` when unsure which skill should handle a request or when the task should compose multiple skills; do not use it as a mandatory prelude to every task.
 6. If a task is broad, mention the expected deliverable, for example `检测规则`, `OpenAPI`, `draw.io`, `PPTX`, `XLSX`, `测试验证`, `CI 复现`, `设计系统`, `状态门禁`, `浏览器截图`, or `风险清单`.
 7. For autonomous composition, include wording such as `你自己判断`, `串联 skill`, `任务图`, `工作流`, `vibe coding`, or `chain the needed skills`.

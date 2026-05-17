@@ -5,12 +5,35 @@
 1. Install the `skills/` folders into your Codex skill directory.
 2. Restart or refresh Codex so it re-indexes skill metadata.
 3. Ask naturally in Chinese or English, or explicitly name a skill.
-4. If you are unsure or the task spans multiple domains, invoke `coff0xc-skill-router` first and let it compose the workflow.
-5. For security tasks, confirm authorization before active testing or remote actions.
+4. For narrow tasks, let the most specific skill execute directly; do not route first.
+5. If you are unsure or the task spans multiple domains, invoke `coff0xc-skill-router` for a lightweight workflow and then execute the first phase.
+6. For security tasks, confirm authorization before active testing or remote actions.
+
+## Default Fast Path
+
+For everyday work, the expected behavior is:
+
+1. Pick the most specific skill.
+2. Read the minimum necessary context.
+3. Make the smallest correct change or analysis.
+4. Run the relevant project validation.
+5. Report completed work, real validation, residual risk, and next step.
+
+Do not create quality evals, golden responses, workflow traces, or long skill graphs for normal tasks. Those are repository release tools, not runtime ceremony.
+
+## When To Run Evals
+
+Run the local eval commands only when you are maintaining this skill repository or the user explicitly asks for review, eval, quality testing, release, push, CI, benchmark, or proof that the skills still work.
+
+```powershell
+python .\scripts\validate_release.py
+python .\scripts\run_trigger_eval.py
+python .\scripts\run_quality_eval.py
+```
 
 ## How To Choose Or Compose Skills
 
-Use this pack by matching your task to the outcome you want, not by memorizing every source skill. For narrow tasks, name one skill directly. For broad work, ask the router to choose and chain the needed skills.
+Use this pack by matching your task to the outcome you want, not by memorizing every source skill. For narrow tasks, name one skill directly or describe the task naturally. For broad work, ask the router to choose and chain only the needed skills.
 
 | If you want... | Use this skill | Expected capability |
 |---|---|---|
@@ -31,8 +54,8 @@ Use this pack by matching your task to the outcome you want, not by memorizing e
 | 使用 coff0xc-compliance-architecture 做上线前安全架构评审和威胁建模。 | `coff0xc-compliance-architecture` | 架构风险评审和信任边界图; STRIDE/威胁建模、控制矩阵和差距分析 |
 | 使用 coff0xc-purple-deception 把这些攻击行为映射成 ATT&CK 检测覆盖矩阵。 | `coff0xc-purple-deception` | ATT&CK 技术映射和演练假设; 检测覆盖矩阵、日志需求和响应验证点 |
 | 使用 coff0xc-network-protocol-security 分析这个 pcap 里的 TLS 握手和异常字段。 | `coff0xc-network-protocol-security` | 协议流程、握手和状态机说明; pcap/日志字段分析、异常字段和安全影响 |
-| 使用 coff0xc-skill-router 帮我判断这个任务该用哪个 skill。 | `coff0xc-skill-router` | 推荐 skill 和理由; 候选 skill 对比和适用边界 |
-| 你自己判断要用哪些 coff0xc skills，并把它们串成工作流完成这个功能。 | `coff0xc-skill-router` | 主/辅 skill graph、阶段顺序、验证门禁、重路由条件 |
+| 使用 coff0xc-skill-router 帮我判断这个任务该用哪个 skill。 | `coff0xc-skill-router` | 推荐主 skill 和必要辅助 skill; 候选边界和下一步 |
+| 你自己判断要用哪些 coff0xc skills，并把它们串成工作流完成这个功能。 | `coff0xc-skill-router` | 轻量主/辅 skill graph、阶段顺序、验证门禁、重路由条件 |
 
 ## Autonomous Composition Examples
 
@@ -89,6 +112,8 @@ A good Coff0xc skill run should leave the user with evidence, not just prose:
 - remaining risk and the next useful action.
 
 ## Local Quality Evals
+
+This section is for release/eval mode only. If the user asked for a normal project task, run that project's tests instead.
 
 Use trigger evals to check routing metadata:
 

@@ -73,6 +73,17 @@ Use coff0xc-software-engineering to build this admin panel feature end to end wi
 - 命令、测试、构建、lint、浏览器检查只有真实运行后才能写成“已验证”。
 - 同一路线连续失败两次，停止重复，换方案或说明阻塞。
 
+## 默认快路径
+普通开发任务按这个顺序走：
+
+1. 读最小必要上下文：仓库规则、相关入口、已有改动和可用脚本。
+2. 定最小影响面：哪些文件必须改、哪些文件不碰、怎么验证。
+3. 直接实现：小步 patch，不做无关重构和新框架迁移。
+4. 跑可用验证：先窄后宽，能跑 test/typecheck/lint/build/browser smoke 就跑。
+5. 简短收口：完成项、真实验证、剩余风险、下一步。
+
+不要为普通任务创建 quality eval、workflow trace、golden response、长篇 skill graph 或发布检查报告。只有用户明确要求 skill 质量验证、review、eval、发版、推送、CI/benchmark 门禁时，才进入重型门禁。
+
 ## 必须先确认
 - 删除文件、drop table、清空缓存、迁移真实数据、force push、修改 main/master、reset hard。
 - push、发布、部署、创建/关闭/评论 PR 或 Issue、发送外部消息。
@@ -200,8 +211,10 @@ Use coff0xc-software-engineering to build this admin panel feature end to end wi
 | 真实测试 | 测试覆盖行为和失败路径；不用 snapshot 或 happy path 假装覆盖。 |
 | UI 协作 | 前端实现由本 skill 落地，但必须套用 `coff0xc-ui-doc-output` 的 UI 状态/视觉验收门禁。 |
 
-## 质量 Eval 自测
-当用户要求“确认 dev skill 是否真的好用”“优化开发 skill”“不要只堆触发词”时，不要只改 frontmatter。优先用仓库内真实 repair 夹具校准：
+## Release / Skill 改进自测
+仅当用户要求“确认 dev skill 是否真的好用”“优化开发 skill”“不要只堆触发词”“发版前验证”“推送前跑门禁”时使用。普通 repo repair 不跑这里的质量 eval，除非它就是当前仓库的发版要求。
+
+不要只改 frontmatter。优先用仓库内真实 repair 夹具校准：
 
 - 参考 `evals/quality/cases/dev-repo-repair-ci-gate/`：输入包含 `AGENTS.md`、README、CI 日志、lockfile、源码和失败测试。
 - 合格输出必须有修复后的 `src/billing.py` 和 `repair-notes.md`；如果输出 `requirements.lock`，必须与输入一致，除非依赖真实变化。

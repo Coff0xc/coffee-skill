@@ -14,7 +14,7 @@
 ## 好在哪里
 
 - 将 91 个来源 skill 和工作流整合为 17 个综合能力 skill，并提供 1 个路由 skill，减少碎片化。
-- 增加 `coff0xc-skill-router` 作为自动触发失败时的兜底路由和多 skill 自治编排入口。
+- 增加 `coff0xc-skill-router` 作为自动触发失败时的兜底路由和跨领域多 skill 轻量编排入口；普通单域任务直接进入最具体 skill。
 - 每个 skill 都包含适用场景、不适用场景、能力矩阵、阶段流程、证据等级、硬门禁、验证清单和反模式。
 - 安全相关内容默认用于授权、防御、检测、加固、复盘和报告。
 - 发布目录包含 README、LICENSE、NOTICE、SECURITY、来源说明、脱敏说明和校验脚本。
@@ -50,7 +50,7 @@
 1. 确认 skill 文件夹名和 frontmatter `name` 一致。
 2. 复制后重启或刷新 Codex。
 3. 删除重复 skill 名称。
-4. 不确定或跨领域任务，用 `coff0xc-skill-router` 兜底并编排工作流。
+4. 不确定或跨领域任务，用 `coff0xc-skill-router` 兜底并轻量编排工作流；普通任务不要先绕 router。
 
 ## 安全边界
 

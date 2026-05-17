@@ -1,17 +1,26 @@
 ---
 name: coff0xc-skill-router
-description: "Coff0xc autonomous skill router, multi-skill workflow composer, and auto-trigger fallback. Use when a user asks the AI to decide which coffee/coff0xc skills to use, chain skills together, create a task-specific workflow graph, run a vibe-coding workflow, handle cross-domain or multi-domain work, or when a specific skill does not auto-trigger. It can choose a primary skill, add support skills, sequence phases, define gates, and re-route as evidence changes. Routes Chinese/English requests for: software engineering, Python, JavaScript, TypeScript, Go, Rust, Java, C/C++, Shell, testing, Git, Agent, RAG, LLM, Prompt, API, database, CLI, UI, frontend, PowerPoint, PPT, PPTX, slides, deck, DOCX, Word, PDF, Excel, XLSX, CSV, spreadsheet, workbook, chart, formula, document, translation, research diagram, draw.io, diagrams.net, paper figure, algorithm architecture, code audit, Web security, API security, GraphQL, OAuth, cloud, AWS, Azure, GCP, Docker, Kubernetes, CI/CD, supply chain, secret scanning, SOC, SIEM, YARA, Sigma, incident response, malware, forensics, CVE, vulnerability management, AD, Kerberos, IAM, Zero Trust, red team, authorized assessment, reverse engineering, binary, mobile, APK, firmware, IoT, ICS, blockchain, smart contract, compliance, threat modeling, purple team, honeypot, TLS, DNS, network protocol, wireless. 中文触发：自主编排、多 skill 工作流、AI 自己判断、自动串联 skill、任务图、工作流图、跨领域、跨域、多领域、多维度、编排工作流、vibe coding、代码、开发、测试、重构、脚本、Agent、智能体、RAG、向量数据库、提示词、接口、数据库、命令行、前端、界面、PPT、PPTX、PowerPoint、演示文稿、幻灯片、DOCX、Word、PDF、Excel、XLSX、CSV、表格、工作簿、公式、批注、修订、导出、文档、翻译、科研绘图、论文配图、算法架构图、模型结构图、draw.io、diagrams.net、代码审计、Web安全、云安全、容器、K8s、供应链、密钥、检测、应急、取证、漏洞、CVE、AD域、身份、零信任、红队、授权评估、逆向、二进制、移动安全、固件、工控、区块链、合约审计、合规、威胁建模、紫队、蜜罐、网络协议、无线安全、不确定用哪个、选择 skill、帮我分流、同时涉及多个领域。"
+description: "Coff0xc autonomous skill router and lightweight multi-skill composer. Use only when the user asks the AI to decide which coffee/coff0xc skills to use, chain skills together, build a task/workflow graph, orchestrate a vibe-coding workflow, handle cross-domain or multi-domain work, or recover from a missing/uncertain skill trigger. It chooses one primary skill, adds only necessary support skills, sequences phases, defines gates, and re-routes as evidence changes. 中文触发：自主编排、多 skill 工作流、AI 自己判断、自动串联 skill、任务图、工作流图、跨领域、跨域、多领域、多维度、编排工作流、vibe coding、不确定用哪个、选择 skill、帮我分流、同时涉及多个领域、串联 skill、工作流编排。 Do not use this router for narrow tasks that already match one specific skill; route directly to that skill."
 ---
 
 # coff0xc-skill-router
 
 ## 能力定位
-面向不确定任务和跨领域任务的 autonomous skill composer。它不是把所有能力揉成一个大 skill，而是让 AI 先判断任务需要哪些专业 skill，再把它们串成一个可执行、可验证、可调整的任务工作流。
+面向不确定任务和跨领域任务的轻量 autonomous skill composer。它不是把所有能力揉成一个大 skill，也不是普通任务的必经步骤；它只在任务确实需要选择、分流或跨域编排时介入。
 
 单一任务只选一个最具体 skill；复杂任务输出主 skill、辅助 skill、执行顺序、门禁和重路由条件。
 
+## 执行模式优先级
+默认是执行模式，不是证明模式。
+
+- 普通任务：不要先输出完整 skill graph；直接选择最具体的主 skill 并开始执行。
+- 复杂跨域任务：只给 3-5 行轻量工作流，然后马上进入第一阶段。
+- 只有用户明确要求 review、eval、质量测试、发版、推送、CI、benchmark、确认 skill 是否好用时，才启用 release/eval 模式。
+- `workflow-trace.json`、golden responses、trigger eval、quality eval 是发版门禁，不是普通任务默认动作。
+- Router 是快速分流器，不是强制规划层；能用一个专业 skill 做完，就不要绕进多 skill 编排。
+
 ## 能交付什么
-- 任务专属 skill graph：主 skill、辅助 skill、暂不使用的 skill
+- 轻量分流结果：当前主 skill、必要辅助 skill、暂不使用的 skill
 - 分阶段执行顺序：每阶段调用哪个 skill、输入、输出、完成门禁
 - 候选 skill 对比、取舍理由和适用边界
 - 需要澄清的最少问题
@@ -47,7 +56,7 @@ Use coff0xc-skill-router when a Coff0xc skill did not auto-trigger.
 
 
 ## 目标
-作为自动触发兜底入口和多 skill 编排入口。当前端模型没有自动选择具体 Coff0xc skill，或任务明显跨多个领域时，先用本路由表和组合规则生成任务图，再读取并执行对应 skill 的工作流。
+作为自动触发兜底入口和多 skill 编排入口。当前端模型没有自动选择具体 Coff0xc skill，或任务明显跨多个领域时，用本路由表快速选择主 skill 和必要支持 skill，然后读取并执行当前阶段对应 skill 的工作流。
 
 ## 为什么需要 Router
 - 多个客户端只用 `name` 和 `description` 参与触发，正文内容不会帮助首次触发。
@@ -56,14 +65,17 @@ Use coff0xc-skill-router when a Coff0xc skill did not auto-trigger.
 - 合并后的大 skill 数量更少，但每个主题覆盖面更广，需要一个触发词密集的兜底和编排入口。
 
 ## 自治编排规则
-1. 如果一个更具体的 Coff0xc skill 已经完全覆盖任务，直接执行该 skill；本 router 只用于确认边界。
-2. 如果任务跨领域，构造 skill graph：选一个主 skill，再添加支持 skill；不要把所有看似相关的 skill 都塞进去。
+1. 如果一个更具体的 Coff0xc skill 已经完全覆盖任务，直接执行该 skill；不要输出 router 计划。
+2. 如果任务跨领域，构造最小 skill graph：选一个主 skill，再添加支持 skill；不要把所有看似相关的 skill 都塞进去。
 3. 每个支持 skill 必须有明确职责：补契约、补 UI、补安全、补文件交付、补检测、补合规、补验证。
 4. 先执行当前阶段需要的 skill。阶段完成后根据证据决定是否继续、切换或新增 skill。
 5. 如果请求涉及安全、生产、凭据、远程写入、删除或付费动作，先套用对应专业 skill 的硬门禁。
 6. 如果无法确定组合，给出 2-3 个候选 workflow 和最小澄清问题；不要凭空执行高风险动作。
+7. 除非用户明确要求评测/发版/推送/质量验证，不要生成 workflow trace、golden response、eval 报告或长篇自证材料。
 
 ## Skill Composition Loop
+只在跨域或用户明确要求“你自己串联 skill / 编排工作流”时使用本循环。普通开发、UI、Office、安全、API 等单域任务直接进入对应专业 skill。
+
 1. 读任务和证据：目标、输入、交付物、约束、风险、已有文件。
 2. 选主 skill：决定谁负责最终结果。
 3. 加支持 skill：只加入当前任务真实需要的能力。
@@ -83,7 +95,7 @@ Use coff0xc-skill-router when a Coff0xc skill did not auto-trigger.
 | Detection / incident workflow | `coff0xc-detection-response` | `coff0xc-vulnerability-lifecycle`, `coff0xc-cloud-devsecops`, `coff0xc-purple-deception` | 先建检测/时间线，再做优先级和覆盖验证 |
 
 ## 输出格式
-复杂任务先输出短编排，不要写长篇理论：
+普通任务不要输出这段，直接执行对应专业 skill。复杂任务先输出短编排，不要写长篇理论：
 
 ```markdown
 工作流：

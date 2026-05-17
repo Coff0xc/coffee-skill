@@ -2,6 +2,8 @@
 
 Trigger evals answer one question: "does this prompt route to the right skill?" Quality evals answer a harder question: "does the skill force the agent to produce reviewable, high-quality work?"
 
+This is release/eval-mode tooling for maintaining the skill repository. It is not the default workflow for normal user tasks. Ordinary project work should run the target project's tests, build, browser smoke, Office render check, or security validation instead of starting with this suite.
+
 This repository includes artifact-level fixtures for areas where routing metrics are not enough. The default quality command now scores checked-in golden responses, including real `.pptx`, `.xlsx`, and `.docx` OOXML packages. Use `--fixture-only` only when you want schema/path validation without scoring artifacts.
 
 | Case | Skill | What it tests |

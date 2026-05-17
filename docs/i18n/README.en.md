@@ -14,7 +14,7 @@
 ## Why Use It
 
 - It consolidates 91 source skills and workflows into 17 comprehensive capability skills plus a router.
-- `coff0xc-skill-router` acts as a fallback when a specific skill does not auto-trigger.
+- `coff0xc-skill-router` acts as a fallback when a specific skill does not auto-trigger and as a lightweight composer for cross-domain tasks; narrow tasks should go directly to the most specific skill.
 - Each skill includes scope, exclusions, capability matrix, workflow phases, evidence levels, hard gates, validation checks, and anti-patterns.
 - Security content stays focused on authorized defense, detection, hardening, verification, and reporting.
 
@@ -45,7 +45,7 @@ Use coff0xc-skill-router to choose the right skill.
 1. Check that the folder name matches the frontmatter `name`.
 2. Restart or refresh Codex after copying.
 3. Remove duplicate skill names.
-4. Explicitly invoke `coff0xc-skill-router`.
+4. Explicitly invoke `coff0xc-skill-router` for uncertain or cross-domain work; do not use it as a mandatory prelude to narrow tasks.
 
 ## Safety Boundary
 

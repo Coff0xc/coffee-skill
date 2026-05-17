@@ -6,13 +6,13 @@ Important: this is a local proxy evaluation based on `SKILL.md` frontmatter meta
 
 ## Summary
 
-- Cases: 128
+- Cases: 131
 - Skills: 18
 - Threshold: 3.0
-- Positive top-1 rate: 0.9646
+- Positive top-1 rate: 0.9483
 - Positive top-3 rate: 1.0
 - Positive triggered rate: 1.0
-- Router top-1 rate: 0.7895
+- Router top-1 rate: 0.6842
 - Router top-3 rate: 1.0
 - Composition full top-N rate: 1.0
 - Negative no-trigger rate: 1.0
@@ -32,11 +32,11 @@ Important: this is a local proxy evaluation based on `SKILL.md` frontmatter meta
 | `coff0xc-detection-response` | 5 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-identity-zero-trust` | 5 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-network-protocol-security` | 5 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-office-doc-tools` | 8 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-office-doc-tools` | 11 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-purple-deception` | 5 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-research-drawio-diagram` | 5 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-secure-code-appsec` | 5 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-skill-router` | 19 | 0.7895 | 1.0 | 1.0 |
+| `coff0xc-skill-router` | 19 | 0.6842 | 1.0 | 1.0 |
 | `coff0xc-software-engineering` | 9 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-ui-doc-output` | 7 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-vulnerability-lifecycle` | 5 | 1.0 | 1.0 | 1.0 |

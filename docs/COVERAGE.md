@@ -6,10 +6,10 @@
 - Source skills consolidated: 91
 - Comprehensive capability skills: 17
 - Router/composer skills: 1
-- Trigger eval cases: 128
+- Trigger eval cases: 131
 - Quality eval fixtures: 7 real-artifact/workflow cases with 51 assertions
 - Office OOXML quality gates: PPTX package/slide/chart parsing, XLSX workbook/formula/table/chart parsing, DOCX comments/redlines/styles/numbering/rels/table geometry parsing
-- Autonomous composition: router can choose a primary skill, add support skills, sequence phases, define gates, and re-route as evidence changes
+- Autonomous composition: narrow tasks go directly to the most specific skill; only uncertain or cross-domain tasks use the router to choose a primary skill, add necessary support skills, sequence phases, define gates, and re-route as evidence changes
 
 ## Skill Capability Map
 
@@ -32,7 +32,7 @@
 | `coff0xc-compliance-architecture` | 面向安全架构、威胁建模、合规映射、数据安全和成熟度评估的治理能力。它把系统设计、控制要求和审计证据整理成能落地的风险决策材料。 | 架构风险评审和信任边界图; STRIDE/威胁建模、控制矩阵和差距分析; 数据分类、隐私、DLP 和日志审计建议 | 授权/防御优先 |
 | `coff0xc-purple-deception` | 面向紫队、ATT&CK 映射、检测覆盖验证和欺骗防御的安全运营改进能力。它把攻击行为语言翻译成可观测、可检测、可改进的防御能力。 | ATT&CK 技术映射和演练假设; 检测覆盖矩阵、日志需求和响应验证点; 蜜罐/诱饵/canary 设计建议 | 授权/防御优先 |
 | `coff0xc-network-protocol-security` | 面向网络协议、TLS/DNS/QUIC/HTTP、无线通信、抓包和形式化建模的协议安全分析能力。它把通信证据转成流程图、风险点和验证建议。 | 协议流程、握手和状态机说明; pcap/日志字段分析、异常字段和安全影响; TLS/PKI/DNS/HTTP/QUIC/无线风险清单 | 授权/防御优先 |
-| `coff0xc-skill-router` | 面向不确定任务和跨领域任务的 autonomous skill composer。它不是替代专业 skill，而是让 AI 选择主 skill、添加辅助 skill、排阶段、设门禁，并在执行中根据证据重路由。 | 主/辅 skill graph; 阶段顺序和验证门禁; 候选组合取舍; 最小澄清问题; 重路由条件 | 授权/防御优先 |
+| `coff0xc-skill-router` | 面向不确定任务和跨领域任务的轻量 autonomous skill composer。它不是普通任务的必经步骤；窄任务直达最具体 skill，跨域任务才由它选择主 skill、添加必要辅助 skill、排阶段、设门禁，并在执行中根据证据重路由。 | 轻量主/辅 skill graph; 阶段顺序和验证门禁; 候选组合取舍; 最小澄清问题; 重路由条件 | 授权/防御优先 |
 
 ## Source Skill Coverage
 

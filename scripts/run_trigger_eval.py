@@ -668,30 +668,9 @@ DOMAIN_KEYWORDS: dict[str, set[str]] = {
         "选择合适",
         "不确定",
         "coffee skill",
-        "ppt",
-        "pptx",
-        "powerpoint",
-        "docx",
-        "excel",
-        "xlsx",
-        "spreadsheet",
-        "workbook",
-        "draw.io",
-        "diagrams.net",
-        "research diagram",
-        "paper figure",
-        "algorithm architecture",
         "选择 skill",
         "帮我分流",
         "同时涉及",
-        "演示文稿",
-        "幻灯片",
-        "工作簿",
-        "公式",
-        "科研绘图",
-        "论文配图",
-        "算法架构图",
-        "模型结构图",
         "路由",
         "兜底",
     },
@@ -708,6 +687,35 @@ SIMPLE_PROMPT_PATTERNS = [
     re.compile(r"^summarize this one-page", re.IGNORECASE),
     re.compile(r"^explain .+ in one paragraph", re.IGNORECASE),
 ]
+
+ARTIFACT_ACTION_TERMS = {
+    "create",
+    "generate",
+    "make",
+    "build",
+    "turn this",
+    "convert",
+    "export",
+    "edit",
+    "review",
+    "annotate",
+    "redline",
+    "format",
+    "parse",
+    "生成",
+    "制作",
+    "做成",
+    "整理成",
+    "转成",
+    "导出",
+    "编辑",
+    "审阅",
+    "小改",
+    "加批注",
+    "修订",
+    "检查",
+    "解析",
+}
 
 
 @dataclass
@@ -781,9 +789,15 @@ def is_simple_prompt(prompt: str) -> bool:
     return any(pattern.search(stripped) for pattern in SIMPLE_PROMPT_PATTERNS)
 
 
+def has_artifact_action(prompt: str) -> bool:
+    prompt_lower = prompt.lower()
+    return any(term in prompt_lower for term in ARTIFACT_ACTION_TERMS)
+
+
 def rank_skills(prompt: str, skills: list[Skill], idf: dict[str, float]) -> list[dict[str, object]]:
     prompt_tokens = Counter(tokenize(prompt))
     simple = is_simple_prompt(prompt)
+    artifact_action = has_artifact_action(prompt)
     domain_hit_count = sum(1 for skill_name in DOMAIN_KEYWORDS if skill_name != "coff0xc-skill-router" and phrase_hits(prompt, skill_name))
     ranked: list[dict[str, object]] = []
 
@@ -805,7 +819,7 @@ def rank_skills(prompt: str, skills: list[Skill], idf: dict[str, float]) -> list
             router_penalty = 5.0
             if simple:
                 router_penalty += 4.0
-        simplicity_penalty = 6.0 if simple else 0.0
+        simplicity_penalty = 0.0 if simple and hits and artifact_action else (6.0 if simple else 0.0)
         score = lexical_score + phrase_score + explicit_score - router_penalty - simplicity_penalty
         ranked.append(
             {

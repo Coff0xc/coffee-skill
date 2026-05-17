@@ -162,6 +162,33 @@
       "reason": "Explicit skill invocation for DOCX comments, redlines, and render QA."
     },
     {
+      "id": "office-short-pptx-artifact",
+      "language": "zh-CN",
+      "category": "short_artifact",
+      "prompt": "生成一份可编辑 PPTX，并检查预览。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "reason": "Short but concrete PPTX artifact creation should still trigger the Office workflow."
+    },
+    {
+      "id": "office-short-xlsx-artifact",
+      "language": "zh-CN",
+      "category": "short_artifact",
+      "prompt": "把这份 CSV 整理成 Excel dashboard。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "reason": "Short but concrete CSV-to-Excel artifact request should trigger the Office workflow."
+    },
+    {
+      "id": "office-short-docx-artifact",
+      "language": "zh-CN",
+      "category": "short_artifact",
+      "prompt": "审阅这个 DOCX 的批注和格式。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "reason": "Short but concrete DOCX comment and formatting review should trigger the Office workflow."
+    },
+    {
       "id": "office-quality-ppt-aesthetic-gate",
       "language": "zh-CN",
       "category": "quality_gate",
