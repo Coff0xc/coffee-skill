@@ -2,13 +2,67 @@
 
 中文 | [English](#english)
 
-把 Codex / AgentSkills 兼容 AI 助手从“临场发挥”变成可复用、可验证、可恢复的工作流，同时保留普通任务的快路径。
+[![CI](https://github.com/Coff0xc/coffee-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/Coff0xc/coffee-skill/actions/workflows/validate.yml)
+![Skills](https://img.shields.io/badge/skills-18-2f855a)
+![Trigger Eval](https://img.shields.io/badge/trigger_eval-131_cases-2563eb)
+![Quality Eval](https://img.shields.io/badge/quality_eval-7_real_artifacts-7c3aed)
+![License](https://img.shields.io/badge/license-source_available_noncommercial-b91c1c)
+![Codex](https://img.shields.io/badge/Codex-AgentSkills-111827)
 
-`coffee-skill` 不是脚本工具，也不是触发词合集。它是一套可安装的 `SKILL.md` 工作流包：普通任务直接进入最相关 skill 干活，跨领域任务才让 router 选择主 skill、补必要辅助 skill、按阶段执行和验证。
+`coffee-skill` 是给 Codex / AgentSkills 兼容客户端安装的工作流 skill pack。它解决的是 AI vibe coding 的三个高频问题：AI 不知道该用什么能力、做出来的东西没质量证据、普通任务被过重流程拖慢。
+
+核心设计很简单：
+
+- **窄任务直达**：修 bug、改 UI、做 PPT、审计代码这类单域任务直接进入最具体 skill。
+- **复杂任务编排**：跨前后端、数据、UI、安全、Office 的任务才让 `coff0xc-skill-router` 选主 skill、补辅助 skill、排阶段和重路由。
+- **质量有证据**：dev 看测试和 diff；UI 看状态、截图和布局证据；Office 解包 PPTX/XLSX/DOCX 查结构；安全结论要有授权边界和证据。
+- **日常快路径**：每个 skill 顶部都有 `快速规则（日常任务先读这里）`；trigger eval、quality eval、golden responses 和 workflow trace 只用于 release/eval。
 
 本仓库公开可见，但不是开源授权。个人学习、研究、评估和本地非商业使用可以保留署名后使用；任何商业化、公司内部生产使用、咨询交付、付费课程、付费社群、agent 包、托管服务、镜像、转售或衍生发布，都必须先通知 Coff0xc 并获得书面许可。没有书面许可，就没有商业授权。
 
-`18 skills` · `中英触发` · `自治编排 router` · `131 个触发/组合评测用例` · `7 个真实产物质量评测夹具` · `CI 自动验证` · `个人非商业可用，商业化必须先通知授权`
+## 30 秒上手
+
+个人学习、研究、评估和本地非商业使用，在仓库根目录执行：
+
+```powershell
+$dest = "$env:USERPROFILE\.codex\skills"
+New-Item -ItemType Directory -Force $dest
+Copy-Item -Recurse .\skills\* $dest
+```
+
+重启或刷新 Codex，然后试：
+
+```text
+使用 coff0xc-software-engineering：这个 repo 测试挂了，帮我最小修复并验证。
+```
+
+不知道该用哪个 skill 时：
+
+```text
+你自己判断要用哪些 coff0xc skills，并把它们串成工作流完成这个功能。
+```
+
+## 选哪个入口
+
+| 你要做什么 | 直接用 | 你应该拿到什么 |
+|---|---|---|
+| 修 repo、写功能、复现 CI、最小修复 | `coff0xc-software-engineering` | 代码 diff、根因、验证结果、剩余风险 |
+| 做前端/UI/报告表达，或正式 PPTX/DOCX/XLSX | `coff0xc-ui-doc-output` / `coff0xc-office-doc-tools` | 截图/浏览器证据，或可编辑 Office 文件和结构检查 |
+| 做 Agent/RAG、API、数据契约、科研图 | `coff0xc-ai-agent-rag` / `coff0xc-api-data-platform` / `coff0xc-research-drawio-diagram` | 架构、schema、评测、draw.io、证据表 |
+| 安全、合规、应急、身份、云、协议、区块链 | 对应安全类 `coff0xc-*` skill | 授权边界、证据、影响、修复/检测/加固建议 |
+| 任务跨多个领域或不知道怎么分流 | `coff0xc-skill-router` | 主 skill、辅助 skill、阶段门禁、重路由条件 |
+
+完整卡片索引见 [Skill Index](docs/SKILL_INDEX.md)。
+
+## 为什么这些 skills 存在
+
+| AI 常见失败 | 本仓库怎么压住 |
+|---|---|
+| 一上来就长篇计划，或者选错能力 | 窄任务直达专业 skill；跨域才启用 router；普通任务不跑 release gate。 |
+| 代码改了但不知道好没好 | dev skill 强制读仓库规则、定位根因、最小改动、跑可用验证、不乱改 lockfile。 |
+| UI 只是“能看”，一股模板味 | UI skill 强制产品类型、设计系统、状态覆盖、响应式、可访问性和截图/浏览器证据。 |
+| PPT/Excel/DOCX 只生成文件名 | Office skill 要求 PPTX/XLSX/DOCX 可编辑、可渲染、可解包检查结构和公式/批注/样式。 |
+| 安全任务越界或只给吓人的话 | 安全类 skill 默认授权/防御优先，高风险动作先确认，发现必须带证据和修复路径。 |
 
 ## 两种模式
 
@@ -67,40 +121,7 @@ router 的职责不是永远停在“推荐一个 skill”，也不是每次都�
 
 如果执行中发现新证据，工作流可以调整。例如：普通 dev 任务发现需要正式 PPTX 交付，就新增 `coff0xc-office-doc-tools`；Agent 应用发现缺数据契约，就新增 `coff0xc-api-data-platform`。
 
-## 先看这个
-
-| 你想让 AI 做什么 | 直接怎么说 | 你应该拿到什么 |
-|---|---|---|
-| 日常修项目/写功能 | `这个 repo 测试挂了，帮我最小修复并验证` | 直接进入 dev skill，代码补丁、验证结果、剩余风险 |
-| 不知道该用哪个工作流 | `使用 coff0xc-skill-router 判断该用哪个 skill` | 推荐主 skill、必要辅助 skill、下一步 |
-| 任务跨多个领域 | `你自己判断要用哪些 coff0xc skills，并串成工作流完成` | 轻量主/辅 skill graph、阶段顺序、验证门禁、重路由条件 |
-| 修项目、写功能、跑测试 | `使用 coff0xc-software-engineering 修复这个 repo` | 代码补丁、验证结果、剩余风险 |
-| 设计 Agent / RAG / Prompt | `使用 coff0xc-ai-agent-rag 设计这个知识库助手` | 架构、工具、检索、引用、评测、降级方案 |
-| 做 API / 数据库 / SDK | `使用 coff0xc-api-data-platform 设计这个接口` | OpenAPI/schema、错误码、分页、迁移和数据质量方案 |
-| 做 UI / dashboard / 前端体验 | `使用 coff0xc-ui-doc-output 优化这个 dashboard` | UI 改动、状态覆盖、响应式/可访问性、截图验证 |
-| 做正式 PPT / Excel / DOCX / PDF | `使用 coff0xc-office-doc-tools 生成可交付文件` | 可编辑文件、预览/渲染 QA、公式和格式检查 |
-| 做论文/算法架构图 | `使用 coff0xc-research-drawio-diagram 画 draw.io 图` | 可编辑 `.drawio`、图结构、证据表 |
-| 做授权安全分析 | `使用对应 coff0xc-* security skill` | 证据化发现、风险说明、修复/检测/加固建议 |
-
-知道 skill 名就直接点名；不知道或任务明显跨领域，就用 `coff0xc-skill-router` 轻量编排。普通单域任务不要先绕 router。
-
-## 个人非商业安装
-
-个人学习、研究、评估和本地非商业使用，在仓库根目录执行：
-
-```powershell
-$dest = "$env:USERPROFILE\.codex\skills"
-New-Item -ItemType Directory -Force $dest
-Copy-Item -Recurse .\skills\* $dest
-```
-
-然后重启或刷新 Codex，让客户端重新索引 skill metadata。
-
-快速验证：
-
-```text
-使用 coff0xc-skill-router 帮我判断这个任务该用哪个 skill。
-```
+完整入口选择、能力卡片、常见组合和手动触发示例见 [Skill Index](docs/SKILL_INDEX.md)。
 
 ## 怎么提问更稳
 
@@ -134,21 +155,6 @@ Copy-Item -Recurse .\skills\* $dest
 用 Agent/RAG 的方式设计一个本地知识库助手，需要引用来源、缓存、失败降级和评测集。
 根据这篇论文和官方 GitHub 画一个可编辑的 draw.io 科研算法架构图。
 ```
-
-## 能力地图
-
-| 领域 | 推荐 skill | 适合任务 | 交付结果 |
-|---|---|---|---|
-| 软件工程 | `coff0xc-software-engineering` | bugfix、feature、refactor、full-stack、repo repair | diff、测试/构建结果、风险说明 |
-| AI 系统 | `coff0xc-ai-agent-rag` | Agent、RAG、Prompt、工具调用、评测、观测、成本 | 架构、流程、工具 schema、评测闭环 |
-| API / 数据 | `coff0xc-api-data-platform` | REST、GraphQL、OpenAPI、SQL、迁移、CLI/SDK | 契约、schema、错误模型、数据质量检查 |
-| UI / 输出 | `coff0xc-ui-doc-output` | 前端、dashboard、报告表达、技术翻译 | UI/文案改进、截图验证、报告结构 |
-| Office 文件 | `coff0xc-office-doc-tools` | PPTX、DOCX、PDF、XLSX、CSV、图表、批注、修订 | 可编辑文件、渲染 QA、公式/格式检查 |
-| 科研图 | `coff0xc-research-drawio-diagram` | 论文方法图、模型结构图、算法 pipeline | `.drawio` 源文件、节点/边说明、证据表 |
-| 授权安全 | 安全类 `coff0xc-*` skills | AppSec、云安全、检测响应、身份、合约、协议、漏洞生命周期 | 证据、影响、修复、检测、加固建议 |
-| 自治编排 | `coff0xc-skill-router` | 不确定该用哪个 skill，或任务跨多个领域 | 主/辅 skill graph、阶段顺序、门禁、重路由条件 |
-
-完整清单见 [docs/COVERAGE.md](docs/COVERAGE.md)。
 
 ## 质量门禁
 
@@ -216,6 +222,7 @@ NOTICE                  # 归属说明
 ## 文档
 
 - [Usage Guide](docs/USAGE.md)
+- [Skill Index](docs/SKILL_INDEX.md)
 - [Triggering Guide](docs/TRIGGERING.md)
 - [Trigger Evaluation](docs/TRIGGER_EVAL.md)
 - [Quality Evaluation](docs/QUALITY_EVAL.md)
@@ -248,13 +255,62 @@ python .\scripts\scan_provenance.py <suspected-folder>
 
 ## English
 
-Turn Codex / AgentSkills-compatible AI assistants from ad hoc execution into reusable, verifiable, recoverable workflows while preserving a fast path for normal work.
+Turn Codex / AgentSkills-compatible assistants into reusable, verifiable, recoverable workflows without making ordinary tasks slow.
 
-`coffee-skill` is not a script package or a keyword list. It is an installable pack of `SKILL.md` workflows: narrow tasks go straight to the most specific skill, while cross-domain tasks use the router to choose a primary skill, add necessary support skills, execute phases, verify, and re-route.
+`coffee-skill` is an installable `SKILL.md` workflow pack. It is built for the three failure modes that hurt agentic coding work: the assistant chooses the wrong capability, produces work without evidence, or turns simple tasks into heavy process.
+
+The design:
+
+- **Narrow tasks go direct**: bug fixes, UI work, Office artifacts, AppSec review, and reports should use the most specific skill.
+- **Cross-domain tasks compose**: the router selects a primary skill, adds only necessary support skills, sequences phases, defines gates, and re-routes when evidence changes.
+- **Quality leaves evidence**: dev work shows diffs and validation, UI work shows state/screenshot/layout evidence, Office work opens OOXML packages, and security work keeps authorization boundaries explicit.
+- **Fast by default**: every skill starts with quick rules; trigger evals, quality evals, golden responses, and workflow traces are release/eval gates.
 
 This repository is publicly visible, but it is not open-source licensed. Personal learning, research, evaluation, and local noncommercial use are allowed with attribution preserved. Any commercialization, company internal production use, consulting deliverable, paid course, paid community, agent-pack bundling, hosted service, mirror, resale, or derivative publication requires prior notice to Coff0xc and written permission. Without written permission, there is no commercial authorization.
 
-`18 skills` · `Chinese/English triggers` · `autonomous router` · `131 trigger/composition eval cases` · `7 real-artifact quality eval fixtures` · `CI validation` · `personal noncommercial use allowed; commercial use requires prior notice and permission`
+## 30-Second Setup
+
+For personal learning, research, evaluation, and local noncommercial use:
+
+```powershell
+$dest = "$env:USERPROFILE\.codex\skills"
+New-Item -ItemType Directory -Force $dest
+Copy-Item -Recurse .\skills\* $dest
+```
+
+Restart or refresh Codex, then try:
+
+```text
+Use coff0xc-software-engineering: this repo has failing tests; make the smallest repair and validate it.
+```
+
+If you do not know which skill to use:
+
+```text
+Decide which coff0xc skills are needed, chain them into a workflow, and complete this task.
+```
+
+## Choose An Entry Point
+
+| Task | Use | Expected output |
+|---|---|---|
+| Repo repair, feature work, CI reproduction | `coff0xc-software-engineering` | diff, root cause, validation, residual risk |
+| Frontend/UI/report polish, or formal PPTX/DOCX/XLSX | `coff0xc-ui-doc-output` / `coff0xc-office-doc-tools` | screenshot/browser evidence, or editable Office files with structure checks |
+| Agent/RAG, API/data contracts, research diagrams | `coff0xc-ai-agent-rag` / `coff0xc-api-data-platform` / `coff0xc-research-drawio-diagram` | architecture, schemas, evals, draw.io files, evidence tables |
+| Security, compliance, incident response, identity, cloud, protocol, blockchain | matching `coff0xc-*` security skill | authorization scope, evidence, impact, remediation/detection/hardening |
+| Cross-domain or unclear work | `coff0xc-skill-router` | primary skill, support skills, phase gates, re-routing conditions |
+
+See the full [Skill Index](docs/SKILL_INDEX.md).
+
+## Why These Skills Exist
+
+| Common agent failure | How this pack handles it |
+|---|---|
+| Wrong capability or too much planning | Narrow tasks go direct; cross-domain tasks use the router; normal work does not run release gates. |
+| Code changes without proof | Dev workflow reads repo rules, finds root cause, makes small diffs, validates, and avoids lockfile noise. |
+| Template-looking UI | UI workflow checks product type, design system, states, responsiveness, accessibility, and screenshots/browser evidence. |
+| Office files that only exist by name | Office workflow requires editable PPTX/XLSX/DOCX, render evidence, and OOXML structure checks. |
+| Security work that drifts out of scope | Security workflows are authorization-first and evidence-based, with confirmation gates for risky actions. |
 
 ## Two Modes
 
@@ -302,24 +358,6 @@ This vibe-coding task may include frontend, backend, data, security, and docs; o
 
 The router should produce a primary skill, only necessary supporting skills, phase order, gates, and re-routing conditions. For example, a SaaS feature may compose `software-engineering + api-data-platform + ui-doc-output + secure-code-appsec`.
 
-## Personal Noncommercial Installation
-
-For personal learning, research, evaluation, and local noncommercial use:
-
-```powershell
-$dest = "$env:USERPROFILE\.codex\skills"
-New-Item -ItemType Directory -Force $dest
-Copy-Item -Recurse .\skills\* $dest
-```
-
-Restart or refresh Codex so it re-indexes skill metadata.
-
-Smoke check:
-
-```text
-Use coff0xc-skill-router to choose the right skill for this task.
-```
-
 ## How To Prompt
 
 Most reliable format:
@@ -335,20 +373,7 @@ Limits: ...
 
 If you know the skill, name it directly. If the task is clearly narrow, do not route first. If it is uncertain or cross-domain, start with `coff0xc-skill-router`.
 
-## Capability Map
-
-| Domain | Skill | Best for | Output |
-|---|---|---|---|
-| Software engineering | `coff0xc-software-engineering` | bugfixes, features, refactors, full-stack work, repo repair | diff, test/build results, risk notes |
-| AI systems | `coff0xc-ai-agent-rag` | Agent, RAG, prompts, tools, evals, observability, cost | architecture, flow, tool schemas, eval loop |
-| API / data | `coff0xc-api-data-platform` | REST, GraphQL, OpenAPI, SQL, migrations, CLI/SDK | contracts, schemas, errors, data checks |
-| UI / output | `coff0xc-ui-doc-output` | frontend, dashboards, reports, translation | UX/content improvements, screenshot checks, report structure |
-| Office artifacts | `coff0xc-office-doc-tools` | PPTX, DOCX, PDF, XLSX, CSV, charts, comments, redlines | editable files, render QA, formula/format checks |
-| Research diagrams | `coff0xc-research-drawio-diagram` | paper method figures, model diagrams, algorithm pipelines | editable `.drawio`, node/edge spec, evidence table |
-| Authorized security | security `coff0xc-*` skills | AppSec, cloud, detection, identity, contracts, protocols, vulnerability lifecycle | evidence, impact, fixes, detections, hardening |
-| Autonomous composition | `coff0xc-skill-router` | uncertain or cross-domain tasks | primary/supporting skill graph, phase order, gates, re-routing conditions |
-
-See [docs/COVERAGE.md](docs/COVERAGE.md) for the full list.
+See [Skill Index](docs/SKILL_INDEX.md) for the full capability map, recipes, and manual invocation examples; see [Coverage Matrix](docs/COVERAGE.md) for full domain coverage.
 
 ## Validation
 
@@ -388,6 +413,7 @@ NOTICE                  # Attribution notice
 ## Documentation
 
 - [Usage Guide](docs/USAGE.md)
+- [Skill Index](docs/SKILL_INDEX.md)
 - [Triggering Guide](docs/TRIGGERING.md)
 - [Trigger Evaluation](docs/TRIGGER_EVAL.md)
 - [Quality Evaluation](docs/QUALITY_EVAL.md)

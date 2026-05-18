@@ -1,6 +1,6 @@
 ---
 name: coff0xc-ai-agent-rag
-description: "Use when / 当用户请求: 全面 AI Agent、RAG、Prompt、LLM 应用、多模型协作、评测、观测和成本控制工作流。触发：Agent、RAG、embedding、向量数据库、Prompt、LangChain、AutoGen、工具调用、多模型编排、代码审计协作、视觉分析、评测、缓存、记忆、失败恢复、查资料助手、调用工具、答错追踪、可落地 AI 助手、AI workflow。 Covered source aliases / 来源别名: ai-agent-dev, ai-orchestrator, deep-thinking. Capability domains / 能力域: Agent 架构, 工具调用, 记忆系统, RAG 管线, Prompt 工程, 评测, 观测与成本. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-ai-agent-rag."
+description: "Use when / 当用户请求 Agent、RAG、LLM、Prompt、embedding、向量数据库、LangChain/AutoGen、tool calling、多模型编排、记忆/缓存、评测、观测、成本、失败恢复或可落地 AI 助手。交付架构、工具 schema、检索引用、eval 和降级。手动触发：使用 coff0xc-ai-agent-rag。"
 ---
 
 # coff0xc-ai-agent-rag

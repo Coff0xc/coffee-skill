@@ -7,7 +7,8 @@ Most clients select skills from frontmatter metadata, especially `name` and `des
 ## Trigger Strategy In This Pack
 
 - Each capability skill starts with broad Chinese/English capability terms.
-- Descriptions include concrete deliverables, domain nouns, tool names, acronyms, and source aliases.
+- Descriptions include concrete deliverables, domain nouns, tool names, acronyms, and manual invocation cues without carrying long source-alias inventories.
+- Release validation keeps frontmatter descriptions under a small metadata budget so daily skill selection stays fast.
 - Each skill body starts with `快速规则（日常任务先读这里）`, then capability positioning, inputs, deliverables, boundaries, trust reasons, and examples.
 - `coff0xc-skill-router` is the fallback when auto-triggering misses and the lightweight autonomous composer for cross-domain tasks.
 - Narrow prompts should go directly to the most specific skill. Broad prompts should trigger a small workflow graph and then execution, not a long proof artifact.

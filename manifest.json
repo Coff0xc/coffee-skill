@@ -1,7 +1,7 @@
 [
   {
     "name": "coff0xc-software-engineering",
-    "description": "能力化 Coff0xc skill：面向真实仓库的工程交付能力。适合把模糊需求变成可运行代码、可复现修复、可验证测试结果和清晰 diff 摘要；强调先读仓库规则、需求包、快速内循环、模块循环、CI 复现、最终审计和 diff 卫生。 可交付：代码补丁、脚本或配置修改、失败原因和根因链路说明、单元/集成/构建验证结果、CI/回归分诊和剩余风险。触发：build end-to-end、full-stack feature、one-shot implementation、repo repair、failing tests、CI failure triage、test reproduction、fast inner loop、need package、module loop、diff hygiene、Python、JavaScript、TypeScript、Go、Rust、Java、C/C++、Shell、dashboard/admin/API implementation、最小修复、证明好了、仓库跑不起来、多文件开发、全栈功能、少问确认、直接实现、先读仓库规则、快速内循环、复现 CI、模块化实现、最终审计、只暂存相关文件。",
+    "description": "Use when / 当用户请求 dev/software engineering：build product、repo repair、failing tests/CI、bugfix、feature/refactor、full-stack/end-to-end implementation、REST API/frontend UI implementation、scripts、Python/JS/TS/Go/Rust/Java/C/C++/Shell、dashboard/admin/API、browser smoke、diff/lockfile hygiene、最小修复、直接实现、证明好了。手动触发：使用 coff0xc-software-engineering。",
     "source_skills": [
       "c-cpp-dev",
       "code-simplifier",
@@ -34,7 +34,7 @@
   },
   {
     "name": "coff0xc-ai-agent-rag",
-    "description": "能力化 Coff0xc skill：面向 AI Agent、RAG 和 LLM 应用的系统设计与落地能力。它把“写 Prompt”升级为数据、工具、检索、评测、观测和成本一起管理的工程系统。 可交付：Agent/RAG 架构方案和数据流、工具 schema、记忆/缓存策略、检索和引用策略、评测集、失败用例和质量指标。触发：Agent、RAG、embedding、向量数据库、Prompt、LangChain、AutoGen、工具调用、多模型编排、代码审计协作、视觉分析、评测、缓存、记忆、失败恢复、查资料助手、调用工具、答错追踪、可落地 AI 助手。",
+    "description": "Use when / 当用户请求 Agent、RAG、LLM、Prompt、embedding、向量数据库、LangChain/AutoGen、tool calling、多模型编排、记忆/缓存、评测、观测、成本、失败恢复或可落地 AI 助手。交付架构、工具 schema、检索引用、eval 和降级。手动触发：使用 coff0xc-ai-agent-rag。",
     "source_skills": [
       "ai-agent-dev",
       "ai-orchestrator",
@@ -57,7 +57,7 @@
   },
   {
     "name": "coff0xc-api-data-platform",
-    "description": "能力化 Coff0xc skill：面向 API、数据库、CLI/SDK 和数据契约的工程能力。目标是让接口可使用、可演进、可测试，数据链路可迁移、可追踪、可恢复。 可交付：REST/GraphQL/OpenAPI 契约、数据库 schema、迁移和数据一致性建议、CLI/SDK 命令设计、JSON 输出和错误模型。触发：REST、GraphQL、OpenAPI、SQL、数据库、迁移、CLI、SDK、分页、认证、错误码、JSON 输出、数据模型、ETL、数据质量、后端接口、请求响应、鉴权、版本兼容、存储结构。",
+    "description": "Use when / 当用户请求 API、数据库、数据平台、CLI/SDK 或接口契约：REST、GraphQL、OpenAPI、SQL/Postgres、schema/migration、分页、认证/鉴权、错误码、JSON、ETL、数据质量、usage ledger、filter builder、impact analysis。手动触发：使用 coff0xc-api-data-platform。",
     "source_skills": [
       "api-design",
       "database",
@@ -79,7 +79,7 @@
   },
   {
     "name": "coff0xc-ui-doc-output",
-    "description": "能力化 Coff0xc skill：面向 UI、前端体验、设计系统、报告表达和技术翻译交付的产物质量能力。普通任务走快路径：定中心、扫系统、做改动、做截图/浏览器 smoke、短交付；深度审美、外部 UI skill 合并、Figma/Playwright/quality eval 才按需读取 references。正式 PPTX/DOCX/PDF/XLSX 文件交付优先路由到 coff0xc-office-doc-tools。可交付：UI/组件/页面改动、桌面/移动端截图或浏览器 smoke、报告结构、交付文案、翻译润色。触发：UI、前端、frontend、dashboard、admin panel、SaaS screen、component、design system、responsive、accessibility、empty/loading/error states、hover/focus/keyboard、browser smoke、screenshot、anti-AI visual polish、页面很乱、移动端、状态门禁、可访问性、反 AI 味、报告、translation、polish、terminology consistency、翻译、润色、术语一致。",
+    "description": "Use when / 当用户请求 UI/frontend/product surface/report/translation polish：dashboard/admin/SaaS、component/design system、responsive/mobile、accessibility/ARIA/contrast、loading/empty/error/hover/focus/keyboard states、browser smoke/screenshot/console cleanliness、anti-AI visual polish。正式 Office 文件用 office-doc-tools。手动触发：使用 coff0xc-ui-doc-output。",
     "source_skills": [
       "UIdesign",
       "quick-translate"
@@ -102,7 +102,7 @@
   },
   {
     "name": "coff0xc-office-doc-tools",
-    "description": "能力化 Coff0xc skill：面向正式 Office 和文件型交付物的创建、编辑、检查、转换和验证能力。覆盖 PowerPoint/PPT/PPTX/slides/deck、Word/DOCX/document/redline/comment、PDF/read/create/review/render、Excel/XLSX/CSV/spreadsheet/workbook/chart/formula。 可交付：可编辑 PPTX、DOCX、PDF、XLSX/CSV、图表、批注/修订、公式检查、渲染截图/预览 QA、文件路径和验证说明。触发：ppt、pptx、powerpoint、slides、deck、docx、word、redline、track changes、comments、pdf、excel、xlsx、csv、spreadsheet、workbook、chart、formula、table、render、export、office、文档、演示文稿、幻灯片、表格、工作簿、公式、批注、修订、版式、导出、可编辑文件。",
+    "description": "Use when / 当用户请求正式 Office 或文件型交付物：PPT PPTX PowerPoint slides deck、DOCX Word redline comments、PDF read create review render、Excel XLSX CSV workbook chart formula table export。要求可编辑文件、渲染/OOXML/公式/格式检查。手动触发：使用 coff0xc-office-doc-tools。",
     "source_skills": [
       "documents",
       "presentations",
@@ -128,7 +128,7 @@
   },
   {
     "name": "coff0xc-research-drawio-diagram",
-    "description": "能力化 Coff0xc skill：面向论文、算法、模型和研究流程的可编辑 draw.io 图生成能力。重点是交付可继续编辑的 `.drawio` 源文件，并把图中元素和公开证据对应起来。 可交付：可编辑 `.drawio` 文件、图结构 JSON/spec 或模块清单、证据表：论文段落、公式、图号、代码路径、官方文档。触发：draw.io、diagrams.net、.drawio、科研绘图、论文配图、算法 pipeline、method figure、architecture figure、model diagram、research workflow、神经网络结构、Transformer、CNN、GNN、diffusion、RAG、agent 架构图。",
+    "description": "Use when / 当用户请求 draw.io、diagrams.net、.drawio、科研图、论文方法图、architecture/method/model diagram、algorithm pipeline、Transformer/CNN/GNN/diffusion/RAG/agent 架构图。绘制前需要 paper/arXiv/official GitHub/docs 或用户来源。手动触发：使用 coff0xc-research-drawio-diagram。",
     "source_skills": [
       "new workflow"
     ],
@@ -150,7 +150,7 @@
   },
   {
     "name": "coff0xc-secure-code-appsec",
-    "description": "能力化 Coff0xc skill：面向代码和应用安全的证据化审计能力。它把源码、路由、配置、扫描结果和日志转成可验证发现、修复建议和回归检查。 可交付：安全发现列表：位置、影响、证据、复现条件、source/sink 或权限链路说明、修复建议、测试用例、检测/日志建议。触发：代码审计、危险函数、source/sink、污点分析、Web 安全、API 安全、GraphQL、OAuth、CSP、CORS、Cookie、Prompt 注入、越权、SSRF、XSS、SQLi、后门、Webshell、绕过登录、看到别人数据、代码入口、数据流。",
+    "description": "Use when / 当用户请求 code/AppSec audit：source/sink、taint、Web/API/GraphQL/OAuth、CSP/CORS/Cookie、LLM prompt injection、access control/authorization bypass、SSRF/XSS/SQLi、backdoor/Webshell、security regression。仅限授权范围。手动触发：使用 coff0xc-secure-code-appsec。",
     "source_skills": [
       "api-discovery",
       "api-security-test",
@@ -182,7 +182,7 @@
   },
   {
     "name": "coff0xc-cloud-devsecops",
-    "description": "能力化 Coff0xc skill：面向云原生、容器、CI/CD、供应链和密钥治理的只读优先评估能力。目标是让风险有证据、修复可落地、验证可复现。 可交付：云/IaC/K8s/CI/CD 风险清单、最小权限、网络隔离、pipeline gate 和密钥轮换建议、SBOM/SCA/secret scanning 策略。触发：AWS、Azure、GCP、IAM、S3/Blob/GCS、Docker、K8s、镜像、Serverless、CI/CD、SAST、DAST、SCA、SBOM、secret scanning、IaC、Terraform、GitHub Actions、发版流水线、集群配置、镜像权限、依赖来源、配置暴露。",
+    "description": "Use when / 当用户请求 cloud、container、Kubernetes/K8s、serverless、DevSecOps、supply chain、CI/CD 或 secrets：AWS/Azure/GCP、IAM、S3/Blob/GCS、Docker、Terraform/IaC、GitHub Actions、SBOM/SCA、secret scanning、pipeline risk。手动触发：使用 coff0xc-cloud-devsecops。",
     "source_skills": [
       "cloud-security",
       "container-security",
@@ -210,7 +210,7 @@
   },
   {
     "name": "coff0xc-detection-response",
-    "description": "能力化 Coff0xc skill：面向 SOC、检测工程、威胁狩猎、取证和应急响应的防御运营能力。它把日志、样本线索和告警问题转成可验证检测、时间线和响应建议。 可交付：Sigma/YARA/查询规则草案和字段映射、IOC、时间线、攻击阶段和 ATT&CK 映射、误报分析、测试样例和调优建议。触发：SIEM、Sigma、YARA、IOC、日志、告警、EDR、IR、forensics、malware、phishing、timeline、威胁情报、狩猎、误报、安全告警太吵、检测逻辑、降误报、验证样本。",
+    "description": "Use when / 当用户请求 SOC、安全运营、detection engineering、threat hunting/intel、incident response/IR、forensics、malware、phishing：SIEM、Sigma、YARA、IOC、logs、alerts、EDR、timeline、alert tuning、误报和检测逻辑。手动触发：使用 coff0xc-detection-response。",
     "source_skills": [
       "detection-engineering",
       "email-security",
@@ -239,7 +239,7 @@
   },
   {
     "name": "coff0xc-vulnerability-lifecycle",
-    "description": "能力化 Coff0xc skill：面向漏洞全生命周期的研究、影响评估、优先级和修复跟踪能力。它把 CVE、补丁、PoC、资产信息和业务影响转成可执行修复计划。 可交付：漏洞原理和补丁差异摘要、受影响范围、CVSS/EPSS/KEV 和业务优先级、授权验证计划、缓解措施和修复 owner。触发：CVE、漏洞原理、补丁对比、advisory、CVSS、EPSS、KEV、PoC 验证、漏洞报告、bug bounty、pentest report、修复跟踪、上游修了安全问题、受不受影响、先修哪儿、跟进闭环。",
+    "description": "Use when / 当用户请求 vulnerability lifecycle：CVE、advisory、patch diff、CVSS/EPSS/KEV、PoC 验证、bug bounty、pentest report、影响范围、修复优先级、缓解措施、security patch 或修复跟踪。授权验证优先。手动触发：使用 coff0xc-vulnerability-lifecycle。",
     "source_skills": [
       "bug-bounty",
       "pentest-report",
@@ -264,7 +264,7 @@
   },
   {
     "name": "coff0xc-identity-zero-trust",
-    "description": "能力化 Coff0xc skill：面向身份、访问控制、AD/Kerberos、IAM 和零信任治理的权限风险评估能力。它帮助回答“谁能访问什么、为什么、风险在哪里、如何收敛”。 可交付：身份/权限风险清单和路径说明、MFA/SSO/session/device posture 评估、AD/Kerberos/IAM 横向移动和特权账号防御建议。触发：IAM、SSO、MFA、AD、Active Directory、Kerberos、BloodHound、权限、凭证、服务账号、提权、横向移动、Zero Trust、PAM、账号权限混乱、谁能访问什么、特权账号收敛、登录策略。",
+    "description": "Use when / 当用户请求 identity、IAM、zero trust、AD/Active Directory、Kerberos、SSO/MFA、BloodHound、PAM、service accounts、权限/凭证风险、identity paths、lateral movement defense、access governance 或特权账号收敛。手动触发：使用 coff0xc-identity-zero-trust。",
     "source_skills": [
       "ad-pentest",
       "credential-access",
@@ -290,7 +290,7 @@
   },
   {
     "name": "coff0xc-authorized-assessment",
-    "description": "能力化 Coff0xc skill：面向授权安全评估和红队到防御映射的规划能力。它把评估范围、ROE、攻击面、控制验证和报告结构组织成可批准、可执行、可复盘的方案。 可交付：授权范围和 ROE 草案、攻击面清单、测试阶段和禁止动作、控制验证矩阵、检测覆盖和演练观测点。触发：recon、fingerprint、attack chain、full pentest、red team、C2、evasion、phishing simulation、post-exploitation、data exfiltration、CDN/WAF、proxy、social engineering、ROE、书面授权、完整入侵链、防护发现、边界和步骤、防御验证。",
+    "description": "Use only for authorized security assessment / 当用户请求已授权评估、ROE、attack surface、recon/fingerprint、red team/adversary emulation、防御化攻击链规划、control validation、CDN/WAF 边界、phishing/social-engineering simulation planning 或报告。高风险动作先确认范围。手动触发：使用 coff0xc-authorized-assessment。",
     "source_skills": [
       "attack-chain-orchestrator",
       "autoredteam-orchestrator",
@@ -325,7 +325,7 @@
   },
   {
     "name": "coff0xc-binary-mobile-iot",
-    "description": "能力化 Coff0xc skill：面向二进制、移动、IoT/ICS、固件和密码实现的逆向分析能力。它把样本、固件、APK、协议和调试线索转成结构化理解、风险点和验证路线。 可交付：样本/固件结构和入口点分析、字符串、配置、权限、通信和硬件接口线索、内存安全、加密实现、协议解析或移动风险发现。触发：reverse engineering、PWN、kernel、APK、IPA、Frida、firmware、UART、JTAG、SPI、SCADA、PLC、Modbus、BLE、RF、CTF、crypto review、constant-time、设备包、可执行文件、通信固件、静态分析、动态调试、接口枚举。",
+    "description": "Use when / 当用户请求 reverse engineering、PWN、kernel、APK/IPA、Frida、firmware、IoT/ICS/SCADA、PLC/Modbus、UART/JTAG/SPI、BLE/RF、CTF、crypto review、constant-time、设备包或可执行文件分析。手动触发：使用 coff0xc-binary-mobile-iot。",
     "source_skills": [
       "binary-exploit",
       "crypto-security",
@@ -355,7 +355,7 @@
   },
   {
     "name": "coff0xc-blockchain-security",
-    "description": "能力化 Coff0xc skill：面向区块链、智能合约、DeFi 和多链项目的安全审计能力。重点是资金流、权限、状态转换、预言机、跨链和测试覆盖。 可交付：合约入口点和权限模型清单、资产流、状态机、价格来源和外部调用风险、漏洞发现、影响、PoC 思路和修复建议。触发：Solidity、EVM、Solana、Cosmos、Substrate、Cairo/StarkNet、TON、Algorand、DeFi、AMM、oracle、bridge、token、NFT、智能合约审计、Foundry、Hardhat、Slither、链上资金逻辑、价格来源、资产流转、合约权限、测试覆盖。",
+    "description": "Use when / 当用户请求 blockchain、smart contract、DeFi/Web3、多链安全：Solidity/EVM、Solana、Cosmos、Substrate、Cairo/StarkNet、TON、Algorand、AMM、oracle、bridge、token/NFT、Foundry/Hardhat/Slither、资产流和权限。手动触发：使用 coff0xc-blockchain-security。",
     "source_skills": [
       "blockchain-security"
     ],
@@ -378,7 +378,7 @@
   },
   {
     "name": "coff0xc-compliance-architecture",
-    "description": "能力化 Coff0xc skill：面向安全架构、威胁建模、合规映射、数据安全和成熟度评估的治理能力。它把系统设计、控制要求和审计证据整理成能落地的风险决策材料。 可交付：架构风险评审和信任边界图、STRIDE/威胁建模、控制矩阵和差距分析、数据分类、隐私、DLP 和日志审计建议。触发：安全架构、STRIDE、威胁建模、等保、PCI-DSS、GDPR、ISO27001、SOC2、CIS、NIST、数据分类、脱敏、DLP、隐私、基线、控制矩阵、安全评审、风险模型、控制项、审计证据、上线前评审。",
+    "description": "Use when / 当用户请求 security architecture、threat modeling、compliance、data security/privacy/DLP、baseline：STRIDE、等保、PCI-DSS、GDPR、ISO27001、SOC2、CIS/NIST、control evidence、risk register、audit log、executive/compliance report、release evidence。手动触发：使用 coff0xc-compliance-architecture。",
     "source_skills": [
       "compliance-audit",
       "data-security",
@@ -401,7 +401,7 @@
   },
   {
     "name": "coff0xc-purple-deception",
-    "description": "能力化 Coff0xc skill：面向紫队、ATT&CK 映射、检测覆盖验证和欺骗防御的安全运营改进能力。它把攻击行为语言翻译成可观测、可检测、可改进的防御能力。 可交付：ATT&CK 技术映射和演练假设、检测覆盖矩阵、日志需求和响应验证点、蜜罐/诱饵/canary 设计建议。触发：purple team、ATT&CK、红蓝对抗、control validation、detection coverage、emulation plan、honeypot、deception、decoy、canary、检测有效性、蓝队发现攻击行为、覆盖指标、改进闭环、防守能力验证。",
+    "description": "Use when / 当用户请求 purple team、ATT&CK、control validation、detection coverage、emulation plan、honeypot/deception、decoy/canary、SOC 改进、检测有效性、覆盖指标或防守能力验证。仅限授权防御演练。手动触发：使用 coff0xc-purple-deception。",
     "source_skills": [
       "honeypot",
       "purple-team"
@@ -422,7 +422,7 @@
   },
   {
     "name": "coff0xc-network-protocol-security",
-    "description": "能力化 Coff0xc skill：面向网络协议、TLS/DNS/QUIC/HTTP、无线通信、抓包和形式化建模的协议安全分析能力。它把通信证据转成流程图、风险点和验证建议。 可交付：协议流程、握手和状态机说明、pcap/日志字段分析、异常字段和安全影响、TLS/PKI/DNS/HTTP/QUIC/无线风险清单。触发：network protocol、TLS、DNS、HTTP/2、HTTP/3、QUIC、TCP、UDP、WiFi、Bluetooth、BLE、RF、packet、pcap、Wireshark、协议分析、安全通信、ProVerif、Mermaid protocol、抓包、握手、解析异常、加密协商、异常字段、通信流程。",
+    "description": "Use when / 当用户请求 network/protocol security：TLS、DNS、TCP/UDP、HTTP/2、HTTP/3、QUIC、WiFi、Bluetooth/BLE、RF、packet/pcap/Wireshark、抓包、握手、状态机、secure communication、ProVerif 或 Mermaid protocol。手动触发：使用 coff0xc-network-protocol-security。",
     "source_skills": [
       "network-protocol",
       "wireless-security"
@@ -443,7 +443,7 @@
   },
   {
     "name": "coff0xc-skill-router",
-    "description": "能力化 Coff0xc skill：面向不确定任务和跨领域任务的轻量 autonomous skill composer。它不是普通任务的必经步骤；窄任务应直接进入最具体 skill。只有用户要求 AI 自己判断、串联 skill、生成任务图/工作流图、处理跨领域/多维度任务，或自动触发失败时，才由它选择主 skill、添加必要辅助 skill、排阶段、设门禁并根据证据重路由；完整路由表按需读取 reference。可交付：轻量主/辅 skill graph、阶段顺序、验证门禁、候选取舍、最小澄清问题和重路由条件。触发：自主编排、多 skill 工作流、AI 自己判断、自动串联 skill、任务图、工作流图、vibe coding、跨领域、跨域、多领域、多维度、编排工作流、不确定用哪个、选择 skill、帮我分流、串联 skill。",
+    "description": "Coff0xc lightweight skill router/composer. Use only when the user asks AI to decide which coff0xc skills to use, chain skills, build a task/workflow graph, orchestrate vibe coding, handle cross-domain/multi-domain work, or recover an uncertain trigger. Also for broad plan work spanning dev API UI or security cloud identity detection compliance Office. 中文触发：自主编排、多 skill、AI 自己判断、跨领域、工作流图。窄任务不用 router。",
     "source_skills": [],
     "similar_installed_skills": [],
     "security_boundary": true,

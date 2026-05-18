@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import subprocess
 from pathlib import Path
 
 
@@ -17,6 +18,8 @@ GITHUB_TOKEN_MARKER = "github" + r"_pat_[A-Za-z0-9_]+|" + "ghp" + r"_[A-Za-z0-9_
 OPENAI_KEY_MARKER = "sk" + r"-[A-Za-z0-9]{20,}"
 QUICK_RULE_HEADING = "## 快速规则（日常任务先读这里）"
 SKILL_ID_PATTERN = re.compile(r"<!--\s*skill-id:\s*cs-[a-z0-9]{3}-[a-f0-9]{8}\s*-->")
+MAX_SKILL_DESCRIPTION_CHARS = 450
+MAX_TOTAL_DESCRIPTION_CHARS = 5000
 FORBIDDEN_LICENSE_TERMS = [
     "AGPL",
     "GNU Affero",
@@ -41,6 +44,7 @@ REQUIRED_FILES = [
     "docs/TRIGGER_EVAL.md",
     "docs/QUALITY_EVAL.md",
     "docs/USAGE.md",
+    "docs/SKILL_INDEX.md",
     "docs/LANGUAGES.md",
     "docs/COVERAGE.md",
     "docs/SANITIZATION.md",
@@ -138,6 +142,42 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, str], list[str]]:
     return values, errors
 
 
+def iter_release_text_files() -> list[Path]:
+    """Return tracked release files for leakage checks.
+
+    Local planning notes and evidence files can contain machine-private paths.
+    Release validation should protect files that are actually published.
+    """
+    try:
+        result = subprocess.run(
+            ["git", "ls-files"],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        )
+    except OSError:
+        result = None
+
+    if result is not None and result.returncode == 0:
+        release_rels = {rel for rel in result.stdout.splitlines() if rel.strip()}
+        release_rels.update(REQUIRED_FILES)
+        release_rels.update(REQUIRED_I18N_FILES)
+        candidates = [(ROOT / rel).resolve() for rel in sorted(release_rels) if (ROOT / rel).exists()]
+    else:
+        candidates = sorted(ROOT.rglob("*"))
+
+    files: list[Path] = []
+    for path in candidates:
+        if path.is_dir() or ".git" in path.parts:
+            continue
+        if path.suffix.lower() not in {".md", ".json", ".py", ""} and path.name not in {"LICENSE"}:
+            continue
+        files.append(path)
+    return files
+
+
 def main() -> None:
     errors: list[str] = []
 
@@ -167,18 +207,30 @@ def main() -> None:
     if len(skill_paths) != len(manifest):
         errors.append(f"skill count mismatch: files={len(skill_paths)} manifest={len(manifest)}")
 
-    manifest_names = {item.get("name") for item in manifest}
+    manifest_by_name = {item.get("name"): item for item in manifest}
+    manifest_names = set(manifest_by_name)
+    total_description_chars = 0
     for path in skill_paths:
         folder = path.parent.name
         values, fm_errors = parse_frontmatter(path)
         errors.extend(fm_errors)
         text = path.read_text(encoding="utf-8")
+        description = values.get("description", "")
         if values.get("name") != folder:
             errors.append(f"{path}: frontmatter name does not match folder")
         if folder not in manifest_names:
             errors.append(f"{path}: not listed in manifest")
-        if not values.get("description"):
+        if not description:
             errors.append(f"{path}: missing description")
+        else:
+            total_description_chars += len(description)
+            if len(description) > MAX_SKILL_DESCRIPTION_CHARS:
+                errors.append(
+                    f"{path}: description too long ({len(description)} chars > {MAX_SKILL_DESCRIPTION_CHARS})"
+                )
+            manifest_item = manifest_by_name.get(folder)
+            if manifest_item is not None and manifest_item.get("description") != description:
+                errors.append(f"{path}: frontmatter description differs from manifest")
         if QUICK_RULE_HEADING not in text:
             errors.append(f"{path}: missing quick rules section")
         elif "## 能力定位" in text and text.index(QUICK_RULE_HEADING) > text.index("## 能力定位"):
@@ -186,17 +238,18 @@ def main() -> None:
         if not SKILL_ID_PATTERN.search(text):
             errors.append(f"{path}: missing source skill-id marker")
 
-    for path in sorted(ROOT.rglob("*")):
-        if path.is_dir() or ".git" in path.parts:
-            continue
-        if path.suffix.lower() not in {".md", ".json", ".py", ""} and path.name not in {"LICENSE"}:
-            continue
+    if total_description_chars > MAX_TOTAL_DESCRIPTION_CHARS:
+        errors.append(
+            f"frontmatter description budget exceeded: {total_description_chars} chars > {MAX_TOTAL_DESCRIPTION_CHARS}"
+        )
+
+    for path in iter_release_text_files():
         text = path.read_text(encoding="utf-8", errors="ignore")
         for idx, line in enumerate(text.splitlines(), 1):
             if path.name in {"README.md", "NOTICE"} or path.parts[-2:] == ("docs", "PROVENANCE.md"):
                 for term in FORBIDDEN_LICENSE_TERMS:
                     if term in line:
-                        errors.append(f"{path}:{idx}: stale non-open-source license term {term}")
+                        errors.append(f"{path}:{idx}: stale open-source license term {term}")
             for pattern in SENSITIVE_PATTERNS:
                 if pattern.search(line):
                     errors.append(f"{path}:{idx}: sensitive pattern {pattern.pattern}")

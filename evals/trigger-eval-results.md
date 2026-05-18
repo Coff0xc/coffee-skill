@@ -9,7 +9,7 @@ Important: this is a local proxy evaluation based on `SKILL.md` frontmatter meta
 - Cases: 131
 - Skills: 18
 - Threshold: 3.0
-- Positive top-1 rate: 0.9483
+- Positive top-1 rate: 0.9397
 - Positive top-3 rate: 1.0
 - Positive triggered rate: 1.0
 - Router top-1 rate: 0.6842
@@ -23,7 +23,7 @@ Important: this is a local proxy evaluation based on `SKILL.md` frontmatter meta
 | Skill | Total | Top-1 | Top-3 | Triggered |
 |---|---:|---:|---:|---:|
 | `coff0xc-ai-agent-rag` | 5 | 1.0 | 1.0 | 1.0 |
-| `coff0xc-api-data-platform` | 5 | 1.0 | 1.0 | 1.0 |
+| `coff0xc-api-data-platform` | 5 | 0.8 | 1.0 | 1.0 |
 | `coff0xc-authorized-assessment` | 5 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-binary-mobile-iot` | 5 | 1.0 | 1.0 | 1.0 |
 | `coff0xc-blockchain-security` | 5 | 1.0 | 1.0 | 1.0 |

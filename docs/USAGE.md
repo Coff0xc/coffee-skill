@@ -38,6 +38,8 @@ python .\scripts\run_quality_eval.py
 
 Use this pack by matching your task to the outcome you want, not by memorizing every source skill. For narrow tasks, name one skill directly or describe the task naturally. For broad work, ask the router to choose and chain only the needed skills.
 
+For a compact card-style index, see [Skill Index](SKILL_INDEX.md).
+
 | If you want... | Use this skill | Expected capability |
 |---|---|---|
 | 使用 coff0xc-software-engineering 修复这个 repo 的 failing tests，并说明验证结果。 | `coff0xc-software-engineering` | 代码补丁、脚本或配置修改; 失败原因和根因链路说明; 快速内循环、CI 复现和 diff 卫生 |

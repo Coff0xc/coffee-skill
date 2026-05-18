@@ -1,6 +1,6 @@
 ---
 name: coff0xc-skill-router
-description: "Coff0xc lightweight skill router and autonomous multi-skill composer. Use only when the user asks the AI to decide which coff0xc skills to use, chain skills, build a task/workflow graph, orchestrate vibe coding, handle cross-domain/multi-domain work, or recover from an uncertain/missing trigger. 中文触发：自主编排、多 skill 工作流、AI 自己判断、自动串联 skill、任务图、工作流图、跨领域、跨域、多领域、多维度、编排工作流、vibe coding、不确定用哪个、选择 skill、帮我分流、串联 skill。Do not use for narrow tasks already covered by one specific skill."
+description: "Coff0xc lightweight skill router/composer. Use only when the user asks AI to decide which coff0xc skills to use, chain skills, build a task/workflow graph, orchestrate vibe coding, handle cross-domain/multi-domain work, or recover an uncertain trigger. Also for broad plan work spanning dev API UI or security cloud identity detection compliance Office. 中文触发：自主编排、多 skill、AI 自己判断、跨领域、工作流图。窄任务不用 router。"
 ---
 
 # coff0xc-skill-router

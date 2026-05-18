@@ -1,6 +1,6 @@
 ---
 name: coff0xc-binary-mobile-iot
-description: "Use when / 当用户请求: 全面二进制/逆向/内核/移动/IoT/ICS/CTF/密码学安全分析工作流。触发：reverse engineering、PWN、kernel、APK、IPA、Frida、firmware、UART、JTAG、SPI、SCADA、PLC、Modbus、BLE、RF、CTF、crypto review、constant-time、设备包、可执行文件、通信固件、静态分析、动态调试、接口枚举。 Covered source aliases / 来源别名: binary-exploit, crypto-security, ctf, ics-scada, iot-security, kernel-security, mobile-security, reverse-engineering. Capability domains / 能力域: 二进制/逆向, PWN/CTF, 内核安全, 移动安全, IoT 固件, 硬件接口, ICS/OT, 密码学. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-binary-mobile-iot."
+description: "Use when / 当用户请求 reverse engineering、PWN、kernel、APK/IPA、Frida、firmware、IoT/ICS/SCADA、PLC/Modbus、UART/JTAG/SPI、BLE/RF、CTF、crypto review、constant-time、设备包或可执行文件分析。手动触发：使用 coff0xc-binary-mobile-iot。"
 ---
 
 # coff0xc-binary-mobile-iot

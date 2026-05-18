@@ -1,6 +1,6 @@
 ---
 name: coff0xc-research-drawio-diagram
-description: "Use when / 当用户请求: 科研算法架构图、论文方法图、论文级模型结构图、模型结构图、实验流程图、draw.io、diagrams.net、.drawio 可编辑文件、算法 pipeline、method figure、architecture figure、paper figure、model diagram、model structure、research workflow、arXiv、official GitHub、科研绘图、论文配图、神经网络结构、Transformer/CNN/GNN/diffusion/RAG/agent 架构图。Requires public-source analysis before drawing: paper, arXiv, official repo, docs, method section, equations, ablation, benchmark, or user-provided sources. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-research-drawio-diagram."
+description: "Use when / 当用户请求 draw.io、diagrams.net、.drawio、科研图、论文方法图、architecture/method/model diagram、algorithm pipeline、Transformer/CNN/GNN/diffusion/RAG/agent 架构图。绘制前需要 paper/arXiv/official GitHub/docs 或用户来源。手动触发：使用 coff0xc-research-drawio-diagram。"
 ---
 
 # coff0xc-research-drawio-diagram

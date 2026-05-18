@@ -1,6 +1,6 @@
 ---
 name: coff0xc-cloud-devsecops
-description: "Use when / 当用户请求: 全面云安全、容器/Kubernetes、Serverless、DevSecOps、供应链、CI/CD 和密钥管理工作流。触发：AWS、Azure、GCP、IAM、S3/Blob/GCS、Docker、K8s、Kubernetes、镜像、Serverless、CI/CD、SAST、DAST、SCA、SBOM、supply chain、supply-chain、secret scanning、IaC、Terraform、GitHub Actions、发版流水线、集群配置、镜像权限、依赖来源、配置暴露、pipeline risk。 Covered source aliases / 来源别名: cloud-security, container-security, devsecops, docker-k8s, secrets-management, serverless-security, supply-chain-security. Capability domains / 能力域: 云配置, 容器镜像, Kubernetes, Serverless, CI/CD, 供应链, 密钥管理. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-cloud-devsecops."
+description: "Use when / 当用户请求 cloud、container、Kubernetes/K8s、serverless、DevSecOps、supply chain、CI/CD 或 secrets：AWS/Azure/GCP、IAM、S3/Blob/GCS、Docker、Terraform/IaC、GitHub Actions、SBOM/SCA、secret scanning、pipeline risk。手动触发：使用 coff0xc-cloud-devsecops。"
 ---
 
 # coff0xc-cloud-devsecops

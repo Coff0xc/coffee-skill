@@ -1,6 +1,6 @@
 ---
 name: coff0xc-purple-deception
-description: "Use when / 当用户请求: 全面紫队演练、ATT&CK 映射、控制验证、检测能力评估、蜜罐/欺骗防御和安全运营改进工作流。触发：purple team、ATT&CK、红蓝对抗、control validation、detection coverage、emulation plan、honeypot、deception、decoy、canary、检测有效性、蓝队发现攻击行为、覆盖指标、改进闭环、防守能力验证。 Covered source aliases / 来源别名: honeypot, purple-team. Capability domains / 能力域: ATT&CK 映射, 演练计划, 检测验证, 响应验证, 欺骗防御, 指标. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-purple-deception."
+description: "Use when / 当用户请求 purple team、ATT&CK、control validation、detection coverage、emulation plan、honeypot/deception、decoy/canary、SOC 改进、检测有效性、覆盖指标或防守能力验证。仅限授权防御演练。手动触发：使用 coff0xc-purple-deception。"
 ---
 
 # coff0xc-purple-deception

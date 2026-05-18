@@ -1,6 +1,6 @@
 ---
 name: coff0xc-office-doc-tools
-description: "Use when / 当用户请求: 正式 Office 和文件型交付物能力，覆盖 PowerPoint/PPT/PPTX/slides/deck、Word/DOCX/document/redline/comment、PDF/read/create/review/render、Excel/XLSX/CSV/spreadsheet/workbook/chart/formula。适合创建、编辑、检查、转换、批注、渲染验证和导出可交付文件。可交付：可编辑 PPTX、DOCX、PDF、XLSX/CSV、图表、批注/修订、公式检查、渲染截图/预览 QA、文件路径和验证说明。触发：ppt、pptx、powerpoint、slides、deck、docx、word、redline、track changes、comments、pdf、excel、xlsx、csv、spreadsheet、workbook、chart、formula、table、render、export、office、文档、演示文稿、幻灯片、表格、工作簿、公式、批注、修订、版式、导出、可编辑文件。If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-office-doc-tools."
+description: "Use when / 当用户请求正式 Office 或文件型交付物：PPT PPTX PowerPoint slides deck、DOCX Word redline comments、PDF read create review render、Excel XLSX CSV workbook chart formula table export。要求可编辑文件、渲染/OOXML/公式/格式检查。手动触发：使用 coff0xc-office-doc-tools。"
 ---
 
 # coff0xc-office-doc-tools

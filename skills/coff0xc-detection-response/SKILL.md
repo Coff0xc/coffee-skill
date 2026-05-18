@@ -1,6 +1,6 @@
 ---
 name: coff0xc-detection-response
-description: "Use when / 当用户请求: 全面 SOC、安全运营、检测工程、威胁狩猎、威胁情报、邮件安全、恶意软件分析、取证和应急响应工作流。触发：SIEM、Sigma、YARA、Sigma/YARA、IOC、日志、告警、EDR、IR、forensics、malware、phishing、timeline、detection response、incident response、incident、威胁情报、狩猎、误报、安全告警太吵、安全告警、检测响应、事故响应、检测逻辑、降误报、验证样本、alert tuning。 Covered source aliases / 来源别名: detection-engineering, email-security, forensics-analysis, incident-response, malware-analysis, osint, soc-operations, threat-hunting, threat-intelligence. Capability domains / 能力域: 检测工程, SOC 运营, 威胁狩猎, 威胁情报, 邮件安全, 取证分析, 恶意软件分析, 应急响应. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-detection-response."
+description: "Use when / 当用户请求 SOC、安全运营、detection engineering、threat hunting/intel、incident response/IR、forensics、malware、phishing：SIEM、Sigma、YARA、IOC、logs、alerts、EDR、timeline、alert tuning、误报和检测逻辑。手动触发：使用 coff0xc-detection-response。"
 ---
 
 # coff0xc-detection-response

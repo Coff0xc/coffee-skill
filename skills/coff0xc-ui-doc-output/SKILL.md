@@ -1,6 +1,6 @@
 ---
 name: coff0xc-ui-doc-output
-description: "Use when / 当用户请求 UI、frontend、dashboard/admin/SaaS screen、component/design system、responsive/mobile、accessibility/ARIA/contrast、empty/loading/error/hover/focus/keyboard states、browser smoke/screenshot/console cleanliness、anti-AI visual polish、technical/executive report narrative、translation/polish/terminology consistency。中文触发：UI、前端、页面很乱、dashboard、组件、设计系统、视觉验证、截图、移动端、状态门禁、可访问性、反 AI 味、报告、翻译、润色、交付文案、术语一致。正式 PPTX/DOCX/PDF/XLSX/CSV 文件交付用 coff0xc-office-doc-tools。手动触发：使用 coff0xc-ui-doc-output。"
+description: "Use when / 当用户请求 UI/frontend/product surface/report/translation polish：dashboard/admin/SaaS、component/design system、responsive/mobile、accessibility/ARIA/contrast、loading/empty/error/hover/focus/keyboard states、browser smoke/screenshot/console cleanliness、anti-AI visual polish。正式 Office 文件用 office-doc-tools。手动触发：使用 coff0xc-ui-doc-output。"
 ---
 
 # coff0xc-ui-doc-output

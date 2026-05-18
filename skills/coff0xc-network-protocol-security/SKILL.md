@@ -1,6 +1,6 @@
 ---
 name: coff0xc-network-protocol-security
-description: "Use when / 当用户请求: 全面网络协议、TLS/DNS/TCP/UDP/QUIC/HTTP、无线/RF/蓝牙、协议日志分析、通信安全和形式化协议建模工作流。触发：network protocol、TLS、DNS、HTTP/2、HTTP/3、QUIC、TCP、UDP、WiFi、Bluetooth、BLE、RF、packet、pcap、Wireshark、协议分析、安全通信、ProVerif、Mermaid protocol、抓包、握手、解析异常、加密协商、异常字段、通信流程。 Covered source aliases / 来源别名: network-protocol, wireless-security. Capability domains / 能力域: 协议设计, TLS/PKI, DNS, HTTP/QUIC, Packet 分析, 无线/BLE/RF, 形式化. If this skill does not auto-trigger, user can manually invoke: 使用 coff0xc-network-protocol-security."
+description: "Use when / 当用户请求 network/protocol security：TLS、DNS、TCP/UDP、HTTP/2、HTTP/3、QUIC、WiFi、Bluetooth/BLE、RF、packet/pcap/Wireshark、抓包、握手、状态机、secure communication、ProVerif 或 Mermaid protocol。手动触发：使用 coff0xc-network-protocol-security。"
 ---
 
 # coff0xc-network-protocol-security

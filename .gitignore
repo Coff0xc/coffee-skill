@@ -28,3 +28,9 @@ extracted/
 # Quality-eval local agent outputs
 evals/quality/responses/
 !evals/quality/golden-responses/
+
+# Local planning/evidence notes
+task_plan.md
+progress.md
+findings.md
+suspected-copy-evidence.md
