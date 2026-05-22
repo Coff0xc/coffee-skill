@@ -23,6 +23,8 @@ MAX_SKILL_DESCRIPTION_CHARS = 450
 MAX_TOTAL_DESCRIPTION_CHARS = 5000
 MAX_SKILL_BODY_BYTES = 6800
 FULL_WORKFLOW_REFERENCE = "references/full-workflow.md"
+SKILL_INVENTORY_JSON = ROOT / "docs" / "skill-inventory.json"
+SKILL_INVENTORY_MD = ROOT / "docs" / "SKILL_INVENTORY.md"
 FORBIDDEN_LICENSE_TERMS = [
     "AGPL",
     "GNU Affero",
@@ -136,6 +138,34 @@ def dynamic_required_files() -> list[str]:
     return files
 
 
+def validate_skill_inventory() -> list[str]:
+    errors: list[str] = []
+    try:
+        from build_skill_inventory import collect_inventory, render_markdown
+    except Exception as exc:  # pragma: no cover - release gate path
+        return [f"skill inventory generator import failed: {exc}"]
+
+    if not SKILL_INVENTORY_JSON.exists():
+        errors.append("missing required file: docs/skill-inventory.json")
+    if not SKILL_INVENTORY_MD.exists():
+        errors.append("missing required file: docs/SKILL_INVENTORY.md")
+    if errors:
+        return errors
+
+    expected = collect_inventory()
+    try:
+        actual_json = json.loads(SKILL_INVENTORY_JSON.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return [f"docs/skill-inventory.json: invalid JSON: {exc}"]
+
+    actual_md = SKILL_INVENTORY_MD.read_text(encoding="utf-8")
+    if actual_json != expected:
+        errors.append("docs/skill-inventory.json is stale or inconsistent with scripts/build_skill_inventory.py")
+    if actual_md != render_markdown(expected):
+        errors.append("docs/SKILL_INVENTORY.md is stale or inconsistent with scripts/build_skill_inventory.py")
+    return errors
+
+
 def parse_frontmatter(path: Path) -> tuple[dict[str, str], list[str]]:
     errors: list[str] = []
     lines = path.read_text(encoding="utf-8").splitlines()
@@ -203,6 +233,7 @@ def main() -> None:
     for rel in [*dynamic_required_files(), *REQUIRED_I18N_FILES]:
         if not (ROOT / rel).exists():
             errors.append(f"missing required file: {rel}")
+    errors.extend(validate_skill_inventory())
 
     license_path = ROOT / "LICENSE"
     if license_path.exists():

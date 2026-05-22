@@ -171,6 +171,7 @@ def md_escape(text: str) -> str:
 def collect_inventory() -> dict:
     items: list[dict[str, str]] = []
     source_counts: Counter[str] = Counter()
+    by_name: dict[str, list[dict[str, str]]] = defaultdict(list)
     for source in sources():
         for path in skill_files_for(source):
             fm = parse_frontmatter(path)
@@ -190,17 +191,26 @@ def collect_inventory() -> dict:
                 "publish_policy": source.publish_policy,
             }
             items.append(item)
+            by_name[name].append(item)
             source_counts[source.id] += 1
 
     names = Counter(item["name"] for item in items)
-    duplicates = {
-        name: {
-            "instances": count,
-            "sources": sorted({item["source"] for item in items if item["name"] == name}),
+    duplicates = {}
+    for name in sorted(names):
+        group = sorted(by_name[name], key=lambda item: (item["source"], item["relative_skill_path"]))
+        if len(group) <= 1:
+            continue
+        duplicates[name] = {
+            "instances": len(group),
+            "entries": [
+                {
+                    "source": item["source"],
+                    "relative_skill_path": item["relative_skill_path"],
+                    "mapped_coff0xc_skill": item["mapped_coff0xc_skill"],
+                }
+                for item in group
+            ],
         }
-        for name, count in sorted(names.items())
-        if count > 1
-    }
     map_counts = Counter(item["mapped_coff0xc_skill"] for item in items)
 
     return {
@@ -253,17 +263,27 @@ def render_markdown(inventory: dict) -> str:
         "plugin-runtime": "Primary runtime plugin skills.",
     }
     policy_by_source = {source.id: source.publish_policy for source in sources()}
+    source_order = ["coffee-release", "codex-user", "codex-system", "agents-user", "plugin-bundled", "plugin-runtime"]
+    for source in [s for s in source_order if s in counts["sources"]]:
+        lines.append(
+            f"| `{source}` | {counts['sources'][source]} | `{policy_by_source.get(source, 'metadata-only')}` | {source_meanings.get(source, '')} |"
+        )
     for source, count in sorted(counts["sources"].items()):
+        if source in source_order:
+            continue
         lines.append(
             f"| `{source}` | {count} | `{policy_by_source.get(source, 'metadata-only')}` | {source_meanings.get(source, '')} |"
         )
 
     lines.extend(["", "## Duplicate Names", ""])
     if inventory["duplicates"]:
-        lines.extend(["| Name | Sources |", "|---|---|"])
+        lines.extend(["| Name | Instances | Entries |", "|---|---:|---|"])
         for name, meta in inventory["duplicates"].items():
-            srcs = meta["sources"]
-            lines.append(f"| `{md_escape(name)}` | {meta['instances']} instance(s): {', '.join(f'`{src}`' for src in srcs)} |")
+            entries = "; ".join(
+                f"`{md_escape(entry['source'])}`:`{md_escape(entry['relative_skill_path'])}` -> `{md_escape(entry['mapped_coff0xc_skill'])}`"
+                for entry in meta["entries"]
+            )
+            lines.append(f"| `{md_escape(name)}` | {meta['instances']} | {entries} |")
     else:
         lines.append("No duplicate skill names were found.")
 

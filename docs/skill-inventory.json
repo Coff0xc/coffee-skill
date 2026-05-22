@@ -40,148 +40,317 @@
   "duplicates": {
     "Chrome": {
       "instances": 2,
-      "sources": [
-        "plugin-bundled"
+      "entries": [
+        {
+          "source": "plugin-bundled",
+          "relative_skill_path": "chrome/0.1.7/skills/chrome/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-ui-doc-output"
+        },
+        {
+          "source": "plugin-bundled",
+          "relative_skill_path": "chrome/latest/skills/chrome/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-ui-doc-output"
+        }
       ]
     },
     "UIdesign": {
       "instances": 2,
-      "sources": [
-        "agents-user",
-        "codex-user"
+      "entries": [
+        {
+          "source": "agents-user",
+          "relative_skill_path": "UIdesign/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-ui-doc-output"
+        },
+        {
+          "source": "codex-user",
+          "relative_skill_path": "UIdesign/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-ui-doc-output"
+        }
       ]
     },
     "coff0xc-ai-agent-rag": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-ai-agent-rag/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-ai-agent-rag"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-ai-agent-rag/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-ai-agent-rag"
+        }
       ]
     },
     "coff0xc-api-data-platform": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-api-data-platform/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-api-data-platform"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-api-data-platform/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-api-data-platform"
+        }
       ]
     },
     "coff0xc-authorized-assessment": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-authorized-assessment/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-authorized-assessment"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-authorized-assessment/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-authorized-assessment"
+        }
       ]
     },
     "coff0xc-binary-mobile-iot": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-binary-mobile-iot/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-binary-mobile-iot"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-binary-mobile-iot/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-binary-mobile-iot"
+        }
       ]
     },
     "coff0xc-blockchain-security": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-blockchain-security/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-blockchain-security"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-blockchain-security/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-blockchain-security"
+        }
       ]
     },
     "coff0xc-cloud-devsecops": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-cloud-devsecops/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-cloud-devsecops"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-cloud-devsecops/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-cloud-devsecops"
+        }
       ]
     },
     "coff0xc-compliance-architecture": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-compliance-architecture/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-compliance-architecture"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-compliance-architecture/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-compliance-architecture"
+        }
       ]
     },
     "coff0xc-detection-response": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-detection-response/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-detection-response"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-detection-response/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-detection-response"
+        }
       ]
     },
     "coff0xc-identity-zero-trust": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-identity-zero-trust/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-identity-zero-trust"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-identity-zero-trust/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-identity-zero-trust"
+        }
       ]
     },
     "coff0xc-network-protocol-security": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-network-protocol-security/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-network-protocol-security"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-network-protocol-security/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-network-protocol-security"
+        }
       ]
     },
     "coff0xc-office-doc-tools": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-office-doc-tools/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-office-doc-tools"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-office-doc-tools/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-office-doc-tools"
+        }
       ]
     },
     "coff0xc-purple-deception": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-purple-deception/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-purple-deception"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-purple-deception/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-purple-deception"
+        }
       ]
     },
     "coff0xc-research-drawio-diagram": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-research-drawio-diagram/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-research-drawio-diagram"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-research-drawio-diagram/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-research-drawio-diagram"
+        }
       ]
     },
     "coff0xc-secure-code-appsec": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-secure-code-appsec/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-secure-code-appsec"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-secure-code-appsec/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-secure-code-appsec"
+        }
       ]
     },
     "coff0xc-skill-router": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-skill-router/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-skill-router"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-skill-router/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-skill-router"
+        }
       ]
     },
     "coff0xc-software-engineering": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-software-engineering/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-software-engineering"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-software-engineering/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-software-engineering"
+        }
       ]
     },
     "coff0xc-ui-doc-output": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-ui-doc-output/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-ui-doc-output"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-ui-doc-output/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-ui-doc-output"
+        }
       ]
     },
     "coff0xc-vulnerability-lifecycle": {
       "instances": 2,
-      "sources": [
-        "codex-user",
-        "coffee-release"
+      "entries": [
+        {
+          "source": "codex-user",
+          "relative_skill_path": "coff0xc-vulnerability-lifecycle/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-vulnerability-lifecycle"
+        },
+        {
+          "source": "coffee-release",
+          "relative_skill_path": "coff0xc-vulnerability-lifecycle/SKILL.md",
+          "mapped_coff0xc_skill": "coff0xc-vulnerability-lifecycle"
+        }
       ]
     },
     "skill-creator": {
       "instances": 2,
-      "sources": [
-        "agents-user",
-        "codex-system"
+      "entries": [
+        {
+          "source": "agents-user",
+          "relative_skill_path": "skill-creator/SKILL.md",
+          "mapped_coff0xc_skill": "supporting-tooling"
+        },
+        {
+          "source": "codex-system",
+          "relative_skill_path": "skill-creator/SKILL.md",
+          "mapped_coff0xc_skill": "supporting-tooling"
+        }
       ]
     }
   },

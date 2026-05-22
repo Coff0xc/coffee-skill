@@ -15,38 +15,38 @@ It does not redistribute raw external, system, or plugin skill bodies.
 
 | Source | Count | Policy | Meaning |
 |---|---:|---|---|
-| `agents-user` | 86 | `metadata-only` | User-installed agent skills. |
-| `codex-system` | 5 | `metadata-only` | Codex system skills. |
-| `codex-user` | 21 | `metadata-only` | User-installed Codex skills. |
 | `coffee-release` | 18 | `redistributed-curated` | Curated skills in this repository. |
+| `codex-user` | 21 | `metadata-only` | User-installed Codex skills. |
+| `codex-system` | 5 | `metadata-only` | Codex system skills. |
+| `agents-user` | 86 | `metadata-only` | User-installed agent skills. |
 | `plugin-bundled` | 3 | `metadata-only` | Bundled plugin skills. |
 | `plugin-runtime` | 3 | `metadata-only` | Primary runtime plugin skills. |
 
 ## Duplicate Names
 
-| Name | Sources |
-|---|---|
-| `Chrome` | 2 instance(s): `plugin-bundled` |
-| `UIdesign` | 2 instance(s): `agents-user`, `codex-user` |
-| `coff0xc-ai-agent-rag` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-api-data-platform` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-authorized-assessment` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-binary-mobile-iot` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-blockchain-security` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-cloud-devsecops` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-compliance-architecture` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-detection-response` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-identity-zero-trust` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-network-protocol-security` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-office-doc-tools` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-purple-deception` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-research-drawio-diagram` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-secure-code-appsec` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-skill-router` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-software-engineering` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-ui-doc-output` | 2 instance(s): `codex-user`, `coffee-release` |
-| `coff0xc-vulnerability-lifecycle` | 2 instance(s): `codex-user`, `coffee-release` |
-| `skill-creator` | 2 instance(s): `agents-user`, `codex-system` |
+| Name | Instances | Entries |
+|---|---:|---|
+| `Chrome` | 2 | `plugin-bundled`:`chrome/0.1.7/skills/chrome/SKILL.md` -> `coff0xc-ui-doc-output`; `plugin-bundled`:`chrome/latest/skills/chrome/SKILL.md` -> `coff0xc-ui-doc-output` |
+| `UIdesign` | 2 | `agents-user`:`UIdesign/SKILL.md` -> `coff0xc-ui-doc-output`; `codex-user`:`UIdesign/SKILL.md` -> `coff0xc-ui-doc-output` |
+| `coff0xc-ai-agent-rag` | 2 | `codex-user`:`coff0xc-ai-agent-rag/SKILL.md` -> `coff0xc-ai-agent-rag`; `coffee-release`:`coff0xc-ai-agent-rag/SKILL.md` -> `coff0xc-ai-agent-rag` |
+| `coff0xc-api-data-platform` | 2 | `codex-user`:`coff0xc-api-data-platform/SKILL.md` -> `coff0xc-api-data-platform`; `coffee-release`:`coff0xc-api-data-platform/SKILL.md` -> `coff0xc-api-data-platform` |
+| `coff0xc-authorized-assessment` | 2 | `codex-user`:`coff0xc-authorized-assessment/SKILL.md` -> `coff0xc-authorized-assessment`; `coffee-release`:`coff0xc-authorized-assessment/SKILL.md` -> `coff0xc-authorized-assessment` |
+| `coff0xc-binary-mobile-iot` | 2 | `codex-user`:`coff0xc-binary-mobile-iot/SKILL.md` -> `coff0xc-binary-mobile-iot`; `coffee-release`:`coff0xc-binary-mobile-iot/SKILL.md` -> `coff0xc-binary-mobile-iot` |
+| `coff0xc-blockchain-security` | 2 | `codex-user`:`coff0xc-blockchain-security/SKILL.md` -> `coff0xc-blockchain-security`; `coffee-release`:`coff0xc-blockchain-security/SKILL.md` -> `coff0xc-blockchain-security` |
+| `coff0xc-cloud-devsecops` | 2 | `codex-user`:`coff0xc-cloud-devsecops/SKILL.md` -> `coff0xc-cloud-devsecops`; `coffee-release`:`coff0xc-cloud-devsecops/SKILL.md` -> `coff0xc-cloud-devsecops` |
+| `coff0xc-compliance-architecture` | 2 | `codex-user`:`coff0xc-compliance-architecture/SKILL.md` -> `coff0xc-compliance-architecture`; `coffee-release`:`coff0xc-compliance-architecture/SKILL.md` -> `coff0xc-compliance-architecture` |
+| `coff0xc-detection-response` | 2 | `codex-user`:`coff0xc-detection-response/SKILL.md` -> `coff0xc-detection-response`; `coffee-release`:`coff0xc-detection-response/SKILL.md` -> `coff0xc-detection-response` |
+| `coff0xc-identity-zero-trust` | 2 | `codex-user`:`coff0xc-identity-zero-trust/SKILL.md` -> `coff0xc-identity-zero-trust`; `coffee-release`:`coff0xc-identity-zero-trust/SKILL.md` -> `coff0xc-identity-zero-trust` |
+| `coff0xc-network-protocol-security` | 2 | `codex-user`:`coff0xc-network-protocol-security/SKILL.md` -> `coff0xc-network-protocol-security`; `coffee-release`:`coff0xc-network-protocol-security/SKILL.md` -> `coff0xc-network-protocol-security` |
+| `coff0xc-office-doc-tools` | 2 | `codex-user`:`coff0xc-office-doc-tools/SKILL.md` -> `coff0xc-office-doc-tools`; `coffee-release`:`coff0xc-office-doc-tools/SKILL.md` -> `coff0xc-office-doc-tools` |
+| `coff0xc-purple-deception` | 2 | `codex-user`:`coff0xc-purple-deception/SKILL.md` -> `coff0xc-purple-deception`; `coffee-release`:`coff0xc-purple-deception/SKILL.md` -> `coff0xc-purple-deception` |
+| `coff0xc-research-drawio-diagram` | 2 | `codex-user`:`coff0xc-research-drawio-diagram/SKILL.md` -> `coff0xc-research-drawio-diagram`; `coffee-release`:`coff0xc-research-drawio-diagram/SKILL.md` -> `coff0xc-research-drawio-diagram` |
+| `coff0xc-secure-code-appsec` | 2 | `codex-user`:`coff0xc-secure-code-appsec/SKILL.md` -> `coff0xc-secure-code-appsec`; `coffee-release`:`coff0xc-secure-code-appsec/SKILL.md` -> `coff0xc-secure-code-appsec` |
+| `coff0xc-skill-router` | 2 | `codex-user`:`coff0xc-skill-router/SKILL.md` -> `coff0xc-skill-router`; `coffee-release`:`coff0xc-skill-router/SKILL.md` -> `coff0xc-skill-router` |
+| `coff0xc-software-engineering` | 2 | `codex-user`:`coff0xc-software-engineering/SKILL.md` -> `coff0xc-software-engineering`; `coffee-release`:`coff0xc-software-engineering/SKILL.md` -> `coff0xc-software-engineering` |
+| `coff0xc-ui-doc-output` | 2 | `codex-user`:`coff0xc-ui-doc-output/SKILL.md` -> `coff0xc-ui-doc-output`; `coffee-release`:`coff0xc-ui-doc-output/SKILL.md` -> `coff0xc-ui-doc-output` |
+| `coff0xc-vulnerability-lifecycle` | 2 | `codex-user`:`coff0xc-vulnerability-lifecycle/SKILL.md` -> `coff0xc-vulnerability-lifecycle`; `coffee-release`:`coff0xc-vulnerability-lifecycle/SKILL.md` -> `coff0xc-vulnerability-lifecycle` |
+| `skill-creator` | 2 | `agents-user`:`skill-creator/SKILL.md` -> `supporting-tooling`; `codex-system`:`skill-creator/SKILL.md` -> `supporting-tooling` |
 
 ## Consolidation Map
 
