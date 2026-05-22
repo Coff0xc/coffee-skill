@@ -67,6 +67,10 @@ Use coff0xc-ui-doc-output to polish the report narrative and UI copy for these f
 - Canvas/WebGL/Three.js 必须检查非空像素、场景 framing、移动/交互是否可见。
 - 如果浏览器或截图不可用，最终写“代码已改但未做视觉验收”，不能说 UI 已验证。
 
+## 默认输出
+- 收口只写完成、验证、还剩、下一步；有文件/代码/规则产物给路径或位置。
+- 未真实运行的检查标为未验证，安全/架构结论标证据等级。
+
 ## References
 普通任务不要默认读取这些文件。
 

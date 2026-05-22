@@ -14,6 +14,28 @@ Unlike trigger evals, these cases define artifact-level quality checks for actua
 - Failed cases: 0
 - Assertion pass rate: 1.0
 
+## Evidence Model
+
+This is a deterministic release guard, not a replacement for live validation.
+
+Deterministic checks:
+- OOXML package structure and selected formulas/cells
+- HTML/static UI structure plus declared render-audit evidence
+- Python/Node fixture behavior and lockfile churn checks
+- workflow trace shape and required stage evidence
+
+Not replaced:
+- live browser interaction, DOM measurement, and visual diffing
+- native PowerPoint/Excel/Word rendering and full Excel calculation
+- human visual taste review
+- real project CI across external services and production-like dependencies
+
+Escalate to live checks when claiming:
+- pixel-perfect UI, no overlap, or console-clean browser behavior
+- final Office layout quality or stakeholder-ready decks/documents
+- financial workbook correctness beyond supported deterministic formulas
+- repository repair is CI-ready for an arbitrary real project
+
 ## Fixture Validation
 
 No fixture errors.

@@ -6,6 +6,8 @@ This is release/eval-mode tooling for maintaining the skill repository. It is no
 
 This repository includes artifact-level fixtures for areas where routing metrics are not enough. The default quality command now scores checked-in golden responses, including real `.pptx`, `.xlsx`, and `.docx` OOXML packages. Use `--fixture-only` only when you want schema/path validation without scoring artifacts.
 
+Security note: behavior assertions execute candidate Python or Node code for repo-repair fixtures. The checked-in golden responses are trusted by default. For any other `--responses-dir`, use `--allow-code-execution` only on trusted local agent outputs or inside an isolated disposable workspace.
+
 | Case | Skill | What it tests |
 |---|---|---|
 | `ui-admin-dashboard-visual-gate` | `coff0xc-ui-doc-output` | Reworking an AI-template dashboard into a SaaS/admin UI with product routing, design tokens, state coverage, accessibility evidence, anti-template cleanup, real PNG evidence, HTML-to-render audit, console cleanliness, overlap/clipping checks, and aesthetic scoring evidence. |
@@ -32,6 +34,12 @@ This repository includes artifact-level fixtures for areas where routing metrics
 ```powershell
 python .\scripts\run_quality_eval.py
 ```
+
+The generated JSON/Markdown report includes an `evidence_model` section. Treat the suite as a deterministic release guard:
+
+- It can prove required files exist, OOXML packages contain expected parts, selected formulas/cells work, UI evidence is internally linked, repo-repair fixtures behave, and workflow traces have the expected shape.
+- It cannot prove live browser interaction, DOM geometry, native PowerPoint/Excel/Word rendering, full Excel calculation, human visual taste, or arbitrary real-project CI.
+- If a release claim says "pixel clean UI", "stakeholder-ready Office output", "financial model correctness", or "CI-ready repo repair", run the matching live browser, native Office, spreadsheet, human review, or project CI check in addition to this suite.
 
 Default mode scores `evals/quality/golden-responses/` and exits non-zero on any failed assertion. It opens the Office files as OOXML zip packages and checks:
 
@@ -103,11 +111,13 @@ evals/quality/responses/
         └── vendor-risk-review.docx
 ```
 
-Then run:
+Because this suite includes behavior-specific Python/Node assertions, scoring a non-default response directory requires explicit acknowledgement. Run:
 
 ```powershell
-python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses
+python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses --allow-code-execution
 ```
+
+Without `--allow-code-execution`, the runner refuses non-default response directories before executing candidate code.
 
 The runner checks required files, required terms, banned AI-template patterns, render-audit evidence, workflow traces, lockfile churn, Office QA evidence, and behavior-specific Python/Node assertions. It exits non-zero on failed assertions.
 

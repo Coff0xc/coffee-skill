@@ -15,6 +15,7 @@ DEFAULT_EVAL_SET = ROOT / "evals" / "trigger-eval.json"
 DEFAULT_OUTPUT = ROOT / "evals" / "trigger-eval-results.json"
 
 TOKEN_RE = re.compile(r"[A-Za-z0-9_+#./-]+|[\u4e00-\u9fff]{1,4}", re.UNICODE)
+CJK_RE = re.compile(r"[\u4e00-\u9fff]")
 STOPWORDS = {
     "the",
     "a",
@@ -688,6 +689,12 @@ SIMPLE_PROMPT_PATTERNS = [
     re.compile(r"^explain .+ in one paragraph", re.IGNORECASE),
 ]
 
+COMPOSITION_CONNECTOR_RE = re.compile(
+    r"\b(and|with|plus|then|while|including|include|cover|covers|covering|spanning|across)\b",
+    re.IGNORECASE,
+)
+COMPOSITION_ZH_CONNECTORS = ("同时", "叠加", "覆盖", "以及", "再", "并", "要求", "保持", "从", "到")
+
 ARTIFACT_ACTION_TERMS = {
     "create",
     "generate",
@@ -773,11 +780,23 @@ def idf_by_token(skills: list[Skill]) -> dict[str, float]:
     return {token: math.log((total + 1) / (df + 0.5)) + 1 for token, df in doc_freq.items()}
 
 
+def phrase_in_prompt(prompt_lower: str, phrase: str) -> bool:
+    phrase_lower = phrase.lower()
+    if not phrase_lower:
+        return False
+    if CJK_RE.search(phrase_lower):
+        return phrase_lower in prompt_lower
+    if re.search(r"[a-z0-9]", phrase_lower):
+        pattern = rf"(?<![A-Za-z0-9_]){re.escape(phrase_lower)}(?![A-Za-z0-9_])"
+        return re.search(pattern, prompt_lower) is not None
+    return phrase_lower in prompt_lower
+
+
 def phrase_hits(prompt: str, skill_name: str) -> list[str]:
     prompt_lower = prompt.lower()
     hits: list[str] = []
     for phrase in sorted(DOMAIN_KEYWORDS.get(skill_name, set()), key=lambda item: (-len(item), item.lower())):
-        if phrase.lower() in prompt_lower:
+        if phrase_in_prompt(prompt_lower, phrase):
             hits.append(phrase)
     return hits
 
@@ -792,6 +811,28 @@ def is_simple_prompt(prompt: str) -> bool:
 def has_artifact_action(prompt: str) -> bool:
     prompt_lower = prompt.lower()
     return any(term in prompt_lower for term in ARTIFACT_ACTION_TERMS)
+
+
+def composition_complexity_bonus(prompt: str, domain_hit_count: int, simple: bool) -> float:
+    if simple or domain_hit_count < 4:
+        return 0.0
+    token_count = len(tokenize(prompt))
+    if token_count < 18 and domain_hit_count < 6:
+        return 0.0
+
+    separator_count = sum(prompt.count(mark) for mark in (",", "，", "、", ";", "；", ":", "："))
+    connector_count = len(COMPOSITION_CONNECTOR_RE.findall(prompt))
+    connector_count += sum(prompt.count(term) for term in COMPOSITION_ZH_CONNECTORS)
+
+    structure_score = 0
+    if token_count >= 22:
+        structure_score += 2
+    if token_count >= 32:
+        structure_score += 2
+    structure_score += min(4, separator_count // 2)
+    structure_score += min(4, connector_count // 2)
+
+    return 6.0 + (3.0 * domain_hit_count) + (1.5 * structure_score)
 
 
 def rank_skills(prompt: str, skills: list[Skill], idf: dict[str, float]) -> list[dict[str, object]]:
@@ -814,19 +855,23 @@ def rank_skills(prompt: str, skills: list[Skill], idf: dict[str, float]) -> list
             explicit_score += 20.0
         if skill.name == "coff0xc-skill-router" and domain_hit_count >= 3:
             explicit_score += 3.5 * domain_hit_count
+        router_composition_bonus = 0.0
+        if skill.name == "coff0xc-skill-router":
+            router_composition_bonus = composition_complexity_bonus(prompt, domain_hit_count, simple)
         router_penalty = 0.0
         if skill.name == "coff0xc-skill-router" and "coff0xc-skill-router" not in prompt_lower:
             router_penalty = 5.0
             if simple:
                 router_penalty += 4.0
         simplicity_penalty = 0.0 if simple and hits and artifact_action else (6.0 if simple else 0.0)
-        score = lexical_score + phrase_score + explicit_score - router_penalty - simplicity_penalty
+        score = lexical_score + phrase_score + explicit_score + router_composition_bonus - router_penalty - simplicity_penalty
         ranked.append(
             {
                 "skill": skill.name,
                 "score": round(score, 4),
                 "lexical_overlap": sorted(overlap),
                 "phrase_hits": hits[:12],
+                "router_composition_bonus": round(router_composition_bonus, 4),
                 "simple_prompt_penalty": simplicity_penalty,
             }
         )

@@ -25,12 +25,10 @@
 个人学习、研究、评估和本地非商业使用，在仓库根目录执行：
 
 ```powershell
-$dest = "$env:USERPROFILE\.codex\skills"
-New-Item -ItemType Directory -Force $dest
-Copy-Item -Recurse .\skills\* $dest
+.\scripts\install_local_skills.ps1
 ```
 
-重启或刷新 Codex，然后试：
+脚本会把旧的 `coff0xc-*` 安装移动到 `~\.codex\skills-backup-coff0xc-*`，再复制当前仓库版本。重启或刷新 Codex，然后试：
 
 ```text
 使用 coff0xc-software-engineering：这个 repo 测试挂了，帮我最小修复并验证。
@@ -48,11 +46,14 @@ Copy-Item -Recurse .\skills\* $dest
 |---|---|---|
 | 修 repo、写功能、复现 CI、最小修复 | `coff0xc-software-engineering` | 代码 diff、根因、验证结果、剩余风险 |
 | 做前端/UI/报告表达，或正式 PPTX/DOCX/XLSX | `coff0xc-ui-doc-output` / `coff0xc-office-doc-tools` | 截图/浏览器证据，或可编辑 Office 文件和结构检查 |
+| 根据论文 DOCX 和旧 PPTX 重写答辩 PPT | `coff0xc-office-doc-tools` | 论文内容重构、答辩叙事、可编辑 PPTX、结构/预览检查 |
 | 做 Agent/RAG、API、数据契约、科研图 | `coff0xc-ai-agent-rag` / `coff0xc-api-data-platform` / `coff0xc-research-drawio-diagram` | 架构、schema、评测、draw.io、证据表 |
 | 安全、合规、应急、身份、云、协议、区块链 | 对应安全类 `coff0xc-*` skill | 授权边界、证据、影响、修复/检测/加固建议 |
 | 任务跨多个领域或不知道怎么分流 | `coff0xc-skill-router` | 主 skill、辅助 skill、阶段门禁、重路由条件 |
 
 完整卡片索引见 [Skill Index](docs/SKILL_INDEX.md)。
+
+更大的本机 skill 环境映射见 [Installed Skill Inventory](docs/SKILL_INVENTORY.md)。它只做元数据整理，用来查看外部/system/plugin skill 和本仓库 18 个发布 skill 的关系，不会把外部 skill 正文打包进发布包。
 
 ## 为什么这些 skills 存在
 
@@ -78,9 +79,10 @@ Copy-Item -Recurse .\skills\* $dest
 Skill 变慢通常不是能力太强，而是普通任务也加载了发版门禁、长路由表和审美长清单。这个仓库现在按“快路径 + 按需 reference”组织：
 
 - 每个 skill 顶部都有 `快速规则（日常任务先读这里）`：先给 3-4 条硬门禁和当前任务的默认执行方式。
-- 普通任务只读主 `SKILL.md` 顶部：目标、边界、短工作流、核心门禁。
+- 普通任务只读主 `SKILL.md` 顶部：目标、边界、核心门禁和默认输出。
 - 深度 UI/外部 skill 合并/路由调试/quality eval 才读取 `references/`。
 - `coff0xc-skill-router` 只在跨领域或不确定任务介入；单域 UI、dev、Office、安全任务直接进专业 skill。
+- 多文件、多阶段、架构/API/schema/auth 或多 worker 任务才读取 `coff0xc-skill-router/references/complex-workflow.md`。
 - `trigger eval`、`quality eval`、`workflow trace`、golden responses 是 release guard，不是日常任务前置步骤。
 
 ## 和其他 skill 仓库的区别
@@ -120,6 +122,8 @@ router 的职责不是永远停在“推荐一个 skill”，也不是每次都�
 ```
 
 如果执行中发现新证据，工作流可以调整。例如：普通 dev 任务发现需要正式 PPTX 交付，就新增 `coff0xc-office-doc-tools`；Agent 应用发现缺数据契约，就新增 `coff0xc-api-data-platform`。
+
+复杂任务会升级到 Trellis-style 状态机：需求收敛、仓库证据、阻塞澄清、策略决策、实现循环、spec/code/architecture review、集成验证和完成收口。这个流程只在 L2/L3 任务启用；简单任务不会创建 `prd.md`、`design.md`、`implement.md` 或多层 review。
 
 完整入口选择、能力卡片、常见组合和手动触发示例见 [Skill Index](docs/SKILL_INDEX.md)。
 
@@ -273,12 +277,10 @@ This repository is publicly visible, but it is not open-source licensed. Persona
 For personal learning, research, evaluation, and local noncommercial use:
 
 ```powershell
-$dest = "$env:USERPROFILE\.codex\skills"
-New-Item -ItemType Directory -Force $dest
-Copy-Item -Recurse .\skills\* $dest
+.\scripts\install_local_skills.ps1
 ```
 
-Restart or refresh Codex, then try:
+The script moves old installed `coff0xc-*` folders into `~\.codex\skills-backup-coff0xc-*`, then copies the current repository version. Restart or refresh Codex, then try:
 
 ```text
 Use coff0xc-software-engineering: this repo has failing tests; make the smallest repair and validate it.
@@ -326,9 +328,10 @@ Normal work should not start by proving the skill system. It should start by doi
 The slow path came from loading release gates, long route tables, and detailed design checklists during ordinary work. The pack now uses a fast-path plus on-demand references:
 
 - Every skill starts with `快速规则（日常任务先读这里）`: 3-4 hard gates and the default way to proceed.
-- Normal tasks load only the top of the main `SKILL.md`: goal, boundary, short workflow, and core gates.
+- Normal tasks load only the top of the main `SKILL.md`: goal, boundary, core gates, and default output.
 - Deep UI review, external skill merging, router debugging, and quality evals load `references/` only when needed.
 - `coff0xc-skill-router` is only for uncertain or cross-domain work; narrow UI, dev, Office, or security tasks go directly to the specific skill.
+- Multi-file, multi-stage, architecture/API/schema/auth, or multi-worker work can load `coff0xc-skill-router/references/complex-workflow.md`.
 - Trigger evals, quality evals, workflow traces, and golden responses are release guards, not runtime ceremony.
 
 ## How This Differs
@@ -357,6 +360,8 @@ This vibe-coding task may include frontend, backend, data, security, and docs; o
 ```
 
 The router should produce a primary skill, only necessary supporting skills, phase order, gates, and re-routing conditions. For example, a SaaS feature may compose `software-engineering + api-data-platform + ui-doc-output + secure-code-appsec`.
+
+Complex work can upgrade into a Trellis-style state machine: intake, repo evidence, blocking clarification, strategy decision, implementation loop, spec/code/architecture review, integration validation, and finish. This is only for L2/L3 tasks; simple tasks should not create `prd.md`, `design.md`, `implement.md`, or stacked review gates.
 
 ## How To Prompt
 

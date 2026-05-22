@@ -17,9 +17,12 @@ PRIVATE_KEY_MARKER = KEY_BLOCK_PREFIX + r"(RSA|EC|DSA|OPENSSH )?" + KEY_BLOCK_SU
 GITHUB_TOKEN_MARKER = "github" + r"_pat_[A-Za-z0-9_]+|" + "ghp" + r"_[A-Za-z0-9_]{20,}"
 OPENAI_KEY_MARKER = "sk" + r"-[A-Za-z0-9]{20,}"
 QUICK_RULE_HEADING = "## 快速规则（日常任务先读这里）"
+DEFAULT_OUTPUT_HEADING = "## 默认输出"
 SKILL_ID_PATTERN = re.compile(r"<!--\s*skill-id:\s*cs-[a-z0-9]{3}-[a-f0-9]{8}\s*-->")
 MAX_SKILL_DESCRIPTION_CHARS = 450
 MAX_TOTAL_DESCRIPTION_CHARS = 5000
+MAX_SKILL_BODY_BYTES = 6800
+FULL_WORKFLOW_REFERENCE = "references/full-workflow.md"
 FORBIDDEN_LICENSE_TERMS = [
     "AGPL",
     "GNU Affero",
@@ -48,9 +51,12 @@ REQUIRED_FILES = [
     "docs/LANGUAGES.md",
     "docs/COVERAGE.md",
     "docs/SANITIZATION.md",
+    "docs/SKILL_INVENTORY.md",
+    "docs/skill-inventory.json",
     "docs/PROVENANCE.md",
     "docs/ENFORCEMENT.md",
     "docs/TAKEDOWN_TEMPLATE.md",
+    ".github/workflows/validate.yml",
     "evals/trigger-eval.json",
     "evals/quality/eval-set.json",
     "evals/quality/quality-eval-results.json",
@@ -86,8 +92,12 @@ REQUIRED_FILES = [
     "scripts/run_trigger_eval.py",
     "scripts/run_quality_eval.py",
     "scripts/build_quality_golden_responses.py",
+    "scripts/build_skill_inventory.py",
+    "scripts/install_local_skills.ps1",
     "scripts/scan_provenance.py",
+    "skills/coff0xc-office-doc-tools/references/pptx-defense-rewrite.md",
     "skills/coff0xc-skill-router/references/router-map.md",
+    "skills/coff0xc-skill-router/references/complex-workflow.md",
     "skills/coff0xc-ui-doc-output/references/ui-generalized-rules.md",
     "skills/coff0xc-research-drawio-diagram/scripts/build_drawio.py",
     "skills/coff0xc-research-drawio-diagram/examples/research-pipeline.json",
@@ -115,6 +125,15 @@ REQUIRED_I18N_FILES = [
     "docs/i18n/README.vi.md",
     "docs/i18n/README.th.md",
 ]
+
+
+def dynamic_required_files() -> list[str]:
+    files = list(REQUIRED_FILES)
+    files.extend(
+        path.relative_to(ROOT).as_posix()
+        for path in sorted(SKILLS.glob(f"*/{FULL_WORKFLOW_REFERENCE}"))
+    )
+    return files
 
 
 def parse_frontmatter(path: Path) -> tuple[dict[str, str], list[str]]:
@@ -162,7 +181,7 @@ def iter_release_text_files() -> list[Path]:
 
     if result is not None and result.returncode == 0:
         release_rels = {rel for rel in result.stdout.splitlines() if rel.strip()}
-        release_rels.update(REQUIRED_FILES)
+        release_rels.update(dynamic_required_files())
         release_rels.update(REQUIRED_I18N_FILES)
         candidates = [(ROOT / rel).resolve() for rel in sorted(release_rels) if (ROOT / rel).exists()]
     else:
@@ -172,7 +191,7 @@ def iter_release_text_files() -> list[Path]:
     for path in candidates:
         if path.is_dir() or ".git" in path.parts:
             continue
-        if path.suffix.lower() not in {".md", ".json", ".py", ""} and path.name not in {"LICENSE"}:
+        if path.suffix.lower() not in {".md", ".json", ".py", ".ps1", ".yml", ".yaml", ""} and path.name not in {"LICENSE"}:
             continue
         files.append(path)
     return files
@@ -181,7 +200,7 @@ def iter_release_text_files() -> list[Path]:
 def main() -> None:
     errors: list[str] = []
 
-    for rel in [*REQUIRED_FILES, *REQUIRED_I18N_FILES]:
+    for rel in [*dynamic_required_files(), *REQUIRED_I18N_FILES]:
         if not (ROOT / rel).exists():
             errors.append(f"missing required file: {rel}")
 
@@ -235,8 +254,15 @@ def main() -> None:
             errors.append(f"{path}: missing quick rules section")
         elif "## 能力定位" in text and text.index(QUICK_RULE_HEADING) > text.index("## 能力定位"):
             errors.append(f"{path}: quick rules section must appear before capability positioning")
+        if DEFAULT_OUTPUT_HEADING not in text:
+            errors.append(f"{path}: missing default output section")
         if not SKILL_ID_PATTERN.search(text):
             errors.append(f"{path}: missing source skill-id marker")
+        body_bytes = len(text.encode("utf-8"))
+        if body_bytes > MAX_SKILL_BODY_BYTES:
+            errors.append(f"{path}: SKILL.md too large ({body_bytes} bytes > {MAX_SKILL_BODY_BYTES})")
+        if FULL_WORKFLOW_REFERENCE in text and not (path.parent / FULL_WORKFLOW_REFERENCE).exists():
+            errors.append(f"{path}: references full workflow but the file is missing")
 
     if total_description_chars > MAX_TOTAL_DESCRIPTION_CHARS:
         errors.append(

@@ -1,24 +1,24 @@
 {
   "threshold": 3.0,
-  "case_count": 131,
+  "case_count": 132,
   "skill_count": 18,
   "metrics": {
-    "positive_total": 116,
-    "positive_top1": 109,
-    "positive_top3": 116,
-    "positive_triggered": 116,
+    "positive_total": 117,
+    "positive_top1": 117,
+    "positive_top3": 117,
+    "positive_triggered": 117,
     "router_total": 19,
-    "router_top1": 13,
+    "router_top1": 19,
     "router_top3": 19,
     "composition_total": 11,
     "composition_full_topn": 11,
     "negative_total": 15,
     "negative_no_trigger": 15,
     "negative_false_positive": 0,
-    "positive_top1_rate": 0.9397,
+    "positive_top1_rate": 1.0,
     "positive_top3_rate": 1.0,
     "positive_triggered_rate": 1.0,
-    "router_top1_rate": 0.6842,
+    "router_top1_rate": 1.0,
     "router_top3_rate": 1.0,
     "composition_full_topn_rate": 1.0,
     "negative_no_trigger_rate": 1.0,
@@ -36,10 +36,10 @@
     },
     "coff0xc-api-data-platform": {
       "total": 5,
-      "top1": 4,
+      "top1": 5,
       "top3": 5,
       "triggered": 5,
-      "top1_rate": 0.8,
+      "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
@@ -116,10 +116,10 @@
       "triggered_rate": 1.0
     },
     "coff0xc-office-doc-tools": {
-      "total": 11,
-      "top1": 11,
-      "top3": 11,
-      "triggered": 11,
+      "total": 12,
+      "top1": 12,
+      "top3": 12,
+      "triggered": 12,
       "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
@@ -153,10 +153,10 @@
     },
     "coff0xc-skill-router": {
       "total": 19,
-      "top1": 13,
+      "top1": 19,
       "top3": 19,
       "triggered": 19,
-      "top1_rate": 0.6842,
+      "top1_rate": 1.0,
       "top3_rate": 1.0,
       "triggered_rate": 1.0
     },
@@ -199,21 +199,21 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-software-engineering",
-      "top_score": 16.8,
+      "top_score": 13.8,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-software-engineering",
-          "score": 16.8,
+          "score": 13.8,
           "lexical_overlap": [],
           "phrase_hits": [
             "pytest",
             "python",
             "lint",
-            "test",
             "最小修复",
             "测试"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -223,6 +223,7 @@
           "phrase_hits": [
             "修复"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -230,6 +231,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -246,12 +248,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-software-engineering",
-      "top_score": 17.339,
+      "top_score": 14.339,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-software-engineering",
-          "score": 17.339,
+          "score": 14.339,
           "lexical_overlap": [
             "repo"
           ],
@@ -259,9 +261,9 @@
             "typescript",
             "feature",
             "tests",
-            "test",
             "git"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -271,15 +273,15 @@
             "diff"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-identity-zero-trust",
-          "score": 1.8,
+          "skill": "coff0xc-ai-agent-rag",
+          "score": 0.0,
           "lexical_overlap": [],
-          "phrase_hits": [
-            "ad"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -310,6 +312,7 @@
             "测试",
             "重构"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -319,6 +322,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -328,6 +332,7 @@
           "phrase_hits": [
             "engineering"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -361,6 +366,7 @@
             "构建",
             "测试"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -368,6 +374,7 @@
           "score": 5.5,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -378,6 +385,7 @@
             "后端接口",
             "接口"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -394,12 +402,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-software-engineering",
-      "top_score": 28.1342,
+      "top_score": 25.1342,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-software-engineering",
-          "score": 28.1342,
+          "score": 25.1342,
           "lexical_overlap": [
             "browser",
             "build",
@@ -410,30 +418,29 @@
             "browser smoke",
             "admin panel",
             "feature",
-            "tests",
-            "test"
+            "tests"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 12.0281,
-          "lexical_overlap": [
-            "build"
-          ],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 7.8281,
+          "score": 6.0281,
           "lexical_overlap": [
             "browser"
           ],
           "phrase_hits": [
-            "browser smoke",
-            "ui"
+            "browser smoke"
           ],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-ai-agent-rag",
+          "score": 0.0,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -467,6 +474,7 @@
             "缓存",
             "评测"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -474,6 +482,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -481,6 +490,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -517,6 +527,7 @@
             "cost",
             "llm"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -526,6 +537,7 @@
             "review"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -535,6 +547,7 @@
             "review"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -566,6 +579,7 @@
             "向量数据库",
             "rag"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -575,6 +589,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -584,6 +599,7 @@
           "phrase_hits": [
             "数据库"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -622,6 +638,7 @@
             "错误码",
             "分页"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -631,6 +648,7 @@
             "schema"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -640,6 +658,7 @@
             "rest"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -655,19 +674,10 @@
       "expected_skill": "coff0xc-api-data-platform",
       "expected_skill_set": [],
       "expected_set_top_n": null,
-      "predicted_skill": "coff0xc-skill-router",
-      "top_score": 12.0281,
+      "predicted_skill": "coff0xc-api-data-platform",
+      "top_score": 10.139,
       "topn": [],
       "top3": [
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 12.0281,
-          "lexical_overlap": [
-            "plan"
-          ],
-          "phrase_hits": [],
-          "simple_prompt_penalty": 0.0
-        },
         {
           "skill": "coff0xc-api-data-platform",
           "score": 10.139,
@@ -679,6 +689,7 @@
             "cli",
             "sdk"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -688,11 +699,22 @@
             "data"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-purple-deception",
+          "score": 3.0281,
+          "lexical_overlap": [
+            "plan"
+          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "passed": true,
-      "failure": "expected skill was top3 but not top1",
+      "failure": "",
       "reason": "CLI, SDK, API contracts, auth, JSON."
     },
     {
@@ -721,6 +743,7 @@
             "api",
             "sql"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -730,6 +753,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -739,6 +763,7 @@
           "phrase_hits": [
             "graphql"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -770,6 +795,7 @@
             "截图",
             "组件"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -777,6 +803,7 @@
           "score": 5.5,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -786,6 +813,7 @@
             "级"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -819,6 +847,7 @@
             "terminology",
             "report"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -828,6 +857,7 @@
             "report"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -837,6 +867,7 @@
             "report"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -868,6 +899,7 @@
             "润色",
             "翻译"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -877,6 +909,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -884,6 +917,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -900,21 +934,21 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-office-doc-tools",
-      "top_score": 14.339,
+      "top_score": 12.539,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 14.339,
+          "score": 12.539,
           "lexical_overlap": [
             "pptx"
           ],
           "phrase_hits": [
             "pptx",
             "演示文稿",
-            "预览验证",
-            "ppt"
+            "预览验证"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -924,6 +958,7 @@
           "phrase_hits": [
             "可编辑"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -931,6 +966,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -947,12 +983,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-office-doc-tools",
-      "top_score": 34.4949,
+      "top_score": 31.4949,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 34.4949,
+          "score": 31.4949,
           "lexical_overlap": [
             "csv",
             "excel",
@@ -964,10 +1000,10 @@
             "workbook",
             "formula",
             "export",
-            "chart",
             "excel",
             "csv"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -975,6 +1011,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -982,6 +1019,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1017,6 +1055,7 @@
             "批注",
             "版式"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1026,6 +1065,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1033,6 +1073,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1049,19 +1090,19 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-office-doc-tools",
-      "top_score": 8.339,
+      "top_score": 6.539,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 8.339,
+          "score": 6.539,
           "lexical_overlap": [
             "pptx"
           ],
           "phrase_hits": [
-            "pptx",
-            "ppt"
+            "pptx"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1071,6 +1112,7 @@
           "phrase_hits": [
             "可编辑"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1078,6 +1120,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -1108,6 +1151,7 @@
             "excel",
             "csv"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1117,6 +1161,7 @@
           "phrase_hits": [
             "dashboard"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1126,6 +1171,7 @@
           "phrase_hits": [
             "dashboard"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1155,6 +1201,7 @@
             "docx",
             "批注"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1162,6 +1209,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -1169,6 +1217,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -1185,30 +1234,31 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-office-doc-tools",
-      "top_score": 114.8779,
+      "top_score": 113.0779,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 114.8779,
+          "score": 113.0779,
           "lexical_overlap": [
             "coff0xc-office-doc-tools",
             "pptx"
           ],
           "phrase_hits": [
             "office",
-            "pptx",
-            "ppt"
+            "pptx"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 32.0,
+          "score": 28.5,
           "lexical_overlap": [],
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1220,12 +1270,64 @@
           "phrase_hits": [
             "design system"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "passed": true,
       "failure": "",
       "reason": "Quality eval for PPT aesthetics gates beyond basic PPTX triggering."
+    },
+    {
+      "id": "office-defense-pptx-rewrite",
+      "category": "artifact_quality",
+      "language": "zh-CN",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "expected_skill_set": [],
+      "expected_set_top_n": null,
+      "predicted_skill": "coff0xc-office-doc-tools",
+      "top_score": 24.7579,
+      "topn": [],
+      "top3": [
+        {
+          "skill": "coff0xc-office-doc-tools",
+          "score": 24.7579,
+          "lexical_overlap": [
+            "docx",
+            "ppt",
+            "pptx"
+          ],
+          "phrase_hits": [
+            "docx",
+            "pptx",
+            "ppt"
+          ],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 5.5,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-research-drawio-diagram",
+          "score": 1.8,
+          "lexical_overlap": [],
+          "phrase_hits": [
+            "可编辑"
+          ],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        }
+      ],
+      "passed": true,
+      "failure": "",
+      "reason": "Defense deck rewrite should trigger Office, read DOCX/PPTX sources, and avoid stopping on a versioned Presentations runtime mismatch."
     },
     {
       "id": "office-quality-excel-data-parse-gate",
@@ -1257,6 +1359,7 @@
             "csv",
             "公式"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1266,6 +1369,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1275,6 +1379,7 @@
           "phrase_hits": [
             "解析"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1291,12 +1396,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-office-doc-tools",
-      "top_score": 137.0169,
+      "top_score": 134.0169,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 137.0169,
+          "score": 134.0169,
           "lexical_overlap": [
             "coff0xc-office-doc-tools",
             "docx",
@@ -1304,7 +1409,6 @@
           ],
           "phrase_hits": [
             "comments",
-            "redline",
             "office",
             "table",
             "不覆盖原件",
@@ -1314,15 +1418,17 @@
             "批注",
             "表格"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 32.0,
+          "score": 18.0,
           "lexical_overlap": [],
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1332,6 +1438,7 @@
           "phrase_hits": [
             "token"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1364,6 +1471,7 @@
             "可编辑",
             "科研"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1373,15 +1481,15 @@
             "github"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-software-engineering",
-          "score": 1.8,
+          "skill": "coff0xc-ai-agent-rag",
+          "score": 0.0,
           "lexical_overlap": [],
-          "phrase_hits": [
-            "git"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1398,12 +1506,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-research-drawio-diagram",
-      "top_score": 28.1061,
+      "top_score": 25.1061,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-research-drawio-diagram",
-          "score": 28.1061,
+          "score": 25.1061,
           "lexical_overlap": [
             "algorithm",
             "diagrams.net",
@@ -1414,28 +1522,31 @@
             "diagrams.net",
             "algorithm",
             "pipeline",
-            "diagram",
             "arxiv"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 12.5,
-          "lexical_overlap": [],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 9.539,
+          "score": 6.539,
           "lexical_overlap": [
             "create"
           ],
           "phrase_hits": [
-            "editable",
-            "table"
+            "editable"
           ],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-software-engineering",
+          "score": 3.539,
+          "lexical_overlap": [
+            "repo"
+          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1472,6 +1583,7 @@
             "drawio",
             "模型结构图"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1481,6 +1593,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1488,6 +1601,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -1524,23 +1638,25 @@
             "认证",
             "越权"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 9.0,
-          "lexical_overlap": [],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": 3.6,
+          "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "api",
-            "sql"
+            "api"
           ],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-ai-agent-rag",
+          "score": 0.0,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1557,12 +1673,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-secure-code-appsec",
-      "top_score": 24.5953,
+      "top_score": 21.5953,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-secure-code-appsec",
-          "score": 24.5953,
+          "score": 21.5953,
           "lexical_overlap": [
             "access",
             "injection",
@@ -1571,10 +1687,10 @@
           "phrase_hits": [
             "prompt injection",
             "graphql",
-            "cookie",
             "oauth",
             "cors"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1587,6 +1703,7 @@
           "phrase_hits": [
             "authorized"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1594,6 +1711,7 @@
           "score": 9.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1624,6 +1742,7 @@
             "代码安全",
             "授权"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -1633,6 +1752,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -1642,6 +1762,7 @@
           "phrase_hits": [
             "授权"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -1680,15 +1801,7 @@
             "k8s",
             "供应链"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-software-engineering",
-          "score": 1.8,
-          "lexical_overlap": [],
-          "phrase_hits": [
-            "git"
-          ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1696,6 +1809,15 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-api-data-platform",
+          "score": 0.0,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1730,6 +1852,7 @@
             "iam",
             "s3"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1739,6 +1862,7 @@
             "plan"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1750,6 +1874,7 @@
           "phrase_hits": [
             "audit"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1783,6 +1908,7 @@
             "密钥",
             "镜像"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -1792,6 +1918,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -1801,6 +1928,7 @@
             "评估"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -1837,6 +1965,7 @@
             "日志",
             "检测"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1844,6 +1973,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1851,6 +1981,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1867,12 +1998,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-detection-response",
-      "top_score": 38.6949,
+      "top_score": 35.6949,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-detection-response",
-          "score": 38.6949,
+          "score": 35.6949,
           "lexical_overlap": [
             "forensics",
             "incident",
@@ -1882,13 +2013,13 @@
           ],
           "phrase_hits": [
             "incident response",
-            "detection",
             "forensics",
             "incident",
             "timeline",
             "malware",
             "siem"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1898,15 +2029,15 @@
             "build"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": 1.8,
+          "skill": "coff0xc-ai-agent-rag",
+          "score": 0.0,
           "lexical_overlap": [],
-          "phrase_hits": [
-            "ui"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -1938,6 +2069,7 @@
             "威胁",
             "日志"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -1947,6 +2079,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -1954,6 +2087,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -1990,6 +2124,7 @@
             "漏洞",
             "补丁"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -1997,6 +2132,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2004,6 +2140,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2040,6 +2177,7 @@
             "bug bounty",
             "advisory"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2050,13 +2188,17 @@
             "report"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-skill-router",
-          "score": 5.5,
-          "lexical_overlap": [],
+          "skill": "coff0xc-api-data-platform",
+          "score": 3.539,
+          "lexical_overlap": [
+            "impact"
+          ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2089,6 +2231,7 @@
             "优先级",
             "修复"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -2098,6 +2241,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -2107,6 +2251,7 @@
           "phrase_hits": [
             "授权"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -2140,6 +2285,7 @@
             "mfa",
             "ad"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2149,6 +2295,7 @@
           "phrase_hits": [
             "移动"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2156,6 +2303,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2193,6 +2341,7 @@
             "pam",
             "sso"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2205,6 +2354,7 @@
           "phrase_hits": [
             "iam"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2215,6 +2365,7 @@
             "risk"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2246,15 +2397,17 @@
             "权限",
             "身份"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 28.0,
+          "score": 24.5,
           "lexical_overlap": [],
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2264,6 +2417,7 @@
           "phrase_hits": [
             "权限模型"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2297,6 +2451,7 @@
             "红队",
             "边界"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2304,6 +2459,7 @@
           "score": 5.5,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2313,6 +2469,7 @@
           "phrase_hits": [
             "授权"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2349,6 +2506,7 @@
             "cdn",
             "waf"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2360,6 +2518,7 @@
           "phrase_hits": [
             "attack"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2369,6 +2528,7 @@
             "data"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2401,6 +2561,7 @@
             "red team",
             "防御验证"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -2412,6 +2573,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -2425,6 +2587,7 @@
           "phrase_hits": [
             "emulation"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -2459,13 +2622,15 @@
             "apk",
             "ble"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 9.0,
+          "score": 5.5,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2476,6 +2641,7 @@
             "ble",
             "通信"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2492,12 +2658,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-binary-mobile-iot",
-      "top_score": 35.9865,
+      "top_score": 34.1865,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-binary-mobile-iot",
-          "score": 35.9865,
+          "score": 34.1865,
           "lexical_overlap": [
             "constant-time",
             "crypto",
@@ -2511,9 +2677,9 @@
             "reverse",
             "crypto",
             "kernel",
-            "pwn",
-            "rf"
+            "pwn"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2526,13 +2692,17 @@
           "phrase_hits": [
             "authorized"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-skill-router",
-          "score": 5.5,
-          "lexical_overlap": [],
+          "skill": "coff0xc-detection-response",
+          "score": 2.6917,
+          "lexical_overlap": [
+            "engineering"
+          ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2563,6 +2733,7 @@
             "固件",
             "移动"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -2572,15 +2743,15 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
-          "skill": "coff0xc-identity-zero-trust",
-          "score": -4.2,
+          "skill": "coff0xc-ai-agent-rag",
+          "score": -6.0,
           "lexical_overlap": [],
-          "phrase_hits": [
-            "ad"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -2620,6 +2791,7 @@
             "amm",
             "nft"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2629,6 +2801,7 @@
           "phrase_hits": [
             "测试"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2636,6 +2809,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2676,13 +2850,7 @@
             "evm",
             "ton"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 9.0,
-          "lexical_overlap": [],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2694,6 +2862,17 @@
           "phrase_hits": [
             "audit"
           ],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-compliance-architecture",
+          "score": 3.0281,
+          "lexical_overlap": [
+            "audit"
+          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2722,6 +2901,7 @@
           "phrase_hits": [
             "跨链"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2731,16 +2911,16 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-secure-code-appsec",
-          "score": 1.8,
+          "skill": "coff0xc-ai-agent-rag",
+          "score": -6.0,
           "lexical_overlap": [],
-          "phrase_hits": [
-            "web"
-          ],
-          "simple_prompt_penalty": 0.0
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 6.0
         }
       ],
       "passed": true,
@@ -2776,16 +2956,17 @@
             "dlp",
             "脱敏"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-detection-response",
-          "score": 3.6,
+          "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "soc",
             "威胁"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2793,6 +2974,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2830,6 +3012,7 @@
             "nist",
             "cis"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2840,6 +3023,7 @@
             "review"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2850,6 +3034,7 @@
             "security"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2880,6 +3065,7 @@
             "合规",
             "基线"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -2889,6 +3075,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -2898,6 +3085,7 @@
             "评估"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -2931,6 +3119,7 @@
             "紫队",
             "蜜罐"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2938,6 +3127,7 @@
           "score": 9.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -2947,6 +3137,7 @@
           "phrase_hits": [
             "指标"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -2963,12 +3154,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-purple-deception",
-      "top_score": 36.0068,
+      "top_score": 30.0068,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-purple-deception",
-          "score": 36.0068,
+          "score": 30.0068,
           "lexical_overlap": [
             "control",
             "coverage",
@@ -2981,21 +3172,21 @@
             "control validation",
             "detection coverage",
             "deception",
-            "emulation",
-            "honeypot",
-            "decoy"
+            "emulation"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 21.248,
+          "score": 14.248,
           "lexical_overlap": [
             "build",
             "detection",
             "plan"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3009,6 +3200,7 @@
           "phrase_hits": [
             "control validation"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3039,6 +3231,7 @@
             "deception",
             "红蓝"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -3048,6 +3241,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -3057,6 +3251,7 @@
           "phrase_hits": [
             "检测"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -3096,22 +3291,23 @@
             "tls",
             "udp"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-skill-router",
-          "score": 5.5,
+          "skill": "coff0xc-ai-agent-rag",
+          "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-detection-response",
-          "score": 1.8,
+          "skill": "coff0xc-api-data-platform",
+          "score": 0.0,
           "lexical_overlap": [],
-          "phrase_hits": [
-            "ir"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3148,6 +3344,7 @@
             "ble",
             "rf"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3160,13 +3357,17 @@
             "ble",
             "rf"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-skill-router",
-          "score": 5.5,
-          "lexical_overlap": [],
+          "skill": "coff0xc-office-doc-tools",
+          "score": 3.0281,
+          "lexical_overlap": [
+            "review"
+          ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3199,6 +3400,7 @@
             "无线",
             "通信"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3208,6 +3410,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3217,6 +3420,7 @@
           "phrase_hits": [
             "日志"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3247,6 +3451,7 @@
             "coff0xc",
             "同时涉及"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3256,6 +3461,7 @@
           "phrase_hits": [
             "云"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3265,6 +3471,7 @@
           "phrase_hits": [
             "检测"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3301,6 +3508,7 @@
             "coff0xc",
             "router"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3312,6 +3520,7 @@
           "phrase_hits": [
             "ci/cd"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3323,6 +3532,7 @@
           "phrase_hits": [
             "rag"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3355,6 +3565,7 @@
             "router",
             "选择合适"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -3362,6 +3573,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -3369,6 +3581,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -3402,6 +3615,7 @@
             "coff0xc",
             "router"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3413,15 +3627,15 @@
           "phrase_hits": [
             "api"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-identity-zero-trust",
-          "score": 1.8,
+          "skill": "coff0xc-ai-agent-rag",
+          "score": 0.0,
           "lexical_overlap": [],
-          "phrase_hits": [
-            "ad"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3455,6 +3669,7 @@
             "coff0xc",
             "router"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -3467,6 +3682,7 @@
             "agent",
             "rag"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -3474,6 +3690,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -3506,15 +3723,15 @@
             "coff0xc",
             "router"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": 3.0,
+          "score": 0.0,
           "lexical_overlap": [],
-          "phrase_hits": [
-            "agent"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3522,6 +3739,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3551,6 +3769,7 @@
             "最小范围",
             "证明"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3558,6 +3777,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3565,6 +3785,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3598,6 +3819,7 @@
             "答错",
             "落地"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3605,6 +3827,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3612,6 +3835,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3646,6 +3870,7 @@
             "接口",
             "鉴权"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3655,6 +3880,7 @@
           "phrase_hits": [
             "后端接口"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3662,6 +3888,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3694,6 +3921,7 @@
             "很乱",
             "窄屏"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3701,6 +3929,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3708,6 +3937,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3737,6 +3967,7 @@
             "公式",
             "表格"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3744,6 +3975,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3751,6 +3983,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3779,6 +4012,7 @@
           "phrase_hits": [
             "可编辑"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3786,6 +4020,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3793,6 +4028,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3821,6 +4057,7 @@
             "绕过登录",
             "数据流"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3830,6 +4067,7 @@
           "phrase_hits": [
             "代码"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3837,6 +4075,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3867,6 +4106,7 @@
             "集群配置",
             "镜像"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3878,6 +4118,7 @@
           "phrase_hits": [
             "权限"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3887,6 +4128,7 @@
             "权限"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -3920,6 +4162,7 @@
             "日志",
             "检测"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -3927,6 +4170,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -3934,6 +4178,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -3964,6 +4209,7 @@
             "先修哪",
             "上游"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3971,6 +4217,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -3978,6 +4225,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4009,6 +4257,7 @@
             "收敛",
             "权限"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4016,6 +4265,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4023,6 +4273,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4052,6 +4303,7 @@
             "授权",
             "边界"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4061,6 +4313,7 @@
           "phrase_hits": [
             "授权"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4068,6 +4321,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4100,6 +4354,7 @@
             "设备包",
             "固件"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4107,6 +4362,7 @@
           "score": 5.5,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4116,6 +4372,7 @@
           "phrase_hits": [
             "接口"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4147,6 +4404,7 @@
             "资产流转",
             "链上资金"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4154,6 +4412,7 @@
           "score": 5.5,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4165,6 +4424,7 @@
           "phrase_hits": [
             "权限"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4195,6 +4455,7 @@
             "上线前",
             "控制项"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -4202,6 +4463,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -4209,6 +4471,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -4240,6 +4503,7 @@
             "覆盖指标",
             "蓝队"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4247,6 +4511,7 @@
           "score": 5.5,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4256,6 +4521,7 @@
           "phrase_hits": [
             "指标"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4288,6 +4554,7 @@
             "解析",
             "通信"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4295,6 +4562,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4302,6 +4570,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4332,6 +4601,7 @@
             "帮我分流",
             "不确定"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4341,6 +4611,7 @@
           "phrase_hits": [
             "接口"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4350,6 +4621,7 @@
           "phrase_hits": [
             "合规"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4372,11 +4644,11 @@
       ],
       "expected_set_top_n": 6,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 58.684,
+      "top_score": 80.684,
       "topn": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 58.684,
+          "score": 80.684,
           "lexical_overlap": [
             "api",
             "coding",
@@ -4389,6 +4661,7 @@
             "coff0xc",
             "自己判断"
           ],
+          "router_composition_bonus": 25.5,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4403,6 +4676,7 @@
             "api",
             "数据库"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4415,6 +4689,7 @@
             "代码",
             "测试"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4425,6 +4700,7 @@
             "认证",
             "越权"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4435,6 +4711,7 @@
             "前端",
             "界面"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4444,13 +4721,14 @@
             "schema"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 58.684,
+          "score": 80.684,
           "lexical_overlap": [
             "api",
             "coding",
@@ -4463,6 +4741,7 @@
             "coff0xc",
             "自己判断"
           ],
+          "router_composition_bonus": 25.5,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4477,6 +4756,7 @@
             "api",
             "数据库"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4489,6 +4769,7 @@
             "代码",
             "测试"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4529,6 +4810,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4544,6 +4826,7 @@
             "cost",
             "rag"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4558,6 +4841,7 @@
             "rest",
             "api"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4570,6 +4854,7 @@
             "ui"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4580,6 +4865,7 @@
             "frontend",
             "ui"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4589,6 +4875,7 @@
             "chain"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4609,6 +4896,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4624,6 +4912,7 @@
             "cost",
             "rag"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4638,6 +4927,7 @@
             "rest",
             "api"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4660,11 +4950,11 @@
       ],
       "expected_set_top_n": 6,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 31.1061,
+      "top_score": 58.1061,
       "topn": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 31.1061,
+          "score": 58.1061,
           "lexical_overlap": [
             "ai",
             "skill",
@@ -4676,11 +4966,12 @@
             "自动串联",
             "自己判断"
           ],
+          "router_composition_bonus": 27.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 30.2949,
+          "score": 28.4949,
           "lexical_overlap": [
             "csv",
             "excel",
@@ -4692,9 +4983,9 @@
             "workbook",
             "excel",
             "pptx",
-            "csv",
-            "ppt"
+            "csv"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4707,6 +4998,7 @@
           "phrase_hits": [
             "draw.io"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4718,6 +5010,7 @@
             "数据来源",
             "指标"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4729,6 +5022,7 @@
             "报告",
             "高管"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4738,13 +5032,14 @@
             "repo"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 31.1061,
+          "score": 58.1061,
           "lexical_overlap": [
             "ai",
             "skill",
@@ -4756,11 +5051,12 @@
             "自动串联",
             "自己判断"
           ],
+          "router_composition_bonus": 27.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 30.2949,
+          "score": 28.4949,
           "lexical_overlap": [
             "csv",
             "excel",
@@ -4772,9 +5068,9 @@
             "workbook",
             "excel",
             "pptx",
-            "csv",
-            "ppt"
+            "csv"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4787,6 +5083,7 @@
           "phrase_hits": [
             "draw.io"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -4808,9 +5105,17 @@
         "coff0xc-ui-doc-output"
       ],
       "expected_set_top_n": 8,
-      "predicted_skill": "coff0xc-research-drawio-diagram",
-      "top_score": 17.3671,
+      "predicted_skill": "coff0xc-skill-router",
+      "top_score": 36.0,
       "topn": [
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 36.0,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 27.0,
+          "simple_prompt_penalty": 0.0
+        },
         {
           "skill": "coff0xc-research-drawio-diagram",
           "score": 17.3671,
@@ -4824,13 +5129,7 @@
             "arxiv",
             "可编辑"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 12.5,
-          "lexical_overlap": [],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4844,18 +5143,7 @@
             "rag",
             "评测"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-office-doc-tools",
-          "score": 8.339,
-          "lexical_overlap": [
-            "pptx"
-          ],
-          "phrase_hits": [
-            "pptx",
-            "ppt"
-          ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4866,6 +5154,19 @@
             "pipeline"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-office-doc-tools",
+          "score": 6.539,
+          "lexical_overlap": [
+            "pptx"
+          ],
+          "phrase_hits": [
+            "pptx"
+          ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4876,6 +5177,7 @@
             "technical report",
             "report"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4885,6 +5187,7 @@
             "report"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4894,10 +5197,19 @@
             "report"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "top3": [
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 36.0,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 27.0,
+          "simple_prompt_penalty": 0.0
+        },
         {
           "skill": "coff0xc-research-drawio-diagram",
           "score": 17.3671,
@@ -4911,13 +5223,7 @@
             "arxiv",
             "可编辑"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 12.5,
-          "lexical_overlap": [],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -4931,11 +5237,12 @@
             "rag",
             "评测"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "passed": true,
-      "failure": "expected skill was top3 but not top1",
+      "failure": "",
       "reason": "PhD-level research system should compose AI/RAG, research diagrams, Office artifacts, UI/report narrative, and the router."
     },
     {
@@ -4953,12 +5260,23 @@
         "coff0xc-compliance-architecture"
       ],
       "expected_set_top_n": 9,
-      "predicted_skill": "coff0xc-software-engineering",
-      "top_score": 34.6732,
+      "predicted_skill": "coff0xc-skill-router",
+      "top_score": 45.6008,
       "topn": [
         {
+          "skill": "coff0xc-skill-router",
+          "score": 45.6008,
+          "lexical_overlap": [
+            "security",
+            "ui"
+          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 31.5,
+          "simple_prompt_penalty": 0.0
+        },
+        {
           "skill": "coff0xc-software-engineering",
-          "score": 34.6732,
+          "score": 31.6732,
           "lexical_overlap": [
             "browser",
             "failing",
@@ -4971,14 +5289,14 @@
             "usage ledger",
             "monorepo",
             "ledger",
-            "tests",
-            "test"
+            "tests"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": 32.331,
+          "score": 30.531,
           "lexical_overlap": [
             "ledger",
             "usage"
@@ -4990,19 +5308,9 @@
             "openapi",
             "ledger",
             "schema",
-            "rest",
-            "api"
+            "rest"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 24.6008,
-          "lexical_overlap": [
-            "security",
-            "ui"
-          ],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5017,19 +5325,19 @@
             "permission model",
             "audit"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-compliance-architecture",
-          "score": 11.1289,
+          "score": 8.1289,
           "lexical_overlap": [
             "audit",
             "risk",
             "security"
           ],
-          "phrase_hits": [
-            "audit log"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5042,17 +5350,7 @@
             "browser smoke",
             "ui"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-detection-response",
-          "score": 5.339,
-          "lexical_overlap": [
-            "logs"
-          ],
-          "phrase_hits": [
-            "ir"
-          ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5062,6 +5360,17 @@
             "schema"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-detection-response",
+          "score": 3.539,
+          "lexical_overlap": [
+            "logs"
+          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5071,13 +5380,25 @@
             "team"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "top3": [
         {
+          "skill": "coff0xc-skill-router",
+          "score": 45.6008,
+          "lexical_overlap": [
+            "security",
+            "ui"
+          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 31.5,
+          "simple_prompt_penalty": 0.0
+        },
+        {
           "skill": "coff0xc-software-engineering",
-          "score": 34.6732,
+          "score": 31.6732,
           "lexical_overlap": [
             "browser",
             "failing",
@@ -5090,14 +5411,14 @@
             "usage ledger",
             "monorepo",
             "ledger",
-            "tests",
-            "test"
+            "tests"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-api-data-platform",
-          "score": 32.331,
+          "score": 30.531,
           "lexical_overlap": [
             "ledger",
             "usage"
@@ -5109,24 +5430,14 @@
             "openapi",
             "ledger",
             "schema",
-            "rest",
-            "api"
+            "rest"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 24.6008,
-          "lexical_overlap": [
-            "security",
-            "ui"
-          ],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "passed": true,
-      "failure": "expected skill was top3 but not top1",
+      "failure": "",
       "reason": "Top development platform work needs software, API/data, UI, AppSec, compliance/risk evidence, and router composition."
     },
     {
@@ -5147,17 +5458,18 @@
       ],
       "expected_set_top_n": 10,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 42.248,
+      "top_score": 83.248,
       "topn": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 42.248,
+          "score": 83.248,
           "lexical_overlap": [
             "compliance",
             "detection",
             "plan"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 48.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5179,6 +5491,7 @@
             "adversary",
             "roe"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5198,6 +5511,7 @@
             "emulation",
             "attack"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5213,6 +5527,7 @@
             "sigma",
             "yara"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5227,6 +5542,7 @@
             "compliance report",
             "compliance"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5240,18 +5556,19 @@
             "identity",
             "ad"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-binary-mobile-iot",
-          "score": 7.4917,
+          "score": 5.6917,
           "lexical_overlap": [
             "engineering"
           ],
           "phrase_hits": [
-            "engineering",
-            "rf"
+            "engineering"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5263,6 +5580,7 @@
           "phrase_hits": [
             "ppt"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5273,6 +5591,7 @@
             "supply-chain",
             "k8s"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5282,19 +5601,21 @@
             "report"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 42.248,
+          "score": 83.248,
           "lexical_overlap": [
             "compliance",
             "detection",
             "plan"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 48.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5316,6 +5637,7 @@
             "adversary",
             "roe"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5335,6 +5657,7 @@
             "emulation",
             "attack"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -5355,12 +5678,23 @@
         "coff0xc-api-data-platform"
       ],
       "expected_set_top_n": 7,
-      "predicted_skill": "coff0xc-ui-doc-output",
-      "top_score": 42.4169,
+      "predicted_skill": "coff0xc-skill-router",
+      "top_score": 48.0563,
       "topn": [
         {
+          "skill": "coff0xc-skill-router",
+          "score": 48.0563,
+          "lexical_overlap": [
+            "api",
+            "ui"
+          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 33.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
           "skill": "coff0xc-ui-doc-output",
-          "score": 42.4169,
+          "score": 39.4169,
           "lexical_overlap": [
             "anti-ai",
             "cleanliness",
@@ -5372,28 +5706,18 @@
             "anti-ai aesthetic",
             "dense data table",
             "filter builder",
-            "screenshot",
             "component",
             "dashboard",
             "contrast",
             "aria",
             "ui"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 32.5563,
-          "lexical_overlap": [
-            "api",
-            "ui"
-          ],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-software-engineering",
-          "score": 19.1061,
+          "score": 16.1061,
           "lexical_overlap": [
             "implementation",
             "repo",
@@ -5401,9 +5725,9 @@
           ],
           "phrase_hits": [
             "dashboard",
-            "tests",
-            "test"
+            "tests"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5418,6 +5742,7 @@
             "filter builder",
             "api"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5430,6 +5755,7 @@
           "phrase_hits": [
             "table"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5439,24 +5765,35 @@
             "data"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-binary-mobile-iot",
-          "score": 4.8281,
+          "score": 3.0281,
           "lexical_overlap": [
             "review"
           ],
-          "phrase_hits": [
-            "ble"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "top3": [
         {
+          "skill": "coff0xc-skill-router",
+          "score": 48.0563,
+          "lexical_overlap": [
+            "api",
+            "ui"
+          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 33.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
           "skill": "coff0xc-ui-doc-output",
-          "score": 42.4169,
+          "score": 39.4169,
           "lexical_overlap": [
             "anti-ai",
             "cleanliness",
@@ -5468,28 +5805,18 @@
             "anti-ai aesthetic",
             "dense data table",
             "filter builder",
-            "screenshot",
             "component",
             "dashboard",
             "contrast",
             "aria",
             "ui"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 32.5563,
-          "lexical_overlap": [
-            "api",
-            "ui"
-          ],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-software-engineering",
-          "score": 19.1061,
+          "score": 16.1061,
           "lexical_overlap": [
             "implementation",
             "repo",
@@ -5497,14 +5824,14 @@
           ],
           "phrase_hits": [
             "dashboard",
-            "tests",
-            "test"
+            "tests"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "passed": true,
-      "failure": "expected skill was top3 but not top1",
+      "failure": "",
       "reason": "Top UI engineering should compose UI quality, implementation, API/data wiring, and routing."
     },
     {
@@ -5523,12 +5850,24 @@
         "coff0xc-compliance-architecture"
       ],
       "expected_set_top_n": 10,
-      "predicted_skill": "coff0xc-office-doc-tools",
-      "top_score": 27.4169,
+      "predicted_skill": "coff0xc-skill-router",
+      "top_score": 61.8281,
       "topn": [
         {
+          "skill": "coff0xc-skill-router",
+          "score": 61.8281,
+          "lexical_overlap": [
+            "api"
+          ],
+          "phrase_hits": [
+            "多维度"
+          ],
+          "router_composition_bonus": 37.5,
+          "simple_prompt_penalty": 0.0
+        },
+        {
           "skill": "coff0xc-office-doc-tools",
-          "score": 27.4169,
+          "score": 25.6169,
           "lexical_overlap": [
             "docx",
             "excel",
@@ -5539,20 +5878,9 @@
             "客户说明 docx",
             "excel",
             "docx",
-            "pptx",
-            "ppt"
+            "pptx"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 24.3281,
-          "lexical_overlap": [
-            "api"
-          ],
-          "phrase_hits": [
-            "多维度"
-          ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5565,6 +5893,7 @@
             "告警",
             "检测"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5578,6 +5907,7 @@
             "影响面",
             "数据库"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5589,6 +5919,7 @@
             "控制证据",
             "合规"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5600,6 +5931,7 @@
             "修 api",
             "代码"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5610,6 +5942,7 @@
             "权限越权",
             "越权"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5619,6 +5952,7 @@
             "bug"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5628,6 +5962,7 @@
           "phrase_hits": [
             "权限"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5635,13 +5970,26 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "top3": [
         {
+          "skill": "coff0xc-skill-router",
+          "score": 61.8281,
+          "lexical_overlap": [
+            "api"
+          ],
+          "phrase_hits": [
+            "多维度"
+          ],
+          "router_composition_bonus": 37.5,
+          "simple_prompt_penalty": 0.0
+        },
+        {
           "skill": "coff0xc-office-doc-tools",
-          "score": 27.4169,
+          "score": 25.6169,
           "lexical_overlap": [
             "docx",
             "excel",
@@ -5652,20 +6000,9 @@
             "客户说明 docx",
             "excel",
             "docx",
-            "pptx",
-            "ppt"
+            "pptx"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 24.3281,
-          "lexical_overlap": [
-            "api"
-          ],
-          "phrase_hits": [
-            "多维度"
-          ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5678,11 +6015,12 @@
             "告警",
             "检测"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "passed": true,
-      "failure": "expected skill was top3 but not top1",
+      "failure": "",
       "reason": "Crisis workflow needs code repair, API/data, AppSec, detection, Office communication, compliance evidence, and router orchestration."
     },
     {
@@ -5699,9 +6037,17 @@
         "coff0xc-office-doc-tools"
       ],
       "expected_set_top_n": 8,
-      "predicted_skill": "coff0xc-blockchain-security",
-      "top_score": 45.984,
+      "predicted_skill": "coff0xc-skill-router",
+      "top_score": 68.5,
       "topn": [
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 68.5,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 42.0,
+          "simple_prompt_penalty": 0.0
+        },
         {
           "skill": "coff0xc-blockchain-security",
           "score": 45.984,
@@ -5724,13 +6070,7 @@
             "资产流转",
             "evm"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 26.5,
-          "lexical_overlap": [],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5745,18 +6085,19 @@
             "修复",
             "漏洞"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 8.339,
+          "score": 6.539,
           "lexical_overlap": [
             "pptx"
           ],
           "phrase_hits": [
-            "pptx",
-            "ppt"
+            "pptx"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5768,6 +6109,7 @@
           "phrase_hits": [
             "权限"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5778,6 +6120,7 @@
             "检测响应",
             "检测"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5787,6 +6130,7 @@
           "phrase_hits": [
             "风险报告"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5796,10 +6140,19 @@
           "phrase_hits": [
             "可编辑"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "top3": [
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 68.5,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 42.0,
+          "simple_prompt_penalty": 0.0
+        },
         {
           "skill": "coff0xc-blockchain-security",
           "score": 45.984,
@@ -5822,13 +6175,7 @@
             "资产流转",
             "evm"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 26.5,
-          "lexical_overlap": [],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5843,11 +6190,12 @@
             "修复",
             "漏洞"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "passed": true,
-      "failure": "expected skill was top3 but not top1",
+      "failure": "",
       "reason": "Blockchain incident work should compose blockchain audit, vuln lifecycle, detection response, Office reporting, and router."
     },
     {
@@ -5864,9 +6212,17 @@
         "coff0xc-compliance-architecture"
       ],
       "expected_set_top_n": 9,
-      "predicted_skill": "coff0xc-network-protocol-security",
-      "top_score": 33.531,
+      "predicted_skill": "coff0xc-skill-router",
+      "top_score": 49.0,
       "topn": [
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 49.0,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 33.0,
+          "simple_prompt_penalty": 0.0
+        },
         {
           "skill": "coff0xc-network-protocol-security",
           "score": 33.531,
@@ -5886,6 +6242,7 @@
             "rf",
             "协议"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5905,13 +6262,7 @@
             "固件",
             "逆向"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 19.5,
-          "lexical_overlap": [],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5925,16 +6276,7 @@
             "diagram",
             "draw.io"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-ui-doc-output",
-          "score": 3.6,
-          "lexical_overlap": [],
-          "phrase_hits": [
-            "ui",
-            "报告"
-          ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5944,6 +6286,7 @@
           "phrase_hits": [
             "风险报告"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5953,15 +6296,17 @@
           "phrase_hits": [
             "接口"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-detection-response",
+          "skill": "coff0xc-ui-doc-output",
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "ir"
+            "报告"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -5969,10 +6314,27 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 0.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": 0.0,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "top3": [
+        {
+          "skill": "coff0xc-skill-router",
+          "score": 49.0,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 33.0,
+          "simple_prompt_penalty": 0.0
+        },
         {
           "skill": "coff0xc-network-protocol-security",
           "score": 33.531,
@@ -5992,6 +6354,7 @@
             "rf",
             "协议"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6011,18 +6374,12 @@
             "固件",
             "逆向"
           ],
-          "simple_prompt_penalty": 0.0
-        },
-        {
-          "skill": "coff0xc-skill-router",
-          "score": 19.5,
-          "lexical_overlap": [],
-          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "passed": true,
-      "failure": "expected skill was top3 but not top1",
+      "failure": "",
       "reason": "Protocol/IoT/formal-analysis work should compose binary/IoT, network protocol, research diagrams, risk/compliance, and router."
     },
     {
@@ -6041,11 +6398,11 @@
       ],
       "expected_set_top_n": 9,
       "predicted_skill": "coff0xc-skill-router",
-      "top_score": 21.5281,
+      "top_score": 48.5281,
       "topn": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 21.5281,
+          "score": 48.5281,
           "lexical_overlap": [
             "ui"
           ],
@@ -6053,6 +6410,7 @@
             "编排工作流",
             "同时涉及"
           ],
+          "router_composition_bonus": 27.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6066,6 +6424,7 @@
             "前后端",
             "开发"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6078,6 +6437,7 @@
             "api",
             "数据库"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6089,6 +6449,7 @@
             "ppt",
             "文档"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6099,6 +6460,7 @@
             "web/api",
             "web"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6109,6 +6471,7 @@
             "ui",
             "文档"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6116,6 +6479,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6123,6 +6487,7 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6130,13 +6495,14 @@
           "score": 0.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
       "top3": [
         {
           "skill": "coff0xc-skill-router",
-          "score": 21.5281,
+          "score": 48.5281,
           "lexical_overlap": [
             "ui"
           ],
@@ -6144,6 +6510,7 @@
             "编排工作流",
             "同时涉及"
           ],
+          "router_composition_bonus": 27.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6157,6 +6524,7 @@
             "前后端",
             "开发"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6169,6 +6537,7 @@
             "api",
             "数据库"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6185,21 +6554,21 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-software-engineering",
-      "top_score": 116.6169,
+      "top_score": 113.6169,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-software-engineering",
-          "score": 116.6169,
+          "score": 113.6169,
           "lexical_overlap": [
             "coff0xc-software-engineering",
             "failing",
             "repo"
           ],
           "phrase_hits": [
-            "tests",
-            "test"
+            "tests"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6209,6 +6578,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6218,6 +6588,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6249,6 +6620,7 @@
             "助手",
             "缓存"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6258,6 +6630,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6267,6 +6640,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6302,6 +6676,7 @@
             "错误码",
             "分页"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6313,6 +6688,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6322,6 +6698,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6353,6 +6730,7 @@
             "ui",
             "截图"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6362,6 +6740,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6371,6 +6750,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6387,12 +6767,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-office-doc-tools",
-      "top_score": 120.2169,
+      "top_score": 118.4169,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-office-doc-tools",
-          "score": 120.2169,
+          "score": 118.4169,
           "lexical_overlap": [
             "coff0xc-office-doc-tools",
             "pptx",
@@ -6401,9 +6781,9 @@
           "phrase_hits": [
             "office",
             "pptx",
-            "ppt",
             "导出"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6413,6 +6793,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6422,6 +6803,7 @@
           "phrase_hits": [
             "边界"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6455,15 +6837,17 @@
             "drawio",
             "可编辑"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 28.5,
+          "score": 18.0,
           "lexical_overlap": [],
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6473,6 +6857,7 @@
             "github"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6505,6 +6890,7 @@
             "认证",
             "越权"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6514,6 +6900,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6523,6 +6910,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6556,6 +6944,7 @@
             "k8s",
             "供应链"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6565,6 +6954,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6574,6 +6964,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6610,6 +7001,7 @@
             "日志",
             "检测"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6619,6 +7011,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6628,6 +7021,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6661,6 +7055,7 @@
             "修复",
             "补丁"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6670,6 +7065,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6679,6 +7075,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6712,15 +7109,17 @@
             "kerberos",
             "ad"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 28.5,
+          "score": 18.0,
           "lexical_overlap": [],
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6730,6 +7129,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6761,6 +7161,7 @@
             "授权",
             "边界"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6770,6 +7171,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6779,6 +7181,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6809,6 +7212,7 @@
             "frida",
             "apk"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6818,6 +7222,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6827,6 +7232,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6857,6 +7263,7 @@
             "solidity",
             "价格来源"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6866,6 +7273,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6875,6 +7283,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6905,6 +7314,7 @@
             "威胁建模",
             "上线前"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6914,6 +7324,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6923,6 +7334,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -6956,6 +7368,7 @@
             "攻击行为",
             "检测覆盖"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6965,6 +7378,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -6974,6 +7388,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -7008,6 +7423,7 @@
             "tls",
             "握手"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -7017,6 +7433,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -7026,6 +7443,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -7057,6 +7475,7 @@
             "coff0xc",
             "router"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -7066,6 +7485,7 @@
             "交付物"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -7075,6 +7495,7 @@
           "phrase_hits": [
             "边界"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -7101,6 +7522,7 @@
           "phrase_hits": [
             "翻译"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7108,6 +7530,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7115,6 +7538,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7143,6 +7567,7 @@
           "phrase_hits": [
             "cve"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7150,6 +7575,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7157,6 +7583,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7181,6 +7608,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7188,6 +7616,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7195,6 +7624,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7211,32 +7641,31 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": null,
-      "top_score": -3.0,
+      "top_score": -6.0,
       "topn": [],
       "top3": [
-        {
-          "skill": "coff0xc-network-protocol-security",
-          "score": -3.0,
-          "lexical_overlap": [],
-          "phrase_hits": [
-            "quic"
-          ],
-          "simple_prompt_penalty": 6.0
-        },
-        {
-          "skill": "coff0xc-ui-doc-output",
-          "score": -4.2,
-          "lexical_overlap": [],
-          "phrase_hits": [
-            "ui"
-          ],
-          "simple_prompt_penalty": 6.0
-        },
         {
           "skill": "coff0xc-ai-agent-rag",
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 6.0
+        },
+        {
+          "skill": "coff0xc-api-data-platform",
+          "score": -6.0,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 6.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": -6.0,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7263,6 +7692,7 @@
           "phrase_hits": [
             "git"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7270,6 +7700,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7277,6 +7708,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7305,6 +7737,7 @@
           "phrase_hits": [
             "json"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7312,6 +7745,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7319,6 +7753,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7345,6 +7780,7 @@
           "phrase_hits": [
             "token"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7352,6 +7788,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7359,6 +7796,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7383,6 +7821,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7390,6 +7829,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7397,6 +7837,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7425,6 +7866,7 @@
           "phrase_hits": [
             "pdf"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7432,6 +7874,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7439,6 +7882,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7467,6 +7911,7 @@
           "phrase_hits": [
             "excel"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7474,6 +7919,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7481,6 +7927,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7509,24 +7956,23 @@
           "phrase_hits": [
             "powerpoint"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
-          "skill": "coff0xc-network-protocol-security",
-          "score": -3.0,
+          "skill": "coff0xc-ai-agent-rag",
+          "score": -6.0,
           "lexical_overlap": [],
-          "phrase_hits": [
-            "quic"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
-          "skill": "coff0xc-ui-doc-output",
-          "score": -4.2,
+          "skill": "coff0xc-api-data-platform",
+          "score": -6.0,
           "lexical_overlap": [],
-          "phrase_hits": [
-            "ui"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7543,23 +7989,15 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": null,
-      "top_score": -4.2,
+      "top_score": -6.0,
       "topn": [],
       "top3": [
-        {
-          "skill": "coff0xc-blockchain-security",
-          "score": -4.2,
-          "lexical_overlap": [],
-          "phrase_hits": [
-            "amm"
-          ],
-          "simple_prompt_penalty": 6.0
-        },
         {
           "skill": "coff0xc-ai-agent-rag",
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7567,6 +8005,15 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
+          "simple_prompt_penalty": 6.0
+        },
+        {
+          "skill": "coff0xc-authorized-assessment",
+          "score": -6.0,
+          "lexical_overlap": [],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7595,6 +8042,7 @@
           "phrase_hits": [
             "siem"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7602,6 +8050,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7609,6 +8058,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7635,15 +8085,15 @@
           "phrase_hits": [
             "kubernetes"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
           "skill": "coff0xc-ai-agent-rag",
-          "score": -4.2,
+          "score": -6.0,
           "lexical_overlap": [],
-          "phrase_hits": [
-            "rag"
-          ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7651,6 +8101,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7679,6 +8130,7 @@
           "phrase_hits": [
             "draw.io"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7686,6 +8138,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         },
         {
@@ -7693,6 +8146,7 @@
           "score": -6.0,
           "lexical_overlap": [],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
         }
       ],
@@ -7709,18 +8163,17 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-ui-doc-output",
-      "top_score": 123.939,
+      "top_score": 120.939,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 123.939,
+          "score": 120.939,
           "lexical_overlap": [
             "coff0xc-ui-doc-output"
           ],
           "phrase_hits": [
             "design system",
-            "component",
             "dashboard",
             "focus",
             "hover",
@@ -7728,11 +8181,12 @@
             "ui",
             "截图"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 46.8563,
+          "score": 36.3563,
           "lexical_overlap": [
             "ai",
             "ui"
@@ -7741,6 +8195,7 @@
             "coff0xc",
             "路由"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -7754,6 +8209,7 @@
             "saas admin",
             "dashboard"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -7770,12 +8226,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-ui-doc-output",
-      "top_score": 142.4169,
+      "top_score": 139.4169,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-ui-doc-output",
-          "score": 142.4169,
+          "score": 139.4169,
           "lexical_overlap": [
             "cleanliness",
             "coff0xc-ui-doc-output",
@@ -7786,7 +8242,6 @@
             "component variants",
             "semantic tokens",
             "design system",
-            "screenshot",
             "component",
             "contrast",
             "keyboard",
@@ -7794,11 +8249,12 @@
             "aria",
             "ui"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 34.5563,
+          "score": 24.0563,
           "lexical_overlap": [
             "ai",
             "ui"
@@ -7806,6 +8262,7 @@
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -7815,6 +8272,7 @@
             "data"
           ],
           "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -7849,15 +8307,17 @@
             "开发",
             "测试"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 35.5,
+          "score": 28.5,
           "lexical_overlap": [],
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
@@ -7869,6 +8329,7 @@
           "phrase_hits": [
             "修复"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],
@@ -7885,12 +8346,12 @@
       "expected_skill_set": [],
       "expected_set_top_n": null,
       "predicted_skill": "coff0xc-software-engineering",
-      "top_score": 125.0779,
+      "top_score": 122.0779,
       "topn": [],
       "top3": [
         {
           "skill": "coff0xc-software-engineering",
-          "score": 125.0779,
+          "score": 122.0779,
           "lexical_overlap": [
             "coff0xc-software-engineering",
             "hygiene"
@@ -7900,28 +8361,29 @@
             "diff hygiene",
             "need package",
             "feature",
-            "tests",
-            "test"
+            "tests"
           ],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         },
         {
           "skill": "coff0xc-skill-router",
-          "score": 35.5,
+          "score": 60.5,
           "lexical_overlap": [],
           "phrase_hits": [
             "coff0xc"
           ],
+          "router_composition_bonus": 28.5,
           "simple_prompt_penalty": 0.0
         },
         {
-          "skill": "coff0xc-binary-mobile-iot",
-          "score": 4.8,
-          "lexical_overlap": [],
-          "phrase_hits": [
-            "engineering",
-            "rf"
+          "skill": "coff0xc-office-doc-tools",
+          "score": 3.539,
+          "lexical_overlap": [
+            "create"
           ],
+          "phrase_hits": [],
+          "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
         }
       ],

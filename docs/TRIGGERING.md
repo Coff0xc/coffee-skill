@@ -9,10 +9,11 @@ Most clients select skills from frontmatter metadata, especially `name` and `des
 - Each capability skill starts with broad Chinese/English capability terms.
 - Descriptions include concrete deliverables, domain nouns, tool names, acronyms, and manual invocation cues without carrying long source-alias inventories.
 - Release validation keeps frontmatter descriptions under a small metadata budget so daily skill selection stays fast.
-- Each skill body starts with `快速规则（日常任务先读这里）`, then capability positioning, inputs, deliverables, boundaries, trust reasons, and examples.
+- Each skill body starts with `快速规则（日常任务先读这里）`, then capability positioning, inputs, deliverables, boundaries, trust reasons, examples, and a short default output contract.
 - `coff0xc-skill-router` is the fallback when auto-triggering misses and the lightweight autonomous composer for cross-domain tasks.
 - Narrow prompts should go directly to the most specific skill. Broad prompts should trigger a small workflow graph and then execution, not a long proof artifact.
-- Main `SKILL.md` files are optimized for runtime fast paths. Heavy checklists, route maps, and eval guidance live in `references/` and should be loaded only when the active task needs them.
+- Main `SKILL.md` files are optimized for runtime fast paths and kept under a release-enforced body-size budget. Full workflows live in `references/full-workflow.md`; route maps, special cases, and eval guidance live in `references/` and should be loaded only when the active task needs them.
+- Local cross-directory consolidation is documented in [Installed Skill Inventory](SKILL_INVENTORY.md). Use it to reason about installed Codex/agent/plugin skills, duplicates, and promotion candidates; do not treat it as runtime skill content.
 
 ## Runtime Modes
 
@@ -23,7 +24,7 @@ Most clients select skills from frontmatter metadata, especially `name` and `des
 
 `workflow-trace.json`, golden responses, trigger evals, and quality evals belong to release/eval mode. They should not appear in normal task execution unless the user explicitly asks for them.
 
-If a normal task feels slow, first check whether the agent unnecessarily invoked the router, loaded references, or entered release/eval mode. The expected fix is to return to the most specific skill and run only task-relevant validation.
+If a normal task feels slow, first check whether the agent unnecessarily invoked the router, loaded `references/full-workflow.md`, or entered release/eval mode. The expected fix is to return to the most specific skill and run only task-relevant validation.
 
 ## Composition Triggers
 

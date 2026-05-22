@@ -50,6 +50,27 @@ SUPPORTED_ASSERTIONS = {
     "docx_ooxml_structure",
 }
 
+EVIDENCE_MODEL = {
+    "deterministic_release_guard": [
+        "OOXML package structure and selected formulas/cells",
+        "HTML/static UI structure plus declared render-audit evidence",
+        "Python/Node fixture behavior and lockfile churn checks",
+        "workflow trace shape and required stage evidence",
+    ],
+    "not_replaced": [
+        "live browser interaction, DOM measurement, and visual diffing",
+        "native PowerPoint/Excel/Word rendering and full Excel calculation",
+        "human visual taste review",
+        "real project CI across external services and production-like dependencies",
+    ],
+    "escalate_to_live_checks_when_claiming": [
+        "pixel-perfect UI, no overlap, or console-clean browser behavior",
+        "final Office layout quality or stakeholder-ready decks/documents",
+        "financial workbook correctness beyond supported deterministic formulas",
+        "repository repair is CI-ready for an arbitrary real project",
+    ],
+}
+
 
 @dataclass
 class AssertionResult:
@@ -1249,6 +1270,15 @@ def evaluate_assertion(assertion: dict[str, Any], response_dir: Path, eval_root:
     return AssertionResult(id=assertion_id, passed=False, evidence=f"unsupported assertion type {assertion_type}")
 
 
+def requires_code_execution(eval_set: dict[str, Any]) -> bool:
+    executable_assertions = {"python_billing_behavior", "node_api_behavior"}
+    return any(
+        assertion.get("type") in executable_assertions
+        for case in eval_set.get("cases", [])
+        for assertion in case.get("assertions", [])
+    )
+
+
 def evaluate_response_case(case: dict[str, Any], responses_dir: Path, eval_root: Path) -> dict[str, Any]:
     case_dir = responses_dir / case["id"]
     assertion_results = [evaluate_assertion(assertion, case_dir, eval_root) for assertion in case["assertions"]]
@@ -1288,6 +1318,27 @@ def write_markdown_report(summary: dict[str, Any], output: Path) -> None:
             ]
         )
 
+    lines.extend(
+        [
+            "",
+            "## Evidence Model",
+            "",
+            "This is a deterministic release guard, not a replacement for live validation.",
+            "",
+            "Deterministic checks:",
+        ]
+    )
+    for item in summary["evidence_model"]["deterministic_release_guard"]:
+        lines.append(f"- {item}")
+    lines.append("")
+    lines.append("Not replaced:")
+    for item in summary["evidence_model"]["not_replaced"]:
+        lines.append(f"- {item}")
+    lines.append("")
+    lines.append("Escalate to live checks when claiming:")
+    for item in summary["evidence_model"]["escalate_to_live_checks_when_claiming"]:
+        lines.append(f"- {item}")
+
     lines.extend(["", "## Fixture Validation", ""])
     if summary["fixture_errors"]:
         for error in summary["fixture_errors"]:
@@ -1314,6 +1365,11 @@ def main() -> None:
     parser.add_argument("--eval-set", type=Path, default=DEFAULT_EVAL_SET)
     parser.add_argument("--responses-dir", type=Path, default=DEFAULT_RESPONSES)
     parser.add_argument("--fixture-only", action="store_true")
+    parser.add_argument(
+        "--allow-code-execution",
+        action="store_true",
+        help="Allow Python/Node behavior assertions for non-default response directories.",
+    )
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     args = parser.parse_args()
 
@@ -1329,9 +1385,14 @@ def main() -> None:
     if not args.fixture_only:
         mode = "responses"
         responses_dir = rel_path(args.responses_dir)
+        default_responses = args.responses_dir.resolve() == DEFAULT_RESPONSES.resolve()
+        if not default_responses and requires_code_execution(eval_set) and not args.allow_code_execution:
+            fixture_errors.append(
+                "non-default responses_dir requires --allow-code-execution because behavior assertions execute Python/Node code"
+            )
         if not args.responses_dir.exists():
             fixture_errors.append(f"missing responses_dir: {responses_dir}")
-        else:
+        elif not fixture_errors:
             results = [evaluate_response_case(case, args.responses_dir, eval_root) for case in eval_set["cases"]]
 
     assertion_total = sum(len(case["assertions"]) for case in results)
@@ -1353,6 +1414,7 @@ def main() -> None:
         "assertion_total": assertion_total,
         "assertion_passed": assertion_passed,
         "assertion_pass_rate": round(assertion_passed / assertion_total, 4) if assertion_total else None,
+        "evidence_model": EVIDENCE_MODEL,
         "results": results,
     }
 

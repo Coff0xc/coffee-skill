@@ -4,6 +4,10 @@ These files are short usage references for international users. They explain wha
 
 The skills themselves are primarily Chinese + English. These reference files are not separate skill implementations.
 
+## License Notice
+
+These translations are usage references only. The controlling license is the repository root [LICENSE](../LICENSE): personal learning, research, evaluation, and local noncommercial use are allowed with attribution preserved; commercial use, redistribution, hosted services, paid courses, paid communities, agent packs, mirrors, resale, or derivative publication require prior notice to Coff0xc and written permission.
+
 ## Available References
 
 | Language | File |

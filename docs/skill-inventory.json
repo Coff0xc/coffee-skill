@@ -1,0 +1,1550 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-05-22",
+  "generated_by": "scripts/build_skill_inventory.py",
+  "policy": "Only coffee-release skills are redistributed as runtime skill bodies. Other installed/system/plugin skills are metadata-only inventory entries.",
+  "counts": {
+    "skill_files": 136,
+    "unique_skill_names": 115,
+    "sources": {
+      "agents-user": 86,
+      "codex-system": 5,
+      "codex-user": 21,
+      "coffee-release": 18,
+      "plugin-bundled": 3,
+      "plugin-runtime": 3
+    },
+    "mapped_coff0xc_skills": {
+      "coff0xc-ai-agent-rag": 5,
+      "coff0xc-api-data-platform": 5,
+      "coff0xc-authorized-assessment": 3,
+      "coff0xc-binary-mobile-iot": 6,
+      "coff0xc-blockchain-security": 12,
+      "coff0xc-cloud-devsecops": 8,
+      "coff0xc-compliance-architecture": 2,
+      "coff0xc-detection-response": 4,
+      "coff0xc-identity-zero-trust": 2,
+      "coff0xc-network-protocol-security": 5,
+      "coff0xc-office-doc-tools": 4,
+      "coff0xc-purple-deception": 3,
+      "coff0xc-research-drawio-diagram": 4,
+      "coff0xc-secure-code-appsec": 11,
+      "coff0xc-skill-router": 2,
+      "coff0xc-software-engineering": 36,
+      "coff0xc-ui-doc-output": 8,
+      "coff0xc-vulnerability-lifecycle": 3,
+      "supporting-tooling": 13
+    },
+    "duplicate_names": 21
+  },
+  "duplicates": {
+    "Chrome": {
+      "instances": 2,
+      "sources": [
+        "plugin-bundled"
+      ]
+    },
+    "UIdesign": {
+      "instances": 2,
+      "sources": [
+        "agents-user",
+        "codex-user"
+      ]
+    },
+    "coff0xc-ai-agent-rag": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-api-data-platform": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-authorized-assessment": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-binary-mobile-iot": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-blockchain-security": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-cloud-devsecops": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-compliance-architecture": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-detection-response": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-identity-zero-trust": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-network-protocol-security": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-office-doc-tools": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-purple-deception": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-research-drawio-diagram": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-secure-code-appsec": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-skill-router": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-software-engineering": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-ui-doc-output": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "coff0xc-vulnerability-lifecycle": {
+      "instances": 2,
+      "sources": [
+        "codex-user",
+        "coffee-release"
+      ]
+    },
+    "skill-creator": {
+      "instances": 2,
+      "sources": [
+        "agents-user",
+        "codex-system"
+      ]
+    }
+  },
+  "skills": [
+    {
+      "name": "address-sanitizer",
+      "source": "agents-user",
+      "relative_skill_path": "address-sanitizer/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "aflpp",
+      "source": "agents-user",
+      "relative_skill_path": "aflpp/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "agentic-actions-auditor",
+      "source": "agents-user",
+      "relative_skill_path": "agentic-actions-auditor/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-cloud-devsecops",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "algorand-vulnerability-scanner",
+      "source": "agents-user",
+      "relative_skill_path": "algorand-vulnerability-scanner/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "dual-use-high-risk",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "ask-questions-if-underspecified",
+      "source": "agents-user",
+      "relative_skill_path": "ask-questions-if-underspecified/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "atheris",
+      "source": "agents-user",
+      "relative_skill_path": "atheris/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "audit-augmentation",
+      "source": "agents-user",
+      "relative_skill_path": "audit-augmentation/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "audit-context-building",
+      "source": "agents-user",
+      "relative_skill_path": "audit-context-building/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "audit-prep-assistant",
+      "source": "agents-user",
+      "relative_skill_path": "audit-prep-assistant/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "burpsuite-project-parser",
+      "source": "agents-user",
+      "relative_skill_path": "burpsuite-project-parser/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "cairo-vulnerability-scanner",
+      "source": "agents-user",
+      "relative_skill_path": "cairo-vulnerability-scanner/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "cargo-fuzz",
+      "source": "agents-user",
+      "relative_skill_path": "cargo-fuzz/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "claude-in-chrome-troubleshooting",
+      "source": "agents-user",
+      "relative_skill_path": "claude-in-chrome-troubleshooting/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-ui-doc-output",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "code-maturity-assessor",
+      "source": "agents-user",
+      "relative_skill_path": "code-maturity-assessor/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-authorized-assessment",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "codeql",
+      "source": "agents-user",
+      "relative_skill_path": "codeql/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-secure-code-appsec",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "constant-time-analysis",
+      "source": "agents-user",
+      "relative_skill_path": "constant-time-analysis/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-cloud-devsecops",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "constant-time-testing",
+      "source": "agents-user",
+      "relative_skill_path": "constant-time-testing/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "cosmos-vulnerability-scanner",
+      "source": "agents-user",
+      "relative_skill_path": "cosmos-vulnerability-scanner/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coverage-analysis",
+      "source": "agents-user",
+      "relative_skill_path": "coverage-analysis/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "crypto-protocol-diagram",
+      "source": "agents-user",
+      "relative_skill_path": "crypto-protocol-diagram/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-network-protocol-security",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "designing-workflow-skills",
+      "source": "agents-user",
+      "relative_skill_path": "designing-workflow-skills/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-ai-agent-rag",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "dev",
+      "source": "agents-user",
+      "relative_skill_path": "dev/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "devcontainer-setup",
+      "source": "agents-user",
+      "relative_skill_path": "devcontainer-setup/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "diagramming-code",
+      "source": "agents-user",
+      "relative_skill_path": "diagramming-code/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-research-drawio-diagram",
+      "risk_profile": "dual-use-high-risk",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "differential-review",
+      "source": "agents-user",
+      "relative_skill_path": "differential-review/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "dwarf-expert",
+      "source": "agents-user",
+      "relative_skill_path": "dwarf-expert/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "entry-point-analyzer",
+      "source": "agents-user",
+      "relative_skill_path": "entry-point-analyzer/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "firebase-apk-scanner",
+      "source": "agents-user",
+      "relative_skill_path": "firebase-apk-scanner/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-cloud-devsecops",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "fp-check",
+      "source": "agents-user",
+      "relative_skill_path": "fp-check/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "fuzzing-dictionary",
+      "source": "agents-user",
+      "relative_skill_path": "fuzzing-dictionary/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "fuzzing-obstacles",
+      "source": "agents-user",
+      "relative_skill_path": "fuzzing-obstacles/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "genotoxic",
+      "source": "agents-user",
+      "relative_skill_path": "genotoxic/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "gh-cli",
+      "source": "agents-user",
+      "relative_skill_path": "gh-cli/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-api-data-platform",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "git-cleanup",
+      "source": "agents-user",
+      "relative_skill_path": "git-cleanup/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "graph-evolution",
+      "source": "agents-user",
+      "relative_skill_path": "graph-evolution/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "dual-use-high-risk",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "guidelines-advisor",
+      "source": "agents-user",
+      "relative_skill_path": "guidelines-advisor/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "harness-writing",
+      "source": "agents-user",
+      "relative_skill_path": "harness-writing/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "insecure-defaults",
+      "source": "agents-user",
+      "relative_skill_path": "insecure-defaults/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-cloud-devsecops",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "libafl",
+      "source": "agents-user",
+      "relative_skill_path": "libafl/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "libfuzzer",
+      "source": "agents-user",
+      "relative_skill_path": "libfuzzer/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "mermaid-to-proverif",
+      "source": "agents-user",
+      "relative_skill_path": "mermaid-to-proverif/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-network-protocol-security",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "modern-python",
+      "source": "agents-user",
+      "relative_skill_path": "modern-python/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "mutation-testing",
+      "source": "agents-user",
+      "relative_skill_path": "mutation-testing/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "ossfuzz",
+      "source": "agents-user",
+      "relative_skill_path": "ossfuzz/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "pi-planning-with-files",
+      "source": "agents-user",
+      "relative_skill_path": "pi-planning-with-files/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "planning-with-files",
+      "source": "agents-user",
+      "relative_skill_path": "planning-with-files/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "planning-with-files-zh",
+      "source": "agents-user",
+      "relative_skill_path": "planning-with-files-zh/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "property-based-testing",
+      "source": "agents-user",
+      "relative_skill_path": "property-based-testing/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "ruzzy",
+      "source": "agents-user",
+      "relative_skill_path": "ruzzy/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "sarif-parsing",
+      "source": "agents-user",
+      "relative_skill_path": "sarif-parsing/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-secure-code-appsec",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "second-opinion",
+      "source": "agents-user",
+      "relative_skill_path": "second-opinion/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-ai-agent-rag",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "secure-workflow-guide",
+      "source": "agents-user",
+      "relative_skill_path": "secure-workflow-guide/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "semgrep",
+      "source": "agents-user",
+      "relative_skill_path": "semgrep/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-secure-code-appsec",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "semgrep-rule-creator",
+      "source": "agents-user",
+      "relative_skill_path": "semgrep-rule-creator/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-secure-code-appsec",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "semgrep-rule-variant-creator",
+      "source": "agents-user",
+      "relative_skill_path": "semgrep-rule-variant-creator/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-secure-code-appsec",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "sharp-edges",
+      "source": "agents-user",
+      "relative_skill_path": "sharp-edges/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-api-data-platform",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "skill-creator",
+      "source": "agents-user",
+      "relative_skill_path": "skill-creator/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "skill-improver",
+      "source": "agents-user",
+      "relative_skill_path": "skill-improver/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-ai-agent-rag",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "solana-vulnerability-scanner",
+      "source": "agents-user",
+      "relative_skill_path": "solana-vulnerability-scanner/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-ad-pentest",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-ad-pentest/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "dual-use-high-risk",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-ai-agent-dev",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-ai-agent-dev/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-binary-exploit",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-binary-exploit/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-binary-mobile-iot",
+      "risk_profile": "dual-use-high-risk",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-blockchain-security",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-blockchain-security/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-code-audit",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-code-audit/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-secure-code-appsec",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-iot-ics",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-iot-ics/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-binary-mobile-iot",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-mobile-security",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-mobile-security/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-binary-mobile-iot",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-paper",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-paper/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-research-drawio-diagram",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-privesc",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-privesc/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-binary-mobile-iot",
+      "risk_profile": "dual-use-high-risk",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-purple-team",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-purple-team/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-purple-deception",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-quick-translate",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-quick-translate/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-network-protocol-security",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "source-command-vuln-research",
+      "source": "agents-user",
+      "relative_skill_path": "source-command-vuln-research/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-vulnerability-lifecycle",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "spec-to-code-compliance",
+      "source": "agents-user",
+      "relative_skill_path": "spec-to-code-compliance/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "substrate-vulnerability-scanner",
+      "source": "agents-user",
+      "relative_skill_path": "substrate-vulnerability-scanner/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "supply-chain-risk-auditor",
+      "source": "agents-user",
+      "relative_skill_path": "supply-chain-risk-auditor/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-cloud-devsecops",
+      "risk_profile": "dual-use-high-risk",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "testing-handbook-generator",
+      "source": "agents-user",
+      "relative_skill_path": "testing-handbook-generator/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "token-integration-analyzer",
+      "source": "agents-user",
+      "relative_skill_path": "token-integration-analyzer/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "ton-vulnerability-scanner",
+      "source": "agents-user",
+      "relative_skill_path": "ton-vulnerability-scanner/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "trailmark",
+      "source": "agents-user",
+      "relative_skill_path": "trailmark/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-secure-code-appsec",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "trailmark-structural",
+      "source": "agents-user",
+      "relative_skill_path": "trailmark-structural/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-secure-code-appsec",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "trailmark-summary",
+      "source": "agents-user",
+      "relative_skill_path": "trailmark-summary/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-detection-response",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "UIdesign",
+      "source": "agents-user",
+      "relative_skill_path": "UIdesign/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-ui-doc-output",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "variant-analysis",
+      "source": "agents-user",
+      "relative_skill_path": "variant-analysis/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-secure-code-appsec",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "vector-forge",
+      "source": "agents-user",
+      "relative_skill_path": "vector-forge/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "wycheproof",
+      "source": "agents-user",
+      "relative_skill_path": "wycheproof/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "dual-use-high-risk",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "yara-rule-authoring",
+      "source": "agents-user",
+      "relative_skill_path": "yara-rule-authoring/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-detection-response",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "zeroize-audit",
+      "source": "agents-user",
+      "relative_skill_path": "zeroize-audit/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "security-review",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "imagegen",
+      "source": "codex-system",
+      "relative_skill_path": "imagegen/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-ui-doc-output",
+      "risk_profile": "platform-provided",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "openai-docs",
+      "source": "codex-system",
+      "relative_skill_path": "openai-docs/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "platform-provided",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "plugin-creator",
+      "source": "codex-system",
+      "relative_skill_path": "plugin-creator/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "platform-provided",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "skill-creator",
+      "source": "codex-system",
+      "relative_skill_path": "skill-creator/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "supporting-tooling",
+      "risk_profile": "platform-provided",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "skill-installer",
+      "source": "codex-system",
+      "relative_skill_path": "skill-installer/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "platform-provided",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "cli-creator",
+      "source": "codex-user",
+      "relative_skill_path": "cli-creator/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-api-data-platform",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-ai-agent-rag",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-ai-agent-rag/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-ai-agent-rag",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-api-data-platform",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-api-data-platform/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-api-data-platform",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-authorized-assessment",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-authorized-assessment/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-authorized-assessment",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-binary-mobile-iot",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-binary-mobile-iot/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-binary-mobile-iot",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-blockchain-security",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-blockchain-security/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-cloud-devsecops",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-cloud-devsecops/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-cloud-devsecops",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-compliance-architecture",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-compliance-architecture/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-compliance-architecture",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-detection-response",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-detection-response/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-detection-response",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-identity-zero-trust",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-identity-zero-trust/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-identity-zero-trust",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-network-protocol-security",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-network-protocol-security/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-network-protocol-security",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-office-doc-tools",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-office-doc-tools/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-office-doc-tools",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-purple-deception",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-purple-deception/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-purple-deception",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-research-drawio-diagram",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-research-drawio-diagram/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-research-drawio-diagram",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-secure-code-appsec",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-secure-code-appsec/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-secure-code-appsec",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-skill-router",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-skill-router/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-skill-router",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-software-engineering",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-software-engineering/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-ui-doc-output",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-ui-doc-output/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-ui-doc-output",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-vulnerability-lifecycle",
+      "source": "codex-user",
+      "relative_skill_path": "coff0xc-vulnerability-lifecycle/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-vulnerability-lifecycle",
+      "risk_profile": "installed-coff0xc-copy",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "pdf",
+      "source": "codex-user",
+      "relative_skill_path": "pdf/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "UIdesign",
+      "source": "codex-user",
+      "relative_skill_path": "UIdesign/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-ui-doc-output",
+      "risk_profile": "general",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "coff0xc-ai-agent-rag",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-ai-agent-rag/SKILL.md",
+      "description": "Use when / 当用户请求 Agent、RAG、LLM、Prompt、embedding、向量数据库、LangChain/AutoGen、tool calling、多模型编排、记忆/缓存、评测、观测、成本、失败恢复或可落地 AI 助手。交付架构、工具 schema、检索引用、eval 和降级。手动触发：使用 coff0xc-ai-agent-rag。",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-ai-agent-rag",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-api-data-platform",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-api-data-platform/SKILL.md",
+      "description": "Use when / 当用户请求 API、数据库、数据平台、CLI/SDK 或接口契约：REST、GraphQL、OpenAPI、SQL/Postgres、schema/migration、分页、认证/鉴权、错误码、JSON、ETL、数据质量、usage ledger、filter builder、impact analysis。手动触发：使用 coff0...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-api-data-platform",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-authorized-assessment",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-authorized-assessment/SKILL.md",
+      "description": "Use only for authorized security assessment / 当用户请求已授权评估、ROE、attack surface、recon/fingerprint、red team/adversary emulation、防御化攻击链规划、control validation、CDN/WAF 边界、phishing/social-e...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-authorized-assessment",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-binary-mobile-iot",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-binary-mobile-iot/SKILL.md",
+      "description": "Use when / 当用户请求 reverse engineering、PWN、kernel、APK/IPA、Frida、firmware、IoT/ICS/SCADA、PLC/Modbus、UART/JTAG/SPI、BLE/RF、CTF、crypto review、constant-time、设备包或可执行文件分析。手动触发：使用 coff0xc-bi...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-binary-mobile-iot",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-blockchain-security",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-blockchain-security/SKILL.md",
+      "description": "Use when / 当用户请求 blockchain、smart contract、DeFi/Web3、多链安全：Solidity/EVM、Solana、Cosmos、Substrate、Cairo/StarkNet、TON、Algorand、AMM、oracle、bridge、token/NFT、Foundry/Hardhat/Slither、资产流和...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-blockchain-security",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-cloud-devsecops",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-cloud-devsecops/SKILL.md",
+      "description": "Use when / 当用户请求 cloud、container、Kubernetes/K8s、serverless、DevSecOps、supply chain、CI/CD 或 secrets：AWS/Azure/GCP、IAM、S3/Blob/GCS、Docker、Terraform/IaC、GitHub Actions、SBOM/SCA、secret...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-cloud-devsecops",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-compliance-architecture",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-compliance-architecture/SKILL.md",
+      "description": "Use when / 当用户请求 security architecture、threat modeling、compliance、data security/privacy/DLP、baseline：STRIDE、等保、PCI-DSS、GDPR、ISO27001、SOC2、CIS/NIST、control evidence、risk register、a...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-compliance-architecture",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-detection-response",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-detection-response/SKILL.md",
+      "description": "Use when / 当用户请求 SOC、安全运营、detection engineering、threat hunting/intel、incident response/IR、forensics、malware、phishing：SIEM、Sigma、YARA、IOC、logs、alerts、EDR、timeline、alert tuning、误报和检...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-detection-response",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-identity-zero-trust",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-identity-zero-trust/SKILL.md",
+      "description": "Use when / 当用户请求 identity、IAM、zero trust、AD/Active Directory、Kerberos、SSO/MFA、BloodHound、PAM、service accounts、权限/凭证风险、identity paths、lateral movement defense、access governance 或特权...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-identity-zero-trust",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-network-protocol-security",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-network-protocol-security/SKILL.md",
+      "description": "Use when / 当用户请求 network/protocol security：TLS、DNS、TCP/UDP、HTTP/2、HTTP/3、QUIC、WiFi、Bluetooth/BLE、RF、packet/pcap/Wireshark、抓包、握手、状态机、secure communication、ProVerif 或 Mermaid protoco...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-network-protocol-security",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-office-doc-tools",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-office-doc-tools/SKILL.md",
+      "description": "Use when / 当用户请求正式 Office 或文件型交付物：PPT PPTX PowerPoint slides deck、DOCX Word redline comments、PDF read create review render、Excel XLSX CSV workbook chart formula table export。要求可编辑...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-office-doc-tools",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-purple-deception",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-purple-deception/SKILL.md",
+      "description": "Use when / 当用户请求 purple team、ATT&CK、control validation、detection coverage、emulation plan、honeypot/deception、decoy/canary、SOC 改进、检测有效性、覆盖指标或防守能力验证。仅限授权防御演练。手动触发：使用 coff0xc-purple-d...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-purple-deception",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-research-drawio-diagram",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-research-drawio-diagram/SKILL.md",
+      "description": "Use when / 当用户请求 draw.io、diagrams.net、.drawio、科研图、论文方法图、architecture/method/model diagram、algorithm pipeline、Transformer/CNN/GNN/diffusion/RAG/agent 架构图。绘制前需要 paper/arXiv/official...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-research-drawio-diagram",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-secure-code-appsec",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-secure-code-appsec/SKILL.md",
+      "description": "Use when / 当用户请求 code/AppSec audit：source/sink、taint、Web/API/GraphQL/OAuth、CSP/CORS/Cookie、LLM prompt injection、access control/authorization bypass、SSRF/XSS/SQLi、backdoor/Webshell...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-secure-code-appsec",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-skill-router",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-skill-router/SKILL.md",
+      "description": "Coff0xc lightweight skill router/composer. Use only when the user asks AI to decide which coff0xc skills to use, chain skills, build a task/workflow graph, orchestrate vibe coding...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-skill-router",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-software-engineering",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-software-engineering/SKILL.md",
+      "description": "Use when / 当用户请求 dev/software engineering：build product、repo repair、failing tests/CI、bugfix、feature/refactor、full-stack/end-to-end implementation、REST API/frontend UI implementati...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-ui-doc-output",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-ui-doc-output/SKILL.md",
+      "description": "Use when / 当用户请求 UI/frontend/product surface/report/translation polish：dashboard/admin/SaaS、component/design system、responsive/mobile、accessibility/ARIA/contrast、loading/empty/err...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-ui-doc-output",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "coff0xc-vulnerability-lifecycle",
+      "source": "coffee-release",
+      "relative_skill_path": "coff0xc-vulnerability-lifecycle/SKILL.md",
+      "description": "Use when / 当用户请求 vulnerability lifecycle：CVE、advisory、patch diff、CVSS/EPSS/KEV、PoC 验证、bug bounty、pentest report、影响范围、修复优先级、缓解措施、security patch 或修复跟踪。授权验证优先。手动触发：使用 coff0xc-vulnera...",
+      "description_policy": "included-release",
+      "mapped_coff0xc_skill": "coff0xc-vulnerability-lifecycle",
+      "risk_profile": "curated-release",
+      "publish_policy": "redistributed-curated"
+    },
+    {
+      "name": "browser",
+      "source": "plugin-bundled",
+      "relative_skill_path": "browser/26.519.22136/skills/browser/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-software-engineering",
+      "risk_profile": "platform-provided",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "Chrome",
+      "source": "plugin-bundled",
+      "relative_skill_path": "chrome/0.1.7/skills/chrome/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-ui-doc-output",
+      "risk_profile": "platform-provided",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "Chrome",
+      "source": "plugin-bundled",
+      "relative_skill_path": "chrome/latest/skills/chrome/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-ui-doc-output",
+      "risk_profile": "platform-provided",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "documents",
+      "source": "plugin-runtime",
+      "relative_skill_path": "documents/26.513.11550/skills/documents/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-cloud-devsecops",
+      "risk_profile": "platform-provided",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "Presentations",
+      "source": "plugin-runtime",
+      "relative_skill_path": "presentations/26.513.11550/skills/presentations/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-office-doc-tools",
+      "risk_profile": "platform-provided",
+      "publish_policy": "metadata-only"
+    },
+    {
+      "name": "Spreadsheets",
+      "source": "plugin-runtime",
+      "relative_skill_path": "spreadsheets/26.513.11550/skills/spreadsheets/SKILL.md",
+      "description": "",
+      "description_policy": "omitted-metadata-only",
+      "mapped_coff0xc_skill": "coff0xc-office-doc-tools",
+      "risk_profile": "platform-provided",
+      "publish_policy": "metadata-only"
+    }
+  ]
+}

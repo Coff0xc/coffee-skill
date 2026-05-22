@@ -22,7 +22,11 @@ For everyday work, the expected behavior is:
 
 Do not create quality evals, golden responses, workflow traces, or long skill graphs for normal tasks. Those are repository release tools, not runtime ceremony.
 
-Do not load `references/` by default. References are for deep review, external skill merging, router debugging, and release/eval work. For ordinary tasks, use the main skill body and the target project's own validation.
+Every main `SKILL.md` keeps a short `默认输出` section so fast-path runs still return completed work, validation evidence, remaining risk, and next step without loading the expanded workflow.
+
+Do not load `references/` by default. `references/full-workflow.md` is the expanded workflow for deep, multi-stage, formal-review, or release/eval work. For ordinary tasks, use the main skill body and the target project's own validation.
+
+Complex work has one exception: L2/L3 multi-file, multi-stage, architecture/API/schema/auth, multi-skill, or multi-worker work can load `skills/coff0xc-skill-router/references/complex-workflow.md`. Thesis/report DOCX plus old PPTX defense-deck rewrites can load `skills/coff0xc-office-doc-tools/references/pptx-defense-rewrite.md`. These references are not required for small edits.
 
 ## When To Run Evals
 
@@ -39,6 +43,7 @@ python .\scripts\run_quality_eval.py
 Use this pack by matching your task to the outcome you want, not by memorizing every source skill. For narrow tasks, name one skill directly or describe the task naturally. For broad work, ask the router to choose and chain only the needed skills.
 
 For a compact card-style index, see [Skill Index](SKILL_INDEX.md).
+For a full local environment map across installed Codex/agent/plugin skills, see [Installed Skill Inventory](SKILL_INVENTORY.md). That file is metadata-only and is meant for consolidation and deduping, not runtime publication.
 
 | If you want... | Use this skill | Expected capability |
 |---|---|---|
@@ -135,7 +140,7 @@ python .\scripts\run_quality_eval.py
 To score actual agent outputs, save them under `evals/quality/responses/<case-id>/` and run:
 
 ```powershell
-python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses
+python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses --allow-code-execution
 ```
 
 ## Safety And Trust
@@ -147,9 +152,9 @@ Security-scoped skills are defensive and authorization-scoped. They should trans
 On Windows:
 
 ```powershell
-$dest = "$env:USERPROFILE\.codex\skills"
-New-Item -ItemType Directory -Force $dest
-Copy-Item -Recurse .\skills\* $dest
+.\scripts\install_local_skills.ps1
 ```
+
+The installer backs up old installed `coff0xc-*` folders to `~\.codex\skills-backup-coff0xc-*` before copying the current repository version. Restart or refresh Codex after installing.
 
 Avoid duplicate skill names across scanned directories. Duplicates can cause inconsistent triggering.

@@ -9,6 +9,7 @@
 | 一个 repo、一个 bug、一个功能、一个 CI 失败 | `coff0xc-software-engineering` | `coff0xc-skill-router`，除非任务明显跨领域 |
 | 一个 UI、前端页面、dashboard、报告表达 | `coff0xc-ui-doc-output` | Office skill，除非交付物是 PPTX/DOCX/XLSX/PDF |
 | 一个正式 Office / 文件型交付物 | `coff0xc-office-doc-tools` | UI skill，除非是 web/app 界面 |
+| 论文 DOCX + 旧 PPTX 重写答辩 PPT | `coff0xc-office-doc-tools` | 不要先走 router，除非还要改代码/实验/系统 |
 | 一个 Agent/RAG/LLM 系统设计 | `coff0xc-ai-agent-rag` | dev skill，除非要求落地到真实仓库 |
 | 一个 API、数据库、数据契约问题 | `coff0xc-api-data-platform` | router，除非还涉及 UI/安全/Office |
 | 一个授权安全领域问题 | 对应安全 skill | 未授权、生产、凭据或破坏性动作 |

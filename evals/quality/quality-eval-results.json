@@ -10,6 +10,26 @@
   "assertion_total": 50,
   "assertion_passed": 50,
   "assertion_pass_rate": 1.0,
+  "evidence_model": {
+    "deterministic_release_guard": [
+      "OOXML package structure and selected formulas/cells",
+      "HTML/static UI structure plus declared render-audit evidence",
+      "Python/Node fixture behavior and lockfile churn checks",
+      "workflow trace shape and required stage evidence"
+    ],
+    "not_replaced": [
+      "live browser interaction, DOM measurement, and visual diffing",
+      "native PowerPoint/Excel/Word rendering and full Excel calculation",
+      "human visual taste review",
+      "real project CI across external services and production-like dependencies"
+    ],
+    "escalate_to_live_checks_when_claiming": [
+      "pixel-perfect UI, no overlap, or console-clean browser behavior",
+      "final Office layout quality or stakeholder-ready decks/documents",
+      "financial workbook correctness beyond supported deterministic formulas",
+      "repository repair is CI-ready for an arbitrary real project"
+    ]
+  },
   "results": [
     {
       "id": "ui-admin-dashboard-visual-gate",

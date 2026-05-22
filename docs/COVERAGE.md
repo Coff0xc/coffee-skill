@@ -7,7 +7,7 @@
 - Comprehensive capability skills: 17
 - Router/composer skills: 1
 - Trigger eval cases: 131
-- Quality eval fixtures: 7 real-artifact/workflow cases with 51 assertions
+- Quality eval fixtures: 7 real-artifact/workflow cases with 50 assertions
 - Office OOXML quality gates: PPTX package/slide/chart parsing, XLSX workbook/formula/table/chart parsing, DOCX comments/redlines/styles/numbering/rels/table geometry parsing
 - Autonomous composition: narrow tasks go directly to the most specific skill; only uncertain or cross-domain tasks use the router to choose a primary skill, add necessary support skills, sequence phases, define gates, and re-route as evidence changes
 - Runtime speed model: every main `SKILL.md` starts with `快速规则（日常任务先读这里）`; detailed UI merge/review gates and router maps live in on-demand `references/`

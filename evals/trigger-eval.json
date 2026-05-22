@@ -198,6 +198,15 @@
       "reason": "Quality eval for PPT aesthetics gates beyond basic PPTX triggering."
     },
     {
+      "id": "office-defense-pptx-rewrite",
+      "language": "zh-CN",
+      "category": "artifact_quality",
+      "prompt": "这有一份毕业论文 DOCX 和一份旧答辩 PPTX，帮我重写答辩 PPT：先读论文结构和旧 PPT 页结构，重构答辩叙事，输出可编辑 PPTX，并做 PPTX 结构/预览检查；如果 Presentations runtime 路径不一致要 fallback，不能卡住。",
+      "should_trigger": true,
+      "expected_skill": "coff0xc-office-doc-tools",
+      "reason": "Defense deck rewrite should trigger Office, read DOCX/PPTX sources, and avoid stopping on a versioned Presentations runtime mismatch."
+    },
+    {
       "id": "office-quality-excel-data-parse-gate",
       "language": "zh-CN",
       "category": "quality_gate",
