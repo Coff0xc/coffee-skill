@@ -1,115 +1,115 @@
 # Full Workflow
 
-本文件是 `coff0xc-purple-deception` 的按需扩展工作流。默认不要加载；只有深度架构、复杂多阶段、质量评测、发版、正式交付或当前任务需要完整门禁时才读取。
+This file is the on-demand extended workflow for `coff0xc-purple-deception`. Do not load it by default; read it only for deep architecture, complex multi-stage work, quality evaluation, release, formal delivery, or when the current task needs the full gates.
 
-## 目标
-用可控演练验证防御能力和可观测性，输出检测差距、响应差距和欺骗防御设计。
+## Goal
+Use controlled exercises to validate defensive capability and observability, and output detection gaps, response gaps, and deception-defense designs.
 
-## 适用场景
-- 设计紫队演练、ATT&CK 技术映射、检测覆盖评估和响应能力验证。
-- 规划蜜罐、诱饵账号、诱饵文件、canary token、欺骗网络和告警流程。
-- 把红队 TTP 转成防御控制、日志字段、查询规则和演练指标。
+## Applicable Scenarios
+- Designing purple-team exercises, ATT&CK technique mapping, detection-coverage assessment, and response-capability validation.
+- Planning honeypots, decoy accounts, decoy files, canary tokens, deception networks, and alert processes.
+- Turning red-team TTPs into defensive controls, log fields, query rules, and exercise metrics.
 
-## 触发强化
-- 自动触发主要依赖本文件 frontmatter 的 `description`；本 skill 只保留核心中文/英文触发词、工具名、常见缩写和手动触发短语，避免 metadata 过重。
-- 如果没有自动触发，手动写：`使用 coff0xc-purple-deception ...`。
-- 如果用户只写了宽泛主题，可先用 `coff0xc-skill-router` 路由到本 skill。
+## Trigger Reinforcement
+- Auto-triggering mainly depends on this file's frontmatter `description`; this skill keeps only core trigger words, tool names, common abbreviations, and manual trigger phrases to avoid overweight metadata.
+- If there is no auto-trigger, write manually: `Use coff0xc-purple-deception ...`.
+- If the user only wrote a broad topic, first use `coff0xc-skill-router` to route to this skill.
 
-## 不适用场景
-- 不提供真实攻击执行、规避、防御绕过或未授权演练步骤。
-- 蜜罐不得与生产高权限网络混用或收集超出目的的个人信息。
-- 不把命中诱饵直接等同于入侵成功，需要验证上下文。
+## Not Applicable
+- Do not provide real attack execution, evasion, defense bypass, or unauthorized exercise steps.
+- Honeypots must not share networks with high-privilege production systems or collect personal information beyond their purpose.
+- Do not treat a decoy hit as proof of successful intrusion; the context needs validation.
 
-## 执行原则
-- 先读取项目文件、配置、调用点、现有风格和可用工具，再下结论或改文件。
-- 把用户目标转成可验证的完成标准；不确定但低风险的细节记录为假设并继续推进。
-- 涉及当前事实、版本、CVE、云服务、GitHub 状态、价格、外部 API 或论文时，查真实来源并标注证据等级。
-- 涉及代码改动时保持最小正确改动，优先使用现有框架、脚本、测试和本地工具。
-- 只有真实运行过的命令、测试、构建、扫描或人工检查才能写成已验证。
-- 涉及删除、远程写入、生产、凭据、付费、push、PR/Issue、CI/CD、权限或基础设施变更时，先拿到明确授权。
+## Execution Principles
+- Read project files, configuration, call sites, existing style, and available tools before concluding or changing files.
+- Turn user goals into verifiable completion criteria; record uncertain but low-risk details as assumptions and keep going.
+- When current facts, versions, CVEs, cloud services, GitHub status, pricing, external APIs, or papers are involved, check real sources and mark the evidence level.
+- When code changes are involved, keep the minimal correct change and prefer existing frameworks, scripts, tests, and local tools.
+- Only commands, tests, builds, scans, or manual checks that were actually run may be written as verified.
+- Before deletion, remote writes, production, credentials, payment, push, PR/Issue, CI/CD, permission, or infrastructure changes, get explicit authorization first.
 
-## 安全边界
-- 只处理自有资产、明确授权资产、实验室、CTF、靶场、日志、配置、样本、代码审计、防御建设和报告写作。
-- 真实第三方目标上不提供漏洞利用、凭证获取、持久化、规避检测、C2、钓鱼收集、数据外传、破坏或未授权访问步骤。
-- 高风险请求默认转为防御输出：授权边界、风险解释、检测思路、日志查询、规则草案、加固方案、验证清单和报告结构。
-- 主动联网扫描、云账号检查、目录/租户查询或生产环境动作前，确认目标范围、速率、时间窗口、禁止动作和回滚方式。
-- 发现密钥、个人信息、样本敏感数据或客户数据时，只报告类型、位置和处置建议，不复述完整秘密值。
+## Security Boundaries
+- Handle only owned assets, explicitly authorized assets, labs, CTFs, ranges, logs, configuration, samples, code audits, defensive work, and report writing.
+- Do not provide exploitation, credential acquisition, persistence, detection evasion, C2, phishing collection, data exfiltration, destruction, or unauthorized-access steps against real third-party targets.
+- High-risk requests default to defensive output: authorization boundaries, risk explanations, detection ideas, log queries, rule drafts, hardening plans, validation checklists, and report structure.
+- Before active online scanning, cloud-account checks, directory/tenant queries, or production-environment actions, confirm target scope, rate, time window, prohibited actions, and rollback method.
+- When keys, personal information, sensitive sample data, or customer data is found, report only the type, location, and handling recommendation; do not repeat the full secret value.
 
-## 能力矩阵
-| 能力域 | 覆盖范围 | 执行要点 |
+## Capability Matrix
+| Capability area | Coverage | Execution points |
 | --- | --- | --- |
-| ATT&CK 映射 | 战术、技术、数据源、检测、响应和预防控制 | 形成覆盖矩阵。 |
-| 演练计划 | 目标、范围、场景、角色、时间、成功标准、停止条件 | 可安全执行。 |
-| 检测验证 | 日志字段、SIEM/EDR 查询、告警、误报、漏报、延迟 | 评估真实能力。 |
-| 响应验证 | triage、升级、沟通、遏制、恢复、复盘 | 流程可演练。 |
-| 欺骗防御 | honeypot、decoy account、decoy file、canary、fake service | 隔离和监控明确。 |
-| 指标 | coverage、MTTD、MTTR、precision、recall、alert fatigue、control gap | 改进可量化。 |
+| ATT&CK mapping | tactics, techniques, data sources, detection, response, and prevention controls | Forms a coverage matrix. |
+| Exercise plan | objectives, scope, scenarios, roles, timing, success criteria, stop conditions | Can be run safely. |
+| Detection validation | log fields, SIEM/EDR queries, alerts, false positives, false negatives, latency | Assesses real capability. |
+| Response validation | triage, escalation, communication, containment, recovery, review | Process can be exercised. |
+| Deception defense | honeypot, decoy account, decoy file, canary, fake service | Isolation and monitoring are explicit. |
+| Metrics | coverage, MTTD, MTTR, precision, recall, alert fatigue, control gap | Improvement is quantifiable. |
 
-## 子域路由
-| 来源 skill | 并入后的处理方式 |
+## Subdomain Routing
+| Source skill | Handling after merge |
 | --- | --- |
-| purple-team | 紫队计划、ATT&CK 映射、控制验证和复盘。 |
-| honeypot | 欺骗防御、诱饵、隔离、告警和运维风险。 |
+| purple-team | Purple-team plans, ATT&CK mapping, control validation, and review. |
+| honeypot | Deception defense, decoys, isolation, alerts, and operations risk. |
 
-## 工作流
-| 阶段 | 动作 | 完成标准 |
+## Workflow
+| Stage | Action | Completion criterion |
 | --- | --- | --- |
-| 目标范围 | 定义业务风险、技术范围、参与角色、禁止动作和停止条件。 | 演练可控。 |
-| 技术映射 | 选择 ATT&CK 技术、预期遥测、检测规则和响应动作。 | 验证点明确。 |
-| 安全模拟 | 设计低风险模拟或桌面演练，不输出攻击细节。 | 能触发控制。 |
-| 数据采集 | 记录告警时间、日志字段、响应动作和沟通记录。 | 有可复查证据。 |
-| 差距分析 | 识别无日志、无规则、误报、延迟、流程卡点。 | 改进项具体。 |
-| 路线图 | 按收益和成本安排检测、响应、欺骗和培训改进。 | 闭环治理。 |
+| Objectives and scope | Define business risk, technical scope, participating roles, prohibited actions, and stop conditions. | Exercise is controlled. |
+| Technique mapping | Select ATT&CK techniques, expected telemetry, detection rules, and response actions. | Validation points are explicit. |
+| Safe simulation | Design low-risk simulations or tabletop exercises without outputting attack details. | Can trigger controls. |
+| Data collection | Record alert times, log fields, response actions, and communication records. | Evidence is re-checkable. |
+| Gap analysis | Identify missing logs, missing rules, false positives, delays, and process blockers. | Improvements are specific. |
+| Roadmap | Schedule detection, response, deception, and training improvements by benefit and cost. | Closed-loop governance. |
 
-## 证据等级
-- 已验证：本地命令、测试、构建、源码、配置、日志、官方资料或可复现数据支持。
-- 高可信：多个可靠来源一致，但当前环境没有完整复现。
-- 推断：基于已验证事实的合理判断，需要后续验证。
-- 未验证：尚未确认，不能作为最终结论。
-- 未知：资料不足，需要补充输入或授权。
+## Evidence Levels
+- Verified: supported by local commands, tests, builds, source code, configuration, logs, official material, or reproducible data.
+- High confidence: multiple reliable sources agree, but the current environment has no full reproduction.
+- Inference: reasonable judgment based on verified facts, needs follow-up verification.
+- Unverified: not yet confirmed, cannot be used as a final conclusion.
+- Unknown: insufficient material, needs additional input or authorization.
 
-## 硬门禁
-- 演练前确认授权、通知范围、生产影响和回滚。
-- 蜜罐上线前确认隔离、日志保留、隐私和法律边界。
-- 不在真实外部目标上执行模拟攻击。
+## Hard Gates
+- Confirm authorization, notification scope, production impact, and rollback before exercises.
+- Confirm isolation, log retention, privacy, and legal boundaries before honeypots go live.
+- Do not run simulated attacks against real external targets.
 
-## 验证清单
-- 每个技术有预期和实际检测对比。
-- 每个告警有字段、时间戳、规则名和响应记录。
-- 欺骗资产有隔离、访问审计和误触处理。
-- 复盘项有 owner 和完成标准。
+## Verification Checklist
+- Every technique has expected vs. actual detection compared.
+- Every alert has fields, timestamps, rule name, and response records.
+- Deception assets have isolation, access auditing, and false-touch handling.
+- Review items have owners and completion criteria.
 
-## 反模式
-- 只做红队动作展示，不验证蓝队能力。
-- 演练后没有复盘和整改追踪。
-- 诱饵过于真实导致业务和隐私风险。
-- 只统计覆盖率，不看告警质量和响应时间。
+## Anti-Patterns
+- Only demonstrating red-team actions without validating blue-team capability.
+- No review or remediation tracking after an exercise.
+- Decoys so realistic they create business and privacy risk.
+- Counting only coverage without looking at alert quality and response time.
 
-## 合并来源
+## Merged Sources
 - `honeypot`
 - `purple-team`
 
-## 本机相近 Skill
+## Nearby Skills on This Machine
 - `source-command-purple-team`
 - `detection-engineering`
 
-## 输出合同
+## Output Contract
 ```markdown
-完成：
+Done:
 - ...
 
-证据：
-- [已验证/高可信/推断/未验证/未知] ...
+Evidence:
+- [Verified/High confidence/Inference/Unverified/Unknown] ...
 
-行动：
+Actions:
 - ...
 
-验证：
+Verification:
 - ...
 
-剩余风险：
+Residual risks:
 - ...
 
-下一步：
+Next steps:
 - ...
 ```

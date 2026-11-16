@@ -1,178 +1,178 @@
 # Full Workflow
 
-本文件是 `coff0xc-office-doc-tools` 的按需扩展工作流。默认不要加载；只有深度架构、复杂多阶段、质量评测、发版、正式交付或当前任务需要完整门禁时才读取。
+This file is the on-demand extended workflow for `coff0xc-office-doc-tools`. Do not load it by default; read it only for deep architecture, complex multi-stage work, quality evaluation, release, formal delivery, or when the current task needs the full gates.
 
-## 目标
-交付正式、可打开、可编辑、可检查的 Office/PDF 文件。默认把“用户能直接拿去汇报、审阅、归档或继续编辑”作为完成标准。
+## Goal
+Deliver formal Office/PDF files that can be opened, edited, and checked. By default, treat "the user can take it straight into a presentation, review, archive, or further editing" as the completion standard.
 
-## 适用场景
-- 创建或优化 PowerPoint/PPTX、slides、deck、演示文稿。
-- 创建、编辑、批注、修订、格式化 DOCX/Word 文档。
-- 阅读、生成、审阅、拆分、合并或检查 PDF。
-- 创建、清洗、分析、格式化 Excel/XLSX/CSV 工作簿、图表和公式模型。
-- 跨文件流：PDF 提取到 Excel、Excel 图表进 PPT、DOCX 报告导出 PDF、PPT 摘要来自 Word/Excel。
+## Applicable Scenarios
+- Creating or improving PowerPoint/PPTX, slides, decks, and presentations.
+- Creating, editing, commenting on, revising, and formatting DOCX/Word documents.
+- Reading, generating, reviewing, splitting, merging, or checking PDFs.
+- Creating, cleaning, analyzing, and formatting Excel/XLSX/CSV workbooks, charts, and formula models.
+- Cross-file flows: PDF extraction into Excel, Excel charts into PPT, DOCX reports exported to PDF, PPT summaries sourced from Word/Excel.
 
-## 和相邻 skill 的分工
-| 场景 | 优先使用 |
+## Division of Labor with Neighboring Skills
+| Scenario | Prefer |
 | --- | --- |
-| 前端页面、组件、dashboard、浏览器 UI | `coff0xc-ui-doc-output` |
-| 正式 PPTX/DOCX/PDF/XLSX 文件创建、编辑、渲染验证 | `coff0xc-office-doc-tools` |
-| 论文算法图、模型结构图、`.drawio` 源文件 | `coff0xc-research-drawio-diagram` |
-| 代码生成或仓库功能开发 | `coff0xc-software-engineering` |
+| Frontend pages, components, dashboards, browser UI | `coff0xc-ui-doc-output` |
+| Formal PPTX/DOCX/PDF/XLSX file creation, editing, render validation | `coff0xc-office-doc-tools` |
+| Paper algorithm figures, model structure figures, `.drawio` source files | `coff0xc-research-drawio-diagram` |
+| Code generation or repo feature development | `coff0xc-software-engineering` |
 
-如果一个任务同时包含 UI 和 Office 文件，先判断最终交付物：最终是网页/应用就走 UI；最终是 PPT/DOCX/PDF/XLSX 就走本 skill。
+If a task covers both UI and Office files, judge by the final deliverable first: a web page/app goes to UI; a PPT/DOCX/PDF/XLSX goes to this skill.
 
-## 执行原则
-- 先确认输出格式、用途、受众、文件来源、是否要保留原件、是否包含敏感信息。
-- 能使用结构化工具就不用脆弱字符串拼接；表格、公式、段落、幻灯片对象和 OOXML 都应尽量结构化处理。
-- 新建文件要有清晰信息架构；编辑现有文件要尽量局部修改，不无故重排全文。
-- 每轮重大改动后做对应验证；验证失败先修，不把瑕疵隐藏在最终回复里。
-- 最终只交付用户要的文件；预览图、临时脚本、提取文本、QA 中间产物除非用户要求，不作为主交付物。
+## Execution Principles
+- First confirm output format, purpose, audience, file sources, whether the original must be kept, and whether sensitive information is included.
+- Use structured tools where possible instead of fragile string concatenation; tables, formulas, paragraphs, slide objects, and OOXML should be handled structurally wherever possible.
+- New files need a clear information architecture; editing existing files should stay as local as possible and not rearrange the whole document without reason.
+- Verify after each major round of changes; fix verification failures first, and do not hide flaws in the final reply.
+- Deliver only the files the user asked for in the end; preview images, temporary scripts, extracted text, and QA intermediate artifacts are not main deliverables unless the user asks for them.
 
-## PPT 审美门禁
-适用于新建、重做、优化或对标参考 deck 的 PPT/PPTX 任务。目标不是“能打开”，而是交付有编辑价值、审美可信、叙事清楚的演示文稿。
+## PPT Aesthetics Gate
+Applies to PPT/PPTX tasks that create, redo, improve, or benchmark against a reference deck. The goal is not "it opens" but a deck with editing value, credible aesthetics, and a clear narrative.
 
-- 先写 claim spine：每个非附录页必须有一句结论型标题、一个主证明对象、必要来源或数据说明。标题如果换个公司名还能用，就继续收紧。
-- 先锁 design system：页面尺寸、背景、字体层级、色彩用途、图表语法、图示/连接线语法、页脚/来源、标题/kicker 规则、允许的版式族和禁用 motif。
-- 做 contact-sheet 规划：10 页 deck 至少 5 种宏观版式；不能连续 3 页同构；不要默认卡片网格、装饰框、模板化 dashboard 或营销空话。
-- 图表和图示要证明标题：优先直接标签，少用沉重 legend；线、箭头、连接器、容器和标签必须在渲染后仍表达同一个关系。
-- 品牌和素材必须有来源：不要手画或仿造 logo、吉祥物、产品 UI、客户标志；无法验证就用排版、颜色、产品语言和已知数据表达品牌感。
-- 必须做 rendered QA：渲染整套 slide 或 contact sheet，检查缩略图节奏、全尺寸文字溢出、图表可读性、图片清晰度、来源页脚、KPI/legend/连接线完整性。
-- 用 comeback scorecard 判断是否能交付：story、specificity、rhythm、whitespace、chart clarity、typography、restraint、precision、coherence 都不能有明显短板。发现弱页时，优先重构最弱的 2-4 页，而不是只做微调。
-- 如果只能做到“功能可用但审美未达标”，最终必须明确说清剩余弱点，不能把有文件输出等同于高质量 deck。
+- Write the claim spine first: every non-appendix slide must have one conclusion-style title, one main proof object, and necessary source or data notes. If a title still works after swapping in another company name, tighten it further.
+- Lock the design system first: page size, background, font hierarchy, color usage, chart grammar, diagram/connector grammar, footer/source, title/kicker rules, allowed layout families, and banned motifs.
+- Plan with a contact sheet: a 10-slide deck needs at least 5 macro layouts; no 3 consecutive slides with the same structure; no default card grids, decorative frames, templated dashboards, or marketing filler.
+- Charts and diagrams must prove the title: prefer direct labels, use heavy legends sparingly; lines, arrows, connectors, containers, and labels must still express the same relationship after rendering.
+- Brands and assets must have a source: do not hand-draw or imitate logos, mascots, product UIs, or customer marks; when something cannot be verified, express brand feel with typography, color, product language, and known data.
+- Rendered QA is mandatory: render the full slide set or a contact sheet and check thumbnail rhythm, full-size text overflow, chart readability, image sharpness, source footers, and KPI/legend/connector completeness.
+- Judge deliverability with a comeback scorecard: story, specificity, rhythm, whitespace, chart clarity, typography, restraint, precision, and coherence must have no obvious weak spot. When weak slides are found, rebuild the weakest 2-4 slides first instead of only fine-tuning.
+- If only "functionally usable but aesthetically below standard" can be achieved, the final reply must state the remaining weaknesses explicitly; having a file output is not the same as a high-quality deck.
 
-## 答辩 PPT 重写门禁
-适用于“论文 DOCX/报告 + 原 PPTX -> 重写答辩 PPT”的任务。默认不是小修旧 deck，而是基于论文内容重构答辩叙事并输出新 PPTX。
+## Defense PPT Rewrite Gate
+Applies to "paper DOCX/report + old PPTX -> rewritten defense PPT" tasks. By default this is not a light edit of the old deck but a rebuild of the defense narrative from the paper content, output as a new PPTX.
 
-- 先读论文结构和旧 PPT 页结构，旧 PPT 只作为内容/素材/模板参考；不能只看文件名或旧 PPT 标题就开始生成。
-- 默认输出 12-16 页本科/项目答辩 deck，除非用户给出时长、学校模板或页数要求。
-- 必须覆盖：研究背景、目标/贡献、方法或系统架构、关键实现、实验/结果、结论/展望、Q&A。
-- 每页必须有结论型标题和 proof object：系统架构图、YOLO/模型 pipeline、数据集样例、结果表/图、界面截图、误检/漏检案例等。
-- 旧 PPT 里可复用图片/截图/表格时要保留来源；不确定来源的校徽/logo/第三方素材不要仿造。
-- 生成失败时按 fallback 顺序继续：Presentations 插件 -> workspace dependencies/Office tools -> 本地 OOXML/Python/JS；只有本地读写能力都不可用时才停止。
-- 交付前至少做 PPTX package/OOXML 结构检查；能渲染则做 contact sheet/预览检查，不能渲染就明确剩余视觉风险。
+- First read the paper structure and the old PPT page structure; the old PPT is only a content/material/template reference — do not start generating from filenames or old PPT titles alone.
+- Default output is a 12-16 slide undergraduate/project defense deck, unless the user gives duration, a school template, or a slide-count requirement.
+- Must cover: research background, objectives/contributions, method or system architecture, key implementation, experiments/results, conclusions/outlook, Q&A.
+- Every slide must have a conclusion-style title and a proof object: system architecture diagram, YOLO/model pipeline, dataset samples, result tables/figures, UI screenshots, false-positive/false-negative cases, and similar.
+- Reusable images/screenshots/tables from the old PPT keep their source; school emblems/logos/third-party material with uncertain sources must not be imitated.
+- On generation failure, continue down the fallback order: Presentations plugin -> workspace dependencies/Office tools -> local OOXML/Python/JS; stop only when no local read/write capability is available at all.
+- Before delivery, at least run a PPTX package/OOXML structural check; when rendering is possible, run a contact-sheet/preview check; when it is not, state the remaining visual risk explicitly.
 
-## Excel 数据解析门禁
-适用于 CSV/TSV/XLSX 导入、清洗、分析、建模、dashboard、图表和公式工作簿。目标是可审计、可计算、可继续编辑，而不是漂亮表格截图。
+## Excel Data Parsing Gate
+Applies to CSV/TSV/XLSX import, cleaning, analysis, modeling, dashboard, chart, and formula workbook work. The goal is auditable, computable, and further-editable — not a pretty table screenshot.
 
-- 读取前先判断数据形态：来源文件、编码/分隔符、表头、单位、日期/数字格式、空值、重复行、异常值、是否已有公式/表格/图表/筛选/条件格式。
-- 导入现有 workbook 先做 compact inspect：列出 sheet、used range、关键表格、公式区域、样式和图表；不要盲目全表重排或覆盖格式。
-- CSV/TSV 优先用结构化解析；需要清洗时保留可审计中间逻辑，避免手写脆弱 split。多来源数据要保留 source/assumptions 或 raw/detail sheet。
-- 分析型 workbook 默认结构：Executive Summary 或 Dashboard 在前，Source/Assumptions 其次，Model/Detail/Checks 在后；简单 tracker 可简化，但仍要有清晰标题、表头和输入区。
-- 派生结果优先用公式：不要硬编码关键计算；公式不要藏魔法数字，引用输入/假设单元格；避免整列引用，使用有边界的范围；跨 sheet 公式要先创建目标 sheet。
-- 可疑关键输出要 trace 或等价审计：检查依赖链、公式范围、单位、百分比、日期和汇总口径。模型完整性依赖 linked calculation 时，加 Checks 区或 Checks sheet。
-- 图表必须有明确数据源：用 helper range 组织 chart-ready 数据，必要时用公式链接源数据；图表不能盖住数据，轴单位/格式/标签必须可读。
-- 必须验证：inspect 关键 ranges 的 values/formulas，扫描 `#REF!`、`#DIV/0!`、`#VALUE!`、`#NAME?`、`#N/A`，渲染关键 sheet/range，检查空白图表、截断标题/数字、列宽、冻结窗格、筛选、表格和条件格式。
-- 如果用户只是问表格内容问题，不要擅自改文件；先读值/公式/表结构并回答。
+- Before reading, judge the data shape: source files, encoding/delimiters, headers, units, date/number formats, nulls, duplicate rows, outliers, and whether formulas/tables/charts/filters/conditional formatting already exist.
+- For importing an existing workbook, do a compact inspect first: list sheets, used ranges, key tables, formula regions, styles, and charts; do not blindly re-lay out or overwrite formatting across the whole table.
+- Prefer structured parsing for CSV/TSV; when cleaning is needed, keep auditable intermediate logic and avoid hand-written fragile splits. Multi-source data keeps a source/assumptions or raw/detail sheet.
+- An analysis workbook's default structure: Executive Summary or Dashboard first, Source/Assumptions second, Model/Detail/Checks after; a simple tracker can be simplified but still needs clear titles, headers, and input areas.
+- Derived results use formulas first: do not hardcode key calculations; formulas must not hide magic numbers — reference input/assumption cells; avoid whole-column references and use bounded ranges; cross-sheet formulas require creating the target sheet first.
+- Audit suspicious key outputs by tracing or equivalent: check dependency chains, formula ranges, units, percentages, dates, and aggregation definitions. When model completeness depends on linked calculations, add a Checks area or Checks sheet.
+- Charts must have an explicit data source: organize chart-ready data with helper ranges, linking to source data with formulas where needed; charts must not cover data, and axis units/formats/labels must be readable.
+- Must verify: inspect values/formulas of key ranges, scan for `#REF!`, `#DIV/0!`, `#VALUE!`, `#NAME?`, `#N/A`, render key sheets/ranges, and check blank charts, truncated titles/numbers, column widths, frozen panes, filters, tables, and conditional formatting.
+- If the user is only asking about table contents, do not change the file on your own; first read the values/formulas/table structure and answer.
 
-## DOCX 阅读与格式门禁
-适用于 DOCX/Word 的阅读、审阅、改写、批注、修订、格式化和生成。目标是理解文档结构并保持可读格式，不是只抽文本。
+## DOCX Reading and Formatting Gate
+Applies to DOCX/Word reading, review, rewriting, commenting, revision, formatting, and generation. The goal is understanding document structure and keeping readable formatting, not just extracting text.
 
-- 阅读 DOCX 先分层理解：章节/标题层级、页数、段落类型、表格/图片/脚注/页眉页脚、批注、修订、目录、交叉引用、字段和元数据线索。
-- 版式结论不能只靠文本抽取或 XML：交付前必须尽量渲染页面并逐页检查；如果渲染不可用，只能声明完成了结构/文本检查，不能声称版式通过。
-- 新建或大改 DOCX 先选文档 archetype/preset：memo、report、SOP、proposal、form、manual、brief 等；确定页面、边距、字体、标题层级、段落节奏、列表、表格、callout、页眉页脚和颜色 token。
-- 使用真实 Word 结构：标题用 styles，列表用真实 numbering，表格用明确列宽/单元格 padding/重复表头；不要用假标题、手打项目符号、手动编号或表格包装普通长段落。
-- 表格必须通过 table gate：只有真实行列数据才用表；句子型/段落型内容应改成段落、bullet、step、callout 或定义列表。表格要检查列宽、换行、垂直/水平对齐、边距、caption、分页和重复表头。
-- 编辑现有 DOCX 默认保留原件并最小局部修改。批注要锚定在具体位置；修订/接受修订/删除批注/清理元数据/去水印前必须确认。
-- 评论和修订要双重验证：渲染可能显示 tracked changes，但常常不显示 comments；需要结构检查 comments.xml、anchors、rels、content-types 或等价证据。
-- 每个有意义的编辑批次后重新渲染或结构复查，重点看 clipping、overlap、missing glyphs、broken tables、spacing drift、header/footer 错位、页码和目录异常。
-- 最终必须区分：已读懂的内容结构、已修改的范围、已验证的页面/结构、未能验证的版式风险。
+- Read a DOCX in layers first: sections/heading hierarchy, page count, paragraph types, tables/images/footnotes/headers/footers, comments, revisions, table of contents, cross-references, fields, and metadata clues.
+- Layout conclusions cannot rest on text extraction or XML alone: render pages and check them one by one before delivery whenever possible; if rendering is unavailable, only claim structural/text checks were completed — do not claim the layout passed.
+- Before creating or heavily revising a DOCX, pick a document archetype/preset first: memo, report, SOP, proposal, form, manual, brief, and similar; settle pages, margins, fonts, heading hierarchy, paragraph rhythm, lists, tables, callouts, headers/footers, and color tokens.
+- Use real Word structure: headings use styles, lists use real numbering, tables use explicit column widths/cell padding/repeated headers; do not use fake headings, hand-typed bullets, manual numbering, or tables wrapping ordinary long paragraphs.
+- Tables must pass a table gate: only genuinely tabular row/column data uses a table; sentence/paragraph content should become paragraphs, bullets, steps, callouts, or definition lists. Check table column widths, wrapping, vertical/horizontal alignment, margins, captions, pagination, and repeated headers.
+- Editing an existing DOCX keeps the original by default with minimal, localized edits. Comments must anchor to specific locations; confirm before revising/accepting revisions/deleting comments/cleaning metadata/removing watermarks.
+- Comments and revisions need double verification: rendering may show tracked changes but often does not show comments; structural checks of comments.xml, anchors, rels, content-types, or equivalent evidence are needed.
+- After each meaningful batch of edits, re-render or re-check structure, focusing on clipping, overlap, missing glyphs, broken tables, spacing drift, header/footer misalignment, page numbers, and table-of-contents anomalies.
+- At the end, distinguish: content structure understood, scope changed, pages/structure verified, and layout risks not verified.
 
-## 质量 Eval 自测
-当用户要求“确认 Office skill 是否真的好用”“优化 PPT/Excel/DOCX 质量门禁”“不要只堆触发词”时，用仓库内 artifact-level 夹具校准：
+## Quality Eval Self-Test
+When the user asks to "confirm whether the Office skill is actually good," "improve the PPT/Excel/DOCX quality gates," or "don't just pile on trigger words," calibrate with the in-repo artifact-level fixtures:
 
-- `evals/quality/cases/office-ppt-aesthetic/`：检查 claim spine、design-system lock、contact-sheet plan、comeback scorecard、render evidence 和最终 PPTX。
-- `evals/quality/cases/office-excel-parse/`：检查 messy CSV/workbook notes 的编码/分隔符/表头/单位/日期/空值/重复/异常审计、Raw/Source/Assumptions/Model/Checks/Dashboard 结构、公式/trace/error scan/helper range 和 dashboard render evidence。
-- `evals/quality/cases/office-docx-format/`：检查 reading map、style/token map、minimal edit plan、comment/redline anchors、真实 styles/numbering/table geometry 和 page render evidence。
-- 运行 `python .\scripts\run_quality_eval.py` 默认评分 `evals/quality/golden-responses/` 的真实产物：PPTX 会解包检查 slide XML/text shapes/chart parts/layout signatures，XLSX 会检查 sheets/tables/charts/formulas 并重算支持范围内的关键公式，DOCX 会检查 comments、anchors、tracked changes、styles、numbering、table geometry、rels、headers/footers 和 fields。
-- 只想检查 prompt/input/assertion schema 时运行 `python .\scripts\run_quality_eval.py --fixture-only`；有真实 agent 输出时运行 `python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses`。
-- 质量 eval 通过不等于 Office 文件已经人工验收；PPT 审美、Excel 完整公式引擎和 DOCX 逐页版式仍需要对应工具渲染或人工复核。
+- `evals/quality/cases/office-ppt-aesthetic/`: check claim spine, design-system lock, contact-sheet plan, comeback scorecard, render evidence, and the final PPTX.
+- `evals/quality/cases/office-excel-parse/`: check encoding/delimiter/header/unit/date/null/duplicate/outlier audits of messy CSV/workbook notes, Raw/Source/Assumptions/Model/Checks/Dashboard structure, formula/trace/error scan/helper range, and dashboard render evidence.
+- `evals/quality/cases/office-docx-format/`: check reading map, style/token map, minimal edit plan, comment/redline anchors, real styles/numbering/table geometry, and page render evidence.
+- Run `python .\scripts\run_quality_eval.py` to score the real artifacts in `evals/quality/golden-responses/` by default: PPTX is unpacked and checked for slide XML/text shapes/chart parts/layout signatures, XLSX is checked for sheets/tables/charts/formulas with key formulas recomputed where supported, DOCX is checked for comments, anchors, tracked changes, styles, numbering, table geometry, rels, headers/footers, and fields.
+- To check only prompt/input/assertion schemas, run `python .\scripts\run_quality_eval.py --fixture-only`; with real agent output, run `python .\scripts\run_quality_eval.py --responses-dir .\evals\quality\responses`.
+- Passing quality eval does not mean the Office files have passed human acceptance; PPT aesthetics, the full Excel formula engine, and page-by-page DOCX layout still need rendering by the matching tool or manual review.
 
-## 能力矩阵
-| 文件类型 | 典型能力 | 验证重点 |
+## Capability Matrix
+| File type | Typical capability | Verification focus |
 | --- | --- | --- |
-| PPT/PPTX | 新建 deck、重做结构、改模板、加图表/表格/图片、压缩故事线 | 幻灯片数量、可编辑对象、预览图、文字不溢出、图表/图片清晰 |
-| DOCX/Word | 报告、方案、SOP、批注、修订、目录、表格、页眉页脚 | 原件保留、结构未破坏、批注/修订锚点、渲染页面、表格不截断 |
-| PDF | 阅读、审阅、生成、拆分/合并、版式检查、引用检查 | 页数、页面渲染、文字提取对照、表格/图片/页码、不可编辑限制 |
-| Excel/XLSX/CSV | 数据清洗、公式、汇总、图表、dashboard、模板、校验 | 公式错误扫描、关键范围 inspect、图表来源、列宽/冻结/格式 |
+| PPT/PPTX | New decks, restructured stories, template changes, charts/tables/images, compressed storylines | Slide count, editable objects, preview images, no text overflow, clear charts/images |
+| DOCX/Word | Reports, proposals, SOPs, comments, revisions, table of contents, tables, headers/footers | Original preserved, structure intact, comment/revision anchors, rendered pages, tables not clipped |
+| PDF | Reading, review, generation, split/merge, layout checks, citation checks | Page count, page rendering, text-extraction cross-check, tables/images/page numbers, non-editable limits |
+| Excel/XLSX/CSV | Data cleaning, formulas, summaries, charts, dashboards, templates, validation | Formula error scan, key-range inspect, chart sources, column width/freeze/format |
 
-## 工作流
-| 阶段 | 动作 | 完成标准 |
+## Workflow
+| Stage | Action | Completion criterion |
 | --- | --- | --- |
-| 任务定界 | 明确最终格式、输入文件、输出目录、受众、敏感性和是否保留原件。 | 知道要交付哪个文件，不误改原件。 |
-| 文件读取 | 读取文件结构、页/slide/sheet 数量、关键文本、表格、图片和元数据线索。 | 不靠文件名猜内容。 |
-| 内容设计 | 先确定目录、页面/幻灯片/工作表结构、数据字段和视觉密度。 | 产物有清晰阅读路径。 |
-| 构建/编辑 | 使用合适工具创建或修改文件；保留样式和可编辑性。 | 文件可打开，内容完整。 |
-| 验证修复 | 按文件类型做渲染、预览、公式、结构或导出检查。 | 发现的问题已修或明确列出。 |
-| 最终交付 | 给最终文件路径、验证结果、剩余风险和下一步。 | 用户能直接使用。 |
+| Task scoping | Pin down final format, input files, output directory, audience, sensitivity, and whether the original is kept. | Know which file to deliver; do not wrongly change the original. |
+| File reading | Read file structure, page/slide/sheet counts, key text, tables, images, and metadata clues. | Do not guess content from filenames. |
+| Content design | First settle the table of contents, page/slide/worksheet structure, data fields, and visual density. | Deliverable has a clear reading path. |
+| Build/edit | Create or modify files with the right tool; preserve styles and editability. | File opens, content complete. |
+| Verify and fix | Run render, preview, formula, structure, or export checks by file type. | Found issues are fixed or listed explicitly. |
+| Final delivery | Give the final file path, verification results, residual risk, and next steps. | User can use it directly. |
 
-## 文件类型门禁
+## File-Type Gates
 ### PPT/PPTX
-- 新建 deck 先写讲述线：主题、受众、每页结论、证据对象。
-- 默认输出可编辑 PPTX，不把整页做成不可编辑大图，除非用户明确要图片型输出。
-- 有数据图表时说明数据来源，避免为了好看编造数字。
-- 最终检查：文件存在、slide 数量正确、预览/导出不空白、标题和正文不重叠、图片清晰、图表标签可读。
+- For a new deck, write the narrative line first: theme, audience, conclusion per slide, evidence objects.
+- Default output is an editable PPTX; do not turn whole slides into non-editable large images unless the user explicitly wants image-style output.
+- When data charts are present, state the data source; do not invent numbers to look good.
+- Final check: file exists, slide count is correct, preview/export is not blank, titles and body text do not overlap, images are clear, chart labels are readable.
 
 ### DOCX/Word
-- 编辑现有文档时保留原件，输出新文件。
-- 小改动优先局部替换；需要重写时说明原因。
-- 批注、修订、目录、页码、表格、交叉引用等结构化元素要做结构检查。
-- 最终检查：文件存在、页数/章节符合预期、渲染或预览没有截断/重叠、表格不贴边、批注/修订保留或清理符合要求。
+- When editing existing documents, keep the original and output a new file.
+- Prefer local replacement for small changes; explain the reason when a rewrite is needed.
+- Structured elements such as comments, revisions, table of contents, page numbers, tables, and cross-references need structural checks.
+- Final check: file exists, page/section counts match expectations, rendering or preview shows no clipping/overlap, tables do not touch the edges, comments/revisions are kept or cleaned as required.
 
 ### PDF
-- PDF 阅读可以先抽文本，但版式结论必须看渲染或页面图。
-- PDF 生成要检查页码、边距、字体、表格、图片、链接和引用。
-- 如果无法渲染，必须说明原因，并把结论限定为“文本/结构检查”，不能声称版式已通过。
-- 最终检查：文件存在、页数正确、页面能渲染、关键页无黑块/乱码/错位/截断。
+- PDF reading can start with text extraction, but layout conclusions must be based on rendering or page images.
+- PDF generation must be checked for page numbers, margins, fonts, tables, images, links, and citations.
+- If rendering is impossible, state the reason and limit conclusions to "text/structure check"; do not claim the layout passed.
+- Final check: file exists, page count is correct, pages render, key pages have no black blocks/garbled text/misalignment/clipping.
 
 ### Excel/XLSX/CSV
-- 派生数据优先用公式或可审计的转换步骤，不把关键计算硬编码成死值。
-- 对 CSV/TSV 先确认分隔符、编码、表头、日期/数字格式和空值。
-- 图表和 dashboard 要有明确数据源范围；新增行列时同步公式、条件格式和图表范围。
-- 最终检查：关键范围 values/formulas、错误值扫描、图表/表格预览、列宽和冻结窗格、输出文件存在。
+- Derived data uses formulas or auditable conversion steps first; do not hardcode key calculations as dead values.
+- For CSV/TSV, confirm delimiters, encoding, headers, date/number formats, and nulls first.
+- Charts and dashboards need explicit data-source ranges; when adding rows/columns, sync formulas, conditional formatting, and chart ranges.
+- Final check: key-range values/formulas, error-value scan, chart/table preview, column width and frozen panes, output file exists.
 
-## 验证清单
-- 文件级：最终文件存在、非空、扩展名正确、能被目标工具打开或导入。
-- 内容级：标题、章节、页/slide/sheet 数、关键数据和用户要求逐项覆盖。
-- 视觉级：渲染/截图/预览检查，无明显截断、重叠、乱码、空白页、坏图表。
-- 数据级：公式、引用范围、错误值、单位、日期、百分比、汇总口径一致。
-- 安全级：敏感信息、个人元数据、隐藏批注、修订记录、水印、外部链接按用户要求处理。
+## Verification Checklist
+- File level: final file exists, is non-empty, has the correct extension, and can be opened or imported by the target tool.
+- Content level: titles, sections, page/slide/sheet counts, key data, and user requirements are covered item by item.
+- Visual level: render/screenshot/preview checks show no obvious clipping, overlap, garbled text, blank pages, or broken charts.
+- Data level: formulas, reference ranges, error values, units, dates, percentages, and aggregation definitions are consistent.
+- Security level: sensitive information, personal metadata, hidden comments, revision history, watermarks, and external links are handled as the user requires.
 
-## 反模式
-- 只输出一段文字，让用户自己复制进 Office。
-- 只看 PDF/DOCX 文本抽取，就断言版式没问题。
-- 把 PPT 做成一张张不可编辑截图，却没有说明。
-- Excel 里把应当公式计算的结果硬编码。
-- 覆盖原件、删除批注、接受修订或清理元数据前没有确认。
-- 为了排版好看编造来源、数字、引用或法律/财务结论。
+## Anti-Patterns
+- Outputting only a paragraph of text and leaving the user to paste it into Office.
+- Asserting the layout is fine from PDF/DOCX text extraction alone.
+- Making a PPT out of non-editable screenshots without saying so.
+- Hardcoding results in Excel that should be computed by formulas.
+- Overwriting originals, deleting comments, accepting revisions, or cleaning metadata without confirmation.
+- Inventing sources, numbers, citations, or legal/financial conclusions to make the layout look good.
 
-## 合并来源
+## Merged Sources
 - `documents`
 - `presentations`
 - `spreadsheets`
 - `pdf`
 
-## 本机相近 Skill
+## Nearby Skills on This Machine
 - `documents:documents`
 - `presentations:Presentations`
 - `spreadsheets:Spreadsheets`
 - `pdf`
 - `coff0xc-ui-doc-output`
 
-## 输出合同
+## Output Contract
 ```markdown
-完成：
+Done:
 - ...
 
-交付文件：
-- [文件名](绝对路径)
+Deliverable files:
+- [filename](absolute path)
 
-验证：
-- [已验证/未能验证] ...
+Verification:
+- [Verified/Could not verify] ...
 
-剩余风险：
+Residual risks:
 - ...
 
-下一步：
+Next steps:
 - ...
 ```

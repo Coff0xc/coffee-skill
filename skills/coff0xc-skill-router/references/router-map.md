@@ -49,15 +49,15 @@ Use this only when a task is genuinely cross-domain, when auto-triggering failed
 ## Output Template
 
 ```markdown
-工作流：
-- 主 skill: <skill> - <one-line reason>
-- 辅助 skills: <skill>: <one-line reason>
-- 暂不使用: <skill>: <one-line reason>
+Workflow:
+- Primary skill: <skill> - <one-line reason>
+- Support skills: <skill>: <one-line reason>
+- Not used for now: <skill>: <one-line reason>
 
-阶段：
-1. <stage> - 使用 <skill>，门禁：<verifiable gate>
-2. <stage> - 使用 <skill>，门禁：<verifiable gate>
+Stages:
+1. <stage> - using <skill>, gate: <verifiable gate>
+2. <stage> - using <skill>, gate: <verifiable gate>
 
-重路由：
-- 如果发现 <evidence>，新增/切换到 <skill>。
+Re-route:
+- If <evidence> is found, add/switch to <skill>.
 ```

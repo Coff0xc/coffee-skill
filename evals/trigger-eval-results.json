@@ -210,8 +210,8 @@
             "pytest",
             "python",
             "lint",
-            "最小修复",
-            "测试"
+            "minimal fix",
+            "tests"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -221,7 +221,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "修复"
+            "fix"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -309,8 +309,8 @@
           ],
           "phrase_hits": [
             "go",
-            "测试",
-            "重构"
+            "tests",
+            "refactoring"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -357,14 +357,14 @@
           "score": 19.2,
           "lexical_overlap": [],
           "phrase_hits": [
-            "前端页面",
-            "后端接口",
-            "少问确认",
-            "状态处理",
-            "多文件",
-            "全栈",
-            "构建",
-            "测试"
+            "frontend pages",
+            "backend APIs",
+            "ask few clarifying questions",
+            "state handling",
+            "multi-file",
+            "full-stack",
+            "build",
+            "tests"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -382,8 +382,8 @@
           "score": 4.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "后端接口",
-            "接口"
+            "backend APIs",
+            "APIs"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -464,15 +464,15 @@
           "skill": "coff0xc-ai-agent-rag",
           "score": 17.2779,
           "lexical_overlap": [
-            "助手",
-            "缓存"
+            "assistant",
+            "caching"
           ],
           "phrase_hits": [
             "agent",
             "rag",
-            "助手",
-            "缓存",
-            "评测"
+            "assistant",
+            "caching",
+            "evaluation"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -576,7 +576,7 @@
           ],
           "phrase_hits": [
             "agent",
-            "向量数据库",
+            "vector database",
             "rag"
           ],
           "router_composition_bonus": 0.0,
@@ -597,7 +597,7 @@
           "score": -4.2,
           "lexical_overlap": [],
           "phrase_hits": [
-            "数据库"
+            "database"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -626,17 +626,17 @@
             "api",
             "openapi",
             "rest",
-            "分页",
-            "数据库"
+            "pagination",
+            "database"
           ],
           "phrase_hits": [
             "openapi",
             "schema",
             "rest",
             "api",
-            "数据库",
-            "错误码",
-            "分页"
+            "database",
+            "error codes",
+            "pagination"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -735,11 +735,11 @@
           "lexical_overlap": [
             "coff0xc-api-data-platform",
             "graphql",
-            "数据质量"
+            "data quality"
           ],
           "phrase_hits": [
             "graphql",
-            "数据质量",
+            "data quality",
             "api",
             "sql"
           ],
@@ -789,11 +789,11 @@
           "lexical_overlap": [],
           "phrase_hits": [
             "dashboard",
-            "可访问性",
-            "移动端",
-            "前端",
-            "截图",
-            "组件"
+            "accessibility",
+            "mobile",
+            "frontend",
+            "screenshots",
+            "components"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -810,7 +810,7 @@
           "skill": "coff0xc-vulnerability-lifecycle",
           "score": 3.539,
           "lexical_overlap": [
-            "级"
+            "level"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -895,9 +895,9 @@
           ],
           "phrase_hits": [
             "ui",
-            "报告",
-            "润色",
-            "翻译"
+            "report",
+            "polish",
+            "translation"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -945,8 +945,8 @@
           ],
           "phrase_hits": [
             "pptx",
-            "演示文稿",
-            "预览验证"
+            "presentation",
+            "preview validation"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -956,7 +956,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "可编辑"
+            "editable"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1048,12 +1048,12 @@
           ],
           "phrase_hits": [
             "office",
-            "不覆盖原件",
+            "without overwriting the original",
             "docx",
-            "渲染检查",
-            "修订",
-            "批注",
-            "版式"
+            "render check",
+            "revisions",
+            "comments",
+            "layout"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1110,7 +1110,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "可编辑"
+            "editable"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1199,7 +1199,7 @@
           ],
           "phrase_hits": [
             "docx",
-            "批注"
+            "comments"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1319,7 +1319,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "可编辑"
+            "editable"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1348,16 +1348,16 @@
             "coff0xc-office-doc-tools",
             "excel",
             "formula",
-            "公式"
+            "formulas"
           ],
           "phrase_hits": [
             "formula",
             "office",
             "excel",
             "xlsx",
-            "渲染检查",
+            "render check",
             "csv",
-            "公式"
+            "formulas"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1377,7 +1377,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "解析"
+            "parsing"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1411,12 +1411,12 @@
             "comments",
             "office",
             "table",
-            "不覆盖原件",
+            "without overwriting the original",
             "docx",
-            "渲染检查",
-            "修订",
-            "批注",
-            "表格"
+            "render check",
+            "revisions",
+            "comments",
+            "tables"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1463,13 +1463,13 @@
           "score": 16.6779,
           "lexical_overlap": [
             "draw.io",
-            "架构图"
+            "architecture diagram"
           ],
           "phrase_hits": [
             "draw.io",
-            "算法架构图",
-            "可编辑",
-            "科研"
+            "algorithm architecture diagram",
+            "editable",
+            "research"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1572,8 +1572,8 @@
           "lexical_overlap": [
             "coff0xc-research-drawio-diagram",
             "drawio",
-            "图",
-            "论文方法"
+            "diagram",
+            "paper methods"
           ],
           "phrase_hits": [
             "transformer",
@@ -1581,7 +1581,7 @@
             ".drawio",
             "diagram",
             "drawio",
-            "模型结构图"
+            "model architecture diagram"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1634,9 +1634,9 @@
             "ssrf",
             "web",
             "xss",
-            "后门",
-            "认证",
-            "越权"
+            "backdoor",
+            "authentication",
+            "authorization bypass"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1739,8 +1739,8 @@
           ],
           "phrase_hits": [
             "appsec",
-            "代码安全",
-            "授权"
+            "code security",
+            "authorization"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -1760,7 +1760,7 @@
           "score": -4.2,
           "lexical_overlap": [],
           "phrase_hits": [
-            "授权"
+            "authorization"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -1799,7 +1799,7 @@
             "sbom",
             "iac",
             "k8s",
-            "供应链"
+            "supply chain"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -1904,9 +1904,9 @@
           "phrase_hits": [
             "azure",
             "ci/cd",
-            "容器",
-            "密钥",
-            "镜像"
+            "containers",
+            "secrets",
+            "images"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -1925,7 +1925,7 @@
           "skill": "coff0xc-authorized-assessment",
           "score": -2.461,
           "lexical_overlap": [
-            "评估"
+            "assessment"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -1962,8 +1962,8 @@
             "yara",
             "edr",
             "ioc",
-            "日志",
-            "检测"
+            "logs",
+            "detection"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -2065,9 +2065,9 @@
           ],
           "phrase_hits": [
             "detection",
-            "告警",
-            "威胁",
-            "日志"
+            "alerts",
+            "threats",
+            "logs"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -2119,10 +2119,10 @@
             "epss",
             "cve",
             "kev",
-            "优先级",
-            "修复",
-            "漏洞",
-            "补丁"
+            "priority",
+            "fix",
+            "vulnerabilities",
+            "patches"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -2228,8 +2228,8 @@
           "phrase_hits": [
             "vulnerability",
             "poc",
-            "优先级",
-            "修复"
+            "priority",
+            "fix"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -2249,7 +2249,7 @@
           "score": -4.2,
           "lexical_overlap": [],
           "phrase_hits": [
-            "授权"
+            "authorization"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -2281,7 +2281,7 @@
           "phrase_hits": [
             "bloodhound",
             "kerberos",
-            "横向移动",
+            "lateral movement",
             "mfa",
             "ad"
           ],
@@ -2293,7 +2293,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "移动"
+            "mobile"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -2393,9 +2393,9 @@
           ],
           "phrase_hits": [
             "identity",
-            "凭证",
-            "权限",
-            "身份"
+            "credentials",
+            "permissions",
+            "identity"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -2415,7 +2415,7 @@
           "score": 3.0,
           "lexical_overlap": [],
           "phrase_hits": [
-            "权限模型"
+            "permission models"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -2445,11 +2445,11 @@
           ],
           "phrase_hits": [
             "roe",
-            "攻击面",
-            "授权",
-            "演练",
-            "红队",
-            "边界"
+            "attack surface",
+            "authorization",
+            "exercise",
+            "red team",
+            "boundaries"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -2467,7 +2467,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "授权"
+            "authorization"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -2559,7 +2559,7 @@
           "phrase_hits": [
             "authorized",
             "red team",
-            "防御验证"
+            "defensive validation"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -2639,7 +2639,7 @@
           "lexical_overlap": [],
           "phrase_hits": [
             "ble",
-            "通信"
+            "communication"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -2730,8 +2730,8 @@
           ],
           "phrase_hits": [
             "scada",
-            "固件",
-            "移动"
+            "firmware",
+            "mobile"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -2799,7 +2799,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "测试"
+            "tests"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -2899,7 +2899,7 @@
             "coff0xc-blockchain-security"
           ],
           "phrase_hits": [
-            "跨链"
+            "cross-chain"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -2951,10 +2951,10 @@
             "iso27001",
             "stride",
             "soc2",
-            "威胁建模",
-            "数据分类",
+            "threat modeling",
+            "data classification",
             "dlp",
-            "脱敏"
+            "de-identification"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -2964,7 +2964,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "威胁"
+            "threats"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3062,8 +3062,8 @@
           ],
           "phrase_hits": [
             "compliance",
-            "合规",
-            "基线"
+            "compliance",
+            "baseline"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -3082,7 +3082,7 @@
           "skill": "coff0xc-authorized-assessment",
           "score": -2.461,
           "lexical_overlap": [
-            "评估"
+            "assessment"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -3115,9 +3115,9 @@
           "phrase_hits": [
             "att&ck",
             "canary",
-            "检测覆盖",
-            "紫队",
-            "蜜罐"
+            "detection coverage",
+            "purple team",
+            "honeypot"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3135,7 +3135,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "指标"
+            "metrics"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3225,11 +3225,11 @@
           "score": 105.8779,
           "lexical_overlap": [
             "coff0xc-purple-deception",
-            "检测有效"
+            "detection effectiveness"
           ],
           "phrase_hits": [
             "deception",
-            "红蓝"
+            "red-blue"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -3249,7 +3249,7 @@
           "score": -4.2,
           "lexical_overlap": [],
           "phrase_hits": [
-            "检测"
+            "detection"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -3396,9 +3396,9 @@
           "phrase_hits": [
             "protocol",
             "network",
-            "协议",
-            "无线",
-            "通信"
+            "protocols",
+            "wireless",
+            "communication"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3418,7 +3418,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "日志"
+            "logs"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3449,7 +3449,7 @@
           ],
           "phrase_hits": [
             "coff0xc",
-            "同时涉及"
+            "spans"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3459,7 +3459,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "云"
+            "cloud"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3469,7 +3469,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "检测"
+            "detection"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3563,7 +3563,7 @@
             "skill-router",
             "coff0xc",
             "router",
-            "选择合适"
+            "choose the right"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -3764,10 +3764,10 @@
           "score": 10.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "仓库跑不起来",
-            "报错链路",
-            "最小范围",
-            "证明"
+            "repo won't run",
+            "error chain",
+            "smallest scope",
+            "proof"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3809,15 +3809,15 @@
           "skill": "coff0xc-ai-agent-rag",
           "score": 16.739,
           "lexical_overlap": [
-            "助手"
+            "assistant"
           ],
           "phrase_hits": [
-            "调用工具",
-            "追踪原因",
-            "查资料",
-            "助手",
-            "答错",
-            "落地"
+            "calling tools",
+            "trace the cause",
+            "look up information",
+            "assistant",
+            "answering wrong",
+            "shippable"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3859,16 +3859,16 @@
           "skill": "coff0xc-api-data-platform",
           "score": 22.139,
           "lexical_overlap": [
-            "鉴权"
+            "authentication"
           ],
           "phrase_hits": [
-            "后端接口",
-            "外部客户",
-            "存储结构",
-            "版本兼容",
-            "请求响应",
-            "接口",
-            "鉴权"
+            "backend APIs",
+            "external customers",
+            "storage structure",
+            "version compatibility",
+            "request/response",
+            "APIs",
+            "authentication"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3878,7 +3878,7 @@
           "score": 3.0,
           "lexical_overlap": [],
           "phrase_hits": [
-            "后端接口"
+            "backend APIs"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3913,13 +3913,13 @@
           "score": 18.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "产品可用性",
-            "页面看起来",
-            "交付文案",
-            "信息密度",
-            "按钮状态",
-            "很乱",
-            "窄屏"
+            "product usability",
+            "page looks",
+            "delivery copy",
+            "information density",
+            "button states",
+            "messy",
+            "narrow screen"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -3962,10 +3962,10 @@
           "score": 7.2,
           "lexical_overlap": [],
           "phrase_hits": [
-            "工作簿",
-            "幻灯片",
-            "公式",
-            "表格"
+            "workbook",
+            "slides",
+            "formulas",
+            "tables"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4007,10 +4007,10 @@
           "skill": "coff0xc-research-drawio-diagram",
           "score": 5.339,
           "lexical_overlap": [
-            "图"
+            "diagram"
           ],
           "phrase_hits": [
-            "可编辑"
+            "editable"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4053,9 +4053,9 @@
           "score": 7.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "代码入口",
-            "绕过登录",
-            "数据流"
+            "code entry points",
+            "bypass login",
+            "data flows"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4065,7 +4065,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "代码"
+            "code"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4100,11 +4100,11 @@
           "score": 13.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "发版流水线",
-            "依赖来源",
-            "配置暴露",
-            "集群配置",
-            "镜像"
+            "release pipeline",
+            "dependency sources",
+            "configuration exposure",
+            "cluster configuration",
+            "images"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4113,10 +4113,10 @@
           "skill": "coff0xc-identity-zero-trust",
           "score": 4.8281,
           "lexical_overlap": [
-            "权限"
+            "permissions"
           ],
           "phrase_hits": [
-            "权限"
+            "permissions"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4125,7 +4125,7 @@
           "skill": "coff0xc-blockchain-security",
           "score": 3.0281,
           "lexical_overlap": [
-            "权限"
+            "permissions"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -4153,14 +4153,14 @@
           "score": 12.0,
           "lexical_overlap": [],
           "phrase_hits": [
-            "安全告警",
-            "检测逻辑",
-            "验证样本",
-            "降误报",
-            "告警",
-            "太吵",
-            "日志",
-            "检测"
+            "security alerts",
+            "detection logic",
+            "validation samples",
+            "reduce false positives",
+            "alerts",
+            "too noisy",
+            "logs",
+            "detection"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -4203,11 +4203,11 @@
           "score": 12.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "受不受影响",
-            "安全问题",
-            "跟进闭环",
-            "先修哪",
-            "上游"
+            "whether affected",
+            "security issue",
+            "track to closure",
+            "what to fix first",
+            "upstream"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4250,12 +4250,12 @@
           "score": 15.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "特权账号",
-            "登录策略",
-            "谁能访问",
-            "账号权限",
-            "收敛",
-            "权限"
+            "privileged accounts",
+            "login policy",
+            "who can access",
+            "account permissions",
+            "consolidation",
+            "permissions"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4298,10 +4298,10 @@
           "score": 9.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "完整入侵链",
-            "书面授权",
-            "授权",
-            "边界"
+            "full intrusion chain",
+            "written authorization",
+            "authorization",
+            "boundaries"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4311,7 +4311,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "授权"
+            "authorization"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4346,13 +4346,13 @@
           "score": 18.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "可执行文件",
-            "动态调试",
-            "接口枚举",
-            "通信固件",
-            "静态分析",
-            "设备包",
-            "固件"
+            "executables",
+            "dynamic debugging",
+            "interface enumeration",
+            "communication firmware",
+            "static analysis",
+            "device package",
+            "firmware"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4370,7 +4370,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "接口"
+            "APIs"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4396,13 +4396,13 @@
           "skill": "coff0xc-blockchain-security",
           "score": 15.0281,
           "lexical_overlap": [
-            "权限"
+            "permissions"
           ],
           "phrase_hits": [
-            "价格来源",
-            "测试覆盖",
-            "资产流转",
-            "链上资金"
+            "price sources",
+            "test coverage",
+            "asset flows",
+            "on-chain funds"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4419,10 +4419,10 @@
           "skill": "coff0xc-identity-zero-trust",
           "score": 4.8281,
           "lexical_overlap": [
-            "权限"
+            "permissions"
           ],
           "phrase_hits": [
-            "权限"
+            "permissions"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4449,11 +4449,11 @@
           "score": 6.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "安全评审",
-            "审计证据",
-            "风险模型",
-            "上线前",
-            "控制项"
+            "security review",
+            "audit evidence",
+            "risk model",
+            "pre-launch",
+            "control items"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -4495,13 +4495,13 @@
           "skill": "coff0xc-purple-deception",
           "score": 14.339,
           "lexical_overlap": [
-            "覆盖指标"
+            "coverage metrics"
           ],
           "phrase_hits": [
-            "改进闭环",
-            "攻击行为",
-            "覆盖指标",
-            "蓝队"
+            "improvement loop",
+            "attack behaviors",
+            "coverage metrics",
+            "blue team"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4519,7 +4519,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "指标"
+            "metrics"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4546,13 +4546,13 @@
           "score": 16.2,
           "lexical_overlap": [],
           "phrase_hits": [
-            "加密协商",
-            "异常字段",
-            "通信流程",
-            "抓包",
-            "握手",
-            "解析",
-            "通信"
+            "encryption negotiation",
+            "anomalous fields",
+            "communication flow",
+            "packet capture",
+            "handshake",
+            "parsing",
+            "communication"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4598,8 +4598,8 @@
           ],
           "phrase_hits": [
             "coffee skill",
-            "帮我分流",
-            "不确定"
+            "triage it for me",
+            "uncertain"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4609,7 +4609,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "接口"
+            "APIs"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4619,7 +4619,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "合规"
+            "compliance"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4659,7 +4659,7 @@
           "phrase_hits": [
             "vibe coding",
             "coff0xc",
-            "自己判断"
+            "decide for yourself"
           ],
           "router_composition_bonus": 25.5,
           "simple_prompt_penalty": 0.0
@@ -4669,12 +4669,12 @@
           "score": 13.1671,
           "lexical_overlap": [
             "api",
-            "数据库"
+            "database"
           ],
           "phrase_hits": [
             "schema",
             "api",
-            "数据库"
+            "database"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4685,9 +4685,9 @@
           "lexical_overlap": [],
           "phrase_hits": [
             "saas admin",
-            "代码实现",
-            "代码",
-            "测试"
+            "code implementation",
+            "code",
+            "tests"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4697,8 +4697,8 @@
           "score": 3.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "认证",
-            "越权"
+            "authentication",
+            "authorization bypass"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4708,8 +4708,8 @@
           "score": 3.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "前端",
-            "界面"
+            "frontend",
+            "UI"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4739,7 +4739,7 @@
           "phrase_hits": [
             "vibe coding",
             "coff0xc",
-            "自己判断"
+            "decide for yourself"
           ],
           "router_composition_bonus": 25.5,
           "simple_prompt_penalty": 0.0
@@ -4749,12 +4749,12 @@
           "score": 13.1671,
           "lexical_overlap": [
             "api",
-            "数据库"
+            "database"
           ],
           "phrase_hits": [
             "schema",
             "api",
-            "数据库"
+            "database"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4765,9 +4765,9 @@
           "lexical_overlap": [],
           "phrase_hits": [
             "saas admin",
-            "代码实现",
-            "代码",
-            "测试"
+            "code implementation",
+            "code",
+            "tests"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -4958,13 +4958,13 @@
           "lexical_overlap": [
             "ai",
             "skill",
-            "自己判断"
+            "decide for yourself"
           ],
           "phrase_hits": [
-            "串联 skill",
-            "ai 自己判断",
-            "自动串联",
-            "自己判断"
+            "chaining skills",
+            "AI deciding for itself",
+            "automatic chaining",
+            "decide for yourself"
           ],
           "router_composition_bonus": 27.0,
           "simple_prompt_penalty": 0.0
@@ -4977,7 +4977,7 @@
             "excel",
             "pptx",
             "workbook",
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [
             "workbook",
@@ -4993,7 +4993,7 @@
           "score": 10.0779,
           "lexical_overlap": [
             "draw.io",
-            "架构图"
+            "architecture diagram"
           ],
           "phrase_hits": [
             "draw.io"
@@ -5006,9 +5006,9 @@
           "score": 7.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "数据契约",
-            "数据来源",
-            "指标"
+            "data contract",
+            "data sources",
+            "metrics"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5018,9 +5018,9 @@
           "score": 6.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "报告叙事",
-            "报告",
-            "高管"
+            "report narrative",
+            "report",
+            "executives"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5043,13 +5043,13 @@
           "lexical_overlap": [
             "ai",
             "skill",
-            "自己判断"
+            "decide for yourself"
           ],
           "phrase_hits": [
-            "串联 skill",
-            "ai 自己判断",
-            "自动串联",
-            "自己判断"
+            "chaining skills",
+            "AI deciding for itself",
+            "automatic chaining",
+            "decide for yourself"
           ],
           "router_composition_bonus": 27.0,
           "simple_prompt_penalty": 0.0
@@ -5062,7 +5062,7 @@
             "excel",
             "pptx",
             "workbook",
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [
             "workbook",
@@ -5078,7 +5078,7 @@
           "score": 10.0779,
           "lexical_overlap": [
             "draw.io",
-            "架构图"
+            "architecture diagram"
           ],
           "phrase_hits": [
             "draw.io"
@@ -5127,7 +5127,7 @@
             "pipeline",
             "draw.io",
             "arxiv",
-            "可编辑"
+            "editable"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5136,12 +5136,12 @@
           "skill": "coff0xc-ai-agent-rag",
           "score": 10.139,
           "lexical_overlap": [
-            "评测"
+            "evaluation"
           ],
           "phrase_hits": [
             "agent",
             "rag",
-            "评测"
+            "evaluation"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5221,7 +5221,7 @@
             "pipeline",
             "draw.io",
             "arxiv",
-            "可编辑"
+            "editable"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5230,12 +5230,12 @@
           "skill": "coff0xc-ai-agent-rag",
           "score": 10.139,
           "lexical_overlap": [
-            "评测"
+            "evaluation"
           ],
           "phrase_hits": [
             "agent",
             "rag",
-            "评测"
+            "evaluation"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5860,7 +5860,7 @@
             "api"
           ],
           "phrase_hits": [
-            "多维度"
+            "multi-dimensional"
           ],
           "router_composition_bonus": 37.5,
           "simple_prompt_penalty": 0.0
@@ -5874,8 +5874,8 @@
             "pptx"
           ],
           "phrase_hits": [
-            "内部复盘 pptx",
-            "客户说明 docx",
+            "internal review pptx",
+            "client brief docx",
             "excel",
             "docx",
             "pptx"
@@ -5888,10 +5888,10 @@
           "score": 9.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "安全告警",
-            "检测响应",
-            "告警",
-            "检测"
+            "security alerts",
+            "detection response",
+            "alerts",
+            "detection"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5904,8 +5904,8 @@
           ],
           "phrase_hits": [
             "api",
-            "影响面",
-            "数据库"
+            "impact scope",
+            "database"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5915,9 +5915,9 @@
           "score": 7.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "客户说明",
-            "控制证据",
-            "合规"
+            "client brief",
+            "control evidence",
+            "compliance"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5927,9 +5927,9 @@
           "score": 7.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "代码 bug",
-            "修 api",
-            "代码"
+            "code bug",
+            "fix the API",
+            "code"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5939,8 +5939,8 @@
           "score": 4.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "权限越权",
-            "越权"
+            "authorization bypass",
+            "authorization bypass"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5960,7 +5960,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "权限"
+            "permissions"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -5982,7 +5982,7 @@
             "api"
           ],
           "phrase_hits": [
-            "多维度"
+            "multi-dimensional"
           ],
           "router_composition_bonus": 37.5,
           "simple_prompt_penalty": 0.0
@@ -5996,8 +5996,8 @@
             "pptx"
           ],
           "phrase_hits": [
-            "内部复盘 pptx",
-            "客户说明 docx",
+            "internal review pptx",
+            "client brief docx",
             "excel",
             "docx",
             "pptx"
@@ -6010,10 +6010,10 @@
           "score": 9.6,
           "lexical_overlap": [],
           "phrase_hits": [
-            "安全告警",
-            "检测响应",
-            "告警",
-            "检测"
+            "security alerts",
+            "detection response",
+            "alerts",
+            "detection"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6056,7 +6056,7 @@
             "oracle",
             "solana",
             "solidity/evm",
-            "权限"
+            "permissions"
           ],
           "phrase_hits": [
             "solidity",
@@ -6067,7 +6067,7 @@
             "solana",
             "token",
             "defi",
-            "资产流转",
+            "asset flows",
             "evm"
           ],
           "router_composition_bonus": 0.0,
@@ -6077,13 +6077,13 @@
           "skill": "coff0xc-vulnerability-lifecycle",
           "score": 11.939,
           "lexical_overlap": [
-            "修复优先"
+            "fix priority"
           ],
           "phrase_hits": [
-            "漏洞生命周期",
-            "优先级",
-            "修复",
-            "漏洞"
+            "vulnerability lifecycle",
+            "priority",
+            "fix",
+            "vulnerabilities"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6104,10 +6104,10 @@
           "skill": "coff0xc-identity-zero-trust",
           "score": 4.8281,
           "lexical_overlap": [
-            "权限"
+            "permissions"
           ],
           "phrase_hits": [
-            "权限"
+            "permissions"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6117,8 +6117,8 @@
           "score": 4.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "检测响应",
-            "检测"
+            "detection response",
+            "detection"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6128,7 +6128,7 @@
           "score": 3.0,
           "lexical_overlap": [],
           "phrase_hits": [
-            "风险报告"
+            "risk report"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6138,7 +6138,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "可编辑"
+            "editable"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6161,7 +6161,7 @@
             "oracle",
             "solana",
             "solidity/evm",
-            "权限"
+            "permissions"
           ],
           "phrase_hits": [
             "solidity",
@@ -6172,7 +6172,7 @@
             "solana",
             "token",
             "defi",
-            "资产流转",
+            "asset flows",
             "evm"
           ],
           "router_composition_bonus": 0.0,
@@ -6182,13 +6182,13 @@
           "skill": "coff0xc-vulnerability-lifecycle",
           "score": 11.939,
           "lexical_overlap": [
-            "修复优先"
+            "fix priority"
           ],
           "phrase_hits": [
-            "漏洞生命周期",
-            "优先级",
-            "修复",
-            "漏洞"
+            "vulnerability lifecycle",
+            "priority",
+            "fix",
+            "vulnerabilities"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6228,7 +6228,7 @@
           "score": 33.531,
           "lexical_overlap": [
             "protocol",
-            "状态机"
+            "state machine"
           ],
           "phrase_hits": [
             "protocol",
@@ -6240,7 +6240,7 @@
             "dns",
             "tls",
             "rf",
-            "协议"
+            "protocols"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6259,8 +6259,8 @@
             "crypto",
             "ble",
             "rf",
-            "固件",
-            "逆向"
+            "firmware",
+            "reverse engineering"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6284,7 +6284,7 @@
           "score": 3.0,
           "lexical_overlap": [],
           "phrase_hits": [
-            "风险报告"
+            "risk report"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6294,7 +6294,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "接口"
+            "APIs"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6304,7 +6304,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "报告"
+            "report"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6340,7 +6340,7 @@
           "score": 33.531,
           "lexical_overlap": [
             "protocol",
-            "状态机"
+            "state machine"
           ],
           "phrase_hits": [
             "protocol",
@@ -6352,7 +6352,7 @@
             "dns",
             "tls",
             "rf",
-            "协议"
+            "protocols"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6371,8 +6371,8 @@
             "crypto",
             "ble",
             "rf",
-            "固件",
-            "逆向"
+            "firmware",
+            "reverse engineering"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6407,8 +6407,8 @@
             "ui"
           ],
           "phrase_hits": [
-            "编排工作流",
-            "同时涉及"
+            "orchestrate the workflow",
+            "spans"
           ],
           "router_composition_bonus": 27.0,
           "simple_prompt_penalty": 0.0
@@ -6420,9 +6420,9 @@
             "ui"
           ],
           "phrase_hits": [
-            "前后端开发",
-            "前后端",
-            "开发"
+            "frontend and backend development",
+            "frontend and backend",
+            "development"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6431,11 +6431,11 @@
           "skill": "coff0xc-api-data-platform",
           "score": 7.139,
           "lexical_overlap": [
-            "数据库"
+            "database"
           ],
           "phrase_hits": [
             "api",
-            "数据库"
+            "database"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6447,7 +6447,7 @@
           "phrase_hits": [
             "docx",
             "ppt",
-            "文档"
+            "documents"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6469,7 +6469,7 @@
           "lexical_overlap": [],
           "phrase_hits": [
             "ui",
-            "文档"
+            "documents"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6507,8 +6507,8 @@
             "ui"
           ],
           "phrase_hits": [
-            "编排工作流",
-            "同时涉及"
+            "orchestrate the workflow",
+            "spans"
           ],
           "router_composition_bonus": 27.0,
           "simple_prompt_penalty": 0.0
@@ -6520,9 +6520,9 @@
             "ui"
           ],
           "phrase_hits": [
-            "前后端开发",
-            "前后端",
-            "开发"
+            "frontend and backend development",
+            "frontend and backend",
+            "development"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6531,11 +6531,11 @@
           "skill": "coff0xc-api-data-platform",
           "score": 7.139,
           "lexical_overlap": [
-            "数据库"
+            "database"
           ],
           "phrase_hits": [
             "api",
-            "数据库"
+            "database"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6585,7 +6585,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -6617,8 +6617,8 @@
           "phrase_hits": [
             "agent",
             "rag",
-            "助手",
-            "缓存"
+            "assistant",
+            "caching"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6637,7 +6637,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -6673,8 +6673,8 @@
             "openapi",
             "rest",
             "api",
-            "错误码",
-            "分页"
+            "error codes",
+            "pagination"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6695,7 +6695,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -6726,9 +6726,9 @@
           ],
           "phrase_hits": [
             "dashboard",
-            "移动端",
+            "mobile",
             "ui",
-            "截图"
+            "screenshots"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6747,7 +6747,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -6776,12 +6776,12 @@
           "lexical_overlap": [
             "coff0xc-office-doc-tools",
             "pptx",
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [
             "office",
             "pptx",
-            "导出"
+            "export"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6801,7 +6801,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "边界"
+            "boundaries"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6835,7 +6835,7 @@
             "diagram",
             "draw.io",
             "drawio",
-            "可编辑"
+            "editable"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6887,8 +6887,8 @@
             "web/api",
             "appsec",
             "web",
-            "认证",
-            "越权"
+            "authentication",
+            "authorization bypass"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6907,7 +6907,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -6942,7 +6942,7 @@
             "docker",
             "ci/cd",
             "k8s",
-            "供应链"
+            "supply chain"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -6961,7 +6961,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -6998,8 +6998,8 @@
             "sigma",
             "yara",
             "edr",
-            "日志",
-            "检测"
+            "logs",
+            "detection"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -7018,7 +7018,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -7051,9 +7051,9 @@
           "phrase_hits": [
             "vulnerability",
             "cve",
-            "优先级",
-            "修复",
-            "补丁"
+            "priority",
+            "fix",
+            "patches"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -7072,7 +7072,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -7126,7 +7126,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -7157,9 +7157,9 @@
           ],
           "phrase_hits": [
             "authorized",
-            "书面授权",
-            "授权",
-            "边界"
+            "written authorization",
+            "authorization",
+            "boundaries"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -7178,7 +7178,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -7229,7 +7229,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -7257,11 +7257,11 @@
           "score": 113.0779,
           "lexical_overlap": [
             "coff0xc-blockchain-security",
-            "资产流和"
+            "asset flows and"
           ],
           "phrase_hits": [
             "solidity",
-            "价格来源"
+            "price sources"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -7280,7 +7280,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -7311,8 +7311,8 @@
           ],
           "phrase_hits": [
             "compliance",
-            "威胁建模",
-            "上线前"
+            "threat modeling",
+            "pre-launch"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -7331,7 +7331,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -7365,8 +7365,8 @@
           "phrase_hits": [
             "deception",
             "att&ck",
-            "攻击行为",
-            "检测覆盖"
+            "attack behaviors",
+            "detection coverage"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -7385,7 +7385,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -7419,9 +7419,9 @@
             "protocol",
             "network",
             "pcap",
-            "异常字段",
+            "anomalous fields",
             "tls",
-            "握手"
+            "handshake"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -7440,7 +7440,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -7482,7 +7482,7 @@
           "skill": "coff0xc-office-doc-tools",
           "score": 3.539,
           "lexical_overlap": [
-            "交付物"
+            "deliverables"
           ],
           "phrase_hits": [],
           "router_composition_bonus": 0.0,
@@ -7493,7 +7493,7 @@
           "score": 1.8,
           "lexical_overlap": [],
           "phrase_hits": [
-            "边界"
+            "boundaries"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -7520,7 +7520,7 @@
           "score": -4.2,
           "lexical_overlap": [],
           "phrase_hits": [
-            "翻译"
+            "translation"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 6.0
@@ -8177,9 +8177,9 @@
             "dashboard",
             "focus",
             "hover",
-            "移动端",
+            "mobile",
             "ui",
-            "截图"
+            "screenshots"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -8193,7 +8193,7 @@
           ],
           "phrase_hits": [
             "coff0xc",
-            "路由"
+            "routing"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -8300,12 +8300,12 @@
           ],
           "phrase_hits": [
             "need package",
-            "只暂存相关文件",
-            "快速内循环",
-            "最小修复",
-            "最终审计",
-            "开发",
-            "测试"
+            "stage only the related files",
+            "fast inner loop",
+            "minimal fix",
+            "final audit",
+            "development",
+            "tests"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0
@@ -8324,10 +8324,10 @@
           "skill": "coff0xc-vulnerability-lifecycle",
           "score": 5.339,
           "lexical_overlap": [
-            "验证"
+            "validation"
           ],
           "phrase_hits": [
-            "修复"
+            "fix"
           ],
           "router_composition_bonus": 0.0,
           "simple_prompt_penalty": 0.0

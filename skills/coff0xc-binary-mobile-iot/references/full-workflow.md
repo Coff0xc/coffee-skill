@@ -1,99 +1,99 @@
 # Full Workflow
 
-本文件是 `coff0xc-binary-mobile-iot` 的按需扩展工作流。默认不要加载；只有深度架构、复杂多阶段、质量评测、发版、正式交付或当前任务需要完整门禁时才读取。
+This file is the on-demand extended workflow for `coff0xc-binary-mobile-iot`. Do not load it by default; read it only for deep architecture, complex multi-stage work, quality evaluation, release, formal delivery, or when the current task needs the full gates.
 
-## 目标
-在授权样本、实验室、CTF 或防御审计场景下分析低层系统风险，输出证据、修复、检测和安全验证。
+## Goal
+Analyze low-level system risk for authorized samples, labs, CTFs, or defensive-audit scenarios, and output evidence, fixes, detections, and security validation.
 
-## 适用场景
-- 分析二进制、固件、移动应用、内核模块、工业协议、硬件接口、密码学实现或 CTF 题目。
-- 做授权逆向、漏洞根因分析、修复建议、检测规则、测试向量和安全报告。
-- 检查 APK/IPA 权限、固件配置、协议日志、危险函数、加密误用和常数时间风险。
+## Applicable Scenarios
+- Analyzing binaries, firmware, mobile apps, kernel modules, industrial protocols, hardware interfaces, crypto implementations, or CTF challenges.
+- Doing authorized reversing, vulnerability root-cause analysis, remediation recommendations, detection rules, test vectors, and security reports.
+- Checking APK/IPA permissions, firmware configuration, protocol logs, dangerous functions, crypto misuse, and constant-time risk.
 
-## 触发强化
-- 自动触发主要依赖本文件 frontmatter 的 `description`；本 skill 只保留核心中文/英文触发词、工具名、常见缩写和手动触发短语，避免 metadata 过重。
-- 如果没有自动触发，手动写：`使用 coff0xc-binary-mobile-iot ...`。
-- 如果用户只写了宽泛主题，可先用 `coff0xc-skill-router` 路由到本 skill。
+## Trigger Reinforcement
+- Auto-triggering mainly depends on this file's frontmatter `description`; this skill keeps only core trigger words, tool names, common abbreviations, and manual trigger phrases to avoid overweight metadata.
+- If there is no auto-trigger, write manually: `Use coff0xc-binary-mobile-iot ...`.
+- If the user only wrote a broad topic, first use `coff0xc-skill-router` to route to this skill.
 
-## 不适用场景
-- 真实目标不提供利用链、绕过检测、越狱/root 绕过、设备接管或破坏 ICS 操作步骤。
-- 不在生产工控、医疗、交通、电力等关键系统上执行主动测试。
-- 移动/IoT 真实应用分析必须确认授权和隐私边界。
+## Not Applicable
+- Do not provide exploit chains, detection bypass, jailbreak/root bypass, device takeover, or destructive ICS operation steps for real targets.
+- Do not run active tests on production industrial-control, medical, transport, power, or other critical systems.
+- Real mobile/IoT application analysis must confirm authorization and privacy boundaries.
 
-## 执行原则
-- 先读取项目文件、配置、调用点、现有风格和可用工具，再下结论或改文件。
-- 把用户目标转成可验证的完成标准；不确定但低风险的细节记录为假设并继续推进。
-- 涉及当前事实、版本、CVE、云服务、GitHub 状态、价格、外部 API 或论文时，查真实来源并标注证据等级。
-- 涉及代码改动时保持最小正确改动，优先使用现有框架、脚本、测试和本地工具。
-- 只有真实运行过的命令、测试、构建、扫描或人工检查才能写成已验证。
-- 涉及删除、远程写入、生产、凭据、付费、push、PR/Issue、CI/CD、权限或基础设施变更时，先拿到明确授权。
+## Execution Principles
+- Read project files, configuration, call sites, existing style, and available tools before concluding or changing files.
+- Turn user goals into verifiable completion criteria; record uncertain but low-risk details as assumptions and keep going.
+- When current facts, versions, CVEs, cloud services, GitHub status, pricing, external APIs, or papers are involved, check real sources and mark the evidence level.
+- When code changes are involved, keep the minimal correct change and prefer existing frameworks, scripts, tests, and local tools.
+- Only commands, tests, builds, scans, or manual checks that were actually run may be written as verified.
+- Before deletion, remote writes, production, credentials, payment, push, PR/Issue, CI/CD, permission, or infrastructure changes, get explicit authorization first.
 
-## 安全边界
-- 只处理自有资产、明确授权资产、实验室、CTF、靶场、日志、配置、样本、代码审计、防御建设和报告写作。
-- 真实第三方目标上不提供漏洞利用、凭证获取、持久化、规避检测、C2、钓鱼收集、数据外传、破坏或未授权访问步骤。
-- 高风险请求默认转为防御输出：授权边界、风险解释、检测思路、日志查询、规则草案、加固方案、验证清单和报告结构。
-- 主动联网扫描、云账号检查、目录/租户查询或生产环境动作前，确认目标范围、速率、时间窗口、禁止动作和回滚方式。
-- 发现密钥、个人信息、样本敏感数据或客户数据时，只报告类型、位置和处置建议，不复述完整秘密值。
+## Security Boundaries
+- Handle only owned assets, explicitly authorized assets, labs, CTFs, ranges, logs, configuration, samples, code audits, defensive work, and report writing.
+- Do not provide exploitation, credential acquisition, persistence, detection evasion, C2, phishing collection, data exfiltration, destruction, or unauthorized-access steps against real third-party targets.
+- High-risk requests default to defensive output: authorization boundaries, risk explanations, detection ideas, log queries, rule drafts, hardening plans, validation checklists, and report structure.
+- Before active online scanning, cloud-account checks, directory/tenant queries, or production-environment actions, confirm target scope, rate, time window, prohibited actions, and rollback method.
+- When keys, personal information, sensitive sample data, or customer data is found, report only the type, location, and handling recommendation; do not repeat the full secret value.
 
-## 能力矩阵
-| 能力域 | 覆盖范围 | 执行要点 |
+## Capability Matrix
+| Capability area | Coverage | Execution points |
 | --- | --- | --- |
-| 二进制/逆向 | 文件格式、strings、imports、CFG、危险函数、符号、反编译 | 定位行为和风险点。 |
-| PWN/CTF | 栈/堆/格式化字符串/ROP 思路、靶场验证、writeup | 仅限 CTF/实验室。 |
-| 内核安全 | 驱动接口、ioctl、权限边界、内存安全、eBPF/io_uring/nftables 风险 | 防御审计和修复。 |
-| 移动安全 | APK/IPA manifest、组件导出、存储、网络、WebView、证书、日志 | 不做真实绕过攻击。 |
-| IoT 固件 | binwalk、文件系统、配置、默认口令风险、启动脚本、更新签名 | 证据化固件审计。 |
-| 硬件接口 | UART/JTAG/SPI/SWD 识别、调试暴露、防护建议 | 不指导未授权读取。 |
-| ICS/OT | 协议、PLC/HMI、网络分区、安全监控、IEC 62443/NIST 800-82 | 被动分析优先。 |
-| 密码学 | 算法选择、模式、随机数、密钥管理、认证、常数时间、测试向量 | 用标准和测试验证。 |
+| Binary/reversing | file formats, strings, imports, CFG, dangerous functions, symbols, decompilation | Locate behavior and risk points. |
+| PWN/CTF | stack/heap/format-string/ROP ideas, range validation, writeups | CTF/lab only. |
+| Kernel security | driver interfaces, ioctl, permission boundaries, memory safety, eBPF/io_uring/nftables risk | Defensive audit and fixes. |
+| Mobile security | APK/IPA manifest, exported components, storage, networking, WebView, certificates, logs | No real bypass attacks. |
+| IoT firmware | binwalk, filesystems, configuration, default-password risk, boot scripts, update signatures | Evidence-based firmware audit. |
+| Hardware interfaces | UART/JTAG/SPI/SWD identification, debug exposure, protection recommendations | Do not guide unauthorized reads. |
+| ICS/OT | protocols, PLC/HMI, network segmentation, security monitoring, IEC 62443/NIST 800-82 | Passive analysis first. |
+| Cryptography | algorithm choice, modes, randomness, key management, authentication, constant time, test vectors | Validate with standards and tests. |
 
-## 子域路由
-| 来源 skill | 并入后的处理方式 |
+## Subdomain Routing
+| Source skill | Handling after merge |
 | --- | --- |
-| reverse-engineering | 静态/动态逆向、反汇编、行为理解。 |
-| binary-exploit | CTF/实验室二进制漏洞根因和防御修复。 |
-| kernel-security | 内核/驱动/eBPF/ioctl 等低层边界审计。 |
-| mobile-security | Android/iOS 应用安全审查和隐私边界。 |
-| iot-security | 固件、硬件接口、设备云 API 和更新机制。 |
-| ics-scada | 工业协议、PLC/HMI、OT 网络和安全分区。 |
-| crypto-security | 密码学实现、协议和密钥管理审查。 |
-| ctf | CTF 全栈题目分析和 writeup。 |
+| reverse-engineering | Static/dynamic reversing, disassembly, behavior understanding. |
+| binary-exploit | CTF/lab binary vulnerability root causes and defensive fixes. |
+| kernel-security | Kernel/driver/eBPF/ioctl and other low-level boundary audits. |
+| mobile-security | Android/iOS application security review and privacy boundaries. |
+| iot-security | Firmware, hardware interfaces, device cloud APIs, and update mechanisms. |
+| ics-scada | Industrial protocols, PLC/HMI, OT networks, and security segmentation. |
+| crypto-security | Crypto implementation, protocol, and key-management review. |
+| ctf | Full-stack CTF challenge analysis and writeups. |
 
-## 工作流
-| 阶段 | 动作 | 完成标准 |
+## Workflow
+| Stage | Action | Completion criterion |
 | --- | --- | --- |
-| 授权与样本 | 确认样本来源、目标系统、实验环境、禁止动作和保密要求。 | 可合法分析。 |
-| 静态优先 | 识别格式、元数据、字符串、imports、配置、权限、符号和危险函数。 | 低风险获得证据。 |
-| 行为推断 | 基于代码、配置、日志、协议和测试环境推断行为。 | 假设可验证。 |
-| 实验验证 | 只在 CTF/lab/自有设备执行最小验证；关键系统被动分析。 | 不伤害真实系统。 |
-| 修复检测 | 输出补丁方向、配置加固、监控字段、测试向量和回归用例。 | 可落地。 |
-| 报告 | 说明样本、工具、哈希、环境、发现、证据、限制和下一步。 | 可复查。 |
+| Authorization and sample | Confirm sample source, target system, lab environment, prohibited actions, and confidentiality requirements. | Can be analyzed lawfully. |
+| Static first | Identify format, metadata, strings, imports, configuration, permissions, symbols, and dangerous functions. | Evidence obtained at low risk. |
+| Behavior inference | Infer behavior from code, configuration, logs, protocols, and test environments. | Hypotheses are verifiable. |
+| Lab validation | Run minimal validation only in CTF/lab/owned devices; passive analysis for critical systems. | No harm to real systems. |
+| Fix and detection | Output patch direction, configuration hardening, monitoring fields, test vectors, and regression cases. | Actionable. |
+| Report | State sample, tools, hashes, environment, findings, evidence, limits, and next steps. | Reviewable. |
 
-## 证据等级
-- 已验证：本地命令、测试、构建、源码、配置、日志、官方资料或可复现数据支持。
-- 高可信：多个可靠来源一致，但当前环境没有完整复现。
-- 推断：基于已验证事实的合理判断，需要后续验证。
-- 未验证：尚未确认，不能作为最终结论。
-- 未知：资料不足，需要补充输入或授权。
+## Evidence Levels
+- Verified: supported by local commands, tests, builds, source code, configuration, logs, official material, or reproducible data.
+- High confidence: multiple reliable sources agree, but the current environment has no full reproduction.
+- Inference: reasonable judgment based on verified facts, needs follow-up verification.
+- Unverified: not yet confirmed, cannot be used as a final conclusion.
+- Unknown: insufficient material, needs additional input or authorization.
 
-## 硬门禁
-- 连接硬件接口、读取固件、动态调试、hook 或运行样本前确认授权。
-- 涉及 ICS/OT 真实环境时只做被动分析，主动测试需单独书面授权。
-- 不输出真实应用绕过支付、反调试、证书 pinning 或 root/jailbreak 检测的攻击脚本。
+## Hard Gates
+- Confirm authorization before connecting hardware interfaces, reading firmware, dynamic debugging, hooking, or running samples.
+- For real ICS/OT environments, passive analysis only; active testing needs separate written authorization.
+- Do not output attack scripts for bypassing payment, anti-debugging, certificate pinning, or root/jailbreak detection in real apps.
 
-## 验证清单
-- 样本 hash、工具版本、分析环境和时间记录。
-- 静态发现有文件路径、函数、偏移、配置项或权限证据。
-- 密码学发现用标准、测试向量或常数时间分析支撑。
-- 移动/IoT 修复用 manifest/config/代码 diff 或复测结果支撑。
+## Verification Checklist
+- Sample hash, tool versions, analysis environment, and time recorded.
+- Static findings have file path, function, offset, configuration item, or permission evidence.
+- Crypto findings are backed by standards, test vectors, or constant-time analysis.
+- Mobile/IoT fixes are backed by manifest/config/code diffs or retest results.
 
-## 反模式
-- 没有授权就给设备/APP 攻击步骤。
-- 只看 strings 就下最终结论。
-- 在生产 ICS 上跑主动探测。
-- 密码学审查只说使用 AES/RSA，不看模式、随机数和认证。
+## Anti-Patterns
+- Giving device/app attack steps without authorization.
+- Reaching a final conclusion from strings alone.
+- Running active probing on production ICS.
+- Reviewing crypto by only saying AES/RSA is used, without looking at modes, randomness, and authentication.
 
-## 合并来源
+## Merged Sources
 - `binary-exploit`
 - `crypto-security`
 - `ctf`
@@ -103,30 +103,30 @@
 - `mobile-security`
 - `reverse-engineering`
 
-## 本机相近 Skill
+## Nearby Skills on This Machine
 - `source-command-binary-exploit`
 - `source-command-iot-ics`
 - `source-command-mobile-security`
 - `constant-time-analysis`
 - `wycheproof`
 
-## 输出合同
+## Output Contract
 ```markdown
-完成：
+Done:
 - ...
 
-证据：
-- [已验证/高可信/推断/未验证/未知] ...
+Evidence:
+- [Verified/High confidence/Inference/Unverified/Unknown] ...
 
-行动：
+Actions:
 - ...
 
-验证：
+Verification:
 - ...
 
-剩余风险：
+Residual risks:
 - ...
 
-下一步：
+Next steps:
 - ...
 ```

@@ -1,101 +1,101 @@
 # Full Workflow
 
-本文件是 `coff0xc-secure-code-appsec` 的按需扩展工作流。默认不要加载；只有深度架构、复杂多阶段、质量评测、发版、正式交付或当前任务需要完整门禁时才读取。
+This file is the on-demand extended workflow for `coff0xc-secure-code-appsec`. Do not load it by default; read it only for deep architecture, complex multi-stage work, quality evaluation, release, formal delivery, or when the current task needs the full gates.
 
-## 目标
-以代码和证据为中心定位应用安全问题，给出可验证修复；对高风险请求保持防御化和授权边界。
+## Goal
+Locate application security issues centered on code and evidence, and give verifiable fixes; keep high-risk requests defensive and within authorization boundaries.
 
-## 适用场景
-- 审计代码、配置、路由、API、认证授权、浏览器安全、GraphQL、OAuth/OIDC、LLM/Agent 安全。
-- 寻找漏洞根因、误报确认、修复建议、回归测试和安全报告。
-- 分析授权测试证据、Burp 项目、日志、SARIF、扫描结果或源码泄露风险。
+## Applicable Scenarios
+- Auditing code, configuration, routes, APIs, authentication/authorization, browser security, GraphQL, OAuth/OIDC, LLM/Agent security.
+- Finding vulnerability root causes, confirming false positives, giving remediation recommendations, regression tests, and security reports.
+- Analyzing authorized-test evidence, Burp projects, logs, SARIF, scan results, or source-leak risk.
 
-## 触发强化
-- 自动触发主要依赖本文件 frontmatter 的 `description`；本 skill 只保留核心中文/英文触发词、工具名、常见缩写和手动触发短语，避免 metadata 过重。
-- 如果没有自动触发，手动写：`使用 coff0xc-secure-code-appsec ...`。
-- 如果用户只写了宽泛主题，可先用 `coff0xc-skill-router` 路由到本 skill。
+## Trigger Reinforcement
+- Auto-triggering mainly depends on this file's frontmatter `description`; this skill keeps only core trigger words, tool names, common abbreviations, and manual trigger phrases to avoid overweight metadata.
+- If there is no auto-trigger, write manually: `Use coff0xc-secure-code-appsec ...`.
+- If the user only wrote a broad topic, first use `coff0xc-skill-router` to route to this skill.
 
-## 不适用场景
-- 不要对未授权目标进行主动扫描、爆破、利用或绕过。
-- 不要提供可直接攻击第三方的 payload、利用链、绕过脚本或数据外传步骤。
-- 二进制、移动、IoT、云或身份专项转对应 skill。
+## Not Applicable
+- Do not run active scanning, brute force, exploitation, or bypass against unauthorized targets.
+- Do not provide payloads, exploit chains, bypass scripts, or data-exfiltration steps that can directly attack third parties.
+- Binary, mobile, IoT, cloud, or identity specialties go to the matching skill.
 
-## 执行原则
-- 先读取项目文件、配置、调用点、现有风格和可用工具，再下结论或改文件。
-- 把用户目标转成可验证的完成标准；不确定但低风险的细节记录为假设并继续推进。
-- 涉及当前事实、版本、CVE、云服务、GitHub 状态、价格、外部 API 或论文时，查真实来源并标注证据等级。
-- 涉及代码改动时保持最小正确改动，优先使用现有框架、脚本、测试和本地工具。
-- 只有真实运行过的命令、测试、构建、扫描或人工检查才能写成已验证。
-- 涉及删除、远程写入、生产、凭据、付费、push、PR/Issue、CI/CD、权限或基础设施变更时，先拿到明确授权。
+## Execution Principles
+- Read project files, configuration, call sites, existing style, and available tools before concluding or changing files.
+- Turn user goals into verifiable completion criteria; record uncertain but low-risk details as assumptions and keep going.
+- When current facts, versions, CVEs, cloud services, GitHub status, pricing, external APIs, or papers are involved, check real sources and mark the evidence level.
+- When code changes are involved, keep the minimal correct change and prefer existing frameworks, scripts, tests, and local tools.
+- Only commands, tests, builds, scans, or manual checks that were actually run may be written as verified.
+- Before deletion, remote writes, production, credentials, payment, push, PR/Issue, CI/CD, permission, or infrastructure changes, get explicit authorization first.
 
-## 安全边界
-- 只处理自有资产、明确授权资产、实验室、CTF、靶场、日志、配置、样本、代码审计、防御建设和报告写作。
-- 真实第三方目标上不提供漏洞利用、凭证获取、持久化、规避检测、C2、钓鱼收集、数据外传、破坏或未授权访问步骤。
-- 高风险请求默认转为防御输出：授权边界、风险解释、检测思路、日志查询、规则草案、加固方案、验证清单和报告结构。
-- 主动联网扫描、云账号检查、目录/租户查询或生产环境动作前，确认目标范围、速率、时间窗口、禁止动作和回滚方式。
-- 发现密钥、个人信息、样本敏感数据或客户数据时，只报告类型、位置和处置建议，不复述完整秘密值。
+## Security Boundaries
+- Handle only owned assets, explicitly authorized assets, labs, CTFs, ranges, logs, configuration, samples, code audits, defensive work, and report writing.
+- Do not provide exploitation, credential acquisition, persistence, detection evasion, C2, phishing collection, data exfiltration, destruction, or unauthorized-access steps against real third-party targets.
+- High-risk requests default to defensive output: authorization boundaries, risk explanations, detection ideas, log queries, rule drafts, hardening plans, validation checklists, and report structure.
+- Before active online scanning, cloud-account checks, directory/tenant queries, or production-environment actions, confirm target scope, rate, time window, prohibited actions, and rollback method.
+- When keys, personal information, sensitive sample data, or customer data is found, report only the type, location, and handling recommendation; do not repeat the full secret value.
 
-## 能力矩阵
-| 能力域 | 覆盖范围 | 执行要点 |
+## Capability Matrix
+| Capability area | Coverage | Execution points |
 | --- | --- | --- |
-| 入口梳理 | routes、controllers、GraphQL resolvers、webhooks、file upload、SPA routes | 列出用户可控输入。 |
-| Source/Sink | 请求参数、headers、cookies、body、files、env、DB 到 command、SQL、template、file、URL、deserialize | 建立可达路径。 |
-| 认证授权 | session、JWT、OAuth、OIDC、tenant、role、object ownership、CSRF | 区分未登录、低权、高权路径。 |
-| Web/API 漏洞 | 注入、XSS、SSRF、XXE、path traversal、deserialization、IDOR、logic bug | 每项给可验证证据。 |
-| 浏览器/SPA | CSP、CORS、postMessage、Cookie、storage、DOM sink、extension manifest | 检查前端信任边界。 |
-| GraphQL | schema、resolver auth、batching、depth、introspection、IDOR、N+1 | 关注字段级权限。 |
-| LLM/Agent 安全 | prompt injection、tool injection、data leakage、memory poisoning、agent CI/CD | 工具权限和数据边界优先。 |
-| 后门检测 | 异常入口、混淆、动态执行、可疑网络、隐藏账号、异常计划任务 | 用代码/配置证据说明。 |
+| Entry-point inventory | routes, controllers, GraphQL resolvers, webhooks, file upload, SPA routes | List user-controllable inputs. |
+| Source/Sink | request parameters, headers, cookies, body, files, env, DB to command, SQL, template, file, URL, deserialize | Build reachable paths. |
+| Authentication and authorization | session, JWT, OAuth, OIDC, tenant, role, object ownership, CSRF | Distinguish unauthenticated, low-privilege, and high-privilege paths. |
+| Web/API vulnerabilities | injection, XSS, SSRF, XXE, path traversal, deserialization, IDOR, logic bug | Give verifiable evidence for each. |
+| Browser/SPA | CSP, CORS, postMessage, Cookie, storage, DOM sink, extension manifest | Check frontend trust boundaries. |
+| GraphQL | schema, resolver auth, batching, depth, introspection, IDOR, N+1 | Focus on field-level permissions. |
+| LLM/Agent security | prompt injection, tool injection, data leakage, memory poisoning, agent CI/CD | Tool permissions and data boundaries first. |
+| Backdoor detection | anomalous entry points, obfuscation, dynamic execution, suspicious networking, hidden accounts, anomalous scheduled tasks | Explain with code/configuration evidence. |
 
-## 子域路由
-| 来源 skill | 并入后的处理方式 |
+## Subdomain Routing
+| Source skill | Handling after merge |
 | --- | --- |
-| code-audit | 代码级 source/sink、危险函数、污点分析和修复。 |
-| web-pentest | 授权 Web 应用验证、OWASP Top 10 和业务逻辑。 |
-| api-discovery | 接口枚举、路由/文档/客户端反推，不做未授权探测。 |
-| api-security-test | API 鉴权、越权、参数校验、速率限制和错误泄露。 |
-| graphql-pentest | GraphQL schema/resolver 权限和查询复杂度。 |
-| oauth-security | OAuth/OIDC redirect、state、PKCE、scope、token 存储。 |
-| browser-security | DOM/CSP/CORS/Cookie/postMessage/扩展安全。 |
-| spa-pentest | 前端路由、token 暴露、source map、前后端权限错位。 |
-| llm-red-teaming | LLM/Agent 防御验证、提示注入和工具边界。 |
-| backdoor-detector | Webshell、异常动态执行、隐藏管理口和恶意代码特征。 |
+| code-audit | Code-level source/sink, dangerous functions, taint analysis, and fixes. |
+| web-pentest | Authorized web application validation, OWASP Top 10, and business logic. |
+| api-discovery | Interface enumeration, route/docs/client inference, without unauthorized probing. |
+| api-security-test | API authentication, authorization bypass, parameter validation, rate limiting, and error leakage. |
+| graphql-pentest | GraphQL schema/resolver permissions and query complexity. |
+| oauth-security | OAuth/OIDC redirect, state, PKCE, scope, token storage. |
+| browser-security | DOM/CSP/CORS/Cookie/postMessage/extension security. |
+| spa-pentest | Frontend routing, token exposure, source maps, frontend/backend permission mismatch. |
+| llm-red-teaming | LLM/Agent defensive validation, prompt injection, and tool boundaries. |
+| backdoor-detector | Webshells, anomalous dynamic execution, hidden admin endpoints, and malicious code traits. |
 
-## 工作流
-| 阶段 | 动作 | 完成标准 |
+## Workflow
+| Stage | Action | Completion criterion |
 | --- | --- | --- |
-| 授权与范围 | 确认资产、代码、环境、测试方式、禁止动作和输出敏感度。 | 知道能做什么。 |
-| 架构/入口 | 读取路由、schema、auth middleware、controllers、clients、config、tests。 | 攻击面和信任边界清晰。 |
-| 数据流分析 | 从 source 到 sink 追踪校验、转义、权限和异常处理。 | 有候选发现和证据链。 |
-| 验证优先级 | 按可达性、影响、权限、可利用复杂度和数据敏感度排序。 | 先验证高风险。 |
-| 修复设计 | 给最小修复、测试用例、兼容影响和日志/监控建议。 | 能落地。 |
-| 报告复查 | 每个发现包含位置、影响、证据、复现条件、修复、验证。 | 不夸大、不漏风险。 |
+| Authorization and scope | Confirm assets, code, environment, test methods, prohibited actions, and output sensitivity. | Know what can be done. |
+| Architecture/entry points | Read routes, schemas, auth middleware, controllers, clients, config, tests. | Attack surface and trust boundaries are clear. |
+| Data-flow analysis | Trace validation, escaping, permissions, and exception handling from source to sink. | Candidate findings and evidence chains exist. |
+| Validation priority | Order by reachability, impact, permissions, exploitation complexity, and data sensitivity. | Highest risk validated first. |
+| Fix design | Give minimal fixes, test cases, compatibility impact, and logging/monitoring recommendations. | Actionable. |
+| Report review | Every finding includes location, impact, evidence, reproduction conditions, fix, and validation. | Nothing exaggerated, no risk missed. |
 
-## 证据等级
-- 已验证：本地命令、测试、构建、源码、配置、日志、官方资料或可复现数据支持。
-- 高可信：多个可靠来源一致，但当前环境没有完整复现。
-- 推断：基于已验证事实的合理判断，需要后续验证。
-- 未验证：尚未确认，不能作为最终结论。
-- 未知：资料不足，需要补充输入或授权。
+## Evidence Levels
+- Verified: supported by local commands, tests, builds, source code, configuration, logs, official material, or reproducible data.
+- High confidence: multiple reliable sources agree, but the current environment has no full reproduction.
+- Inference: reasonable judgment based on verified facts, needs follow-up verification.
+- Unverified: not yet confirmed, cannot be used as a final conclusion.
+- Unknown: insufficient material, needs additional input or authorization.
 
-## 硬门禁
-- 主动扫描、认证绕过测试、文件上传测试、外部回连验证前必须确认授权和速率。
-- 不输出真实秘密值、完整客户数据或可用于未授权攻击的 payload。
-- 使用 Semgrep/CodeQL 等工具时记录规则、版本、目标和过滤标准。
+## Hard Gates
+- Confirm authorization and rate first for active scanning, authentication-bypass testing, file-upload testing, and external callback validation.
+- Do not output real secret values, complete customer data, or payloads usable for unauthorized attacks.
+- When using Semgrep/CodeQL and similar tools, record rules, versions, targets, and filtering criteria.
 
-## 验证清单
-- 静态：文件/行号、调用链、source/sink、权限路径。
-- 动态：仅在授权本地/测试环境中验证，记录请求条件和预期结果。
-- 工具：Semgrep/CodeQL/SARIF 结果需去重和误报分析。
-- 修复：加入回归测试，确认漏洞路径被阻断且正常路径保留。
+## Verification Checklist
+- Static: file/line number, call chain, source/sink, permission paths.
+- Dynamic: validate only in authorized local/test environments, recording request conditions and expected results.
+- Tools: Semgrep/CodeQL/SARIF results need deduplication and false-positive analysis.
+- Fixes: add regression tests, confirm the vulnerability path is blocked and normal paths remain.
 
-## 反模式
-- 只列工具扫描结果，不做可达性和误报判断。
-- 把漏洞标题当证据。
-- 用攻击视角替代修复和检测方案。
-- 只修前端校验，不修服务端边界。
+## Anti-Patterns
+- Listing only tool scan results without reachability and false-positive judgment.
+- Treating a vulnerability title as evidence.
+- Replacing fix and detection plans with an attacker view.
+- Fixing only frontend validation, not the server-side boundary.
 
-## 合并来源
+## Merged Sources
 - `api-discovery`
 - `api-security-test`
 - `backdoor-detector`
@@ -107,30 +107,30 @@
 - `spa-pentest`
 - `web-pentest`
 
-## 本机相近 Skill
+## Nearby Skills on This Machine
 - `source-command-code-audit`
 - `semgrep`
 - `codeql`
 - `variant-analysis`
 - `burpsuite-project-parser`
 
-## 输出合同
+## Output Contract
 ```markdown
-完成：
+Done:
 - ...
 
-证据：
-- [已验证/高可信/推断/未验证/未知] ...
+Evidence:
+- [Verified/High confidence/Inference/Unverified/Unknown] ...
 
-行动：
+Actions:
 - ...
 
-验证：
+Verification:
 - ...
 
-剩余风险：
+Residual risks:
 - ...
 
-下一步：
+Next steps:
 - ...
 ```

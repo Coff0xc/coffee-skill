@@ -1,96 +1,96 @@
 # Full Workflow
 
-本文件是 `coff0xc-identity-zero-trust` 的按需扩展工作流。默认不要加载；只有深度架构、复杂多阶段、质量评测、发版、正式交付或当前任务需要完整门禁时才读取。
+This file is the on-demand extended workflow for `coff0xc-identity-zero-trust`. Do not load it by default; read it only for deep architecture, complex multi-stage work, quality evaluation, release, formal delivery, or when the current task needs the full gates.
 
-## 目标
-从身份、设备、网络、应用和数据访问路径评估权限风险，输出检测、最小权限和零信任改进方案。
+## Goal
+Assess permission risk from identity, device, network, application, and data access paths, and output detection, least-privilege, and zero-trust improvement plans.
 
-## 适用场景
-- 审查 AD、Kerberos、云 IAM、SSO/MFA、PAM、服务账号、权限委派和访问路径。
-- 基于 BloodHound/目录导出/审计日志做防御性路径分析。
-- 设计零信任控制、条件访问、凭证治理、最小权限和横向移动检测。
+## Applicable Scenarios
+- Reviewing AD, Kerberos, cloud IAM, SSO/MFA, PAM, service accounts, permission delegation, and access paths.
+- Doing defensive path analysis from BloodHound/directory exports/audit logs.
+- Designing zero-trust controls, conditional access, credential governance, least privilege, and lateral-movement detection.
 
-## 触发强化
-- 自动触发主要依赖本文件 frontmatter 的 `description`；本 skill 只保留核心中文/英文触发词、工具名、常见缩写和手动触发短语，避免 metadata 过重。
-- 如果没有自动触发，手动写：`使用 coff0xc-identity-zero-trust ...`。
-- 如果用户只写了宽泛主题，可先用 `coff0xc-skill-router` 路由到本 skill。
+## Trigger Reinforcement
+- Auto-triggering mainly depends on this file's frontmatter `description`; this skill keeps only core trigger words, tool names, common abbreviations, and manual trigger phrases to avoid overweight metadata.
+- If there is no auto-trigger, write manually: `Use coff0xc-identity-zero-trust ...`.
+- If the user only wrote a broad topic, first use `coff0xc-skill-router` to route to this skill.
 
-## 不适用场景
-- 不提供凭证窃取、hash 提取、票据伪造、绕过 MFA、真实提权或横向移动步骤。
-- 不在生产目录、租户或终端上运行修改命令，除非明确授权。
-- 真实用户隐私和凭据数据必须脱敏。
+## Not Applicable
+- Do not provide credential theft, hash extraction, ticket forgery, MFA bypass, real privilege escalation, or lateral-movement steps.
+- Do not run modification commands on production directories, tenants, or endpoints without explicit authorization.
+- Real user private and credential data must be de-identified.
 
-## 执行原则
-- 先读取项目文件、配置、调用点、现有风格和可用工具，再下结论或改文件。
-- 把用户目标转成可验证的完成标准；不确定但低风险的细节记录为假设并继续推进。
-- 涉及当前事实、版本、CVE、云服务、GitHub 状态、价格、外部 API 或论文时，查真实来源并标注证据等级。
-- 涉及代码改动时保持最小正确改动，优先使用现有框架、脚本、测试和本地工具。
-- 只有真实运行过的命令、测试、构建、扫描或人工检查才能写成已验证。
-- 涉及删除、远程写入、生产、凭据、付费、push、PR/Issue、CI/CD、权限或基础设施变更时，先拿到明确授权。
+## Execution Principles
+- Read project files, configuration, call sites, existing style, and available tools before concluding or changing files.
+- Turn user goals into verifiable completion criteria; record uncertain but low-risk details as assumptions and keep going.
+- When current facts, versions, CVEs, cloud services, GitHub status, pricing, external APIs, or papers are involved, check real sources and mark the evidence level.
+- When code changes are involved, keep the minimal correct change and prefer existing frameworks, scripts, tests, and local tools.
+- Only commands, tests, builds, scans, or manual checks that were actually run may be written as verified.
+- Before deletion, remote writes, production, credentials, payment, push, PR/Issue, CI/CD, permission, or infrastructure changes, get explicit authorization first.
 
-## 安全边界
-- 只处理自有资产、明确授权资产、实验室、CTF、靶场、日志、配置、样本、代码审计、防御建设和报告写作。
-- 真实第三方目标上不提供漏洞利用、凭证获取、持久化、规避检测、C2、钓鱼收集、数据外传、破坏或未授权访问步骤。
-- 高风险请求默认转为防御输出：授权边界、风险解释、检测思路、日志查询、规则草案、加固方案、验证清单和报告结构。
-- 主动联网扫描、云账号检查、目录/租户查询或生产环境动作前，确认目标范围、速率、时间窗口、禁止动作和回滚方式。
-- 发现密钥、个人信息、样本敏感数据或客户数据时，只报告类型、位置和处置建议，不复述完整秘密值。
+## Security Boundaries
+- Handle only owned assets, explicitly authorized assets, labs, CTFs, ranges, logs, configuration, samples, code audits, defensive work, and report writing.
+- Do not provide exploitation, credential acquisition, persistence, detection evasion, C2, phishing collection, data exfiltration, destruction, or unauthorized-access steps against real third-party targets.
+- High-risk requests default to defensive output: authorization boundaries, risk explanations, detection ideas, log queries, rule drafts, hardening plans, validation checklists, and report structure.
+- Before active online scanning, cloud-account checks, directory/tenant queries, or production-environment actions, confirm target scope, rate, time window, prohibited actions, and rollback method.
+- When keys, personal information, sensitive sample data, or customer data is found, report only the type, location, and handling recommendation; do not repeat the full secret value.
 
-## 能力矩阵
-| 能力域 | 覆盖范围 | 执行要点 |
+## Capability Matrix
+| Capability area | Coverage | Execution points |
 | --- | --- | --- |
-| 身份治理 | 用户、组、角色、服务账号、特权账号、生命周期、JML | 权限有 owner 和理由。 |
-| 认证强度 | MFA、SSO、conditional access、device posture、session policy | 高风险路径有强认证。 |
-| 授权模型 | RBAC、ABAC、tenant boundary、delegation、admin roles | 最小权限和分权。 |
-| AD/Kerberos | GPO、SPN、delegation、trust、ACL、tiering、adminSDHolder | 防御路径分析。 |
-| 凭证风险 | 硬编码、共享账号、长期 token、弱存储、轮换、审计 | 不暴露秘密值。 |
-| 横向移动防御 | 远程管理、共享、RDP/WinRM/SSH、日志覆盖、网络分段 | 检测和阻断建议。 |
-| 零信任 | 身份、设备、应用、数据、网络、持续评估 | 控制矩阵和成熟度路线。 |
+| Identity governance | users, groups, roles, service accounts, privileged accounts, lifecycle, JML | Permissions have owners and reasons. |
+| Authentication strength | MFA, SSO, conditional access, device posture, session policy | High-risk paths have strong authentication. |
+| Authorization model | RBAC, ABAC, tenant boundary, delegation, admin roles | Least privilege and separation of duties. |
+| AD/Kerberos | GPO, SPN, delegation, trust, ACL, tiering, adminSDHolder | Defensive path analysis. |
+| Credential risk | hardcoding, shared accounts, long-lived tokens, weak storage, rotation, audit | Do not expose secret values. |
+| Lateral-movement defense | remote administration, shares, RDP/WinRM/SSH, log coverage, network segmentation | Detection and blocking recommendations. |
+| Zero trust | identity, device, application, data, network, continuous evaluation | Control matrix and maturity path. |
 
-## 子域路由
-| 来源 skill | 并入后的处理方式 |
+## Subdomain Routing
+| Source skill | Handling after merge |
 | --- | --- |
-| identity-security | IAM/SSO/MFA/PAM/身份治理。 |
-| zero-trust | 零信任架构、控制矩阵和成熟度路线。 |
-| ad-pentest | AD/Kerberos 防御性路径分析和加固。 |
-| credential-access | 凭证暴露检测、轮换和日志审计。 |
-| privilege-escalation | 提权路径防御、权限边界和最小权限。 |
-| lateral-movement | 横向移动检测、分段和远程访问控制。 |
+| identity-security | IAM/SSO/MFA/PAM/identity governance. |
+| zero-trust | Zero-trust architecture, control matrix, and maturity path. |
+| ad-pentest | AD/Kerberos defensive path analysis and hardening. |
+| credential-access | Credential-exposure detection, rotation, and log audit. |
+| privilege-escalation | Privilege-escalation path defense, permission boundaries, and least privilege. |
+| lateral-movement | Lateral-movement detection, segmentation, and remote-access control. |
 
-## 工作流
-| 阶段 | 动作 | 完成标准 |
+## Workflow
+| Stage | Action | Completion criterion |
 | --- | --- | --- |
-| 范围与数据 | 确认目录/租户、数据导出、日志、工具结果和授权。 | 数据来源合法。 |
-| 资产建模 | 列身份、角色、系统、数据、管理通道和 trust relationship。 | 访问图清晰。 |
-| 路径分析 | 寻找高权限路径、弱认证、过度委派、长期凭证和日志盲区。 | 风险有证据。 |
-| 控制映射 | 映射 MFA、PAM、分段、JIT/JEA、审计、检测和响应。 | 知道缺什么控制。 |
-| 修复计划 | 按权限降级、轮换、策略、分段、检测和培训排序。 | 能分阶段执行。 |
-| 验证 | 权限查询、策略模拟、日志命中、访问失败/成功路径验证。 | 风险降低可证明。 |
+| Scope and data | Confirm directory/tenant, data exports, logs, tool results, and authorization. | Data sources are lawful. |
+| Asset modeling | List identities, roles, systems, data, admin channels, and trust relationships. | Access graph is clear. |
+| Path analysis | Find high-privilege paths, weak authentication, excessive delegation, long-lived credentials, and log blind spots. | Risks have evidence. |
+| Control mapping | Map MFA, PAM, segmentation, JIT/JEA, audit, detection, and response. | Know which controls are missing. |
+| Fix plan | Order by permission reduction, rotation, policy, segmentation, detection, and training. | Executable in stages. |
+| Verification | Permission queries, policy simulation, log hits, access failure/success path verification. | Risk reduction is provable. |
 
-## 证据等级
-- 已验证：本地命令、测试、构建、源码、配置、日志、官方资料或可复现数据支持。
-- 高可信：多个可靠来源一致，但当前环境没有完整复现。
-- 推断：基于已验证事实的合理判断，需要后续验证。
-- 未验证：尚未确认，不能作为最终结论。
-- 未知：资料不足，需要补充输入或授权。
+## Evidence Levels
+- Verified: supported by local commands, tests, builds, source code, configuration, logs, official material, or reproducible data.
+- High confidence: multiple reliable sources agree, but the current environment has no full reproduction.
+- Inference: reasonable judgment based on verified facts, needs follow-up verification.
+- Unverified: not yet confirmed, cannot be used as a final conclusion.
+- Unknown: insufficient material, needs additional input or authorization.
 
-## 硬门禁
-- 目录修改、禁用账号、轮换凭据、策略下发、权限收敛前必须确认业务影响。
-- 不要输出真实用户密码、hash、token、cookie 或可滥用票据。
-- BloodHound 或日志中的个人身份信息要最小化引用。
+## Hard Gates
+- Confirm business impact first for directory changes, account disabling, credential rotation, policy rollout, and permission convergence.
+- Do not output real user passwords, hashes, tokens, cookies, or abusable tickets.
+- Minimize references to personal identity information in BloodHound or logs.
 
-## 验证清单
-- 权限：前后角色/ACL/策略 diff。
-- 认证：MFA/conditional access 命中日志。
-- 检测：关键事件 ID、SIEM 查询和样例。
-- 零信任：控制矩阵完成度和残余风险。
+## Verification Checklist
+- Permissions: before/after role/ACL/policy diffs.
+- Authentication: MFA/conditional-access hit logs.
+- Detection: key event IDs, SIEM queries, and samples.
+- Zero trust: control-matrix completeness and residual risk.
 
-## 反模式
-- 只列攻击路径，不给业务可接受的修复顺序。
-- 把所有账号一刀切禁用或强制轮换。
-- 忽略服务账号和自动化任务影响。
-- 没有日志验证就认为控制生效。
+## Anti-Patterns
+- Listing only attack paths without a business-acceptable fix order.
+- Disabling all accounts or forcing rotation across the board.
+- Ignoring service accounts and automation tasks.
+- Assuming a control works with no log verification.
 
-## 合并来源
+## Merged Sources
 - `ad-pentest`
 - `credential-access`
 - `identity-security`
@@ -98,28 +98,28 @@
 - `privilege-escalation`
 - `zero-trust`
 
-## 本机相近 Skill
+## Nearby Skills on This Machine
 - `source-command-ad-pentest`
 - `source-command-privesc`
 - `zeroize-audit`
 
-## 输出合同
+## Output Contract
 ```markdown
-完成：
+Done:
 - ...
 
-证据：
-- [已验证/高可信/推断/未验证/未知] ...
+Evidence:
+- [Verified/High confidence/Inference/Unverified/Unknown] ...
 
-行动：
+Actions:
 - ...
 
-验证：
+Verification:
 - ...
 
-剩余风险：
+Residual risks:
 - ...
 
-下一步：
+Next steps:
 - ...
 ```

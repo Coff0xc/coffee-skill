@@ -12,7 +12,7 @@
       "id": "software-cn-tests-refactor",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "这个 Python 项目的 pytest 挂了，帮我定位失败用例，做最小修复，然后跑测试和 lint。",
+      "prompt": "This Python project's pytest run is failing — locate the failing cases, make the minimal fix, then run tests and lint.",
       "should_trigger": true,
       "expected_skill": "coff0xc-software-engineering",
       "reason": "Local coding, tests, minimal fix, validation."
@@ -30,7 +30,7 @@
       "id": "software-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-software-engineering 帮我重构这个 Go 模块，保持行为不变并补测试。",
+      "prompt": "Use coff0xc-software-engineering to refactor this Go module, keeping behavior unchanged and adding tests.",
       "should_trigger": true,
       "expected_skill": "coff0xc-software-engineering",
       "reason": "Explicit skill invocation."
@@ -39,7 +39,7 @@
       "id": "software-cn-autonomous-fullstack",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "少问确认，直接把这个项目的多文件全栈功能做完，包含前端页面、后端接口、状态处理、测试和构建验证。",
+      "prompt": "Ask few clarifying questions and just build this project's multi-file full-stack feature, covering frontend pages, backend APIs, state handling, tests, and build validation.",
       "should_trigger": true,
       "expected_skill": "coff0xc-software-engineering",
       "reason": "Autonomous multi-file full-stack implementation with verification."
@@ -57,7 +57,7 @@
       "id": "agent-cn-knowledge-base",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "用 Agent/RAG 的方式设计一个本地知识库助手，需要引用来源、缓存、失败降级和评测集。",
+      "prompt": "Design a local knowledge-base assistant using Agent/RAG, with cited sources, caching, failure fallbacks, and an eval set.",
       "should_trigger": true,
       "expected_skill": "coff0xc-ai-agent-rag",
       "reason": "Agent/RAG architecture, citations, cache, fallback, evals."
@@ -75,7 +75,7 @@
       "id": "agent-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-ai-agent-rag 设计一个带向量数据库和多模型编排的 RAG workflow。",
+      "prompt": "Use coff0xc-ai-agent-rag to design a RAG workflow with a vector database and multi-model orchestration.",
       "should_trigger": true,
       "expected_skill": "coff0xc-ai-agent-rag",
       "reason": "Explicit skill invocation."
@@ -84,7 +84,7 @@
       "id": "api-cn-openapi-schema",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "帮我设计这个 billing REST API，包含 OpenAPI、数据库 schema、分页、错误码和兼容迁移。",
+      "prompt": "Design this billing REST API for me, including OpenAPI, database schema, pagination, error codes, and compatibility migration.",
       "should_trigger": true,
       "expected_skill": "coff0xc-api-data-platform",
       "reason": "REST, OpenAPI, database schema, pagination, errors, migration."
@@ -102,7 +102,7 @@
       "id": "api-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-api-data-platform 梳理 GraphQL 查询、SQL 表结构和数据质量检查。",
+      "prompt": "Use coff0xc-api-data-platform to sort out GraphQL queries, SQL table structures, and data-quality checks.",
       "should_trigger": true,
       "expected_skill": "coff0xc-api-data-platform",
       "reason": "Explicit skill invocation."
@@ -111,7 +111,7 @@
       "id": "ui-cn-dashboard",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "优化这个 dashboard 的前端体验，检查移动端截图、组件状态、可访问性和视觉层级。",
+      "prompt": "Polish this dashboard's frontend experience, checking mobile screenshots, component states, accessibility, and visual hierarchy.",
       "should_trigger": true,
       "expected_skill": "coff0xc-ui-doc-output",
       "reason": "UI/frontend dashboard, screenshots, components, accessibility."
@@ -129,7 +129,7 @@
       "id": "ui-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-ui-doc-output 把这份中文报告翻译润色成英文交付版。",
+      "prompt": "Use coff0xc-ui-doc-output to translate and polish this Chinese report into an English deliverable.",
       "should_trigger": true,
       "expected_skill": "coff0xc-ui-doc-output",
       "reason": "Explicit skill invocation."
@@ -138,7 +138,7 @@
       "id": "office-cn-pptx-deck",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "把这份 Markdown 大纲做成可编辑 PPTX 演示文稿，包含图表、讲述逻辑、预览验证和最终文件路径。",
+      "prompt": "Turn this Markdown outline into an editable PPTX deck with charts, a narrative arc, preview validation, and the final file path.",
       "should_trigger": true,
       "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Office artifact request for editable PPTX with preview verification."
@@ -156,7 +156,7 @@
       "id": "office-manual-docx",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-office-doc-tools 给这个 DOCX 加批注和修订，不覆盖原件，最后渲染检查版式。",
+      "prompt": "Use coff0xc-office-doc-tools to add comments and revisions to this DOCX without overwriting the original, then render-check the layout.",
       "should_trigger": true,
       "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Explicit skill invocation for DOCX comments, redlines, and render QA."
@@ -165,7 +165,7 @@
       "id": "office-short-pptx-artifact",
       "language": "zh-CN",
       "category": "short_artifact",
-      "prompt": "生成一份可编辑 PPTX，并检查预览。",
+      "prompt": "Generate an editable PPTX and check the preview.",
       "should_trigger": true,
       "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Short but concrete PPTX artifact creation should still trigger the Office workflow."
@@ -174,7 +174,7 @@
       "id": "office-short-xlsx-artifact",
       "language": "zh-CN",
       "category": "short_artifact",
-      "prompt": "把这份 CSV 整理成 Excel dashboard。",
+      "prompt": "Turn this CSV into an Excel dashboard.",
       "should_trigger": true,
       "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Short but concrete CSV-to-Excel artifact request should trigger the Office workflow."
@@ -183,7 +183,7 @@
       "id": "office-short-docx-artifact",
       "language": "zh-CN",
       "category": "short_artifact",
-      "prompt": "审阅这个 DOCX 的批注和格式。",
+      "prompt": "Review this DOCX's comments and formatting.",
       "should_trigger": true,
       "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Short but concrete DOCX comment and formatting review should trigger the Office workflow."
@@ -192,7 +192,7 @@
       "id": "office-quality-ppt-aesthetic-gate",
       "language": "zh-CN",
       "category": "quality_gate",
-      "prompt": "使用 coff0xc-office-doc-tools 把这份运营复盘大纲做成高审美可编辑 PPTX，不要模板感；必须先给 claim spine、design system、contact-sheet 规划、comeback scorecard，并说明渲染预览如何检查弱页。",
+      "prompt": "Use coff0xc-office-doc-tools to turn this operations-review outline into a high-aesthetic editable PPTX with no template feel; first provide a claim spine, design system, contact-sheet plan, and comeback scorecard, and explain how render previews catch weak slides.",
       "should_trigger": true,
       "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Quality eval for PPT aesthetics gates beyond basic PPTX triggering."
@@ -201,7 +201,7 @@
       "id": "office-defense-pptx-rewrite",
       "language": "zh-CN",
       "category": "artifact_quality",
-      "prompt": "这有一份毕业论文 DOCX 和一份旧答辩 PPTX，帮我重写答辩 PPT：先读论文结构和旧 PPT 页结构，重构答辩叙事，输出可编辑 PPTX，并做 PPTX 结构/预览检查；如果 Presentations runtime 路径不一致要 fallback，不能卡住。",
+      "prompt": "Here is a thesis DOCX and an old defense PPTX — rewrite the defense deck for me: first read the thesis structure and the old PPTX's slide structure, rebuild the defense narrative, output an editable PPTX, and run PPTX structure/preview checks; if the Presentations runtime path differs, fall back instead of getting stuck.",
       "should_trigger": true,
       "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Defense deck rewrite should trigger Office, read DOCX/PPTX sources, and avoid stopping on a versioned Presentations runtime mismatch."
@@ -210,7 +210,7 @@
       "id": "office-quality-excel-data-parse-gate",
       "language": "zh-CN",
       "category": "quality_gate",
-      "prompt": "使用 coff0xc-office-doc-tools 解析这个混乱 CSV/XLSX 数据包，生成可审计 Excel：先 inspect sheets/ranges、识别编码分隔符和异常值，保留 raw/source/assumptions，派生值用公式，trace 关键输出，最后做 formula error scan 和图表渲染检查。",
+      "prompt": "Use coff0xc-office-doc-tools to parse this messy CSV/XLSX data package into an auditable Excel file: first inspect sheets/ranges, identify encodings, delimiters, and outliers, keep raw/source/assumptions, use formulas for derived values, trace key outputs, and finish with a formula error scan and chart render check.",
       "should_trigger": true,
       "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Quality eval for spreadsheet parsing, auditability, formulas, trace, and render validation."
@@ -219,7 +219,7 @@
       "id": "office-quality-docx-reading-format-gate",
       "language": "zh-CN",
       "category": "quality_gate",
-      "prompt": "使用 coff0xc-office-doc-tools 审阅并小改这个 DOCX，不覆盖原件；先理解标题层级、表格、批注、修订和页眉页脚，再按 preset/token map 检查真实 styles、numbering、table geometry，最后逐页渲染检查格式并说明 comments/redlines 的结构验证。",
+      "prompt": "Use coff0xc-office-doc-tools to review and lightly edit this DOCX without overwriting the original; first understand the heading hierarchy, tables, comments, revisions, and headers/footers, then check real styles, numbering, and table geometry against the preset/token map, and finally render-check the formatting page by page and explain the structural validation of comments/redlines.",
       "should_trigger": true,
       "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Quality eval for DOCX comprehension, formatting preservation, render QA, and structural review evidence."
@@ -228,7 +228,7 @@
       "id": "drawio-cn-paper-method",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "帮我根据这篇论文和官方 GitHub 画一个可编辑的 draw.io 科研算法架构图，要求标注模块证据和推断连接。",
+      "prompt": "Draw an editable draw.io research algorithm architecture diagram from this paper and the official GitHub, labeling module evidence and inferred connections.",
       "should_trigger": true,
       "expected_skill": "coff0xc-research-drawio-diagram",
       "reason": "Research algorithm architecture figure, public-source analysis, editable draw.io output."
@@ -246,7 +246,7 @@
       "id": "drawio-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-research-drawio-diagram 把这个 Transformer 论文方法整理成 .drawio 模型结构图。",
+      "prompt": "Use coff0xc-research-drawio-diagram to organize this Transformer paper's method into a .drawio model architecture diagram.",
       "should_trigger": true,
       "expected_skill": "coff0xc-research-drawio-diagram",
       "reason": "Explicit skill invocation."
@@ -255,7 +255,7 @@
       "id": "appsec-cn-authz",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "审计这个 Web/API 项目的认证和越权风险，重点看 source/sink、SSRF、XSS、SQLi 和后门迹象。",
+      "prompt": "Audit this Web/API project for authentication and authorization-bypass risks, focusing on source/sink, SSRF, XSS, SQLi, and backdoor signs.",
       "should_trigger": true,
       "expected_skill": "coff0xc-secure-code-appsec",
       "reason": "Code audit, Web/API security, authz, source/sink, vulnerability classes."
@@ -273,7 +273,7 @@
       "id": "appsec-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-secure-code-appsec 做一次授权代码安全审计，只输出证据和修复建议。",
+      "prompt": "Use coff0xc-secure-code-appsec to run an authorized code security audit, outputting only evidence and remediation advice.",
       "should_trigger": true,
       "expected_skill": "coff0xc-secure-code-appsec",
       "reason": "Explicit skill invocation."
@@ -282,7 +282,7 @@
       "id": "cloud-cn-k8s-ci",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "检查这个 Docker、K8s 和 GitHub Actions 配置有没有供应链、SBOM、secret scanning 和 IaC 风险。",
+      "prompt": "Check this Docker, K8s, and GitHub Actions configuration for supply-chain, SBOM, secret-scanning, and IaC risks.",
       "should_trigger": true,
       "expected_skill": "coff0xc-cloud-devsecops",
       "reason": "Docker, Kubernetes, CI/CD, supply chain, SBOM, secrets, IaC."
@@ -300,7 +300,7 @@
       "id": "cloud-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-cloud-devsecops 评估 Azure、容器镜像和 CI/CD 的密钥管理问题。",
+      "prompt": "Use coff0xc-cloud-devsecops to assess Azure, container-image, and CI/CD secrets-management issues.",
       "should_trigger": true,
       "expected_skill": "coff0xc-cloud-devsecops",
       "reason": "Explicit skill invocation."
@@ -309,7 +309,7 @@
       "id": "detect-cn-sigma-yara",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "根据这些 EDR 日志写 Sigma 和 YARA 检测规则，说明 IOC、误报和验证样例。",
+      "prompt": "Write Sigma and YARA detection rules from these EDR logs, explaining IOCs, false positives, and validation samples.",
       "should_trigger": true,
       "expected_skill": "coff0xc-detection-response",
       "reason": "EDR logs, Sigma, YARA, IOC, false positives, validation."
@@ -327,7 +327,7 @@
       "id": "detect-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-detection-response 做一次威胁狩猎假设、日志查询和告警调优。",
+      "prompt": "Use coff0xc-detection-response for a threat-hunting hypothesis, log queries, and alert tuning.",
       "should_trigger": true,
       "expected_skill": "coff0xc-detection-response",
       "reason": "Explicit skill invocation."
@@ -336,7 +336,7 @@
       "id": "vuln-cn-cve-patch",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "分析这个 CVE 的漏洞原理、补丁对比、CVSS/EPSS/KEV 优先级和修复跟踪计划。",
+      "prompt": "Analyze this CVE's vulnerability mechanism, patch comparison, CVSS/EPSS/KEV priority, and remediation tracking plan.",
       "should_trigger": true,
       "expected_skill": "coff0xc-vulnerability-lifecycle",
       "reason": "CVE, patch diff, prioritization, remediation tracking."
@@ -354,7 +354,7 @@
       "id": "vuln-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-vulnerability-lifecycle 做授权 PoC 验证计划和修复优先级。",
+      "prompt": "Use coff0xc-vulnerability-lifecycle to plan authorized PoC validation and remediation priority.",
       "should_trigger": true,
       "expected_skill": "coff0xc-vulnerability-lifecycle",
       "reason": "Explicit skill invocation."
@@ -363,7 +363,7 @@
       "id": "identity-cn-ad-kerberos",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "评估这个 AD 域的 Kerberos、BloodHound 路径、服务账号、MFA 和横向移动防御。",
+      "prompt": "Assess this AD domain's Kerberos, BloodHound paths, service accounts, MFA, and lateral-movement defenses.",
       "should_trigger": true,
       "expected_skill": "coff0xc-identity-zero-trust",
       "reason": "AD, Kerberos, BloodHound, service accounts, MFA, lateral movement defense."
@@ -381,7 +381,7 @@
       "id": "identity-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-identity-zero-trust 检查身份治理、权限模型和凭证暴露风险。",
+      "prompt": "Use coff0xc-identity-zero-trust to check identity governance, permission models, and credential-exposure risks.",
       "should_trigger": true,
       "expected_skill": "coff0xc-identity-zero-trust",
       "reason": "Explicit skill invocation."
@@ -390,7 +390,7 @@
       "id": "assessment-cn-roe",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "为一次授权红队演练写 ROE、攻击面梳理、控制验证、钓鱼演练边界和报告结构。",
+      "prompt": "Write the ROE, attack-surface mapping, control validation, phishing-exercise boundaries, and report structure for an authorized red-team exercise.",
       "should_trigger": true,
       "expected_skill": "coff0xc-authorized-assessment",
       "reason": "Authorized assessment, ROE, red team, control validation, phishing simulation boundaries."
@@ -408,7 +408,7 @@
       "id": "assessment-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-authorized-assessment 设计一个只用于防御验证的 red team emulation plan。",
+      "prompt": "Use coff0xc-authorized-assessment to design a red team emulation plan for defensive validation only.",
       "should_trigger": true,
       "expected_skill": "coff0xc-authorized-assessment",
       "reason": "Explicit skill invocation."
@@ -417,7 +417,7 @@
       "id": "binary-cn-apk-firmware",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "分析这个 APK 和 IoT firmware 的 Frida Hook 点、UART/JTAG 接口、BLE 通信和加密实现风险。",
+      "prompt": "Analyze this APK and IoT firmware's Frida hook points, UART/JTAG interfaces, BLE communication, and crypto-implementation risks.",
       "should_trigger": true,
       "expected_skill": "coff0xc-binary-mobile-iot",
       "reason": "APK, firmware, Frida, hardware interfaces, BLE, crypto."
@@ -435,7 +435,7 @@
       "id": "binary-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-binary-mobile-iot 做移动安全、固件和 ICS/SCADA 分析计划。",
+      "prompt": "Use coff0xc-binary-mobile-iot to plan mobile-security, firmware, and ICS/SCADA analysis.",
       "should_trigger": true,
       "expected_skill": "coff0xc-binary-mobile-iot",
       "reason": "Explicit skill invocation."
@@ -444,7 +444,7 @@
       "id": "blockchain-cn-defi",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "审计这个 Solidity DeFi 合约，重点看 oracle、AMM、bridge、token/NFT 和 Slither/Foundry 测试。",
+      "prompt": "Audit this Solidity DeFi contract, focusing on oracle, AMM, bridge, token/NFT, and Slither/Foundry tests.",
       "should_trigger": true,
       "expected_skill": "coff0xc-blockchain-security",
       "reason": "Solidity, DeFi, oracle, AMM, bridge, token/NFT, Slither/Foundry."
@@ -462,7 +462,7 @@
       "id": "blockchain-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-blockchain-security 检查 Web3 跨链桥和代币集成风险。",
+      "prompt": "Use coff0xc-blockchain-security to check Web3 cross-chain bridge and token-integration risks.",
       "should_trigger": true,
       "expected_skill": "coff0xc-blockchain-security",
       "reason": "Explicit skill invocation."
@@ -471,7 +471,7 @@
       "id": "compliance-cn-stride-dlp",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "为这个系统做 STRIDE 威胁建模，映射等保、ISO27001、SOC2、数据分类、脱敏和 DLP 控制。",
+      "prompt": "Do STRIDE threat modeling for this system, mapping MLPS, ISO27001, SOC2, data classification, de-identification, and DLP controls.",
       "should_trigger": true,
       "expected_skill": "coff0xc-compliance-architecture",
       "reason": "Threat modeling, compliance, data classification, DLP."
@@ -489,7 +489,7 @@
       "id": "compliance-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-compliance-architecture 做安全基线、合规审计和成熟度评估。",
+      "prompt": "Use coff0xc-compliance-architecture for security baselining, compliance auditing, and maturity assessment.",
       "should_trigger": true,
       "expected_skill": "coff0xc-compliance-architecture",
       "reason": "Explicit skill invocation."
@@ -498,7 +498,7 @@
       "id": "purple-cn-attack-coverage",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "设计紫队演练，把 ATT&CK 技术映射到检测覆盖、响应验证、蜜罐和 canary 指标。",
+      "prompt": "Design a purple-team exercise mapping ATT&CK techniques to detection coverage, response validation, honeypot, and canary metrics.",
       "should_trigger": true,
       "expected_skill": "coff0xc-purple-deception",
       "reason": "Purple team, ATT&CK, detection coverage, response validation, honeypot/canary."
@@ -516,7 +516,7 @@
       "id": "purple-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-purple-deception 做红蓝对抗复盘和检测有效性评估。",
+      "prompt": "Use coff0xc-purple-deception for a red-blue exercise review and detection-effectiveness assessment.",
       "should_trigger": true,
       "expected_skill": "coff0xc-purple-deception",
       "reason": "Explicit skill invocation."
@@ -525,7 +525,7 @@
       "id": "network-cn-pcap-tls",
       "language": "zh-CN",
       "category": "natural_cn",
-      "prompt": "分析这个 pcap，重点看 TLS、DNS、HTTP/3、QUIC、TCP/UDP 和 Wireshark 证据。",
+      "prompt": "Analyze this pcap, focusing on TLS, DNS, HTTP/3, QUIC, TCP/UDP, and Wireshark evidence.",
       "should_trigger": true,
       "expected_skill": "coff0xc-network-protocol-security",
       "reason": "pcap, TLS, DNS, HTTP/3, QUIC, TCP/UDP, Wireshark."
@@ -543,7 +543,7 @@
       "id": "network-manual",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-network-protocol-security 检查安全通信、无线安全和协议日志。",
+      "prompt": "Use coff0xc-network-protocol-security to check secure communications, wireless security, and protocol logs.",
       "should_trigger": true,
       "expected_skill": "coff0xc-network-protocol-security",
       "reason": "Explicit skill invocation."
@@ -552,7 +552,7 @@
       "id": "router-cn-broad",
       "language": "zh-CN",
       "category": "router_fallback",
-      "prompt": "这个需求同时涉及代码、云安全、检测规则和漏洞报告，先帮我判断应该用哪个 Coff0xc skill。",
+      "prompt": "This request involves code, cloud security, detection rules, and vulnerability reports — help me decide which Coff0xc skill to use first.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "reason": "Broad mixed Coff0xc capability routing."
@@ -570,7 +570,7 @@
       "id": "router-manual-cn",
       "language": "zh-CN",
       "category": "manual_invocation",
-      "prompt": "使用 coff0xc-skill-router 帮我选择合适 skill。",
+      "prompt": "Use coff0xc-skill-router to help me choose the right skill.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "reason": "Explicit router invocation."
@@ -588,7 +588,7 @@
       "id": "router-multilingual-ja",
       "language": "ja",
       "category": "manual_multilingual",
-      "prompt": "Use coff0xc-skill-router to choose the right skill for AI Agent/RAG と防御的セキュリティの作業。",
+      "prompt": "Use coff0xc-skill-router to choose the right skill for AI Agent/RAG and defensive security work.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "reason": "Multilingual reference still uses explicit router phrase."
@@ -606,7 +606,7 @@
       "id": "hard-software-cn-colloquial",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "这个仓库跑不起来，先别大改，帮我看下报错链路，改最小范围，再证明确实好了。",
+      "prompt": "This repo won't run — don't change much yet; look at the error chain, change the smallest scope, then prove it really works.",
       "should_trigger": true,
       "expected_skill": "coff0xc-software-engineering",
       "reason": "Colloquial engineering repair request without language names."
@@ -615,7 +615,7 @@
       "id": "hard-agent-cn-colloquial",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "我想做一个会查资料、会调用工具、答错能追踪原因的助手，帮我把方案拆成可落地版本。",
+      "prompt": "I want to build an assistant that looks up information, calls tools, and traces the cause when it answers wrong — break the plan into a shippable version for me.",
       "should_trigger": true,
       "expected_skill": "coff0xc-ai-agent-rag",
       "reason": "Agent/RAG intent without direct RAG keyword."
@@ -624,7 +624,7 @@
       "id": "hard-api-cn-contract",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "这个后端接口要给外部客户用，帮我把请求响应、鉴权、错误返回、版本兼容和存储结构定下来。",
+      "prompt": "This backend API will serve external customers — define the request/response, authentication, error responses, version compatibility, and storage structure.",
       "should_trigger": true,
       "expected_skill": "coff0xc-api-data-platform",
       "reason": "API/data platform intent without REST/OpenAPI keywords."
@@ -633,7 +633,7 @@
       "id": "hard-ui-cn-polish",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "这个页面看起来很乱，帮我按真实产品可用性调整信息密度、按钮状态、窄屏表现和交付文案。",
+      "prompt": "This page looks messy — adjust the information density, button states, narrow-screen behavior, and delivery copy for real product usability.",
       "should_trigger": true,
       "expected_skill": "coff0xc-ui-doc-output",
       "reason": "UI polish and output wording without exact UI keywords."
@@ -642,7 +642,7 @@
       "id": "hard-office-cn-files",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "老板给了我一堆表格和文字，我要整理成能直接汇报的幻灯片和工作簿，公式别错，文件要能继续编辑。",
+      "prompt": "My boss gave me a pile of tables and text — organize them into slides and a workbook I can present directly, with correct formulas and files that stay editable.",
       "should_trigger": true,
       "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Colloquial Office artifact request without exact skill name."
@@ -651,7 +651,7 @@
       "id": "hard-drawio-cn-paper-figure",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "我要给论文补一张方法总览图，能从公开材料核对算法模块，最后给我可编辑源文件。",
+      "prompt": "I need a method-overview figure for my paper, with algorithm modules verifiable against public material, and an editable source file at the end.",
       "should_trigger": true,
       "expected_skill": "coff0xc-research-drawio-diagram",
       "reason": "Colloquial research method figure request without exact draw.io wording."
@@ -660,7 +660,7 @@
       "id": "hard-appsec-cn-risk",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "这个系统有没有人能绕过登录看到别人的数据？帮我从代码入口和数据流找证据。",
+      "prompt": "Can anyone bypass login on this system and see other people's data? Find evidence from the code entry points and data flows.",
       "should_trigger": true,
       "expected_skill": "coff0xc-secure-code-appsec",
       "reason": "Access-control code audit without explicit vulnerability names."
@@ -669,7 +669,7 @@
       "id": "hard-cloud-cn-pipeline",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "发版流水线和集群配置我不放心，帮我看镜像、权限、依赖来源和配置暴露风险。",
+      "prompt": "I'm not confident about the release pipeline and cluster configuration — check image, permission, dependency-source, and configuration-exposure risks.",
       "should_trigger": true,
       "expected_skill": "coff0xc-cloud-devsecops",
       "reason": "CI/container/cloud risk without exact CI/CD/K8s keywords."
@@ -678,7 +678,7 @@
       "id": "hard-detect-cn-alert",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "这些安全告警太吵，帮我从日志里提炼检测逻辑、降误报，并给验证样本。",
+      "prompt": "These security alerts are too noisy — distill detection logic from the logs, reduce false positives, and provide validation samples.",
       "should_trigger": true,
       "expected_skill": "coff0xc-detection-response",
       "reason": "Detection engineering without Sigma/YARA/SIEM acronyms."
@@ -687,7 +687,7 @@
       "id": "hard-vuln-cn-patch",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "上游刚修了一个安全问题，我要判断我们受不受影响、先修哪儿、怎么跟进闭环。",
+      "prompt": "Upstream just fixed a security issue — I need to judge whether we are affected, what to fix first, and how to track it to closure.",
       "should_trigger": true,
       "expected_skill": "coff0xc-vulnerability-lifecycle",
       "reason": "Patch/vulnerability lifecycle without CVE keyword."
@@ -696,7 +696,7 @@
       "id": "hard-identity-cn-access",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "公司账号权限越来越乱，帮我检查谁能访问什么、特权账号怎么收敛、登录策略怎么补。",
+      "prompt": "Company account permissions are getting messy — check who can access what, how to consolidate privileged accounts, and how to fix the login policy.",
       "should_trigger": true,
       "expected_skill": "coff0xc-identity-zero-trust",
       "reason": "Identity governance without AD/IAM acronyms."
@@ -705,7 +705,7 @@
       "id": "hard-assessment-cn-authorized",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "我们有书面授权，想验证现有防护能不能发现一条完整入侵链，先帮我写边界和步骤。",
+      "prompt": "We have written authorization and want to verify whether existing defenses can detect a full intrusion chain — write the boundaries and steps first.",
       "should_trigger": true,
       "expected_skill": "coff0xc-authorized-assessment",
       "reason": "Authorized assessment and control validation without red-team jargon."
@@ -714,7 +714,7 @@
       "id": "hard-binary-cn-device",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "这个设备包里有可执行文件和通信固件，帮我制定静态分析、动态调试和接口枚举计划。",
+      "prompt": "This device package contains executables and communication firmware — plan static analysis, dynamic debugging, and interface enumeration for me.",
       "should_trigger": true,
       "expected_skill": "coff0xc-binary-mobile-iot",
       "reason": "Binary/firmware analysis without explicit IoT acronyms."
@@ -723,7 +723,7 @@
       "id": "hard-blockchain-cn-contract",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "这个链上资金逻辑要上线，帮我检查价格来源、权限、资产流转和测试覆盖。",
+      "prompt": "This on-chain funds logic is about to launch — check price sources, permissions, asset flows, and test coverage.",
       "should_trigger": true,
       "expected_skill": "coff0xc-blockchain-security",
       "reason": "Smart contract/DeFi audit without Solidity keyword."
@@ -732,7 +732,7 @@
       "id": "hard-compliance-cn-architecture",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "新系统上线前要过安全评审，帮我整理风险模型、控制项、隐私和审计证据。",
+      "prompt": "A new system needs a security review before launch — organize the risk model, control items, privacy, and audit evidence.",
       "should_trigger": true,
       "expected_skill": "coff0xc-compliance-architecture",
       "reason": "Security architecture/compliance review without standard names."
@@ -741,7 +741,7 @@
       "id": "hard-purple-cn-coverage",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "我想验证蓝队到底能不能发现这些攻击行为，帮我设计演练、覆盖指标和改进闭环。",
+      "prompt": "I want to verify whether the blue team can actually detect these attack behaviors — design the exercise, coverage metrics, and improvement loop.",
       "should_trigger": true,
       "expected_skill": "coff0xc-purple-deception",
       "reason": "Purple/control validation without ATT&CK or honeypot keywords."
@@ -750,7 +750,7 @@
       "id": "hard-network-cn-traffic",
       "language": "zh-CN",
       "category": "hard_paraphrase",
-      "prompt": "这段抓包里握手和解析看起来不对，帮我按通信流程、加密协商和异常字段分析。",
+      "prompt": "The handshake and parsing in this packet capture look wrong — analyze it by communication flow, encryption negotiation, and anomalous fields.",
       "should_trigger": true,
       "expected_skill": "coff0xc-network-protocol-security",
       "reason": "Protocol/packet analysis without explicit protocol names."
@@ -759,7 +759,7 @@
       "id": "hard-router-cn-unknown",
       "language": "zh-CN",
       "category": "hard_router",
-      "prompt": "我不确定该用哪个 coffee skill，这件事同时有界面、接口、检测和合规，先帮我分流。",
+      "prompt": "I'm not sure which coffee skill to use — this involves UI, APIs, detection, and compliance, so triage it for me first.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "reason": "Ambiguous routing request without exact router name."
@@ -768,7 +768,7 @@
       "id": "composition-cn-vibe-coding-fullstack",
       "language": "zh-CN",
       "category": "composition",
-      "prompt": "你自己判断要用哪些 coff0xc skills，并把它们串成工作流完成这个 vibe coding 任务：实现一个 SaaS admin 功能，涉及代码实现、前端界面、后端 API、数据库 schema、认证越权风险和最终测试验证。",
+      "prompt": "Decide which coff0xc skills are needed, chain them into a workflow, and complete this vibe coding task: implement a SaaS admin feature covering code implementation, frontend UI, backend API, database schema, authentication/authorization-bypass risk, and final test validation.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "expected_skill_set": [
@@ -802,7 +802,7 @@
       "id": "composition-cn-executive-deliverable",
       "language": "zh-CN",
       "category": "composition",
-      "prompt": "AI 自己判断并自动串联 skill：从 repo 指标、CSV 数据和论文证据里做一套给高管看的交付物，包含数据契约、PPTX、Excel workbook、draw.io 架构图、报告叙事和数据来源验证。",
+      "prompt": "Let the AI decide and automatically chain skills: build an executive deliverable from repo metrics, CSV data, and paper evidence, including a data contract, PPTX, Excel workbook, draw.io architecture diagram, report narrative, and data-source validation.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "expected_skill_set": [
@@ -819,7 +819,7 @@
       "id": "composition-extreme-phd-research-system",
       "language": "zh-CN",
       "category": "composition_extreme",
-      "prompt": "博士级任务：从 arXiv 论文和 official GitHub 复现实验思路，设计 RAG/Agent 评测 pipeline，抽取模型结构和证据等级，画可编辑 draw.io 方法图，再输出 technical report 和领导可读 PPTX；要求区分官方证据、论文证据和推断。",
+      "prompt": "PhD-level task: reproduce the experiment approach from an arXiv paper and the official GitHub, design a RAG/Agent evaluation pipeline, extract the model structure and evidence levels, draw an editable draw.io method diagram, then output a technical report and an executive-readable PPTX; distinguish official evidence, paper evidence, and inference.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "expected_skill_set": [
@@ -890,7 +890,7 @@
       "id": "composition-extreme-multidim-crisis",
       "language": "zh-CN",
       "category": "composition_extreme",
-      "prompt": "多维度危机任务：billing 数据异常叠加安全告警，定位代码 bug，修 API 和数据库迁移，补权限越权回归，写检测响应规则，生成客户说明 DOCX、内部复盘 PPTX、Excel 影响面表、合规控制证据，并保持可恢复工作流。",
+      "prompt": "Multi-dimensional crisis task: billing data anomalies plus security alerts — locate the code bug, fix the API and database migration, add authorization-bypass regression coverage, write detection-response rules, generate a client brief DOCX, internal review PPTX, Excel impact table, and compliance control evidence, while keeping a recoverable workflow.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "expected_skill_set": [
@@ -909,7 +909,7 @@
       "id": "composition-extreme-blockchain-incident",
       "language": "zh-CN",
       "category": "composition_extreme",
-      "prompt": "顶级多链 DeFi 事件审计：覆盖 Solidity/EVM、Solana、oracle、bridge、token 权限、资产流转、Foundry/Slither 测试、修复优先级和漏洞生命周期、检测响应规则、投资人风险报告和可编辑 PPTX。",
+      "prompt": "Top-tier multi-chain DeFi incident audit: cover Solidity/EVM, Solana, oracle, bridge, token permissions, asset flows, Foundry/Slither tests, remediation priority and vulnerability lifecycle, detection-response rules, investor risk report, and editable PPTX.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "expected_skill_set": [
@@ -926,7 +926,7 @@
       "id": "composition-extreme-protocol-iot",
       "language": "zh-CN",
       "category": "composition_extreme",
-      "prompt": "顶级协议/IoT/形式化任务：分析工业 IoT firmware 和 pcap，逆向协议状态机，覆盖 TLS/DNS/QUIC/custom binary protocol、BLE/RF、固件接口、constant-time crypto、ProVerif/Mermaid protocol diagram、draw.io 架构图和风险报告。",
+      "prompt": "Top-tier protocol/IoT/formal task: analyze industrial IoT firmware and pcap, reverse the protocol state machine, covering TLS/DNS/QUIC/custom binary protocol, BLE/RF, firmware interfaces, constant-time crypto, ProVerif/Mermaid protocol diagrams, draw.io architecture diagrams, and a risk report.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "expected_skill_set": [
@@ -943,7 +943,7 @@
       "id": "composition-natural-cross-domain-workflow",
       "language": "zh-CN",
       "category": "composition_extreme",
-      "prompt": "这个任务同时涉及前后端开发、数据库、UI、Web/API 安全和 DOCX/PPT 文档交付，你来编排工作流，先判断哪些能力要串起来，再分阶段执行并给出每阶段验收门禁。",
+      "prompt": "This task spans frontend and backend development, databases, UI, Web/API security, and DOCX/PPT document delivery — orchestrate the workflow: first decide which capabilities to chain, then execute in phases with acceptance gates for each phase.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "expected_skill_set": [
@@ -961,7 +961,7 @@
       "id": "capability-software-engineering",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-software-engineering 修复这个 repo 的 failing tests，并说明验证结果。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-software-engineering to fix this repo's failing tests and report the validation results. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-software-engineering",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -970,7 +970,7 @@
       "id": "capability-ai-agent-rag",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-ai-agent-rag 设计一个带引用、缓存和失败降级的企业知识库助手。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-ai-agent-rag to design an enterprise knowledge-base assistant with citations, caching, and failure fallbacks. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-ai-agent-rag",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -979,7 +979,7 @@
       "id": "capability-api-data-platform",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-api-data-platform 设计这个 billing REST API，包含 OpenAPI、分页和错误码。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-api-data-platform to design this billing REST API, including OpenAPI, pagination, and error codes. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-api-data-platform",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -988,7 +988,7 @@
       "id": "capability-ui-doc-output",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-ui-doc-output 优化这个 dashboard，并用截图检查移动端。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-ui-doc-output to polish this dashboard and check mobile with screenshots. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-ui-doc-output",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -997,7 +997,7 @@
       "id": "capability-office-doc-tools",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-office-doc-tools 生成一份可编辑 PPTX，并检查预览、图表和导出文件。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-office-doc-tools to generate an editable PPTX and check its preview, charts, and exported file. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-office-doc-tools",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1006,7 +1006,7 @@
       "id": "capability-research-drawio-diagram",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-research-drawio-diagram 根据论文和官方 GitHub 画一个可编辑 draw.io 方法图。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-research-drawio-diagram to draw an editable draw.io method diagram from the paper and official GitHub. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-research-drawio-diagram",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1015,7 +1015,7 @@
       "id": "capability-secure-code-appsec",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-secure-code-appsec 审计这个 Web/API 项目的认证和越权风险。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-secure-code-appsec to audit this Web/API project for authentication and authorization-bypass risks. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-secure-code-appsec",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1024,7 +1024,7 @@
       "id": "capability-cloud-devsecops",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-cloud-devsecops 检查 Docker、K8s、CI/CD 和供应链风险。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-cloud-devsecops to check Docker, K8s, CI/CD, and supply-chain risks. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-cloud-devsecops",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1033,7 +1033,7 @@
       "id": "capability-detection-response",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-detection-response 根据这些 EDR 日志写 Sigma 和 YARA 检测规则。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-detection-response to write Sigma and YARA detection rules from these EDR logs. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-detection-response",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1042,7 +1042,7 @@
       "id": "capability-vulnerability-lifecycle",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-vulnerability-lifecycle 分析这个 CVE 的影响、补丁和修复优先级。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-vulnerability-lifecycle to analyze this CVE's impact, patch, and remediation priority. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-vulnerability-lifecycle",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1051,7 +1051,7 @@
       "id": "capability-identity-zero-trust",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-identity-zero-trust 评估这个 AD 域的 Kerberos、BloodHound 路径和服务账号风险。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-identity-zero-trust to assess this AD domain's Kerberos, BloodHound paths, and service-account risks. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-identity-zero-trust",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1060,7 +1060,7 @@
       "id": "capability-authorized-assessment",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-authorized-assessment 在书面授权范围内规划一次安全评估。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-authorized-assessment to plan a security assessment within the written authorization. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-authorized-assessment",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1069,7 +1069,7 @@
       "id": "capability-binary-mobile-iot",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-binary-mobile-iot 分析这个 APK 的权限、网络通信和 Frida hook 点。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-binary-mobile-iot to analyze this APK's permissions, network traffic, and Frida hook points. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-binary-mobile-iot",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1078,7 +1078,7 @@
       "id": "capability-blockchain-security",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-blockchain-security 审计这个 Solidity 合约的权限、资产流和价格来源。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-blockchain-security to audit this Solidity contract's permissions, asset flows, and price sources. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-blockchain-security",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1087,7 +1087,7 @@
       "id": "capability-compliance-architecture",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-compliance-architecture 做上线前安全架构评审和威胁建模。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-compliance-architecture for a pre-launch security architecture review and threat modeling. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-compliance-architecture",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1096,7 +1096,7 @@
       "id": "capability-purple-deception",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-purple-deception 把这些攻击行为映射成 ATT&CK 检测覆盖矩阵。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-purple-deception to map these attack behaviors into an ATT&CK detection-coverage matrix. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-purple-deception",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1105,7 +1105,7 @@
       "id": "capability-network-protocol-security",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-network-protocol-security 分析这个 pcap 里的 TLS 握手和异常字段。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-network-protocol-security to analyze the TLS handshake and anomalous fields in this pcap. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-network-protocol-security",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1114,7 +1114,7 @@
       "id": "capability-skill-router",
       "language": "zh-CN",
       "category": "capability_cn",
-      "prompt": "使用 coff0xc-skill-router 帮我判断这个任务该用哪个 skill。 请明确输入、交付物、边界和验证方式。",
+      "prompt": "Use coff0xc-skill-router to help me decide which skill this task needs. State the inputs, deliverables, boundaries, and validation approach explicitly.",
       "should_trigger": true,
       "expected_skill": "coff0xc-skill-router",
       "reason": "Capability-focused invocation with deliverable and trust criteria."
@@ -1123,7 +1123,7 @@
       "id": "negative-simple-translate",
       "language": "zh-CN",
       "category": "negative_simple",
-      "prompt": "把 hello 翻译成中文。",
+      "prompt": "Translate hello into Chinese.",
       "should_trigger": false,
       "expected_skill": null,
       "reason": "One-step trivial translation should not need a workflow skill."
@@ -1132,7 +1132,7 @@
       "id": "negative-simple-definition-cve",
       "language": "zh-CN",
       "category": "negative_simple",
-      "prompt": "CVE 是什么意思？",
+      "prompt": "What does CVE mean?",
       "should_trigger": false,
       "expected_skill": null,
       "reason": "Simple definition, not vulnerability workflow."
@@ -1141,7 +1141,7 @@
       "id": "negative-weather",
       "language": "zh-CN",
       "category": "negative_unrelated",
-      "prompt": "明天上海天气怎么样？",
+      "prompt": "What's the weather like in Shanghai tomorrow?",
       "should_trigger": false,
       "expected_skill": null,
       "reason": "Weather lookup is unrelated."
@@ -1204,7 +1204,7 @@
       "id": "negative-excel-definition",
       "language": "zh-CN",
       "category": "negative_near_miss",
-      "prompt": "Excel 是什么？",
+      "prompt": "What is Excel?",
       "should_trigger": false,
       "expected_skill": null,
       "reason": "Simple definition, not an Office artifact workflow."
@@ -1258,7 +1258,7 @@
       "id": "ui-quality-product-type-state-gate",
       "language": "zh-CN",
       "category": "quality_gate",
-      "prompt": "使用 coff0xc-ui-doc-output 重做这个 SaaS admin dashboard，不要 AI 味卡片堆叠；先做产品类型路由和 UI need package，检查现有 design system/tokens/components，覆盖 populated、empty、loading、error、disabled、hover、focus、long-content、mobile 状态，最后用桌面和移动端浏览器截图验收。",
+      "prompt": "Use coff0xc-ui-doc-output to redo this SaaS admin dashboard without the AI-look card-stacking; start with product-type routing and a UI need package, check the existing design system/tokens/components, cover populated, empty, loading, error, disabled, hover, focus, long-content, and mobile states, and finish with desktop and mobile browser screenshot acceptance.",
       "should_trigger": true,
       "expected_skill": "coff0xc-ui-doc-output",
       "reason": "Quality eval for UI product routing, state gates, design system adherence, anti-AI visual audit, and browser verification."
@@ -1276,7 +1276,7 @@
       "id": "software-quality-ci-fast-loop-gate",
       "language": "zh-CN",
       "category": "quality_gate",
-      "prompt": "使用 coff0xc-software-engineering 复现这个 CI 失败；先读根目录和目标子目录的 AGENTS/README/开发说明，整理 need package，找到快速内循环命令，保存一次完整测试输出再分析，做最小修复，按 CI 等价环境验证，最后只暂存相关文件并做最终审计。",
+      "prompt": "Use coff0xc-software-engineering to reproduce this CI failure; first read the root and target subdirectory AGENTS/README/dev docs, assemble a need package, find the fast inner loop command, save one full test output before analyzing, make the minimal fix, validate in a CI-equivalent environment, and finally stage only the related files and run a final audit.",
       "should_trigger": true,
       "expected_skill": "coff0xc-software-engineering",
       "reason": "Quality eval for repo rules, need package, fast inner loop, CI reproduction, focused staging, and final audit."

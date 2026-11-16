@@ -2,7 +2,7 @@
 
 These files are short usage references for international users. They explain what `coffee-skill` is, why it exists, why it is useful, how to use it, where it fits, and what to do when automatic skill triggering misses. The core skills include engineering, AI Agent/RAG, API/data, UI/report output, Office/PDF file delivery, research draw.io diagrams, and defensive security.
 
-The skills themselves are primarily Chinese + English. These reference files are not separate skill implementations.
+The skills themselves are primarily English. These reference files are not separate skill implementations.
 
 ## License Notice
 
@@ -13,8 +13,8 @@ These translations are usage references only. The controlling license is the rep
 | Language | File |
 |---|---|
 | English | [README.en.md](i18n/README.en.md) |
-| 中文 | [README.zh-CN.md](i18n/README.zh-CN.md) |
-| 日本語 | [README.ja.md](i18n/README.ja.md) |
+| Chinese | [README.zh-CN.md](i18n/README.zh-CN.md) |
+| Japanese | [README.ja.md](i18n/README.ja.md) |
 | 한국어 | [README.ko.md](i18n/README.ko.md) |
 | Español | [README.es.md](i18n/README.es.md) |
 | Français | [README.fr.md](i18n/README.fr.md) |
@@ -37,12 +37,6 @@ If a specific skill does not auto-trigger, use the router:
 
 ```text
 Use coff0xc-skill-router to choose the right skill.
-```
-
-Chinese equivalent:
-
-```text
-使用 coff0xc-skill-router 帮我选择合适 skill
 ```
 
 ## Notes For Translators

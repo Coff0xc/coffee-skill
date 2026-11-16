@@ -1,119 +1,119 @@
 # Full Workflow
 
-本文件是 `coff0xc-compliance-architecture` 的按需扩展工作流。默认不要加载；只有深度架构、复杂多阶段、质量评测、发版、正式交付或当前任务需要完整门禁时才读取。
+This file is the on-demand extended workflow for `coff0xc-compliance-architecture`. Do not load it by default; read it only for deep architecture, complex multi-stage work, quality evaluation, release, formal delivery, or when the current task needs the full gates.
 
-## 目标
-把架构和合规要求转成资产、数据流、威胁、控制、证据和整改计划，而不是泛泛清单。
+## Goal
+Turn architecture and compliance requirements into assets, data flows, threats, controls, evidence, and remediation plans — not generic checklists.
 
-## 适用场景
-- 做系统安全架构评审、威胁建模、合规差距分析、数据保护和控制矩阵。
-- 梳理数据分类、加密、脱敏、DLP、访问控制、日志审计和隐私风险。
-- 制定安全基线、成熟度路线、整改优先级和证据收集计划。
+## Applicable Scenarios
+- Doing system security architecture reviews, threat modeling, compliance gap analysis, data protection, and control matrices.
+- Sorting out data classification, encryption, de-identification, DLP, access control, log auditing, and privacy risk.
+- Setting security baselines, maturity paths, remediation priorities, and evidence-collection plans.
 
-## 触发强化
-- 自动触发主要依赖本文件 frontmatter 的 `description`；本 skill 只保留核心中文/英文触发词、工具名、常见缩写和手动触发短语，避免 metadata 过重。
-- 如果没有自动触发，手动写：`使用 coff0xc-compliance-architecture ...`。
-- 如果用户只写了宽泛主题，可先用 `coff0xc-skill-router` 路由到本 skill。
+## Trigger Reinforcement
+- Auto-triggering mainly depends on this file's frontmatter `description`; this skill keeps only core trigger words, tool names, common abbreviations, and manual trigger phrases to avoid overweight metadata.
+- If there is no auto-trigger, write manually: `Use coff0xc-compliance-architecture ...`.
+- If the user only wrote a broad topic, first use `coff0xc-skill-router` to route to this skill.
 
-## 不适用场景
-- 不要凭过期记忆回答当前法规条款、认证要求或标准版本。
-- 不要把合规勾选当安全结论；必须结合系统证据。
-- 涉及法律解释时给技术视角和证据等级，不替代律师意见。
+## Not Applicable
+- Do not answer current regulation clauses, certification requirements, or standard versions from stale memory.
+- Do not treat compliance checkmarks as security conclusions; they must be tied to system evidence.
+- For legal interpretation, give the technical view and evidence level; do not substitute for a lawyer's opinion.
 
-## 执行原则
-- 先读取项目文件、配置、调用点、现有风格和可用工具，再下结论或改文件。
-- 把用户目标转成可验证的完成标准；不确定但低风险的细节记录为假设并继续推进。
-- 涉及当前事实、版本、CVE、云服务、GitHub 状态、价格、外部 API 或论文时，查真实来源并标注证据等级。
-- 涉及代码改动时保持最小正确改动，优先使用现有框架、脚本、测试和本地工具。
-- 只有真实运行过的命令、测试、构建、扫描或人工检查才能写成已验证。
-- 涉及删除、远程写入、生产、凭据、付费、push、PR/Issue、CI/CD、权限或基础设施变更时，先拿到明确授权。
+## Execution Principles
+- Read project files, configuration, call sites, existing style, and available tools before concluding or changing files.
+- Turn user goals into verifiable completion criteria; record uncertain but low-risk details as assumptions and keep going.
+- When current facts, versions, CVEs, cloud services, GitHub status, pricing, external APIs, or papers are involved, check real sources and mark the evidence level.
+- When code changes are involved, keep the minimal correct change and prefer existing frameworks, scripts, tests, and local tools.
+- Only commands, tests, builds, scans, or manual checks that were actually run may be written as verified.
+- Before deletion, remote writes, production, credentials, payment, push, PR/Issue, CI/CD, permission, or infrastructure changes, get explicit authorization first.
 
-## 安全边界
-- 只处理自有资产、明确授权资产、实验室、CTF、靶场、日志、配置、样本、代码审计、防御建设和报告写作。
-- 真实第三方目标上不提供漏洞利用、凭证获取、持久化、规避检测、C2、钓鱼收集、数据外传、破坏或未授权访问步骤。
-- 高风险请求默认转为防御输出：授权边界、风险解释、检测思路、日志查询、规则草案、加固方案、验证清单和报告结构。
-- 主动联网扫描、云账号检查、目录/租户查询或生产环境动作前，确认目标范围、速率、时间窗口、禁止动作和回滚方式。
-- 发现密钥、个人信息、样本敏感数据或客户数据时，只报告类型、位置和处置建议，不复述完整秘密值。
+## Security Boundaries
+- Handle only owned assets, explicitly authorized assets, labs, CTFs, ranges, logs, configuration, samples, code audits, defensive work, and report writing.
+- Do not provide exploitation, credential acquisition, persistence, detection evasion, C2, phishing collection, data exfiltration, destruction, or unauthorized-access steps against real third-party targets.
+- High-risk requests default to defensive output: authorization boundaries, risk explanations, detection ideas, log queries, rule drafts, hardening plans, validation checklists, and report structure.
+- Before active online scanning, cloud-account checks, directory/tenant queries, or production-environment actions, confirm target scope, rate, time window, prohibited actions, and rollback method.
+- When keys, personal information, sensitive sample data, or customer data is found, report only the type, location, and handling recommendation; do not repeat the full secret value.
 
-## 能力矩阵
-| 能力域 | 覆盖范围 | 执行要点 |
+## Capability Matrix
+| Capability area | Coverage | Execution points |
 | --- | --- | --- |
-| 架构评审 | 边界、信任区、入口、身份、数据流、第三方、故障模式 | 架构风险可定位。 |
-| 威胁建模 | STRIDE、PASTA、attack trees、abuse cases、assets | 威胁映射到控制。 |
-| 合规映射 | 等保、PCI-DSS、GDPR、ISO27001、SOC2、CIS、NIST | 条款到证据和差距。 |
-| 数据安全 | 分类分级、加密、脱敏、masking、retention、backup、DLP | 数据生命周期可控。 |
-| 隐私 | PII、consent、purpose limitation、DSR、minimization、cross-border | 隐私风险可说明。 |
-| 基线 | OS、DB、K8s、Cloud、App、Logging、Endpoint | 配置基线和例外管理。 |
-| 成熟度 | 能力现状、目标状态、路线图、owner、SLA、指标 | 整改可跟踪。 |
+| Architecture review | boundaries, trust zones, entry points, identity, data flows, third parties, failure modes | Architecture risks can be located. |
+| Threat modeling | STRIDE, PASTA, attack trees, abuse cases, assets | Threats map to controls. |
+| Compliance mapping | MLPS, PCI-DSS, GDPR, ISO27001, SOC2, CIS, NIST | Clauses to evidence and gaps. |
+| Data security | classification and grading, encryption, de-identification, masking, retention, backup, DLP | Data lifecycle is controlled. |
+| Privacy | PII, consent, purpose limitation, DSR, minimization, cross-border | Privacy risks can be explained. |
+| Baselines | OS, DB, K8s, Cloud, App, Logging, Endpoint | Configuration baselines and exception management. |
+| Maturity | current capability, target state, roadmap, owner, SLA, metrics | Remediation is trackable. |
 
-## 子域路由
-| 来源 skill | 并入后的处理方式 |
+## Subdomain Routing
+| Source skill | Handling after merge |
 | --- | --- |
-| security-architecture | 系统边界、威胁建模、控制设计和安全评审。 |
-| compliance-audit | 等保、PCI-DSS、GDPR、基线和证据映射。 |
-| data-security | 数据分类、加密、脱敏、DLP、访问控制。 |
+| security-architecture | System boundaries, threat modeling, control design, and security review. |
+| compliance-audit | MLPS, PCI-DSS, GDPR, baselines, and evidence mapping. |
+| data-security | Data classification, encryption, de-identification, DLP, access control. |
 
-## 工作流
-| 阶段 | 动作 | 完成标准 |
+## Workflow
+| Stage | Action | Completion criterion |
 | --- | --- | --- |
-| 范围定义 | 确认系统、数据、法规/标准、业务目标和评审深度。 | 评审目标明确。 |
-| 资产数据流 | 画资产、信任边界、身份、数据流、第三方和存储。 | 威胁模型有基础。 |
-| 控制映射 | 把威胁/条款映射到现有控制、证据和缺口。 | 差距具体。 |
-| 风险排序 | 按影响、可能性、合规要求、可执行性和依赖排序。 | 整改有优先级。 |
-| 整改计划 | 给 owner、步骤、验证、时间、例外和残余风险。 | 能落地管理。 |
-| 证据包 | 整理截图、配置、日志、测试、策略、流程和报告引用。 | 审计可复查。 |
+| Scope definition | Confirm system, data, regulations/standards, business goals, and review depth. | Review goals are clear. |
+| Asset data flow | Draw assets, trust boundaries, identity, data flows, third parties, and storage. | Threat model has a basis. |
+| Control mapping | Map threats/clauses to existing controls, evidence, and gaps. | Gaps are specific. |
+| Risk ordering | Order by impact, likelihood, compliance requirements, executability, and dependencies. | Remediation has priority. |
+| Remediation plan | Give owner, steps, verification, timing, exceptions, and residual risk. | Manageable and landable. |
+| Evidence package | Organize screenshots, configuration, logs, tests, policies, processes, and report citations. | Auditable and re-checkable. |
 
-## 证据等级
-- 已验证：本地命令、测试、构建、源码、配置、日志、官方资料或可复现数据支持。
-- 高可信：多个可靠来源一致，但当前环境没有完整复现。
-- 推断：基于已验证事实的合理判断，需要后续验证。
-- 未验证：尚未确认，不能作为最终结论。
-- 未知：资料不足，需要补充输入或授权。
+## Evidence Levels
+- Verified: supported by local commands, tests, builds, source code, configuration, logs, official material, or reproducible data.
+- High confidence: multiple reliable sources agree, but the current environment has no full reproduction.
+- Inference: reasonable judgment based on verified facts, needs follow-up verification.
+- Unverified: not yet confirmed, cannot be used as a final conclusion.
+- Unknown: insufficient material, needs additional input or authorization.
 
-## 硬门禁
-- 当前法规、标准版本、认证要求必须查官方或权威来源。
-- 访问生产证据、客户数据或审计系统前确认权限和脱敏。
-- 不要把技术建议写成法律结论。
+## Hard Gates
+- Current regulations, standard versions, and certification requirements must be checked against official or authoritative sources.
+- Confirm permissions and de-identification before accessing production evidence, customer data, or audit systems.
+- Do not write technical recommendations as legal conclusions.
 
-## 验证清单
-- 每个合规结论都有证据文件、配置、截图或流程记录。
-- 每个威胁有现有控制、缺口和验证方式。
-- 数据保护结论覆盖采集、传输、存储、使用、共享、删除。
-- 整改项有 owner、优先级和验收标准。
+## Verification Checklist
+- Every compliance conclusion has evidence files, configuration, screenshots, or process records.
+- Every threat has existing controls, gaps, and a verification method.
+- Data-protection conclusions cover collection, transmission, storage, use, sharing, and deletion.
+- Remediation items have owners, priorities, and acceptance criteria.
 
-## 反模式
-- 复制标准条款，不映射真实系统。
-- 只看网络边界，不看身份和数据流。
-- 把加密当作所有数据安全问题的答案。
-- 没有证据就标合规通过。
+## Anti-Patterns
+- Copying standard clauses without mapping them to the real system.
+- Looking only at network boundaries, not identity and data flows.
+- Treating encryption as the answer to every data-security problem.
+- Marking compliance as passed with no evidence.
 
-## 合并来源
+## Merged Sources
 - `compliance-audit`
 - `data-security`
 - `security-architecture`
 
-## 本机相近 Skill
+## Nearby Skills on This Machine
 - `guidelines-advisor`
 - `sharp-edges`
 - `code-maturity-assessor`
 
-## 输出合同
+## Output Contract
 ```markdown
-完成：
+Done:
 - ...
 
-证据：
-- [已验证/高可信/推断/未验证/未知] ...
+Evidence:
+- [Verified/High confidence/Inference/Unverified/Unknown] ...
 
-行动：
+Actions:
 - ...
 
-验证：
+Verification:
 - ...
 
-剩余风险：
+Residual risks:
 - ...
 
-下一步：
+Next steps:
 - ...
 ```

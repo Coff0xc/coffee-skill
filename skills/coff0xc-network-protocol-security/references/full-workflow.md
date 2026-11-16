@@ -1,116 +1,116 @@
 # Full Workflow
 
-本文件是 `coff0xc-network-protocol-security` 的按需扩展工作流。默认不要加载；只有深度架构、复杂多阶段、质量评测、发版、正式交付或当前任务需要完整门禁时才读取。
+This file is the on-demand extended workflow for `coff0xc-network-protocol-security`. Do not load it by default; read it only for deep architecture, complex multi-stage work, quality evaluation, release, formal delivery, or when the current task needs the full gates.
 
-## 目标
-分析通信协议和网络遥测中的安全属性、状态机、认证、加密和配置风险，默认用于授权和防御场景。
+## Goal
+Analyze security properties, state machines, authentication, encryption, and configuration risks in communication protocols and network telemetry, for authorized and defensive scenarios by default.
 
-## 适用场景
-- 分析协议设计、抓包、日志、TLS/DNS/HTTP/QUIC 配置、无线/BLE/RF 合规测试和通信安全。
-- 把协议描述转成时序图、状态机、威胁模型或形式化验证输入。
-- 诊断连接失败、证书错误、降级风险、重放风险和网络检测规则。
+## Applicable Scenarios
+- Analyzing protocol design, packet captures, logs, TLS/DNS/HTTP/QUIC configuration, wireless/BLE/RF compliance testing, and communication security.
+- Turning protocol descriptions into sequence diagrams, state machines, threat models, or formal-verification inputs.
+- Diagnosing connection failures, certificate errors, downgrade risk, replay risk, and network detection rules.
 
-## 触发强化
-- 自动触发主要依赖本文件 frontmatter 的 `description`；本 skill 只保留核心中文/英文触发词、工具名、常见缩写和手动触发短语，避免 metadata 过重。
-- 如果没有自动触发，手动写：`使用 coff0xc-network-protocol-security ...`。
-- 如果用户只写了宽泛主题，可先用 `coff0xc-skill-router` 路由到本 skill。
+## Trigger Reinforcement
+- Auto-triggering mainly depends on this file's frontmatter `description`; this skill keeps only core trigger words, tool names, common abbreviations, and manual trigger phrases to avoid overweight metadata.
+- If there is no auto-trigger, write manually: `Use coff0xc-network-protocol-security ...`.
+- If the user only wrote a broad topic, first use `coff0xc-skill-router` to route to this skill.
 
-## 不适用场景
-- 不提供未授权无线攻击、干扰、绕过、捕获凭据或第三方网络入侵步骤。
-- 不对生产网络执行主动扫描、压测或变更，除非确认授权。
-- 不把加密算法名称当作安全结论，必须看配置和协议上下文。
+## Not Applicable
+- Do not provide unauthorized wireless attacks, jamming, bypass, credential capture, or third-party network intrusion steps.
+- Do not run active scanning, load testing, or changes against production networks without confirmed authorization.
+- Do not treat an encryption algorithm name as a security conclusion; configuration and protocol context must be examined.
 
-## 执行原则
-- 先读取项目文件、配置、调用点、现有风格和可用工具，再下结论或改文件。
-- 把用户目标转成可验证的完成标准；不确定但低风险的细节记录为假设并继续推进。
-- 涉及当前事实、版本、CVE、云服务、GitHub 状态、价格、外部 API 或论文时，查真实来源并标注证据等级。
-- 涉及代码改动时保持最小正确改动，优先使用现有框架、脚本、测试和本地工具。
-- 只有真实运行过的命令、测试、构建、扫描或人工检查才能写成已验证。
-- 涉及删除、远程写入、生产、凭据、付费、push、PR/Issue、CI/CD、权限或基础设施变更时，先拿到明确授权。
+## Execution Principles
+- Read project files, configuration, call sites, existing style, and available tools before concluding or changing files.
+- Turn user goals into verifiable completion criteria; record uncertain but low-risk details as assumptions and keep going.
+- When current facts, versions, CVEs, cloud services, GitHub status, pricing, external APIs, or papers are involved, check real sources and mark the evidence level.
+- When code changes are involved, keep the minimal correct change and prefer existing frameworks, scripts, tests, and local tools.
+- Only commands, tests, builds, scans, or manual checks that were actually run may be written as verified.
+- Before deletion, remote writes, production, credentials, payment, push, PR/Issue, CI/CD, permission, or infrastructure changes, get explicit authorization first.
 
-## 安全边界
-- 只处理自有资产、明确授权资产、实验室、CTF、靶场、日志、配置、样本、代码审计、防御建设和报告写作。
-- 真实第三方目标上不提供漏洞利用、凭证获取、持久化、规避检测、C2、钓鱼收集、数据外传、破坏或未授权访问步骤。
-- 高风险请求默认转为防御输出：授权边界、风险解释、检测思路、日志查询、规则草案、加固方案、验证清单和报告结构。
-- 主动联网扫描、云账号检查、目录/租户查询或生产环境动作前，确认目标范围、速率、时间窗口、禁止动作和回滚方式。
-- 发现密钥、个人信息、样本敏感数据或客户数据时，只报告类型、位置和处置建议，不复述完整秘密值。
+## Security Boundaries
+- Handle only owned assets, explicitly authorized assets, labs, CTFs, ranges, logs, configuration, samples, code audits, defensive work, and report writing.
+- Do not provide exploitation, credential acquisition, persistence, detection evasion, C2, phishing collection, data exfiltration, destruction, or unauthorized-access steps against real third-party targets.
+- High-risk requests default to defensive output: authorization boundaries, risk explanations, detection ideas, log queries, rule drafts, hardening plans, validation checklists, and report structure.
+- Before active online scanning, cloud-account checks, directory/tenant queries, or production-environment actions, confirm target scope, rate, time window, prohibited actions, and rollback method.
+- When keys, personal information, sensitive sample data, or customer data is found, report only the type, location, and handling recommendation; do not repeat the full secret value.
 
-## 能力矩阵
-| 能力域 | 覆盖范围 | 执行要点 |
+## Capability Matrix
+| Capability area | Coverage | Execution points |
 | --- | --- | --- |
-| 协议设计 | 消息流、状态机、认证、密钥协商、重放、降级、错误处理 | 可画图和验证。 |
-| TLS/PKI | 证书链、SAN、过期、cipher、mTLS、OCSP、pinning、HSTS | 配置有证据。 |
-| DNS | 解析链、DNSSEC、DoH/DoT、缓存、split horizon、zone transfer 风险 | 日志和配置结合。 |
-| HTTP/QUIC | headers、cookies、CORS、cache、HTTP/2/3、ALPN、proxy | 应用协议边界。 |
-| Packet 分析 | pcap、Wireshark、flow、latency、重传、异常序列 | 网络事实可复查。 |
-| 无线/BLE/RF | 频段、配对、认证、加密、设备暴露、合规测试 | 授权实验室优先。 |
-| 形式化 | Mermaid sequence、ProVerif/Tamarin 思路、攻击者模型 | 安全性质明确。 |
+| Protocol design | message flows, state machines, authentication, key agreement, replay, downgrade, error handling | Can be drawn and verified. |
+| TLS/PKI | certificate chains, SAN, expiry, cipher, mTLS, OCSP, pinning, HSTS | Configuration has evidence. |
+| DNS | resolution chain, DNSSEC, DoH/DoT, caching, split horizon, zone transfer risk | Logs and configuration together. |
+| HTTP/QUIC | headers, cookies, CORS, cache, HTTP/2/3, ALPN, proxy | Application-protocol boundaries. |
+| Packet analysis | pcap, Wireshark, flow, latency, retransmission, anomalous sequences | Network facts are re-checkable. |
+| Wireless/BLE/RF | bands, pairing, authentication, encryption, device exposure, compliance testing | Authorized labs first. |
+| Formal methods | Mermaid sequence, ProVerif/Tamarin ideas, attacker models | Security properties are explicit. |
 
-## 子域路由
-| 来源 skill | 并入后的处理方式 |
+## Subdomain Routing
+| Source skill | Handling after merge |
 | --- | --- |
-| network-protocol | 有线/互联网协议、TLS/DNS/HTTP/QUIC/pcap 分析。 |
-| wireless-security | WiFi/BLE/RF 合规和防御分析。 |
+| network-protocol | Wired/internet protocols, TLS/DNS/HTTP/QUIC/pcap analysis. |
+| wireless-security | WiFi/BLE/RF compliance and defensive analysis. |
 
-## 工作流
-| 阶段 | 动作 | 完成标准 |
+## Workflow
+| Stage | Action | Completion criterion |
 | --- | --- | --- |
-| 输入确认 | 确认 pcap、日志、配置、协议文档、设备、授权和时间窗。 | 数据合法可分析。 |
-| 协议建模 | 列参与方、消息、状态、密钥、信任边界和攻击者能力。 | 安全属性明确。 |
-| 证据分析 | 从抓包、日志、配置、证书和源码提取事实。 | 不是凭经验猜。 |
-| 风险判断 | 检查认证、加密、完整性、重放、降级、隐私和错误处理。 | 发现有上下文。 |
-| 修复检测 | 给配置、协议变更、日志字段、规则和复测方法。 | 能执行和验证。 |
-| 图示/报告 | 输出时序图、状态机、证据表和剩余风险。 | 便于沟通。 |
+| Input confirmation | Confirm pcap, logs, configuration, protocol docs, devices, authorization, and time window. | Data is lawful and analyzable. |
+| Protocol modeling | List participants, messages, states, keys, trust boundaries, and attacker capabilities. | Security properties are explicit. |
+| Evidence analysis | Extract facts from packet captures, logs, configuration, certificates, and source code. | Not guessed from experience. |
+| Risk judgment | Check authentication, encryption, integrity, replay, downgrade, privacy, and error handling. | Findings have context. |
+| Fix and detection | Give configuration, protocol changes, log fields, rules, and retest methods. | Executable and verifiable. |
+| Diagrams/report | Output sequence diagrams, state machines, evidence tables, and residual risk. | Easy to communicate. |
 
-## 证据等级
-- 已验证：本地命令、测试、构建、源码、配置、日志、官方资料或可复现数据支持。
-- 高可信：多个可靠来源一致，但当前环境没有完整复现。
-- 推断：基于已验证事实的合理判断，需要后续验证。
-- 未验证：尚未确认，不能作为最终结论。
-- 未知：资料不足，需要补充输入或授权。
+## Evidence Levels
+- Verified: supported by local commands, tests, builds, source code, configuration, logs, official material, or reproducible data.
+- High confidence: multiple reliable sources agree, but the current environment has no full reproduction.
+- Inference: reasonable judgment based on verified facts, needs follow-up verification.
+- Unverified: not yet confirmed, cannot be used as a final conclusion.
+- Unknown: insufficient material, needs additional input or authorization.
 
-## 硬门禁
-- 无线测试、抓包、主动扫描或连接设备前确认授权和法规边界。
-- 生产证书、DNS、路由、WAF/proxy 配置修改前确认。
-- 形式化结论要说明攻击者模型和未建模假设。
+## Hard Gates
+- Confirm authorization and legal boundaries before wireless testing, packet capture, active scanning, or connecting devices.
+- Confirm first before production certificate, DNS, routing, WAF/proxy configuration changes.
+- Formal conclusions must state the attacker model and unmodeled assumptions.
 
-## 验证清单
-- TLS：证书链、cipher、协议版本、握手日志或测试命令。
-- DNS：权威/递归路径、记录、TTL、DNSSEC 状态。
-- pcap：过滤表达式、包号、时间戳和字段。
-- 协议模型：安全性质、参与方和反例/无反例条件。
+## Verification Checklist
+- TLS: certificate chain, cipher, protocol version, handshake logs, or test commands.
+- DNS: authoritative/recursive path, records, TTL, DNSSEC status.
+- pcap: filter expressions, packet numbers, timestamps, and fields.
+- Protocol model: security properties, participants, and counter-example/no-counter-example conditions.
 
-## 反模式
-- 只看端口开放就下安全结论。
-- 没有时间窗和包号的抓包分析。
-- 把实验室无线方法用于真实第三方环境。
-- 形式化模型漏掉关键参与方却给强结论。
+## Anti-Patterns
+- Reaching security conclusions from open ports alone.
+- Packet-capture analysis with no time window or packet numbers.
+- Applying lab wireless methods to real third-party environments.
+- Formal models that omit key participants yet give strong conclusions.
 
-## 合并来源
+## Merged Sources
 - `network-protocol`
 - `wireless-security`
 
-## 本机相近 Skill
+## Nearby Skills on This Machine
 - `crypto-protocol-diagram`
 - `mermaid-to-proverif`
 
-## 输出合同
+## Output Contract
 ```markdown
-完成：
+Done:
 - ...
 
-证据：
-- [已验证/高可信/推断/未验证/未知] ...
+Evidence:
+- [Verified/High confidence/Inference/Unverified/Unknown] ...
 
-行动：
+Actions:
 - ...
 
-验证：
+Verification:
 - ...
 
-剩余风险：
+Residual risks:
 - ...
 
-下一步：
+Next steps:
 - ...
 ```

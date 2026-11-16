@@ -1,86 +1,86 @@
 # Full Workflow
 
-本文件是 `coff0xc-research-drawio-diagram` 的按需扩展工作流。默认不要加载；只有深度架构、复杂多阶段、质量评测、发版、正式交付或当前任务需要完整门禁时才读取。
+This file is the on-demand extended workflow for `coff0xc-research-drawio-diagram`. Do not load it by default; read it only for deep architecture, complex multi-stage work, quality evaluation, release, formal delivery, or when the current task needs the full gates.
 
-## 目标
-把科研算法、论文方法、模型结构或实验流程转成可编辑的 diagrams.net/draw.io `.drawio` 架构图。先基于公开来源或用户提供材料做结构分析，再画图；不要凭记忆编造模块、连接或创新点。
+## Goal
+Turn research algorithms, paper methods, model structures, or experiment flows into editable diagrams.net/draw.io `.drawio` architecture diagrams. Analyze structure from public sources or user-provided material before drawing; do not invent modules, connections, or innovations from memory.
 
-## 适用场景
-- 用户要求画科研算法架构图、论文方法图、模型 pipeline、实验流程、系统框架或对比图。
-- 用户明确要求 draw.io、diagrams.net、`.drawio`、可编辑 XML、论文配图、method figure、architecture figure。
-- 需要把论文、arXiv、官方 GitHub、README、代码目录、公式、消融实验或已有草图转成结构化图。
-- 需要输出可编辑源文件，而不只是 Mermaid、PNG 或文字描述。
+## Applicable Scenarios
+- The user asks to draw a research algorithm architecture figure, paper method figure, model pipeline, experiment flow, system framework, or comparison figure.
+- The user explicitly asks for draw.io, diagrams.net, `.drawio`, editable XML, paper figures, method figures, or architecture figures.
+- Papers, arXiv, official GitHub repos, READMEs, code directories, formulas, ablation experiments, or existing sketches need to be turned into structured figures.
+- An editable source file is required, not just Mermaid, PNG, or a text description.
 
-## 不适用场景
-- 纯代码依赖图、调用图、类图优先用代码图/Trailmark 类 skill。
-- 只需要简单 ASCII/Mermaid 草图且不要求 draw.io 时，不必生成 `.drawio`。
-- 没有来源、也不允许联网或提供材料时，只能输出“待确认草图”，不得声称是论文真实结构。
+## Not Applicable
+- Pure code dependency graphs, call graphs, and class diagrams go to code-graph/Trailmark-type skills first.
+- When only a simple ASCII/Mermaid sketch is needed and draw.io is not required, generating `.drawio` is unnecessary.
+- With no sources and no permission to go online or provide material, only output a "draft pending confirmation" and never claim it is the paper's real structure.
 
-## 公开来源要求
-优先使用这些证据，按可靠度排序：
+## Public Source Requirements
+Prefer this evidence, ordered by reliability:
 
-1. 用户提供的论文 PDF、方法章节、图表、公式、补充材料。
-2. 官方论文页、arXiv、OpenReview、ACL Anthology、IEEE/ACM/Springer 页面。
-3. 官方 GitHub/项目主页、模型卡、文档、demo。
-4. 高可信综述、Papers with Code、公开 benchmark 页面。
-5. 其他博客/教程只能作为辅助，不得覆盖原论文。
+1. Paper PDFs, method sections, figures, formulas, and supplementary material provided by the user.
+2. Official paper pages, arXiv, OpenReview, ACL Anthology, IEEE/ACM/Springer pages.
+3. Official GitHub repos/project homepages, model cards, documentation, demos.
+4. High-trust reviews, Papers with Code, public benchmark pages.
+5. Other blogs/tutorials are supporting material only and must not override the original paper.
 
-涉及当前论文、最新模型、仓库结构、benchmark 或 API 时必须查公开来源并标注证据等级。
+When current papers, latest models, repo structures, benchmarks, or APIs are involved, check public sources and mark the evidence level.
 
-## draw.io 约束
-- 默认输出 `.drawio`，也可输出 `.xml`。draw.io/diagrams.net 的可编辑图本质是 XML；`.drawio` 是常见文件扩展名。
-- 需要可编辑交付时优先保存 `.drawio` 源文件；PNG/SVG/PDF 只作为预览或投稿导出。
-- 如果导出 PNG/SVG/PDF，尽量保留 embedded diagram data，方便之后继续编辑。
-- 可以先用 Mermaid/表格整理逻辑，但最终必须生成 draw.io 可编辑文件。
-- 如果本地没有 draw.io Desktop，不要假称已导出 PNG/PDF；只说已生成 `.drawio`，用户可用 app.diagrams.net 或桌面版打开。
+## draw.io Constraints
+- Default output is `.drawio`; `.xml` is also possible. An editable draw.io/diagrams.net figure is fundamentally XML; `.drawio` is the common file extension.
+- When an editable deliverable is needed, save the `.drawio` source file first; PNG/SVG/PDF are only previews or submission exports.
+- When exporting PNG/SVG/PDF, keep embedded diagram data where possible so the figure can keep being edited later.
+- Mermaid/tables can organize the logic first, but the final deliverable must be an editable draw.io file.
+- If draw.io Desktop is not installed locally, do not claim a PNG/PDF was exported; only say the `.drawio` was generated, which the user can open with app.diagrams.net or the desktop app.
 
-## 执行原则
-- 先抽取算法事实，再画图：任务、输入、输出、模块、数据流、训练/推理差异、损失函数、评估、创新点。
-- 图必须服务论文表达：读者应该能一眼看出“问题、方法主线、关键模块、信息流和贡献点”。
-- 复杂图分层：总览图、模块展开图、训练流程图、推理流程图、消融/对比图不要硬塞一张。
-- 术语保留论文原名；缩写首次出现写全称。
-- 图中每个核心模块都要能追溯到来源段落、公式、图号、代码路径或公开文档。
+## Execution Principles
+- Extract algorithm facts before drawing: task, inputs, outputs, modules, data flow, training/inference differences, loss functions, evaluation, innovations.
+- The figure must serve the paper's expression: readers should see at a glance the "problem, main method thread, key modules, information flow, and contribution points."
+- Layer complex figures: overview, module expansion, training flow, inference flow, and ablation/comparison figures should not be forced into one figure.
+- Keep the paper's original term names; write abbreviations in full on first use.
+- Every core module in the figure must trace back to a source passage, formula, figure number, code path, or public document.
 
-## 输出产物
-至少交付：
+## Deliverables
+Deliver at minimum:
 
-- `.drawio` 文件路径。
-- 图结构说明：模块、边、分组、颜色含义。
-- 证据表：每个关键模块对应来源。
-- 未确认项：哪些连接或命名是推断。
-- 打开/编辑说明：用 diagrams.net/draw.io 打开 `.drawio`。
+- `.drawio` file path.
+- Figure-structure notes: modules, edges, groupings, color meanings.
+- Evidence table: a source for each key module.
+- Unconfirmed items: which connections or names are inferred.
+- Open/edit instructions: open the `.drawio` with diagrams.net/draw.io.
 
-可选交付：
+Optional deliverables:
 
-- JSON spec：供 `scripts/build_drawio.py` 复现。
-- Mermaid 草图：用于快速审阅，不替代 `.drawio`。
-- PNG/SVG/PDF 预览：仅在本地工具可用并真实导出后声明。
+- JSON spec: for reproduction with `scripts/build_drawio.py`.
+- Mermaid sketch: for quick review, not a replacement for `.drawio`.
+- PNG/SVG/PDF preview: only claimed after a real local export when the tool is available.
 
-## 工作流
+## Workflow
 
-| 阶段 | 动作 | 完成标准 |
+| Stage | Action | Completion criterion |
 | --- | --- | --- |
-| 需求定界 | 确认图类型、目标读者、论文 venue、页面比例、输出路径和是否要多页。 | 知道画什么、不画什么。 |
-| 来源分析 | 读取用户材料；必要时查公开论文、官方 repo、文档、图表和公式。 | 每个核心结构有证据。 |
-| 结构抽取 | 列输入、编码器/核心算法/解码器、训练目标、推理路径、数据集、指标和创新点。 | 可转成节点和边。 |
-| 图稿设计 | 选择布局：left-to-right pipeline、top-down hierarchy、swimlane、loop、multi-page。 | 信息层级清晰。 |
-| 生成 draw.io | 用 `scripts/build_drawio.py` 或直接写 `.drawio` XML。 | 文件可被 draw.io 打开编辑。 |
-| 自检 | 检查 XML、节点标签、连接方向、证据表、未确认项。 | 不伪造、不漏关键模块。 |
-| 交付 | 给出文件路径、证据、验证和下一步。 | 用户能打开和修改。 |
+| Requirements scoping | Confirm figure type, target readers, paper venue, page ratio, output path, and whether multiple pages are needed. | Know what to draw and what not to draw. |
+| Source analysis | Read user material; when needed, check public papers, official repos, docs, figures, and formulas. | Every core structure has evidence. |
+| Structure extraction | List inputs, encoders/core algorithms/decoders, training objectives, inference paths, datasets, metrics, and innovations. | Convertible into nodes and edges. |
+| Figure design | Choose a layout: left-to-right pipeline, top-down hierarchy, swimlane, loop, multi-page. | Information hierarchy is clear. |
+| Generate draw.io | Use `scripts/build_drawio.py` or write `.drawio` XML directly. | File opens and edits in draw.io. |
+| Self-check | Check XML, node labels, edge directions, evidence table, and unconfirmed items. | Nothing fabricated, no key module missing. |
+| Delivery | Give file path, evidence, verification, and next steps. | User can open and modify it. |
 
-## 推荐图型
+## Recommended Figure Types
 
-| 图型 | 适用 | 布局 |
+| Figure type | Use for | Layout |
 | --- | --- | --- |
-| Algorithm pipeline | 输入到输出、端到端方法 | 左到右 |
-| Model architecture | 神经网络/模块层级 | 分组 + 子模块 |
-| Training vs inference | 训练和推理路径不同 | 双泳道 |
-| Data flow | 数据处理、特征、检索、缓存 | 左到右或上到下 |
-| Loss/evaluation | 多损失、多指标、多 benchmark | 辅助区块 |
-| Paper contribution map | 创新点和 baseline 对比 | 中心模块 + 对比旁注 |
+| Algorithm pipeline | Input to output, end-to-end method | Left to right |
+| Model architecture | Neural network/module hierarchy | Groups + submodules |
+| Training vs inference | Training and inference paths differ | Dual swimlanes |
+| Data flow | Data processing, features, retrieval, caching | Left to right or top to bottom |
+| Loss/evaluation | Multiple losses, metrics, benchmarks | Supporting blocks |
+| Paper contribution map | Innovations and baseline comparison | Central module + comparison side notes |
 
-## JSON Spec 约定
-优先用 `scripts/build_drawio.py` 生成 `.drawio`。输入 JSON 结构：
+## JSON Spec Convention
+Prefer generating `.drawio` with `scripts/build_drawio.py`. Input JSON structure:
 
 ```json
 {
@@ -100,51 +100,51 @@
 }
 ```
 
-常用 `type`：`data`, `module`, `algorithm`, `model`, `loss`, `evaluation`, `output`, `claim`, `note`, `source`。
+Common `type` values: `data`, `module`, `algorithm`, `model`, `loss`, `evaluation`, `output`, `claim`, `note`, `source`.
 
-## 证据表格式
+## Evidence Table Format
 
 ```markdown
-| 图中元素 | 来源 | 证据等级 | 备注 |
+| Figure element | Source | Evidence level | Notes |
 | --- | --- | --- | --- |
-| Encoder | Paper Section 3.1 / official repo module path | 已验证 | 原文模块名 |
-| Retrieval cache | README / code path | 已验证 | 推理路径 |
-| Feedback edge | 推断 | 推断 | 需要用户确认 |
+| Encoder | Paper Section 3.1 / official repo module path | Verified | Original module name |
+| Retrieval cache | README / code path | Verified | Inference path |
+| Feedback edge | Inference | Inference | Needs user confirmation |
 ```
 
-## 验证清单
-- `.drawio` 是 XML 文件，包含 `<mxfile>` 和 `<mxGraphModel>`。
-- 节点 ID 唯一；边的 source/target 都存在。
-- 连接方向符合论文方法，不反向。
-- 训练路径、推理路径、loss、evaluation 没混在一起。
-- 图中未确认内容已标注为推断。
-- 没有把公开论文外的信息写成已验证事实。
+## Verification Checklist
+- The `.drawio` is an XML file containing `<mxfile>` and `<mxGraphModel>`.
+- Node IDs are unique; every edge's source/target exists.
+- Edge directions follow the paper's method, not reversed.
+- Training paths, inference paths, loss, and evaluation are not mixed together.
+- Unconfirmed content in the figure is marked as inference.
+- No information from outside the public paper is written as verified fact.
 
-## 反模式
-- 只根据模型名画“常见架构”，没有来源证据。
-- 把论文图复制成低分辨率图片，而不是可编辑结构图。
-- 所有模块同一颜色，读者分不出 data/model/loss/eval。
-- 一张图塞满所有细节，导致论文排版不可用。
-- 声称已导出 PNG/PDF，但实际只生成了 `.drawio`。
+## Anti-Patterns
+- Drawing a "common architecture" from the model name alone, with no source evidence.
+- Copying a paper figure as a low-resolution image instead of an editable structure figure.
+- All modules in one color, so readers cannot tell data/model/loss/eval apart.
+- Cramming every detail into one figure so it is unusable in paper layout.
+- Claiming a PNG/PDF was exported when only a `.drawio` was generated.
 
-## 输出合同
+## Output Contract
 
 ```markdown
-完成：
+Done:
 - ...
 
-证据：
-- [已验证/高可信/推断/未验证/未知] ...
+Evidence:
+- [Verified/High confidence/Inference/Unverified/Unknown] ...
 
-文件：
+Files:
 - ...
 
-验证：
+Verification:
 - ...
 
-未确认项：
+Unconfirmed items:
 - ...
 
-下一步：
+Next steps:
 - ...
 ```

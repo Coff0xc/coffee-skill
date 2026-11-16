@@ -1,57 +1,57 @@
 ---
 name: coff0xc-purple-deception
-description: "Use when / 当用户请求 purple team、ATT&CK、control validation、detection coverage、emulation plan、honeypot/deception、decoy/canary、SOC 改进、检测有效性、覆盖指标或防守能力验证。仅限授权防御演练。手动触发：使用 coff0xc-purple-deception。"
+description: "Use when the user requests purple team, ATT&CK, control validation, detection coverage, emulation plan, honeypot/deception, decoy/canary, SOC improvement, detection effectiveness, coverage metrics, or defensive-capability validation. Authorized defensive exercises only. Manual trigger: Use coff0xc-purple-deception."
 ---
 
 # coff0xc-purple-deception
 
 <!-- skill-id: cs-pdp-e45c2a90 -->
 
-## 快速规则（日常任务先读这里）
-> **[行为映射]** 先把假设攻击行为映射到 ATT&CK、日志源、检测逻辑、控制点和响应动作。
-> **[覆盖门禁]** 输出检测覆盖矩阵、缺口、误报风险、验证样本和观测指标。
-> **[防御优先]** 优先计划、检测、复盘和欺骗防御设计；真实演练动作必须受 ROE 约束。
-> **[硬边界]** 生产演练、诱捕部署、主动对抗、第三方目标和会影响用户的控制变更先确认。
+## Quick Rules (read this first for everyday tasks)
+> **[Behavior mapping]** First map hypothesized attacker behavior to ATT&CK, log sources, detection logic, control points, and response actions.
+> **[Coverage gate]** Output a detection-coverage matrix, gaps, false-positive risk, validation samples, and observation metrics.
+> **[Defense first]** Prioritize planning, detection, review, and deception-defense design; real exercise actions must stay within ROE constraints.
+> **[Hard boundary]** Confirm first for production exercises, decoy deployment, active adversarial work, third-party targets, and control changes that would affect users.
 
-普通紫队/欺骗防御任务按本节先推进；只有真实演练执行或多团队控制验证时再展开完整工作流。
+Follow this section first for ordinary purple-team/deception-defense tasks; expand the full workflow only for real exercise execution or multi-team control validation.
 
-## 能力定位
-面向紫队、ATT&CK 映射、检测覆盖验证和欺骗防御的安全运营改进能力。它把攻击行为语言翻译成可观测、可检测、可改进的防御能力。
+## Capability
+Security-operations improvement capability for purple teaming, ATT&CK mapping, detection-coverage validation, and deception defense. It translates attacker-behavior language into defensive capability that is observable, detectable, and improvable.
 
-## 能交付什么
-- ATT&CK 技术映射和演练假设
-- 检测覆盖矩阵、日志需求和响应验证点
-- 蜜罐/诱饵/canary 设计建议
-- 演练复盘、差距和改进 backlog
+## What It Can Deliver
+- ATT&CK technique mapping and exercise hypotheses
+- Detection-coverage matrix, log requirements, and response validation points
+- Honeypot/decoy/canary design recommendations
+- Exercise reviews, gaps, and improvement backlog
 
-## 可以接收什么输入
-- 攻击行为描述、检测规则、日志源、SOC 反馈
-- ATT&CK 技术、演练计划、告警数据、响应流程
-- 蜜罐/诱饵需求、资产清单、覆盖指标
+## What Input It Can Take
+- Attack-behavior descriptions, detection rules, log sources, SOC feedback
+- ATT&CK techniques, exercise plans, alert data, response processes
+- Honeypot/decoy requirements, asset inventory, coverage metrics
 
-## 放心使用的边界
-- 只做授权演练、防御验证和欺骗防御设计
-- 不提供未授权攻击、规避检测、持久化或外传步骤
-- 真实演练、钓鱼模拟、诱饵部署和外部交互必须先确认
-- 安全类能力默认只用于授权、防御、检测、加固、验证和报告；不提供未授权攻击、凭据窃取、持久化、规避检测、C2、钓鱼收集、数据外传或破坏性步骤。
+## Safe-Use Boundaries
+- Authorized exercises, defensive validation, and deception-defense design only
+- Do not provide unauthorized attack, detection-evasion, persistence, or exfiltration steps
+- Real exercises, phishing simulations, decoy deployment, and external interaction must be confirmed first
+- Security capabilities are used only for authorized, defensive, detection, hardening, validation, and reporting purposes by default; do not provide unauthorized attack, credential theft, persistence, detection evasion, C2, phishing collection, data exfiltration, or destructive steps.
 
-## 为什么可以放心
-- 每个演练动作都对应可观测信号
-- 检测效果用数据源、规则和样例验证
-- 输出改进闭环而不是只列攻击技术
+## Why You Can Trust It
+- Every exercise action maps to an observable signal
+- Detection effectiveness is validated with data sources, rules, and samples
+- Output is an improvement loop, not just a list of attack techniques
 
-## 典型使用方式
+## Typical Usage
 ```text
-使用 coff0xc-purple-deception 把这些攻击行为映射成 ATT&CK 检测覆盖矩阵。
-使用 coff0xc-purple-deception 设计一次授权紫队演练和复盘指标。
+Use coff0xc-purple-deception to map these attack behaviors into an ATT&CK detection-coverage matrix.
+Use coff0xc-purple-deception to design an authorized purple-team exercise and review metrics.
 Use coff0xc-purple-deception to plan honeypot/canary coverage and detection validation.
 ```
 
-## 默认输出
-- 收口只写完成、验证、还剩、下一步；有文件/代码/规则产物给路径或位置。
-- 未真实运行的检查标为未验证，安全/架构结论标证据等级。
+## Default Output
+- Close with only done, verified, remaining, and next steps; give a path or location for any file/code/rule artifacts.
+- Checks not actually run are marked unverified; security/architecture conclusions carry an evidence level.
 
-## 按需展开
-- 日常任务只执行上面的快速规则、能力边界和典型用法，不默认读取完整门禁。
-- 深度架构、复杂多阶段、质量评测、发版、正式交付或当前任务证据不足时，再读取 `references/full-workflow.md`。
-- 读取 reference 后仍保持最小必要上下文；不要因为 reference 存在就输出长篇流程或额外自证材料。
+## Expand on Demand
+- Everyday tasks use only the quick rules, capability boundaries, and typical usage above; do not read the full gates by default.
+- Read `references/full-workflow.md` only for deep architecture, complex multi-stage work, quality evaluation, release, formal delivery, or when the current task lacks evidence.
+- After reading a reference, keep context to the minimum necessary; do not output long process write-ups or extra self-justifying material just because a reference exists.

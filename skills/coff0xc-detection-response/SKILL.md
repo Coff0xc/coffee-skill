@@ -1,57 +1,57 @@
 ---
 name: coff0xc-detection-response
-description: "Use when / 当用户请求 SOC、安全运营、detection engineering、threat hunting/intel、incident response/IR、forensics、malware、phishing：SIEM、Sigma、YARA、IOC、logs、alerts、EDR、timeline、alert tuning、误报和检测逻辑。手动触发：使用 coff0xc-detection-response。"
+description: "Use when the user requests SOC, security operations, detection engineering, threat hunting/intel, incident response/IR, forensics, malware, or phishing: SIEM, Sigma, YARA, IOC, logs, alerts, EDR, timeline, alert tuning, false positives, and detection logic. Manual trigger: Use coff0xc-detection-response."
 ---
 
 # coff0xc-detection-response
 
 <!-- skill-id: cs-drs-6c1f90e4 -->
 
-## 快速规则（日常任务先读这里）
-> **[时间线先行]** 先定日志源、字段、时间范围、实体、告警上下文和已知 IOC。
-> **[检测门禁]** Sigma/YARA/查询必须说明字段映射、样本、误报来源、ATT&CK 映射和测试方式。
-> **[响应边界]** 默认给 triage、保全、遏制建议；真实隔离、封禁、删除、封号或生产处置先确认。
-> **[交付标准]** 输出时间线、证据等级、规则、调优建议、缺失日志和复盘项。
+## Quick Rules (read this first for everyday tasks)
+> **[Timeline first]** Define log sources, fields, time range, entities, alert context, and known IOCs first.
+> **[Detection gate]** Sigma/YARA/queries must state field mappings, samples, false-positive sources, ATT&CK mapping, and test method.
+> **[Response boundary]** Triage, preservation, and containment recommendations by default; confirm first for real isolation, blocking, deletion, account suspension, or production handling.
+> **[Delivery standard]** Output timeline, evidence level, rules, tuning recommendations, missing logs, and review items.
 
-普通检测/响应任务按本节先推进；只有事件指挥、真实 containment 或跨团队演练时再展开完整工作流。
+Follow this section first for ordinary detection/response tasks; expand the full workflow only for incident command, real containment, or cross-team exercises.
 
-## 能力定位
-面向 SOC、检测工程、威胁狩猎、取证和应急响应的防御运营能力。它把日志、样本线索和告警问题转成可验证检测、时间线和响应建议。
+## Capability
+Defensive-operations capability for SOC, detection engineering, threat hunting, forensics, and incident response. It turns logs, sample leads, and alert problems into verifiable detections, timelines, and response recommendations.
 
-## 能交付什么
-- Sigma/YARA/查询规则草案和字段映射
-- IOC、时间线、攻击阶段和 ATT&CK 映射
-- 误报分析、测试样例和调优建议
-- 应急处置、取证保全和复盘改进清单
+## What It Can Deliver
+- Sigma/YARA/query rule drafts and field mappings
+- IOCs, timelines, attack stages, and ATT&CK mapping
+- False-positive analysis, test samples, and tuning recommendations
+- Incident handling, forensic preservation, and review/improvement checklists
 
-## 可以接收什么输入
-- EDR/SIEM/云日志、告警、IOC、样本摘要
-- 取证笔记、邮件头、网络流量摘要、事件时间线
-- 已有 Sigma/YARA/查询规则和误报反馈
+## What Input It Can Take
+- EDR/SIEM/cloud logs, alerts, IOCs, sample summaries
+- Forensic notes, mail headers, network-traffic summaries, incident timelines
+- Existing Sigma/YARA/query rules and false-positive feedback
 
-## 放心使用的边界
-- 只做防御检测、应急、取证和报告
-- 不提供未授权攻击、持久化、规避检测或恶意样本投递步骤
-- 处理真实日志时避免泄露个人信息和敏感资产细节
-- 安全类能力默认只用于授权、防御、检测、加固、验证和报告；不提供未授权攻击、凭据窃取、持久化、规避检测、C2、钓鱼收集、数据外传或破坏性步骤。
+## Safe-Use Boundaries
+- Defensive detection, incident response, forensics, and reporting only
+- Do not provide unauthorized attack, persistence, detection-evasion, or malicious-sample delivery steps
+- When handling real logs, avoid leaking personal information and sensitive asset details
+- Security capabilities are used only for authorized, defensive, detection, hardening, validation, and reporting purposes by default; do not provide unauthorized attack, credential theft, persistence, detection evasion, C2, phishing collection, data exfiltration, or destructive steps.
 
-## 为什么可以放心
-- 检测规则必须说明数据源、字段、测试样例和误报风险
-- IR 输出区分已观测事实和推断
-- 优先给可执行的处置和验证步骤
+## Why You Can Trust It
+- Detection rules must state data sources, fields, test samples, and false-positive risk
+- IR output separates observed facts from inference
+- Prioritizes executable handling and verification steps
 
-## 典型使用方式
+## Typical Usage
 ```text
-使用 coff0xc-detection-response 根据这些 EDR 日志写 Sigma 和 YARA 检测规则。
-使用 coff0xc-detection-response 做一次威胁狩猎假设、日志查询和告警调优。
+Use coff0xc-detection-response to write Sigma and YARA detection rules from these EDR logs.
+Use coff0xc-detection-response for a threat-hunting hypothesis, log queries, and alert tuning.
 Use coff0xc-detection-response to build an incident timeline from these forensics notes.
 ```
 
-## 默认输出
-- 收口只写完成、验证、还剩、下一步；有文件/代码/规则产物给路径或位置。
-- 未真实运行的检查标为未验证，安全/架构结论标证据等级。
+## Default Output
+- Close with only done, verified, remaining, and next steps; give a path or location for any file/code/rule artifacts.
+- Checks not actually run are marked unverified; security/architecture conclusions carry an evidence level.
 
-## 按需展开
-- 日常任务只执行上面的快速规则、能力边界和典型用法，不默认读取完整门禁。
-- 深度架构、复杂多阶段、质量评测、发版、正式交付或当前任务证据不足时，再读取 `references/full-workflow.md`。
-- 读取 reference 后仍保持最小必要上下文；不要因为 reference 存在就输出长篇流程或额外自证材料。
+## Expand on Demand
+- Everyday tasks use only the quick rules, capability boundaries, and typical usage above; do not read the full gates by default.
+- Read `references/full-workflow.md` only for deep architecture, complex multi-stage work, quality evaluation, release, formal delivery, or when the current task lacks evidence.
+- After reading a reference, keep context to the minimum necessary; do not output long process write-ups or extra self-justifying material just because a reference exists.

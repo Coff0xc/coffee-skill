@@ -17,7 +17,7 @@ This repository is a publication candidate generated from a local skill consolid
 - A research draw.io diagram skill was added as a new workflow after public-source analysis of diagrams.net/draw.io editing/export behavior.
 - A trigger fallback router skill was added because client auto-triggering depends heavily on frontmatter metadata.
 - External UI skill material was reduced to generalized workflow and quality gates. Personal definitions, local machine paths, absolute taste rules, and default authorization language were not copied into the runtime skill.
-- The external quick-rule style was generalized across all runtime skills as `快速规则（日常任务先读这里）`; no external personal paths, authorization shortcuts, or project-specific identity rules were copied.
+- The external quick-rule style was generalized across all runtime skills as `Quick Rules (read this first for everyday tasks)`; no external personal paths, authorization shortcuts, or project-specific identity rules were copied.
 
 ## Publication Caveat
 
